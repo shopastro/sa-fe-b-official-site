@@ -5,7 +5,3 @@ interface Props extends React.HTMLAttributes<HTMLDivElement>, PositionProps, Lay
     children: React.ReactNode;
 }
 
-interface MenuItemDataType {
-    label: string;
-    value?: string;
-}
