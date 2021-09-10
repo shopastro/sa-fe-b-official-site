@@ -1,5 +1,7 @@
-import {MenuItemDataType} from "@root/index";
-
+interface MenuItemDataType {
+    label: string;
+    value?: string;
+}
 export const menuData:Array<MenuItemDataType> = [
     {
         label: '首页',
