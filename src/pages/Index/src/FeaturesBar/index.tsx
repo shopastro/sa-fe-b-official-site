@@ -23,7 +23,9 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
         comps.push((
             <Box className='feature-block'>{icon}<Box as='span' className='afont' sx={{
                 ...styles.label,
-                marginLeft: icon ? '10px' : 0,
+                [mq[1]]: {
+                    marginLeft: icon ? '0.71rem' : 0,
+                },
             }}>{label}</Box></Box>
         ))
     }
@@ -37,34 +39,41 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
                 padding: '28px 0',
                 backgroundColor: "#ffffff",
                 userSelect: 'none',
-                '& .feature-block':{
+                '& .feature-block': {
                     width: '50%',
                     float: 'left',
-                    padding: '2.5rem 0.5rem'
+                    padding: '2.5rem 0.8rem',
                 },
-                [mq[1]]:{
-                    '& .feature-block':{
+                '& .feature-block .afont': {
+                    display: 'block',
+                    marginTop: '0.83rem',
+                },
+                [mq[1]]: {
+                    '& .feature-block': {
                         width: 'auto',
                         float: 'none',
-                    }
+                    },
+                    '& .feature-block .afont': {
+                        display: 'inline-block',
+                        marginTop: '0'
+                    },
                 }
             }}
         >
-            <Container sx={{
+            <Container className='clearfix' sx={{
                 display: 'block',
                 textAlign: 'center',
                 justifyContent: 'space-between',
+                overflow: 'hidden',
                 '& .aicon path': {
                     stroke: "#2050CB"
                 },
-                [mq[1]]:{
+                [mq[1]]: {
                     display: 'flex',
                 }
-
             }}>
                 {comps}
             </Container>
-            <Box sx={{clear: 'both'}}/>
         </Box>
     )
 };

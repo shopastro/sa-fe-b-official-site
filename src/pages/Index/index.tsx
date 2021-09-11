@@ -57,7 +57,8 @@ const IndexPage: React.FC = (props) => {
                     "& .traffic-area .info-area": {
                         paddingBottom: '15rem',
                     },
-                }
+                },
+
             }}>
                 <Container className='traffic-area'>
                     <InfoBlock type='1' infoData={{
@@ -150,6 +151,10 @@ const IndexPage: React.FC = (props) => {
                             top: '50%',
                             left: 0,
                             transform: 'translate(0, -50%)',
+                        },
+                        [mq[3]]: {
+                            left: '15%',
+                            transform: 'translate(0, -50%)',
                         }
                     }}
                     src={'/static/banner5.png'}
@@ -221,31 +226,48 @@ const IndexPage: React.FC = (props) => {
                     textAlign: 'center',
                     color: '#ffffff',
                     fontWeight: '600',
-                    fontSize: "2.29rem",
+                    fontSize: "1.33rem",
+                    padding: '3.2rem 0.857rem 3.2rem 0.857rem',
                     position: 'relative',
                     zIndex: 1,
-                    padding: '6rem 0.857rem 5.14rem 0.857rem',
-                    letterSpacing: '0.1em'
+
+                    letterSpacing: '0.1em',
+                    [mq[1]]: {
+                        fontSize: "2.29rem",
+                        padding: '6rem 0.857rem 5.14rem 0.857rem',
+                    }
                 }}>
                     <Box as='span'>让中国跨境卖家享受更好的商业服务</Box>
                 </Box>
             </Box>
             <Box sx={{
                 backgroundColor: '#1C2A47',
-                padding: '2.5rem 0',
+                padding: '1.58rem 0',
                 userSelect: 'none',
+                [mq[1]]:{
+                    padding: '2.5rem 0',
+                }
             }}>
                 <Container sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center'
+                    display: 'block',
+                    textAlign: 'center',
+                    [mq[1]]: {
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                    }
+
                 }}>
-                    <Logo sx={{
+                    <Logo className='footer-logo' sx={{
+                        display: 'none',
                         paddingRight: "10rem",
                         verticalAlign: 'middle',
-                        '& path': {fill: "#ffffff"}
+                        '& path': {fill: "#ffffff"},
+                        [mq[1]]: {
+                            display: 'block',
+                        }
                     }}/>
-                    <Box sx={{color: "#666666", fontSize: "0.857rem", float: 'right'}}>
+                    <Box sx={{color: "#666666", fontSize: "0.857rem",}}>
                         <Box as='span'>©2020 shopastro.com Rights Reserved｜浙ICP备xxxxxx号-00</Box></Box>
                 </Container>
             </Box>

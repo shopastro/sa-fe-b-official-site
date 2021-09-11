@@ -16,6 +16,10 @@ export const trafficBannerImg = {
         top: '50%',
         right: '0',
         transform: 'translate(8.5%, -50%)',
+    },
+    [mq[3]]: {
+        right: '15%',
+        transform: 'translate(0, -50%)',
     }
 }
 

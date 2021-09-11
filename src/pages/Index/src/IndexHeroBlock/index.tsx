@@ -13,13 +13,16 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
                 width: '100%',
                 margin: "0 auto",
                 backgroundImage: 'url(./static/hero-bottom.png)',
-                backgroundSize: '1440px',
-                backgroundPosition: '0 bottom',
+                backgroundSize: '720px',
+                backgroundPosition: '0 80%',
                 backgroundRepeat: 'repeat-x',
                 "& .heroTitle1" :{
                     display: 'block'
                 },
                 [mq[1]]:{
+                    backgroundSize: '1440px',
+                    backgroundPosition: '0 bottom',
+                    backgroundRepeat: 'repeat-x',
                     ".heroTitle1" :{
                         display: 'inline'
                     }
