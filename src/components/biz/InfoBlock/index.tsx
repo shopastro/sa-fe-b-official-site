@@ -2,6 +2,7 @@ import React, {Fragment, PropsWithChildren} from "react"
 import {Box} from "@components/common"
 import * as styles from "./styles"
 import {IInfoData} from "@root/type"
+import mq from "@components/common/mq";
 
 
 import Info from './Info'
@@ -18,24 +19,26 @@ const Component: React.FC<PropsWithChildren<{
 
     const fType = type ? type : '1'
     const infoStyle: any = {
-        ...styles.info
+        ...styles.info,
     }
     const mediaStyle: any = {
         ...styles.media
     }
-    const infoWrapperStyle = {
-        paddingLeft: '0'
+    const infoWrapperStyle:any = {
+        paddingLeft: '0',
+        [mq[1]]:{}
     }
     if (fType != '1') {
-        infoStyle.paddingLeft = '50%'
+        infoStyle[mq[1]]['paddingLeft'] = '50%'
         infoStyle.width = '100%'
-        infoWrapperStyle.paddingLeft = '94px'
+        infoWrapperStyle[mq[1]]['paddingLeft'] = '6.7rem'
         mediaStyle.left = '0'
     } else {
+        infoStyle[mq[1]]['paddingLeft'] = '0'
         mediaStyle.right = '0'
     }
 
-    const infoComp = infoData ? <Box sx={infoStyle}><Info styleConfig={styleConfig} sx={infoWrapperStyle} data={infoData}/></Box> : null
+    const infoComp = infoData ? <Box className='info-area' sx={infoStyle}><Info styleConfig={styleConfig} sx={infoWrapperStyle} data={infoData}/></Box> : null
     const mediaComp = media ? (<Box sx={mediaStyle}>{media}</Box>) : null;
 
     return (

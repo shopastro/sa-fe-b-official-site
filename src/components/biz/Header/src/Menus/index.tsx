@@ -6,6 +6,7 @@ import {menuData, styles} from "./config";
 import Logo from "@components/biz/Logo";
 import {MenuItemDataType} from "@root/type";
 
+import mq from "@components/common/mq";
 
 const Component: React.FC<PropsWithChildren<any>> = (props) => {
     const menuItemsDom = [];
@@ -24,14 +25,17 @@ const Component: React.FC<PropsWithChildren<any>> = (props) => {
         <Box
             {...props}
             __css={{
-            fontSize: '14px',
-            lineHeight: '1.3',
-            color: "#111111",
-            fontWeight: 300,
-            padding: "25px 0",
-            overflow: "hidden",
-        }}>
-            <Logo sx={{float:'left', paddingRight: "10rem",verticalAlign:'middle'}}/>
+                fontSize: '1rem',
+                lineHeight: '1.3',
+                color: "#111111",
+                fontWeight: 300,
+                padding: "2rem 0",
+                overflow: "hidden",
+                display: 'none',
+                [mq[1]]: {
+                    display: 'block'
+                }
+            }}>
             {menuItemsDom}
             <Box sx={{display: "block", clear: 'both'}}/>
         </Box>

@@ -2,6 +2,7 @@ import React, {Fragment, PropsWithChildren} from "react"
 import {Box} from "@components/common"
 import {IInfoData} from "@root/type";
 import * as styles from "./styles";
+import mq from "@components/common/mq";
 
 
 const Component: React.FC<PropsWithChildren<{
@@ -19,7 +20,7 @@ const Component: React.FC<PropsWithChildren<{
     const titleDom = title ? (
         <Box sx={{
             ...styles.title,
-            marginTop: subTitlte ? '10px' : 0,
+            marginTop: subTitlte ? '0.71rem' : 0,
             ...(styleConfig.title ? styleConfig.title : {})
         }}>{title}</Box>
     ) : null;
@@ -31,7 +32,7 @@ const Component: React.FC<PropsWithChildren<{
                 } else {
                     return (<Box sx={{
                         ...styles.listItem,
-                        marginTop: index > 0 ? '10px' : '0'
+                        marginTop: index > 0 ? '0.71rem' : '0'
                     }}>
                         <Box sx={{
                             display: 'inline-block',
@@ -55,7 +56,7 @@ const Component: React.FC<PropsWithChildren<{
         >
             {subTitlteDom}
             {titleDom}
-            {(subTitlte || title) ? <Box style={{height: '24px'}}/> : null}
+            {(subTitlte || title) ? <Box style={{height: '1.71rem'}}/> : null}
             {liContentDom}
         </Box>
     )

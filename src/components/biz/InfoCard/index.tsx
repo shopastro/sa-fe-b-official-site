@@ -24,7 +24,7 @@ const Component: React.FC<PropsWithChildren<{
             <Box sx={{zIndex: 1, position:'relative'}}>
                 <Box>{icon}<Box as='span' className='afont' sx={{
                     ...styles.title,
-                    marginLeft: hasIcon ? '10px' : 0,
+                    marginLeft: hasIcon ? '0.7rem' : 0,
                 }}>{title}</Box></Box>
                 <Box sx={{
                     ...styles.des,
@@ -37,7 +37,7 @@ const Component: React.FC<PropsWithChildren<{
                 position: 'absolute',
                 right: '2.3%',
                 top: '42.5%',
-                borderRadius: "50px 0px 0px 50px",
+                borderRadius: "3.57rem 0px 0px 3.57rem",
                 transform: 'rotate(120deg)',
                 zIndex: '0',
                 opacity: 0,

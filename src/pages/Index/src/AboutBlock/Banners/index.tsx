@@ -18,7 +18,7 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
         }
         const {icon, title, des} = bannerData
         bannerDoms.push((
-            <Box sx={{float: 'left', padding: '10px', width: `${bannerWidth}px`}}>
+            <Box sx={{float: 'left', padding: '0.7rem', width: `${bannerWidth}px`}}>
                 <InfoCard icon={icon} title={title} des={des}/>
             </Box>
 

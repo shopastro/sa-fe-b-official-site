@@ -13,6 +13,7 @@ import Container from "@components/biz/Container"
 import InfoBlock from "@components/biz/InfoBlock"
 import Card from "@components/biz/Card"
 import Logo from "@components/biz/Logo"
+import mq from "@components/common/mq";
 
 
 const IndexPage: React.FC = (props) => {
@@ -20,10 +21,17 @@ const IndexPage: React.FC = (props) => {
         <Box>
             <Box sx={styles.headerWrapper}>
                 <Header/>
+                <IndexHeroBlock/>
             </Box>
-            <IndexHeroBlock/>
             <AboutBlock/>
-            <Box sx={{backgroundColor: '#FAFBFC',userSelect: 'none',}}>
+            <Box sx={{
+                backgroundColor: '#FAFBFC',
+                userSelect: 'none',
+                paddingBottom: '4.7rem',
+                [mq[1]]: {
+                    paddingBottom: 0,
+                }
+            }}>
                 <Container>
                     <InfoBlock type='2' media={<Box>
                         <Box as='img' sx={{width: '100%'}} src={'/static/banner1.png'}/>
@@ -34,8 +42,24 @@ const IndexPage: React.FC = (props) => {
                     }}/>
                 </Container>
             </Box>
-            <Box sx={{backgroundColor: '#FFFFFF', position: 'relative',userSelect: 'none',}}>
-                <Container>
+            <Box sx={{
+                backgroundColor: '#FFFFFF',
+                position: 'relative',
+                userSelect: 'none',
+                width: '100%',
+                overflow: 'hidden',
+                paddingBottom: '4.7rem',
+                "& .traffic-area .info-area": {
+                    paddingBottom: 0
+                },
+                [mq[1]]: {
+                    paddingBottom: 0,
+                    "& .traffic-area .info-area": {
+                        paddingBottom: '15rem',
+                    },
+                }
+            }}>
+                <Container className='traffic-area'>
                     <InfoBlock type='1' infoData={{
                         title: "多样化精准投放",
                         subTitlte: '转化率提升200%',
@@ -45,7 +69,14 @@ const IndexPage: React.FC = (props) => {
                 <Box as='img' sx={styles.trafficBannerImg} src='/static/banner2.png'/>
             </Box>
             <Box
-                sx={{userSelect: 'none',background: 'linear-gradient(89.95deg, rgba(255, 248, 251, 0) 0.83%, rgba(249, 246, 235, 0.417778) 22.51%, rgba(212, 242, 253, 0.24) 60.7%, rgba(205, 243, 255, 0) 99.92%)'}}>
+                sx={{
+                    userSelect: 'none',
+                    background: 'linear-gradient(89.95deg, rgba(255, 248, 251, 0) 0.83%, rgba(249, 246, 235, 0.417778) 22.51%, rgba(212, 242, 253, 0.24) 60.7%, rgba(205, 243, 255, 0) 99.92%)',
+                    paddingBottom: '4.7rem',
+                    [mq[1]]: {
+                        paddingBottom: 0,
+                    }
+                }}>
                 <Container>
                     <InfoBlock type='2' media={<Box>
                         <Box as='img' sx={{width: '100%'}} src={'/static/banner3.png'}/>
@@ -56,7 +87,13 @@ const IndexPage: React.FC = (props) => {
                     }}/>
                 </Container>
             </Box>
-            <Box sx={{background: '#ffffff',userSelect: 'none',}}>
+            <Box sx={{
+                background: '#ffffff', userSelect: 'none',
+                paddingBottom: '4.7rem',
+                [mq[1]]: {
+                    paddingBottom: 0,
+                }
+            }}>
                 <Container>
                     <InfoBlock type='1' media={<Box>
                         <Box as='img' sx={{width: '100%'}} src={'/static/banner4.png'}/>
@@ -67,15 +104,32 @@ const IndexPage: React.FC = (props) => {
                     }}/>
                 </Container>
             </Box>
-            <Box sx={{background: '#ffffff', userSelect: 'none',}}>
+            <Box sx={{
+                background: 'linear-gradient(33.9deg, rgba(255, 248, 251, 0) 10.16%, rgba(249, 246, 235, 0.417778) 28.19%, rgba(212, 242, 253, 0.24) 59.97%, rgba(205, 243, 255, 0) 92.61%)',
+                userSelect: 'none',
+                paddingBottom: '4.7rem',
+                position:'relative',
+                [mq[1]]: {
+                    paddingBottom: 0,
+                }
+            }}>
                 <Container>
                     <InfoBlock type='2'
-                               media={<Box>
-                                   <Box as='img' sx={{width: '100%'}} src={'/static/banner5.png'}/>
-                               </Box>}
+
                                styleConfig={{
-                                   subTitle: {fontSize: "36px"},
-                                   title: {fontSize: '24px'}
+                                   subTitle: {
+                                       fontSize: "2rem",
+                                       [mq[1]]: {
+                                           fontSize: "2.57rem",
+                                       }
+                                   },
+                                   title: {
+                                       fontSize: '1.33rem',
+                                       [mq[1]]: {
+                                           fontSize: '1.71rem',
+                                       }
+                                   },
+
                                }}
                                infoData={{
                                    title: "星盘不仅懂中国卖家，更懂海外买家",
@@ -85,33 +139,50 @@ const IndexPage: React.FC = (props) => {
 
                     />
                 </Container>
+                <Box
+                    as='img'
+                    sx={{
+                        width: '100%',
+                        maxWidth: '833px',
+                        [mq[1]]: {
+                            position: 'absolute',
+                            width: '57.8%',
+                            top: '50%',
+                            left: 0,
+                            transform: 'translate(0, -50%)',
+                        }
+                    }}
+                    src={'/static/banner5.png'}
+                />
             </Box>
-            <Box sx={{padding: '50px 0'}}>
-               <Container>
-                   <Box sx={{margin: '-10px'}}>
-                       <Box sx={styles.cardWrapper}>
-                           <Card infoData={{
-                               title: "想建站出海？请联系我们",
-                               subTitlte: "Contact us",
-                               liContent: [
-                                   <Box key={1} as='a' href='tel:+86057123456735'>Tel: 0571-23456738</Box>,
-                                   <Box key={2} as='a' href='mailto:xingpan_demo@gmail.com'>Mail: test@gmail.com</Box>
-                               ]
-                           }} imgSizeRatio={2.565} imgURL='/static/image1.jpg' />
-                       </Box>
-                       <Box sx={styles.cardWrapper}>
-                           <Card infoData={{
-                               title: "加入我们",
-                               subTitlte: "Jion us",
-                               liContent: [
-                                   '年轻的团队，拥有十余年丰富跨境产品技术服务经验',
-                                   '期待与优秀的你，一同为中国跨境卖家打造优质商业服务'
-                               ]
-                           }} imgSizeRatio={2.565} color='#6173A7' bgColor='#CEDBFF' imgURL='/static/image2.jpg' />
-                       </Box>
-                       <Box sx={{clear: 'both'}}/>
-                   </Box>
-               </Container>
+            <Box sx={{
+                padding: '3.57rem 0'
+            }}>
+                <Container>
+                    <Box sx={{margin: '-0.71rem'}}>
+                        <Box sx={styles.cardWrapper}>
+                            <Card infoData={{
+                                title: "想建站出海？请联系我们",
+                                subTitlte: "Contact us",
+                                liContent: [
+                                    <Box key={1} as='a' href='tel:+86057123456735'>Tel: 0571-23456738</Box>,
+                                    <Box key={2} as='a' href='mailto:xingpan_demo@gmail.com'>Mail: test@gmail.com</Box>
+                                ]
+                            }} imgSizeRatio={2.565} imgURL='/static/image1.jpg'/>
+                        </Box>
+                        <Box sx={styles.cardWrapper}>
+                            <Card infoData={{
+                                title: "加入我们",
+                                subTitlte: "Jion us",
+                                liContent: [
+                                    '年轻的团队，拥有十余年丰富跨境产品技术服务经验',
+                                    '期待与优秀的你，一同为中国跨境卖家打造优质商业服务'
+                                ]
+                            }} imgSizeRatio={2.565} color='#6173A7' bgColor='#CEDBFF' imgURL='/static/image2.jpg'/>
+                        </Box>
+                        <Box sx={{clear: 'both'}}/>
+                    </Box>
+                </Container>
             </Box>
             <Box sx={{
                 userSelect: 'none',
@@ -126,7 +197,8 @@ const IndexPage: React.FC = (props) => {
                 <Box sx={{
                     backgroundImage: 'url(/static/footer-bg.png)',
                     backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'repeat-x',
                     textAlign: 'center',
                     position: 'absolute',
                     width: '100%',
@@ -140,8 +212,8 @@ const IndexPage: React.FC = (props) => {
                         color: '#ffffff',
                         opacity: 0.2,
                         textAlign: 'center',
-                        fontSize: '120px',
-                        padding: '34px 12px',
+                        fontSize: '8.57rem',
+                        padding: '2.43rem 0.86rem',
                         fontWeight: '900'
                     }}>SHOPASTRO</Box>
                 </Box>
@@ -149,10 +221,10 @@ const IndexPage: React.FC = (props) => {
                     textAlign: 'center',
                     color: '#ffffff',
                     fontWeight: '600',
-                    fontSize: "32px",
+                    fontSize: "2.29rem",
                     position: 'relative',
                     zIndex: 1,
-                    padding: '83px 12px 72px 12px',
+                    padding: '6rem 0.857rem 5.14rem 0.857rem',
                     letterSpacing: '0.1em'
                 }}>
                     <Box as='span'>让中国跨境卖家享受更好的商业服务</Box>
@@ -160,7 +232,7 @@ const IndexPage: React.FC = (props) => {
             </Box>
             <Box sx={{
                 backgroundColor: '#1C2A47',
-                padding: '35px 0',
+                padding: '2.5rem 0',
                 userSelect: 'none',
             }}>
                 <Container sx={{
@@ -173,7 +245,7 @@ const IndexPage: React.FC = (props) => {
                         verticalAlign: 'middle',
                         '& path': {fill: "#ffffff"}
                     }}/>
-                    <Box sx={{color: "#666666", fontSize: "12px", float: 'right'}}>
+                    <Box sx={{color: "#666666", fontSize: "0.857rem", float: 'right'}}>
                         <Box as='span'>©2020 shopastro.com Rights Reserved｜浙ICP备xxxxxx号-00</Box></Box>
                 </Container>
             </Box>
