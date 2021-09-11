@@ -45,7 +45,7 @@ const abE = {
     display: 'block',
     width: '1.42rem',
     height: '1.42rem',
-    backgroundImage: "url(./static/o-o.png)",
+    backgroundImage: "url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/o-o.png)",
     backgroundSize: '200%',
     backgroundRepeat: 'no-repeat',
 }

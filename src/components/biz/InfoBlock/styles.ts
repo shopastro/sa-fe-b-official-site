@@ -34,10 +34,12 @@ export const info = {
     paddingTop: '4.1rem',
     paddingBottom: '4.1rem',
     textAlign: 'center',
+
     [mq[1]]:{
         textAlign: 'left',
         paddingTop: '15rem',
         paddingBottom: '15rem',
+        paddingRight: '50%',
     }
 }
 

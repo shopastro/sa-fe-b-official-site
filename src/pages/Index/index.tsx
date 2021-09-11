@@ -34,7 +34,7 @@ const IndexPage: React.FC = (props) => {
             }}>
                 <Container>
                     <InfoBlock type='2' media={<Box>
-                        <Box as='img' sx={{width: '100%'}} src={'/static/banner1.png'}/>
+                        <Box as='img' sx={{width: '100%'}} src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner1.png'}/>
                     </Box>} infoData={{
                         title: "无门槛建站",
                         subTitlte: '方便快捷',
@@ -67,7 +67,7 @@ const IndexPage: React.FC = (props) => {
                         liContent: ['贴合本地买家的多渠道广告+社交投放，精准转化、效率翻倍']
                     }}/>
                 </Container>
-                <Box as='img' sx={styles.trafficBannerImg} src='/static/banner2.png'/>
+                <Box as='img' sx={styles.trafficBannerImg} src='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner2.png'/>
             </Box>
             <Box
                 sx={{
@@ -80,7 +80,7 @@ const IndexPage: React.FC = (props) => {
                 }}>
                 <Container>
                     <InfoBlock type='2' media={<Box>
-                        <Box as='img' sx={{width: '100%'}} src={'/static/banner3.png'}/>
+                        <Box as='img' sx={{width: '100%'}} src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner3.png'}/>
                     </Box>} infoData={{
                         title: <Fragment><Box>省钱省心的</Box><Box>支付、物流方案</Box></Fragment>,
                         subTitlte: '贴心细致周到',
@@ -97,9 +97,9 @@ const IndexPage: React.FC = (props) => {
             }}>
                 <Container>
                     <InfoBlock type='1' media={<Box>
-                        <Box as='img' sx={{width: '100%'}} src={'/static/banner4.png'}/>
+                        <Box as='img' sx={{width: '100%'}} src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner4.png'}/>
                     </Box>} infoData={{
-                        title: "事半功倍的管理工具 贴心专业的专人服务",
+                        title: <Fragment><Box>事半功倍的管理工具</Box><Box>贴心专业的专人服务</Box></Fragment>,
                         subTitlte: '全方位智能优化',
                         liContent: ['多店铺、CRM、全渠道投放、智能决策等，好工具要好用，才能事倍功半', '专业的服务和运营团队，将陪伴守护您的跨境出海之路！']
                     }}/>
@@ -153,11 +153,11 @@ const IndexPage: React.FC = (props) => {
                             transform: 'translate(0, -50%)',
                         },
                         [mq[3]]: {
-                            left: '15%',
+                            left: '8%',
                             transform: 'translate(0, -50%)',
                         }
                     }}
-                    src={'/static/banner5.png'}
+                    src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner5.png'}
                 />
             </Box>
             <Box sx={{
@@ -173,7 +173,7 @@ const IndexPage: React.FC = (props) => {
                                     <Box key={1} as='a' href='tel:+86057123456735'>Tel: 0571-23456738</Box>,
                                     <Box key={2} as='a' href='mailto:xingpan_demo@gmail.com'>Mail: test@gmail.com</Box>
                                 ]
-                            }} imgSizeRatio={2.565} imgURL='/static/image1.jpg'/>
+                            }} imgSizeRatio={2.565} imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/image1.jpg'/>
                         </Box>
                         <Box sx={styles.cardWrapper}>
                             <Card infoData={{
@@ -183,7 +183,7 @@ const IndexPage: React.FC = (props) => {
                                     '年轻的团队，拥有十余年丰富跨境产品技术服务经验',
                                     '期待与优秀的你，一同为中国跨境卖家打造优质商业服务'
                                 ]
-                            }} imgSizeRatio={2.565} color='#6173A7' bgColor='#CEDBFF' imgURL='/static/image2.jpg'/>
+                            }} imgSizeRatio={2.565} color='#6173A7' bgColor='#CEDBFF' imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/image2.jpg'/>
                         </Box>
                         <Box sx={{clear: 'both'}}/>
                     </Box>
@@ -200,7 +200,7 @@ const IndexPage: React.FC = (props) => {
                 background: 'linear-gradient(88.97deg, #FF8BC3 -3.87%, #4081FF 28.34%, #31C6FF 85.79%, #26FFFF 101.25%)'
             }}>
                 <Box sx={{
-                    backgroundImage: 'url(/static/footer-bg.png)',
+                    backgroundImage: 'url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/footer-bg.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'repeat-x',
@@ -213,13 +213,19 @@ const IndexPage: React.FC = (props) => {
                     overflow: 'hidden'
                 }}>
                     <Box sx={{
-                        letterSpacing: '0.5em',
+
                         color: '#ffffff',
                         opacity: 0.2,
                         textAlign: 'center',
-                        fontSize: '8.57rem',
-                        padding: '2.43rem 0.86rem',
-                        fontWeight: '900'
+                        fontWeight: '900',
+                        letterSpacing: '0.5em',
+                        fontSize: '3.33rem',
+                        padding: '2.2rem 0.86rem',
+                        [mq[1]]:{
+                            letterSpacing: '0.5em',
+                            fontSize: '8.57rem',
+                            padding: '2.43rem 0.86rem',
+                        }
                     }}>SHOPASTRO</Box>
                 </Box>
                 <Box sx={{
@@ -230,7 +236,6 @@ const IndexPage: React.FC = (props) => {
                     padding: '3.2rem 0.857rem 3.2rem 0.857rem',
                     position: 'relative',
                     zIndex: 1,
-
                     letterSpacing: '0.1em',
                     [mq[1]]: {
                         fontSize: "2.29rem",

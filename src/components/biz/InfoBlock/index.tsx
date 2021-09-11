@@ -33,8 +33,10 @@ const Component: React.FC<PropsWithChildren<{
         infoStyle.width = '100%'
         infoWrapperStyle[mq[1]]['paddingLeft'] = '6.7rem'
         mediaStyle.left = '0'
+        infoStyle[mq[1]]['paddingRight'] = '0'
     } else {
         infoStyle[mq[1]]['paddingLeft'] = '0'
+        infoStyle[mq[1]]['paddingRight'] = '50%'
         mediaStyle.right = '0'
     }
 

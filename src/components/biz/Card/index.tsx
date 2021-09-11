@@ -38,6 +38,7 @@ const Component: React.FC<PropsWithChildren<{
                 }
                 return <Box key={index} as='li' sx={{
                     ...styles.li,
+                    marginTop: index > 0 ? '0.5rem' : 0,
                     "& a": {
                         '&:link,&:visited,&:hover,&:active': {
                             color: color,
@@ -72,10 +73,10 @@ const Component: React.FC<PropsWithChildren<{
             <Box sx={{
                 width: '100%',
                 position: 'relative',
-                padding: "12px 30px 16px 30px",
+                padding: "1rem 6rem 1.5rem 1.5rem",
                 backgroundColor: bgColor,
                 color: color,
-                "& .aicon path":{
+                "& .aicon path": {
                     fill: '#000000'
                 }
             }}>{infoComp}<Box sx={{
