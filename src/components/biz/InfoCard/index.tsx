@@ -1,7 +1,6 @@
 import React, {Fragment, PropsWithChildren} from "react"
 import {Box} from "@components/common"
 import * as styles from "./styles"
-import styled from "@emotion/styled";
 
 // Biz
 

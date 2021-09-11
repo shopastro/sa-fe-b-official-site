@@ -1,6 +1,6 @@
 export const ContentWrapper = {
     textAlign: 'center',
-    minHeight: "500px",
+    // minHeight: "500px",
 }
 
 export const h1Title = {
