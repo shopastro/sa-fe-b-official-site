@@ -3,8 +3,8 @@ import {Box} from "@components/common"
 
 // Biz
 import {menuData, styles} from "./config";
-import {MenuItemDataType} from "@root/index";
 import Logo from "@components/biz/Logo";
+import {MenuItemDataType} from "@root/type";
 
 
 const Component: React.FC<PropsWithChildren<any>> = (props) => {

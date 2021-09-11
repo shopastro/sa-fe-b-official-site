@@ -5,10 +5,14 @@ import {headerWrapper, trafficBannerImg} from './styles'
 
 import IndexHeroBlock from './src/IndexHeroBlock'
 import AboutBlock from "./src/AboutBlock"
+import FeaturesBarBlock from "./src/FeaturesBar"
+
 import Container from "@components/biz/Container"
 
 
 import InfoBlock from "@components/biz/InfoBlock"
+import Logo from "@components/biz/Logo";
+
 
 const IndexPage: React.FC = (props) => {
     return (
@@ -18,7 +22,7 @@ const IndexPage: React.FC = (props) => {
             </Box>
             <IndexHeroBlock/>
             <AboutBlock/>
-            <Box sx={{backgroundColor: '#FAFBFC'}}>
+            <Box sx={{backgroundColor: '#FAFBFC',userSelect: 'none',}}>
                 <Container>
                     <InfoBlock type='2' media={<Box>
                         <Box as='img' sx={{width: '100%'}} src={'/static/banner1.png'}/>
@@ -29,7 +33,7 @@ const IndexPage: React.FC = (props) => {
                     }}/>
                 </Container>
             </Box>
-            <Box sx={{backgroundColor: '#FFFFFF', position: 'relative'}}>
+            <Box sx={{backgroundColor: '#FFFFFF', position: 'relative',userSelect: 'none',}}>
                 <Container>
                     <InfoBlock type='1' infoData={{
                         title: "多样化精准投放",
@@ -40,7 +44,7 @@ const IndexPage: React.FC = (props) => {
                 <Box as='img' sx={trafficBannerImg} src='/static/banner2.png'/>
             </Box>
             <Box
-                sx={{background: 'linear-gradient(89.95deg, rgba(255, 248, 251, 0) 0.83%, rgba(249, 246, 235, 0.417778) 22.51%, rgba(212, 242, 253, 0.24) 60.7%, rgba(205, 243, 255, 0) 99.92%)'}}>
+                sx={{userSelect: 'none',background: 'linear-gradient(89.95deg, rgba(255, 248, 251, 0) 0.83%, rgba(249, 246, 235, 0.417778) 22.51%, rgba(212, 242, 253, 0.24) 60.7%, rgba(205, 243, 255, 0) 99.92%)'}}>
                 <Container>
                     <InfoBlock type='2' media={<Box>
                         <Box as='img' sx={{width: '100%'}} src={'/static/banner3.png'}/>
@@ -51,7 +55,7 @@ const IndexPage: React.FC = (props) => {
                     }}/>
                 </Container>
             </Box>
-            <Box sx={{background: '#ffffff'}}>
+            <Box sx={{background: '#ffffff',userSelect: 'none',}}>
                 <Container>
                     <InfoBlock type='1' media={<Box>
                         <Box as='img' sx={{width: '100%'}} src={'/static/banner4.png'}/>
@@ -62,7 +66,7 @@ const IndexPage: React.FC = (props) => {
                     }}/>
                 </Container>
             </Box>
-            <Box sx={{background: '#ffffff'}}>
+            <Box sx={{background: '#ffffff', userSelect: 'none',}}>
                 <Container>
                     <InfoBlock type='2'
                                media={<Box>
@@ -79,6 +83,70 @@ const IndexPage: React.FC = (props) => {
                                }}
 
                     />
+                </Container>
+            </Box>
+            <Box sx={{
+                userSelect: 'none',
+            }}>
+                <FeaturesBarBlock/>
+            </Box>
+            <Box sx={{
+                userSelect: 'none',
+                position: 'relative',
+                background: 'linear-gradient(88.97deg, #FF8BC3 -3.87%, #4081FF 28.34%, #31C6FF 85.79%, #26FFFF 101.25%)'
+            }}>
+                <Box sx={{
+                    backgroundImage: 'url(/static/footer-bg.png)',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    textAlign: 'center',
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    zIndex: 0,
+                    opacity: 0.5,
+                    overflow: 'hidden'
+                }}>
+                    <Box sx={{
+                        letterSpacing: '0.5em',
+                        color: '#ffffff',
+                        opacity: 0.2,
+                        textAlign: 'center',
+                        fontSize: '120px',
+                        padding: '34px 12px',
+                        fontWeight: '900'
+                    }}>SHOPASTRO</Box>
+                </Box>
+                <Box sx={{
+                    textAlign: 'center',
+                    color: '#ffffff',
+                    fontWeight: '600',
+                    fontSize: "32px",
+                    position: 'relative',
+                    zIndex: 1,
+                    padding: '83px 12px 72px 12px',
+                    letterSpacing: '0.1em'
+                }}>
+                    <Box as='span'>让中国跨境卖家享受更好的商业服务</Box>
+                </Box>
+            </Box>
+            <Box sx={{
+                backgroundColor: '#1C2A47',
+                padding: '35px 0',
+                userSelect: 'none',
+            }}>
+                <Container sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                }}>
+                    <Logo sx={{
+                        paddingRight: "10rem",
+                        verticalAlign: 'middle',
+                        '& path': {fill: "#ffffff"}
+                    }}/>
+                    <Box sx={{color: "#666666", fontSize: "12px", float: 'right'}}>
+                        <Box as='span'>©2020 shopastro.com Rights Reserved｜浙ICP备xxxxxx号-00</Box></Box>
                 </Container>
             </Box>
         </Box>

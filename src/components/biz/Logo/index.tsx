@@ -12,7 +12,6 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
         <Box
             ref={ref}
             {...props}
-            __css={{}}
         >
             <svg width={fWidth} height={fHeight} viewBox="0 0 100 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0)">

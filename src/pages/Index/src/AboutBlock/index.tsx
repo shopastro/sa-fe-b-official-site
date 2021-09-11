@@ -15,6 +15,7 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
                 width: '100%',
                 padding: '106px 16px 94px 16px',
                 backgroundColor: "#ffffff",
+                userSelect: 'none',
             }}
         >
             <Container sx={styles.ContentWrapper}>

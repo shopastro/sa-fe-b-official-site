@@ -5,7 +5,10 @@ import 'flipsnap';
 interface Props extends React.HTMLAttributes<HTMLDivElement>, PositionProps, LayoutProps {
     children: React.ReactNode;
 }
-
+interface MenuItemDataType {
+    label: string;
+    value?: string;
+}
 interface IInfoData {
     title?: string | ReactElement<any, any>;
     subTitlte?: string;

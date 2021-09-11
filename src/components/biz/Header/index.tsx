@@ -11,7 +11,6 @@ const Component: React.FC = () => {
     return (
         <div>
             <Container>
-
                 <Menus sx={{}} />
                 <Box sx={{display:'block',clear:'both'}}/>
             </Container>
