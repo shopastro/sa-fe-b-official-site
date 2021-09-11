@@ -13,6 +13,7 @@ const config: webpack.Configuration = {
       "@config": path.resolve(__dirname, 'configs/'),
       "@components": path.resolve(__dirname, 'src/components/'),
       "@theme": path.resolve(__dirname, 'src/theme/'),
+      "@utils": path.resolve(__dirname, 'src/utils'),
     },
     extensions: [".ts", ".tsx", ".js"]
   },

@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {Button, Box} from '@components/common'
 import Header from "@components/biz/Header"
-import {headerWrapper, trafficBannerImg} from './styles'
+import * as styles from './styles'
 
 import IndexHeroBlock from './src/IndexHeroBlock'
 import AboutBlock from "./src/AboutBlock"
@@ -11,13 +11,14 @@ import Container from "@components/biz/Container"
 
 
 import InfoBlock from "@components/biz/InfoBlock"
-import Logo from "@components/biz/Logo";
+import Card from "@components/biz/Card"
+import Logo from "@components/biz/Logo"
 
 
 const IndexPage: React.FC = (props) => {
     return (
         <Box>
-            <Box sx={headerWrapper}>
+            <Box sx={styles.headerWrapper}>
                 <Header/>
             </Box>
             <IndexHeroBlock/>
@@ -41,7 +42,7 @@ const IndexPage: React.FC = (props) => {
                         liContent: ['贴合本地买家的多渠道广告+社交投放，精准转化、效率翻倍']
                     }}/>
                 </Container>
-                <Box as='img' sx={trafficBannerImg} src='/static/banner2.png'/>
+                <Box as='img' sx={styles.trafficBannerImg} src='/static/banner2.png'/>
             </Box>
             <Box
                 sx={{userSelect: 'none',background: 'linear-gradient(89.95deg, rgba(255, 248, 251, 0) 0.83%, rgba(249, 246, 235, 0.417778) 22.51%, rgba(212, 242, 253, 0.24) 60.7%, rgba(205, 243, 255, 0) 99.92%)'}}>
@@ -84,6 +85,33 @@ const IndexPage: React.FC = (props) => {
 
                     />
                 </Container>
+            </Box>
+            <Box sx={{padding: '50px 0'}}>
+               <Container>
+                   <Box sx={{margin: '-10px'}}>
+                       <Box sx={styles.cardWrapper}>
+                           <Card infoData={{
+                               title: "想建站出海？请联系我们",
+                               subTitlte: "Contact us",
+                               liContent: [
+                                   <Box key={1} as='a' href='tel:+86057123456735'>Tel: 0571-23456738</Box>,
+                                   <Box key={2} as='a' href='mailto:xingpan_demo@gmail.com'>Mail: test@gmail.com</Box>
+                               ]
+                           }} imgSizeRatio={2.565} imgURL='/static/image1.jpg' />
+                       </Box>
+                       <Box sx={styles.cardWrapper}>
+                           <Card infoData={{
+                               title: "加入我们",
+                               subTitlte: "Jion us",
+                               liContent: [
+                                   '年轻的团队，拥有十余年丰富跨境产品技术服务经验',
+                                   '期待与优秀的你，一同为中国跨境卖家打造优质商业服务'
+                               ]
+                           }} imgSizeRatio={2.565} color='#6173A7' bgColor='#CEDBFF' imgURL='/static/image2.jpg' />
+                       </Box>
+                       <Box sx={{clear: 'both'}}/>
+                   </Box>
+               </Container>
             </Box>
             <Box sx={{
                 userSelect: 'none',

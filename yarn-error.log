@@ -31,7 +31,7 @@ npm manifest:
     "name": "@sa-fe/official-site",
     "version": "0.0.1",
     "description": "A front-end code repo about ShopAstro's official site.",
-    "main": "index.js",
+    "main": "index.ts",
     "repository": "git@github.com:shopastro/sa-fe-b-official-site.git",
     "author": "zongyi.xzy@shopastro.com",
     "license": "MIT",

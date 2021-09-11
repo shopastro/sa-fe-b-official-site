@@ -12,5 +12,5 @@ interface MenuItemDataType {
 interface IInfoData {
     title?: string | ReactElement<any, any>;
     subTitlte?: string;
-    liContent?: Array<string>;
+    liContent?: Array<string|ReactElement<any, any>>;
 }
