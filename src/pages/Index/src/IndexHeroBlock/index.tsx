@@ -46,7 +46,7 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
                     }
 
                 }}></Box>
-                <Box sx={h2Title}>Saas模式的一站式跨境电商服务平台，小白卖家的出海首选！</Box>
+                <Box sx={h2Title}>一站式跨境电商服务平台，跨境卖家的出海首选！</Box>
                 <Box sx={heroImgWrapper}>
                     <Box sx={{position: 'relative'}}>
                         <Box sx={yE}/>

@@ -26,9 +26,8 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
             <Container sx={styles.ContentWrapper}>
                 <Box sx={styles.h1Title}><Box as='span'>关于ShopAstro</Box></Box>
                 <Box sx={{height:'2rem'}}></Box>
-                <Box sx={styles.des}>帮助中小卖家出海，让获客、交易、支付、物流、客户管理轻松简单</Box>
+                <Box sx={styles.des}>帮助跨境卖家出海，让获客、交易、支付、物流、客户管理轻松简单</Box>
                 <Box sx={{
-                    textAlign: 'left',
                     margin: '-0.7rem',
                     paddingTop: '2.6rem',
                     [mq[1]]:{

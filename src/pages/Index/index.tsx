@@ -101,7 +101,7 @@ const IndexPage: React.FC = (props) => {
                     </Box>} infoData={{
                         title: <Fragment><Box>事半功倍的管理工具</Box><Box>贴心专业的专人服务</Box></Fragment>,
                         subTitlte: '全方位智能优化',
-                        liContent: ['多店铺、CRM、全渠道投放、智能决策等，好工具要好用，才能事倍功半', '专业的服务和运营团队，将陪伴守护您的跨境出海之路！']
+                        liContent: ['多店铺、CRM、全渠道投放、智能决策等，好工具要好用，才能事半功倍', '专业的服务和运营团队，将陪伴守护您的跨境出海之路！']
                     }}/>
                 </Container>
             </Box>
@@ -178,7 +178,7 @@ const IndexPage: React.FC = (props) => {
                         <Box sx={styles.cardWrapper}>
                             <Card infoData={{
                                 title: "加入我们",
-                                subTitlte: "Jion us",
+                                subTitlte: "Join us",
                                 liContent: [
                                     '年轻的团队，拥有十余年丰富跨境产品技术服务经验',
                                     '期待与优秀的你，一同为中国跨境卖家打造优质商业服务'

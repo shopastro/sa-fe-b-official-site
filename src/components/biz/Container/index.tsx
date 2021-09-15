@@ -11,7 +11,6 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
                 width: '100%',
                 maxWidth: "1200px",
                 margin: "0 auto",
-
                 [mq[0]]: {
                     paddingLeft: "2rem",
                     paddingRight: '2rem'
@@ -19,6 +18,10 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
                 [mq[1]]: {
                     paddingLeft: "2.8rem",
                     paddingRight: '2.8rem'
+                },
+                [mq[3]]: {
+                    paddingLeft: "0",
+                    paddingRight: '0'
                 },
 
             }}

@@ -27,7 +27,7 @@ export const CardItem = {
     "& .hover-show": {
         transition: "opacity 0.3s",
     },
-    "&:hover": {
+    "&:hover,&.active": {
         borderColor: "#3179FE",
         // color: '#ffffff',
         backgroundColor: "#3179FE",

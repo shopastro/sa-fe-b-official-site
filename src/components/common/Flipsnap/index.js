@@ -114,6 +114,7 @@
         self.disable3d = (opts.disable3d === undefined) ? false : opts.disable3d;
         self.transitionDuration = (opts.transitionDuration === undefined) ? '350ms' : opts.transitionDuration + 'ms';
         self.threshold = opts.threshold || 0;
+        self.onChange = opts.onChange || new Function();
 
         // set property
         self.currentPoint = 0;
@@ -256,6 +257,8 @@
             point = self.currentPoint;
         }
 
+        const oldPoint = self.currentPoint;
+
         if (point < 0) {
             self.currentPoint = 0;
         }
@@ -265,6 +268,8 @@
         else {
             self.currentPoint = parseInt(point, 10);
         }
+
+
 
         if (support.cssAnimation) {
             self._setStyle({ transitionDuration: transitionDuration });
@@ -280,6 +285,11 @@
             self._triggerEvent('fsmoveend', true, false);
             self._triggerEvent('fspointmove', true, false);
         }
+
+        if (self.currentPoint != oldPoint) {
+            self.onChange && self.onChange(self.currentPoint);
+        }
+
     };
 
     Flipsnap.prototype._setX = function(x, transitionDuration) {
