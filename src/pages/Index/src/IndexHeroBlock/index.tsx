@@ -12,7 +12,7 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
             __css={{
                 width: '100%',
                 margin: "0 auto",
-                backgroundImage: 'url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/hero-bottom.png)',
+                backgroundImage: 'url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/hero-bottom.png)',
                 backgroundSize: '720px',
                 backgroundPosition: '0 80%',
                 backgroundRepeat: 'repeat-x',
@@ -50,7 +50,7 @@ const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (
                 <Box sx={heroImgWrapper}>
                     <Box sx={{position: 'relative'}}>
                         <Box sx={yE}/>
-                        <Box as='img' sx={{width: '100%'}} src='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/hero-banner.png'/>
+                        <Box as='img' sx={{width: '100%'}} src='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/hero-banner.png'/>
                     </Box>
 
                 </Box>

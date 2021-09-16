@@ -21,7 +21,8 @@ export const menuData:Array<MenuItemDataType> = [
 
 export const styles = {
     menuItem: {
-        padding: '12px 16px',
+        display: 'inline-block',
+        padding: '0 16px',
         '&:link': {
             color: '#111111'
         },

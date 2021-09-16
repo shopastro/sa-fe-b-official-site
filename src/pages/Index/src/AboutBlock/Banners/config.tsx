@@ -21,15 +21,5 @@ export const bannersData = [
         icon: <NoteIcon verticalAlign='middle' className='afont'/>,
         title: "管理",
         des: "多店铺、CRM、全渠道投放，好工具，让管理和运营事倍功半"
-    },
-    {
-        icon: <NoteIcon verticalAlign='middle' className='afont'/>,
-        title: "管理",
-        des: "多店铺、CRM、全渠道投放，好工具，让管理和运营事倍功半"
-    },
-    {
-        icon: <NoteIcon verticalAlign='middle' className='afont'/>,
-        title: "管理",
-        des: "多店铺、CRM、全渠道投放，好工具，让管理和运营事倍功半"
-    },
+    }
 ]

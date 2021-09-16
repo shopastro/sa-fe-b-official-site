@@ -5,8 +5,8 @@ import {Box} from "@components/common"
 import {menuData, styles} from "./config";
 import Logo from "@components/biz/Logo";
 import {MenuItemDataType} from "@root/type";
-
 import mq from "@components/common/mq";
+import {goTo} from "@root/utils";
 
 const Component: React.FC<PropsWithChildren<any>> = (props) => {
     const menuItemsDom = [];
@@ -17,7 +17,15 @@ const Component: React.FC<PropsWithChildren<any>> = (props) => {
         }
         const {value, label}: MenuItemDataType = menuItemData;
         menuItemsDom.push((
-            <Box sx={styles.menuItemWrapper}><Box as='a' href={value} sx={styles.menuItem}>{label}</Box></Box>
+            <Box
+                onClick={(e) => {
+                    e.preventDefault();
+                    if (value) {
+                        goTo(value.replace("#", ''))
+                    }
+                }}
+                sx={styles.menuItemWrapper}
+            ><Box as='a' href={value} sx={styles.menuItem}>{label}</Box></Box>
         ))
     }
 

@@ -8,6 +8,7 @@ import BannersCom from './Banners'
 const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (props, ref) => {
     return (
         <Box
+            id='about'
             ref={ref}
             {...props}
             __css={{

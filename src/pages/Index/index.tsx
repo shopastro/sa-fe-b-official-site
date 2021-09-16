@@ -24,17 +24,20 @@ const IndexPage: React.FC = (props) => {
                 <IndexHeroBlock/>
             </Box>
             <AboutBlock/>
-            <Box sx={{
-                backgroundColor: '#FAFBFC',
-                userSelect: 'none',
-                paddingBottom: '4.7rem',
-                [mq[1]]: {
-                    paddingBottom: 0,
-                }
-            }}>
+            <Box
+                id="service"
+                sx={{
+                    backgroundColor: '#FAFBFC',
+                    userSelect: 'none',
+                    paddingBottom: '4.7rem',
+                    [mq[1]]: {
+                        paddingBottom: 0,
+                    }
+                }}>
                 <Container>
                     <InfoBlock type='2' media={<Box>
-                        <Box as='img' sx={{width: '100%'}} src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner1.png'}/>
+                        <Box as='img' sx={{width: '100%'}}
+                             src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/banner1.png'}/>
                     </Box>} infoData={{
                         title: "无门槛建站",
                         subTitlte: '方便快捷',
@@ -67,7 +70,8 @@ const IndexPage: React.FC = (props) => {
                         liContent: ['贴合本地买家的多渠道广告+社交投放，精准转化、效率翻倍']
                     }}/>
                 </Container>
-                <Box as='img' sx={styles.trafficBannerImg} src='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner2.png'/>
+                <Box as='img' sx={styles.trafficBannerImg}
+                     src='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/banner2.png'/>
             </Box>
             <Box
                 sx={{
@@ -80,7 +84,8 @@ const IndexPage: React.FC = (props) => {
                 }}>
                 <Container>
                     <InfoBlock type='2' media={<Box>
-                        <Box as='img' sx={{width: '100%'}} src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner3.png'}/>
+                        <Box as='img' sx={{width: '100%'}}
+                             src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/banner3.png'}/>
                     </Box>} infoData={{
                         title: <Fragment><Box>省钱省心的</Box><Box>支付、物流方案</Box></Fragment>,
                         subTitlte: '贴心细致周到',
@@ -97,7 +102,8 @@ const IndexPage: React.FC = (props) => {
             }}>
                 <Container>
                     <InfoBlock type='1' media={<Box>
-                        <Box as='img' sx={{width: '100%'}} src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner4.png'}/>
+                        <Box as='img' sx={{width: '100%'}}
+                             src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/banner4.png'}/>
                     </Box>} infoData={{
                         title: <Fragment><Box>事半功倍的管理工具</Box><Box>贴心专业的专人服务</Box></Fragment>,
                         subTitlte: '全方位智能优化',
@@ -105,15 +111,17 @@ const IndexPage: React.FC = (props) => {
                     }}/>
                 </Container>
             </Box>
-            <Box sx={{
-                background: 'linear-gradient(33.9deg, rgba(255, 248, 251, 0) 10.16%, rgba(249, 246, 235, 0.417778) 28.19%, rgba(212, 242, 253, 0.24) 59.97%, rgba(205, 243, 255, 0) 92.61%)',
-                userSelect: 'none',
-                paddingBottom: '4.7rem',
-                position:'relative',
-                [mq[1]]: {
-                    paddingBottom: 0,
-                }
-            }}>
+            <Box
+                id='join'
+                sx={{
+                    background: 'linear-gradient(33.9deg, rgba(255, 248, 251, 0) 10.16%, rgba(249, 246, 235, 0.417778) 28.19%, rgba(212, 242, 253, 0.24) 59.97%, rgba(205, 243, 255, 0) 92.61%)',
+                    userSelect: 'none',
+                    paddingBottom: '4.7rem',
+                    position: 'relative',
+                    [mq[1]]: {
+                        paddingBottom: 0,
+                    }
+                }}>
                 <Container>
                     <InfoBlock type='2'
 
@@ -157,7 +165,7 @@ const IndexPage: React.FC = (props) => {
                             transform: 'translate(0, -50%)',
                         }
                     }}
-                    src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/banner5.png'}
+                    src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/banner5.png'}
                 />
             </Box>
             <Box sx={{
@@ -173,7 +181,8 @@ const IndexPage: React.FC = (props) => {
                                     <Box key={1} as='a' href='tel:+86057123456735'>Tel: 0571-23456738</Box>,
                                     <Box key={2} as='a' href='mailto:xingpan_demo@gmail.com'>Mail: test@gmail.com</Box>
                                 ]
-                            }} imgSizeRatio={2.565} imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/image1.jpg'/>
+                            }} imgSizeRatio={2.565}
+                                  imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/image1.jpg'/>
                         </Box>
                         <Box sx={styles.cardWrapper}>
                             <Card infoData={{
@@ -183,7 +192,8 @@ const IndexPage: React.FC = (props) => {
                                     '年轻的团队，拥有十余年丰富跨境产品技术服务经验',
                                     '期待与优秀的你，一同为中国跨境卖家打造优质商业服务'
                                 ]
-                            }} imgSizeRatio={2.565} color='#6173A7' bgColor='#CEDBFF' imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/image2.jpg'/>
+                            }} imgSizeRatio={2.565} color='#6173A7' bgColor='#CEDBFF'
+                                  imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/image2.jpg'/>
                         </Box>
                         <Box sx={{clear: 'both'}}/>
                     </Box>
@@ -200,7 +210,7 @@ const IndexPage: React.FC = (props) => {
                 background: 'linear-gradient(88.97deg, #FF8BC3 -3.87%, #4081FF 28.34%, #31C6FF 85.79%, #26FFFF 101.25%)'
             }}>
                 <Box sx={{
-                    backgroundImage: 'url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.1/static/footer-bg.png)',
+                    backgroundImage: 'url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/footer-bg.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'repeat-x',
@@ -221,7 +231,7 @@ const IndexPage: React.FC = (props) => {
                         letterSpacing: '0.5em',
                         fontSize: '3.33rem',
                         padding: '2.2rem 0.86rem',
-                        [mq[1]]:{
+                        [mq[1]]: {
                             letterSpacing: '0.5em',
                             fontSize: '8.57rem',
                             padding: '2.43rem 0.86rem',
@@ -249,7 +259,7 @@ const IndexPage: React.FC = (props) => {
                 backgroundColor: '#1C2A47',
                 padding: '1.58rem 0',
                 userSelect: 'none',
-                [mq[1]]:{
+                [mq[1]]: {
                     padding: '2.5rem 0',
                 }
             }}>
