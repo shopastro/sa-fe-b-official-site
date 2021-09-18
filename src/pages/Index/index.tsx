@@ -20,7 +20,13 @@ const IndexPage: React.FC = (props) => {
     return (
         <Box>
             <Box sx={styles.headerWrapper}>
-                <Header/>
+                <Header sx={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    zIndex: 888,
+                }}/>
                 <IndexHeroBlock/>
             </Box>
             <AboutBlock/>
@@ -143,7 +149,7 @@ const IndexPage: React.FC = (props) => {
                                infoData={{
                                    title: "星盘不仅懂中国卖家，更懂海外买家",
                                    subTitlte: '星盘ShopAstro',
-                                   liContent: ['星盘由一群在跨境电商领域奋战十年以上的老兵组成，不仅懂中国卖家，更懂海外买家', '我们的愿景是：让中国跨境卖家享受更好的商业服务']
+                                   liContent: ['星盘由一群在跨境电商领域奋战十年以上的老兵组成，不仅懂中国卖家，更懂海外买家', '我们的使命是：让中国跨境卖家享受更好的商业服务']
                                }}
 
                     />
@@ -169,31 +175,48 @@ const IndexPage: React.FC = (props) => {
                 />
             </Box>
             <Box sx={{
-                padding: '3.57rem 0'
+                padding: '3.57rem 0',
             }}>
                 <Container>
-                    <Box sx={{margin: '-0.71rem'}}>
-                        <Box sx={styles.cardWrapper}>
-                            <Card infoData={{
-                                title: "想建站出海？请联系我们",
-                                subTitlte: "Contact us",
-                                liContent: [
-                                    <Box key={1} as='a' href='tel:+86057123456735'>Tel: 0571-23456738</Box>,
-                                    <Box key={2} as='a' href='mailto:xingpan_demo@gmail.com'>Mail: test@gmail.com</Box>
-                                ]
-                            }} imgSizeRatio={2.565}
-                                  imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/image1.jpg'/>
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        [mq[1]]: {
+                            flexDirection: 'row',
+                        }
+
+                    }}>
+                        <Box id='contact-us' sx={styles.cardWrapper}>
+                            <Card
+                                infoData={{
+                                    title: "想建站出海？请联系我们",
+                                    subTitlte: "Contact us",
+                                    liContent: [
+                                        // <Box key={1} as='a' href='tel:+86057123456735'>Tel: 0571-23456738</Box>,
+                                        <Box key={2} as='a' href='mailto:contact@shopastro-inc.com'>Mail:
+                                            contact@shopastro-inc.com</Box>
+                                    ]
+                                }}
+                                imgSizeRatio={2.565}
+                                imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/image1.jpg'
+                                showArrow={false}
+                            />
                         </Box>
-                        <Box sx={styles.cardWrapper}>
-                            <Card infoData={{
-                                title: "加入我们",
-                                subTitlte: "Join us",
-                                liContent: [
-                                    '年轻的团队，拥有十余年丰富跨境产品技术服务经验',
-                                    '期待与优秀的你，一同为中国跨境卖家打造优质商业服务'
-                                ]
-                            }} imgSizeRatio={2.565} color='#6173A7' bgColor='#CEDBFF'
-                                  imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/image2.jpg'/>
+                        <Box id='join-us' sx={styles.cardWrapper}>
+                            <Card
+                                infoData={{
+                                    title: "加入我们",
+                                    subTitlte: "Join us",
+                                    liContent: [
+                                        '年轻的团队，拥有十余年丰富跨境产品技术服务经验',
+                                        '期待与优秀的你，一同为中国跨境卖家打造优质商业服务'
+                                    ]
+                                }}
+                                imgSizeRatio={2.565}
+                                color='#6173A7'
+                                bgColor='#CEDBFF'
+                                link='https://www.zhipin.com/gongsi/0c4a441aa82110141nx82Nm9EFI~.html'
+                                imgURL='//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/image2.jpg'/>
                         </Box>
                         <Box sx={{clear: 'both'}}/>
                     </Box>
@@ -283,7 +306,7 @@ const IndexPage: React.FC = (props) => {
                         }
                     }}/>
                     <Box sx={{color: "#666666", fontSize: "0.857rem",}}>
-                        <Box as='span'>©2020 shopastro.com Rights Reserved｜浙ICP备xxxxxx号-00</Box></Box>
+                        <Box as='span'>Copyright ©2021 ShopAstro All Rights Reserved.</Box></Box>
                 </Container>
             </Box>
         </Box>

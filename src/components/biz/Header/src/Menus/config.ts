@@ -15,7 +15,7 @@ export const menuData:Array<MenuItemDataType> = [
     },
     {
         label: '加入我们',
-        value: '#join'
+        value: '#join-us'
     },
 ]
 

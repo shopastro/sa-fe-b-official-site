@@ -1,27 +1,24 @@
 import React, {forwardRef, PropsWithChildren} from "react";
 import Box from "@components/common/Box";
 
-const Component:React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (props, ref) => {
+const Component: React.ForwardRefRenderFunction<any, PropsWithChildren<any>> = (props, ref) => {
     return (
         <Box
             ref={ref}
             as='button'
-            tx='button'
-            variant='primary'
             {...props}
-            __css={{
+            sx={{
                 appearance: 'none',
                 display: 'inline-block',
                 textAlign: 'center',
                 lineHeight: 'inherit',
                 textDecoration: 'none',
                 fontSize: 'inherit',
-                px: 3,
-                py: 2,
+                backgroundColor: '#2050CB',
+                padding: "0.5rem 1rem",
                 color: 'white',
-                bg: 'primary',
                 border: 0,
-                borderRadius: 4,
+                borderRadius: '80px',
                 '&:hover': {
                     cursor: 'pointer'
                 }

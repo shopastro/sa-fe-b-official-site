@@ -27,7 +27,8 @@ const variant = ({theme, variant, tx = 'variants'}: any) => {
 
 export default styled('div', {
     shouldForwardProp: (prop) => {
-        return isPropValid(prop as string);
+
+        return isPropValid(prop as string) || prop === 'backdropFilter';
     }
 })(
     {

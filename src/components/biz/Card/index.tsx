@@ -10,9 +10,11 @@ const Component: React.FC<PropsWithChildren<{
     color?: string;
     bgColor?: string;
     infoData?: IInfoData;
+    showArrow?: boolean;
+    link?: string;
 }>> = (props) => {
 
-    const {imgURL, color = '#DA9327', bgColor = '#FFE8BB', infoData = {}, imgSizeRatio = 1} = props;
+    const {imgURL, color = '#DA9327', bgColor = '#FFE8BB', infoData = {}, imgSizeRatio = 1, showArrow = true, link} = props;
 
 
     const {title, subTitlte, liContent = []} = infoData
@@ -29,7 +31,8 @@ const Component: React.FC<PropsWithChildren<{
                     marginRight: '0',
                     marginBottom: '0',
                     padding: 0,
-                    marginTop: (subTitlte || title) ? '12px' : 0
+                    marginTop: (subTitlte || title) ? '12px' : 0,
+                    minHeight: "2.4rem"
                 }}
                 as='ul'
             >{liContent.map((el, index) => {
@@ -52,8 +55,16 @@ const Component: React.FC<PropsWithChildren<{
     return (
         <Box
             {...props}
+            onClick={()=>{
+                if(link){
+                    window.open(link, '_blank')
+                }
+            }}
             __css={{
                 ...styles.Card,
+                flex: '1',
+                display: 'flex',
+                flexDirection: 'column'
             }}
         >
             <Box sx={{
@@ -74,21 +85,25 @@ const Component: React.FC<PropsWithChildren<{
                 width: '100%',
                 position: 'relative',
                 padding: "1rem 6rem 1.5rem 1.5rem",
+                flex: '1',
                 backgroundColor: bgColor,
                 color: color,
+
                 "& .aicon path": {
                     fill: '#000000'
                 }
-            }}>{infoComp}<Box sx={{
-                padding: '9px',
-                borderRadius: '100px',
-                backgroundColor: '#ffffff',
-                overflow: 'hidden',
-                position: 'absolute',
-                right: '18px',
-                bottom: '18px',
-                fontSize: '0'
-            }}><RightArrowIcon className='aicon'/></Box></Box>
+            }}>{infoComp}
+                {showArrow ? <Box sx={{
+                    padding: '9px',
+                    borderRadius: '100px',
+                    backgroundColor: '#ffffff',
+                    overflow: 'hidden',
+                    position: 'absolute',
+                    right: '18px',
+                    bottom: '18px',
+                    fontSize: '0'
+                }}><RightArrowIcon className='aicon'/> </Box> : null}
+            </Box>
         </Box>
     )
 }

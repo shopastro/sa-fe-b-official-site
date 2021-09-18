@@ -5,7 +5,7 @@ export const title = {
 }
 
 export const li = {
-    fontSize: '12px',
+    fontSize: '1rem',
     lineHeight: 1.2,
     listStyle: 'inside',
 }
