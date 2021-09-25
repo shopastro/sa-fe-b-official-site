@@ -151,7 +151,6 @@ const IndexPage: React.FC = (props) => {
                                    subTitlte: '星盘ShopAstro',
                                    liContent: ['星盘由一群在跨境电商领域奋战十年以上的老兵组成，不仅懂中国卖家，更懂海外买家', '我们的使命是：让中国跨境卖家享受更好的商业服务']
                                }}
-
                     />
                 </Container>
                 <Box
@@ -174,19 +173,18 @@ const IndexPage: React.FC = (props) => {
                     src={'//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.6/static/banner5.png'}
                 />
             </Box>
-            <Box sx={{
+            <Box id='contact-us' sx={{
                 padding: '3.57rem 0',
             }}>
-                <Container>
+                <Container >
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         [mq[1]]: {
                             flexDirection: 'row',
                         }
-
                     }}>
-                        <Box id='contact-us' sx={styles.cardWrapper}>
+                        <Box sx={styles.cardWrapper}>
                             <Card
                                 infoData={{
                                     title: "想建站出海？请联系我们",
