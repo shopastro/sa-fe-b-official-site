@@ -191,8 +191,8 @@ const IndexPage: React.FC = (props) => {
                                     subTitlte: "Contact us",
                                     liContent: [
                                         // <Box key={1} as='a' href='tel:+86057123456735'>Tel: 0571-23456738</Box>,
-                                        <Box key={2} as='a' href='mailto:contact@shopastro-inc.com'>Mail:
-                                            contact@shopastro-inc.com</Box>
+                                        <Box key={2} as='a' href='mailto:contact@shopastro.com'>Mail:
+                                            contact@shopastro.com</Box>
                                     ]
                                 }}
                                 imgSizeRatio={2.565}
@@ -303,8 +303,8 @@ const IndexPage: React.FC = (props) => {
                             display: 'block',
                         }
                     }}/>
-                    <Box sx={{color: "#666666", fontSize: "0.857rem",}}>
-                        <Box as='span'>Copyright ©2021 ShopAstro All Rights Reserved.</Box></Box>
+                    <Box sx={{color: "#666666", fontSize: "0.857rem", textAlign: 'right', lineHeight: '1.6'}}>
+                        <Box as='span'>Copyright ©2021 ShopAstro All Rights Reserved. <br/> 星盘起航（杭州）网络技术有限公司</Box></Box>
                 </Container>
             </Box>
         </Box>
