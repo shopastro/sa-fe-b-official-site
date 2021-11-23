@@ -1,4 +1,7 @@
 @import "~normalize.css";
+html {
+  font-size: 10px;
+}
 body {
   //background-color: aliceblue;
   font-family: Roboto, Helvetica, sans-serif;
@@ -6,4 +9,8 @@ body {
 
 a {
   text-decoration: none;
+}
+
+div {
+  box-sizing: border-box;
 }

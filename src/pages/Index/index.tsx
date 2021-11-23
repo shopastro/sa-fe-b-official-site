@@ -1,25 +1,31 @@
-import React from 'react';
-import {Button, Box } from '@components/common'
-import Header from "@components/biz/Header"
-import {headerWrapper} from './styles';
+import React from "react";
+import Header from "@components/common/header";
+import TopBg from "./src/components/TopBg";
+import AboutAstro from "./src/components/AboutAstro";
+import BuildStation from "./src/components/BuildStation";
+import Launch from "./src/components/Launch";
+import Logistics from "./src/components/Logistics";
+import Service from "./src/components/Service";
+import Vision from "./src/components/Vision";
+import Partner from "./src/components/Partner";
+import Footer from "./src/components/Footer";
+import "./index.scss";
 
-import IndexHeroBlock from './src/IndexHeroBlock';
-import AboutBlock from "./src/AboutBlock";
-
-const IndexPage : React.FC = (props)=>{
-    return (
-        <Box>
-            <Box sx={headerWrapper}>
-                <Header/>
-                <IndexHeroBlock/>
-                <AboutBlock/>
-            </Box>
-
-        </Box>
-    )
-}
+const IndexPage: React.FC = (props) => {
+  return (
+    <React.Fragment>
+      <Header />
+      <TopBg />
+      <AboutAstro />
+      <BuildStation />
+      <Launch />
+      <Logistics />
+      <Service />
+      <Vision />
+      <Partner />
+      <Footer />
+    </React.Fragment>
+  );
+};
 
 export default IndexPage;
-
-
-

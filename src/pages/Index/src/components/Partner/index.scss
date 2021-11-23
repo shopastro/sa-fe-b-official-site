@@ -1,0 +1,41 @@
+.partner {
+  width: 120rem;
+  margin: 21.5rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .partner-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4.7rem;
+    .item {
+      width: 20rem;
+      background: #ddd;
+      height: 10.9rem;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .partner {
+    width: 100%;
+    margin: 7.5rem auto 0 auto;
+    padding: 0 2.4rem;
+    .title-width-slash {
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+    }
+
+    .partner-box {
+      width: 100%;
+      margin-top: 3rem;
+      .item {
+        width: 33.33%;
+        background: #ddd;
+        padding-bottom: 17%;
+        height: auto;
+      }
+    }
+  }
+}
