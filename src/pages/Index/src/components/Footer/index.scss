@@ -134,17 +134,38 @@
             margin: 0.5rem 0;
             position: relative;
 
-            // &::before {
-            //   content: "";
-            //   background: url(./img/add.svg) no-repeat;
-            //   background-size: contain;
-            //   right: 0;
-            //   position: absolute;
-            //   width: 1.8rem;
-            //   height: 1.8rem;
-            // }
+            .add {
+              background: url(./img/add.svg) no-repeat;
+              background-size: contain;
+              right: 0;
+              position: absolute;
+              width: 1.8rem;
+              height: 1.8rem;
+              cursor: pointer;
+
+              &.line {
+                background: url(./img/line.svg) no-repeat;
+                background-position: center;
+                background-size: contain;
+              }
+            }
           }
+
+          .closeed {
+            .item {
+              height: 0; 
+              padding: 0 4.4rem;
+            }
+          }
+
+          .opened {
+            .item {
+              height: 3.8rem;
+            }
+          }
+
           .item {
+            transition-duration: 0.3s;
             background: #2269df;
             margin: 0 -2.4rem;
             padding: 1rem 4.4rem;
@@ -152,6 +173,8 @@
             font-size: 1.2rem;
             line-height: 1.8rem;
             color: #eeeeee;
+            overflow: hidden;
+            display: block;
           }
           .item-title {
           }
