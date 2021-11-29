@@ -66,6 +66,7 @@
           color: #cecece;
           margin-top: 0.4rem;
           margin-left: 2.3rem;
+          display: flex;
         }
         .item-title {
           line-height: 21px;
@@ -76,7 +77,7 @@
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 770px) {
   .home-footer {
     width: 100%;
     background-size: contain;
@@ -153,7 +154,7 @@
 
           .closeed {
             .item {
-              height: 0; 
+              height: 0;
               padding: 0 4.4rem;
             }
           }

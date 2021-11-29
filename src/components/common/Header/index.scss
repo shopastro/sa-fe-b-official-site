@@ -31,6 +31,7 @@
       height: 3.5rem;
       background: url(./img/logo.svg) no-repeat;
       background-size: contain;
+      cursor: pointer;
     }
 
     .header-nav {
@@ -50,6 +51,11 @@
         color: #ff793a;
       }
 
+      .content-us-btn-for-mb,
+      .try-now {
+        display: none;
+      }
+
       .content-us-btn {
         margin-left: -0.8rem;
         background: #fff;
@@ -58,6 +64,7 @@
         font-size: 1.2rem;
         padding: 0 2.4rem;
         color: #004ed1;
+
         &:hover {
           color: #fff;
           background: #004ed1;
@@ -65,11 +72,52 @@
       }
     }
   }
+
+  .local {
+    cursor: pointer;
+    position: relative;
+    background: url(./img/ball.svg) no-repeat;
+    padding-left: 32px;
+    height: 24px;
+    line-height: 24px;
+    &:hover .lang {
+      display: block;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      height: 38px;
+      width: 100%;
+
+    }
+    .lang {
+      display: none;
+      position: absolute;
+      background: #fff;
+      width: 104px;
+      height: 36px;
+      line-height: 36px;
+      left: 0;
+      top: 38px;
+      color: #30323f;
+      padding-left: 12px;
+      box-shadow: 0px 0px 10px rgba(144, 158, 176, 0.2);
+      border-radius: 4px;
+
+      &:hover {
+        background: #f5f7fd;
+        color: #004ed1;
+      }
+    }
+  }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 770px) {
+  .root {
+    overflow: hidden;
+  }
   .header {
-    min-width: auto; 
+    min-width: auto;
     .header-box {
       height: 4.8rem;
 
@@ -114,6 +162,10 @@
         height: 100vh;
         transition-duration: 0.3s;
 
+        .content-us-btn {
+          display: none;
+        }
+
         .nav-btn {
           height: 4.8rem;
           line-height: 4.8rem;
@@ -141,6 +193,24 @@
             }
           }
         }
+
+        .content-us-btn-for-mb,
+        .try-now {
+          display: block;
+        }
+
+        .try-now {
+          margin: 4rem 2.4rem 0 2.4rem;
+          width: calc(100% - 4.8rem);
+          color: #fff;
+          background: #004ed1;
+          &:hover,
+          &:active {
+            color: #fff;
+            background: #004ed1;
+          }
+        }
+
         .nav-logo {
           height: 4.8rem;
           width: 100%;

@@ -1,6 +1,8 @@
 import React from "react";
 import IndexPage from "@pages/Index";
-import IndexPage2 from "@pages/Index2";
+import Policy from "@pages/Policy";
+import Header from "@components/common/Header";
+import Footer from "@components/common/Footer";
 import {
   HashRouter as Router,
   Route,
@@ -21,11 +23,16 @@ const App: React.FC = () => {
 
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path="/" component={IndexPage} />
-        <Route exact path="/aaa" component={IndexPage2} />
+        <Route path="/policy/zh-CN" component={Policy} />
+        <Route path="/agreement/zh-CN" component={Policy} />
+        <Route exact path="/policy" component={Policy} />
+        <Route exact path="/agreement" component={Policy} />
         <Redirect from="/*" to="/" />
       </Switch>
+      <Footer />
     </Router>
   );
 };

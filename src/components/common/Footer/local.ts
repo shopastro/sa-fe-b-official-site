@@ -1,0 +1,41 @@
+export const local = {
+  aboutUs: {
+    "zh-CN": "关于我们",
+    "en-US": "About us",
+  },
+  joinUs: {
+    "zh-CN": "加入我们",
+    "en-US": "Join us",
+  },
+  contactUs: {
+    "zh-CN": "联系我们",
+    "en-US": "Contact us",
+  },
+
+
+  privacy: {
+    "zh-CN": "隐私政策",
+    "en-US": "Privacy",
+  },
+  terms: {
+    "zh-CN": "用户协议",
+    "en-US": "Terms",
+  },
+  careers: {
+    "zh-CN": "在招岗位",
+    "en-US": "Careers",
+  },
+  sendYourResume: {
+    "zh-CN": "投递简历",
+    "en-US": "Send your resume",
+  },
+  address: {
+    "zh-CN": "杭州市余杭区时代未来城5号楼1702室",
+    "en-US":
+      "Room 1702,  Building 5 of AUX Future Center, Yuhang District ,Hangzhou, China",
+  },
+  qrTencent: {
+    "zh-CN": "shopastro官方公众号",
+    "en-US": "shopastro wechat official account",
+  },
+};

@@ -48,6 +48,7 @@ const config: webpack.Configuration = {
   },
   devServer: {
     port: 3333,
+    https: true,
     static: {
       directory: path.join(__dirname, 'public'),
     },

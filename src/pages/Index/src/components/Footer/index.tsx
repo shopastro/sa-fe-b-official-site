@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import "./index.scss";
 import Title from "@components/common/Title";
+import Policy from "../Policy/Policy";
+import Agreement from "../Policy/Agreement";
+
+type Docs = {
+  policy: "init" | "show" | "hide";
+  agreement: "init" | "show" | "hide";
+};
 
 const Vision: React.FC = () => {
   const [close, setClose] = useState({
     about: true,
     join: true,
     content: true,
+  });
+
+  const [docs, setDocs] = useState<Docs>({
+    policy: "init",
+    agreement: "init",
   });
 
   return (
@@ -27,40 +39,52 @@ const Vision: React.FC = () => {
           <div className="right-cell">
             <Title size={14}>
               <div>
-                <div className="item-title">About us </div>
+                <div className="item-title">aaa us </div>
                 <div className="item-title">关于我们</div>
               </div>
 
-              <i
-                className={`add ${close.about && "line"}`}
-                onClick={() =>
-                  setClose({
-                    ...close,
-                    about: !close.about,
-                  })
-                }
-              />
+              <i className={`add ${close.about && "line"}`} />
             </Title>
             <div className={`${close.about ? "opened" : "closeed"}`}>
-              <div className="item">隐私政策</div>
-              <div className="item">用户协议</div>
+              <div
+                className="item"
+                onClick={() => {
+                  setDocs({
+                    ...docs,
+                    policy: docs.policy === "show" ? "hide" : "show",
+                  });
+                }}
+              >
+                隐私政策
+              </div>
+              <div
+                className="item"
+                onClick={() => {
+                  setDocs({
+                    ...docs,
+                    agreement: docs.agreement === "show" ? "hide" : "show",
+                  });
+                }}
+              >
+                用户协议
+              </div>
             </div>
           </div>
           <div className="right-cell">
-            <Title size={14}>
+            <Title
+              size={14}
+              onClick={() =>
+                setClose({
+                  ...close,
+                  join: !close.join,
+                })
+              }
+            >
               <div>
                 <div className="item-title">Join us</div>
                 <div className="item-title">加入我们</div>
               </div>
-              <i
-                className={`add ${close.join && "line"}`}
-                onClick={() =>
-                  setClose({
-                    ...close,
-                    join: !close.join,
-                  })
-                }
-              />
+              <i className={`add ${close.join && "line"}`} />
             </Title>
 
             <div className={`${close.join ? "opened" : "closeed"}`}>
@@ -83,21 +107,21 @@ const Vision: React.FC = () => {
             </div>
           </div>
           <div className="right-cell">
-            <Title size={14}>
+            <Title
+              size={14}
+              onClick={() =>
+                setClose({
+                  ...close,
+                  content: !close.content,
+                })
+              }
+            >
               <div>
                 <div className="item-title">Contact us</div>
                 <div className="item-title">联系我们</div>
               </div>
 
-              <i
-                className={`add ${close.content && "line"}`}
-                onClick={() =>
-                  setClose({
-                    ...close,
-                    content: !close.content,
-                  })
-                }
-              />
+              <i className={`add ${close.content && "line"}`} />
             </Title>
             <div className={`${close.content ? "opened" : "closeed"}`}>
               <a
@@ -119,6 +143,10 @@ const Vision: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {docs.policy !== "init" && <Policy state={docs.policy} />}
+
+      {docs.agreement !== "init" && <Agreement state={docs.agreement} />}
     </div>
   );
 };

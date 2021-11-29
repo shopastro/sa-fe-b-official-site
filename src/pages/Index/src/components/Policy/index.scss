@@ -1,0 +1,27 @@
+@import "./styles/docx.scss";
+@import "./styles/main.scss";
+@import "./styles/photo-viewer.scss";
+@import "./styles/photo360.scss";
+
+.policy-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+  .pg-viewer-wrapper {
+    .document-container {
+      width: 100%;
+      max-width: 70rem;
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: normal;
+        font-family: Source Han Sans CN;
+        color: #333333;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "@components/common/header";
+// import Header from "@components/common/header";
 import TopBg from "./src/components/TopBg";
 import AboutAstro from "./src/components/AboutAstro";
 import BuildStation from "./src/components/BuildStation";
@@ -8,13 +8,13 @@ import Logistics from "./src/components/Logistics";
 import Service from "./src/components/Service";
 import Vision from "./src/components/Vision";
 import Partner from "./src/components/Partner";
-import Footer from "./src/components/Footer";
+// import Footer from "./src/components/Footer";
 import "./index.scss";
 
 const IndexPage: React.FC = (props) => {
   return (
     <React.Fragment>
-      <Header />
+      {/* <Header /> */}
       <TopBg />
       <AboutAstro />
       <BuildStation />
@@ -23,7 +23,7 @@ const IndexPage: React.FC = (props) => {
       <Service />
       <Vision />
       <Partner />
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };

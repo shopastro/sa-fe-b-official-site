@@ -1,6 +1,6 @@
 {
   "name": "@sa-fe/official-site",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "A front-end code repo about ShopAstro's official site.",
   "main": "index.js",
   "repository": "git@github.com:shopastro/sa-fe-b-official-site.git",

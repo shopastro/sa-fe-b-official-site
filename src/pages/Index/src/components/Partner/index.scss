@@ -12,11 +12,25 @@
       width: 20rem;
       background: #ddd;
       height: 10.9rem;
+      &.strip {
+        background: url(./img/strip.svg) no-repeat;
+        background-size: contain;
+      }
+
+      &.paypal {
+        background: url(./img/paypal.svg) no-repeat;
+        background-size: contain;
+      }
+
+      &.qh {
+        background: url(./img/qh.svg) no-repeat;
+        background-size: contain;
+      }
     }
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 770px) {
   .partner {
     width: 100%;
     margin: 7.5rem auto 0 auto;

@@ -7,12 +7,9 @@ const Partner: React.FC = () => {
     <div className="partner">
       <Title size={34}>合作伙伴</Title>
       <div className="partner-box">
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
+        <div className="item strip"></div>
+        <div className="item paypal"></div>
+        <div className="item qh"></div> 
       </div>
     </div>
   );

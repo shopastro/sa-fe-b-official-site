@@ -1,0 +1,37 @@
+@import "./styles/docx.scss";
+@import "./styles/main.scss";
+@import "./styles/photo-viewer.scss";
+@import "./styles/photo360.scss";
+
+.policy-container {
+  
+  .pg-viewer-wrapper {
+    overflow: hidden;
+    .document-container {
+      width: 100%;
+      max-width: 70rem;
+      .title {
+        text-align: center;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: normal;
+        font-family: Source Han Sans CN;
+        color: #333333;
+      }
+
+      h2 {
+        font-family: Source Han Sans CN;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.9rem;
+        line-height: 2.8rem;
+        /* identical to box height */
+
+        color: #333333;
+      }
+    }
+  }
+}
