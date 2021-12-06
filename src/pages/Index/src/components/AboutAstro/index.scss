@@ -3,7 +3,7 @@
   margin: 6.4rem auto 0 auto;
   position: relative;
   .about-decoration {
-    background: url("./img/decoration.svg") no-repeat;
+    background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/decoration.svg") no-repeat;
     background-size: contain;
     position: absolute;
 
@@ -52,25 +52,25 @@
           &.get-customer {
             width: 9.3rem;
             height: 10rem;
-            background: url("./img/get-customer.svg") no-repeat;
+            background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/get-customer.svg") no-repeat;
             background-size: contain;
           }
           &.manager {
             width: 9.2rem;
             height: 10rem;
-            background: url("./img/manager.svg") no-repeat;
+            background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/manager.svg") no-repeat;
             background-size: contain;
           }
           &.protection {
             width: 8.4rem;
             height: 10rem;
-            background: url("./img/protection.svg") no-repeat;
+            background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/protection.svg") no-repeat;
             background-size: contain;
           }
           &.trading {
             width: 10rem;
             height: 10rem;
-            background: url("./img/trading.svg") no-repeat;
+            background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/trading.svg") no-repeat;
             background-size: contain;
           }
         }
@@ -131,7 +131,7 @@
         gap: 1rem;
         position: relative;
         .decoration {
-          background: url("./img/decoration.svg") no-repeat;
+          background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/decoration.svg") no-repeat;
           background-size: contain;
           position: absolute;
 
@@ -156,25 +156,25 @@
             &.get-customer {
               width: 4.7rem;
               height: 3.8rem;
-              background: url("./img/get-customer.svg") no-repeat;
+              background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/get-customer.svg") no-repeat;
               background-size: contain;
             }
             &.manager {
               width: 4.7rem;
               height: 4.7rem;
-              background: url("./img/manager.svg") no-repeat;
+              background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/manager.svg") no-repeat;
               background-size: contain;
             }
             &.protection {
               width: 4.7rem;
               height: 4.5rem;
-              background: url("./img/protection.svg") no-repeat;
+              background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/protection.svg") no-repeat;
               background-size: contain;
             }
             &.trading {
               width: 4.7rem;
               height: 4.5rem;
-              background: url("./img/trading.svg") no-repeat;
+              background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/trading.svg") no-repeat;
               background-size: contain;
             }
           }
@@ -184,6 +184,7 @@
             white-space: nowrap;
             font-size: 1.6rem;
             line-height: 2.4rem;
+            margin: 0;
             color: #333333;
           }
           .feature-desc {
@@ -197,7 +198,7 @@
     }
     .about-circle {
       display: block;
-      background: url(./img/circle-mb.svg) no-repeat;
+      background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/circle-mb.svg) no-repeat;
       background-size: contain;
       width: 26rem;
       padding-bottom: 36rem;

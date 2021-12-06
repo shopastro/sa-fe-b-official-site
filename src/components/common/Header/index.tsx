@@ -155,29 +155,29 @@ const IndexPage: React.FC = (props) => {
                 联系我们
               </Button>
 
-              <Button className="nav-btn try-now">立即试用</Button>
+              <Button className="nav-btn try-now"><a href="mailto:shopastro@shopastro-inc.com">立即试用</a></Button>
             </Fragment>
           )}
 
-          {isPolicy && (
-            <div className="local">
-              {getLang() ? "中文" : "English"}
-              <div
-                className="lang"
-                onClick={() => {
-                  if (getLang()) {
-                    // setLang("");
-                    history.push(pathname.replace('/zh-CN', ''));
-                  } else {
-                    // setLang("/zh-CN");
-                    history.push(`${pathname}/zh-CN`);
-                  }
-                }}
-              >
-                {getLang() ? "English" : "中文"}
-              </div>
-            </div>
-          )}
+          {/*{isPolicy && (*/}
+          {/*  <div className="local">*/}
+          {/*    {getLang() ? "中文" : "English"}*/}
+          {/*    <div*/}
+          {/*      className="lang"*/}
+          {/*      onClick={() => {*/}
+          {/*        if (getLang()) {*/}
+          {/*          // setLang("");*/}
+          {/*          history.push(pathname.replace('/zh-CN', ''));*/}
+          {/*        } else {*/}
+          {/*          // setLang("/zh-CN");*/}
+          {/*          history.push(`${pathname}/zh-CN`);*/}
+          {/*        }*/}
+          {/*      }}*/}
+          {/*    >*/}
+          {/*      {getLang() ? "English" : "中文"}*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*)}*/}
 
           <div
             className="nav-close"

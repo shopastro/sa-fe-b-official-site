@@ -9,14 +9,16 @@
     overflow: hidden;
     .document-container {
       width: 100%;
-      max-width: 70rem;
+      max-width: 120rem;
+      font-size: 1.6rem;
+      line-height: 1.35;
+      word-break: break-word;
       .title {
         text-align: center;
       }
 
       p {
-        font-size: 1rem;
-        line-height: 1.5rem;
+
         font-weight: normal;
         font-family: Source Han Sans CN;
         color: #333333;
@@ -34,4 +36,9 @@
       }
     }
   }
+}
+@media screen and (max-width: 770px) {
+  .policy-container .pg-viewer-wrapper .document-container{
+      font-size: 1.4rem;
+    }
 }

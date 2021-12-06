@@ -18,7 +18,7 @@ const TopBg: React.FC = () => {
           <div className="left-sub-title">
             「一站式」跨境电商服务平台， 跨境卖家的出海首选！
           </div>
-          <Button className="try-now">立即试用</Button>
+          <Button className="try-now"><a href="mailto:shopastro@shopastro-inc.com">立即试用</a></Button>
         </div>
         <div className="content-right" />
       </div>

@@ -6,7 +6,7 @@
   flex-direction: row-reverse;
 
   .launch-left {
-    background: url(./img/launch.svg) no-repeat;
+    background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/launch.svg) no-repeat;
     background-size: contain;
 
     width: (573 / 1200 * 100%);
@@ -46,7 +46,7 @@
   .circle-launch {
     position: absolute;
     left: 0;
-    background: url("./img/circle.svg") no-repeat;
+    background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/circle.svg") no-repeat;
     background-size: contain;
     width: 55.2rem;
     padding-bottom: 55.2rem;
@@ -91,7 +91,7 @@
     }
 
     .circle-launch {
-      background: url(./img/circle-mb.svg) no-repeat;
+      background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/circle-mb.svg) no-repeat;
       background-size: contain;
       width: 25.9rem;
       padding-bottom: 25.9rem;

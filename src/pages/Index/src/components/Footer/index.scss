@@ -1,7 +1,7 @@
 .home-footer {
   height: 45.5rem;
   display: flex;
-  background: url(./img/footer.svg) no-repeat;
+  background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/footer.svg) no-repeat;
   background-size: cover;
   min-width: 120rem;
   margin-top: 2.6rem;
@@ -13,7 +13,7 @@
     .footer-left {
       .footer-logo {
         margin-top: 9.5rem;
-        background: url(./img/footer-logo.svg) no-repeat;
+        background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/footer-logo.svg) no-repeat;
         background-size: contain;
         width: 24rem;
         height: 4.5rem;
@@ -23,7 +23,7 @@
         width: 13.5rem;
 
         .qr-img {
-          background: url(./img/qr.svg) no-repeat;
+          background: url("https://media.cdn.myshopastro.com/sys/media/image/WDbJExARByj22hFX.jpg") no-repeat;
           height: 11.5rem;
           width: 11.5rem;
           background-size: contain;
@@ -78,6 +78,9 @@
 }
 
 @media screen and (max-width: 770px) {
+  .icp-info {
+    font-size: 1rem;
+  }
   .home-footer {
     width: 100%;
     background-size: contain;
@@ -136,7 +139,7 @@
             position: relative;
 
             .add {
-              background: url(./img/add.svg) no-repeat;
+              background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/add.svg) no-repeat;
               background-size: contain;
               right: 0;
               position: absolute;
@@ -145,7 +148,7 @@
               cursor: pointer;
 
               &.line {
-                background: url(./img/line.svg) no-repeat;
+                background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/line.svg) no-repeat;
                 background-position: center;
                 background-size: contain;
               }
@@ -161,7 +164,7 @@
 
           .opened {
             .item {
-              height: 3.8rem;
+              //height: 3.8rem;
             }
           }
 
@@ -170,7 +173,7 @@
             background: #2269df;
             margin: 0 -2.4rem;
             padding: 1rem 4.4rem;
-            height: 3.8rem;
+            //height: 3.8rem;
             font-size: 1.2rem;
             line-height: 1.8rem;
             color: #eeeeee;

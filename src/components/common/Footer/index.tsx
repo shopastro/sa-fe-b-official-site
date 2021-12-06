@@ -34,6 +34,11 @@ const Vision: React.FC = (props) => {
     return local?.[key]?.[lang];
   };
 
+  const currentYear = new Date().getFullYear().toString();
+  const copyrightText = `©${currentYear} shopastro All Rights Reserved.`;
+
+  const icpInfoComp = (<div className='icp-info'><a href="http://beian.miit.gov.cn/" target='_blank'>浙ICP备2021036268号-1</a></div>)
+
   return (
     <div className="home-footer" id="homeFooter">
       <div className="footer-box">
@@ -42,10 +47,6 @@ const Vision: React.FC = (props) => {
           <div className="footer-qr">
             <div className="qr-img"></div>
             <div className="qr-desc">{getLocal("qrTencent")}</div>
-
-            <div className="copy-right">
-              ©2021 shopastro.com Rights Reserved｜浙ICP备123456号-00
-            </div>
           </div>
         </div>
         <div className="footer-right">
@@ -140,12 +141,16 @@ const Vision: React.FC = (props) => {
 
           <div className="right-cell right-cell-mb">
             <div className="copy-right">
-              ©2021 shopastro.com Rights Reserved｜浙ICP备123456号-00
+              {copyrightText}&nbsp;&nbsp;{icpInfoComp}
             </div>
           </div>
         </div>
       </div>
-
+      <div className='pc-bottom-area'>
+        <div className="copy-right">
+          {copyrightText}&nbsp;&nbsp;{icpInfoComp}
+        </div>
+      </div>
       {/* {docs.policy !== "init" && <Policy state={docs.policy} />}
 
       {docs.agreement !== "init" && <Agreement state={docs.agreement} />} */}

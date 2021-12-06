@@ -29,7 +29,7 @@
     .header-logo {
       width: 19.8rem;
       height: 3.5rem;
-      background: url(./img/logo.svg) no-repeat;
+      background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/logo.svg) no-repeat;
       background-size: contain;
       cursor: pointer;
     }
@@ -59,10 +59,10 @@
       .content-us-btn {
         margin-left: -0.8rem;
         background: #fff;
-        height: 3.4rem;
+        //height: 3.4rem;
         border: 1px solid #004ed1;
         font-size: 1.2rem;
-        padding: 0 2.4rem;
+        padding: 0.9rem 2.4rem;
         color: #004ed1;
 
         &:hover {
@@ -76,7 +76,7 @@
   .local {
     cursor: pointer;
     position: relative;
-    background: url(./img/ball.svg) no-repeat;
+    background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/ball.svg) no-repeat;
     padding-left: 32px;
     height: 24px;
     line-height: 24px;
@@ -125,7 +125,7 @@
         display: block;
         width: 2.4rem;
         height: 2.4rem;
-        background: url(./img/menu.svg) no-repeat;
+        background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/menu.svg) no-repeat;
         background-size: contain;
         margin-right: 1.2rem;
       }
@@ -152,16 +152,19 @@
         background: #fff;
         z-index: 111;
         position: absolute;
-        right: -82%;
+        right: -100%;
         top: 0;
         gap: 0;
         padding: 0;
         align-items: flex-start;
-        box-shadow: 0px 5px 40px rgb(0 0 0 / 15%);
-        width: 82%;
+
+        width: 100%;
         height: 100vh;
         transition-duration: 0.3s;
 
+        &.ture{
+          box-shadow: 0px 5px 40px rgb(0 0 0 / 15%);
+        }
         .content-us-btn {
           display: none;
         }
@@ -221,7 +224,7 @@
             width: 9.9rem;
             height: 1.75rem;
 
-            background: url(./img/logo.svg) no-repeat;
+            background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/logo.svg) no-repeat;
             background-size: contain;
           }
         }
@@ -229,7 +232,7 @@
         .nav-close {
           width: 2.8rem;
           height: 2.8rem;
-          background: url(./img/close.svg) no-repeat;
+          background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/close.svg) no-repeat;
           background-size: contain;
           position: absolute;
           top: 1rem;

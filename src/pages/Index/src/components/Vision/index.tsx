@@ -12,7 +12,7 @@ const Vision: React.FC = () => {
         </div>
         <div className="vison-title">懂中国卖家，更懂海外买家</div>
         <div className="vison-sub-title">
-          我们的愿景是：让中国跨境卖家享受更好的商业服务
+          Let the World Discover Better China Brands
         </div>
       </div>
       <div className="vision-feature">
