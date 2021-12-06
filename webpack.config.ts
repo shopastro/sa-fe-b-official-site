@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config: webpack.Configuration = {
   mode: 'production',
-
   resolve:{
     alias: {
       "@root":  path.resolve(__dirname, 'src/'),
@@ -22,6 +21,7 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].js',
+    publicPath: "//sys.cdn.myshopastro.com/fe/official-site/0.0.7/"
   },
   module: {
     rules: [

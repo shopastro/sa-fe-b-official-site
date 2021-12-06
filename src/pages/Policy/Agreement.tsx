@@ -17,8 +17,8 @@ const IndexPage: React.FC<IProps> = (props) => {
               <p>
                 <strong>User Agreement</strong>
               </p>
-              <p>Release Date: [Date] of [Month] 2021 </p>
-              <p>Effective date: [Date] of [Month] 2021</p>
+              <p>Release Date: 6th of Dec. 2021 </p>
+              <p>Effective date: 6th of Dec. 2021</p>
               <p>
                 <strong>about us</strong>
               </p>
@@ -31,7 +31,7 @@ const IndexPage: React.FC<IProps> = (props) => {
                 affiliates (hereinafter collectively referred to as "we"),
                 providing online shops to seller users (hereinafter referred to
                 as "users", "you" or "sellers")&nbsp;through SHOPASTRO website
-                [&nbsp;<em>fill in website address&nbsp;</em>] A SaaS platform
+                www.shopastro.com A SaaS platform
                 with complete solutions for site building, traffic, payment and
                 logistics.&nbsp;&nbsp;
               </p>
@@ -65,7 +65,7 @@ const IndexPage: React.FC<IProps> = (props) => {
               <p>
                 3)&nbsp; In the process of reading this agreement, if you have
                 any questions or feedback, you can contact us through
-                SHOPASTRO's customer service hotline: [XXXXXX].&nbsp;When you
+                SHOPASTRO's customer service email: shopastro@shopastro-inc.com.&nbsp;When you
                 fill in the information as prompted on the registration page,
                 complete all the registration procedures, and read and check to
                 agree to this agreement, it means that you accept all the
@@ -347,8 +347,7 @@ const IndexPage: React.FC<IProps> = (props) => {
                 1)&nbsp; We will provide you with a complete solution for shop
                 building, traffic, payment and logistics through the SHOPASTRO
                 website.&nbsp;After registering an account, you can&nbsp;choose
-                the service you need&nbsp;on the SHOPASTRO website [&nbsp;
-                <em>fill in the website address&nbsp;</em>].
+                the service you need&nbsp;on the SHOPASTRO website www.shopastro.com.
               </p>
               <p>&nbsp;</p>
               <p>
@@ -387,8 +386,7 @@ const IndexPage: React.FC<IProps> = (props) => {
                 authorize us (without prior notice) to charge the applicable
                 subscription fee at that time.&nbsp;You can&nbsp;cancel the
                 subscription service of your account&nbsp;at any time through
-                the management panel or email [&nbsp;
-                <em>fill in the customer service mailbox&nbsp;</em>].
+                the management panel or email shopastro@shopastro-inc.com.
               </p>
               <p>&nbsp;</p>
               <p>
@@ -755,8 +753,7 @@ const IndexPage: React.FC<IProps> = (props) => {
                 after the effective date of the agreement change will be deemed
                 to have accepted the updated agreement.&nbsp;If you have any
                 questions or comments on the changed content, you
-                can&nbsp;contact us for feedback&nbsp;via [&nbsp;
-                <em>fill in the customer service mailbox&nbsp;</em>].
+                can&nbsp;contact us for feedback&nbsp;via shopastro@shopastro-inc.com.
               </p>
               <p>&nbsp;</p>
               <p>
@@ -864,12 +861,7 @@ const IndexPage: React.FC<IProps> = (props) => {
               <p>
                 1) If you have any questions, comments or suggestions about the
                 content of this policy, you can contact the SHOPASTRO customer
-                service hotline: [&nbsp;
-                <em>
-                  Fill in the customer service phone number (if any), otherwise
-                  provide an email&nbsp;
-                </em>
-                ];
+                service email: shopastro@shopastro-inc.com;
               </p>
               <p>&nbsp;</p>
               <p>
@@ -878,8 +870,7 @@ const IndexPage: React.FC<IProps> = (props) => {
                 following ways.
               </p>
               <p>
-                2.1&nbsp;Email: [&nbsp;
-                <em>Fill in the customer service email&nbsp;</em>]
+                2.1&nbsp;Email:shopastro@shopastro-inc.com
               </p>
               <p>
                 2.2&nbsp;Common office address: Room 1701, Building 5, City of

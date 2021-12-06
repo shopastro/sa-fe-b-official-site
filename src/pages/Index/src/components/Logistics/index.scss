@@ -11,7 +11,7 @@
   }
 
   .logistics-left {
-    background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/logistics.svg) no-repeat;
+    background: url(./img/logistics.svg) no-repeat;
     background-size: contain;
     width: (575 / 1200 * 100%);
     padding-bottom: (397 / 1200 * 100%);
@@ -50,7 +50,7 @@
   .circle-logistics {
     position: absolute;
     right: 0;
-    background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/circle.svg") no-repeat;
+    background: url("./img/circle.svg") no-repeat;
     background-size: contain;
     width: 97.58rem;
     padding-bottom: 97.58rem;
@@ -63,7 +63,7 @@
   .rectangle-logistics {
     position: absolute;
     left: 0;
-    background: url("//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/rectangle.svg") no-repeat;
+    background: url("./img/rectangle.svg") no-repeat;
     background-size: contain;
     width: 60%;
     padding-bottom: 16.8%;
@@ -115,7 +115,7 @@
     }
 
     .circle-logistics {
-      background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/circle-mb.svg) no-repeat;
+      background: url(./img/circle-mb.svg) no-repeat;
       background-size: contain;
       width: 28rem;
       padding-bottom: 35rem;
@@ -124,7 +124,7 @@
     }
 
     .rectangle-logistics {
-      background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/rectangle-mb.svg) no-repeat;
+      background: url(./img/rectangle-mb.svg) no-repeat;
       background-size: contain;
       padding-bottom: 82%;
       left: -2.4rem;

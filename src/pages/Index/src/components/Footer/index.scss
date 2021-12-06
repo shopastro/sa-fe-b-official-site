@@ -1,7 +1,7 @@
 .home-footer {
   height: 45.5rem;
   display: flex;
-  background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/footer.svg) no-repeat;
+  background: url(./img/footer.svg) no-repeat;
   background-size: cover;
   min-width: 120rem;
   margin-top: 2.6rem;
@@ -13,7 +13,7 @@
     .footer-left {
       .footer-logo {
         margin-top: 9.5rem;
-        background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/footer-logo.svg) no-repeat;
+        background: url(./img/footer-logo.svg) no-repeat;
         background-size: contain;
         width: 24rem;
         height: 4.5rem;
@@ -139,7 +139,7 @@
             position: relative;
 
             .add {
-              background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/add.svg) no-repeat;
+              background: url(./img/add.svg) no-repeat;
               background-size: contain;
               right: 0;
               position: absolute;
@@ -148,7 +148,7 @@
               cursor: pointer;
 
               &.line {
-                background: url(//sys.cdn.beta.myshopastro.com/fe/official-site/0.0.7/img/line.svg) no-repeat;
+                background: url(./img/line.svg) no-repeat;
                 background-position: center;
                 background-size: contain;
               }

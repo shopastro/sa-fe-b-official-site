@@ -26,8 +26,8 @@ const App: React.FC = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={IndexPage} />
-        <Route path="/policy/zh-CN" component={Policy} />
-        <Route path="/agreement/zh-CN" component={Policy} />
+        <Route path="/policy/zh_CN" component={Policy} />
+        <Route path="/agreement/zh_CN" component={Policy} />
         <Route exact path="/policy" component={Policy} />
         <Route exact path="/agreement" component={Policy} />
         <Redirect from="/*" to="/" />

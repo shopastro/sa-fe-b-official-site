@@ -17,8 +17,8 @@ const IndexPage: React.FC<IProps> = (props) => {
               <p>
                 <strong>Privacy&nbsp;policy</strong>
               </p>
-              <p>Release Date: 2021 [Date] of [Month]</p>
-              <p>Effective date: 2021 [Date] of [Month]</p>
+              <p>Release Date: 2021 6th of Dec.</p>
+              <p>Effective date: 2021 6th of Dec.</p>
               <p>
                 <strong>&nbsp;</strong>
               </p>
@@ -34,7 +34,7 @@ const IndexPage: React.FC<IProps> = (props) => {
                 its affiliates (hereinafter collectively referred to as "we"),
                 providing online shops to seller users (hereinafter referred to
                 as "users", "you" or "sellers")&nbsp;through SHOPASTRO website
-                [&nbsp;<em>fill in website address&nbsp;</em>] A SaaS platform
+                www.shopastro.com A SaaS platform
                 with complete solutions for site building, traffic, payment and
                 logistics.&nbsp;
               </p>
@@ -1055,7 +1055,7 @@ const IndexPage: React.FC<IProps> = (props) => {
                 that your personal information that we collect, store, use, and
                 disclose is incorrect or incomplete, or under other
                 circumstances as required by laws and regulations, you can log
-                in [&nbsp;<em>Fill in the merchant site URL&nbsp;</em>] and
+                in https://sys.admin.myshopastro.com/admin/user/login and
                 enter the "Personal Center" "After correcting or supplementing
                 your personal information.
               </p>
@@ -1565,10 +1565,9 @@ const IndexPage: React.FC<IProps> = (props) => {
               <p>
                 If you have any questions, comments or suggestions about the
                 content of this policy, you can contact us in the following
-                ways: 1) SHOPASTRO's customer service hotline: [&nbsp;
-                <em>fill in the customer service phone number&nbsp;</em>]; 2)
+                ways: 1) SHOPASTRO's customer service email: shopastro@shopastro-inc.com; 2)
                 Personal information protection full-time department email:
-                [fill in information security Departmental mailbox]; or 3) Mail
+                shopastro@shopastro-inc.com; or 3) Mail
                 the letter to: Common office address:&nbsp;Room 1701, Building
                 5, Times Future City, Cangqian Street, Yuhang District, Hangzhou
                 City&nbsp;,&nbsp;Zhejiang
