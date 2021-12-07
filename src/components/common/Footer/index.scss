@@ -62,7 +62,11 @@
       margin-top: 18.9rem;
       .right-cell {
         flex: 1;
-        max-width: 580px;
+        max-width: 58rem;
+        min-width: 14rem;
+        & + .right-cell {
+          margin-left: 6rem;
+        }
         &.right-cell-mb {
           display: none;
         }

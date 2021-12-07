@@ -24,9 +24,9 @@ const Vision: React.FC = (props) => {
 
   const lang = useMemo(() => {
     if (pathname.toLocaleLowerCase().indexOf("zh-cn") > -1) {
-      return "zh-CN";
-    } else {
       return "en-US";
+    } else {
+      return "zh-CN";
     }
   }, [pathname]);
 

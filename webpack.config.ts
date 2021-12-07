@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].js',
-    publicPath: "//sys.cdn.myshopastro.com/fe/official-site/0.0.7/"
+    // publicPath: "//sys.cdn.myshopastro.com/fe/official-site/0.0.7/"
   },
   module: {
     rules: [
@@ -48,7 +48,7 @@ const config: webpack.Configuration = {
   },
   devServer: {
     port: 3333,
-    https: true,
+    https: false,
     static: {
       directory: path.join(__dirname, 'public'),
     },
