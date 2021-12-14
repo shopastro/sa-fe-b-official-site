@@ -30,9 +30,8 @@ export const local = {
     "en-US": "Send your resume",
   },
   address: {
-    "zh-CN": "杭州市余杭区时代未来城5号楼1702室",
-    "en-US":
-      "Room 1702,  Building 5 of AUX Future Center, Yuhang District ,Hangzhou, China",
+    "zh-CN": "浙江省杭州市余杭区仓前街道时代未来之城5幢1701室",
+    "en-US": "Suite 1701, 17/F., Building 5, Aux Era Future City, Cangqian Street, Yuhang District, Hangzhou, Zhejiang Province, China.",
   },
   qrTencent: {
     "zh-CN": "shopastro官方公众号",

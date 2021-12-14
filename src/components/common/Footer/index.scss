@@ -175,7 +175,12 @@
         margin-top: 2.8rem;
         flex-direction: column;
         gap: 0;
+
         .right-cell {
+
+          & + .right-cell {
+            margin-left: 0;
+          }
           &.right-cell-mb {
             display: block;
           }
