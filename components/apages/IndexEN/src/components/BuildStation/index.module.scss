@@ -1,0 +1,114 @@
+.build-station {
+  width: 100%;
+  min-width: 120rem;
+  margin: 24rem auto 0 auto;
+  position: relative;
+  .station-box {
+    width: 120rem;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  .station-left {
+    width: (600 / 1200 * 100%);
+    padding-bottom: (412 / 1200 * 100%);
+    background: url("./img/site.png") no-repeat;
+    background-size: contain;
+    image-rendering: -moz-crisp-edges;
+    /* Firefox */
+    image-rendering: -o-crisp-edges;
+    /* Opera */
+    image-rendering: -webkit-optimize-contrast;
+    /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    /* IE (non-standard property) */
+    position: relative;
+    z-index: 1;
+  }
+  .station-right {
+    width: 46%;
+    margin-top: 5.6rem;
+    position: relative;
+    z-index: 1;
+    .right-title {
+      font-weight: bold;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      color: #004ed1;
+    }
+    .right-slogan {
+      font-weight: bold;
+      font-size: 4.8rem;
+      line-height: 1.46;
+      color: #333333;
+      margin-top: 0.4rem;
+      word-break: keep-all;
+    }
+    .right-desc {
+      font-size: 2rem;
+      line-height: 3rem;
+      color: #999999;
+      margin-top: 2rem;
+      word-break: keep-all;
+    }
+  }
+
+  .circle-station {
+    position: absolute;
+    right: 0;
+    background: url("./img/circle.svg") no-repeat;
+    background-size: contain;
+    width: 97.55rem;
+    padding-bottom: 97.55rem;
+    transform: translateY(-605px);
+    background-position-x: right;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .build-station {
+    width: calc(100% - 4.8rem);
+    margin: 7.5rem 2.4rem 0 2.4rem;
+    min-width: auto;
+    .station-box {
+      width: 100%;
+      flex-direction: column-reverse;
+    }
+    .station-left {
+      padding-bottom: 58.86%;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 4rem;
+    }
+    .station-right {
+      width: 100%;
+      margin-top: 0;
+      text-align: center;
+
+      .right-title {
+        display: flex;
+        justify-content: center;
+      }
+      .right-slogan {
+        font-weight: bold;
+        font-size: 2.3rem;
+        text-align: center;
+        color: #333333;
+      }
+      .right-desc {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        text-align: center;
+        color: #999999;
+        margin-top: 1.5rem;
+      }
+    }
+
+    .circle-station {
+      display: none;
+    }
+  }
+}

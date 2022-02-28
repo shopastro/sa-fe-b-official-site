@@ -1,0 +1,103 @@
+.launch {
+  width: 120rem;
+  margin: 23.1rem auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
+  .launch-left {
+    background: url(./img/launch.svg) no-repeat;
+    background-size: contain;
+
+    width: (573 / 1200 * 100%);
+    padding-bottom: (480 / 1200 * 100%);
+
+    position: relative;
+    z-index: 1;
+  }
+  .launch-right {
+    width: 28.16%;
+    margin-top: 14.2rem;
+    position: relative;
+    z-index: 1;
+    .right-title {
+      font-weight: bold;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      color: #004ed1;
+    }
+    .right-slogan {
+      font-weight: bold;
+      font-size: 4.8rem;
+      line-height: 7.2rem;
+      color: #333333;
+      margin-top: 0.4rem;
+      word-break: keep-all;
+    }
+    .right-desc {
+      font-size: 2rem;
+      line-height: 3rem;
+      color: #999999;
+      margin-top: 2rem;
+      word-break: keep-all;
+    }
+  }
+
+  .circle-launch {
+    position: absolute;
+    left: 0;
+    background: url("./img/circle.svg") no-repeat;
+    background-size: contain;
+    width: 55.2rem;
+    padding-bottom: 55.2rem;
+    transform: translateY(-80px);
+    background-position-x: left;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .launch {
+    width: calc(100% - 4.8rem);
+    margin: 8.2rem 2.4rem 0 2.4rem;
+    flex-direction: column-reverse;
+    position: relative;
+    .launch-left {
+      margin-top: 4rem;
+      width: 100%;
+      padding-bottom: 84%;
+    }
+    .launch-right {
+      width: 100%;
+      margin-top: 0;
+      .right-title {
+        display: flex;
+        justify-content: center;
+      }
+      .right-slogan {
+        font-weight: bold;
+        font-size: 2.8rem;
+        line-height: 4.2rem;
+        text-align: center;
+        color: #333333;
+        margin-top: 0.5rem;
+      }
+      .right-desc {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        text-align: center;
+        color: #999999;
+        margin-top: 1.5rem;
+      }
+    }
+
+    .circle-launch {
+      background: url(./img/circle-mb.svg) no-repeat;
+      background-size: contain;
+      width: 25.9rem;
+      padding-bottom: 25.9rem;
+      left: 50%;
+      transform: translate(-50%, -3rem);
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+.service {
+  width: 120rem;
+  margin: 24.6rem auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
+  .service-left {
+    background: url(./img//service.png) no-repeat;
+    background-size: contain;
+    image-rendering: -moz-crisp-edges;
+    /* Firefox */
+    image-rendering: -o-crisp-edges;
+    /* Opera */
+    image-rendering: -webkit-optimize-contrast;
+    /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    /* IE (non-standard property) */
+    width: (573 / 1200 * 100%);
+    padding-bottom: (480 / 1200 * 100%);
+    position: relative;
+    z-index: 1;
+  }
+  .service-right {
+    width: (540 / 1200 * 100%);
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+    .right-title {
+      font-weight: bold;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      color: #004ed1;
+    }
+    .right-slogan {
+      font-weight: bold;
+      font-size: 4.8rem;
+      line-height: 1.46;
+      color: #333333;
+      margin-top: 0.4rem;
+      word-break: keep-all;
+    }
+    .right-desc {
+      font-size: 2rem;
+      line-height: 1.46;
+      color: #999999;
+      margin-top: 2rem;
+      word-break: keep-all;
+    }
+  }
+
+  // .circle-launch {
+  //   position: absolute;
+  //   left: 0;
+  //   background: url("./img/circle.svg") no-repeat;
+  //   background-size: contain;
+  //   width: 38.33%;
+  //   padding-bottom: 38.33%;
+  //   transform: translateY(-80px);
+  //   background-position-x: left;
+  // }
+}
+
+@media screen and (max-width: 480px){
+  .title-width-slash {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 770px) {
+
+  .service {
+    width: calc(100% - 4.8rem);
+    margin: 7rem 2.4rem 0 2.4rem;
+    flex-direction: column-reverse;
+    .service-left {
+      width: 100%;
+      padding-bottom: 68%;
+      margin-top: 4rem;
+    }
+    .service-right {
+      width: 100%;
+      margin-top: 0;
+      .right-title {
+        display: flex;
+        justify-content: center;
+      }
+      .right-slogan {
+        font-weight: bold;
+        font-size: 2.3rem;
+        text-align: center;
+        color: #333333;
+      }
+      .right-desc {
+        font-size: 1.2rem;
+        text-align: center;
+        color: #999999;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

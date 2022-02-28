@@ -1,0 +1,136 @@
+.logistics {
+  width: 100%;
+  min-width: 120rem;
+  margin: 24.8rem auto 0 auto;
+  position: relative;
+  .logistics-box {
+    margin: 0 auto;
+    width: 120rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logistics-left {
+    background: url(./img/logistics.svg) no-repeat;
+    background-size: contain;
+    width: (575 / 1200 * 100%);
+    padding-bottom: (397 / 1200 * 100%);
+
+    position: relative;
+    z-index: 1;
+  }
+  .logistics-right {
+    width: 28.91%;
+    margin-top: 8.5rem;
+    position: relative;
+    z-index: 1;
+    .right-title {
+      font-weight: bold;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      color: #004ed1;
+    }
+    .right-slogan {
+      font-weight: bold;
+      font-size: 4.8rem;
+      line-height: 7.2rem;
+      color: #333333;
+      margin-top: 0.4rem;
+      word-break: keep-all;
+    }
+    .right-desc {
+      font-size: 2rem;
+      line-height: 3rem;
+      color: #999999;
+      margin-top: 2rem;
+      word-break: keep-all;
+    }
+  }
+
+  .circle-logistics {
+    position: absolute;
+    right: 0;
+    background: url("./img/circle.svg") no-repeat;
+    background-size: contain;
+    width: 97.58rem;
+    padding-bottom: 97.58rem;
+    transform: translateY(7.3rem);
+    background-position-x: right;
+    z-index: -1;
+    top: 0;
+  }
+
+  .rectangle-logistics {
+    position: absolute;
+    left: 0;
+    background: url("./img/rectangle.svg") no-repeat;
+    background-size: contain;
+    width: 60%;
+    padding-bottom: 16.8%;
+    transform: translateY(10.8rem);
+    background-position-x: left;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .logistics {
+    width: calc(100% - 4.8rem);
+    margin: 7.9rem 2.4rem 0 2.4rem;
+    min-width: auto;
+    .logistics-box {
+      width: 100%;
+      min-width: auto;
+      flex-direction: column-reverse;
+    }
+    .logistics-left {
+      width: 100%;
+      padding-bottom: 69%;
+      margin-top: 4rem;
+      margin-left: 0;
+    }
+    .logistics-right {
+      width: 100%;
+      margin-top: 0;
+
+      .right-title {
+        display: flex;
+        justify-content: center;
+      }
+      .right-slogan {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+        text-align: center;
+        color: #333333;
+      }
+      .right-desc {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        text-align: center;
+        color: #999999;
+        margin-top: 1.5rem;
+      }
+    }
+
+    .circle-logistics {
+      background: url(./img/circle-mb.svg) no-repeat;
+      background-size: contain;
+      width: 28rem;
+      padding-bottom: 35rem;
+      left: -2.4rem;
+      transform: translateY(24rem);
+    }
+
+    .rectangle-logistics {
+      background: url(./img/rectangle-mb.svg) no-repeat;
+      background-size: contain;
+      padding-bottom: 82%;
+      left: -2.4rem;
+      right: -2.4rem;
+      width: auto;
+      transform: translateY(20rem);
+    }
+  }
+}

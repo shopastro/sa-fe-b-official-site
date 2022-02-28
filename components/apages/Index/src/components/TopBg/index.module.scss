@@ -1,0 +1,189 @@
+.banner {
+  position: relative;
+  // min-width: 144rem;
+  height: 75rem;
+  display: flex;
+  justify-content: center;
+  min-width: 120rem;
+  .ball {
+    background: url("./img/circle.svg") no-repeat;
+    width: 57.6rem;
+    padding-bottom: 67.68rem;
+    background-size: contain;
+    top: -7rem;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    max-width: 58.2rem;
+  }
+  .rectangle {
+    background: url("./img/rectangle.svg") no-repeat;
+    width: 65.79rem;
+    padding-bottom: 75.45rem;
+    background-size: contain;
+    position: absolute;
+    z-index: -1;
+    max-width: 65.8rem;
+    right: 1%;
+    top: -5.4rem;
+  }
+
+  .ball-small {
+    background: url("./img/circle-small.svg") no-repeat;
+    width: 28.8rem;
+    padding-bottom: 34.27rem;
+    background-size: contain;
+    position: absolute;
+    z-index: -1;
+    max-width: 28.9rem;
+    right: 0;
+    top: 36.68%;
+  }
+
+  .banner-content {
+    position: absolute;
+    display: flex;
+    margin: 15.6rem auto 0 auto;
+    width: 120rem;
+    justify-content: space-between;
+    .content-left {
+      margin-top: 0.6rem;
+      .left-title {
+        color: #333333;
+      }
+      .left-slogan {
+        font-weight: bold;
+        font-size: 5rem;
+        line-height: 7.5rem;
+        color: #004ed1;
+        margin: 0.4rem 0 3rem 0;
+        white-space: nowrap;
+      }
+      .left-sub-title {
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+        color: #666666;
+        font-weight: 300;
+        word-break: keep-all;
+      }
+      .try-now {
+        background: #004ed1;
+        color: #ffffff;
+        padding: 0 7.4rem;
+        margin-top: 4rem;
+        height: 5.8rem;
+        line-height: 5.7rem;
+        font-size: 1.8rem;
+
+        a:visited,a:link{
+          color: #ffffff;
+        }
+      }
+
+    }
+    .content-right {
+      background: url("./img/banner.png") no-repeat;
+      background-size: contain;
+      image-rendering: -moz-crisp-edges;
+      /* Firefox */
+      image-rendering: -o-crisp-edges;
+      /* Opera */
+      image-rendering: -webkit-optimize-contrast;
+      /* Webkit (non-standard naming) */
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor;
+      /* IE (non-standard property) */
+
+      width: (603 / 1200 * 100%);
+      padding-bottom: (379 / 1200 * 100%);
+      // background-size: contain;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .ball-small {
+      top: 26.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .banner {
+    height: auto;
+    min-width: auto;
+    .ball {
+      background: url("./img/circle-mb.svg") no-repeat;
+      width: 100%;
+      padding-bottom: 100%;
+      background-size: contain;
+      z-index: -1;
+      max-width: 100%;
+    }
+    .rectangle {
+      background: url("./img/rectangle-mb.svg") no-repeat;
+      width: 100%;
+      background-size: contain;
+      top: 27.5rem;
+      padding-bottom: 100%;
+      right: 0;
+      left: 0;
+      max-width: 100%;
+    }
+    .ball-small {
+      background: url("./img/circle-small-mb.svg") no-repeat;
+      width: 34%;
+      background-size: contain;
+      top: 51rem;
+      padding-bottom: 34%;
+      left: 0;
+    }
+
+    .banner-content {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 4.5rem;
+      position: initial;
+      .content-left {
+        .left-title {
+          display: flex;
+          justify-content: center;
+        }
+        .left-slogan {
+          font-weight: bold;
+          font-size: 3rem;
+          line-height: 4.5rem;
+          text-align: center;
+          color: #004ed1;
+          margin-top: 0.3rem;
+        }
+        .left-sub-title {
+          font-weight: 300;
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+          text-align: center;
+          color: #666666;
+          width: 20rem;
+          margin: 1.6rem auto 0 auto;
+        }
+        .try-now {
+          width: 17rem;
+          height: 4.8rem;
+          line-height: 4.8rem;
+          font-size: 1.4rem;
+          text-align: center;
+          color: #ffffff;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          margin: 2.5rem auto 0 auto;
+        }
+      }
+      .content-right {
+        margin-top: 8rem;
+        margin-left: 2.4rem;
+        width: calc(100% - 4.8rem);
+        padding-bottom: 63%;
+      }
+    }
+  }
+}

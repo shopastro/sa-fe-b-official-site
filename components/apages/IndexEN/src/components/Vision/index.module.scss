@@ -1,0 +1,175 @@
+.vision {
+  width: 120rem;
+  margin: 21.5rem auto 0 auto;
+  .vision-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    .vision-slogan {
+      color: #004ed1;
+    }
+    .vision-title {
+      font-weight: bold;
+      font-size: 4.6rem;
+      line-height: 6.9rem;
+      color: #333333;
+    }
+
+    .vision-sub-title {
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      color: #999999;
+      margin-top: 1rem;
+    }
+  }
+  .vision-feature {
+    margin-top: 7.2rem;
+    display: flex;
+    gap: 2.1rem;
+    z-index: 1;
+    .feature-card {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+      background: #fff;
+    }
+    .feature-img {
+      width: 100%;
+      height: 14.2rem;
+      &.feature-img-1 {
+        background: url(./img/1.png) no-repeat;
+        background-size: contain;
+      }
+      &.feature-img-2 {
+        background: url(./img/2.png) no-repeat;
+        background-size: contain;
+      }
+      &.feature-img-3 {
+        background: url(./img/3.png) no-repeat;
+        background-size: contain;
+      }
+      &.feature-img-4 {
+        background: url(./img/4.png) no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .feature-title {
+      line-height: 1.46;
+      text-align: center;
+      font-size: 1.8rem;
+      color: #333333;
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: capitalize;
+    }
+  }
+
+  .circle-vision {
+    position: absolute;
+    left: 0;
+    background: url("./img/circle.svg") no-repeat;
+    background-size: contain;
+    width: 55.2rem;
+    padding-bottom: 55.2rem;
+    transform: translateY(-39rem);
+    background-position-x: left;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .vision {
+    width: calc(100% - 4.8rem);
+    margin-top: 7.5rem;
+    position: relative;
+    .vision-main {
+      .vision-slogan {
+      }
+      .vision-title {
+        font-weight: bold;
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+        text-align: center;
+        color: #333333;
+        word-break: keep-all;
+      }
+
+      .vision-sub-title {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        text-align: center;
+        color: #999999;
+        margin-top: 1.5rem;
+      }
+    }
+    .vision-feature {
+      margin-top: 4rem;
+      flex-direction: column;
+      .feature-card {
+        position: relative;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+      .feature-img {
+        width: 100%;
+        padding-bottom: 30%;
+        height: auto;
+
+        &.feature-img-1 {
+          background: url(./img/1-mb.png) no-repeat;
+          background-size: cover;
+          background-position: bottom;
+        }
+        &.feature-img-2 {
+          background: url(./img/2-mb.png) no-repeat;
+          background-size: cover;
+          background-position: bottom;
+        }
+        &.feature-img-3 {
+          background: url(./img/3-mb.png) no-repeat;
+          background-size: cover;
+          background-position: bottom;
+        }
+        &.feature-img-4 {
+          background: url(./img/4-mb.png) no-repeat;
+          background-size: cover;
+          background-position: bottom;
+        }
+      }
+
+      .feature-title {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: url(./img/bg.png) no-repeat;
+        background-size: cover;
+        background-position: right;
+        text-align: right;
+        justify-content: right;
+        padding-right: 4rem;
+        border-radius: 0.5rem;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        color: #333333;
+      }
+    }
+
+    .circle-vision {
+      background: url(./img/circle-mb.svg) no-repeat;
+      background-size: contain;
+      width: 26rem;
+      padding-bottom: 26rem;
+      left: 50%;
+      transform: translate(-50%, -4rem);
+      top: 0;
+    }
+  }
+}
