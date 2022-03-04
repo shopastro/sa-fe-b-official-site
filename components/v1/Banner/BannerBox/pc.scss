@@ -1,0 +1,49 @@
+@media screen and (min-width: 770px) {
+  .bannerBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5.2rem;
+    .mainTitle {
+      font-family: Outfit;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 5rem;
+      line-height: 6.3rem;
+      color: #004ed1;
+      margin-top: 1rem;
+      span {
+        color: #000;
+      }
+    }
+    .desc {
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      text-align: center;
+      color: #333;
+      margin-top: 2.6rem;
+    }
+
+    .btnNow {
+      margin-top: 4.5rem;
+    }
+
+    .imgbox {
+      display: flex;
+      margin-top: 4.6rem;
+      &.abroad {
+        width: 79.1rem;
+        height: 65.3rem;
+        background: url(./img/abroad.png) no-repeat;
+        background-size: contain;
+      }
+      &.template {
+        width: 95.2rem;
+        height: 54.2rem;
+        background: url(./img/template.png) no-repeat;
+        background-size: 95.2rem 54.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@media screen and (min-width: 770px) {
+  .mouseWheelHorizontalSlide {
+    .slideContainer {
+      position: relative;
+    }
+    .slideWrapper {
+      min-height: 0.1rem;
+      overflow: hidden;
+    }
+
+    .slideContent {
+      // height: 20rem;
+      white-space: nowrap;
+      font-size: 0;
+      .slidePage {
+        display: inline-block;
+        // height: 20rem;
+        width: 100%;
+        // line-height: 20rem;
+        text-align: center;
+        font-size: 2.6rem;
+        overflow: hidden;
+      }
+    }
+    .slideBtn {
+      position: absolute;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.prevBtn {
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 1;
+      }
+      &.nextBtn {
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 1;
+      }
+      &.disabled {
+        opacity: 0.5;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+    }
+
+    .dotsWrapper {
+      position: absolute;
+      bottom: 5.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 11rem;
+      .dot {
+        display: inline-block;
+        margin: 0 0.4rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        border: 0.1rem solid #d8d8d8;
+        cursor: pointer;
+        position: relative;
+        &:nth-child(1) {
+          &.active {
+            border: none;
+            &::after {
+              content: '';
+              width: 8rem;
+              height: 1.2rem;
+              background: url(./img/active.svg) no-repeat;
+              background-size: contain;
+              display: flex;
+              position: absolute;
+              left: 0;
+              transform: scaleX(-1);
+            }
+          }
+        }
+        &:nth-child(2) {
+          &.active {
+            border: none;
+            &::after {
+              content: '';
+              width: 8rem;
+              height: 1.2rem;
+              background: url(./img/active.svg) no-repeat;
+              background-size: contain;
+              display: flex;
+              position: absolute;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

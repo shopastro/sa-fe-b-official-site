@@ -1,0 +1,127 @@
+@media screen and (min-width: 770px) {
+  .aboutShopastro {
+    background: #ffffff;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5.8rem 11.5rem 8.8rem;
+    position: relative;
+    &::before {
+      content: '';
+      background: url(./img/decorate.svg) no-repeat;
+      background-size: contain;
+      width: 23.8rem;
+      height: 24.2rem;
+      position: absolute;
+      left: -12.8rem;
+      top: -16.9rem;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      width: 6rem;
+      height: 6rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      background: #fff;
+      border-radius: 1rem;
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 4.04rem;
+      line-height: 5.7rem;
+      color: #333;
+    }
+    .desc {
+      font-family: Outfit;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 2.2rem;
+      line-height: 2.8rem;
+      color: #666;
+      margin-bottom: 8rem;
+    }
+    .item {
+      display: flex;
+      list-style: none;
+      font-family: Outfit;
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      text-align: center;
+      color: #666666;
+      width: 100%;
+      justify-content: space-between;
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        &::before {
+          content: '';
+          margin-bottom: 2rem;
+        }
+
+        .mainTitle {
+          font-family: Outfit;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 2.4rem;
+          line-height: 3rem;
+          color: #333333;
+          margin-bottom: 2.6rem;
+        }
+        .subDesc {
+          font-family: Outfit;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 1.6rem;
+          line-height: 2rem;
+          text-align: center;
+          color: #666666;
+        }
+      }
+      .easy {
+        &::before {
+          background: url(./img/easy.svg) no-repeat;
+          background-size: contain;
+          width: 9.3rem;
+          height: 7.88rem;
+        }
+      }
+      .freedom {
+        &::before {
+          background: url(./img/freedom.svg) no-repeat;
+          background-size: contain;
+          width: 10rem;
+          height: 10rem;
+        }
+      }
+
+      .secure {
+        &::before {
+          background: url(./img/secure.svg) no-repeat;
+          background-size: contain;
+          width: 8.44rem;
+          height: 8.98rem;
+        }
+      }
+
+      .efficiency {
+        &::before {
+          background: url(./img/efficiency.svg) no-repeat;
+          background-size: contain;
+          width: 9.2rem;
+          height: 9.7rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@media screen and (max-width: 770px) {
+  .CardLR {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    &.site {
+      margin-top: 7.5rem;
+    }
+    &.launch {
+      margin-top: 7.8rem;
+    }
+    &.case {
+      margin-top: 7.9rem;
+    }
+    &.service {
+      margin-top: 7.5rem;
+    }
+    &.abroad {
+      margin-top: 7.5rem;
+    }
+
+    .leftBox {
+      font-size: 2.8rem;
+      line-height: 3.9rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .mainTitle {
+        margin-top: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      .desc {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        margin-top: 1.8rem;
+        color: #999;
+        font-family: Outfit;
+        text-align: center;
+      }
+    }
+
+    .rightBox {
+      display: flex;
+      margin-top: 4.5rem;
+
+      &.site {
+        background: url(./img/site.png) no-repeat;
+        background-size: contain;
+        width: 32.7rem;
+        height: 20.2rem;
+      }
+      &.launch {
+        background: url(./img/launch.png) no-repeat;
+        background-size: contain;
+        width: 29.3rem;
+        height: 28.6rem;
+      }
+      &.case {
+        background: url(./img/case.png) no-repeat;
+        background-size: contain;
+        width: 32.7rem;
+        height: 22.5rem;
+      }
+      &.service {
+        background: url(./img/service.png) no-repeat;
+        background-size: contain;
+        width: 32.7rem;
+        height: 22.2rem;
+      }
+      &.abroad {
+        background: url(./img/abroad.png) no-repeat;
+        background-size: contain;
+        width: 20.85rem;
+        height: 23.1rem;
+      }
+    }
+  }
+}

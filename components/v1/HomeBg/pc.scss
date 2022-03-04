@@ -1,0 +1,74 @@
+@media screen and (min-width: 770px) {
+  .homeBg {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    // background: url(./img/官网pc端.png);
+    // filter: grayscale(100%);
+    // opacity: 0.7;
+    // user-select: none;
+    // pointer-events: none;
+    .topBannerBg {
+      background: url(./img/topBannerBg.svg) no-repeat;
+      background-size: cover;
+      height: 766px;
+      top: 0;
+    }
+    .first {
+      background: url(./img/first.svg) no-repeat;
+      background-size: contain;
+      top: 136rem;
+      width: 65.9rem;
+      height: 91.8rem;
+      position: absolute;
+      right: 0;
+    }
+    .second {
+      background: url(./img/second.svg) no-repeat;
+      background-size: contain;
+      top: 257rem;
+      width: 44.5rem;
+      height: 55.3rem;
+      position: absolute;
+      left: 0;
+    }
+    .across {
+      background: url(./img/across.svg) no-repeat;
+      background-size: contain;
+      top: 341.3rem;
+      width: 79.1REM;
+      height: 24.3REM;
+      position: absolute;
+      left: 0;
+    }
+    .three {
+      background: url(./img/three.svg) no-repeat;
+      background-size: contain;
+      top: 337rem;
+      width: 72rem;
+      height: 98rem;
+      position: absolute;
+      right: 0;
+    }
+    .four {
+      background: url(./img/four.svg) no-repeat;
+      background-size: contain;
+      top: 457rem;
+      width: 40.9rem;
+      height: 55.3rem;
+      position: absolute;
+      left: 0;
+    }
+    .five {
+      background: url(./img/five.svg) no-repeat;
+      background-size: contain;
+      top: 536rem;
+      width: 36rem;
+      height: 55.3rem;
+      position: absolute;
+      right: 0px;
+    }
+  }
+}

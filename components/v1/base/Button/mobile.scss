@@ -1,0 +1,24 @@
+@media screen and (max-width: 770px) {
+  .btn {
+    display: inline-block;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-family: Outfit;
+    &.primary {
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2.3rem;
+      color: #fff;
+      background: #004ed1;
+      padding: 1.5rem 5rem;
+    }
+
+    &.ghost {
+      border: 0.1rem solid #004ed1;
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+      color: #004ed1;
+      padding: 0.9rem 2.4rem;
+    }
+  }
+}
