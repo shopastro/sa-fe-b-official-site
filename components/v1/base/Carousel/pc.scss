@@ -10,6 +10,7 @@
 
     .slideContent {
       // height: 20rem;
+      display: flex;
       white-space: nowrap;
       font-size: 0;
       .slidePage {
@@ -50,7 +51,7 @@
 
     .dotsWrapper {
       position: absolute;
-      bottom: 5.2rem;
+      bottom: 15rem;
       left: 50%;
       transform: translateX(-50%);
       display: flex;

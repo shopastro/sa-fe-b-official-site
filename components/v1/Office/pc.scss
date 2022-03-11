@@ -1,0 +1,33 @@
+@media screen and (min-width: 770px) {
+  .office {
+    margin-top: 120px;
+
+    .imgBox {
+      display: flex;
+      gap: 28px;
+      margin-top: 48px;
+      .imgLeft {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        .img1 {
+          width: 608px;
+          height: 348px;
+          background: url(./img/1.png);
+        }
+        .img2 {
+          width: 608px;
+          height: 348px;
+          background: url(./img/2.png);
+        }
+      }
+
+      .imgRight {
+        width: 562px;
+        background: url(./img/3.png);
+        height: 728px;
+      }
+    }
+  }
+}

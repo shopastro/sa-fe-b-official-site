@@ -19,6 +19,11 @@ const Carousel: React.FC<CarouselProps> = (props) => {
         ...slideInit,
         ...slide,
       },
+      click: true,
+      mouseWheel: true,
+      disableMouse: false,
+      disableTouch: false,
+      eventPassthrough: 'vertical',
     }).on('scrollEnd', () => {
       const { pageX = 0 } = bScroll.current.getCurrentPage()
       setCurrentPageX(pageX)

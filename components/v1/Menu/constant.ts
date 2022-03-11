@@ -1,26 +1,26 @@
 export const list = [
   {
     text: '首页',
-    href: '',
+    href: '/',
   },
   {
     text: '产品定价',
-    href: '',
+    href: '/price',
   },
   {
     text: '解决方案',
-    href: '',
+    href: '/solution',
   },
   {
     text: '渠道合作',
-    href: '',
+    href: '/channels',
   },
   {
     text: '生态联盟',
-    href: '',
+    href: '/ecological',
   },
   {
     text: '关于我们',
-    href: '',
+    href: '/about',
   },
 ]

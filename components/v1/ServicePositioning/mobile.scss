@@ -1,0 +1,64 @@
+@media screen and (max-width: 770px) {
+  .servicePositioning {
+    margin-top: 7.5rem;
+    padding: 0 2.4rem;
+    .listBox {
+      display: flex;
+      flex-direction: column;
+      margin-top: 3.2rem;
+
+      .box {
+        display: flex;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 2.8rem  0;
+        margin: -0.1rem 0 0 0;
+        .gmvLogo,
+        .worthLogo,
+        .brandLogo {
+          width: 7rem;
+          height: 7rem;
+          background: url(./img/brand.svg) no-repeat center;
+          background-size: contain;
+          margin-right: 3.2rem;
+        }
+
+        .worthLogo {
+          background: url(./img/worth.svg) no-repeat center;
+          background-size: contain;
+        }
+        .gmvLogo {
+          background: url(./img/gmv.svg) no-repeat center;
+          background-size: contain;
+        }
+
+        .posotion {
+          .title {
+            font-family: Outfit;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+            color: #333333;
+            &::after {
+              content: '';
+              width: 1.4rem;
+              height: 0.2rem;
+              background: #004ed1;
+              display: block;
+              margin: 1.8rem 0;
+            }
+          }
+          .desc {
+            font-family: Outfit;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+}

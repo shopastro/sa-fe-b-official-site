@@ -1,7 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Title from '../components/v1/base/Title'
-import Button from '../components/v1/base/Button'
 import Cards from '../components/v1/Cards'
 import Banner from '../components/v1/Banner'
 import Menu from '../components/v1/Menu'

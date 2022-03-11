@@ -1,0 +1,90 @@
+@media screen and (max-width: 770px) {
+  .service {
+    padding-top: 10.7rem;
+    padding-bottom: 7.1rem;
+    background: #f4f4f4;
+    position: relative;
+    margin-top: -13rem;
+    background: #f4f4f4;
+
+    .title {
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 3.3rem;
+      color: #000000;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+    }
+    .object {
+      position: relative;
+      display: flex;
+
+      justify-content: center;
+      margin-top: 2.4rem;
+      z-index: 2;
+      flex-wrap: wrap;
+      div {
+        background: #ffffff;
+        border-radius: 0.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: #000000;
+        flex-direction: column;
+        width: 36%;
+        min-height: 9.4rem;
+        position: relative;
+        &::before {
+          content: '';
+          width: 5rem;
+          height: 3.5rem;
+          margin-bottom: 1.4rem;
+        }
+        &::after {
+          content: '';
+          width: 3.8rem;
+          height: 1.2rem;
+          position: absolute;
+          right: 0;
+          top: 0;
+          background: url(./img/vip.svg) no-repeat;
+          background-size: contain;
+        }
+      }
+      .factory {
+        &::before {
+          background: url(./img/factory.svg) no-repeat center;
+          background-size: contain;
+        }
+        margin-bottom: 2rem;
+        margin-right: 2rem;
+      }
+      .inBrand {
+        &::before {
+          background: url(./img/inBrand.svg) no-repeat center;
+          background-size: contain;
+        }
+        margin-bottom: 2rem;
+      }
+      .outBrand {
+        &::before {
+          background: url(./img/outBrand.svg) no-repeat center;
+          background-size: contain;
+        }
+        margin-bottom: 2rem;
+        margin-right: 2rem;
+      }
+      .dtcBrand {
+        &::before {
+          background: url(./img/dtcBrand.svg) no-repeat center;
+          background-size: contain;
+        }
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

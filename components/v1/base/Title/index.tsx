@@ -3,8 +3,8 @@ import styles from './index.module.scss'
 import classNames from 'classnames'
 
 type IProps = {
-  size?: 14 | 24 | 26 | 30 | 34 | 36
-  mbSize?: 14 | 15 | 18 
+  size?: 14 | 24 | 26 | 30 | 34 | 36 | 48
+  mbSize?: 14 | 15 | 18 | 24
   onClick?: () => any
   text: string
   color?: 'blue' | 'white'

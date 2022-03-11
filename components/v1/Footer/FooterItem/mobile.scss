@@ -39,7 +39,8 @@
         line-height: 3.8rem;
         background: #2269df;
         overflow: hidden;
-
+        display: flex;
+        align-items: baseline;
         &.close {
           max-height: 0;
           transition-duration: 0.3s;
@@ -51,10 +52,11 @@
         }
 
         a {
-          color: #cecece;
+          color: #ececec;
         }
         span {
           max-width: 20.2rem;
+          line-height: 2;
         }
       }
     }

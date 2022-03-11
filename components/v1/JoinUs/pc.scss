@@ -1,0 +1,96 @@
+@media screen and (min-width: 770px) {
+  .joinUs {
+    margin-top: 120px;
+    .joinBox {
+      display: flex;
+      gap: 244px;
+      align-items: center;
+      .joinCard {
+        display: flex;
+        gap: 40px;
+
+        .position,
+        .resume {
+          background: rgba(238, 240, 241, 0.5);
+          padding: 24px 36px;
+          width: 350px;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 25px;
+          color: #333333;
+          position: relative;
+          cursor: pointer;
+          &::before {
+            content: '';
+            width: 48px;
+            height: 48px;
+            background: url(./img/consume.svg) no-repeat center;
+            background-size: cover;
+            display: block;
+            margin-bottom: 28px;
+          }
+          &::after {
+            content: '';
+            width: 28px;
+            height: 4px;
+            background: #004ed1;
+            margin-top: 16px;
+            display: block;
+          }
+
+          &:hover {
+            background: #004ed1;
+            color: #fff;
+            &::before {
+              content: '';
+              width: 48px;
+              height: 48px;
+              background: url(./img/consume1.svg) no-repeat center;
+              background-size: cover;
+              display: block;
+              margin-bottom: 28px;
+            }
+            &::after {
+              content: '';
+              width: 28px;
+              height: 4px;
+              background: #fff;
+              margin-top: 16px;
+              display: block;
+            }
+
+            .go {
+              background: url(./img/arrow1.svg);
+            }
+          }
+        }
+
+        .position {
+          &::before {
+            content: '';
+            background: url(./img/position.svg) no-repeat center;
+            background-size: cover;
+          }
+          &:hover {
+            &::before {
+              content: '';
+              background: url(./img/position1.svg) no-repeat center;
+              background-size: cover;
+            }
+          }
+        }
+
+        .go {
+          width: 32px;
+          height: 32px;
+          background: url(./img/arrow.svg);
+          position: absolute;
+          top: 50%;
+          right: 36px;
+          transform: translateY(-50%);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

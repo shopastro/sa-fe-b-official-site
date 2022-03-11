@@ -24,7 +24,6 @@
       flex-direction: column;
       margin-top: 4.5rem;
       list-style: none;
-      gap: 1rem;
       width: calc(100vw - 4.8rem);
       li {
         width: 100%;
@@ -37,6 +36,7 @@
         position: relative;
         overflow: hidden;
         position: relative;
+        margin-bottom: 1rem;
         .slogan {
           padding: 24px 0;
           position: absolute;
@@ -44,7 +44,7 @@
           transform: translateY(-50%);
           right: 4rem;
           font-size: 1.3rem;
-          line-height: 1.6rem; 
+          line-height: 1.6rem;
           text-align: right;
           color: #333333;
           z-index: 3;
@@ -66,6 +66,7 @@
           background: url(./img/mask.svg) no-repeat;
           background-size: cover;
           z-index: 2;
+          right: -1px;
         }
         &:hover {
           background: #004ed1;

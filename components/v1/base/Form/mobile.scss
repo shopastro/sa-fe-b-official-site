@@ -1,0 +1,50 @@
+@media screen and (max-width: 770px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .error {
+    border: 1px solid #cc4444 !important;
+  }
+  .btnBox {
+    margin-top: 0.8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputBox {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-bottom: 1.6rem;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 0.2rem;
+    padding: 1.2rem;
+    &:active,
+    &:hover {
+      border: 1px solid #004ed1;
+    }
+
+    .label {
+      word-break: keep-all;
+      margin-right: 2.4rem;
+      font-weight: normal;
+      font-size: 1.4rem;
+      min-width: 7rem;
+    }
+
+    select,
+    textarea,
+    input {
+      color: #333333;
+      border: none;
+      flex: 1;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+}

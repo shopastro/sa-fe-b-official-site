@@ -13,6 +13,18 @@
       padding: 1.8rem 7.4rem;
     }
 
+    &.form {
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: #ffffff;
+      background: #004ed1;
+      padding: 1.6rem;
+      text-align: center;
+      border-radius: 0;
+      width: 100%;
+    }
+
     &.ghost {
       border: 0.1rem solid #004ed1;
       font-size: 1.2rem;

@@ -1,0 +1,16 @@
+@media screen and (min-width: 770px) {
+  .modal {
+    position: fixed;
+    width: 560px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::before {
+      content: '';
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+    }
+  }
+}

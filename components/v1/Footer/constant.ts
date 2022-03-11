@@ -11,6 +11,10 @@ export const aboutUsList = [
     text: '用户协议',
     href: '',
   },
+  {
+    text: '解决方案',
+    href: '',
+  },
 ]
 
 export const caseList = [
