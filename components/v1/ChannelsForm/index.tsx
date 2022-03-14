@@ -23,7 +23,7 @@ const ChannelsForm: React.FC<IProps> = (props) => {
         <div className={styles.formTitle}>渠道合作伙伴申请表</div>
         <div className={styles.formDesc}>终于等到你，快来成为我们的合作伙伴，一起让中国跨境卖家享受更好的商业服务</div>
         <div className={styles.form}>
-          <Form list={list} type="channels" />
+          <Form list={list} type="agents" />
         </div>
       </div>
     </div>

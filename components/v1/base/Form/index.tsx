@@ -8,7 +8,7 @@ import Success from '../../Success'
 type IProps = {
   list: List[]
   row?: 'row2'
-  type: 'channels' | 'ecological' | 'use'
+  type: 'agents' | 'partners' | 'use'
   successCallback?: () => void
 }
 type List = {

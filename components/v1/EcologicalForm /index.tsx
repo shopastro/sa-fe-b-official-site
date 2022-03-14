@@ -12,7 +12,7 @@ const EcologicalForm: React.FC<IProps> = (props) => {
         <div className={styles.formTitle}>加入生态联盟 共铸跨境生态圈</div>
 
         <div className={styles.form}>
-          <Form list={list} row='row2' type="ecological" />
+          <Form list={list} row='row2' type="partners" />
         </div>
       </div>
     </div>
