@@ -11,6 +11,7 @@ type Item = {
   phone?: string
   email?: string
   cursor?: string
+  targetHref?: string
 }
 
 type IProps = {
@@ -47,11 +48,16 @@ const FooterItem: React.FC<IProps> = (props) => {
       </div>
       <ul className={styles.listBox}>
         {list.map((it) => {
-          const { text, href, content, type, phone, email, cursor = 'pointer' } = it
+          const { text, href, content, type, phone, email, cursor = 'pointer', targetHref } = it
           const style = { cursor }
           return (
             <li key={text} className={!open ? styles.open : styles.close}>
-              {href ? <Link href={href}>{text}</Link> : text}
+              {href && <Link href={href}>{text}</Link>}
+              {targetHref && (
+                <a href={targetHref} target="_blank" rel="noreferrer">
+                  {text}
+                </a>
+              )}
 
               {type === 'email' && (
                 <a href={`mailto:${email}`} target="_blank" rel="noreferrer">

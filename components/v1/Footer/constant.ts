@@ -1,19 +1,19 @@
 export const aboutUsList = [
   {
     text: '公司简介',
-    href: '/com',
+    href: '/about',
   },
   {
     text: '隐私政策',
-    href: '/wwwcom',
+    href: '/privacy',
   },
   {
     text: '用户协议',
-    href: '',
+    href: '/agreement',
   },
   {
     text: '解决方案',
-    href: '',
+    href: '/solutions',
   },
 ]
 
@@ -35,11 +35,11 @@ export const caseList = [
 export const joinList = [
   {
     text: '在招岗位',
-    href: '',
+    targetHref: '//www.zhipin.com/gongsir/0c4a441aa82110141nx82Nm9EFI~.html?ka=company-jobs',
   },
   {
     text: '投递简历',
-    href: '',
+    targetHref: '//www.zhipin.com/gongsi/0c4a441aa82110141nx82Nm9EFI~.html',
   },
 ]
 

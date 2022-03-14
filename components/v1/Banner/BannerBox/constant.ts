@@ -38,14 +38,15 @@ export const list: List[] = [
   {
     maxLength: 64,
     name: 'experience',
-    placeholder: '请选择出海经验（选填）',
+    placeholder: '请选择出海经验（必填）',
     type: 'select',
     label: '出海经验',
+    require: true,
   },
   {
     maxLength: 255,
     name: 'message',
-    placeholder: '',
+    placeholder: '请输入出海经验（选填）',
     type: 'textarea',
     label: '',
   },

@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 import Button from '../base/Button'
 import { ultimate, enterprise } from './constant'
 import classNames from 'classnames'
+import Modal from '../base/Modal'
 
 type IProps = {}
 
@@ -11,6 +12,7 @@ const PriceBanner: React.FC<IProps> = (props) => {
   const [mbUltimateMore, setMbUltimateMore] = useState(false)
   const [mbEnterpriseMore, setMbEnterpriseMore] = useState(false)
   const [isPc, setIsPc] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleResize = () => {
     if (document.body.clientWidth < 770) {
@@ -28,6 +30,10 @@ const PriceBanner: React.FC<IProps> = (props) => {
     }
   }, [])
 
+  const handleClose = () => {
+    setIsOpen(false)
+  }
+
   return (
     <div className={styles.priceBanner}>
       <div className={styles.introBox}>
@@ -42,7 +48,13 @@ const PriceBanner: React.FC<IProps> = (props) => {
           </span>
         </div>
         <div className={styles.btnNow}>
-          <Button text="立即开始" />
+          <Button
+            text="立即开始"
+            onClick={() => {
+              setIsOpen(true)
+            }}
+          />
+          {isOpen && <Modal visiable={isOpen} handleClose={handleClose} />}
         </div>
       </div>
       <div className={styles.priceBox}>

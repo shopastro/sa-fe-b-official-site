@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 import Button from '../base/Button'
+import Modal from '../base/Modal'
 
 type IProps = {}
 
 const BannerBox: React.FC<IProps> = (props) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleClose = () => {
+    setIsOpen(false)
+  }
   return (
     <div className={styles.bannerBox}>
       <div className={styles.title}>优选模板</div>
@@ -18,7 +24,13 @@ const BannerBox: React.FC<IProps> = (props) => {
         </span>
       </div>
       <div className={styles.btnNow}>
-        <Button text="立即开始" />
+        <Button
+          text="立即开始"
+          onClick={() => {
+            setIsOpen(true)
+          }}
+        />
+        {isOpen && <Modal visiable={isOpen} handleClose={handleClose} />}
       </div>
 
       <div className={`${styles.imgbox} ${styles.solution}`}></div>

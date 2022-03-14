@@ -4,6 +4,12 @@
     border-radius: 0.4rem;
     cursor: pointer;
     font-family: Outfit;
+
+    &.disabled {
+      opacity: .7;
+      pointer-events: none;
+    }
+
     &.primary {
       font-weight: 500;
       font-size: 1.8rem;
@@ -11,6 +17,15 @@
       color: #fff;
       background: #004ed1;
       padding: 1.8rem 7.4rem;
+    }
+
+    &.successForm {
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: #fff;
+      background: #004ed1;
+      padding: 1rem 6.7rem;
     }
 
     &.form {

@@ -80,8 +80,11 @@
       display: flex;
       flex-wrap: wrap;
       .copyRight {
-        width: 100%;
         display: flex;
+      }
+
+      .policeBox {
+        word-break: keep-all;
       }
 
       .police {
@@ -90,7 +93,8 @@
         height: 1.6rem;
         display: inline-block;
         background-size: contain;
-        margin: 0 0.8rem;
+        // margin: 0 0.8rem;
+        margin-right: .8rem;
       }
 
       a {

@@ -3,9 +3,9 @@ import styles from './index.module.scss'
 import { withRouter } from 'next/router'
 import FooterItem from './FooterItem'
 import { aboutUsList, joinList, contentList } from './constant'
-
 const Vision: React.FC<any> = (props) => {
-  // TODO 2022
+  const currentYear = new Date().getFullYear().toString()
+
   return (
     <div className={styles.homeFooter} id="homeFooter">
       <div className={styles.top}>
@@ -18,19 +18,41 @@ const Vision: React.FC<any> = (props) => {
         </div>
       </div>
       <div className={styles.bottom}>
-        <span className={styles.copyRight}>©2022 shopastro All Rights Reserved.</span>
-
+        <span className={styles.copyRight}>©{currentYear} shopastro All Rights Reserved.</span>
         <a href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
-          浙ICP备2021036268号-1
+          浙ICP备2021036268号
         </a>
-        <span className={styles.police} />
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016170"
-          target="_blank"
-          rel="noreferrer"
-        >
-          浙公网安备 33011002016170号
-        </a>
+
+        <div className={styles.policeBox}>
+          <span className={styles.police} />
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016170"
+            target="_blank"
+            rel="noreferrer"
+          >
+            浙公网安备 33011002016170号
+          </a>
+        </div>
+        <div className={styles.policeBox}>
+          <span className={styles.police} />
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016170"
+            target="_blank"
+            rel="noreferrer"
+          >
+            浙公网安备 33011002016309号
+          </a>
+        </div>
+        <div className={styles.policeBox}>
+          <span className={styles.police} />
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016170"
+            target="_blank"
+            rel="noreferrer"
+          >
+            浙公网安备 33011002016308号
+          </a>
+        </div>
       </div>
     </div>
   )

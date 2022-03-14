@@ -4,12 +4,22 @@
     border-radius: 0.4rem;
     cursor: pointer;
     font-family: Outfit;
+    word-break: keep-all;
     &.primary {
       font-weight: 500;
       font-size: 1.4rem;
       color: #fff;
       background: #004ed1;
       padding: 1.5rem 10rem;
+    }
+
+     &.successForm {
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: #fff;
+      background: #004ed1;
+      padding: 1.2rem 4.6rem;
     }
 
     &.form {

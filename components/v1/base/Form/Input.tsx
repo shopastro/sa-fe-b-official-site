@@ -1,4 +1,5 @@
-import React from 'react'
+import classNames from 'classnames'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 
 type IProps = {
@@ -14,7 +15,7 @@ type IProps = {
 
 const Input: React.FC<IProps> = (props) => {
   const { type = 'text', label, placeholder, maxLength, name, error = false } = props
-
+  const [selected, setSelected] = useState(false)
   return (
     <div className={`${styles.inputBox} ${type === 'textarea' && styles.inputTxtBox} ${error && styles.error}`}>
       {type === 'text' && (
@@ -38,11 +39,17 @@ const Input: React.FC<IProps> = (props) => {
           <div className={styles.label}>{label}</div>
           <select
             placeholder={placeholder}
+            className={classNames({
+              [styles.unselect]: !selected,
+            })}
             onChange={(e) => {
               props.onChange(name, e.target.value)
+              setSelected(true)
             }}
           >
-            <option style={{ display: 'none' }}></option>
+            <option disabled selected value="" style={{ color: 'red' }}>
+              请选择出海经验（必填）
+            </option>
             <option value="亚马逊、ebay等海外平台经验">亚马逊、ebay等海外平台经验</option>
             <option value="DTC品牌独立站经验">DTC品牌独立站经验</option>
             <option value="无出海经验">无出海经验</option>

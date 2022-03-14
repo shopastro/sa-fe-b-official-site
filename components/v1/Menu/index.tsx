@@ -4,12 +4,14 @@ import Button from '../base/Button'
 import { list } from './constant'
 import Link from 'next/link'
 import classname from 'classname'
+import Modal from '../base/Modal'
 
 type IProps = {}
 
 const Title: React.FC<IProps> = (props) => {
   const [openMenu, setOpenMenu] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const onResize = (e: any) => {
     if (e.currentTarget.innerWidth > 770) {
@@ -23,7 +25,7 @@ const Title: React.FC<IProps> = (props) => {
     const scrollTop =
       (e.srcElement ? e.srcElement.documentElement?.scrollTop : false) ||
       window.pageYOffset ||
-      (e.srcElement ? e.srcElement.body.scrollTop : 0)
+      (e.srcElement ? e.srcElement.body?.scrollTop : 0)
     if (scrollTop > 80) {
       setScrolled(true)
     } else {
@@ -53,6 +55,9 @@ const Title: React.FC<IProps> = (props) => {
       setOpenMenu(false)
     }
   }
+  const handleClose = () => {
+    setIsOpen(false)
+  }
   return (
     <div
       className={classname(styles.menuBox, {
@@ -80,10 +85,12 @@ const Title: React.FC<IProps> = (props) => {
           })}
 
           <li className={styles.contentUs}>
-            <Button text="联系我们" type="ghost" />
+            <Button text="联系我们" type="ghost" onClick={() => setIsOpen(true)} />
           </li>
         </ul>
       )}
+
+      {isOpen && <Modal visiable={isOpen} handleClose={handleClose} />}
     </div>
   )
 }

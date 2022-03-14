@@ -13,7 +13,9 @@
       .textList {
         display: flex;
         flex-direction: column;
-
+        a {
+          color: #333333;
+        }
         .addr,
         .email,
         .tel {

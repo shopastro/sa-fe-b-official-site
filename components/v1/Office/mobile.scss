@@ -4,19 +4,19 @@
     padding: 0 2.4rem;
     .imgBox {
       display: flex;
-      gap: 1.2rem;
+
       margin-top: 3.2rem;
       flex-direction: column;
 
       .imgLeft {
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
 
         .img1 {
           width: 100%;
           padding-bottom: 57.28%;
           background: url(./img/1.png);
+          margin-bottom: 1.2rem;
           background-size: cover;
         }
         .img2 {
@@ -24,6 +24,7 @@
           padding-bottom: 57.28%;
           background: url(./img/2.png);
           background-size: cover;
+          margin-bottom: 1.2rem;
         }
       }
 
