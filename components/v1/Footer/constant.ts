@@ -1,19 +1,19 @@
 export const aboutUsList = [
   {
     text: '公司简介',
-    href: '/about',
+    href: '/about.html',
   },
   {
     text: '隐私政策',
-    href: '/privacy',
+    href: '/privacy.html',
   },
   {
     text: '用户协议',
-    href: '/agreement',
+    href: '/agreement.html',
   },
   {
     text: '解决方案',
-    href: '/solutions',
+    href: '/solutions.html',
   },
 ]
 
@@ -46,7 +46,7 @@ export const joinList = [
 export const contentList = [
   {
     text: '总部地址：',
-    content: '浙江省杭州市余杭区奥克斯未来中心5幢1701室',
+    content: ['浙江省杭州市余杭区奥克斯未来中心5幢1701室', '星盘起航（杭州）网络技术有限公司'],
     cursor: 'auto',
   },
   {
