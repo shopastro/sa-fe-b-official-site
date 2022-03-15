@@ -35,7 +35,7 @@
         content: '';
         background: url(./img/top.svg) no-repeat;
         width: 80vw;
-
+        background-size: contain;
         padding-bottom: 10%;
         display: block;
         position: absolute;
