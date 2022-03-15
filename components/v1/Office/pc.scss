@@ -14,19 +14,22 @@
         .img1 {
           width: 608px;
           height: 348px;
-          background: url(./img/1.png);
+          background: url(./img/1.png) no-repeat;
+          background-size: contain;
         }
         .img2 {
           width: 608px;
           height: 348px;
-          background: url(./img/2.png);
+          background: url(./img/2.png) no-repeat;
+          background-size: contain;
         }
       }
 
       .imgRight {
         width: 562px;
-        background: url(./img/3.png);
+        background: url(./img/3.png) no-repeat;
         height: 728px;
+        background-size: contain;
       }
     }
   }

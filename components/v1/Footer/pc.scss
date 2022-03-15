@@ -62,6 +62,11 @@
       display: flex;
       align-items: center;
 
+      .policeBox {
+        display: flex;
+        align-items: center;
+      }
+
       .police {
         background: url(./img/police.png) no-repeat;
         width: 1.6rem;

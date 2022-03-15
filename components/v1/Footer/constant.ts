@@ -45,7 +45,7 @@ export const joinList = [
 
 export const contentList = [
   {
-    text: '总部地址：',
+    text: '公司名称：',
     content: '星盘起航（杭州）网络技术有限公司',
     cursor: 'auto',
   },

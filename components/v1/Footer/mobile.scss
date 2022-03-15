@@ -83,8 +83,14 @@
         display: flex;
       }
 
+      .record {
+        margin-right: .8rem;
+      }
+
       .policeBox {
         word-break: keep-all;
+        display: flex;
+        align-items: center;
       }
 
       .police {

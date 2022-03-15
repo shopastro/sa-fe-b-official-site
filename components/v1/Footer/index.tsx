@@ -19,7 +19,7 @@ const Vision: React.FC<any> = (props) => {
       </div>
       <div className={styles.bottom}>
         <span className={styles.copyRight}>©{currentYear} shopastro All Rights Reserved.</span>
-        <a href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
+        <a className={styles.record} href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
           浙ICP备2021036268号
         </a>
 
