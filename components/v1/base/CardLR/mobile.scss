@@ -12,6 +12,17 @@
     }
     &.case {
       margin-top: 7.9rem;
+      position: relative;
+      &::before {
+        content: '';
+        background: url(./img/across.svg) no-repeat;
+        background-size: contain;
+        width: 100vw;
+        padding-bottom: 65%;
+        z-index: -1;
+        position: absolute;
+        top: 25rem;
+      }
     }
     &.service {
       margin-top: 7.5rem;
@@ -70,6 +81,7 @@
         background-size: contain;
         width: calc(100vw - 4.8rem);
         padding-bottom: 65%;
+        position: relative;
       }
       &.abroad {
         background: url(./img/abroad.png) no-repeat;
