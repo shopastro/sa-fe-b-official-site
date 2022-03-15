@@ -6,7 +6,7 @@ import Link from 'next/link'
 type Item = {
   text: string
   href?: string
-  content?: string[]
+  content?: string
   type?: string
   phone?: string
   email?: string
@@ -48,7 +48,7 @@ const FooterItem: React.FC<IProps> = (props) => {
       </div>
       <ul className={styles.listBox}>
         {list.map((it) => {
-          const { text, href, content = [], type, phone, email, cursor = 'pointer', targetHref } = it
+          const { text, href, content, type, phone, email, cursor = 'pointer', targetHref } = it
           const style = { cursor }
           return (
             <li key={text} className={!open ? styles.open : styles.close}>
@@ -71,17 +71,7 @@ const FooterItem: React.FC<IProps> = (props) => {
                 </a>
               )}
 
-              {content?.length > 0 && (
-                <span style={{ cursor }}>
-                  {content.map((it) => {
-                    return (
-                      <div key={it} style={{ wordBreak: 'keep-all', whiteSpace: 'nowrap' }}>
-                        {it}
-                      </div>
-                    )
-                  })}
-                </span>
-              )}
+              {content && <span style={{ cursor, wordBreak: 'keep-all', whiteSpace: 'nowrap' }}>{content}</span>}
             </li>
           )
         })}

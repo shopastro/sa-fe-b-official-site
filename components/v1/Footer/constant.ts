@@ -46,7 +46,13 @@ export const joinList = [
 export const contentList = [
   {
     text: '总部地址：',
-    content: ['浙江省杭州市余杭区奥克斯未来中心5幢1701室', '星盘起航（杭州）网络技术有限公司'],
+    content: '星盘起航（杭州）网络技术有限公司',
+    cursor: 'auto',
+  },
+
+  {
+    text: '总部地址：',
+    content: '浙江省杭州市余杭区奥克斯未来中心5幢1701室',
     cursor: 'auto',
   },
   {
