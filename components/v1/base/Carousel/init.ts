@@ -3,7 +3,7 @@ export const slideInit = {
   loop: true,
   threshold: 100,
   autoplay: true,
-  interval: 1000000,
+  interval: 10000,
 }
 // 滚动方向
 export const scroll = {
