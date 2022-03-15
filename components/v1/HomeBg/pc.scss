@@ -14,15 +14,39 @@
     -ms-user-select: none;
     pointer-events: none;
     .topBannerBg {
-      background: url(./img/topBannerBg.svg) no-repeat;
-      background-size: cover;
-      height: 766px;
+      background: url(./img/top1.svg) no-repeat;
       top: 0;
+      left: 0;
+      width: 100vw;
+      min-width: 1440px;
+      height: 680px;
+      background-size: contain;
+      position: relative;
+      &::before {
+        content: '';
+        background: url(./img/top2.svg) no-repeat;
+        top: 0;
+        right: 0;
+        width: 655px;
+        height: 780px;
+        background-size: contain;
+        position: absolute;
+      }
+      &::after {
+        content: '';
+        background: url(./img/top3.svg) no-repeat;
+        top: 350px;
+        right: 0;
+        width: 230px;
+        height: 270px;
+        background-size: contain;
+        position: absolute;
+      }
     }
     .first {
       background: url(./img/first.svg) no-repeat;
       background-size: contain;
-      top: 136rem;
+      top: 106rem;
       width: 65.9rem;
       height: 91.8rem;
       position: absolute;
@@ -31,7 +55,7 @@
     .second {
       background: url(./img/second.svg) no-repeat;
       background-size: contain;
-      top: 257rem;
+      top: 227rem;
       width: 44.5rem;
       height: 55.3rem;
       position: absolute;
@@ -40,7 +64,7 @@
     .across {
       background: url(./img/across.svg) no-repeat;
       background-size: contain;
-      top: 341.3rem;
+      top: 311.3rem;
       width: 79.1rem;
       height: 24.3rem;
       position: absolute;
@@ -49,7 +73,7 @@
     .three {
       background: url(./img/three.svg) no-repeat;
       background-size: contain;
-      top: 337rem;
+      top: 307rem;
       width: 72rem;
       height: 98rem;
       position: absolute;
@@ -58,7 +82,7 @@
     .four {
       background: url(./img/four.svg) no-repeat;
       background-size: contain;
-      top: 457rem;
+      top: 427rem;
       width: 40.9rem;
       height: 55.3rem;
       position: absolute;
@@ -67,7 +91,7 @@
     .five {
       background: url(./img/five.svg) no-repeat;
       background-size: contain;
-      top: 536rem;
+      top: 506rem;
       width: 36rem;
       height: 55.3rem;
       position: absolute;

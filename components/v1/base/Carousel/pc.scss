@@ -51,12 +51,11 @@
 
     .dotsWrapper {
       position: absolute;
-      bottom: 15rem;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
       display: flex;
       justify-content: space-between;
       width: 11rem;
+      top: 0;
       .dot {
         display: inline-block;
         margin: 0 0.4rem;

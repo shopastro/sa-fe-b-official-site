@@ -11,11 +11,36 @@
     -ms-user-select: none;
     pointer-events: none;
     .topBannerBg {
-      background: url(./img/topBannerBg.svg) no-repeat;
-      background-size: cover;
-      height: 43.2rem;
+      background: url(./img/top1Mb.svg) no-repeat;
       top: 0;
+      left: 0;
+      width: 100vw;
+      height: 68rem;
+      background-size: contain;
+      position: relative;
+      background-position: 0 -7rem;
+      &::before {
+        content: '';
+        background: url(./img/top2Mb.svg) no-repeat;
+        top: 26rem;
+        right: 0;
+        width: 100vw;
+        height: 68rem;
+        background-size: contain;
+        position: absolute;
+      }
+      &::after {
+        content: '';
+        background: url(./img/top3Mb.svg) no-repeat;
+        top: 58rem;
+        left: 0;
+        width: 17rem;
+        height: 29rem;
+        background-size: contain;
+        position: absolute;
+      }
     }
+
     .first {
       background: url(./img/firstMb.svg) no-repeat;
       background-size: contain;
