@@ -24,10 +24,10 @@ const SolutionCase: React.FC<IProps> = (props) => {
 
   const handleClick = (type: string) => {
     const { offsetTop = 0 } = document.getElementById(type) || {}
-    let offset = 92 + 10
+    let offset = 92 + 10 + 30
     const { offsetWidth = 0 } = document.querySelector('body') || {}
     if (offsetWidth > 750) {
-      offset = 146
+      offset = 226
     }
 
     window.scrollTo(0, offsetTop - offset)
