@@ -14,7 +14,7 @@ const ServicePositioning: React.FC<IProps> = (props) => {
           <div className={styles.brandLogo} />
           <div className={styles.posotion}>
             <div className={styles.title}>品牌</div>
-            <div className={styles.desc}>已客户品牌为载体</div>
+            <div className={styles.desc}>以客户品牌为载体</div>
           </div>
         </div>
 

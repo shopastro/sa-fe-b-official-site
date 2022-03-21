@@ -85,7 +85,7 @@ const Title: React.FC<IProps> = (props) => {
           })}
 
           <li className={styles.contentUs}>
-            <Button text="联系我们" type="ghost" onClick={() => setIsOpen(true)} />
+            <Button text="立即开始" type="ghost" onClick={() => setIsOpen(true)} />
           </li>
         </ul>
       )}
