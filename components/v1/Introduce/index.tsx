@@ -21,7 +21,7 @@ const Introduce: React.FC<IProps> = (props) => {
               <div className={styles.desc}>
                 <div className={styles.mbimg} />
                 星盘跨境
-                shopastro，总部位于杭州，是中国品牌出海一站式全链路服务商，依托一站式SaaS电商服务平台，融独立站搭建与品牌海外化运营于一体，赋能中国品牌全球化，助力打造品牌海外私域生态。
+                shopastro，总部位于杭州，是中国品牌出海一站式全链路服务商，依托一站式SaaS电商服务平台，融合独立站搭建与品牌海外化运营于一体，赋能中国品牌全球化，助力打造品牌海外私域生态。
               </div>
             </div>
           </div>
