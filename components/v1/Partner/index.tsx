@@ -7,6 +7,7 @@ type IProps = {}
 const Partner: React.FC<IProps> = (props) => {
   const partners = [
     'google',
+    'tt',
     'strip',
     'paypal',
     'lianlian',
