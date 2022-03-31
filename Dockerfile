@@ -1,4 +1,6 @@
 FROM node:16-buster-slim
 WORKDIR /app
-COPY . .
-RUN npm install && npm start
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD ["npm", "start"]
