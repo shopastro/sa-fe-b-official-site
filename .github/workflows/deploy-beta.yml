@@ -8,7 +8,7 @@ env:
   CLUSTER_ID : c2e42dd5a7a594cdf8592d9d490f976d4    # beta
   ACR_REGISTRY: registry.cn-hangzhou.aliyuncs.com
   K8S_NAMESPACE: default
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
         with:
           access-key-id: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_KEY_ID }}
           access-key-secret: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_SECRET_ACCESS_KEY }}
-          cluster-id: ${{ env.CLUSTER }}
+          cluster-id: ${{ env.CLUSTER_ID }}
 
       - uses: azure/k8s-deploy@v1
         with:
