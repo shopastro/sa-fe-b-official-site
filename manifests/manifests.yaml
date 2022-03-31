@@ -19,8 +19,7 @@ spec:
         app: sa-fe-b-official-site
     spec:
       containers:
-        - image: >-
-            registry-vpc.cn-hangzhou.aliyuncs.com/shopastro/sa-fe-b-official-site:ad5d9eaa02512a17f818cc4e4ccbdb95b2245a96
+        - image: registry-vpc.cn-hangzhou.aliyuncs.com/shopastro/sa-fe-b-official-site:latest
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
