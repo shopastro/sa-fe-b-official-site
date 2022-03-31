@@ -1,0 +1,51 @@
+name: Deploy into S3
+on:
+  push:
+    branches:
+      - deploy-to-aliyun
+env:
+  ACR_REPOSITORY: ${{ github.repository }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      # - name: Bump version and push tag
+      #   id: tag_version
+      #   uses: mathieudutour/github-tag-action@v5.1
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Create a GitHub release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ steps.tag_version.outputs.new_tag }}
+      #     release_name: Release ${{ steps.tag_version.outputs.new_tag }}
+      #     body: ${{ steps.tag_version.outputs.changelog }}
+
+      - name: Login to ACR
+        uses: aliyun/acr-login@v1
+        with:
+          region-id: cn-hangzhou 
+          access-key-id: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_KEY_ID }}
+          access-key-secret: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_SECRET_ACCESS_KEY }}
+      - name: Build and push image
+        run: |
+          docker build -t registry.cn-hangzhou.aliyuncs.com/${{ env.ECR_REPOSITORY }}:${{ github.sha }} .
+          docker push registry.cn-hangzhou.aliyuncs.com/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+
+      - uses: aliyun/ack-set-context@v1
+        with:
+          access-key-id: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_KEY_ID }}
+          access-key-secret: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_SECRET_ACCESS_KEY }}
+          cluster-id: beta-ack
+
+      - uses: jtalk/k8s-deploy@v2
+        with:
+          namespace: 'default'
+          manifests: |
+            ${{ github.workspace }}/manifests/manifests.yaml
+          images: 'registry.cn-hangzhou.aliyuncs.com/${{ env.ECR_REPOSITORY }}:${{ github.sha }}'
+          kubectl-version: 'latest'

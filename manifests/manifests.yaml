@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sa-fe-b-official-site
+  labels:
+    app.kubernetes.io/instance: sa-fe-b-official-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: sa-fe-b-official-site
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: sa-fe-b-official-site
+    spec:
+      containers:
+        - name: sa-fe-b-official-site
+          image: "registry.cn-hangzhou.aliyuncs.com/shopastro/sa-fe-b-official-site:latest"
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "50M"
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: 80
+            # initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 80
+            # initialDelaySeconds: 60
+            periodSeconds: 10
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  sa-fe-b-official-site
+spec:
+  selector:
+    app.kubernetes.io/instance:  sa-fe-b-official-site
+  type: ClusterIP
+  ports:
+    - name:  http
+      port:  80
+      targetPort:  80
