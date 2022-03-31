@@ -48,5 +48,5 @@ jobs:
           namespace: 'default'
           manifests: |
             ${{ github.workspace }}/manifests/manifests.yaml
-          images: 'registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }}'
+          images: registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }}
           kubectl-version: 'latest'
