@@ -43,10 +43,17 @@ jobs:
           access-key-secret: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_SECRET_ACCESS_KEY }}
           cluster-id: c2e42dd5a7a594cdf8592d9d490f976d4
 
-      - uses: jtalk/k8s-deploy@v2
+      # - uses: jtalk/k8s-deploy@v2
+      #   with:
+      #     namespace: 'default'
+      #     manifests: |
+      #       ${{ github.workspace }}/manifests/manifests.yaml
+      #     images: registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }}
+      #     kubectl-version: 'latest'
+      - uses: azure/k8s-deploy@v1
         with:
-          namespace: 'default'
           manifests: |
             ${{ github.workspace }}/manifests/manifests.yaml
-          images: registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }}
-          kubectl-version: 'latest'
+          images: |
+            registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }}
+          namespace: market
