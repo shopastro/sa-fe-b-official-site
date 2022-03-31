@@ -28,6 +28,7 @@ jobs:
       - name: Login to ACR
         uses: aliyun/acr-login@v1
         with:
+          login-server: registry.cn-hangzhou.aliyuncs.com
           region-id: cn-hangzhou 
           access-key-id: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_KEY_ID }}
           access-key-secret: ${{ secrets.ALIYUN_COM_BUILD_DEPLOY_SECRET_ACCESS_KEY }}
