@@ -34,8 +34,8 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Build and push image
         run: |
-          docker build -t registry.cn-hangzhou.aliyuncs.com/${{ env.ECR_REPOSITORY }}:${{ github.sha }} .
-          docker push registry.cn-hangzhou.aliyuncs.com/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+          docker build -t registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }} .
+          docker push registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }}
 
       - uses: aliyun/ack-set-context@v1
         with:
@@ -48,5 +48,5 @@ jobs:
           namespace: 'default'
           manifests: |
             ${{ github.workspace }}/manifests/manifests.yaml
-          images: 'registry.cn-hangzhou.aliyuncs.com/${{ env.ECR_REPOSITORY }}:${{ github.sha }}'
+          images: 'registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }}'
           kubectl-version: 'latest'
