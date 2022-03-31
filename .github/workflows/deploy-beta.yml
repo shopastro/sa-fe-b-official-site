@@ -2,7 +2,7 @@ name: Deploy into S3
 on:
   push:
     branches:
-      - deploy-to-aliyun
+      - depoy-to-aliyun
 env:
   ACR_REPOSITORY: ${{ github.repository }}
 jobs:
