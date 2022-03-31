@@ -56,4 +56,4 @@ jobs:
             ${{ github.workspace }}/manifests/manifests.yaml
           images: |
             registry.cn-hangzhou.aliyuncs.com/${{ env.ACR_REPOSITORY }}:${{ github.sha }}
-          namespace: market
+          namespace: default
