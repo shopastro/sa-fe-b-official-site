@@ -1,6 +1,8 @@
 FROM node:16-buster-slim
 WORKDIR /app
 COPY package.json /app
-RUN npm install
+RUN npm install yarn -g
+RUN npm install pm2 -g
+RUN yarn install
 COPY . /app
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
