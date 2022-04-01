@@ -1,0 +1,95 @@
+.partner {
+  width: 120rem;
+  margin: 21.5rem auto 12rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .partner-box {
+    //display: flex;
+    //flex-wrap: wrap;
+
+    width: 100%;
+    margin-top: 4.7rem;
+    display: block;
+    .item {
+      width: 20%;
+      background: #fff;
+      float: left;
+      &::before{
+        content: "";
+        display: block;
+        padding-top: 54.5%;
+        width: 100%;
+      }
+      &.strip {
+        background: url(./img/stripe.svg) no-repeat;
+        background-size: contain;
+      }
+
+      &.paypal {
+        background: url(./img/Paypal.svg) no-repeat;
+        background-size: contain;
+      }
+
+      &.qh {
+        background: url(./img/Oceanpayment.svg) no-repeat;
+        background-size: contain;
+      }
+      &.logo-4px {
+        background: url(./img/4px.svg) no-repeat;
+        background-size: contain;
+      }
+      &.bluefocus {
+        background: url(./img/Bluefocus.png) no-repeat;
+        background-size: contain;
+      }
+      &.cmt {
+        background: url(./img/cmt.png) no-repeat;
+        background-size: contain;
+      }
+      &.google {
+        background: url(./img/Google.png) no-repeat;
+        background-size: contain;
+      }
+      &.joying-box {
+        background: url('./img/JOYING BOX.png') no-repeat;
+        background-size: contain;
+      }
+      &.meetsocial-group {
+        background: url('./img/meetsocial group.svg') no-repeat;
+        background-size: contain;
+      }
+      &.lianlian {
+        background: url(./img/Lianlian.svg) no-repeat;
+        background-size: contain;
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .partner {
+    width: 100%;
+    margin: 7.5rem auto 0 auto;
+    padding: 0 2.4rem;
+    .title-width-slash {
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+    }
+
+    .partner-box {
+      width: 100%;
+      margin-top: 3rem;
+      .item {
+        width: 33.33%;
+        background: #ddd;
+      }
+    }
+  }
+}

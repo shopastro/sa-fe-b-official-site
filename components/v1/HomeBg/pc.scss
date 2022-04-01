@@ -1,0 +1,101 @@
+@media screen and (min-width: 770px) {
+  .homeBg {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    min-width: 144rem;
+    height: 100%;
+    top: 0;
+    // background: url(./img/官网pc端.png);
+    // filter: grayscale(100%);
+    // opacity: 0.7;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+    .topBannerBg {
+      background: url(./img/top1.svg) no-repeat;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      min-width: 1440px;
+      height: 680px;
+      background-size: contain;
+      position: relative;
+      &::before {
+        content: '';
+        background: url(./img/top2.svg) no-repeat;
+        top: 0;
+        right: 0;
+        width: 655px;
+        height: 780px;
+        background-size: contain;
+        position: absolute;
+      }
+      &::after {
+        content: '';
+        background: url(./img/top3.svg) no-repeat;
+        top: 350px;
+        right: 0;
+        width: 230px;
+        height: 270px;
+        background-size: contain;
+        position: absolute;
+      }
+    }
+    .first {
+      background: url(./img/first.svg) no-repeat;
+      background-size: contain;
+      top: 106rem;
+      width: 65.9rem;
+      height: 91.8rem;
+      position: absolute;
+      right: 0;
+    }
+    .second {
+      background: url(./img/second.svg) no-repeat;
+      background-size: contain;
+      top: 217rem;
+      width: 44.5rem;
+      height: 55.3rem;
+      position: absolute;
+      left: 0;
+    }
+    .across {
+      background: url(./img/across.svg) no-repeat;
+      background-size: contain;
+      top: 301.3rem;
+      width: 79.1rem;
+      height: 24.3rem;
+      position: absolute;
+      left: 0;
+    }
+    .three {
+      background: url(./img/three.svg) no-repeat;
+      background-size: contain;
+      top: 297rem;
+      width: 72rem;
+      height: 98rem;
+      position: absolute;
+      right: 0;
+    }
+    .four {
+      background: url(./img/four.svg) no-repeat;
+      background-size: contain;
+      top: 397rem;
+      width: 40.9rem;
+      height: 55.3rem;
+      position: absolute;
+      left: 0;
+    }
+    .five {
+      background: url(./img/five.svg) no-repeat;
+      background-size: contain;
+      top: 480rem;
+      width: 36rem;
+      height: 55.3rem;
+      position: absolute;
+      right: 0px;
+    }
+  }
+}

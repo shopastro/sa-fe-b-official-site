@@ -1,0 +1,137 @@
+@media screen and (max-width: 770px) {
+  .solutionCase {
+    padding: 5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 3.3rem;
+      color: #000000;
+    }
+    .desc {
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      margin-top: 0.8rem;
+      color: #333333;
+    }
+
+    .list {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 4.8rem;
+      display: flex;
+      width: 100%;
+      height: 4.4rem;
+      align-items: center;
+      z-index: 20;
+      margin-top: 4.8rem;
+      margin-bottom: 4rem;
+      overflow: auto;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      div {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background: #ffffff;
+        // border: 1px solid #ccc;
+        height: 100%;
+        flex: 1;
+        margin-left: -1px;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        color: #000000;
+        min-width: 10rem;
+        cursor: pointer;
+
+        &[data-active='active'] {
+          background: #004ed1;
+          color: #ffffff;
+          border: none;
+        }
+      }
+    }
+
+    .graphicList {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .graphic {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      width: 100%;
+      .imgBox {
+        display: flex;
+        width: 100%;
+        padding-bottom: 51.6%;
+        margin-bottom: 2.5rem;
+
+        &.site {
+          background: url(./img/site.png) no-repeat center;
+          background-size: contain;
+        }
+        &.increase {
+          background: url(./img/increase.png) no-repeat center;
+          background-size: contain;
+        }
+        &.launch {
+          background: url(./img/launch.png) no-repeat center;
+          background-size: contain;
+        }
+        &.operating {
+          background: url(./img/operating.png) no-repeat center;
+          background-size: contain;
+        }
+        &.ecological {
+          background: url(./img/ecological.png) no-repeat center;
+          background-size: contain;
+        }
+      }
+
+      .textBox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        // gap: 1.8rem;
+        padding: 0 1.8rem;
+        .listTitle {
+          font-weight: 600;
+          font-size: 1.8rem;
+          line-height: 2.5rem;
+          color: #004ed1;
+        }
+        .listText {
+          font-size: 1.4rem;
+          line-height: 3.2rem;
+          margin-top: 0.8rem;
+          color: #333333;
+          position: relative;
+          display: flex;
+          margin-bottom: 1.8rem;
+          &::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #000;
+            display: flex;
+            margin-right: 10px;
+            margin-top: 12px;
+            margin-left: 6px;
+          }
+        }
+      }
+    }
+  }
+}

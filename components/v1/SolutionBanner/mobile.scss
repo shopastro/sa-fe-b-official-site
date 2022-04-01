@@ -1,0 +1,78 @@
+@media screen and (max-width: 770px) {
+  .bannerBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+    position: relative;
+    z-index: 20;
+    margin-top: 4rem;
+    .title {
+      font-weight: 600;
+      font-size: 3.6rem;
+      line-height: 5rem;
+      color: #000000;
+    }
+    .mainTitle {
+      // font-family: Outfit;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 3rem;
+      line-height: 3.8rem;
+      color: #000;
+      margin-top: 1rem;
+      span {
+        color: #004ed1;
+      }
+    }
+    .desc {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      margin-top: 0.8rem;
+      color: #000000;
+      display: flex;
+      gap: 1.2rem;
+      flex-direction: column;
+      .vertical {
+        display: none;
+      }
+      span {
+        display: flex;
+      }
+      i {
+        color: #004ed1;
+        font-style: normal;
+        margin: 0 1.2rem;
+      }
+    }
+
+    .btnNow {
+      margin-top: 3.2rem;
+    }
+
+    .imgbox {
+      display: flex;
+      margin-top: 4.6rem;
+      &.abroad {
+        width: 100%;
+        padding-bottom: 62.7%;
+        background: url(./img/abroad.png) no-repeat center;
+        background-size: contain;
+      }
+      &.template {
+        width: 100%;
+        padding-bottom: 61%;
+        background: url(./img/template.png) no-repeat center;
+        background-size: contain;
+      }
+      &.solution {
+        width: 100%;
+        padding-bottom: 89.6%;
+        background: url(./img/solutionMB.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+}

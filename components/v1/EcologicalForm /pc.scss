@@ -1,0 +1,29 @@
+@media screen and (min-width: 770px) {
+  .ecologicalForm {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12.4rem;
+    .formBox {
+
+      .formTitle {
+        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 3.4rem;
+        text-align: center;
+        color: #333333;
+      }
+
+      .formDesc {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        margin-top: 1.6rem;
+        color: #333333;
+      }
+
+      .form {
+        margin-top: 3.6rem;
+      }
+    }
+  }
+}

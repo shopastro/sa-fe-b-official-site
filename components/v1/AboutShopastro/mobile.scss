@@ -1,0 +1,129 @@
+@media screen and (max-width: 770px) {
+  .aboutShopastro {
+    margin-top: 7.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    &::before {
+      content: '';
+      background: url(./img/decorate.svg) no-repeat;
+      background-size: contain;
+      width: 11.9rem;
+      height: 12.1rem;
+      position: absolute;
+      left: -4rem;
+      top: 4.4rem;
+      z-index: 1;
+    }
+
+    // &::after {
+    //   content: '';
+    //   width: 6rem;
+    //   height: 6rem;
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   z-index: 2;
+    //   background: #fff;
+    //   border-radius: 1rem;
+    // }
+
+    .title {
+      font-weight: 600;
+      font-size: 2.3rem;
+      line-height: 3.2rem;
+      color: #333;
+    }
+    .desc {
+      // font-family: Outfit;
+      font-style: normal;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      color: #666;
+      margin-bottom: 4.6rem;
+      margin-top: 0.3rem;
+      span {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .item {
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+      // font-family: Outfit;
+      font-weight: 300;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      color: #666666;
+      width: calc(100% - 4.8rem);
+      z-index: 12;
+      li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background: #ffffff;
+        box-shadow: 0px 0.2rem 1rem rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+        height: 7rem;
+        margin-bottom: 1rem;
+        padding: 0 0 0 2.7rem;
+        .mainTitle {
+          // font-family: Outfit;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2rem;
+          margin-left: 1rem;
+          color: #333333;
+          word-break: keep-all;
+          margin-right: 2rem;
+        }
+        .subDesc {
+          // font-family: Outfit;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+          color: #666666;
+        }
+        &::before {
+          content: '';
+          width: 4.5rem;
+          height: 3.8rem;
+          margin-right: 2rem;
+        }
+      }
+      .easy {
+        &::before {
+          background: url(./img/easy.svg) no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+      .freedom {
+        &::before {
+          background: url(./img/freedom.svg) no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+
+      .secure {
+        &::before {
+          background: url(./img/secure.svg) no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+
+      .efficiency {
+        &::before {
+          background: url(./img/efficiency.svg) no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+    }
+  }
+}

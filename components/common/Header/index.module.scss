@@ -1,0 +1,253 @@
+.header {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 0 0.7rem #e0e0e0;
+  z-index: 1;
+  width: 100%;
+  min-width: 120rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  .header-box {
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 120rem;
+    width: 120rem;
+    align-items: center;
+
+    .menu-icon {
+      display: none;
+    }
+
+    .nav-mask {
+      position: absolute;
+    }
+
+    .header-logo {
+      width: 18.26rem;
+      height: 3.2rem;
+      background: url(./img/logo.svg) no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 5rem;
+      align-items: center;
+      color: #004ed1;
+
+      .nav-logo {
+        display: none;
+      }
+      .nav-btn {
+        cursor: pointer;
+        display: block;
+      }
+      .nav-home {
+        color: #ff793a;
+      }
+
+      .content-us-btn-for-mb,
+      .try-now {
+        display: none;
+      }
+
+      .content-us-btn {
+        margin-left: -0.8rem;
+        background: #fff;
+        //height: 3.4rem;
+        border: 1px solid #004ed1;
+        font-size: 1.2rem;
+        padding: 0.9rem 2.4rem;
+        color: #004ed1;
+
+        &:hover {
+          color: #fff;
+          background: #004ed1;
+        }
+      }
+    }
+  }
+
+  .local {
+    cursor: pointer;
+    position: relative;
+    background: url(./img/ball.svg) no-repeat;
+    padding-left: 32px;
+    height: 24px;
+    line-height: 24px;
+    &:hover .lang {
+      display: block;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      height: 38px;
+      width: 100%;
+
+    }
+    .lang {
+      display: none;
+      position: absolute;
+      background: #fff;
+      width: 104px;
+      height: 36px;
+      line-height: 36px;
+      left: 0;
+      top: 38px;
+      color: #30323f;
+      padding-left: 12px;
+      box-shadow: 0px 0px 10px rgba(144, 158, 176, 0.2);
+      border-radius: 4px;
+
+      &:hover {
+        background: #f5f7fd;
+        color: #004ed1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .root {
+    overflow: hidden;
+  }
+  .header {
+    min-width: auto;
+    .header-box {
+      height: 4.8rem;
+      justify-content: center;
+      .menu-icon {
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background: url(./img/menu.svg) no-repeat;
+        background-size: contain;
+        margin-right: 1.2rem;
+      }
+
+      .header-logo {
+        width: 19.8/2 * 1rem;
+        height: 1.75rem;
+        //margin-left: 1.2rem;
+      }
+
+      .nav-mask {
+        background: #333333;
+        opacity: 0.6;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+      }
+
+      .header-nav {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        z-index: 111;
+        position: absolute;
+        right: -100%;
+        top: 0;
+        gap: 0;
+        padding: 0;
+        align-items: flex-start;
+
+        width: 100%;
+        height: 100vh;
+        transition-duration: 0.3s;
+
+        &.ture{
+          box-shadow: 0px 5px 40px rgb(0 0 0 / 15%);
+        }
+        .content-us-btn {
+          display: none;
+        }
+
+        .nav-btn {
+          height: 4.8rem;
+          line-height: 4.8rem;
+          padding-left: 2.4rem;
+          width: 100%;
+          font-size: 1.3rem;
+          color: #333333;
+          &:active {
+            background: #f2f8ff;
+          }
+
+          &:hover {
+            background: #fff;
+            color: #333;
+          }
+
+          &.content-us-btn {
+            color: #004ed1;
+            margin: 4rem 2.4rem 0 2.4rem;
+            width: calc(100% - 4.8rem);
+
+            &:active {
+              color: #fff !important;
+              background: #004ed1 !important;
+            }
+          }
+        }
+
+        .content-us-btn-for-mb,
+        .try-now {
+          display: block;
+        }
+
+        .try-now {
+          margin: 4rem 2.4rem 0 2.4rem;
+          width: calc(100% - 4.8rem);
+          color: #fff;
+          background: #004ed1;
+          &:hover,
+          &:active {
+            color: #fff;
+            background: #004ed1;
+          }
+          a,a:visited,a:link{
+            color: #ffffff;
+          }
+        }
+
+        .nav-logo {
+          height: 4.8rem;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding-left: 1.5rem;
+          .nav-logo-overlay {
+            width: 9.9rem;
+            height: 1.75rem;
+
+            background: url(./img/logo.svg) no-repeat;
+            background-size: contain;
+          }
+        }
+
+        .nav-close {
+          width: 2.8rem;
+          height: 2.8rem;
+          background: url(./img/close.svg) no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+        }
+
+        &.show-menu {
+          right: 0;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+  }
+}

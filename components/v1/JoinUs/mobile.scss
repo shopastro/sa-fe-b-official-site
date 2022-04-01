@@ -1,0 +1,72 @@
+@media screen and (max-width: 770px) {
+  .joinUs {
+    margin-top: 7.5rem;
+    padding: 0 2.4rem;
+    .joinBox {
+      display: flex;
+      flex-direction: column;
+      .joinCard {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3.2rem;
+
+        .resume {
+          margin-bottom: 2.4rem;
+        }
+
+        .position,
+        .resume {
+          background: rgba(238, 240, 241, 0.5);
+          padding: 1.8rem;
+          font-weight: bold;
+          font-size: 1.8rem;
+          line-height: 2.2rem;
+          color: #333333;
+          position: relative;
+          a {
+            color: #333333;
+            display: flex;
+            width: 100%;
+            height: 100%;
+          }
+          &::before {
+            content: '';
+            width: 3.2rem;
+            height: 3.2rem;
+            background: url(./img/consume.svg) no-repeat center;
+            background-size: cover;
+            display: block;
+            margin-bottom: 1.4rem;
+          }
+          &::after {
+            content: '';
+            width: 1.4rem;
+            height: 0.2rem;
+            background: #004ed1;
+            margin-top: 1.2rem;
+            display: block;
+          }
+        }
+
+        .position {
+          &::before {
+            content: '';
+            background: url(./img/position.svg) no-repeat center;
+            background-size: cover;
+          }
+        }
+
+        .go {
+          width: 32px;
+          height: 32px;
+          background: url(./img/arrow.svg);
+          position: absolute;
+          top: 50%;
+          right: 36px;
+          transform: translateY(-50%);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

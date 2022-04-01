@@ -1,0 +1,268 @@
+.home-footer {
+  //height: 45.5rem;
+  display: flex;
+  flex-direction: column;
+  background: #004ed1 url(./img/footer-bg-top.png);
+  background-size: 1440px;
+  min-width: 120rem;
+  margin-top: 2.6rem;
+  background-repeat: repeat-x;
+  background-position-x: center;
+  image-rendering: -moz-crisp-edges;
+  /* Firefox */
+  image-rendering: -o-crisp-edges;
+  /* Opera */
+  image-rendering: -webkit-optimize-contrast;
+  /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE (non-standard property) */
+  .footer-box {
+    display: flex;
+    justify-content: space-between;
+    width: 120rem;
+    margin: 2.4rem auto 0 auto;
+    .footer-left {
+      .footer-logo {
+        margin-top: 9.5rem;
+        background: url(./img/footer-logo.svg) no-repeat;
+        background-size: contain;
+        width: 24rem;
+        height: 4.5rem;
+      }
+      .footer-qr {
+        margin-top: 4rem;
+        width: 13.5rem;
+
+        .qr-img {
+          background: url("https://media.cdn.myshopastro.com/sys/media/image/WDbJExARByj22hFX.jpg") no-repeat;
+          height: 11.5rem;
+          width: 11.5rem;
+          background-size: contain;
+        }
+
+        .qr-desc {
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          color: #cecece;
+          margin-top: 0.5rem;
+        }
+
+        .copy-right {
+          margin-top: 8.4rem;
+          font-size: 1.4rem;
+          line-height: 2;
+          color: #ececec;
+          white-space: nowrap;
+        }
+      }
+    }
+    .footer-right {
+      display: flex;
+      margin-top: 18.9rem;
+      .right-cell {
+        flex: 1;
+        max-width: 58rem;
+        min-width: 14rem;
+        & + .right-cell {
+          margin-left: 6rem;
+        }
+        &.right-cell-mb {
+          display: none;
+        }
+        .footer-item-title {
+          color: #fff;
+        }
+        .item {
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+          color: #cecece;
+          margin-top: 0.4rem;
+          margin-left: 2.3rem;
+          display: flex;
+          & a,
+          & a:visited,
+          & a:link{
+          color: #cecece;
+        }
+        }
+        .item-title {
+          line-height: 21px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.icp-info{
+  display: inline-block;
+  a,a:visited,a:link, a:hover{
+   color: #cecece;
+  }
+  .i-content {
+    //vertical-align: middle;
+  }
+  &.police {
+    &::before{
+      content: "";
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background: url(https://media.cdn.myshopastro.com/sys/media/image/police.png) no-repeat;
+      background-size: 16px;
+      margin-right: 8px;
+      vertical-align: text-bottom;
+    }
+  }
+}
+.pc-bottom-area {
+  width: 120rem;
+  margin: 0 auto;
+  //margin: 2.4rem auto 0 auto;
+  padding-top: 8.4rem;
+  padding-bottom: 2.8rem;
+}
+.pc-bottom-area .copy-right{
+  color: #cecece;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .home-footer {
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .pc-bottom-area{
+    display: none;
+  }
+  .i-add {
+    background: url(./img/add.svg) no-repeat;
+    background-size: contain;
+    right: 0;
+    position: absolute;
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+
+    &.i-line {
+      background: url(./img/line.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  .home-footer {
+    width: 100%;
+    background-size: 100%;
+    background-size: contain;
+    height: auto;
+    min-width: auto;
+    margin-top: 7.5rem;
+    .footer-box {
+      width: 100%;
+      margin-top: 7.5rem;
+      background: #004ed1;
+      padding: 0 2.4rem;
+      flex-direction: column;
+      .footer-left {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        .footer-logo {
+          margin-top: 0;
+          width: 15.9rem;
+          height: 3rem;
+        }
+        .footer-qr {
+          background-size: 7.5rem;
+          width: 8.5rem;
+          margin-top: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+          .qr-img {
+            height: 7.5rem;
+            width: 7.5rem;
+          }
+          .qr-desc {
+            font-size: 1.2rem;
+            line-height: 1.35;
+            // white-space: nowrap;
+            color: #cecece;
+            word-break: keep-all;
+            width: max-content;
+          }
+
+          .copy-right {
+            display: none;
+          }
+        }
+      }
+      .footer-right {
+        width: 100%;
+        margin-top: 2.8rem;
+        flex-direction: column;
+        gap: 0;
+
+        .right-cell {
+          max-width: none;
+          & + .right-cell {
+            margin-left: 0;
+          }
+          &.right-cell-mb {
+            display: block;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+          .footer-title-width-slash {
+            font-weight: normal;
+            margin: 1.8rem 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            &::before {
+              align-self: stretch;
+            }
+          }
+          .closeed {
+            .item {
+              height: 0;
+              padding: 0 4.4rem;
+            }
+          }
+
+          .opened {
+            .item {
+              //height: 3.8rem;
+            }
+          }
+
+          .item {
+            transition-duration: 0.3s;
+            background: #2269df;
+            margin: 0 -2.4rem;
+            padding: 1rem 4.4rem;
+
+            //height: 3.8rem;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            color: #eeeeee;
+            overflow: hidden;
+            display: block;
+          }
+          .item-title {
+          }
+        }
+        .copy-right {
+          font-size: 1rem;
+          color: #eeeeee;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}

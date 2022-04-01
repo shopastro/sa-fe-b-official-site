@@ -1,0 +1,25 @@
+@media screen and (min-width: 770px) {
+  .footerItem {
+    .listBox {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      margin-left: 2rem;
+      list-style: none;
+      gap: 1.2rem;
+
+      li {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: #ececec;
+        display: flex;
+        a {
+          color: #ececec;
+        }
+        span {
+          max-width: 20.2rem;
+        }
+      }
+    }
+  }
+}

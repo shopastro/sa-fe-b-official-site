@@ -1,0 +1,17 @@
+@media screen and (max-width: 770px) {
+  .bannerContainer {
+    margin-top: 4.5rem;
+    position: relative;
+    &::after {
+      content: '';
+      background: url(./img/top3Mb.svg) no-repeat;
+      bottom: -4rem;
+      left: 0;
+      width: 21rem;
+      padding-bottom: 36%;
+      background-size: contain;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}

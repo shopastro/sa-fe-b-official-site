@@ -1,0 +1,68 @@
+.title-width-slash {
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  align-items: center;
+  display: flex;
+  &::before {
+    content: "";
+    background: url("./img/slash.svg") no-repeat;
+    width: 1.8rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    background-size: contain;
+  }
+
+  &.size-14 {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  &.size-26 {
+    font-size: 2.6rem;
+    line-height: 3.9rem;
+  }
+
+  &.size-34 {
+    font-size: 3.4rem;
+    line-height: 5.1rem;
+    &::before {
+      content: "";
+      width: 2rem;
+      height: 3.4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .title-width-slash {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    &::before {
+      width: 1.2rem;
+      height: 1.8rem;
+      margin-right: 0.35rem;
+    }
+
+    &.size-14 {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+
+    &.size-26 {
+      font-size: 2.6rem;
+      line-height: 3.9rem;
+    }
+
+    &.size-34 {
+      font-size: 3.4rem;
+      line-height: 5.1rem;
+      &::before {
+        content: "";
+        width: 2rem;
+        height: 3.4rem;
+      }
+    }
+  }
+}

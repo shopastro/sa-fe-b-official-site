@@ -1,0 +1,28 @@
+@media screen and (min-width: 770px) {
+  .channelsBannerPlaceholder {
+    padding-bottom: 40rem;
+  }
+  .channelsBanner {
+    padding-bottom: 40rem;
+    position: absolute;
+    width: 100vw;
+    min-width: 144rem;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+    background: url(./img/pc.png) no-repeat center;
+    background-size: cover;
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 40rem;
+    //   background: url(./img/pc.png) no-repeat;
+    //   left: 0;
+    // }
+
+    .label {
+      min-width: 8.2rem;
+    }
+  }
+}

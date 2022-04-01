@@ -1,0 +1,95 @@
+@media screen and (min-width: 770px) {
+  .CardLR {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    &.right {
+      flex-direction: row-reverse;
+    }
+
+    &.site {
+      margin-top: 19rem;
+    }
+    &.launch {
+      margin-top: 19rem;
+    }
+    &.case {
+      margin-top: 19rem;
+    }
+    &.service {
+      margin-top: 19rem;
+    }
+    &.abroad {
+      margin-top: 19rem;
+    }
+
+    .leftBox {
+      font-size: 4.6rem;
+      line-height: 5.5rem;
+      color: #333;
+      &.site {
+        margin-top: 11rem;
+      }
+      &.launch {
+        margin-top: 14.2rem;
+      }
+      &.case {
+        margin-top: 7rem;
+      }
+      &.service {
+        margin-top: 8rem;
+      }
+      &.abroad {
+        margin-top: 6.2rem;
+      }
+
+      .mainTitle {
+        margin-top: 1.2rem;
+        font-weight: bold;
+      }
+      .desc {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        margin-top: 2.6rem;
+        color: #999;
+        font-style: normal;
+        font-weight: normal;
+        // font-family: Outfit;
+      }
+    }
+
+    .rightBox {
+      display: flex;
+      &.site {
+        background: url(./img/site.png) no-repeat;
+        background-size: contain;
+        width: 68.887rem;
+        height: 42.4rem;
+      }
+      &.launch {
+        background: url(./img/launch.png) no-repeat;
+        background-size: contain;
+        width: 57.3rem;
+        height: 48rem;
+      }
+      &.case {
+        background: url(./img/case.png) no-repeat;
+        background-size: contain;
+        width: 57.5rem;
+        height: 39.7rem;
+      }
+      &.service {
+        background: url(./img/service.png) no-repeat;
+        background-size: contain;
+        width: 57.346rem;
+        height: 39.043rem;
+      }
+      &.abroad {
+        background: url(./img/abroad.png) no-repeat;
+        background-size: contain;
+        width: 61.7rem;
+        height: 46.2rem;
+      }
+    }
+  }
+}

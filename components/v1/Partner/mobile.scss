@@ -1,0 +1,74 @@
+@media screen and (max-width: 770px) {
+  .partnerBox {
+    margin-top: 7.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .partnerList {
+      display: flex;
+      width: calc(100vw - 4.8rem);
+      flex-wrap: wrap;
+      margin-top: 3.3rem;
+      .partner {
+        width: 33%;
+        padding-bottom: 15.5%;
+        &.google {
+          background: url(./img/Google.png) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.strip {
+          background: url(./img/stripe.svg) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.paypal {
+          background: url(./img/Paypal.svg) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.lianlian {
+          background: url(./img/Lianlian.svg) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.opay {
+          background: url(./img/Oceanpayment.svg) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.fourPx {
+          background: url(./img/4px.svg) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.joying {
+          background: url(./img/JOYINGBOX.png) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.meetsocial {
+          background: url(./img/meetsocialgroup.svg) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.cheetah {
+          background: url(./img/cmt.png) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.blue {
+          background: url(./img/Bluefocus.png) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+        &.tt {
+          background: url(./img/tt.svg) no-repeat center;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+  }
+}
