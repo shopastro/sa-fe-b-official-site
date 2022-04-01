@@ -2,9 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Menu from '../components/v1/Menu'
 import Footer from '../components/v1/Footer'
-import HomeBg from '../components/v1/HomeBg'
-import PriceBanner from '../components/v1/PriceBanner'
-import Graphic from '../components/v1/Graphic'
+import PriceBanner from '../components/v2/PriceBanner'
+import PriceColumn from '../components/v2/PriceColumn'
+import ServiceItem from '../components/v2/ServiceItem'
 
 const Home: NextPage = () => {
   return (
@@ -28,7 +28,8 @@ const Home: NextPage = () => {
       <section className="sec-container">
         <Menu />
         <PriceBanner />
-        <Graphic />
+        <PriceColumn />
+        <ServiceItem />
       </section>
       <Footer />
     </div>
