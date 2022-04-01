@@ -46,10 +46,13 @@ const PriceColumn: React.FC<IProps> = (props) => {
       <div className={styles.base}>
         <div className={styles.version}>基础版</div>
         <div className={styles.price}>9800 RMB</div>
-        <div className={styles.desc}>全链路最优解</div>
+        <div className={styles.desc}>
+          <div>极致流畅的全功能SaaS</div>
+          <div>全面的建站支持与运营指导</div>
+        </div>
         {getList('base')}
         <Button className={styles.baseBtn} text="立即开始" type="ghost" onClick={() => setIsOpen(true)} />
-        {maxShow.base < 8 && (
+        {maxShow.base <= 8 && (
           <div
             className={styles.more}
             onClick={() => {
@@ -67,17 +70,23 @@ const PriceColumn: React.FC<IProps> = (props) => {
         <div className={styles.topBg}>
           <div className={styles.version}>旗舰版</div>
           <div className={styles.price}>39800 RMB</div>
-          <div className={styles.desc}>全链路最优解</div>{' '}
+          <div className={styles.desc}>
+            <div>建站与营销的双重赋能</div>
+            <div>基于AI大数据的精准投放</div>
+          </div>
         </div>
         <div className={styles.top}>
           <div className={styles.version}>旗舰版</div>
           <div className={styles.price}>39800 RMB</div>
-          <div className={styles.desc}>全链路最优解</div>
+          <div className={styles.desc}>
+            <div>建站与营销的双重赋能</div>
+            <div>基于AI大数据的精准投放</div>
+          </div>
         </div>
         {getList('ultimate')}
 
         <Button className={styles.ultimateBtn} text="立即开始" type="ghost" onClick={() => setIsOpen(true)} />
-        {maxShow.ultimate < 8 && (
+        {maxShow.ultimate <= 8 && (
           <div
             className={styles.more}
             onClick={() => {
@@ -96,10 +105,13 @@ const PriceColumn: React.FC<IProps> = (props) => {
         <div className={styles.price}>
           188000 RMB <div className={styles.priceStart}>起</div>
         </div>
-        <div className={styles.desc}>星盘能力开放赋能</div>
+        <div className={styles.desc}>
+          <div>打造流量闭环 沉淀品牌价值</div>
+          <div>专注LTV与GMV的高效增长</div>
+        </div>
         {getList('enterprise')}
         <Button className={styles.enterpriseBtn} text="立即开始" type="ghost" onClick={() => setIsOpen(true)} />
-        {maxShow.enterprise < 8 && (
+        {maxShow.enterprise <= 8 && (
           <div
             className={styles.more}
             onClick={() => {

@@ -977,7 +977,7 @@ export const site = {
       ],
       operate: [
         {
-          title: 'OnePage优化',
+          title: 'OnPage优化',
           desc: '页面SEO结构/内容优化',
           base: false,
           ultimate: false,
