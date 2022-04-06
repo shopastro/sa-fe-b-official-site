@@ -1,0 +1,243 @@
+@media screen and (max-width: 770px) {
+  .Item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background: #fff;
+    .switch {
+      width: 2.4rem;
+      height: 2.4rem;
+      position: absolute;
+      background: url('./img/arrow.svg') no-repeat;
+      background-size: contain;
+      right: 1.2rem;
+      top: 1.2rem;
+
+      &.switchClose {
+        transform: rotate(180deg);
+      }
+    }
+
+    .certification,
+    .site,
+    .product,
+    .trading,
+    .brand,
+    .country,
+    .analysis,
+    .save,
+    .service,
+    .launch,
+    .useOperate,
+    .socialOperate,
+    .marketing,
+    .seo,
+    .additional {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 12rem;
+      border-top: .2rem solid #fff;
+      z-index: 50;
+      display: flex;
+      background: rgba(243, 247, 252);
+      line-height: 4.8rem;
+      padding-left: 1.8rem;
+      font-weight: 600;
+      font-size: 0;
+      color: #333333;
+      margin-top: 1.2rem;
+      align-items: center;
+
+      &.baas {
+        background: rgba(254, 249, 248);
+      }
+
+      &::before {
+        content: '';
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 0.8rem;
+      }
+
+      &::after {
+        content: attr(data-text);
+        font-size: 1.4rem;
+      }
+    }
+
+    .certification {
+      margin-top: 0.8rem;
+      &::before {
+        background: url('./img/certification.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .site {
+      &::before {
+        background: url('./img/site.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .product {
+      &::before {
+        background: url('./img/product.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .trading {
+      &::before {
+        background: url('./img/trading.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .brand {
+      &::before {
+        background: url('./img/brand.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .country {
+      &::before {
+        background: url('./img/country.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .analysis {
+      &::before {
+        background: url('./img/analysis.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .save {
+      &::before {
+        background: url('./img/save.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .service {
+      &::before {
+        background: url('./img/service.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .launch {
+      &::before {
+        background: url('./img/launch.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .useOperate {
+      &::before {
+        background: url('./img/useOperate.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .socialOperate {
+      &::before {
+        background: url('./img/socialOperate.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .marketing {
+      &::before {
+        background: url('./img/marketing.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .seo {
+      &::before {
+        background: url('./img/seo.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+    .additional {
+      &::before {
+        background: url('./img/brand.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .feature,
+    .operate {
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+      color: #ff793a;
+      display: flex;
+      justify-content: center;
+      margin: 0.9rem 0;
+      position: relative;
+      border: none;
+      span {
+        background: #fff;
+        padding: 0 1.2rem;
+        z-index: 11;
+      }
+      &::before {
+        content: '';
+        border-bottom: 1px solid #ececec;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+      }
+    }
+
+    .feature {
+      color: #3353b6;
+    }
+
+    ul {
+      list-style: none;
+      font-weight: 400;
+      color: #666666;
+
+      li {
+        line-height: 44px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-top: 1rem;
+        border: 1px solid #f0f0f0;
+        border-radius: 0.4rem;
+        div:first-child {
+          font-weight: 500;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          width: 100%;
+          color: #333333;
+          background: #f9f9f9;
+          padding-top: 0.8rem;
+        }
+        div:nth-child(2) {
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.7rem;
+          color: #666666;
+          width: 100%;
+          background: #f9f9f9;
+          padding: 0.4rem 0.8rem 0.8rem 0.8rem;
+        }
+        div:nth-child(3),
+        div:nth-child(4),
+        div:nth-child(5) {
+          width: 33%;
+          height: 4.4rem;
+        }
+        .can,
+        .not {
+          background: url('./img/right.svg') no-repeat;
+          background-size: 1.6rem 1.2rem;
+          background-position: center;
+        }
+        .not {
+          background: url('./img/err.svg') no-repeat;
+          background-size: 1.3rem 1.3rem;
+          background-position: center;
+        }
+      }
+    }
+  }
+}

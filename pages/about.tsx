@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
+import Header from '../components/v2/Header'
 import Menu from '../components/v1/Menu'
 import Footer from '../components/v1/Footer'
 import AboutBanner from '../components/v1/AboutBanner'
@@ -12,7 +12,7 @@ import ContentUs from '../components/v1/ContentUs'
 const Home: NextPage = () => {
   return (
     <div style={{ position: 'relative' }}>
-      <Head>
+      <Header>
         <meta charSet="utf-8" />
         <link rel="icon" href="//sys.cdn.myshopastro.com/fe/official-site/0.0.7/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           content="独立站,星盘跨境,自建站,出海,跨境,DTC,电商,Saas,跨境物流,跨境支付,Facebook投放,跨境引流,ShopAstro"
         />
         <meta name="google-site-verification" content="7ThrbtOx2-qkncHO3SxtyWaqIWYB7NAU8xgV3Av6bzc" />
-      </Head>
+      </Header>
 
       <section className="sec-container">
         <Menu />

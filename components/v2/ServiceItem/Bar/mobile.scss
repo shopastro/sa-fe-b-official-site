@@ -1,0 +1,53 @@
+@media screen and (max-width: 770px) {
+  .Bar {
+    display: flex;
+    height: 7.3rem;
+    background: #edf3fa;
+    width: 100%;
+    margin-top: 3.2rem;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 4.8rem;
+    z-index: 99;
+    &.beluga {
+      background: #f9f3f2;
+      display: none;
+    }
+    .cell1,
+    .cell2,
+    .cell3,
+    .cell4 {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+      border-left: 2px solid #fff;
+      .price {
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        margin-top: 0.2rem;
+        color: #333333;
+      }
+    }
+    .cell1 {
+      display: none;
+    }
+    .cell2 {
+      color: #1786ed;
+      width: 190px;
+      border: none;
+    }
+    .cell3 {
+      color: #004ed1;
+      width: 190px;
+    }
+    .cell4 {
+      color: #cc4e13;
+      width: 190px;
+    }
+  }
+}
