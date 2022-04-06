@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
+import Header from '../components/v2/Header'
 import styles from '../styles/Home.module.css'
 import React from 'react'
 import Footer from '../components/v1/Footer'
@@ -9,7 +9,7 @@ import Doc from '../components/v1/Doc'
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <Head>
+      <Header>
         <meta charSet="utf-8" />
         <link rel="icon" href="//sys.cdn.myshopastro.com/fe/official-site/0.0.7/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
           rel="stylesheet"
         />
-      </Head>
+      </Header>
       <section className="sec-container">
         <Menu />
         <Doc type="agreement" />
