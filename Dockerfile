@@ -4,6 +4,6 @@ COPY package.json /app
 COPY yarn.lock /app
 RUN npm install pm2 -g
 RUN yarn install
-RUN yarn build
 COPY . /app
+RUN yarn build
 CMD ["yarn", "start:dev"]
