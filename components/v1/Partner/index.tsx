@@ -19,7 +19,7 @@ const Partner: React.FC<IProps> = (props) => {
     'blue',
   ]
   return (
-    <div className={styles.partnerBox}>
+    <div className={styles.partnerBox} id="partners">
       <Title text="合作伙伴" size={34} mbSize={15} />
 
       <div className={styles.partnerList}>

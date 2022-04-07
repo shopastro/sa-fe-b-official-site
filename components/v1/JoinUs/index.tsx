@@ -7,7 +7,7 @@ type IProps = {}
 
 const JoinUs: React.FC<IProps> = (props) => {
   return (
-    <div className={styles.joinUs}>
+    <div className={styles.joinUs} id="joinUs">
       <div className={styles.joinBox}>
         <Title size={48} text="加入我们" mbSize={24} />
         <div className={styles.joinCard}>

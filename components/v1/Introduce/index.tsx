@@ -8,7 +8,7 @@ type IProps = {}
 const Introduce: React.FC<IProps> = (props) => {
   return (
     <>
-      <div className={styles.introduce}>
+      <div className={styles.introduce} id="introduce">
         <div className={styles.box}>
           <div className={styles.introduce}>
             <div className={styles.line}>
@@ -28,7 +28,7 @@ const Introduce: React.FC<IProps> = (props) => {
           <div className={styles.img} />
         </div>
 
-        <div className={styles.box}>
+        <div className={styles.box} id="team">
           <div className={styles.introduce}>
             <div className={styles.line}>
               <div className={styles.place}>团队优势</div>

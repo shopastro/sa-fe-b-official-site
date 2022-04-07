@@ -6,7 +6,7 @@ type IProps = {}
 
 const Office: React.FC<IProps> = (props) => {
   return (
-    <div className={styles.office}>
+    <div className={styles.office}  id="office">
       <Title size={48} text="办公环境" mbSize={24} />
       <div className={styles.imgBox}>
         <div className={styles.imgLeft}>

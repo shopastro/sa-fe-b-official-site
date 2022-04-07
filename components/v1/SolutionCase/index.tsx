@@ -36,7 +36,7 @@ const SolutionCase: React.FC<IProps> = (props) => {
   }
 
   return (
-    <div className={styles.solutionCase}>
+    <div className={styles.solutionCase} id="solutionCase">
       <div className={styles.title}>星盘跨境 shopastro</div>
       <div className={styles.desc}>一站式出海全链路解决方案</div>
       <div className={styles.list} ref={listRef}>

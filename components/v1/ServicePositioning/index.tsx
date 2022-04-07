@@ -6,7 +6,7 @@ type IProps = {}
 
 const ServicePositioning: React.FC<IProps> = (props) => {
   return (
-    <div className={styles.servicePositioning}>
+    <div className={styles.servicePositioning} id="servicePositioning">
       <Title size={48} text="服务定位" mbSize={24} />
 
       <div className={styles.listBox}>

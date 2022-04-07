@@ -6,7 +6,7 @@ type IProps = {}
 
 const Ecological: React.FC<IProps> = (props) => {
   return (
-    <div className={styles.ecological}>
+    <div className={styles.ecological} id="ecological">
       <div className={styles.banner} />
 
       <div className={styles.titleBox}>

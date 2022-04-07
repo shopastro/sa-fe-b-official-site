@@ -42,7 +42,7 @@ const PriceColumn: React.FC<IProps> = (props) => {
   }
 
   return (
-    <div className={styles.PriceColumn}>
+    <div className={styles.PriceColumn} id="PriceColumn">
       <div className={styles.base}>
         <div className={styles.version}>基础版</div>
         <div className={styles.price}>9800 RMB</div>

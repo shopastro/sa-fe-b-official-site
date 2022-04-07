@@ -20,7 +20,7 @@ const BannerBox: React.FC<IProps> = (props) => {
   }
 
   return (
-    <div className={styles.bannerBox}>
+    <div className={styles.bannerBox} id={`home_banner_${type}`}>
       <div className={styles.leftBox}>
         <Title text={title} size={26} mbSize={18} />
         <div className={styles.mainTitle}>{mainTitle}</div>
@@ -29,7 +29,7 @@ const BannerBox: React.FC<IProps> = (props) => {
             <span key={it}>{it}</span>
           ))}
         </div>
-        <div className={styles.btnNow}>
+        <div className={styles.btnNow} id="home_now">
           <Button
             text="立即开始"
             onClick={() => {

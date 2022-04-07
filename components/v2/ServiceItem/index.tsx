@@ -6,7 +6,7 @@ type IProps = {}
 
 const ServiceItem: React.FC<IProps> = (props) => {
   return (
-    <div className={styles.ServiceItem}>
+    <div className={styles.ServiceItem} id="ServiceItem">
       <div className={styles.title}>服务项目</div>
       <div className={styles.desc}>shopastro提供极简更优的产品服务全案</div>
 

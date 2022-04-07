@@ -15,6 +15,7 @@ const Doc: React.FC<IProps> = (props) => {
       dangerouslySetInnerHTML={{
         __html: type === 'agreement' ? agreement : privacy,
       }}
+      id={type === 'agreement' ? 'agreement' : 'privacy'}
     ></div>
   )
 }

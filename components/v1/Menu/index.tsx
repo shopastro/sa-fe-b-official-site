@@ -12,6 +12,7 @@ const Title: React.FC<IProps> = (props) => {
   const [openMenu, setOpenMenu] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [pathname, setPathname] = useState('')
 
   const onResize = (e: any) => {
     if (e.currentTarget.innerWidth > 770) {
@@ -58,6 +59,11 @@ const Title: React.FC<IProps> = (props) => {
   const handleClose = () => {
     setIsOpen(false)
   }
+
+  useEffect(() => {
+    setPathname(window.location.pathname)
+  }, [])
+
   return (
     <div
       className={classname(styles.menuBox, {
@@ -75,8 +81,16 @@ const Title: React.FC<IProps> = (props) => {
         <ul className={styles.menuList}>
           {list.map((it) => {
             const { text, href } = it
+
             return (
-              <li key={text} onClick={handleClick}>
+              <li
+                key={text}
+                onClick={handleClick}
+                id={`mene_${text}`}
+                className={classname({
+                  [styles.active]: pathname === href,
+                })}
+              >
                 <Link href={href}>
                   <span> {text}</span>
                 </Link>

@@ -12,7 +12,7 @@ const BannerBox: React.FC<IProps> = (props) => {
     setIsOpen(false)
   }
   return (
-    <div className={styles.bannerBox}>
+    <div className={styles.bannerBox} id="SolutionBanner">
       <div className={styles.title}>优选模板</div>
       <div className={styles.mainTitle}>
         覆盖<span>100+</span>热门行业

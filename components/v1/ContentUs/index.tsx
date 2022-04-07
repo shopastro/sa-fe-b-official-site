@@ -6,7 +6,7 @@ type IProps = {}
 
 const ContentUs: React.FC<IProps> = (props) => {
   return (
-    <div className={styles.contentUs}>
+    <div className={styles.contentUs} id="contentUs">
       <div className={styles.textBox}>
         <Title size={48} text="联系我们" mbSize={24} />
         <div className={styles.textList}>

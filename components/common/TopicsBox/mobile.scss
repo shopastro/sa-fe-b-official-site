@@ -1,0 +1,218 @@
+@media screen and (max-width: 770px) {
+  .TopicsBox {
+    margin-top: 4.8rem;
+    padding: 0 1.8rem;
+
+    .TopicsContent {
+      color: #45484b;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 175%;
+      letter-spacing: 0.03em;
+      text-indent: 3.2rem;
+
+      .info {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+        text-align: center;
+        color: #666;
+        display: flex;
+        justify-content: center;
+        margin: 0.8rem 0 2.4rem 0;
+        .cell {
+          display: flex;
+          text-indent: 0;
+          &:first-child {
+            margin-right: 1.8rem;
+          }
+        }
+        .title {
+          color: #999;
+          text-indent: 0;
+        }
+      }
+
+      p {
+        line-height: 175%;
+      }
+
+      h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 3.3rem;
+        text-align: center;
+        color: #333333;
+        text-indent: 0;
+        a {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 2.4rem;
+          line-height: 3.3rem;
+          text-align: center;
+          color: #333333;
+          text-indent: 0;
+          pointer-events: none;
+        }
+      }
+
+      h2 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.03em;
+        text-indent: 0;
+        color: #45484b;
+        a {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 2.4rem;
+          line-height: 2.4rem;
+          letter-spacing: 0.03em;
+          color: #45484b;
+          text-indent: 0;
+          pointer-events: none;
+        }
+      }
+
+      h3 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.03em;
+        color: #45484b;
+        text-indent: 0;
+
+        a {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 2.2rem;
+          line-height: 2.4rem;
+          letter-spacing: 0.03em;
+          color: #45484b;
+          text-indent: 0;
+          pointer-events: none;
+        }
+      }
+
+      h4 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.03em;
+        color: #45484b;
+        text-indent: 0;
+
+        a {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 2rem;
+          line-height: 2.4rem;
+          letter-spacing: 0.03em;
+          color: #45484b;
+          text-indent: 0;
+          pointer-events: none;
+        }
+      }
+
+      h5 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.03em;
+        color: #45484b;
+        text-indent: 0;
+
+        a {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+          letter-spacing: 0.03em;
+          color: #45484b;
+          text-indent: 0;
+          pointer-events: none;
+        }
+      }
+
+      h6 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.03em;
+        color: #45484b;
+        text-indent: 0;
+
+        a {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          letter-spacing: 0.03em;
+          color: #45484b;
+          text-indent: 0;
+          pointer-events: none;
+        }
+      }
+      a {
+        color: #004ed1;
+      }
+
+      table tr th,
+      table tr td {
+        border: 1px solid #ccc;
+        text-align: center;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.4rem;
+        letter-spacing: 0.03em;
+        color: #45484b;
+      }
+      table tr:nth-child(2n) {
+        background: transparent;
+      }
+
+      strong {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.03em;
+        color: #45484b;
+      }
+
+      blockquote {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 175%;
+        letter-spacing: 0.03em;
+        text-indent: 1.8rem;
+        color: #999999;
+        border-left: none;
+        background: transparent;
+      }
+
+      img {
+        border: none;
+        padding: 0;
+      }
+
+      figcaption {
+        display: none !important;
+      }
+
+      ul,
+      ol {
+        text-indent: 0;
+      }
+    }
+  }
+}

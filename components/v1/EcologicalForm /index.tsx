@@ -7,7 +7,7 @@ type IProps = {}
 
 const EcologicalForm: React.FC<IProps> = (props) => {
   return (
-    <div className={styles.ecologicalForm}>
+    <div className={styles.ecologicalForm} id="ecologicalForm">
       <div className={styles.formBox}>
         <div className={styles.formTitle}>加入生态联盟 共铸跨境生态圈</div>
 

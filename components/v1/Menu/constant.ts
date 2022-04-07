@@ -5,22 +5,22 @@ export const list = [
   },
   {
     text: '产品定价',
-    href: '/pricing.html',
+    href: '/pricing',
   },
   {
     text: '解决方案',
-    href: '/solutions.html',
+    href: '/solutions',
   },
   {
     text: '渠道合作',
-    href: '/agents.html',
+    href: '/agents',
   },
   {
     text: '生态联盟',
-    href: '/partners.html',
+    href: '/partners',
   },
   {
     text: '关于我们',
-    href: '/about.html',
+    href: '/about',
   },
 ]

@@ -5,7 +5,7 @@ type IProps = {}
 
 const PriceBanner: React.FC<IProps> = (props) => {
   return (
-    <div className={styles.priceBanner}>
+    <div className={styles.priceBanner} id="priceBanner">
       <div className={styles.introBox}>
         <div className={styles.title}>货品您搞定 出海我搞定</div>
         <div className={styles.subTitle}>shopastro提供极简更优的产品服务全案</div>
