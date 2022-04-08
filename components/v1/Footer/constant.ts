@@ -1,19 +1,19 @@
 export const aboutUsList = [
   {
     text: '公司简介',
-    href: '/about.html',
+    href: '/about',
   },
   {
     text: '隐私政策',
-    href: '/privacy.html',
+    href: '/privacy',
   },
   {
     text: '用户协议',
-    href: '/agreement.html',
+    href: '/agreement',
   },
   {
     text: '解决方案',
-    href: '/solutions.html',
+    href: '/solutions',
   },
 ]
 
