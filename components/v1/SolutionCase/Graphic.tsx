@@ -22,7 +22,7 @@ const Graphic: React.FC<IProps> = (props) => {
       window.pageYOffset ||
       (e.srcElement ? e.srcElement.body?.scrollTop : 0)
 
-    if (offsetTop - scrollTop < clientHeight / 2 && offsetTop - scrollTop > 200) {
+    if (offsetTop - scrollTop < clientHeight / 2 && offsetTop - scrollTop > -200) {
       onChange && onChange(type)
     }
   }

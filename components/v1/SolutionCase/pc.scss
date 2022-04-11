@@ -6,6 +6,44 @@
     align-items: center;
     margin-bottom: -60px;
 
+    .goTop {
+      background: #fafbfd;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      width: 60px;
+      height: 60px;
+      position: relative;
+      border-radius: 50%;
+      position: sticky;
+      position: -webkit-sticky;
+      z-index: 10;
+      top: 200px;
+      margin-top: 60px;
+      cursor: pointer;
+      right: 40px;
+      align-self: flex-end;
+      cursor: pointer;
+      &:hover {
+        background: #5071e7;
+        &::after {
+          background-color: #fafbfd;
+        }
+      }
+
+      &::after {
+        content: '';
+        background-color: #5071e7;
+        mask: url('./img/arrow.svg') no-repeat;
+        mask-size: cover;
+        -webkit-mask-size: cover;
+        position: absolute;
+        width: 16px;
+        height: 22px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
     .title {
       font-weight: 600;
       font-size: 36px;
@@ -31,14 +69,13 @@
       justify-content: center;
       z-index: 20;
       margin-top: 48px;
-      margin-bottom: 80px;
+      background: #fafbfd;
       cursor: pointer;
 
       div {
         align-items: center;
         justify-content: center;
         display: flex;
-        background: #ffffff;
         // border: 1px solid #ccc;
         height: 100%;
         flex: 1;
@@ -47,13 +84,13 @@
         font-size: 18px;
         line-height: 25px;
         color: #000000;
-        &::before {
-          content: '';
-          width: 20px;
-          height: 20px;
-          display: flex;
-          margin-right: 18px;
-        }
+        // &::before {
+        //   content: '';
+        //   width: 20px;
+        //   height: 20px;
+        //   display: flex;
+        //   margin-right: 18px;
+        // }
         &[data-active='active'] {
           background: #004ed1;
           color: #ffffff;
@@ -61,72 +98,73 @@
         }
       }
 
-      .site {
-        &::before {
-          background: url(./img/site.svg) no-repeat center;
-          background-size: contain;
-        }
-        &[data-active='active'] {
-          &::before {
-            background: url(./img/siteBg.svg) no-repeat center;
-            background-size: contain;
-          }
-        }
-      }
-      .increase {
-        &::before {
-          background: url(./img/increase.svg) no-repeat center;
-          background-size: contain;
-        }
-        &[data-active='active'] {
-          &::before {
-            background: url(./img/increaseBg.svg) no-repeat center;
-            background-size: contain;
-          }
-        }
-      }
-      .launch {
-        &::before {
-          background: url(./img/launch.svg) no-repeat center;
-          background-size: contain;
-        }
-        &[data-active='active'] {
-          &::before {
-            background: url(./img/launchBg.svg) no-repeat center;
-            background-size: contain;
-          }
-        }
-      }
-      .operating {
-        &::before {
-          background: url(./img/operating.svg) no-repeat center;
-          background-size: contain;
-        }
-        &[data-active='active'] {
-          &::before {
-            background: url(./img/operatingBg.svg) no-repeat center;
-            background-size: contain;
-          }
-        }
-      }
-      .ecological {
-        &::before {
-          background: url(./img/ecological.svg) no-repeat center;
-          background-size: contain;
-        }
-        &[data-active='active'] {
-          &::before {
-            background: url(./img/ecologicalBg.svg) no-repeat center;
-            background-size: contain;
-          }
-        }
-      }
+      // .site {
+      //   &::before {
+      //     background: url(./img/site.svg) no-repeat center;
+      //     background-size: contain;
+      //   }
+      //   &[data-active='active'] {
+      //     &::before {
+      //       background: url(./img/siteBg.svg) no-repeat center;
+      //       background-size: contain;
+      //     }
+      //   }
+      // }
+      // .increase {
+      //   &::before {
+      //     background: url(./img/increase.svg) no-repeat center;
+      //     background-size: contain;
+      //   }
+      //   &[data-active='active'] {
+      //     &::before {
+      //       background: url(./img/increaseBg.svg) no-repeat center;
+      //       background-size: contain;
+      //     }
+      //   }
+      // }
+      // .launch {
+      //   &::before {
+      //     background: url(./img/launch.svg) no-repeat center;
+      //     background-size: contain;
+      //   }
+      //   &[data-active='active'] {
+      //     &::before {
+      //       background: url(./img/launchBg.svg) no-repeat center;
+      //       background-size: contain;
+      //     }
+      //   }
+      // }
+      // .operating {
+      //   &::before {
+      //     background: url(./img/operating.svg) no-repeat center;
+      //     background-size: contain;
+      //   }
+      //   &[data-active='active'] {
+      //     &::before {
+      //       background: url(./img/operatingBg.svg) no-repeat center;
+      //       background-size: contain;
+      //     }
+      //   }
+      // }
+      // .ecological {
+      //   &::before {
+      //     background: url(./img/ecological.svg) no-repeat center;
+      //     background-size: contain;
+      //   }
+      //   &[data-active='active'] {
+      //     &::before {
+      //       background: url(./img/ecologicalBg.svg) no-repeat center;
+      //       background-size: contain;
+      //     }
+      //   }
+      // }
     }
 
     .graphicList {
       display: flex;
       flex-direction: column;
       gap: 129px;
+      margin-top: -70px;
     }
 
     .graphic {
@@ -135,26 +173,35 @@
       width: 100%;
       .imgBox {
         display: flex;
-        min-width: 530px;
-        height: 387px;
+        min-width: 492px;
+        height: 327px;
+
+        &.brand {
+          background: url(./img/brand.png) no-repeat center;
+          background-size: contain;
+        }
         &.site {
           background: url(./img/site.png) no-repeat center;
           background-size: contain;
         }
-        &.increase {
-          background: url(./img/increase.png) no-repeat center;
+        &.seo {
+          background: url(./img/seo.png) no-repeat center;
           background-size: contain;
         }
-        &.launch {
-          background: url(./img/launch.png) no-repeat center;
+        &.launches {
+          background: url(./img/launches.png) no-repeat center;
           background-size: contain;
         }
-        &.operating {
-          background: url(./img/operating.png) no-repeat center;
+        &.operation {
+          background: url(./img/operation.png) no-repeat center;
           background-size: contain;
         }
-        &.ecological {
-          background: url(./img/ecological.png) no-repeat center;
+        &.email {
+          background: url(./img/email.png) no-repeat center;
+          background-size: contain;
+        }
+        &.repurchase {
+          background: url(./img/repurchase.png) no-repeat center;
           background-size: contain;
         }
       }

@@ -1,5 +1,6 @@
 export type Data = {
-  type: 'site' | 'increase' | 'launch' | 'operating' | 'ecological'
+  type: 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'
+  title: string
   textList: TextList[]
 }
 
@@ -8,102 +9,125 @@ type TextList = {
   list: string[]
 }
 
-export const site: Data = {
-  type: 'site',
+const brand: Data = {
+  type: 'brand',
+  title: '品牌策划',
   textList: [
     {
-      title: '独立站建站',
+      title: '品牌策划',
       list: [
-        '精品行业模版+个性化定制，精准匹配行业特点',
-        'SEO多重优化，搜索更智能友好，提升商城展示量',
-        '优选支付体验更佳的收单收款渠道，一键深度集成',
-        'Api对接，高效触达目标客户，站内站外推广直达',
+        '调研行业全球市场及行业趋势',
+        '明确目标受众及品牌定位',
+        '梳理产品线结构，选择优势产品并匹配不同的营销渠道打法',
+        '结合目标受众购买力/竞品定价，对营销/物流等各项成本核算，制定定价策略',
       ],
-    },
-    {
-      title: '端到端管理',
-      list: ['打通营销、支付、物流等系统底层', '只需单一后台管理全链路各个环节'],
     },
   ],
 }
 
-export const increase: Data = {
-  type: 'increase',
+const site: Data = {
+  type: 'site',
+  title: '个性化建站',
   textList: [
     {
-      title: '智能营销系统',
+      title: '个性化建站',
       list: [
-        '精准获取行业趋势、生成定制化推广策略，高效解决营销获客难题',
-        '人群标签及特色分类，洞悉用户行为，更懂用户',
-        '提供店铺指标体系分析和解读，提升经营效率、改善选品策略',
-        '通过大数据分析，实现更高的转化率和复购率',
-      ],
-    },
-    {
-      title: '流量和用户运营',
-      list: [
-        '结合客户品类和目标市场，整合年度营销计划，布局各流量渠道，明确预算和产出目标，结果导向',
-        '用户行为数据分析，及时调整营销策略以达到效果最优',
+        '专业极致的全流程建站服务',
+        '网站demo设计，导航/首页/footer等各项模块优化',
+        '网站整体风格和内容设计优化',
+        '商品分类设置和信息优化',
+        '根据目标国家营销日历，制定广告营销计划及站内营销活动',
       ],
     },
   ],
 }
-export const launch: Data = {
-  type: 'launch',
+
+const seo: Data = {
+  type: 'seo',
+  title: 'SEO 深度运营',
+
   textList: [
     {
-      title: '主流媒体渠道',
+      title: 'SEO 深度运营',
       list: [
-        '结合品牌特征和用户画像，选择Google、Facebook、Tiktok等主流媒体为推广渠道，快速覆盖目标用户',
-        '利用SEM、SEO等技术手段，优化搜索及投放效果，提供更具性价比的广告投放效果',
-      ],
-    },
-    {
-      title: '深度内容生成',
-      list: [
-        '结合当地特色和用户行为习惯，发布更贴近用户心理的营销内容，引发用户情感共鸣，植入品牌意识，助力流量转化',
-        '借助网红营销、联盟营销等方式，丰富品牌展示渠道并提升品牌口碑',
+        '页面SEO结构/内容优化',
+        '拓展机会关键词/优化核心关键词排名',
+        '分阶段实施不同层级反向链接',
+        '提供排名及自然流量监测报告',
       ],
     },
   ],
 }
-export const operating: Data = {
-  type: 'operating',
+
+const launches: Data = {
+  type: 'launches',
+  title: '多渠道营销投放',
+
   textList: [
     {
-      title: '建站运营',
+      title: '多渠道营销投放',
       list: [
-        '资深跨境运营团队，深究品类和产业带，打造供应链优势',
-        '提供行业分析报告和竞品案例，供客户做选品和营销决策',
-        '一对一协助建站，站点风格突出，集中体现行业特色及品类优势',
-      ],
-    },
-    {
-      title: '营销投放',
-      list: [
-        '精通各国家区域的节日促销节奏，擅长促销氛围打造和活动营销，帮卖家做好全年的营销活动策略',
-        '大促营销集中全攻略，助力全面GMV全面增长',
-      ],
-    },
-    {
-      title: '复购',
-      list: [
-        '通过站内会员体系搭建、浏览数据分析、用户关怀输出等操作，增加用户对品牌的认可度',
-        '通过邮件营销、社群营销等方式刺激用户二次消费',
+        'Google/Facebook/TikTok/Bing/Twitter/Snapchat等广告渠道开户',
+        '基于行业竞品推广监测及渠道特性，制定关键词/人群/素材等维度的广告投放策略',
+        '制定Google/Facebook/Instagram/TikTok等推广渠道的广告结构',
+        '一站式管理人群标签，沉淀人群数据资产',
+        '再营销人群分层和圈选，跨渠道再营销广告搭建',
+        '对广告数据持续分析，对素材/人群定位/转化节点进行优化',
       ],
     },
   ],
 }
-export const ecological: Data = {
-  type: 'ecological',
+
+const operation: Data = {
+  type: 'operation',
+  title: '社媒和KOL运营',
+
   textList: [
     {
-      title: '一站式服务+多方合作',
+      title: '社媒和KOL运营',
       list: [
-        '提供包括素材设计、账户注册、支付、物流等一站式服务',
-        '商务及市场团队根据客户需求匹配最优生态解决方案，为客户及生态服务商实现多方共赢',
-        '筛选优质生态合作商，助力商家规范操作、安心出海',
+        '制定账号Profile/Story/图片/视频内容框架，提供日常内容设计与排期',
+        '制定粉丝增长目标，挖掘潜力涨粉话题，提高社媒账号自然曝光率',
+        '分析网红及其粉丝画像，结合转化指标匹配优质红人',
+        '制定红人运营策略/衡量指标/权益/任务要求/红人效果数据追踪',
+        ' 私域社群运营/社群生态培育',
       ],
     },
   ],
 }
+
+const email: Data = {
+  type: 'email',
+  title: '邮件营销',
+
+  textList: [
+    {
+      title: '邮件营销',
+      list: [
+        '丰富的EDM模版',
+        '全年邮件营销活动节奏设置',
+        '弃单召回邮件设计',
+        '根据用户不同定位及需求进行精准化邮件营销',
+      ],
+    },
+  ],
+}
+
+const repurchase: Data = {
+  type: 'repurchase',
+  title: '用户/会员复购运营',
+
+  textList: [
+    {
+      title: '用户/会员复购运营',
+      list: [
+        '设置邮件营销节奏和内容，并根据数据反馈进行优化调整',
+        '设计弃单召回节奏和内容，并根据数据反馈进行优化调整',
+        'WhatsApp/Messenger/Apple Business Chat等多渠道一站式运营策略',
+        '构建会员体系，匹配会员权益并制定营销策略',
+      ],
+    },
+  ],
+}
+
+export const list: Data[] = [brand, site, seo, launches, operation, email, repurchase]

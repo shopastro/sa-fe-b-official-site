@@ -8,18 +8,29 @@ import Service from '../components/v1/Service'
 import Full from '../components/v1/Full'
 import SolutionCase from '../components/v1/SolutionCase'
 import Partner from '../components/v1/Partner'
+import { useState } from 'react'
 
 const Home: NextPage = () => {
+  const [active, setActive] = useState<'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'>(
+    'brand'
+  )
+
+  const onActive = (ac: 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase') => {
+    setActive(ac)
+  }
+
   return (
     <div style={{ position: 'relative' }}>
       <Header />
 
       <section className="sec-container">
         <Menu />
-        <SolutionBanner />
-        <Service />
+        <SolutionBanner onActive={onActive} />
+        {/* <Service /> */}
+        <SolutionCase active={active} />
+
         <Full />
-        <SolutionCase />
+
         <Partner />
       </section>
 

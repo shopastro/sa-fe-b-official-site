@@ -1,29 +1,166 @@
 @media screen and (min-width: 770px) {
   .full {
-    padding: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 240px;
+    background: #fafbff;
+    padding: 100px 0;
+    position: relative;
+
     &::after {
       content: '';
-      background: url(./img/full.svg) no-repeat center;
-      width: 951.81px;
-      height: 442px;
-      display: flex;
-      margin-top: 80px;
+      background: #fafbff;
+      position: absolute;
+      min-width: 1440px;
+      width: 100vw;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      height: 100%;
+      z-index: -1;
     }
-    .title {
+
+    .sectionTitle {
+      font-style: normal;
       font-weight: 600;
       font-size: 36px;
       line-height: 50px;
       color: #000000;
+      text-align: center;
+      margin-bottom: 48px;
     }
-    .desc {
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 28px;
-      margin-top: 16px;
-      color: #333333;
+    .contentBoxMb {
+      display: none;
+    }
+    .contentBox {
+      background: #fff;
+      display: flex;
+      .left {
+        width: 280px;
+        min-width: 280px;
+        margin-right: 36px;
+        background: #fafbff;
+
+        div {
+          height: 100px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          color: #333333;
+          display: flex;
+          align-items: center;
+          padding-left: 48px;
+          cursor: pointer;
+          background: #fafbff;
+          padding-bottom: 10px;
+
+          &.active {
+            padding-left: 24px;
+            background: #fff;
+          }
+          &::before {
+            content: '';
+            width: 80px;
+            height: 60px;
+            display: flex;
+            margin-right: 16px;
+          }
+        }
+        .brand {
+          &::before {
+            background: url('./img/brand.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        .border {
+          &::before {
+            background: url('./img/border.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        .b2b {
+          &::before {
+            background: url('./img/b2b.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        .domestic {
+          &::before {
+            background: url('./img/domestic.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+
+      .content {
+        flex: 1;
+        align-items: flex-start;
+        margin-left: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 36px;
+        .title {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 36px;
+          color: #004ed1;
+          margin-left: 24px;
+        }
+
+        .desc {
+          margin-top: 24px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 28px;
+          color: #333333;
+          div {
+            display: flex;
+            align-items: center;
+            &::before {
+              content: '';
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background: #000;
+              display: flex;
+              margin-right: 12px;
+            }
+          }
+        }
+      }
+
+      .brandImg {
+        width: 380px;
+        height: 380px;
+        margin-top: 25px;
+        background: url('./img/brand.png') no-repeat;
+        background-size: contain;
+      }
+      .borderImg {
+        width: 380px;
+        height: 380px;
+        margin-top: 25px;
+
+        background: url('./img/border.png') no-repeat;
+        background-size: contain;
+      }
+      .b2bImg {
+        width: 380px;
+        height: 380px;
+        margin-top: 25px;
+
+        background: url('./img/b2b.png') no-repeat;
+        background-size: contain;
+      }
+      .domesticImg {
+        width: 380px;
+        height: 380px;
+        margin-top: 25px;
+
+        background: url('./img/domestic.png') no-repeat;
+        background-size: contain;
+      }
     }
   }
 }

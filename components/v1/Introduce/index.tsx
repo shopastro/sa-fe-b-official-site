@@ -20,8 +20,7 @@ const Introduce: React.FC<IProps> = (props) => {
               <div className={styles.title}>公司简介</div>
               <div className={styles.desc}>
                 <div className={styles.mbimg} />
-                星盘跨境
-                shopastro，总部位于杭州，是中国品牌出海一站式全链路服务商，依托一站式SaaS电商服务平台，融合独立站搭建与品牌海外化运营于一体，赋能中国品牌全球化，助力打造品牌海外私域生态。
+                shopastro是品牌出海服务领域的新锐者，成立于2021年8月，总部位于杭州，在义乌、深圳、厦门三地设立分公司，目前已服务百家以上大客户。其致力于为中国品牌卖家提供一站式出海全链路解决方案，以「大数据和AI技术驱动的精细化运营」实现品牌价值输出和流量变现。
               </div>
             </div>
           </div>
@@ -39,7 +38,7 @@ const Introduce: React.FC<IProps> = (props) => {
               <div className={styles.title}>团队优势</div>
               <div className={styles.desc}>
                 <div className={styles.mbimg2} />
-                星盘创始团队均来自于阿里、百度、字节等顶尖互联网公司，深耕互联网电商领域数十载，拥有丰富的专业领域实操经验、成熟的团队管理模式。
+                shopastro创始团队均来自阿里巴巴、字节跳动、百度等公司高管层。核心成员来自阿里国际、速卖通、字节跳动、百度、蚂蚁金服等公司，且多名成员为阿里巴巴产品、运营、设计、技术等领域P8、P9层级。在跨境电商、支付、SaaS领域，具备十年以上产品研发、运营和商业化运营经验。
               </div>
             </div>
           </div>

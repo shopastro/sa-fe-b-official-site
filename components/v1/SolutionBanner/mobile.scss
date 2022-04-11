@@ -1,77 +1,478 @@
 @media screen and (max-width: 770px) {
-  .bannerBox {
+  $opacity: 0;
+  $transition: 0.35s;
+  $scale: 0.5;
+
+  .topBox {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 5rem;
+    padding-top: 3.6rem;
+    z-index: 10;
+    margin-bottom: -2rem;
     position: relative;
-    z-index: 20;
-    margin-top: 4rem;
-    .title {
-      font-weight: 600;
-      font-size: 3.6rem;
-      line-height: 5rem;
-      color: #000000;
-    }
-    .mainTitle {
-      // font-family: Outfit;
+    background: #f8faff;
+    .company {
       font-style: normal;
-      font-weight: bold;
-      font-size: 3rem;
-      line-height: 3.8rem;
-      color: #000;
-      margin-top: 1rem;
-      span {
-        color: #004ed1;
-      }
-    }
-    .desc {
       font-weight: 500;
       font-size: 1.6rem;
       line-height: 2.2rem;
-      margin-top: 0.8rem;
-      color: #000000;
-      display: flex;
-      gap: 1.2rem;
-      flex-direction: column;
-      .vertical {
-        display: none;
-      }
+      color: #222222;
       span {
-        display: flex;
-      }
-      i {
         color: #004ed1;
-        font-style: normal;
-        margin: 0 1.2rem;
       }
     }
 
-    .btnNow {
-      margin-top: 3.2rem;
+    .title {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 3.3rem;
+      text-align: center;
+      margin-top: 0.6rem;
+      color: #222222;
     }
 
-    .imgbox {
+    .desc {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 3.3rem;
+      text-align: center;
+      color: #222222;
+    }
+
+    .center {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.4rem;
+      color: #263577;
+      position: relative;
       display: flex;
-      margin-top: 4.6rem;
-      &.abroad {
-        width: 100%;
-        padding-bottom: 62.7%;
-        background: url(./img/abroad.png) no-repeat center;
-        background-size: contain;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      margin-top: 2.5rem;
+      div {
+        display: flex;
+        flex-direction: column;
+        width: 28.27%;
+        align-items: center;
+        &.save {
+          &::before {
+            content: '';
+            width: 3.8rem;
+            height: 3.7rem;
+            background: url(./img/c-1.svg) no-repeat;
+            margin-bottom: 0.8rem;
+            background-size: contain;
+          }
+        }
+        &.data {
+          border-left: 1px solid #dae0fc;
+          border-right: 1px solid #dae0fc;
+          &::before {
+            content: '';
+            width: 3.8rem;
+            height: 3.7rem;
+            background: url(./img/c-2.svg) no-repeat;
+            margin-bottom: 0.8rem;
+            background-size: contain;
+          }
+        }
+        &.country {
+          &::before {
+            content: '';
+            width: 3.8rem;
+            height: 3.7rem;
+            background: url(./img/c-2.svg) no-repeat;
+            margin-bottom: 0.8rem;
+            background-size: contain;
+          }
+        }
       }
-      &.template {
-        width: 100%;
-        padding-bottom: 61%;
-        background: url(./img/template.png) no-repeat center;
+    }
+  }
+
+  .bannerBox {
+    position: relative;
+    height: 119.6rem;
+    .banner {
+      background: #f8faff url(./img/mbBg.svg) no-repeat;
+      background-size: contain;
+      width: 100%;
+      position: relative;
+      // padding-bottom: 319%;
+      height: 119.6rem;
+
+      .startLine {
+        background: url(./img/lineMb.svg) no-repeat;
         background-size: contain;
+        width: 82.66%;
+        position: absolute;
+        padding-bottom: 337%;
+        left: 11.86%;
+        top: 11.1rem;
+        opacity: $opacity;
+        &.active {
+          opacity: 1;
+          transition: $transition;
+        }
       }
-      &.solution {
-        width: 100%;
-        padding-bottom: 89.6%;
-        background: url(./img/solutionMB.png) no-repeat center;
+
+      .astro {
+        background: url(./img/astro.svg) no-repeat;
         background-size: contain;
+        width: 16.9rem;
+        height: 18.4rem;
+        position: absolute;
+        left: -5.5%;
+        top: 5.8rem;
+        &::after {
+          content: '首购';
+          background: #ffffff;
+          border-radius: 0.6rem;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          padding: 1.2rem 1.8rem;
+          color: #004ed1;
+          position: absolute;
+          word-break: keep-all;
+          left: 12.8rem;
+          top: 6rem;
+        }
+      }
+      .step1,
+      .step2,
+      .step3,
+      .step4,
+      .step5,
+      .step6,
+      .step7 {
+        position: absolute;
+        width: 7.5rem;
+        height: 7.5rem;
+
+        &::before {
+          content: 'step';
+          position: absolute;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.3rem;
+          color: #5071e7;
+          z-index: 2;
+          opacity: $opacity;
+          transform: scale($scale);
+        }
+        &::after {
+          content: '01';
+          position: absolute;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 2.3rem;
+          line-height: 3.2rem;
+          color: #5071e7;
+          z-index: 3;
+          opacity: $opacity;
+          transform: scale($scale);
+        }
+
+        &.active {
+          .bg,
+          &::before,
+          &::after {
+            opacity: 1;
+            transition: $transition;
+            transform: scale(1);
+          }
+        }
+
+        .bg {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          opacity: $opacity;
+          transform: scale($scale);
+        }
+      }
+
+      .step1 {
+        right: 0.5rem;
+        top: 15.9rem;
+        .bg {
+          background: url(./img/step1.svg) no-repeat;
+          background-size: contain;
+        }
+        .stepBox {
+          top: 4.4rem;
+          right: 2rem;
+        }
+        &::before {
+          left: -5rem;
+          top: -2.4rem;
+        }
+        &::after {
+          left: -2.1rem;
+          top: -2.9rem;
+        }
+      }
+
+      .step2 {
+        left: -0.6rem;
+        top: 28.5rem;
+        .bg {
+          background: url(./img/step2.svg) no-repeat;
+          background-size: contain;
+        }
+        &::before {
+          right: -2rem;
+          top: -1.4rem;
+        }
+        &::after {
+          content: '02';
+          right: -5rem;
+          top: -1.9rem;
+        }
+
+        .stepBox {
+          top: 3.7rem;
+          left: 3rem;
+        }
+      }
+
+      .step3 {
+        right: 0;
+        top: 38.5rem;
+        .bg {
+          background: url(./img/step3.svg) no-repeat;
+          background-size: contain;
+        }
+        &::before {
+          top: 1.9rem;
+          left: -6.7rem;
+        }
+
+        &::after {
+          content: '03';
+
+          left: -3.8rem;
+          top: 1.3rem;
+        }
+
+        .stepBox {
+          top: 4.5rem;
+          right: 2.6rem;
+        }
+      }
+
+      .step4 {
+        top: 49rem;
+        .bg {
+          background: url(./img/step4.svg) no-repeat;
+          background-size: contain;
+        }
+        &::before {
+          left: 5rem;
+          top: -2.4rem;
+        }
+
+        &::after {
+          content: '04';
+          right: -3rem;
+          top: -3rem;
+        }
+        .stepBox {
+          top: 3.5rem;
+          left: 2.5rem;
+        }
+      }
+
+      .step5 {
+        left: 1rem;
+        top: 70rem;
+        .bg {
+          background: url(./img/step5.svg) no-repeat;
+          background-size: contain;
+        }
+        &::before {
+          right: -3rem;
+          top: 1rem;
+        }
+
+        &::after {
+          content: '05';
+          right: -6.2rem;
+          top: 0.2rem;
+        }
+        .stepBox {
+          top: 5.1rem;
+          left: 2.2rem;
+        }
+      }
+
+      .step6 {
+        display: flex;
+        right: 1.5rem;
+        top: 83.9rem;
+        .bg {
+          background: url(./img/step6.svg) no-repeat;
+          background-size: contain;
+        }
+        &::before {
+          left: -6.8rem;
+          top: 1rem;
+        }
+
+        &::after {
+          content: '06';
+          left: -3.8rem;
+          top: 0.2rem;
+        }
+        .stepBox {
+          top: 4.2rem;
+          left: -15rem;
+        }
+      }
+
+      .step7 {
+        left: 0.6rem;
+        top: 95rem;
+
+        .bg {
+          background: url(./img/step7.svg) no-repeat;
+          background-size: contain;
+        }
+        &::before {
+          left: 8rem;
+          top: 1rem;
+        }
+
+        &::after {
+          content: '07';
+          left: 11rem;
+          top: 0.2rem;
+        }
+
+        .stepBox {
+          top: 5.5rem;
+          left: 2.5rem;
+        }
+      }
+
+      .rocket {
+        position: absolute;
+        background: url(./img/spacecraft.svg) no-repeat;
+        background-size: contain;
+        width: 15rem;
+        height: 20rem;
+        top: 56.6rem;
+        right: 0rem;
+        &::after {
+          content: '复购';
+          background: #ffffff;
+          border-radius: 0.6rem;
+          border-radius: 0.6rem;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+
+          color: #004ed1;
+          padding: 1.2rem 1.8rem;
+          position: absolute;
+          left: 0;
+          top: 7.9rem;
+        }
+      }
+
+      .bottomRocket {
+        position: absolute;
+        background: url(./img/astro.svg) no-repeat;
+        background-size: cover;
+        width: 8.3rem;
+        height: 20rem;
+        top: 99rem;
+        right: 0rem;
+      }
+
+      .stepBox {
+        background: #fff;
+        padding: 1.2rem;
+        width: 19.2rem;
+        background: #ffffff;
+        border-radius: 0.6rem;
+        position: absolute;
+        z-index: 1;
+
+        .stepTitle {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          color: #26263d;
+          margin-bottom: 0.6rem;
+        }
+        .stepDesc {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.6rem;
+          color: #999999;
+        }
+      }
+    }
+
+    .center {
+      position: relative;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 20px;
+      color: #263577;
+      text-align: center;
+      display: none;
+      div {
+        display: flex;
+        flex-direction: column;
+        width: 196px;
+        align-items: center;
+        &.save {
+          &::before {
+            content: '';
+            width: 58px;
+            height: 56px;
+            background: url(./img/c-1.svg) no-repeat;
+            margin-bottom: 18px;
+            background-size: contain;
+          }
+        }
+        &.data {
+          border-left: 1px solid #dae0fc;
+          border-right: 1px solid #dae0fc;
+          &::before {
+            content: '';
+            width: 58px;
+            height: 56px;
+            background: url(./img/c-2.svg) no-repeat;
+            margin-bottom: 18px;
+            background-size: contain;
+          }
+        }
+        &.country {
+          &::before {
+            content: '';
+            width: 58px;
+            height: 56px;
+            background: url(./img/c-2.svg) no-repeat;
+            margin-bottom: 18px;
+            background-size: contain;
+          }
+        }
       }
     }
   }

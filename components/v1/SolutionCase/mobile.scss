@@ -1,6 +1,5 @@
 @media screen and (max-width: 770px) {
   .solutionCase {
-    padding: 5rem 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,6 +16,44 @@
       line-height: 2rem;
       margin-top: 0.8rem;
       color: #333333;
+    }
+
+    .goTop {
+      background: #fafbfd;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      width: 4rem;
+      height: 4rem;
+      position: relative;
+      border-radius: 50%;
+      position: sticky;
+      position: -webkit-sticky;
+      z-index: 10;
+      top: 13rem;
+      margin-top: 1.6rem;
+      cursor: pointer;
+      right: 0.6rem;
+      align-self: flex-end;
+      cursor: pointer;
+      &:hover {
+        background: #5071e7;
+        &::after {
+          background-color: #fafbfd;
+        }
+      }
+
+      &::after {
+        content: '';
+        background-color: #5071e7;
+        mask: url('./img/arrow.svg') no-repeat;
+        mask-size: cover;
+        -webkit-mask-size: cover;
+        position: absolute;
+        width: 1rem;
+        height: 1.4rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
 
     .list {
@@ -48,13 +85,16 @@
         font-size: 1.4rem;
         line-height: 1.7rem;
         color: #000000;
-        min-width: 10rem;
         cursor: pointer;
-
+        white-space: nowrap;
+        padding: 0 1.5rem;
+        border-top: 2px solid #CCCCCC;
+        border-bottom: 2px solid #CCCCCC;
         &[data-active='active'] {
           background: #004ed1;
           color: #ffffff;
           border: none;
+          // transition: .5s;
         }
       }
     }
@@ -63,6 +103,7 @@
       display: flex;
       flex-direction: column;
       gap: 4rem;
+      margin-top: -5.6rem;
     }
 
     .graphic {
@@ -73,27 +114,34 @@
       .imgBox {
         display: flex;
         width: 100%;
-        padding-bottom: 51.6%;
-        margin-bottom: 2.5rem;
-
+        padding-bottom: 57.4%;
+        // margin-bottom: .5rem;
+        &.brand {
+          background: url(./img/brand.png) no-repeat center;
+          background-size: contain;
+        }
         &.site {
           background: url(./img/site.png) no-repeat center;
           background-size: contain;
         }
-        &.increase {
-          background: url(./img/increase.png) no-repeat center;
+        &.seo {
+          background: url(./img/seo.png) no-repeat center;
           background-size: contain;
         }
-        &.launch {
-          background: url(./img/launch.png) no-repeat center;
+        &.launches {
+          background: url(./img/launches.png) no-repeat center;
           background-size: contain;
         }
-        &.operating {
-          background: url(./img/operating.png) no-repeat center;
+        &.operation {
+          background: url(./img/operation.png) no-repeat center;
           background-size: contain;
         }
-        &.ecological {
-          background: url(./img/ecological.png) no-repeat center;
+        &.email {
+          background: url(./img/email.png) no-repeat center;
+          background-size: contain;
+        }
+        &.repurchase {
+          background: url(./img/repurchase.png) no-repeat center;
           background-size: contain;
         }
       }
