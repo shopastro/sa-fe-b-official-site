@@ -11,9 +11,9 @@ import Partner from '../components/v1/Partner'
 import { useState } from 'react'
 
 const Home: NextPage = () => {
-  const [active, setActive] = useState<'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'>(
-    'brand'
-  )
+  const [active, setActive] = useState<
+    '' | 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'
+  >('')
 
   const onActive = (ac: 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase') => {
     setActive(ac)

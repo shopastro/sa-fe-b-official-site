@@ -4,7 +4,7 @@ import { list } from './constant'
 import Graphic from './Graphic'
 
 type IProps = {
-  active: 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'
+  active: '' | 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'
 }
 
 const SolutionCase: React.FC<IProps> = (props) => {
@@ -16,8 +16,10 @@ const SolutionCase: React.FC<IProps> = (props) => {
   }
 
   useEffect(() => {
-    setActiveType(active)
-    handleClick(active)
+    if (active) {
+      setActiveType(active)
+      handleClick(active)
+    }
   }, [active])
 
   useEffect(() => {
