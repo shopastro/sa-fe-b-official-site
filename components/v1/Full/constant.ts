@@ -1,4 +1,10 @@
-export const caseList = [
+type Data = {
+  text: string
+  type: 'brand' | 'b2b' | 'border' | 'domestic'
+  list: string[]
+}
+
+export const caseList: Data[] = [
   {
     text: 'B2B外贸工厂',
     type: 'b2b',
