@@ -2,10 +2,10 @@ name: Deploy to Aliyun ACK
 on:
   push:
     branches:
-      - beta
+      - main
 env:
   ACR_REPOSITORY: ${{ github.repository }}
-  CLUSTER_ID : c2e42dd5a7a594cdf8592d9d490f976d4    # beta
+  CLUSTER_ID : c6ee0e98962eb4c1ab7676f92d047143f    # prod
   ACR_REGISTRY: registry.cn-hangzhou.aliyuncs.com
   K8S_NAMESPACE: default
 
@@ -25,7 +25,7 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Build and push image
         run: |
-          docker build -t ${{ env.ACR_REGISTRY }}/${{ env.ACR_REPOSITORY }}:${{ github.sha }} .
+          docker build -t ${{ env.ACR_REGISTRY }}/${{ env.ACR_REPOSITORY }}:${{ github.sha }} -f ./Dockerfile_prod .
           docker push ${{ env.ACR_REGISTRY }}/${{ env.ACR_REPOSITORY }}:${{ github.sha }}
 
       - uses: aliyun/ack-set-context@v1
