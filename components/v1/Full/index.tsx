@@ -42,8 +42,10 @@ const Full: React.FC<IProps> = (props) => {
             )
           })}
         </div>
-        <div className={styles[`${active}Img`]}></div>
-        <div className={styles.content}>{getDetail()}</div>
+        <div className={styles.rightTowBox}>
+          <div className={styles[`${active}Img`]}></div>
+          <div className={styles.content}>{getDetail()}</div>
+        </div>
       </div>
 
       <div className={styles.contentBoxMb}>

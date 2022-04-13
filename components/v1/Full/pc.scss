@@ -33,13 +33,24 @@
     .contentBox {
       background: #fff;
       display: flex;
+
+      .rightTowBox {
+        display: flex;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        background: #fff;
+        padding:0 36px;
+      }
+
       .left {
         width: 280px;
         min-width: 280px;
-        margin-right: 36px;
         background: #fafbff;
 
         div {
+          &:last-child {
+            margin-bottom: 0;
+          }
           height: 100px;
           font-style: normal;
           font-weight: 500;
@@ -50,11 +61,23 @@
           padding-left: 48px;
           cursor: pointer;
           background: #fafbff;
-          padding-bottom: 10px;
+          margin-bottom: 10px;
 
           &.active {
             padding-left: 24px;
             background: #fff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              z-index: 1;
+              width: 36px;
+              right: -36px;
+              height: 100%;
+              background: #fff;
+            }
           }
           &::before {
             content: '';
@@ -123,14 +146,14 @@
       .brandImg {
         width: 380px;
         height: 380px;
-        margin-top: 25px;
+        margin: 25px 0;
         background: url('./img/brand.png') no-repeat;
         background-size: contain;
       }
       .borderImg {
         width: 380px;
         height: 380px;
-        margin-top: 25px;
+        margin: 25px 0;
 
         background: url('./img/border.png') no-repeat;
         background-size: contain;
@@ -138,7 +161,7 @@
       .b2bImg {
         width: 380px;
         height: 380px;
-        margin-top: 25px;
+        margin: 25px 0;
 
         background: url('./img/b2b.png') no-repeat;
         background-size: contain;
@@ -146,7 +169,7 @@
       .domesticImg {
         width: 380px;
         height: 380px;
-        margin-top: 25px;
+        margin: 25px 0;
 
         background: url('./img/domestic.png') no-repeat;
         background-size: contain;
