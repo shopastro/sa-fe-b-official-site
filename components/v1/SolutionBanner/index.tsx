@@ -25,7 +25,7 @@ const BannerBox: React.FC<IProps> = (props) => {
 
   useEffect(() => {
     const key = keys[count] || ''
-    const timer = !['startLine', 'step1', 'endLine'].includes(key) ? 700 : 10
+    const timer = !['startLine', 'step1', 'endLine'].includes(key) ? 1200 : 10
     setTimeout(() => {
       setProgress({
         ...progress,

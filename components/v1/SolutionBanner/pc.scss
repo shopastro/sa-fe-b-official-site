@@ -1,6 +1,6 @@
 @media screen and (min-width: 770px) {
   $opacity: 0;
-  $transition: 0.35s;
+  $transition: 0.6s;
   $scale: 0.5;
 
   @keyframes shadow {
@@ -110,15 +110,15 @@
         left: 30px;
         bottom: 228px;
         &::after {
-          content: '复购';
-          background: #004ed1;
+          content: '首购';
+          background: #ffffff;
           box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
           border-radius: 12px;
           font-style: normal;
           font-weight: 600;
           font-size: 22px;
           line-height: 31px;
-          color: #ffffff;
+          color: #004ed1;
           padding: 20px 28px;
           position: absolute;
           left: 149px;
@@ -399,7 +399,7 @@
 
       .active {
         .stepBox {
-          animation: shadow 0.35s linear;
+          animation: shadow $transition linear;
         }
       }
 
