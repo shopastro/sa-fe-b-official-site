@@ -36,10 +36,10 @@
 
       .rightTowBox {
         display: flex;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px rgb(80 92 112 / 10%);
         flex: 1;
         background: #fff;
-        padding:0 36px;
+        padding: 0 36px;
       }
 
       .left {
@@ -66,7 +66,7 @@
           &.active {
             padding-left: 24px;
             background: #fff;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 30px rgb(80 92 112 / 10%);
             z-index: 1;
             position: relative;
             &::after {
