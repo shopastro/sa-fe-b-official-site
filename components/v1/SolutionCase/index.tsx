@@ -10,7 +10,7 @@ type IProps = {
 
 const SolutionCase: React.FC<IProps> = (props) => {
   const { active, onActive } = props
-  const [activeType, setActiveType] = useState('site')
+  const [activeType, setActiveType] = useState('brand')
   const listRef = useRef<any>()
   const getActive = (type: string) => {
     setActiveType(type)
