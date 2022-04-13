@@ -22,6 +22,21 @@
       right: 40px;
       align-self: flex-end;
       cursor: pointer;
+
+      &::before {
+        content: '查看大图';
+        position: absolute;
+        white-space: nowrap;
+        bottom: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 12px;
+        text-align: center;
+        color: #999999;
+      }
       &:hover {
         background: #5071e7;
         &::after {
