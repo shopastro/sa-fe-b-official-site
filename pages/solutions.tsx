@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     '' | 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'
   >('')
 
-  const onActive = (ac: 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase') => {
+  const onActive = (ac: '' | 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase') => {
     setActive(ac)
   }
 
