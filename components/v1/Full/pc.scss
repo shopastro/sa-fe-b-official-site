@@ -104,7 +104,6 @@
           font-size: 24px;
           line-height: 36px;
           color: #004ed1;
-          margin-left: 24px;
         }
 
         .desc {
@@ -114,18 +113,9 @@
           font-size: 16px;
           line-height: 28px;
           color: #333333;
-          div {
+          ul {
             display: flex;
             align-items: center;
-            &::before {
-              content: '';
-              width: 4px;
-              height: 4px;
-              border-radius: 50%;
-              background: #000;
-              display: flex;
-              margin-right: 12px;
-            }
           }
         }
       }

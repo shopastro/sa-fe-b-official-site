@@ -12,11 +12,11 @@ const Full: React.FC<IProps> = (props) => {
     return (
       <>
         <div className={styles.title}>{item?.text}</div>
-        <div className={styles.desc}>
+        <ul className={styles.desc}>
           {item?.list.map((txt) => {
-            return <div key={txt}>{txt}</div>
+            return <li key={txt}>{txt}</li>
           })}
-        </div>
+        </ul>
       </>
     )
   }
@@ -52,11 +52,11 @@ const Full: React.FC<IProps> = (props) => {
             <div key={it.type} className={styles.box}>
               <div className={styles[`${it.type}Img`]} />
               <div className={styles[`${it.type}`]}>{it.text}</div>
-              <div className={styles.desc}>
+              <ul className={styles.desc}>
                 {it.list.map((txt) => {
-                  return <div key={txt}>{txt}</div>
+                  return <li key={txt}>{txt}</li>
                 })}
-              </div>
+              </ul>
             </div>
           )
         })}

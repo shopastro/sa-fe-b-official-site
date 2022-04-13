@@ -42,13 +42,15 @@ const Graphic: React.FC<IProps> = (props) => {
           return (
             <div key={it.title}>
               <div className={styles.listTitle}>{it.title}</div>
-              {it.list.map((txt) => {
-                return (
-                  <div key={txt} className={styles.listText}>
-                    {txt}
-                  </div>
-                )
-              })}
+              <ul className={styles.listItem}>
+                {it.list.map((txt) => {
+                  return (
+                    <li key={txt} className={styles.listText}>
+                      {txt}
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
           )
         })}

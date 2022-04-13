@@ -27,7 +27,7 @@ const Home: NextPage = () => {
         <Menu />
         <SolutionBanner onActive={onActive} />
         {/* <Service /> */}
-        <SolutionCase active={active} />
+        <SolutionCase active={active} onActive={onActive} />
 
         <Full />
 

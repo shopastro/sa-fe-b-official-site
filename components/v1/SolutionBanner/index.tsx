@@ -31,8 +31,20 @@ const BannerBox: React.FC<IProps> = (props) => {
         ...progress,
         [key]: true,
       })
-      if (count < keys.length) {
+      if (count <= keys.length) {
         setCount((n) => n + 1)
+      } else {
+        setProgress({
+          step1: false,
+          step2: false,
+          step3: false,
+          step4: false,
+          step5: false,
+          step6: false,
+          step7: false,
+          startLine: true,
+          endLine: true,
+        })
       }
     }, timer)
   }, [count])
@@ -68,6 +80,7 @@ const BannerBox: React.FC<IProps> = (props) => {
           <div
             className={classNames(styles.step1, {
               [styles.active]: progress.step1,
+              [styles.executeOne]: keys.length < count,
             })}
             onClick={() => {
               onActive('brand')
@@ -82,6 +95,7 @@ const BannerBox: React.FC<IProps> = (props) => {
           <div
             className={classNames(styles.step2, {
               [styles.active]: progress.step2,
+              [styles.executeOne]: keys.length < count,
             })}
             onClick={() => {
               onActive('site')
@@ -96,6 +110,7 @@ const BannerBox: React.FC<IProps> = (props) => {
           <div
             className={classNames(styles.step3, {
               [styles.active]: progress.step3,
+              [styles.executeOne]: keys.length < count,
             })}
             onClick={() => {
               onActive('seo')
@@ -110,6 +125,7 @@ const BannerBox: React.FC<IProps> = (props) => {
           <div
             className={classNames(styles.step4, {
               [styles.active]: progress.step4,
+              [styles.executeOne]: keys.length < count,
             })}
             onClick={() => {
               onActive('launches')
@@ -124,6 +140,7 @@ const BannerBox: React.FC<IProps> = (props) => {
           <div
             className={classNames(styles.step5, {
               [styles.active]: progress.step5,
+              [styles.executeOne]: keys.length < count,
             })}
             onClick={() => {
               onActive('operation')
@@ -140,6 +157,7 @@ const BannerBox: React.FC<IProps> = (props) => {
           <div
             className={classNames(styles.step6, {
               [styles.active]: progress.step6,
+              [styles.executeOne]: keys.length < count,
             })}
             onClick={() => {
               onActive('email')
@@ -154,6 +172,7 @@ const BannerBox: React.FC<IProps> = (props) => {
           <div
             className={classNames(styles.step7, {
               [styles.active]: progress.step7,
+              [styles.executeOne]: keys.length < count,
             })}
             onClick={() => {
               onActive('repurchase')

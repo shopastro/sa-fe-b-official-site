@@ -3,6 +3,16 @@
   $transition: 0.35s;
   $scale: 0.5;
 
+  @keyframes shadow {
+    0% {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+
+    100% {
+      box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.1);
+    }
+  }
+
   .topBox {
     display: flex;
     flex-direction: column;
@@ -187,6 +197,40 @@
             opacity: 1;
             transition: $transition;
             transform: scale(1);
+          }
+
+          &:focus-visible {
+            .bg,
+            &::before,
+            &::after {
+              opacity: 1;
+              transition: $transition;
+              transform: scale(1);
+            }
+            .stepBox {
+              box-shadow: 0 .2rem 1.5rem rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
+
+        &.executeOne {
+          .bg,
+          &::before,
+          &::after {
+            opacity: 0.4;
+            transition: $transition;
+            transform: scale(1);
+          }
+          &:active {
+            .bg,
+            &::before,
+            &::after {
+              opacity: 1;
+              transform: scale(1);
+            }
+            .stepBox {
+              box-shadow: 0 .2rem 1.5rem rgba(0, 0, 0, 0.1);
+            }
           }
         }
 
@@ -398,6 +442,12 @@
         height: 20rem;
         top: 99rem;
         right: 0rem;
+      }
+
+      .active {
+        .stepBox {
+          animation: shadow 0.35s linear;
+        }
       }
 
       .stepBox {

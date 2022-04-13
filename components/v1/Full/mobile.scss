@@ -124,19 +124,7 @@
         font-size: 1.4rem;
         line-height: 160%;
         color: #333333;
-        div {
-          display: flex;
-          align-items: center;
-          &::before {
-            content: '';
-            width: 0.4rem;
-            height: 0.4rem;
-            border-radius: 50%;
-            background: #000;
-            display: flex;
-            margin-right: 0.6rem;
-          }
-        }
+        list-style: inside;
       }
     }
 

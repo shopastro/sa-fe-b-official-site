@@ -5,10 +5,11 @@ import Graphic from './Graphic'
 
 type IProps = {
   active: '' | 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'
+  onActive: (p: '') => void
 }
 
 const SolutionCase: React.FC<IProps> = (props) => {
-  const { active } = props
+  const { active, onActive } = props
   const [activeType, setActiveType] = useState('site')
   const listRef = useRef<any>()
   const getActive = (type: string) => {
@@ -46,7 +47,7 @@ const SolutionCase: React.FC<IProps> = (props) => {
       behavior: 'smooth',
     })
 
-    setActiveType(type)
+    onActive('')
   }
 
   return (

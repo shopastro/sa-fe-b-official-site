@@ -218,24 +218,13 @@
           line-height: 28px;
           color: #004ed1;
         }
+
         .listText {
           font-size: 16px;
           line-height: 32px;
           margin-top: 16px;
           color: #333333;
           position: relative;
-          display: flex;
-          &::before {
-            content: '';
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: #000;
-            display: flex;
-            margin-right: 10px;
-            margin-top: 12px;
-            margin-left: 6px;
-          }
         }
       }
     }
