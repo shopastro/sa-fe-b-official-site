@@ -1,0 +1,18 @@
+@media screen and (max-width: 770px) {
+  .historyBox {
+    margin-top: 2.4rem;
+    padding: 0 2.4rem;
+    .history {
+      width: 100%;
+      padding-bottom: 150%;
+      margin-top: 3.2rem;
+      background: url('./img/mb.png') no-repeat;
+      background-size: contain;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor;
+    }
+  }
+}
