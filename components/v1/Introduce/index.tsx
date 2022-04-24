@@ -45,12 +45,6 @@ const Introduce: React.FC<IProps> = (props) => {
           <div className={`${styles.img} ${styles.img2}`} />
         </div>
       </div>
-      <div className={styles.waist}>
-        <div className={styles.waistText}>
-          <div>让中国品牌卖家享受更好的商业服务</div>
-          <div className={styles.waistTextEn}>Let The World Discover Better China Brands</div>
-        </div>
-      </div>
     </>
   )
 }

@@ -8,6 +8,8 @@ import ServicePositioning from '../components/v1/ServicePositioning'
 import Office from '../components/v1/Office'
 import JoinUs from '../components/v1/JoinUs'
 import ContentUs from '../components/v1/ContentUs'
+import History from '../components/v2/History'
+import AboutWaist from '../components/v2/AboutWaist'
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +20,8 @@ const Home: NextPage = () => {
         <Menu />
         <AboutBanner />
         <Introduce />
+        <History />
+        <AboutWaist />
         <ServicePositioning />
         <Office />
         <JoinUs />
