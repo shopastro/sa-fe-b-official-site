@@ -1,0 +1,97 @@
+@media screen and (min-width: 770px) {
+  .topBannerBox {
+    margin-top: 11rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .topBannerTitle {
+      font-size: 5.2rem;
+      line-height: 7.2rem;
+      font-weight: bold;
+
+      .titleHight {
+        color: #004ed1;
+      }
+    }
+
+    .topBannerText {
+      font-size: 2.6rem;
+      line-height: 3.6rem;
+      margin-top: 1.2rem;
+      font-weight: 400;
+      font-family: PingFang HK;
+      color: #555555;
+    }
+
+    .topBannerList {
+      display: flex;
+      list-style-type: none;
+      margin-top: 7.2rem;
+
+      li {
+        width: 12rem;
+        padding: 0 9.3rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::after {
+          content: '';
+          width: 1px;
+          height: 17.5rem;
+          background: #d8d3d3;
+          position: absolute;
+          right: 0;
+          top: calc(50% - 8.75rem);
+        }
+
+        .listText {
+          line-height: 2.5rem;
+          font-size: 1.8rem;
+          color: #666;
+        }
+
+        .function {
+          background-image: url(./img/function.svg);
+          width: 12rem;
+          height: 12rem;
+          margin-top: 3.4rem;
+        }
+        .operate {
+          background-image: url(./img/operate.svg);
+          width: 12rem;
+          height: 12rem;
+          margin-top: 3.4rem;
+        }
+        .conversion {
+          background-image: url(./img/conversion.svg);
+          width: 12rem;
+          height: 12rem;
+          margin-top: 3.4rem;
+        }
+        .ecology {
+          background-image: url(./img/ecology.svg);
+          width: 12rem;
+          height: 12rem;
+          margin-top: 3.4rem;
+        }
+      }
+
+      li:nth-child(4) {
+        &::after {
+          width: 0;
+        }
+      }
+    }
+
+    .immediatelyBtn {
+      margin-top: 7.2rem;
+      padding: 2.15rem 6.2rem;
+      font-weight: 500;
+      font-size: 2.4rem;
+    }
+  }
+}
