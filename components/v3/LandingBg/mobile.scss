@@ -11,34 +11,39 @@
     -ms-user-select: none;
     pointer-events: none;
     .topBannerBg {
-      background: url(./img/top1Mb.svg) no-repeat;
       top: 0;
       left: 0;
       width: 100vw;
-      height: 68rem;
-      background-size: contain;
+      height: 1030px;
       position: relative;
-      background-position: 0 -7rem;
+      background-color: #f8faff;
+
+      .topBannerFirstBg {
+        background: url(./imgMobile/topBanner1.svg) no-repeat;
+        background-size: contain;
+        height: 225px;
+        width: 215px;
+      }
       &::before {
         content: '';
-        background: url(./img/top2Mb.svg) no-repeat;
-        top: 26rem;
-        right: 0;
-        width: 100vw;
-        height: 68rem;
+        background: url(./imgMobile/topBanner2.svg) no-repeat;
+        top: 600px;
+        left: 0;
+        width: 126px;
+        height: 228px;
         background-size: contain;
         position: absolute;
       }
-      // &::after {
-      //   content: '';
-      //   background: url(./img/top3Mb.svg) no-repeat;
-      //   top: 48rem;
-      //   left: 0;
-      //   width: 13rem;
-      //   height: 29rem;
-      //   background-size: contain;
-      //   position: absolute;
-      // }
+      &::after {
+        content: '';
+        background: url(./imgMobile/topBanner3.svg) no-repeat;
+        top: 380px;
+        right: 0;
+        width: 196px;
+        height: 304px;
+        background-size: contain;
+        position: absolute;
+      }
     }
 
     .first {

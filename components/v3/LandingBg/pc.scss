@@ -14,31 +14,37 @@
     -ms-user-select: none;
     pointer-events: none;
     .topBannerBg {
-      background: url(./img/top1.svg) no-repeat;
       top: 0;
       left: 0;
       width: 100vw;
       min-width: 1440px;
-      height: 680px;
-      background-size: contain;
+      height: 1475px;
       position: relative;
+      background-color: #f8faff;
+
+      .topBannerFirstBg {
+        background: url(./imgPc/topBanner1.svg) no-repeat;
+        background-size: contain;
+        height: 468px;
+        width: 431px;
+      }
       &::before {
         content: '';
-        background: url(./img/top2.svg) no-repeat;
-        top: 0;
-        right: 0;
-        width: 655px;
-        height: 780px;
+        background: url(./imgPc/topBanner2.svg) no-repeat;
+        top: 580px;
+        left: 0;
+        width: 252px;
+        height: 430px;
         background-size: contain;
         position: absolute;
       }
       &::after {
         content: '';
-        background: url(./img/top3.svg) no-repeat;
-        top: 350px;
+        background: url(./imgPc/topBanner3.svg) no-repeat;
+        top: 580px;
         right: 0;
-        width: 230px;
-        height: 270px;
+        width: 386px;
+        height: 542px;
         background-size: contain;
         position: absolute;
       }
