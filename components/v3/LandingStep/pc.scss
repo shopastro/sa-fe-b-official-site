@@ -22,42 +22,57 @@
     }
   }
 
-  .topBox {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin-top: 56px;
-    z-index: 10;
-    .company {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 28px;
-      color: #222222;
-      span {
+  .landingStep {
+    margin: 12rem 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 3rem;
+    background-color: #fff;
+    padding: 7rem;
+    max-width: 128rem;
+
+    .topBox {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: 10;
+
+      .company {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        color: #222222;
+        span {
+          color: #004ed1;
+        }
+      }
+
+      .center {
+        display: none;
+      }
+
+      .title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 5.2rem;
+        line-height: 7.2rem;
         color: #004ed1;
       }
-    }
 
-    .center {
-      display: none;
-    }
+      .desc {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 5.2rem;
+        line-height: 7.2rem;
+        color: #333;
+      }
 
-    .title {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 36px;
-      line-height: 50px;
-      margin-top: 12px;
-      color: #222222;
-    }
-
-    .desc {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 36px;
-      line-height: 50px;
-      color: #222222;
+      .text {
+        font-size: 2.6rem;
+        line-height: 2.6rem;
+        color: #555;
+        margin-top: 1.6rem;
+      }
     }
   }
 
@@ -67,9 +82,9 @@
     &::before {
       content: '';
       position: absolute;
-      min-width: 1440px;
+      min-width: 1140px;
       width: 100vw;
-      background: #fafbff;
+      // background: #fafbff;
       position: absolute;
       height: 100%;
       left: 50%;
@@ -79,34 +94,15 @@
 
     .banner {
       // background: url(./img/pcBg.svg) no-repeat;
-      width: 1440px;
-      height: 842px;
+      width: 1140px;
+      // height: 842px;
       position: relative;
-      margin-left: -120px;
       height: 842px;
-      overflow: hidden;
 
       .astro {
-        width: 252px;
-        height: 297px;
         position: absolute;
-        left: 30px;
-        bottom: 228px;
-        &::after {
-          content: '首购';
-          background: #ffffff;
-          // box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
-          border-radius: 12px;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 22px;
-          line-height: 31px;
-          color: #004ed1;
-          padding: 20px 28px;
-          position: absolute;
-          left: 149px;
-          top: 71px;
-        }
+        left: 0;
+        top: 5.2rem;
       }
 
       .step1,
@@ -121,19 +117,6 @@
         height: 120px;
         display: flex;
         cursor: pointer;
-        &::before {
-          content: 'step';
-          position: absolute;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 21px;
-          color: #5071e7;
-          z-index: 2;
-          left: -94px;
-          opacity: $opacity;
-          transform: scale($scale);
-        }
 
         &::after {
           content: '01';
@@ -363,7 +346,7 @@
 
       .rocket {
         position: absolute;
-        background: url(./img/spacecraft.svg) no-repeat;
+        // background: url(./img/spacecraft.svg) no-repeat;
         background-size: contain;
 
         left: 1204px;

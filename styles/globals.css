@@ -404,4 +404,17 @@ ul {
     z-index: 100;
     position: relative;
   }
+
+  .sec-landing-container {
+    max-width: 144rem;
+    min-width: 144rem;
+    width: 100%;
+    padding: 0 8rem;
+    margin: 0 auto;
+    z-index: 100;
+    position: relative;
+  }
+  .sec-landing-menu {
+    padding: 0 2rem;
+  }
 }

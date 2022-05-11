@@ -6,7 +6,7 @@ type IProps = {
   onActive: (a: 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase') => void
 }
 
-const BannerBox: React.FC<IProps> = (props) => {
+const LandingStep: React.FC<IProps> = (props) => {
   const { onActive } = props
   const [progress, setProgress] = useState({
     step1: false,
@@ -50,10 +50,11 @@ const BannerBox: React.FC<IProps> = (props) => {
   }, [count])
 
   return (
-    <div className={styles.topBox}>
+    <div className={styles.landingStep}>
       <div className={styles.topBox}>
-        <div className={styles.title}>全链路运营方案 </div>
-        <div className={styles.desc}> 一站式出海更简单、更高效</div>
+        <div className={styles.title}>全链路运营</div>
+        <div className={styles.desc}>实现高效转化 燃爆出海业绩</div>
+        <div className={styles.text}>贯通首购+复购 ｜ 加速GMV提升 ｜ 助力独立站私域沉淀</div>
 
         <div className={styles.center}>
           <div className={styles.save}>合规安全</div>
@@ -63,17 +64,7 @@ const BannerBox: React.FC<IProps> = (props) => {
       </div>
       <div className={styles.bannerBox} id="SolutionBanner">
         <div className={styles.banner}>
-          <div
-            className={classNames(styles.startLine, {
-              [styles.active]: progress.startLine,
-            })}
-          />
-          <div
-            className={classNames(styles.endLine, {
-              [styles.active]: progress.endLine,
-            })}
-          />
-          <div className={styles.astro} />
+          <div className={styles.astro}>首购</div>
           <div
             className={classNames(styles.step1, {
               [styles.active]: progress.step1,
@@ -197,4 +188,4 @@ const BannerBox: React.FC<IProps> = (props) => {
   )
 }
 
-export default BannerBox
+export default LandingStep

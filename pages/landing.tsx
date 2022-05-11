@@ -19,8 +19,10 @@ const Home: NextPage = () => {
   return (
     <div style={{ position: 'relative' }}>
       <Header />
-      <section className="sec-container">
-        <Menu />
+      <section className="sec-landing-container">
+        <div className="sec-landing-menu">
+          <Menu />
+        </div>
         <LandBanner />
         <LandingStep onActive={onActive} />
         <Partner />
