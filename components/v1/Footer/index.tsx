@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './index.module.scss'
 import { withRouter } from 'next/router'
 import FooterItem from './FooterItem'
+import Pendant from '../../common/Pendant'
 import { aboutUsList, joinList, contentList } from './constant'
 const Vision: React.FC<any> = (props) => {
   const currentYear = new Date().getFullYear().toString()
@@ -54,6 +55,7 @@ const Vision: React.FC<any> = (props) => {
           </a>
         </div>
       </div>
+      <Pendant />
     </div>
   )
 }
