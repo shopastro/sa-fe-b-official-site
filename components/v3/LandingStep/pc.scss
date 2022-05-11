@@ -77,7 +77,7 @@
   }
 
   .bannerBox {
-    padding-top: 196px;
+    padding-top: 25.8rem;
     position: relative;
     &::before {
       content: '';
@@ -113,8 +113,8 @@
       .step6,
       .step7 {
         position: absolute;
-        width: 120px;
-        height: 120px;
+        width: 5.6rem;
+        height: 5.6rem;
         display: flex;
         cursor: pointer;
 
@@ -122,13 +122,14 @@
           content: '01';
           position: absolute;
           font-style: normal;
-          font-weight: 400;
-          font-size: 46px;
+          font-weight: 600;
+          font-family: WenYue XinQingNianTi (Authorization Required);
+          font-size: 40px;
           line-height: 53px;
           color: #5071e7;
           z-index: 3;
-          left: -55px;
-          top: -8px;
+          right: -4.8rem;
+          top: 0;
           opacity: $opacity;
           transform: scale($scale);
         }
@@ -156,6 +157,11 @@
             }
             .stepBox {
               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+              &::after {
+                height: 0;
+                animation: shadow $transition linear;
+              }
             }
           }
         }
@@ -182,6 +188,11 @@
             .stepBox {
               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
               animation: shadow $transition linear;
+
+              &::after {
+                height: 0;
+                animation: shadow $transition linear;
+              }
             }
           }
         }
@@ -197,150 +208,95 @@
       }
 
       .step1 {
-        left: 185px;
-        top: 150px;
+        left: 19rem;
+        top: 0;
         .bg {
-          background: url(./img/step1.svg) no-repeat;
+          background: url(./imgPc/step01.svg) no-repeat;
           background-size: contain;
         }
       }
 
       .step2 {
-        left: 447px;
-        top: 61px;
+        left: 45rem;
+        top: 0;
         .bg {
-          background: url(./img/step2.svg) no-repeat;
+          background: url(./imgPc/step02.svg) no-repeat;
           background-size: contain;
         }
         &::after {
           content: '02';
-        }
-
-        .stepBox {
-          top: 80px;
-          left: 53px;
+          right: -5.6rem;
         }
       }
 
       .step3 {
-        left: 893px;
-        top: 145px;
+        left: 72rem;
+        top: 0;
         .bg {
-          background: url(./img/step3.svg) no-repeat;
+          background: url(./imgPc/step03.svg) no-repeat;
           background-size: contain;
-        }
-        &::before {
-          left: -94px;
-          top: -44px;
         }
 
         &::after {
           content: '03';
-
-          left: -55px;
-          top: -52px;
-        }
-
-        .stepBox {
-          top: 69px;
-          left: -144px;
+          right: -5.6rem;
         }
       }
 
       .step4 {
-        left: 1056px;
-        top: 72px;
+        left: 99rem;
+        top: 0;
         .bg {
-          background: url(./img/step4.svg) no-repeat;
+          background: url(./imgPc/step04.svg) no-repeat;
           background-size: contain;
-        }
-        &::before {
-          left: 67px;
-          top: -24px;
         }
 
         &::after {
           content: '04';
-          left: 110px;
-          top: -29px;
-        }
-        .stepBox {
-          top: 73px;
-          left: 44px;
+          right: -5.6rem;
         }
       }
 
       .step5 {
-        left: 1090px;
-        top: 488px;
+        left: 70rem;
+        top: 46rem;
         .bg {
-          background: url(./img/step5.svg) no-repeat;
+          background: url(./imgPc/step05.svg) no-repeat;
           background-size: contain;
-        }
-        &::before {
-          left: -116px;
-          top: 20px;
         }
 
         &::after {
           content: '05';
-          left: -75px;
-          top: 10px;
-        }
-        .stepBox {
-          top: 68px;
-          left: -160px;
+          right: -5.6rem;
         }
       }
 
       .step6 {
-        display: flex;
-        left: 622px;
-        top: 551px;
+        left: 45.4rem;
+        top: 46rem;
         .bg {
-          background: url(./img/step6.svg) no-repeat;
+          background: url(./imgPc/step06.svg) no-repeat;
           background-size: contain;
-        }
-        &::before {
-          left: 110px;
-          top: -14px;
         }
 
         &::after {
           content: '06';
-          left: 147px;
-          top: -24px;
-        }
-        .stepBox {
-          top: 81px;
-          left: 47px;
+          right: -5.6rem;
         }
       }
 
       .step7 {
-        background-size: contain;
-        left: 328px;
-        top: 529px;
-        width: 108px;
-        height: 108px;
+        left: 13.6rem;
+        top: 46rem;
+
         .bg {
-          background: url(./img/step7.svg) no-repeat;
+          background: url(./imgPc/step07.svg) no-repeat;
           background-size: contain;
-        }
-        &::before {
-          left: 110px;
-          top: -6px;
         }
 
         &::after {
           content: '07';
-          left: 147px;
-          top: -10px;
-        }
-
-        .stepBox {
-          top: 80px;
-          left: 45px;
+          right: -5.6rem;
         }
       }
 
@@ -379,13 +335,29 @@
 
       .stepBox {
         background: #fff;
-        padding: 20px;
-        width: 220px;
+        padding: 1.6rem;
+        width: 20rem;
         border-radius: 12px;
         position: absolute;
         z-index: 1;
-        top: 60px;
-        left: 53px;
+        top: 7.2rem;
+        left: -1.6rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 2rem;
+          width: 11rem;
+          height: 1px;
+          background: #e5e5e5;
+        }
+
+        &:hover {
+          &::after {
+            height: 0;
+          }
+        }
 
         .stepTitle {
           font-style: normal;
@@ -406,8 +378,8 @@
 
     .center {
       position: absolute;
-      left: 50%;
-      top: 50%;
+      left: 14.6rem;
+      top: 20.6rem;
       transform: translate(-50%, -50%);
       font-style: normal;
       font-weight: 500;
@@ -426,7 +398,7 @@
             content: '';
             width: 58px;
             height: 56px;
-            background: url(./img/c-1.svg) no-repeat;
+
             margin-bottom: 18px;
             background-size: contain;
           }
@@ -438,7 +410,7 @@
             content: '';
             width: 58px;
             height: 56px;
-            background: url(./img/c-2.svg) no-repeat;
+
             margin-bottom: 18px;
             background-size: contain;
           }
@@ -448,7 +420,7 @@
             content: '';
             width: 58px;
             height: 56px;
-            background: url(./img/c-3.svg) no-repeat;
+
             margin-bottom: 18px;
             background-size: contain;
           }
