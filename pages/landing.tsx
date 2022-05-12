@@ -8,6 +8,7 @@ import LandingBg from '../components/v3/LandingBg'
 import LandBanner from '../components/v3/LandBanner'
 import LandingStep from '../components/v3/LandingStep'
 import LandingAIEngine from '../components/v3/LandingAIEngine'
+import LandingTemplate from '../components/v3/LandingTemplate'
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         <LandBanner />
         <LandingStep />
         <LandingAIEngine />
+        <LandingTemplate />
         <Partner />
       </section>
       <Footer />
