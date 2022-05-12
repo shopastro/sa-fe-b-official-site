@@ -48,7 +48,7 @@
 
     .second {
       width: 100%;
-      height: 79.2rem;
+      height: 77rem;
       position: relative;
       display: flex;
 
@@ -68,7 +68,7 @@
     .third {
       background-color: #f7faff;
       width: 100%;
-      height: 113rem;
+      height: 123rem;
       position: relative;
 
       &::after {
@@ -84,34 +84,15 @@
       }
     }
 
-    .three {
-      background: url(./img/threeMb.svg) no-repeat;
-      background-size: contain;
-      top: 253rem;
-      width: 27rem;
-      height: 36rem;
-      position: absolute;
-      left: 0;
-      z-index: 1;
-    }
     .four {
-      background: url(./img/fourMb.svg) no-repeat;
-      background-size: contain;
-      top: 330rem;
-      width: 27rem;
-      height: 36rem;
-      position: absolute;
-      left: 0;
+      width: 100%;
+      height: 27.4rem;
     }
+
     .five {
-      background: url(./img/fiveMb.svg) no-repeat;
-      background-size: contain;
-      top: 368rem;
-      width: 26rem;
-      height: 26rem;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      width: 100%;
+      height: 70.3rem;
+      background-color: #f7faff;
     }
   }
 }

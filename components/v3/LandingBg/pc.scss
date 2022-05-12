@@ -15,7 +15,7 @@
     pointer-events: none;
     .first {
       width: 100vw;
-      min-width: 144px;
+      min-width: 144rem;
       height: 147.5rem;
       position: relative;
       background-color: #f8faff;
@@ -75,41 +75,15 @@
       background-size: cover;
     }
 
-    .across {
-      background: url(./img/across.svg) no-repeat;
-      background-size: contain;
-      top: 301.3rem;
-      width: 79.1rem;
-      height: 24.3rem;
-      position: absolute;
-      left: 0;
-    }
-    .three {
-      background: url(./img/three.svg) no-repeat;
-      background-size: contain;
-      top: 297rem;
-      width: 72rem;
-      height: 98rem;
-      position: absolute;
-      right: 0;
-    }
     .four {
-      background: url(./img/four.svg) no-repeat;
-      background-size: contain;
-      top: 397rem;
-      width: 40.9rem;
-      height: 55.3rem;
-      position: absolute;
-      left: 0;
+      width: 100%;
+      height: 44.6rem;
     }
+
     .five {
-      background: url(./img/five.svg) no-repeat;
-      background-size: contain;
-      top: 480rem;
-      width: 36rem;
-      height: 55.3rem;
-      position: absolute;
-      right: 0px;
+      width: 100%;
+      height: 60.8rem;
+      background-color: #f7faff;
     }
   }
 }

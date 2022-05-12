@@ -1,4 +1,105 @@
 @media screen and (min-width: 770px) {
-  .landingAIEngine {
+  .landingGuide {
+    margin-top: 7.3rem;
+    width: 100%;
+    padding: 4rem 6.6rem;
+    position: relative;
+    height: 60.8rem;
+
+    .guideBg {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        background-image: url(./img/topPc.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0;
+        left: 60.8rem;
+        height: 10.5rem;
+        width: 11rem;
+        z-index: 30;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-image: url(./img/bottom.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 21.7rem;
+        left: 0;
+        height: 27rem;
+        // width: 26rem;
+        z-index: 10;
+      }
+
+      .mainBg {
+        position: absolute;
+        top: 2rem;
+        left: 2.5rem;
+        width: 72rem;
+        height: 47rem;
+        background-image: url(./img/mainPc.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 20;
+      }
+    }
+
+    .guideWord {
+      position: absolute;
+      top: 7rem;
+      left: 87rem;
+
+      .guideTitle {
+        color: #333;
+        font-size: 4.8rem;
+        font-weight: 600;
+
+        .guideDesc {
+          line-height: 6.8rem;
+          white-space: nowrap;
+          .guideLight {
+            color: #004ed1;
+          }
+        }
+      }
+
+      .guideText {
+        font-size: 2.6rem;
+        line-height: 3.6rem;
+        color: #555;
+        margin-top: 1.6rem;
+      }
+
+      .guideList {
+        margin-top: 3rem;
+        font-size: 1.4rem;
+        color: #222;
+
+        .guideOne {
+          line-height: 2.6rem;
+          .itemTitle {
+            font-weight: 500;
+          }
+          .itemDesc {
+            color: #555;
+          }
+          .itemLight {
+            font-weight: 500;
+            color: #ff793b;
+          }
+        }
+      }
+
+      .immediatelyBtn {
+        margin-top: 3rem;
+        padding: 2.15rem 6.2rem;
+        font-weight: 500;
+        font-size: 2.4rem;
+        border-radius: 0.8rem;
+      }
+    }
   }
 }

@@ -11,7 +11,8 @@ const HomeBg: React.FC<IProps> = () => {
       </div>
       <div className={styles.second} />
       <div className={styles.third} />
-
+      <div className={styles.four} />
+      <div className={styles.five} />
       {/* <div className={styles.second} />
       <div className={styles.across} />
 

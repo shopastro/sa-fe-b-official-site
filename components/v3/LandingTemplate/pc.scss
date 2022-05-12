@@ -1,4 +1,41 @@
 @media screen and (min-width: 770px) {
-  .landingAIEngine {
+  .landingTemplate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12rem;
+
+    .templateTitle {
+      color: #000;
+      font-size: 5.2rem;
+      line-height: 7.2rem;
+      font-weight: 600;
+
+      .titleHight {
+        color: #004ed1;
+      }
+    }
+
+    .engineText {
+      color: #555;
+      font-size: 2.6rem;
+      line-height: 3.6rem;
+      margin: 1.6rem 0 2.8rem;
+    }
+
+    .templateBg {
+      background-image: url(./img/templatePc.png);
+      height: 49rem;
+      width: 115.4rem;
+      background-size: cover;
+    }
+
+    .immediatelyBtn {
+      margin-top: 6.2rem;
+      padding: 2.15rem 6.2rem;
+      font-weight: 500;
+      font-size: 2.4rem;
+      border-radius: 0.8rem;
+    }
   }
 }
