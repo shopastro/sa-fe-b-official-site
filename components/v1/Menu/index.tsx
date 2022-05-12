@@ -6,9 +6,10 @@ import Link from 'next/link'
 import classname from 'classname'
 import Modal from '../base/Modal'
 
-type IProps = {}
+type IProps = { text?: string }
 
 const Title: React.FC<IProps> = (props) => {
+  const { text } = props
   const [openMenu, setOpenMenu] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -99,7 +100,7 @@ const Title: React.FC<IProps> = (props) => {
           })}
 
           <li className={styles.contentUs}>
-            <Button text="立即开始" type="ghost" onClick={() => setIsOpen(true)} />
+            <Button text={text ? text : '立即开始'} type="ghost" onClick={() => setIsOpen(true)} />
           </li>
         </ul>
       )}

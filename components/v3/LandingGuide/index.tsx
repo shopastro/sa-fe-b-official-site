@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { useState } from 'react'
 import Button from '../../v1/base/Button'
 import Modal from '../../v1/base/Modal'
@@ -7,7 +8,7 @@ type IProps = {}
 
 const keyValueList = [
   { key: '行业：', value: '某品牌服饰客户' },
-  { key: '对比维度：', value: '同时间段shopastro运营成效vs客户自运营成效' },
+  { key: '对比维度：', value: '同时间段shopastro运营成效', value2: 'vs客户自运营成效' },
   { key: '订单量：', value: '为客户自投的', number: '18倍' },
   { key: 'Roas：', value: '为客户自投的', number: '4.3倍' },
   { key: '客单价：', number: '+50%' },
@@ -22,6 +23,9 @@ const LandingGuide: React.FC<IProps> = () => {
   }
   return (
     <div className={styles.landingGuide}>
+      <div className={styles.guideBg}>
+        <div className={styles.mainBg}></div>
+      </div>
       <div className={styles.guideWord}>
         <div className={styles.guideTitle}>
           <div className={styles.guideDesc}>行业运营专家</div>
@@ -36,22 +40,25 @@ const LandingGuide: React.FC<IProps> = () => {
               <div className={styles.guideOne} key={item.key}>
                 <span className={styles.itemTitle}>{item.key}</span>
                 <span className={styles.itemDesc}> {item.value} </span>
+                {item.value2 && (
+                  <span className={classNames(styles.itemDesc, styles.itemDescBlock)}> {item.value2} </span>
+                )}
                 <span className={styles.itemLight}> {item.number} </span>
               </div>
             )
           })}
         </div>
-        <Button
-          text="运营方案免费领取"
-          className={styles.immediatelyBtn}
-          onClick={() => {
-            setIsOpen(true)
-          }}
-        />
+        <div className={styles.btnContainer}>
+          <Button
+            text="运营方案免费领取"
+            className={styles.immediatelyBtn}
+            onClick={() => {
+              setIsOpen(true)
+            }}
+          />
+        </div>
       </div>
-      <div className={styles.guideBg}>
-        <div className={styles.mainBg}></div>
-      </div>
+
       {isOpen && <Modal visiable={isOpen} handleClose={handleClose} />}
     </div>
   )

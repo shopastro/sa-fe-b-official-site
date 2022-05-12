@@ -1,0 +1,193 @@
+@media screen and (min-width: 770px) {
+  .full {
+    margin-top: 12rem;
+    // background: #fafbff;
+    position: relative;
+
+    &::after {
+      content: '';
+      // background: #fafbff;
+      position: absolute;
+      min-width: 1440px;
+      width: 100vw;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      height: 100%;
+      z-index: -1;
+    }
+
+    .sectionTitle {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 5.2rem;
+      line-height: 7.3rem;
+      color: #000000;
+      display: flex;
+      justify-content: center;
+
+      .titleLight {
+        color: #004ed1;
+        margin-right: 0.6rem;
+      }
+    }
+
+    .sectionDesc {
+      font-size: 2.6rem;
+      line-height: 3.6rem;
+      color: #555;
+      text-align: center;
+      margin-top: 1.6rem;
+      margin-bottom: 5.6rem;
+    }
+
+    .contentBoxMb {
+      display: none;
+    }
+    .contentBox {
+      background: #fff;
+      display: flex;
+
+      .rightTowBox {
+        display: flex;
+        box-shadow: 0 4px 30px rgb(80 92 112 / 10%);
+        flex: 1;
+        background: #fff;
+        padding: 0 36px;
+      }
+
+      .left {
+        width: 280px;
+        min-width: 280px;
+        background: #fafbff;
+
+        div {
+          &:last-child {
+            margin-bottom: 0;
+          }
+          height: 100px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          color: #333333;
+          display: flex;
+          align-items: center;
+          padding-left: 48px;
+          cursor: pointer;
+          background: #fafbff;
+          margin-bottom: 10px;
+
+          &.active {
+            padding-left: 24px;
+            background: #fff;
+            box-shadow: 0 4px 30px rgb(80 92 112 / 10%);
+            z-index: 1;
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              z-index: 1;
+              width: 36px;
+              right: -36px;
+              height: 100%;
+              background: #fff;
+            }
+          }
+          &::before {
+            content: '';
+            width: 80px;
+            height: 60px;
+            display: flex;
+            margin-right: 16px;
+          }
+        }
+        .brand {
+          &::before {
+            background: url('./img/brand.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        .border {
+          &::before {
+            background: url('./img/border.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        .b2b {
+          &::before {
+            background: url('./img/b2b.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        .domestic {
+          &::before {
+            background: url('./img/domestic.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+
+      .content {
+        flex: 1;
+        align-items: flex-start;
+        margin-left: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 54px;
+        .title {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 36px;
+          color: #004ed1;
+        }
+
+        .desc {
+          margin-top: 24px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 28px;
+          color: #333333;
+          ul {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      .brandImg {
+        width: 380px;
+        height: 380px;
+        margin: 25px 0;
+        background: url('./img/brand.png') no-repeat;
+        background-size: contain;
+      }
+      .borderImg {
+        width: 380px;
+        height: 380px;
+        margin: 25px 0;
+
+        background: url('./img/border.png') no-repeat;
+        background-size: contain;
+      }
+      .b2bImg {
+        width: 380px;
+        height: 380px;
+        margin: 25px 0;
+
+        background: url('./img/b2b.png') no-repeat;
+        background-size: contain;
+      }
+      .domesticImg {
+        width: 380px;
+        height: 380px;
+        margin: 25px 0;
+
+        background: url('./img/domestic.png') no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}

@@ -1,4 +1,143 @@
 @media screen and (min-width: 770px) {
-  .landingAIEngine {
+  .aiSystem {
+    margin-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sectionTitle {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 5.2rem;
+      line-height: 7.3rem;
+      color: #000000;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .titleLight {
+        color: #004ed1;
+        margin-right: 0.6rem;
+
+        .titleLogo {
+          background-image: url(./img/beluga.svg);
+          width: 6rem;
+          height: 3.8rem;
+          display: inline-block;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .sectionDesc {
+      font-size: 2.6rem;
+      line-height: 3.6rem;
+      color: #555;
+      text-align: center;
+      margin-top: 1.6rem;
+      margin-bottom: 5.6rem;
+
+      .frontDesc {
+        position: relative;
+      }
+
+      .frontDesc::before {
+        position: absolute;
+        content: '，';
+        top: 0;
+        right: -2.6rem;
+        color: #555;
+        width: 2.6rem;
+        height: 3.6rem;
+      }
+
+      .laterDesc {
+        margin-left: 2rem;
+      }
+    }
+
+    .bottomContainer {
+      display: flex;
+      flex: 1;
+      width: 144rem;
+
+      .supportItem {
+        height: 42.7rem;
+        padding: 9rem 6rem;
+
+        .itemContent {
+          position: relative;
+          .itemBg {
+            height: 3.4rem;
+          }
+
+          .itemBg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4.8rem;
+            height: 3.2rem;
+            background: url(./img/whiteBeluga.svg) no-repeat;
+            background-size: contain;
+          }
+
+          .itemBg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 5.8rem;
+            width: 15.8rem;
+            height: 3.2rem;
+            background: url(./img/logo.svg) no-repeat;
+            background-size: contain;
+          }
+
+          .itemSubject {
+            height: 3.4rem;
+            font-weight: 500;
+            font-size: 2.4rem;
+            color: #fff;
+          }
+
+          .itemTitle {
+            font-weight: 600;
+            font-size: 5.6rem;
+            line-height: 7.8rem;
+            color: #fff;
+            margin: 0.6rem 0 3rem;
+          }
+
+          .itemDesc {
+            font-weight: 500;
+            font-size: 3.6rem;
+            line-height: 5rem;
+            color: #fff;
+            margin-top: 0.6rem;
+          }
+        }
+      }
+      .frontBg {
+        background: url(./img/left.png) no-repeat;
+        width: 100%;
+        background-size: cover;
+      }
+
+      .behindBg {
+        background: url(./img/right.png) no-repeat;
+        width: 100%;
+        background-size: cover;
+      }
+    }
+
+    .immediatelyBtn {
+      margin-top: 6rem;
+      padding: 2.15rem 6.2rem;
+      font-weight: 500;
+      font-size: 2.4rem;
+      border-radius: 0.8rem;
+    }
   }
 }
