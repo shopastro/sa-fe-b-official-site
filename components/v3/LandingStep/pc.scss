@@ -24,7 +24,7 @@
 
   .landingStep {
     margin: 12rem 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
     border-radius: 3rem;
     background-color: #fff;
     padding: 7rem;
@@ -39,16 +39,12 @@
       .company {
         font-style: normal;
         font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
+        font-size: 2rem;
+        line-height: 2.8rem;
         color: #222222;
         span {
           color: #004ed1;
         }
-      }
-
-      .center {
-        display: none;
       }
 
       .title {
@@ -82,7 +78,7 @@
     &::before {
       content: '';
       position: absolute;
-      min-width: 1140px;
+      min-width: 114rem;
       width: 100vw;
       // background: #fafbff;
       position: absolute;
@@ -93,16 +89,28 @@
     }
 
     .banner {
-      // background: url(./img/pcBg.svg) no-repeat;
-      width: 1140px;
-      // height: 842px;
+      width: 114rem;
       position: relative;
-      height: 842px;
+      height: 53.8rem;
 
-      .astro {
+      .firstPurchase {
         position: absolute;
         left: 0;
-        top: 5.2rem;
+        top: 5.3rem;
+        line-height: 4.2rem;
+        font-size: 3rem;
+        font-weight: 500;
+        color: #004ed1;
+      }
+
+      .againPurchase {
+        position: absolute;
+        right: 5.3rem;
+        top: 42rem;
+        color: #ff793a;
+        line-height: 4.2rem;
+        font-size: 3rem;
+        font-weight: 500;
       }
 
       .step1,
@@ -124,12 +132,25 @@
           font-style: normal;
           font-weight: 600;
           font-family: WenYue XinQingNianTi (Authorization Required);
-          font-size: 40px;
-          line-height: 53px;
-          color: #5071e7;
+          font-size: 4rem;
+          line-height: 5.3rem;
+          color: #d9e5ff;
           z-index: 3;
           right: -4.8rem;
           top: 0;
+          opacity: $opacity;
+          transform: scale($scale);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -2rem;
+          left: 0;
+          width: 11rem;
+          height: 1px;
+          background: #e5e5e5;
+          z-index: 100;
           opacity: $opacity;
           transform: scale($scale);
         }
@@ -155,14 +176,6 @@
               transition: $transition;
               transform: scale(1);
             }
-            .stepBox {
-              box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-              &::after {
-                height: 0;
-                animation: shadow $transition linear;
-              }
-            }
           }
         }
 
@@ -170,31 +183,15 @@
           .bg,
           &::before,
           &::after {
-            opacity: 0.4;
+            opacity: 1;
             transition: $transition;
             transform: scale(1);
           }
-          .stepBox {
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
-            animation: shadowHide $transition linear;
-          }
-          &:hover {
-            .bg,
-            &::before,
-            &::after {
-              opacity: 1;
-              transform: scale(1);
-            }
-            .stepBox {
-              box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-              animation: shadow $transition linear;
-
-              &::after {
-                height: 0;
-                animation: shadow $transition linear;
-              }
-            }
-          }
+          // &::after {
+          //   opacity: 0.4;
+          //   transition: $transition;
+          //   transform: scale(1);
+          // }
         }
 
         .bg {
@@ -259,7 +256,7 @@
 
       .step5 {
         left: 70rem;
-        top: 46rem;
+        top: 37rem;
         .bg {
           background: url(./imgPc/step05.svg) no-repeat;
           background-size: contain;
@@ -268,12 +265,13 @@
         &::after {
           content: '05';
           right: -5.6rem;
+          color: #ffd8c4;
         }
       }
 
       .step6 {
         left: 45.4rem;
-        top: 46rem;
+        top: 37rem;
         .bg {
           background: url(./imgPc/step06.svg) no-repeat;
           background-size: contain;
@@ -282,12 +280,13 @@
         &::after {
           content: '06';
           right: -5.6rem;
+          color: #ffd8c4;
         }
       }
 
       .step7 {
         left: 13.6rem;
-        top: 46rem;
+        top: 37rem;
 
         .bg {
           background: url(./imgPc/step07.svg) no-repeat;
@@ -297,135 +296,177 @@
         &::after {
           content: '07';
           right: -5.6rem;
-        }
-      }
-
-      .rocket {
-        position: absolute;
-        // background: url(./img/spacecraft.svg) no-repeat;
-        background-size: contain;
-
-        left: 1204px;
-        top: 292px;
-        width: 200px;
-        height: 260px;
-        &::after {
-          content: '复购';
-          background: #fff;
-          // box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
-          border-radius: 12px;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 22px;
-          line-height: 31px;
-          color: #004ed1;
-          padding: 20px 28px;
-          position: absolute;
-          left: 0;
-          top: 104px;
-        }
-      }
-
-      .active {
-        .stepBox {
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          animation: shadow $transition linear;
+          color: #ffd8c4;
         }
       }
 
       .stepBox {
         background: #fff;
         padding: 1.6rem;
-        width: 20rem;
-        border-radius: 12px;
+        width: 22rem;
+        border-radius: 1.2rem;
         position: absolute;
         z-index: 1;
         top: 7.2rem;
         left: -1.6rem;
 
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 2rem;
-          width: 11rem;
-          height: 1px;
-          background: #e5e5e5;
-        }
-
-        &:hover {
-          &::after {
-            height: 0;
-          }
-        }
-
         .stepTitle {
           font-style: normal;
           font-weight: 600;
-          font-size: 18px;
-          line-height: 25px;
+          font-size: 2.2rem;
+          line-height: 3.1rem;
           color: #26263d;
-          margin-bottom: 10px;
+          margin-bottom: 1rem;
         }
         .stepDesc {
           font-weight: 400;
-          font-size: 12px;
-          line-height: 18px;
-          color: #999999;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          color: #444;
         }
       }
     }
 
     .center {
       position: absolute;
-      left: 14.6rem;
+      left: 13.6rem;
       top: 20.6rem;
-      transform: translate(-50%, -50%);
       font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 20px;
+      font-size: 2rem;
+      line-height: 2rem;
       color: #263577;
       text-align: center;
       display: flex;
+      border-radius: 1.2rem;
+      padding: 5.3rem 8.8rem;
+      background-color: #f9fbff;
+
       div {
         display: flex;
         flex-direction: column;
-        width: 196px;
         align-items: center;
-        &.save {
-          &::before {
-            content: '';
-            width: 58px;
-            height: 56px;
+        position: relative;
 
-            margin-bottom: 18px;
-            background-size: contain;
-          }
-        }
-        &.data {
-          border-left: 1px solid #dae0fc;
-          border-right: 1px solid #dae0fc;
-          &::before {
-            content: '';
-            width: 58px;
-            height: 56px;
-
-            margin-bottom: 18px;
-            background-size: contain;
-          }
-        }
-        &.country {
-          &::before {
-            content: '';
-            width: 58px;
-            height: 56px;
-
-            margin-bottom: 18px;
-            background-size: contain;
-          }
+        &::after {
+          content: '';
+          position: absolute;
+          top: -3.2rem;
+          left: 0;
+          width: 1px;
+          height: 8.6rem;
+          background-color: #dae0fc;
         }
       }
+
+      .save {
+        padding-right: 10rem;
+      }
+
+      .data {
+        padding: 0 10rem;
+      }
+
+      .country {
+        padding-left: 10rem;
+      }
+
+      .save::after {
+        width: 0;
+      }
     }
+
+    .arrow {
+      background-size: contain;
+      position: absolute;
+      background-repeat: no-repeat;
+      z-index: 100;
+      transition: $transition;
+      transform: scale(0);
+
+      &.active {
+        transition: $transition;
+        transform: scale(1);
+      }
+
+      &.executeOne {
+        transition: $transition;
+        transform: scale(1);
+      }
+    }
+
+    .arrow1 {
+      background-image: url(./imgPc/arrowRight.svg);
+      width: 4rem;
+      height: 1.5rem;
+      top: 6.8rem;
+      left: 10.5rem;
+    }
+
+    .arrow2 {
+      background-image: url(./imgPc/arrowRight.svg);
+      width: 4rem;
+      height: 1.5rem;
+      top: 6.8rem;
+      left: 36rem;
+    }
+
+    .arrow3 {
+      background-image: url(./imgPc/arrowRight.svg);
+      width: 4rem;
+      height: 1.5rem;
+      top: 6.8rem;
+      left: 63.4rem;
+    }
+
+    .arrow4 {
+      background-image: url(./imgPc/arrowRight.svg);
+      width: 4rem;
+      height: 1.5rem;
+      top: 6.8rem;
+      left: 90rem;
+    }
+
+    .arrow5 {
+      background-image: url(./imgPc/arrowBottom.svg);
+      height: 4rem;
+      width: 1.5rem;
+      top: 24.6rem;
+      right: 7.8rem;
+    }
+
+    .arrow6,
+    .arrow7,
+    .arrow8,
+    .arrow9 {
+      background-image: url(./imgPc/arrowLeft.svg);
+      width: 4rem;
+      height: 1.5rem;
+      top: 43.8rem;
+      right: 20rem;
+    }
+
+    .arrow7 {
+      left: 61.3rem;
+      right: 0;
+    }
+
+    .arrow8 {
+      left: 36.2rem;
+      right: 0;
+    }
+
+    .arrow9 {
+      left: 3rem;
+      right: 0;
+    }
+  }
+
+  .arrow10 {
+    background-image: url(./imgPc/arrowTop.svg);
+    height: 4rem;
+    width: 1.5rem;
+    top: 43.8rem;
+    left: 2.3rem;
+    top: 24.6rem;
   }
 }

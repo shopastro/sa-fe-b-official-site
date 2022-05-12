@@ -16,21 +16,25 @@ const LandingStep: React.FC<IProps> = (props) => {
     step5: false,
     step6: false,
     step7: false,
-    startLine: false,
-    endLine: false,
+    start: false,
+    center: false,
+    end: false,
   })
-  const keys = ['startLine', 'step1', 'step2', 'step3', 'step4', 'endLine', 'step5', 'step6', 'step7']
+
+  const keys = ['start', 'step1', 'step2', 'step3', 'step4', 'center', 'step5', 'step6', 'step7', 'end']
 
   const [count, setCount] = useState(0)
 
   useEffect(() => {
     const key = keys[count] || ''
-    const timer = !['startLine', 'step1', 'endLine'].includes(key) ? 1200 : 10
+
+    const timer = !['start', 'step1', 'center', 'end'].includes(key) ? 1200 : 10
     setTimeout(() => {
       setProgress({
         ...progress,
         [key]: true,
       })
+
       if (count <= keys.length) {
         setCount((n) => n + 1)
       } else {
@@ -42,29 +46,31 @@ const LandingStep: React.FC<IProps> = (props) => {
           step5: false,
           step6: false,
           step7: false,
-          startLine: true,
-          endLine: true,
+          start: false,
+          end: false,
+          center: false,
         })
       }
     }, timer)
   }, [count])
-
   return (
     <div className={styles.landingStep}>
       <div className={styles.topBox}>
         <div className={styles.title}>全链路运营</div>
         <div className={styles.desc}>实现高效转化 燃爆出海业绩</div>
-        <div className={styles.text}>贯通首购+复购 ｜ 加速GMV提升 ｜ 助力独立站私域沉淀</div>
-
-        <div className={styles.center}>
-          <div className={styles.save}>合规安全</div>
-          <div className={styles.data}>数据分析</div>
-          <div className={styles.country}>多国家市场</div>
+        <div className={styles.text}>
+          <span>贯通首购+复购 ｜ 加速GMV提升 ｜</span> <span>助力独立站私域沉淀</span>
         </div>
       </div>
       <div className={styles.bannerBox} id="SolutionBanner">
         <div className={styles.banner}>
-          <div className={styles.astro}>首购</div>
+          <div className={styles.center}>
+            <div className={styles.save}>合规安全</div>
+            <div className={styles.data}>数据分析</div>
+            <div className={styles.country}>多国家市场</div>
+          </div>
+          <div className={styles.firstPurchase}>首购</div>
+          <div className={styles.againPurchase}>复购</div>
           <div
             className={classNames(styles.step1, {
               [styles.active]: progress.step1,
@@ -77,9 +83,70 @@ const LandingStep: React.FC<IProps> = (props) => {
             <div className={styles.bg} />
             <div className={styles.stepBox}>
               <div className={styles.stepTitle}>品牌策划</div>
-              <div className={styles.stepDesc}>行业调研、受众研究、品牌定位 卖点提炼、市场策略</div>
+              <div className={styles.stepDesc}>目标受众、品牌定位</div>
+              <div className={styles.stepDesc}>行业趋势分析</div>
             </div>
           </div>
+          <div
+            className={classNames(styles.arrow1, styles.arrow, {
+              [styles.active]: progress.step1,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow2, styles.arrow, {
+              [styles.active]: progress.step2,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow3, styles.arrow, {
+              [styles.active]: progress.step3,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow4, styles.arrow, {
+              [styles.active]: progress.step4,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow5, styles.arrow, {
+              [styles.active]: progress.center,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow6, styles.arrow, {
+              [styles.active]: progress.step5,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow7, styles.arrow, {
+              [styles.active]: progress.step6,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow8, styles.arrow, {
+              [styles.active]: progress.step7,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow9, styles.arrow, {
+              [styles.active]: progress.end,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
+          <div
+            className={classNames(styles.arrow10, styles.arrow, {
+              [styles.active]: progress.end,
+              [styles.executeOne]: keys.length < count,
+            })}
+          />
           <div
             className={classNames(styles.step2, {
               [styles.active]: progress.step2,
@@ -92,7 +159,8 @@ const LandingStep: React.FC<IProps> = (props) => {
             <div className={styles.bg} />
             <div className={styles.stepBox}>
               <div className={styles.stepTitle}>个性化建站</div>
-              <div className={styles.stepDesc}>全托管专业建站、网站视觉优化、 网站内容优化</div>
+              <div className={styles.stepDesc}>网页风格及内容设计、 </div>
+              <div className={styles.stepDesc}>商品分类、信息优化</div>
             </div>
           </div>
           <div
@@ -107,7 +175,8 @@ const LandingStep: React.FC<IProps> = (props) => {
             <div className={styles.bg} />
             <div className={styles.stepBox}>
               <div className={styles.stepTitle}>SEO深度运营</div>
-              <div className={styles.stepDesc}>核心关键词筛选、站点关键词布局、 反链建设、数据报告</div>
+              <div className={styles.stepDesc}>页面SEO结构优化</div>
+              <div className={styles.stepDesc}>核心关键词优化</div>
             </div>
           </div>
           <div
@@ -122,7 +191,8 @@ const LandingStep: React.FC<IProps> = (props) => {
             <div className={styles.bg} />
             <div className={styles.stepBox}>
               <div className={styles.stepTitle}>多渠道营销投放</div>
-              <div className={styles.stepDesc}>广告预算方案、广告结构搭建、 人群标签管理、广告优化、 数据分析复盘</div>
+              <div className={styles.stepDesc}>多渠道开户</div>
+              <div className={styles.stepDesc}>广告投放数据分析</div>
             </div>
           </div>
           <div
@@ -137,9 +207,8 @@ const LandingStep: React.FC<IProps> = (props) => {
             <div className={styles.bg} />
             <div className={styles.stepBox}>
               <div className={styles.stepTitle}>社媒和KOL运营</div>
-              <div className={styles.stepDesc}>
-                内容设计和排期方案、热门话题 挖掘、粉丝增长运营策略、红人 匹配及运营
-              </div>
+              <div className={styles.stepDesc}>寻找优质匹配网红</div>
+              <div className={styles.stepDesc}>社群生态打造</div>
             </div>
           </div>
           <div
@@ -154,7 +223,8 @@ const LandingStep: React.FC<IProps> = (props) => {
             <div className={styles.bg} />
             <div className={styles.stepBox}>
               <div className={styles.stepTitle}>邮件营销</div>
-              <div className={styles.stepDesc}>弃单邮件策略、丰富的邮件模版、 分层用户营销策略</div>
+              <div className={styles.stepDesc}>EDM模版库</div>
+              <div className={styles.stepDesc}>邮件营销内容生成</div>
             </div>
           </div>
           <div
@@ -168,19 +238,10 @@ const LandingStep: React.FC<IProps> = (props) => {
           >
             <div className={styles.bg} />
             <div className={styles.stepBox}>
-              <div className={styles.stepTitle}>用户/会员复购运营</div>
-              <div className={styles.stepDesc}>邮件营销、弃单追踪、私域运营、 会员分层运营</div>
+              <div className={styles.stepTitle}>用户/会员深度运营</div>
+              <div className={styles.stepDesc}>构建会员体系</div>
+              <div className={styles.stepDesc}>设置转介绍机制</div>
             </div>
-          </div>
-
-          <div className={styles.rocket}></div>
-
-          <div className={styles.bottomRocket}></div>
-
-          <div className={styles.center}>
-            <div className={styles.save}>合规安全</div>
-            <div className={styles.data}>数据分析</div>
-            <div className={styles.country}>多国家市场</div>
           </div>
         </div>
       </div>
