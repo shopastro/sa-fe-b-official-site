@@ -7,24 +7,17 @@ import Footer from '../components/v1/Footer'
 import LandingBg from '../components/v3/LandingBg'
 import LandBanner from '../components/v3/LandBanner'
 import LandingStep from '../components/v3/LandingStep'
+import LandingAIEngine from '../components/v3/LandingAIEngine'
 
 const Home: NextPage = () => {
-  const [active, setActive] = useState<
-    '' | 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase'
-  >('')
-
-  const onActive = (ac: '' | 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase') => {
-    setActive(ac)
-  }
   return (
     <div style={{ position: 'relative' }}>
       <Header />
       <section className="sec-landing-container">
-        <div className="sec-landing-menu">
-          <Menu />
-        </div>
+        <Menu />
         <LandBanner />
-        <LandingStep onActive={onActive} />
+        <LandingStep />
+        <LandingAIEngine />
         <Partner />
       </section>
       <Footer />

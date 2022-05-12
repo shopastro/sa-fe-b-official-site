@@ -25,7 +25,7 @@
   .landingStep {
     margin: 12rem 0;
     box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
-    border-radius: 3rem;
+    border-radius: 1.2rem;
     background-color: #fff;
     padding: 7rem;
     max-width: 128rem;
@@ -301,10 +301,9 @@
       }
 
       .stepBox {
-        background: #fff;
+        // background: #fff;
         padding: 1.6rem;
         width: 22rem;
-        border-radius: 1.2rem;
         position: absolute;
         z-index: 1;
         top: 7.2rem;
@@ -379,7 +378,7 @@
       background-size: contain;
       position: absolute;
       background-repeat: no-repeat;
-      z-index: 100;
+      z-index: 10;
       transition: $transition;
       transform: scale(0);
 

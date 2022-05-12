@@ -1,0 +1,77 @@
+@media screen and (min-width: 770px) {
+  .landingAIEngine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .engineTitle {
+      color: #004ed1;
+      font-size: 5.2rem;
+      line-height: 7.2rem;
+      font-weight: 600;
+
+      .titleRight {
+        color: #000;
+      }
+    }
+
+    .engineText {
+      color: #555;
+      font-size: 2.6rem;
+      line-height: 3.6rem;
+      margin: 1.6rem 0 6rem;
+    }
+
+    .engineList {
+      display: flex;
+      justify-content: space-between;
+      width: 128rem;
+
+      .engineItem {
+        width: 38rem;
+        height: 18rem;
+        background: #ffffff;
+        box-shadow: 0 0.4rem 2rem 0.2rem rgba(60, 83, 166, 0.2);
+        border-radius: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .topTitle,
+        .bottomTitle {
+          font-weight: 600;
+          font-size: 4rem;
+          line-height: 5.6rem;
+          color: #5071e7;
+        }
+
+        .bottomTitle {
+          color: #eeab46;
+        }
+
+        .itemText {
+          font-size: 2.4rem;
+          line-height: 3.4rem;
+          color: #666;
+          margin-top: 1.2rem;
+        }
+      }
+    }
+
+    .triangle {
+      margin: 3.7rem 0 1.4rem;
+      width: 0;
+      border: 26px solid;
+      border-color: #004ed1 transparent transparent transparent;
+    }
+
+    .immediatelyBtn {
+      margin-top: 6rem;
+      padding: 2.15rem 6.2rem;
+      font-weight: 500;
+      font-size: 2.4rem;
+      border-radius: 0.8rem;
+    }
+  }
+}

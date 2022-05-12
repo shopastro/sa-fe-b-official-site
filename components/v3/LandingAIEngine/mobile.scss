@@ -1,0 +1,92 @@
+@media screen and (max-width: 770px) {
+  .landingAIEngine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .engineTitle {
+      color: #004ed1;
+      font-size: 2.8rem;
+      line-height: 4rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .titleRight {
+        color: #000;
+        display: block;
+      }
+    }
+
+    .engineText {
+      color: #555;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      margin: 1rem 0 3rem;
+    }
+
+    .engineList {
+      padding: 0 1.2rem;
+      width: 100%;
+
+      .engineItem {
+        height: 12rem;
+        background: #ffffff;
+        box-shadow: 0 0.4rem 2rem 0.2rem rgba(60, 83, 166, 0.2);
+        border-radius: 1.2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 1.8rem;
+
+        .topTitle,
+        .bottomTitle {
+          font-weight: 600;
+          font-size: 2.6rem;
+          line-height: 3.6rem;
+          color: #5071e7;
+        }
+
+        .bottomTitle {
+          color: #eeab46;
+        }
+
+        .itemText {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          color: #666;
+          margin-top: 0.8rem;
+        }
+      }
+
+      .first {
+        width: 100%;
+      }
+
+      .second {
+        margin: -1rem 1rem;
+      }
+
+      .three {
+        margin: -2rem 2.6rem;
+        padding-top: 2.5rem;
+      }
+    }
+
+    .triangle {
+      margin: 5rem 0 1.2rem;
+      width: 0;
+      border: 1.8rem solid;
+      border-color: #004ed1 transparent transparent transparent;
+    }
+
+    .immediatelyBtn {
+      margin-top: 4rem;
+      padding: 1.5rem 5.3rem !important;
+      font-weight: 500;
+      font-size: 1.6rem;
+      border-radius: 0.4rem;
+    }
+  }
+}

@@ -2,12 +2,7 @@ import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 
-type IProps = {
-  onActive: (a: 'brand' | 'site' | 'seo' | 'launches' | 'operation' | 'email' | 'repurchase') => void
-}
-
-const LandingStep: React.FC<IProps> = (props) => {
-  const { onActive } = props
+const LandingStep: React.FC = () => {
   const [progress, setProgress] = useState({
     step1: false,
     step2: false,
@@ -76,9 +71,6 @@ const LandingStep: React.FC<IProps> = (props) => {
               [styles.active]: progress.step1,
               [styles.executeOne]: keys.length < count,
             })}
-            onClick={() => {
-              onActive('brand')
-            }}
           >
             <div className={styles.bg} />
             <div className={styles.stepBox}>
@@ -152,9 +144,6 @@ const LandingStep: React.FC<IProps> = (props) => {
               [styles.active]: progress.step2,
               [styles.executeOne]: keys.length < count,
             })}
-            onClick={() => {
-              onActive('site')
-            }}
           >
             <div className={styles.bg} />
             <div className={styles.stepBox}>
@@ -168,9 +157,6 @@ const LandingStep: React.FC<IProps> = (props) => {
               [styles.active]: progress.step3,
               [styles.executeOne]: keys.length < count,
             })}
-            onClick={() => {
-              onActive('seo')
-            }}
           >
             <div className={styles.bg} />
             <div className={styles.stepBox}>
@@ -184,9 +170,6 @@ const LandingStep: React.FC<IProps> = (props) => {
               [styles.active]: progress.step4,
               [styles.executeOne]: keys.length < count,
             })}
-            onClick={() => {
-              onActive('launches')
-            }}
           >
             <div className={styles.bg} />
             <div className={styles.stepBox}>
@@ -200,9 +183,6 @@ const LandingStep: React.FC<IProps> = (props) => {
               [styles.active]: progress.step5,
               [styles.executeOne]: keys.length < count,
             })}
-            onClick={() => {
-              onActive('operation')
-            }}
           >
             <div className={styles.bg} />
             <div className={styles.stepBox}>
@@ -216,9 +196,6 @@ const LandingStep: React.FC<IProps> = (props) => {
               [styles.active]: progress.step6,
               [styles.executeOne]: keys.length < count,
             })}
-            onClick={() => {
-              onActive('email')
-            }}
           >
             <div className={styles.bg} />
             <div className={styles.stepBox}>
@@ -232,9 +209,6 @@ const LandingStep: React.FC<IProps> = (props) => {
               [styles.active]: progress.step7,
               [styles.executeOne]: keys.length < count,
             })}
-            onClick={() => {
-              onActive('repurchase')
-            }}
           >
             <div className={styles.bg} />
             <div className={styles.stepBox}>

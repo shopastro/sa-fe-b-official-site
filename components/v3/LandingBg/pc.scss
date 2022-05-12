@@ -13,28 +13,26 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     pointer-events: none;
-    .topBannerBg {
-      top: 0;
-      left: 0;
+    .first {
       width: 100vw;
-      min-width: 1440px;
-      height: 1475px;
+      min-width: 144px;
+      height: 147.5rem;
       position: relative;
       background-color: #f8faff;
 
       .topBannerFirstBg {
         background: url(./imgPc/topBanner1.svg) no-repeat;
         background-size: contain;
-        height: 468px;
-        width: 431px;
+        height: 46.8rem;
+        width: 43rem;
       }
       &::before {
         content: '';
         background: url(./imgPc/topBanner2.svg) no-repeat;
         top: 580px;
         left: 0;
-        width: 252px;
-        height: 430px;
+        width: 25.2rem;
+        height: 43rem;
         background-size: contain;
         position: absolute;
       }
@@ -43,30 +41,40 @@
         background: url(./imgPc/topBanner3.svg) no-repeat;
         top: 580px;
         right: 0;
-        width: 386px;
-        height: 542px;
+        width: 38.6rem;
+        height: 54.2rem;
         background-size: contain;
         position: absolute;
       }
     }
-    .first {
-      background: url(./img/first.svg) no-repeat;
-      background-size: contain;
-      top: 106rem;
-      width: 65.9rem;
-      height: 91.8rem;
-      position: absolute;
-      right: 0;
-    }
+
     .second {
-      background: url(./img/second.svg) no-repeat;
-      background-size: contain;
-      top: 217rem;
-      width: 44.5rem;
-      height: 55.3rem;
-      position: absolute;
-      left: 0;
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 67rem;
+
+      &::after {
+        content: '';
+        background: url(./imgPc/center1.svg) no-repeat;
+        top: 12rem;
+        right: 0;
+        width: 21rem;
+        height: 27rem;
+        background-size: contain;
+        position: absolute;
+        z-index: 1;
+      }
     }
+
+    .third {
+      position: relative;
+      width: 100%;
+      height: 103.6rem;
+      background: url(./imgPc/third.svg) no-repeat;
+      background-size: cover;
+    }
+
     .across {
       background: url(./img/across.svg) no-repeat;
       background-size: contain;
