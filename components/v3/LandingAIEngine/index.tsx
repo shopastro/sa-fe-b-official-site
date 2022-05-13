@@ -58,6 +58,7 @@ const LandingAIEngine: React.FC<IProps> = () => {
 
       <Button
         text="立即试用"
+        type="ghost"
         className={styles.immediatelyBtn}
         onClick={() => {
           setIsOpen(true)

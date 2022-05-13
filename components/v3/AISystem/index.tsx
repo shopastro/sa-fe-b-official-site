@@ -45,6 +45,7 @@ const LandingAIEngine: React.FC<IProps> = () => {
 
       <Button
         text="了解详情"
+        type="ghost"
         className={styles.immediatelyBtn}
         onClick={() => {
           setIsOpen(true)

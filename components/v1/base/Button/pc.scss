@@ -6,7 +6,7 @@
     // font-family: Outfit;
 
     &.disabled {
-      opacity: .7;
+      opacity: 0.7;
       pointer-events: none;
     }
 
@@ -46,6 +46,11 @@
       line-height: 1.7rem;
       color: #004ed1;
       padding: 0.9rem 2.4rem;
+
+      &:hover {
+        background: #004ed1;
+        color: #fff;
+      }
     }
   }
 }

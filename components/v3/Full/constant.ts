@@ -9,7 +9,7 @@ export const caseList: Data[] = [
     text: 'B2B外贸工厂',
     type: 'b2b',
     list: [
-      'D2C+Wholesale+ B2B询盘，三站一体化运营',
+      'D2C+Wholesale+B2B询盘，三站一体化运营',
       '明确品牌定位，精准对焦目标市场和受众',
       '充分利用已有供应链优势占据市场份额',
       '全链路运营提升2C效率和ROI',

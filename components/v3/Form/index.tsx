@@ -15,9 +15,12 @@ const LandingAIEngine: React.FC<IProps> = () => {
           <div className={styles.leftDesc}>出海一站式 省心又省力</div>
         </div>
         <div className={styles.textContent}>
-          <div className={styles.leftText}>星盘跨境 shopastro，依托一站式SaaS电商服务平台，</div>
-          <div className={styles.leftText}>融合独立站搭建与品牌海外运营于一体，赋能中国品牌全球化，</div>
-          <div className={styles.leftText}> 助力品牌打造海外私域生态！</div>
+          <span className={styles.leftText}>
+            星盘跨境
+            shopastro，依托一站式SaaS电商服务平台，融合独立站搭建与品牌海外运营于一体，赋能中国品牌全球化，助力品牌打造海外私域生态！
+          </span>
+          {/* <span className={styles.leftText}>融合独立站搭建与品牌海外运营于一体，赋能中国品牌全球化，</span>
+          <span className={styles.leftText}> 助力品牌打造海外私域生态！</span> */}
         </div>
       </div>
       <div className={styles.centre}></div>

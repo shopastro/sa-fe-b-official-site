@@ -50,6 +50,7 @@ const LandingGuide: React.FC<IProps> = () => {
         </div>
         <div className={styles.btnContainer}>
           <Button
+            type="ghost"
             text="运营方案免费领取"
             className={styles.immediatelyBtn}
             onClick={() => {

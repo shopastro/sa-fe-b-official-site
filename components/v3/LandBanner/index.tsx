@@ -40,6 +40,7 @@ const TopBanner: React.FC<IProps> = () => {
       </ul>
       <Button
         text="立即试用"
+        type="ghost"
         className={styles.immediatelyBtn}
         onClick={() => {
           setIsOpen(true)

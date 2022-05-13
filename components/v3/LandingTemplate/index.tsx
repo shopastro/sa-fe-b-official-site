@@ -29,6 +29,7 @@ const LandingTemplate: React.FC<IProps> = () => {
       <div className={styles.templateBg} />
       <Button
         text="立即试用"
+        type="ghost"
         className={styles.immediatelyBtn}
         onClick={() => {
           setIsOpen(true)
