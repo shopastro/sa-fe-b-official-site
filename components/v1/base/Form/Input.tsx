@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './index.module.scss'
 
 type IProps = {
@@ -16,6 +16,7 @@ type IProps = {
 const Input: React.FC<IProps> = (props) => {
   const { type = 'text', label, placeholder, maxLength, name, error = false } = props
   const [selected, setSelected] = useState(false)
+
   return (
     <div className={`${styles.inputBox} ${type === 'textarea' && styles.inputTxtBox} ${error && styles.error}`}>
       {type === 'text' && (
