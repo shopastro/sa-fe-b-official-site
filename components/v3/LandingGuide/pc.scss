@@ -8,6 +8,10 @@
 
     .guideBg {
       position: relative;
+      position: absolute;
+      left: -100rem;
+      top: -2rem;
+
       &::after {
         content: '';
         position: absolute;
@@ -30,7 +34,7 @@
         top: 21.7rem;
         left: 0;
         height: 27rem;
-        // width: 26rem;
+        width: 26rem;
         z-index: 10;
       }
 

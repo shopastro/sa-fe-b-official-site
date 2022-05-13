@@ -23,9 +23,6 @@ const LandingGuide: React.FC<IProps> = () => {
   }
   return (
     <div className={styles.landingGuide}>
-      <div className={styles.guideBg}>
-        <div className={styles.mainBg}></div>
-      </div>
       <div className={styles.guideWord}>
         <div className={styles.guideTitle}>
           <div className={styles.guideDesc}>行业运营专家</div>
@@ -47,6 +44,9 @@ const LandingGuide: React.FC<IProps> = () => {
               </div>
             )
           })}
+        </div>
+        <div className={styles.guideBg}>
+          <div className={styles.mainBg}></div>
         </div>
         <div className={styles.btnContainer}>
           <Button

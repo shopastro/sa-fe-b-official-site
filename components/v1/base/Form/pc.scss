@@ -77,7 +77,8 @@
     }
 
     .unselect {
-      color: #999;
+      color: #bbb;
+      margin-left: -1px;
     }
 
     select,
@@ -92,13 +93,13 @@
     }
 
     ::-webkit-input-placeholder {
-      color: #999;
+      color: #bbb;
     }
     ::-moz-placeholder {
-      color: #999;
+      color: #bbb;
     }
     :-ms-input-placeholder {
-      color: #999;
+      color: #bbb;
     }
   }
 }
