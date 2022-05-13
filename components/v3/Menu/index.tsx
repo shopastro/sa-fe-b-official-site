@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './index.module.scss'
-import Button from '../../v1/base/Button'
+import Button from '../base/Button'
 import { list } from './constant'
 import Link from 'next/link'
 import classname from 'classname'

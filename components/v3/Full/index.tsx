@@ -23,8 +23,8 @@ const Full: React.FC<IProps> = (props) => {
   return (
     <div className={styles.full}>
       <div className={styles.sectionTitle}>
-        <div className={styles.titleLight}>多类型客户</div>
-        <div> 提供针对性跨境解决方案</div>
+        <div className={styles.titleLight}>为多类型客户提供</div>
+        <div>针对性跨境解决方案</div>
       </div>
       <div className={styles.sectionDesc}>帮您找到更优解更高效出海路径</div>
 

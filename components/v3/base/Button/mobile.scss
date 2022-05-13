@@ -1,22 +1,16 @@
-@media screen and (min-width: 770px) {
+@media screen and (max-width: 770px) {
   .btn {
     display: inline-block;
     border-radius: 0.4rem;
     cursor: pointer;
     // font-family: Outfit;
-
-    &.disabled {
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
+    word-break: keep-all;
     &.primary {
       font-weight: 500;
-      font-size: 1.8rem;
-      line-height: 2.3rem;
+      font-size: 1.4rem;
       color: #fff;
       background: #004ed1;
-      padding: 1.8rem 7.4rem;
+      padding: 1.5rem 10rem;
     }
 
     &.successForm {
@@ -25,32 +19,26 @@
       line-height: 2rem;
       color: #fff;
       background: #004ed1;
-      padding: 1rem 6.7rem;
+      padding: 1.2rem 4.6rem;
     }
 
     &.form {
       font-weight: 500;
       font-size: 1.4rem;
-      line-height: 2rem;
+      line-height: 2.4rem;
       color: #ffffff;
       background: #004ed1;
-      padding: 1.6rem;
+      padding: 1.2rem;
       text-align: center;
       border-radius: 0;
-      width: 100%;
     }
 
     &.ghost {
-      border: 0.1rem solid #004ed1;
+      background: #004ed1;
+      color: #fff;
       font-size: 1.2rem;
       line-height: 1.7rem;
-      color: #004ed1;
       padding: 0.9rem 2.4rem;
-
-      // &:hover {
-      //   background: #004ed1;
-      //   color: #fff;
-      // }
     }
   }
 }

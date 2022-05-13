@@ -36,6 +36,7 @@
 
         .guideOne {
           line-height: 2rem;
+          margin-bottom: 0.6rem;
           .itemTitle {
             font-weight: 500;
           }
@@ -56,32 +57,6 @@
       .guideBg {
         position: relative;
         margin: 3.2rem 0.2rem 0 0.6rem;
-
-        // &::after {
-        //   content: '';
-        //   position: absolute;
-        //   background-image: url(./img/topPc.svg);
-        //   background-repeat: no-repeat;
-        //   background-size: cover;
-        //   top: 0;
-        //   right: 2rem;
-        //   height: 18%;
-        //   width: 13%;
-        //   z-index: 30;
-        // }
-
-        // &::before {
-        //   content: '';
-        //   position: absolute;
-        //   background-image: url(./img/bottom.svg);
-        //   background-repeat: no-repeat;
-        //   background-size: cover;
-        //   top: 7.5rem;
-        //   left: 0;
-        //   height: 60%;
-        //   width: 40%;
-        //   z-index: 10;
-        // }
 
         .mainBg {
           position: relative;

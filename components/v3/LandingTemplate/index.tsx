@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from '../../v1/base/Button'
+import Button from '../base/Button'
 import Modal from '../../v1/base/Modal'
 import styles from './index.module.scss'
 
