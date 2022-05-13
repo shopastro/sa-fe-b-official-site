@@ -23,7 +23,7 @@ const LandingStep: React.FC = () => {
   useEffect(() => {
     const key = keys[count] || ''
 
-    const timer = !['start', 'step1', 'center', 'end'].includes(key) ? 1200 : 10
+    const timer = !['start', 'step1'].includes(key) ? 600 : 10
     setTimeout(() => {
       setProgress({
         ...progress,
@@ -65,7 +65,14 @@ const LandingStep: React.FC = () => {
             <div className={styles.country}>多国家市场</div>
           </div>
           <div className={styles.firstPurchase}>首购</div>
-          <div className={styles.againPurchase}>复购</div>
+          <div
+            className={classNames(styles.againPurchase, {
+              [styles.active]: progress.center,
+              [styles.executeOne]: keys.length < count,
+            })}
+          >
+            复购
+          </div>
           <div
             className={classNames(styles.step1, {
               [styles.active]: progress.step1,

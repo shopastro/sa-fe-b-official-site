@@ -111,6 +111,15 @@
         line-height: 4.2rem;
         font-size: 3rem;
         font-weight: 500;
+        opacity: $opacity;
+        transform: scale($scale);
+
+        &.active,
+        &.executeOne {
+          opacity: 1;
+          transition: $transition;
+          transform: scale(1);
+        }
       }
 
       .step1,
@@ -161,6 +170,7 @@
 
         &.active {
           .bg,
+          .stepBox,
           &::before,
           &::after {
             opacity: 1;
@@ -181,6 +191,7 @@
 
         &.executeOne {
           .bg,
+          .stepBox,
           &::before,
           &::after {
             opacity: 1;
@@ -308,6 +319,8 @@
         z-index: 1;
         top: 7.2rem;
         left: -1.6rem;
+        opacity: $opacity;
+        transform: scale($scale);
 
         .stepTitle {
           font-style: normal;

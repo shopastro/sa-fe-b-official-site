@@ -144,6 +144,7 @@
 
         &.active {
           .bg,
+          .stepBox,
           &::before,
           &::after {
             opacity: 1;
@@ -164,6 +165,7 @@
 
         &.executeOne {
           .bg,
+          .stepBox,
           &::before,
           &::after {
             opacity: 1;
@@ -295,6 +297,8 @@
         z-index: 1;
         top: 5rem;
         left: -1rem;
+        opacity: $opacity;
+        transform: scale($scale);
 
         .stepTitle {
           font-style: normal;
