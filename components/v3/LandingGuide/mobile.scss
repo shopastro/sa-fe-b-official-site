@@ -2,7 +2,7 @@
   .landingGuide {
     margin-top: 6.6rem;
     width: 100%;
-    padding: 3rem 2rem;
+    padding: 3rem 0;
     position: relative;
     // height: 70.3rem;
     background-color: #f7faff;
@@ -12,6 +12,7 @@
         color: #333;
         font-size: 2.8rem;
         font-weight: 600;
+        padding: 0 2rem;
 
         .guideDesc {
           line-height: 4rem;
@@ -27,12 +28,14 @@
         line-height: 2.2rem;
         color: #555;
         margin-top: 1rem;
+        padding: 0 2rem;
       }
 
       .guideList {
         margin-top: 2rem;
         font-size: 1.4rem;
         color: #222;
+        padding: 0 2rem;
 
         .guideOne {
           line-height: 2rem;
@@ -56,14 +59,14 @@
 
       .guideBg {
         position: relative;
-        margin: 3.2rem 0.2rem 0 0.6rem;
+        margin: 2rem 0 3.6rem;
 
         .mainBg {
           position: relative;
           width: 100%;
           height: 0;
           padding-bottom: 70%;
-          background: url(./img/mainMobile.png) no-repeat;
+          background: url(./img/mainMobile1.png) no-repeat;
           // background-repeat: no-repeat;
           background-size: contain;
           z-index: 20;

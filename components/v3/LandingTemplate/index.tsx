@@ -27,6 +27,7 @@ const LandingTemplate: React.FC<IProps> = () => {
       </div>
 
       <div className={styles.templateBg} />
+
       <Button
         text="立即试用"
         type="ghost"
