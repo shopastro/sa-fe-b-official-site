@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Header from '../components/v2/Header'
-import Menu from '../components/v1/Menu'
+import Menu from '../components/v3/Menu'
 import Partner from '../components/v1/Partner'
 import Footer from '../components/v1/Footer'
 import LandingBg from '../components/v3/LandingBg'
