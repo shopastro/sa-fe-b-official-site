@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 import Input from './Input'
 import Button from '../Button'
@@ -28,35 +28,6 @@ const Form: React.FC<IProps> = (props) => {
   const [error, setError] = useState(false)
 
   const [verification, setVerification] = useState(false)
-
-  useEffect(() => {
-    //用于防止ios 输入框聚焦时放大页面
-    window.onload = function () {
-      document.addEventListener('gesturestart', function (e) {
-        e.preventDefault()
-      })
-      document.addEventListener('dblclick', function (e) {
-        e.preventDefault()
-      })
-      document.addEventListener('touchstart', function (event) {
-        if (event.touches.length > 1) {
-          event.preventDefault()
-        }
-      })
-      let lastTouchEnd = 0
-      document.addEventListener(
-        'touchend',
-        function (event) {
-          let now = new Date().getTime()
-          if (now - lastTouchEnd <= 300) {
-            event.preventDefault()
-          }
-          lastTouchEnd = now
-        },
-        false
-      )
-    }
-  }, [])
 
   const handleChange = (key: string, value: string) => {
     setValues({
