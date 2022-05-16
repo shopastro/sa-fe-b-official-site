@@ -41,7 +41,6 @@ const Header: React.FC<IProps> = (props) => {
                 "code": "1b7f137j",
                 "link": "https://1381583.s4.udesk.cn/im_client/?web_plugin_id=34130",
                 "targetSelector": "#pendantItem",
-              
             });
         `}
       </Script>

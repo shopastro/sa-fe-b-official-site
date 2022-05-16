@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Modal from '../../v1/base/Modal'
-import Document from 'next'
 import styles from './index.module.scss'
 import classNames from 'classnames'
 // import classNames from 'classnames'
@@ -34,51 +33,11 @@ const Pendant: React.FC<IProps> = () => {
     }
   }, [])
 
-  const initUDesk = (a: any, h: any, c: any, b: any, f: any, g?: any) => {
-    a['UdeskApiObject'] = f
-    a[f] =
-      a[f] ||
-      function () {
-        ;(a[f].d = a[f].d || []).push(arguments)
-      }
-    g = h.createElement(c)
-    g.async = 1
-    g.charset = 'utf-8'
-    g.src = b
-    c = h.getElementsByTagName(c)[0]
-    c.parentNode.insertBefore(g, c)
-  }
-
-  // useEffect(() => {
-  //   initUDesk(window, document, 'script', 'https://assets-cli.s4.udesk.cn/im_client/js/udeskApi.js', 'ud')
-  //   ud({
-  //     code: '1b7f137j',
-  //     link: 'https://1381583.s4.udesk.cn/im_client/?web_plugin_id=34130',
-  //     targetSelector: '#pendantItem',
-  //   })
-  // }, [])
-
   return (
     <div className={styles.pendantContainer}>
-      {/* <Script id="uDesk">
-        {`(function(a,h,c,b,f,g){a["UdeskApiObject"]=f;a[f]=a[f]||function(){(a[f].d=a[f].d||[]).push(arguments)};g=h.createElement(c);g.async=1;g.charset="utf-8";g.src=b;c=h.getElementsByTagName(c)[0];c.parentNode.insertBefore(g,c)})(window,document,"script","https://assets-cli.s4.udesk.cn/im_client/js/udeskApi.js","ud");
-            ud({
-                "code": "1b7f137j",
-                "link": "https://1381583.s4.udesk.cn/im_client/?web_plugin_id=34130",
-                "targetSelector": "#pendantItem",
-              
-            });
-        `}
-      </Script> */}
       <ul>
         <li>
-          <div
-            className={classNames(styles.pendantItem)}
-            id={'pendantItem'}
-            onClick={() => {
-              ud('showPanel')
-            }}
-          >
+          <div className={classNames(styles.pendantItem)} id={'pendantItem'}>
             {isPc ? (
               <>
                 <div className={styles.imgItem} />
