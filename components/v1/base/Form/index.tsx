@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 import Input from './Input'
 import Button from '../Button'
@@ -27,24 +27,6 @@ const Form: React.FC<IProps> = (props) => {
   const [requested, setRequested] = useState(false)
   const [error, setError] = useState(false)
   const [verification, setVerification] = useState(false)
-  const [dataLayer, setDataLayer] = useState<Record<string, any>>({})
-
-  const googleBuried = (w: any, d: any, s: any, l: any, i: any) => {
-    w[l] = w[l] || []
-    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
-
-    setDataLayer(w[l])
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != 'dataLayer' ? '&l=' + l : ''
-    j.async = true
-    j.src = 'https://tagging.ishopastro.com/gtm.js?id=' + i + dl
-    f.parentNode.insertBefore(j, f)
-  }
-
-  useEffect(() => {
-    googleBuried(window, document, 'script', 'dataLayer', 'GTM-5ZLHWLN')
-  }, [])
 
   const handleChange = (key: string, value: string) => {
     setValues({
@@ -81,22 +63,24 @@ const Form: React.FC<IProps> = (props) => {
     const { data = {} } = res
     const { success = false } = data
     if (success) {
-      dataLayer.push({
-        event: 'generate_lead',
-        eventModel: {
-          currency: 'CNY',
-          value: 9800,
-          user_data: {
-            phone_number: '15648494',
-            address: {
-              first_name: '基于表单来提交',
-              last_name: '基于表单来提交',
-              city: '{基于表单来提交}',
-              country: 'CN',
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'generate_lead',
+          eventModel: {
+            currency: 'CNY',
+            value: 9800,
+            user_data: {
+              phone_number: '15648494',
+              address: {
+                first_name: '基于表单来提交',
+                last_name: '基于表单来提交',
+                city: '{基于表单来提交}',
+                country: 'CN',
+              },
             },
           },
-        },
-      })
+        })
+      }
 
       setRequested(true)
       successCallback && successCallback()
