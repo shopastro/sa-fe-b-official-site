@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Modal from '../../v1/base/Modal'
+import Document from 'next'
 import styles from './index.module.scss'
+import classNames from 'classnames'
 // import classNames from 'classnames'
 
 type IProps = {
@@ -32,64 +34,95 @@ const Pendant: React.FC<IProps> = () => {
     }
   }, [])
 
-  //   const { size = 24, onClick } = props
+  const initUDesk = (a: any, h: any, c: any, b: any, f: any, g?: any) => {
+    a['UdeskApiObject'] = f
+    a[f] =
+      a[f] ||
+      function () {
+        ;(a[f].d = a[f].d || []).push(arguments)
+      }
+    g = h.createElement(c)
+    g.async = 1
+    g.charset = 'utf-8'
+    g.src = b
+    c = h.getElementsByTagName(c)[0]
+    c.parentNode.insertBefore(g, c)
+  }
+
+  // useEffect(() => {
+  //   initUDesk(window, document, 'script', 'https://assets-cli.s4.udesk.cn/im_client/js/udeskApi.js', 'ud')
+  //   ud({
+  //     code: '1b7f137j',
+  //     link: 'https://1381583.s4.udesk.cn/im_client/?web_plugin_id=34130',
+  //     targetSelector: '#pendantItem',
+  //   })
+  // }, [])
+
   return (
-    <div className={styles.pendantPc}>
-      {isPc ? (
-        <ul>
-          <li>
-            <div className={styles.PcContainer}>
-              <div className={styles.imgPc} />
-              <div className={styles.textPc}> 在线咨询</div>
-            </div>
-          </li>
-          <li>
-            <div className={styles.PcContainer}>
-              <div className={styles.imgPc} />
-              <div className={styles.textPc}>电话咨询</div>
-            </div>
-            <div className={styles.arrow_box}>
-              <div className={styles.boxText}>出海咨询热线: 400-669-2228</div>
-            </div>
-          </li>
-          <li>
-            <div className={styles.PcContainer}>
-              <div className={styles.imgPc} />
-              <div className={styles.textPc}> 微信咨询</div>
-            </div>
-            <div className={styles.arrow_box}>
-              <div className={styles.imgBcg}></div>
-            </div>
-          </li>
-          <li>
-            <div
-              className={styles.PcContainer}
-              onClick={() => {
-                setIsOpen(true)
-              }}
-            >
-              <div className={styles.imgPc} />
-              <div className={styles.textPc}>立即试用</div>
-            </div>
-          </li>
-        </ul>
-      ) : (
-        <div className={styles.pendantMobile}>
+    <div className={styles.pendantContainer}>
+      {/* <Script id="uDesk">
+        {`(function(a,h,c,b,f,g){a["UdeskApiObject"]=f;a[f]=a[f]||function(){(a[f].d=a[f].d||[]).push(arguments)};g=h.createElement(c);g.async=1;g.charset="utf-8";g.src=b;c=h.getElementsByTagName(c)[0];c.parentNode.insertBefore(g,c)})(window,document,"script","https://assets-cli.s4.udesk.cn/im_client/js/udeskApi.js","ud");
+            ud({
+                "code": "1b7f137j",
+                "link": "https://1381583.s4.udesk.cn/im_client/?web_plugin_id=34130",
+                "targetSelector": "#pendantItem",
+              
+            });
+        `}
+      </Script> */}
+      <ul>
+        <li>
           <div
-            className={styles.mobileLeftBtn}
+            className={classNames(styles.pendantItem)}
+            id={'pendantItem'}
+            onClick={() => {
+              ud('showPanel')
+            }}
+          >
+            {isPc ? (
+              <>
+                <div className={styles.imgItem} />
+                <div className={styles.textItem}> 在线咨询</div>
+              </>
+            ) : (
+              <>
+                <span className={styles.imgItem} />
+                <span className={styles.textItem}>在线咨询</span>
+              </>
+            )}
+          </div>
+        </li>
+        <li>
+          <div className={styles.pendantItem}>
+            <div className={styles.imgItem} />
+            <div className={styles.textItem}>电话咨询</div>
+          </div>
+          <div className={styles.arrow_box}>
+            <div className={styles.boxText}>出海咨询热线: 400-669-2228</div>
+          </div>
+        </li>
+        <li>
+          <div className={styles.pendantItem}>
+            <div className={styles.imgItem} />
+            <div className={styles.textItem}> 微信咨询</div>
+          </div>
+          <div className={styles.arrow_box}>
+            <div className={styles.imgBcg}></div>
+          </div>
+        </li>
+        <li>
+          <div
+            className={classNames(styles.pendantItem)}
             onClick={() => {
               setIsOpen(true)
             }}
           >
-            <span className={styles.imgMobile} />
-            <span className={styles.textMobile}>立即试用</span>
+            <div className={styles.imgItem} />
+            <div className={styles.textItem}>立即试用</div>
           </div>
-          <div className={styles.mobileRightBtn}>
-            <span className={styles.imgMobile} />
-            <span className={styles.textMobile}> 在线咨询</span>
-          </div>
-        </div>
-      )}
+        </li>
+      </ul>
+
       {isOpen && <Modal visiable={isOpen} handleClose={handleClose} />}
     </div>
   )

@@ -34,6 +34,17 @@ const Header: React.FC<IProps> = (props) => {
           gtag('config', 'G-6WMHV7EMED');
         `}
       </Script>
+
+      <Script id="uDesk-analytics" strategy="afterInteractive">
+        {`(function(a,h,c,b,f,g){a["UdeskApiObject"]=f;a[f]=a[f]||function(){(a[f].d=a[f].d||[]).push(arguments)};g=h.createElement(c);g.async=1;g.charset="utf-8";g.src=b;c=h.getElementsByTagName(c)[0];c.parentNode.insertBefore(g,c)})(window,document,"script","https://assets-cli.s4.udesk.cn/im_client/js/udeskApi.js","ud");
+            ud({
+                "code": "1b7f137j",
+                "link": "https://1381583.s4.udesk.cn/im_client/?web_plugin_id=34130",
+                "targetSelector": "#pendantItem",
+              
+            });
+        `}
+      </Script>
     </>
   )
 }
