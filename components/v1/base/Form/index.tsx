@@ -5,12 +5,6 @@ import Button from '../Button'
 import { axiosFun } from '../../../../utils/asios'
 import Success from '../../Success'
 
-declare global {
-  interface Window {
-    dataLayer: any
-  }
-}
-
 type IProps = {
   list: List[]
   row?: 'row2'

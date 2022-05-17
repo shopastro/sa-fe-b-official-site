@@ -4,6 +4,12 @@ import Script from 'next/script'
 
 type IProps = {}
 
+declare global {
+  interface Window {
+    dataLayer: any
+  }
+}
+
 const Header: React.FC<IProps> = (props) => {
   return (
     <>

@@ -37,7 +37,18 @@ const Pendant: React.FC<IProps> = () => {
     <div className={styles.pendantContainer}>
       <ul>
         <li>
-          <div className={classNames(styles.pendantItem)} id={'pendantItem'}>
+          <div
+            className={classNames(styles.pendantItem)}
+            id={'pendantItem'}
+            onClick={() => {
+              //添加埋点
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  event: 'click_online_chat',
+                })
+              }
+            }}
+          >
             {isPc ? (
               <>
                 <div className={styles.imgItem} />
@@ -52,7 +63,17 @@ const Pendant: React.FC<IProps> = () => {
           </div>
         </li>
         <li>
-          <div className={styles.pendantItem}>
+          <div
+            className={styles.pendantItem}
+            onMouseEnter={() => {
+              //添加埋点
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  event: 'hover_contact_info',
+                })
+              }
+            }}
+          >
             <div className={styles.imgItem} />
             <div className={styles.textItem}>电话咨询</div>
           </div>
@@ -61,7 +82,17 @@ const Pendant: React.FC<IProps> = () => {
           </div>
         </li>
         <li>
-          <div className={styles.pendantItem}>
+          <div
+            className={styles.pendantItem}
+            onMouseEnter={() => {
+              //添加埋点
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  event: 'hover_contact_info',
+                })
+              }
+            }}
+          >
             <div className={styles.imgItem} />
             <div className={styles.textItem}> 微信咨询</div>
           </div>
