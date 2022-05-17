@@ -48,7 +48,7 @@ const Input: React.FC<IProps> = (props) => {
               setSelected(true)
             }}
           >
-            <option disabled selected value="" style={{ color: 'red' }}>
+            <option disabled defaultValue="" value="" style={{ color: 'red' }}>
               请选择出海经验（必填）
             </option>
             <option value="亚马逊、ebay等海外平台经验">亚马逊、ebay等海外平台经验</option>
