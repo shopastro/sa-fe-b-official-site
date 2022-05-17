@@ -5,29 +5,13 @@ import Script from 'next/script'
 type IProps = {}
 
 const Header: React.FC<IProps> = (props) => {
-  // const googleBuried = (w: any, d: any, s: any, l: any, i: any) => {
-  //   w[l] = dataLayer || w[l] || []
-  //   w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
-  //   dataLayer = w[l]
-
-  //   var f = d.getElementsByTagName(s)[0],
-  //     j = d.createElement(s),
-  //     dl = l != 'dataLayer' ? '&l=' + l : ''
-  //   j.async = true
-  //   j.src = 'https://tagging.ishopastro.com/gtm.js?id=' + i + dl
-  //   f.parentNode.insertBefore(j, f)
-  // }
-
-  // useEffect(() => {
-  //   googleBuried(window, document, 'script', 'dataLayer', 'GTM-5ZLHWLN')
-  // }, [])
-
   return (
     <>
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="//sys.cdn.myshopastro.com/fe/official-site/0.0.7/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="facebook-domain-verification" content="mhtekq26xg4xukggg2aydslamwt76d" />
         <title>shopastro 星盘跨境 一站式跨境电商saas服务平台，跨境卖家的出海首选！</title>
         <meta
           name="description"
