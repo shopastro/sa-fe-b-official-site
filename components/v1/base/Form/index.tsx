@@ -76,11 +76,11 @@ const Form: React.FC<IProps> = (props) => {
             currency: 'CNY',
             value: 9800,
             user_data: {
-              phone_number: '15648494',
+              phone_number: values.phoneNum,
               address: {
-                first_name: '基于表单来提交',
-                last_name: '基于表单来提交',
-                city: '{基于表单来提交}',
+                first_name: values.username,
+                last_name: values.username,
+                city: values.city,
                 country: 'CN',
               },
             },
