@@ -2,8 +2,31 @@ import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 
+const stepList = [
+  { type: 'step1', title: '品牌策划', desc: ['目标受众、品牌定位', '行业趋势分析'] },
+  { type: 'step2', title: '个性化建站', desc: ['网页风格及内容设计、', '商品分类、信息优化'] },
+  { type: 'step3', title: 'SEO深度运营', desc: ['页面SEO结构优化', '核心关键词优化'] },
+  { type: 'step4', title: '多渠道营销投放', desc: ['多渠道开户', '广告投放数据分析'] },
+  { type: 'step5', title: '社媒和KOL运营', desc: ['寻找优质匹配网红', '社群生态打造'] },
+  { type: 'step6', title: '邮件营销', desc: ['EDM模版库', '邮件营销内容生成'] },
+  { type: 'step7', title: '用户/会员深度运营', desc: ['构建会员体系', '设置转介绍机制'] },
+]
+
+const stepIconList = [
+  { arrow: 'arrow1', step: 'step1' },
+  { arrow: 'arrow2', step: 'step2' },
+  { arrow: 'arrow3', step: 'step3' },
+  { arrow: 'arrow4', step: 'step4' },
+  { arrow: 'arrow5', step: 'center' },
+  { arrow: 'arrow6', step: 'step5' },
+  { arrow: 'arrow7', step: 'step6' },
+  { arrow: 'arrow8', step: 'step7' },
+  { arrow: 'arrow9', step: 'end' },
+  { arrow: 'arrow10', step: 'end' },
+]
+
 const LandingStep: React.FC = () => {
-  const [progress, setProgress] = useState({
+  const [progress, setProgress] = useState<Record<string, boolean>>({
     step1: false,
     step2: false,
     step3: false,
@@ -73,157 +96,41 @@ const LandingStep: React.FC = () => {
           >
             复购
           </div>
-          <div
-            className={classNames(styles.step1, {
-              [styles.active]: progress.step1,
-              [styles.executeOne]: keys.length < count,
-            })}
-          >
-            <div className={styles.bg} />
-            <div className={styles.stepBox}>
-              <div className={styles.stepTitle}>品牌策划</div>
-              <div className={styles.stepDesc}>目标受众、品牌定位</div>
-              <div className={styles.stepDesc}>行业趋势分析</div>
-            </div>
-          </div>
-          <div
-            className={classNames(styles.arrow1, styles.arrow, {
-              [styles.active]: progress.step1,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow2, styles.arrow, {
-              [styles.active]: progress.step2,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow3, styles.arrow, {
-              [styles.active]: progress.step3,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow4, styles.arrow, {
-              [styles.active]: progress.step4,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow5, styles.arrow, {
-              [styles.active]: progress.center,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow6, styles.arrow, {
-              [styles.active]: progress.step5,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow7, styles.arrow, {
-              [styles.active]: progress.step6,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow8, styles.arrow, {
-              [styles.active]: progress.step7,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow9, styles.arrow, {
-              [styles.active]: progress.end,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.arrow10, styles.arrow, {
-              [styles.active]: progress.end,
-              [styles.executeOne]: keys.length < count,
-            })}
-          />
-          <div
-            className={classNames(styles.step2, {
-              [styles.active]: progress.step2,
-              [styles.executeOne]: keys.length < count,
-            })}
-          >
-            <div className={styles.bg} />
-            <div className={styles.stepBox}>
-              <div className={styles.stepTitle}>个性化建站</div>
-              <div className={styles.stepDesc}>网页风格及内容设计、 </div>
-              <div className={styles.stepDesc}>商品分类、信息优化</div>
-            </div>
-          </div>
-          <div
-            className={classNames(styles.step3, {
-              [styles.active]: progress.step3,
-              [styles.executeOne]: keys.length < count,
-            })}
-          >
-            <div className={styles.bg} />
-            <div className={styles.stepBox}>
-              <div className={styles.stepTitle}>SEO深度运营</div>
-              <div className={styles.stepDesc}>页面SEO结构优化</div>
-              <div className={styles.stepDesc}>核心关键词优化</div>
-            </div>
-          </div>
-          <div
-            className={classNames(styles.step4, {
-              [styles.active]: progress.step4,
-              [styles.executeOne]: keys.length < count,
-            })}
-          >
-            <div className={styles.bg} />
-            <div className={styles.stepBox}>
-              <div className={styles.stepTitle}>多渠道营销投放</div>
-              <div className={styles.stepDesc}>多渠道开户</div>
-              <div className={styles.stepDesc}>广告投放数据分析</div>
-            </div>
-          </div>
-          <div
-            className={classNames(styles.step5, {
-              [styles.active]: progress.step5,
-              [styles.executeOne]: keys.length < count,
-            })}
-          >
-            <div className={styles.bg} />
-            <div className={styles.stepBox}>
-              <div className={styles.stepTitle}>社媒和KOL运营</div>
-              <div className={styles.stepDesc}>寻找优质匹配网红</div>
-              <div className={styles.stepDesc}>社群生态打造</div>
-            </div>
-          </div>
-          <div
-            className={classNames(styles.step6, {
-              [styles.active]: progress.step6,
-              [styles.executeOne]: keys.length < count,
-            })}
-          >
-            <div className={styles.bg} />
-            <div className={styles.stepBox}>
-              <div className={styles.stepTitle}>邮件营销</div>
-              <div className={styles.stepDesc}>EDM模版库</div>
-              <div className={styles.stepDesc}>邮件营销内容生成</div>
-            </div>
-          </div>
-          <div
-            className={classNames(styles.step7, {
-              [styles.active]: progress.step7,
-              [styles.executeOne]: keys.length < count,
-            })}
-          >
-            <div className={styles.bg} />
-            <div className={styles.stepBox}>
-              <div className={styles.stepTitle}>用户/会员深度运营</div>
-              <div className={styles.stepDesc}>构建会员体系</div>
-              <div className={styles.stepDesc}>设置转介绍机制</div>
-            </div>
-          </div>
+          {stepIconList.map((item) => {
+            return (
+              <div
+                key={item.arrow}
+                className={classNames(styles[item.arrow], styles.arrow, {
+                  [styles.active]: progress[item.step],
+                  [styles.executeOne]: keys.length < count,
+                })}
+              />
+            )
+          })}
+
+          {stepList.map((item) => {
+            return (
+              <div
+                key={item.title}
+                className={classNames(styles[item.type], {
+                  [styles.active]: progress[item.type],
+                  [styles.executeOne]: keys.length < count,
+                })}
+              >
+                <div className={styles.bg} />
+                <div className={styles.stepBox}>
+                  <div className={styles.stepTitle}>{item.title}</div>
+                  {item.desc.map((text) => {
+                    return (
+                      <div className={styles.stepDesc} key={text}>
+                        {text}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
