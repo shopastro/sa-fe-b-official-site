@@ -17,7 +17,7 @@ const Header: React.FC<IProps> = (props) => {
         <meta charSet="utf-8" />
         <link rel="icon" href="//sys.cdn.myshopastro.com/fe/official-site/0.0.7/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="facebook-domain-verification" content="mhtekq26xg4xukggg2aydslamwt76d" />
+        <meta name="facebook-domain-verification" content="rmikn52rejhxpepoxtp5q07p7wisp6" />
         <title>shopastro 星盘跨境 一站式跨境电商saas服务平台，跨境卖家的出海首选！</title>
         <meta
           name="description"
