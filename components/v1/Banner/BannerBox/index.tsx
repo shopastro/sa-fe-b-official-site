@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 import Title from '../../base/Title'
 import Button from '../../base/Button'
 import Modal from '../../base/Modal'
+import { buryingPoint } from '../../../../utils/buryingPoint'
 
 type IProps = {
   desc: string[]
@@ -33,6 +34,7 @@ const BannerBox: React.FC<IProps> = (props) => {
           <Button
             text="立即开始"
             onClick={() => {
+              buryingPoint('click_touch_contact_form')
               setIsOpen(true)
             }}
           />

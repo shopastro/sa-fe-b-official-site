@@ -4,6 +4,7 @@ import Input from './Input'
 import Button from '../Button'
 import { axiosFun } from '../../../../utils/asios'
 import Success from '../../Success'
+import { buryingPoint } from '../../../../utils/buryingPoint'
 
 type IProps = {
   list: List[]
@@ -63,24 +64,22 @@ const Form: React.FC<IProps> = (props) => {
     const { data = {} } = res
     const { success = false } = data
     if (success) {
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          event: 'generate_lead',
-          eventModel: {
-            currency: 'CNY',
-            value: 9800,
-            user_data: {
-              phone_number: values.phoneNum,
-              address: {
-                first_name: values.username,
-                last_name: values.username,
-                city: values.city,
-                country: 'CN',
-              },
+      buryingPoint({
+        event: 'generate_lead',
+        eventModel: {
+          currency: 'CNY',
+          value: 9800,
+          user_data: {
+            phone_number: values.phoneNum,
+            address: {
+              first_name: values.username,
+              last_name: values.username,
+              city: values.city,
+              country: 'CN',
             },
           },
-        })
-      }
+        },
+      })
 
       setRequested(true)
       successCallback && successCallback()

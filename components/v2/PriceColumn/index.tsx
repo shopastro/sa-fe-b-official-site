@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 import { listObj } from './constant'
 import Button from '../../v1/base/Button'
 import Modal from '../../v1/base/Modal'
+import { buryingPoint } from '../../../utils/buryingPoint'
 
 type IProps = {}
 
@@ -51,7 +52,15 @@ const PriceColumn: React.FC<IProps> = (props) => {
           <div>全面的建站支持与运营指导</div>
         </div>
         {getList('base')}
-        <Button className={styles.baseBtn} text="立即开始" type="ghost" onClick={() => setIsOpen(true)} />
+        <Button
+          className={styles.baseBtn}
+          text="立即开始"
+          type="ghost"
+          onClick={() => {
+            buryingPoint('click_touch_contact_form')
+            setIsOpen(true)
+          }}
+        />
         {maxShow.base <= 8 && (
           <div
             className={styles.more}
@@ -85,7 +94,15 @@ const PriceColumn: React.FC<IProps> = (props) => {
         </div>
         {getList('ultimate')}
 
-        <Button className={styles.ultimateBtn} text="立即开始" type="ghost" onClick={() => setIsOpen(true)} />
+        <Button
+          className={styles.ultimateBtn}
+          text="立即开始"
+          type="ghost"
+          onClick={() => {
+            buryingPoint('click_touch_contact_form')
+            setIsOpen(true)
+          }}
+        />
         {maxShow.ultimate <= 8 && (
           <div
             className={styles.more}

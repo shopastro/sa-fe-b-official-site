@@ -71,6 +71,7 @@ const LandingStep: React.FC = () => {
       }
     }, timer)
   }, [count])
+
   return (
     <div className={styles.landingStep}>
       <div className={styles.topBox}>
