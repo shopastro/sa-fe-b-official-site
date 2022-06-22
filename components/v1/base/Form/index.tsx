@@ -61,6 +61,7 @@ const Form: React.FC<IProps> = (props) => {
 
   const callback = (res: any) => {
     setLoad(false)
+
     const { data = {} } = res
     const { success = false } = data
     if (success) {
