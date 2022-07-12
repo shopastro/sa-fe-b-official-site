@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Modal from '../../v1/base/Modal'
 import styles from './index.module.scss'
 import classNames from 'classnames'
+import { buryingPoint } from '../../../utils/buryingPoint'
 // import classNames from 'classnames'
 
 type IProps = {
@@ -42,11 +43,7 @@ const Pendant: React.FC<IProps> = () => {
             id={'pendantItem'}
             onClick={() => {
               //添加埋点
-              if (window.dataLayer) {
-                window.dataLayer.push({
-                  event: 'click_online_chat',
-                })
-              }
+              buryingPoint('click_online_chat')
             }}
           >
             {isPc ? (
@@ -67,11 +64,7 @@ const Pendant: React.FC<IProps> = () => {
             className={styles.pendantItem}
             onMouseEnter={() => {
               //添加埋点
-              if (window.dataLayer) {
-                window.dataLayer.push({
-                  event: 'hover_contact_info',
-                })
-              }
+              buryingPoint('hover_contact_info')
             }}
           >
             <div className={styles.imgItem} />
@@ -86,11 +79,7 @@ const Pendant: React.FC<IProps> = () => {
             className={styles.pendantItem}
             onMouseEnter={() => {
               //添加埋点
-              if (window.dataLayer) {
-                window.dataLayer.push({
-                  event: 'hover_contact_info',
-                })
-              }
+              buryingPoint('hover_contact_info')
             }}
           >
             <div className={styles.imgItem} />
@@ -104,6 +93,7 @@ const Pendant: React.FC<IProps> = () => {
           <div
             className={classNames(styles.pendantItem)}
             onClick={() => {
+              buryingPoint('click_touch_contact_form')
               setIsOpen(true)
             }}
           >

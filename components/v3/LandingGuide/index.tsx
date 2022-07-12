@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Button from '../base/Button'
 import Modal from '../../v1/base/Modal'
 import styles from './index.module.scss'
+import { buryingPoint } from '../../../utils/buryingPoint'
 
 type IProps = {}
 
@@ -55,6 +56,7 @@ const LandingGuide: React.FC<IProps> = () => {
             className={styles.immediatelyBtn}
             onClick={() => {
               setIsOpen(true)
+              buryingPoint('click_touch_contact_form')
             }}
           />
         </div>

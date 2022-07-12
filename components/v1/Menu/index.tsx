@@ -5,6 +5,7 @@ import { list } from './constant'
 import Link from 'next/link'
 import classname from 'classname'
 import Modal from '../base/Modal'
+import { buryingPoint } from '../../../utils/buryingPoint'
 
 type IProps = { text?: string }
 
@@ -100,7 +101,14 @@ const Title: React.FC<IProps> = (props) => {
           })}
 
           <li className={styles.contentUs}>
-            <Button text={text ? text : '立即开始'} type="ghost" onClick={() => setIsOpen(true)} />
+            <Button
+              text={text ? text : '立即开始'}
+              type="ghost"
+              onClick={() => {
+                buryingPoint('click_touch_contact_form')
+                setIsOpen(true)
+              }}
+            />
           </li>
         </ul>
       )}

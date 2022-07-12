@@ -4,6 +4,7 @@ import Button from '../base/Button'
 import { ultimate, enterprise } from './constant'
 import classNames from 'classnames'
 import Modal from '../base/Modal'
+import { buryingPoint } from '../../../utils/buryingPoint'
 
 type IProps = {}
 
@@ -51,6 +52,7 @@ const PriceBanner: React.FC<IProps> = (props) => {
           <Button
             text="立即开始"
             onClick={() => {
+              buryingPoint('click_touch_contact_form')
               setIsOpen(true)
             }}
           />
@@ -101,7 +103,7 @@ const PriceBanner: React.FC<IProps> = (props) => {
         >
           <div className={styles.version}>企业版</div>
           <div className={styles.desc}>星盘能力开放赋能</div>
-          <div className={styles.cost}>188000 RMB</div>
+          <div className={styles.cost}>面议咨询</div>
 
           <ul className={`${styles.list}`} style={{ display: mbEnterpriseMore || isPc ? 'flex' : 'none' }}>
             {enterprise.map((it) => (
