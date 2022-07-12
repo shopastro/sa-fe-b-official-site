@@ -120,7 +120,7 @@ const PriceColumn: React.FC<IProps> = (props) => {
       <div className={styles.enterprise}>
         <div className={styles.version}>企业版</div>
         <div className={styles.price}>
-          188000 RMB <div className={styles.priceStart}>起</div>
+          面议咨询
         </div>
         <div className={styles.desc}>
           <div>打造流量闭环 沉淀品牌价值</div>

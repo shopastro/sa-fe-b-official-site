@@ -103,7 +103,7 @@ const PriceBanner: React.FC<IProps> = (props) => {
         >
           <div className={styles.version}>企业版</div>
           <div className={styles.desc}>星盘能力开放赋能</div>
-          <div className={styles.cost}>188000 RMB</div>
+          <div className={styles.cost}>面议咨询</div>
 
           <ul className={`${styles.list}`} style={{ display: mbEnterpriseMore || isPc ? 'flex' : 'none' }}>
             {enterprise.map((it) => (
