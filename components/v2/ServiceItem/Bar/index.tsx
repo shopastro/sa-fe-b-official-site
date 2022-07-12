@@ -26,7 +26,7 @@ const Bar: React.FC<IProps> = (props) => {
       </div>
       <div className={styles.cell4}>
         <div>企业版</div>
-        <div className={styles.price}>￥188000</div>
+        <div className={styles.price}>面议咨询</div>
       </div>
     </div>
   )
