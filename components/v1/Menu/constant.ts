@@ -3,10 +3,10 @@ export const list = [
     text: '首页',
     href: '/',
   },
-  {
-    text: '产品定价',
-    href: '/pricing',
-  },
+  // {
+  //   text: '产品定价',
+  //   href: '/pricing',
+  // },
   {
     text: '解决方案',
     href: '/solutions',
