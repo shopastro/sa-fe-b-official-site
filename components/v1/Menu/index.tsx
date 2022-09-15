@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 import Button from '../base/Button'
 import { list } from './constant'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import classname from 'classname'
 import Modal from '../base/Modal'
 import { buryingPoint } from '../../../utils/buryingPoint'
@@ -14,7 +15,7 @@ const Title: React.FC<IProps> = (props) => {
   const [openMenu, setOpenMenu] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [pathname, setPathname] = useState('')
+  const router = useRouter()
 
   const onResize = (e: any) => {
     if (e.currentTarget.innerWidth > 770) {
@@ -62,17 +63,13 @@ const Title: React.FC<IProps> = (props) => {
     setIsOpen(false)
   }
 
-  useEffect(() => {
-    setPathname(window.location.pathname)
-  }, [])
-
   return (
     <div
       className={classname(styles.menuBox, {
         [styles.menuBoxScroll]: scrolled,
       })}
     >
-      <Link href="/">
+      <Link href="/" passHref>
         <div className={styles.logo} />
       </Link>
 
@@ -90,10 +87,10 @@ const Title: React.FC<IProps> = (props) => {
                 onClick={handleClick}
                 id={`mene_${text}`}
                 className={classname({
-                  [styles.active]: pathname === href,
+                  [styles.active]: router.pathname === href,
                 })}
               >
-                <Link href={href}>
+                <Link href={href} passHref>
                   <span> {text}</span>
                 </Link>
               </li>
@@ -101,6 +98,10 @@ const Title: React.FC<IProps> = (props) => {
           })}
 
           <li className={styles.contentUs}>
+            <Button type="black" className={styles.measure} onClick={() => router.push('/measure')}>
+              <Link href="/measure">免费SEO检测</Link>
+            </Button>
+
             <Button
               text={text ? text : '立即开始'}
               type="ghost"

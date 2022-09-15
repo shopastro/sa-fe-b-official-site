@@ -52,9 +52,18 @@
       color: #333;
       li {
         cursor: pointer;
+        display: flex;
         &:hover {
           font-weight: 600;
           color: #004ed1;
+        }
+      }
+      .contentUs {
+        .measure {
+          margin-right: 24px;
+          a {
+            color: unset;
+          }
         }
       }
     }

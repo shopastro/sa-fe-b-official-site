@@ -5,6 +5,8 @@ import Button from '../Button'
 import { axiosFun } from '../../../../utils/asios'
 import Success from '../../Success'
 import { buryingPoint } from '../../../../utils/buryingPoint'
+import { useContainer } from 'unstated-next'
+import detectionStore from '../../../../store/detectionStore'
 
 type IProps = {
   list: List[]
@@ -28,6 +30,7 @@ const Form: React.FC<IProps> = (props) => {
   const [requested, setRequested] = useState(false)
   const [error, setError] = useState(false)
   const [verification, setVerification] = useState(false)
+  const { dataSource, setUnlock } = useContainer(detectionStore)
 
   const handleChange = (key: string, value: string) => {
     setValues({
@@ -60,6 +63,7 @@ const Form: React.FC<IProps> = (props) => {
   }
 
   const callback = (res: any) => {
+    debugger
     setLoad(false)
 
     const { data = {} } = res
@@ -78,9 +82,16 @@ const Form: React.FC<IProps> = (props) => {
               city: values.city,
               country: 'CN',
             },
+            user_domain: dataSource.url,
           },
         },
       })
+
+      if (dataSource.url) {
+        const urlList = atob(localStorage.getItem('sa-seo') ?? '').split(',')
+        localStorage.setItem('sa-seo', btoa(`${urlList.toString()},${dataSource.url}`))
+        setUnlock(true)
+      }
 
       setRequested(true)
       successCallback && successCallback()

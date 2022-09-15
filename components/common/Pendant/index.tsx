@@ -3,6 +3,8 @@ import Modal from '../../v1/base/Modal'
 import styles from './index.module.scss'
 import classNames from 'classnames'
 import { buryingPoint } from '../../../utils/buryingPoint'
+import { useContainer } from 'unstated-next'
+import detectionStore from '../../../store/detectionStore'
 // import classNames from 'classnames'
 
 type IProps = {
@@ -13,9 +15,11 @@ type IProps = {
 const Pendant: React.FC<IProps> = () => {
   const [isPc, setIsPc] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
+  const { shouModal, setShowMoadl } = useContainer(detectionStore)
 
   const handleClose = () => {
     setIsOpen(false)
+    setShowMoadl(false)
   }
 
   const handleResize = () => {
@@ -103,7 +107,7 @@ const Pendant: React.FC<IProps> = () => {
         </li>
       </ul>
 
-      {isOpen && <Modal visiable={isOpen} handleClose={handleClose} />}
+      {(isOpen || shouModal) && <Modal visiable={isOpen} handleClose={handleClose} />}
     </div>
   )
 }

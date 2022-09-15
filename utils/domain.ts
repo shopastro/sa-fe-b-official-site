@@ -4,3 +4,10 @@ export const getCmsDomain = () => {
   }
   return 'https://cms.shopastro-inc.com'
 }
+
+export const getBelugaDomain = () => {
+  if (process.env.APP_ENV === 'dev') {
+    return 'https://site-api.beta.ishopastro.com'
+  }
+  return 'https://site-api.beta.ishopastro.com'
+}

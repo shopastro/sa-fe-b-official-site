@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Children } from 'react'
 import styles from './index.module.scss'
 
 type IProps = {
@@ -8,28 +8,38 @@ type IProps = {
   name: string
   placeholder: string
   require?: boolean
-  label: string
+  label?: string
   type?: 'text' | 'textarea' | 'select'
   error?: boolean
+  className?: string
+  value?: string
 }
 
 const Input: React.FC<IProps> = (props) => {
-  const { type = 'text', label, placeholder, maxLength, name, error = false } = props
+  const { type = 'text', label, placeholder, maxLength, name, error = false, className, children, value } = props
   const [selected, setSelected] = useState(false)
+  const [inputValue, setInputValue] = useState('')
+
+  const inputLabel = label && <div className={styles.label}>{label}</div>
 
   return (
-    <div className={`${styles.inputBox} ${type === 'textarea' && styles.inputTxtBox} ${error && styles.error}`}>
+    <div
+      className={`${styles.inputBox} ${type === 'textarea' && styles.inputTxtBox} ${error && styles.error} ${
+        className && className
+      }`}
+    >
       {type === 'text' && (
         <>
-          <div className={styles.label}>{label}</div>
-
+          {inputLabel}
           <input
             className={styles.input}
             type={type}
             placeholder={placeholder}
             maxLength={maxLength}
+            value={value === null || value === undefined ? inputValue : value}
             onChange={(e) => {
               props.onChange(name, e.target.value)
+              setInputValue(e.target.value)
             }}
           />
         </>
@@ -37,7 +47,7 @@ const Input: React.FC<IProps> = (props) => {
 
       {type === 'select' && (
         <>
-          <div className={styles.label}>{label}</div>
+          {inputLabel}
           <select
             placeholder={placeholder}
             className={classNames({
@@ -70,8 +80,9 @@ const Input: React.FC<IProps> = (props) => {
           }}
         />
       )}
+
+      {children}
     </div>
   )
 }
-
 export default Input
