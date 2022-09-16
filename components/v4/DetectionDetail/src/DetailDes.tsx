@@ -42,13 +42,8 @@ const DetailDes: React.FC = () => {
       </div>
       <div className={styles.line}></div>
       <div className={styles.preCover}>
-        <Image
-          src={`https://media.beluga.cdn.ishopastro.com/seo-ads/${dataSource?.imageName}`}
-          alt="preCover"
-          // width={500}
-          // height={500}
-        />
-        {/* <img src={`https://media.beluga.cdn.ishopastro.com/seo-ads/${dataSource?.imageName}`} alt="preCover" /> */}
+        {/* <Image src={`https://media.beluga.cdn.ishopastro.com/seo-ads/${dataSource?.imageName}`} alt="preCover" /> */}
+        <img src={`https://media.beluga.cdn.ishopastro.com/seo-ads/${dataSource?.imageName}`} alt="preCover" />
       </div>
     </div>
   )

@@ -14,6 +14,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [requested, setRequested] = useState(false)
   const { visiable = false } = props
+
   useEffect(() => {
     setIsOpen(visiable)
   }, [visiable])

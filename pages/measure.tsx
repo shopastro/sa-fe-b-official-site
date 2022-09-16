@@ -5,7 +5,6 @@ import Footer from '../components/v1/Footer'
 import { CSSProperties } from 'react'
 import Detection from '../components/v4/Detection/Detection'
 import DetectionDetail from '../components/v4/DetectionDetail/DetectionDetail'
-import DetectionStore from '../store/detectionStore'
 
 const Home: NextPage = () => {
   const pageStyle: CSSProperties = {
@@ -21,10 +20,8 @@ const Home: NextPage = () => {
       <Header />
       <section className="sec-container" id="about">
         <Menu />
-        <DetectionStore.Provider>
-          <Detection />
-          <DetectionDetail />
-        </DetectionStore.Provider>
+        <Detection />
+        <DetectionDetail />
       </section>
       <Footer />
     </div>

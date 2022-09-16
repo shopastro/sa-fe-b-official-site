@@ -15,7 +15,7 @@ type IProps = {
 const Pendant: React.FC<IProps> = () => {
   const [isPc, setIsPc] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
-  const { shouModal, setShowMoadl } = useContainer(detectionStore)
+  const { showModal, setShowMoadl } = useContainer(detectionStore)
 
   const handleClose = () => {
     setIsOpen(false)
@@ -34,7 +34,7 @@ const Pendant: React.FC<IProps> = () => {
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => {
-      window.addEventListener('resize', () => {})
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
@@ -107,7 +107,7 @@ const Pendant: React.FC<IProps> = () => {
         </li>
       </ul>
 
-      {(isOpen || shouModal) && <Modal visiable={isOpen} handleClose={handleClose} />}
+      {(isOpen || showModal) && <Modal visiable={isOpen || showModal} handleClose={handleClose} />}
     </div>
   )
 }

@@ -2,7 +2,7 @@ import Button from '../../v1/base/Button'
 import Input from '../../v1/base/Form/Input'
 import styles from './index.module.scss'
 import Image from 'next/image'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { useContainer } from 'unstated-next'
 import detectionStore from '../../../store/detectionStore'
 
@@ -13,7 +13,7 @@ const https = (url: string) => {
 
 const isUrl = (url: string) => {
   try {
-    if (!url || !Boolean(/^(https?:\/\/)?([a-zA-Z0-9]+\.)+[a-zA-Z0-9]+/.test(url))) throw new Error()
+    if (!url || !Boolean(/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z0-9]+/.test(url))) throw new Error()
     return Boolean(new URL(https(url)))
   } catch (error) {
     return false
@@ -23,7 +23,8 @@ const isUrl = (url: string) => {
 const Detection: React.FC = () => {
   const loader = ({ src }: { src: string }) => `https://media.cdn.ishopastro.com/${src}`
   const [inputValue, setInputValue] = useState('')
-  const { setCurrentUrl, errorText, setErrorText } = useContainer(detectionStore)
+  const [errorText, setErrorText] = useState('')
+  const { setCurrentUrl, currentUrl, dataSource } = useContainer(detectionStore)
 
   return (
     <div className={styles.detection}>
@@ -50,6 +51,11 @@ const Detection: React.FC = () => {
           />
         )}
         {errorText && <div className={styles.tips}>{errorText}</div>}
+        {currentUrl && !dataSource?.url && (
+          <div className={styles.loadingBox}>
+            <div className={styles.loading}></div>
+          </div>
+        )}
       </Input>
       <Button
         text="开始检测"

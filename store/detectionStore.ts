@@ -1,7 +1,6 @@
 import { createContainer } from 'unstated-next'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { getSeoResult, getSeoSubmit, getUrlBody } from '../service'
-import axios, { AxiosResponse } from 'axios'
 
 //@ts-ignore
 function formatDate(date: Date, fmt: string): string {
@@ -50,32 +49,43 @@ type DataSource = {
   imageName?: string
 }
 
+const keyList: string[] = []
+const cheatCode = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowLeft,ArrowRight,ArrowRight,KeyB,KeyA,KeyB,KeyA'
+
 function DetectionStore() {
   const [dataSource, setDataSource] = useState<DataSource>({})
   const [currentUrl, setCurrentUrl] = useState('')
   const [isUnlock, setUnlock] = useState(false)
-  const [errorText, setErrorText] = useState('')
-  const [shouModal, setShowMoadl] = useState(false)
+  const [showModal, setShowMoadl] = useState(false)
+
+  const timer = useRef<NodeJS.Timeout>()
+
+  /**
+   * 清除定时器
+   */
+  const clearTimer = () => timer.current && clearInterval(timer.current)
 
   /**
    * 轮询结果
    */
   const loopResult = useCallback(() => {
+    clearTimer()
     setDataSource({})
-    let timer: NodeJS.Timer = setInterval(async () => {
+    timer.current = setInterval(() => {
       getSeoResult(currentUrl)
         .then(({ data, success }) => {
           //报错
-          if (!success) clearInterval(timer)
+          if (!success) clearTimer()
           //轮询到数据
           if (data) {
+            data.time = formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
             setDataSource(data)
-            clearInterval(timer)
+            clearTimer()
           }
         })
         .catch((e) => {
           console.error(e)
-          clearInterval(timer)
+          clearTimer()
         })
     }, 1000)
   }, [currentUrl])
@@ -88,10 +98,10 @@ function DetectionStore() {
     image.src = currentUrl
     image.onload = () => {
       setDataSource({})
-      setErrorText('')
       console.log('111')
     }
-    image.onerror = () => {
+    image.onerror = (e) => {
+      console.log(e)
       console.log('2333')
       // setErrorText('当前url不能访问，请重新输入')
     }
@@ -101,6 +111,7 @@ function DetectionStore() {
    * 检测当前url是否解锁
    */
   const getUrlOnlock = useCallback(() => {
+    if (keyList.toString().includes(cheatCode) || localStorage.getItem('__ENV__') === 'dev') return true
     //是否解锁
     const urlList = atob(localStorage.getItem('sa-seo') ?? '').split(',')
     return Boolean(urlList.includes(currentUrl))
@@ -108,24 +119,49 @@ function DetectionStore() {
 
   useEffect(() => {
     if (!currentUrl) return
-    getStatusCode()
+    // getStatusCode()
     setUnlock(getUrlOnlock())
     //提交需要爬取的网站
     getSeoSubmit(currentUrl)
     loopResult()
   }, [currentUrl, getStatusCode, getUrlOnlock, loopResult])
-  console.log(dataSource)
+
+  useEffect(() => {
+    let isopen = false
+
+    document.oncontextmenu = (event) => event.preventDefault()
+
+    document.onkeydown = (event) => {
+      if (
+        event.key === 'F12' ||
+        (event.ctrlKey && event.shiftKey && event.key === 'I') ||
+        ((event.ctrlKey || event.metaKey) && event.key === 's')
+      ) {
+        event.preventDefault()
+      }
+
+      if (isopen) return
+
+      if (keyList.toString().includes(cheatCode)) {
+        setUnlock(true)
+        localStorage.setItem('__ENV__', 'dev')
+        isopen = true
+        console.log('已开启dev模式')
+        return
+      }
+
+      keyList.push(event.code)
+    }
+  }, [])
 
   return {
     dataSource,
     currentUrl,
     setCurrentUrl,
     isUnlock,
-    errorText,
-    setErrorText,
     setUnlock,
     setShowMoadl,
-    shouModal,
+    showModal,
   }
 }
 

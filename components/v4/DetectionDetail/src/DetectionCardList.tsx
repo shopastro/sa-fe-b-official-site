@@ -6,28 +6,6 @@ import { useMemo } from 'react'
 import classNames from 'classnames'
 import Button from '../../../v3/base/Button'
 
-const DownIcon = () => {
-  return (
-    <svg
-      width="13"
-      height="14"
-      viewBox="0 0 13 14"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ marginRight: '6px' }}
-    >
-      <g clipPath="url(#clip0_67_2601)">
-        <path d="M6.49958 8.85723L2.7853 5.14294L10.2139 5.14294L6.49958 8.85723Z" fill="#333333" />
-      </g>
-      <defs>
-        <clipPath id="clip0_67_2601">
-          <rect width="13" height="13" fill="white" transform="translate(0 0.500061)" />
-        </clipPath>
-      </defs>
-    </svg>
-  )
-}
-
 export const ScuessIcon = ({ style }: { style?: CSSProperties }) => {
   return (
     <svg
@@ -46,12 +24,12 @@ export const ScuessIcon = ({ style }: { style?: CSSProperties }) => {
   )
 }
 export default function () {
-  const { dataSource, isUnlock } = useContainer(detectionStore)
+  const { dataSource, isUnlock, setShowMoadl } = useContainer(detectionStore)
 
   const unlockNode = (
     <div className={styles.unlockNode}>
       <div style={{ marginRight: '12px' }}>查看详细报告，请</div>
-      <Button text="解锁" type="ghost" className={styles.unlockBtn} />
+      <Button text="解锁" type="ghost" className={styles.unlockBtn} onClick={() => setShowMoadl(true)} />
     </div>
   )
 

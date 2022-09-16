@@ -30,7 +30,7 @@ const UrlTitleCase = (url: string) => {
 const DetectionDetail: React.FC = () => {
   const [currentType, setCurrentType] = useState<'header' | 'download'>('header')
   const currentTypeRef = useRef({})
-  const { dataSource, currentUrl } = useContainer(detectionStore)
+  const { dataSource, currentUrl, isUnlock } = useContainer(detectionStore)
 
   const scrollCallBack = (e: Event) => {
     const scrollTop = document.documentElement.scrollTop
@@ -47,18 +47,6 @@ const DetectionDetail: React.FC = () => {
   }
 
   useEffect(() => {
-    //屏蔽F12等按键
-    // document.oncontextmenu = (event) => event.preventDefault()
-    // document.onkeydown = (event) => {
-    //   if (
-    //     event.key === 'F12' ||
-    //     (event.ctrlKey && event.shiftKey && event.key === 'I') ||
-    //     ((event.ctrlKey || event.metaKey) && event.key === 's')
-    //   ) {
-    //     event.preventDefault()
-    //   }
-    // }
-
     window.addEventListener('scroll', scrollCallBack)
     return () => window.removeEventListener('scroll', scrollCallBack)
   }, [])
@@ -78,7 +66,8 @@ const DetectionDetail: React.FC = () => {
       <Button
         className={styles.download}
         onClick={() => htmlToPdf({ id: 'pdf', title: 'pdf' })}
-        disabled={Boolean(currentUrl && !dataSource)}
+        // disabled={Boolean(currentUrl && dataSource.url && !isUnlock)}
+        disabled={Boolean(!isUnlock)}
       >
         下载详细报告
       </Button>

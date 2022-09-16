@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 import Title from '../../base/Title'
 import Button from '../../base/Button'
