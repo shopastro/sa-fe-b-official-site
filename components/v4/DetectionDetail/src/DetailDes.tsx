@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from '../index.module.scss'
 import { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import { drawMain } from '../../../../utils/htmlToPdf'
 import { useContainer } from 'unstated-next'
 import detectionStore from '../../../../store/detectionStore'
@@ -20,7 +20,7 @@ const DetailDes: React.FC = () => {
       })()
       drawMain(canvasRef.current, dataSource.score - 1, forecolor, bgColor)
     }
-  }, [])
+  }, [dataSource])
 
   return (
     <div className={styles.des}>
@@ -42,7 +42,6 @@ const DetailDes: React.FC = () => {
       </div>
       <div className={styles.line}></div>
       <div className={styles.preCover}>
-        {/* <Image src={`https://media.beluga.cdn.ishopastro.com/seo-ads/${dataSource?.imageName}`} alt="preCover" /> */}
         <img src={`https://media.beluga.cdn.ishopastro.com/seo-ads/${dataSource?.imageName}`} alt="preCover" />
       </div>
     </div>

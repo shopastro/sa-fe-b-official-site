@@ -23,8 +23,7 @@ const isUrl = (url: string) => {
 const Detection: React.FC = () => {
   const loader = ({ src }: { src: string }) => `https://media.cdn.ishopastro.com/${src}`
   const [inputValue, setInputValue] = useState('')
-  const [errorText, setErrorText] = useState('')
-  const { setCurrentUrl, currentUrl, dataSource } = useContainer(detectionStore)
+  const { setCurrentUrl, currentUrl, dataSource, errorText, setErrorText } = useContainer(detectionStore)
 
   return (
     <div className={styles.detection}>
@@ -51,7 +50,7 @@ const Detection: React.FC = () => {
           />
         )}
         {errorText && <div className={styles.tips}>{errorText}</div>}
-        {currentUrl && !dataSource?.url && (
+        {currentUrl && !dataSource?.url && !errorText && (
           <div className={styles.loadingBox}>
             <div className={styles.loading}></div>
           </div>

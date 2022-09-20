@@ -49,6 +49,8 @@ type DataSource = {
   imageName?: string
 }
 
+let TIMEROUT = 0
+
 const keyList: string[] = []
 const cheatCode = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowLeft,ArrowRight,ArrowRight,KeyB,KeyA,KeyB,KeyA'
 
@@ -57,21 +59,31 @@ function DetectionStore() {
   const [currentUrl, setCurrentUrl] = useState('')
   const [isUnlock, setUnlock] = useState(false)
   const [showModal, setShowMoadl] = useState(false)
+  const [errorText, setErrorText] = useState('')
 
   const timer = useRef<NodeJS.Timeout>()
 
   /**
    * 清除定时器
    */
-  const clearTimer = () => timer.current && clearInterval(timer.current)
+  const clearTimer = () => {
+    TIMEROUT = 0
+    timer.current && clearInterval(timer.current)
+  }
 
   /**
    * 轮询结果
    */
   const loopResult = useCallback(() => {
-    clearTimer()
     setDataSource({})
     timer.current = setInterval(() => {
+      TIMEROUT += 1000
+      console.log(TIMEROUT)
+      if (TIMEROUT >= 60000) {
+        clearTimer()
+        setErrorText('查询url超时，请确认url是否正确')
+        setCurrentUrl('')
+      }
       getSeoResult(currentUrl)
         .then(({ data, success }) => {
           //报错
@@ -162,6 +174,8 @@ function DetectionStore() {
     setUnlock,
     setShowMoadl,
     showModal,
+    errorText,
+    setErrorText,
   }
 }
 

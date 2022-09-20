@@ -63,7 +63,6 @@ const Form: React.FC<IProps> = (props) => {
   }
 
   const callback = (res: any) => {
-    debugger
     setLoad(false)
 
     const { data = {} } = res
@@ -112,6 +111,7 @@ const Form: React.FC<IProps> = (props) => {
         {
           ...values,
           category: type,
+          checkDomain: dataSource?.url,
         },
         callback
       )

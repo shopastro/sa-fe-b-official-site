@@ -47,7 +47,7 @@ const Title: React.FC<IProps> = (props) => {
 
     return () => {
       window.removeEventListener('resize', onResize, true)
-      window.removeEventListener('scroll', onResize, true)
+      window.removeEventListener('scroll', onScroll, true)
     }
   }, [])
 
