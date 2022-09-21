@@ -47,7 +47,7 @@ const Form: React.FC<IProps> = (props) => {
     },
   ]
 
-  const formList = dataSource ? newList : list
+  const formList = dataSource.url ? newList : list
 
   const handleChange = (key: string, value: string) => {
     setValues({

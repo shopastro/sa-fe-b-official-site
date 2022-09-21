@@ -203,4 +203,4 @@ const IndexPage: React.FC<any> = (props) => {
   )
 }
 
-export default withRouter(IndexPage)
+export default IndexPage

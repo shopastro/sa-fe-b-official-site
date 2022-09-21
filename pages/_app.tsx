@@ -6,7 +6,9 @@ import DetectionStore from '../store/detectionStore'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      {/*@ts-ignore*/}
       <DetectionStore.Provider>
+        {/*@ts-ignore*/}
         <Component {...pageProps} />
       </DetectionStore.Provider>
     </>
