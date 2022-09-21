@@ -55,7 +55,9 @@ const Detection: React.FC = () => {
     const url = https(inputValue)
     if (checkMap[`${url}`] && currentUrl) {
       if (new Date().getTime() - checkMap[`${url}`] > 60000) {
+        setCurrentUrl(url)
         loopResult()
+        checkMap[`${url}`] = new Date().getTime()
       } else {
         checkOutTime(checkMap[`${url}`], new Date().getTime())
       }

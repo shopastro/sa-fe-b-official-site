@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import '../components/biz/Message/message.min.css'
-// import '../../biz/Message/message.min.css'
 import type { AppProps } from 'next/app'
 import DetectionStore from '../store/detectionStore'
 
