@@ -65,7 +65,7 @@ const DetectionDetail: React.FC = () => {
       </div>
       <Button
         className={styles.download}
-        onClick={() => htmlToPdf({ id: 'pdf', title: 'pdf' })}
+        onClick={() => htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf' })}
         // disabled={Boolean(currentUrl && dataSource.url && !isUnlock)}
         disabled={Boolean(!isUnlock)}
       >

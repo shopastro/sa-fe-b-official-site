@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useMemo, useState } from 'react'
+import { CSSProperties, useMemo, useState } from 'react'
 import { useContainer } from 'unstated-next'
 import detectionStore from '../../../../store/detectionStore'
 import styles from '../index.module.scss'
@@ -44,7 +44,7 @@ export const ScuessIcon = () => {
   )
 }
 
-export const ErrorIcon = () => {
+export const ErrorIcon = ({ style }: { style?: CSSProperties }) => {
   return (
     <svg
       width="16"
@@ -52,7 +52,7 @@ export const ErrorIcon = () => {
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ marginRight: '4px' }}
+      style={{ marginRight: '4px', ...style }}
     >
       <path
         d="M8.00004 1.3334C4.32671 1.3334 1.33337 4.32674 1.33337 8.00007C1.33337 11.6734 4.32671 14.6667 8.00004 14.6667C11.6734 14.6667 14.6667 11.6734 14.6667 8.00007C14.6667 4.32674 11.6734 1.3334 8.00004 1.3334ZM10.24 9.53341C10.4334 9.72674 10.4334 10.0467 10.24 10.2401C10.14 10.3401 10.0134 10.3867 9.88671 10.3867C9.76004 10.3867 9.63337 10.3401 9.53337 10.2401L8.00004 8.70674L6.46671 10.2401C6.36671 10.3401 6.24004 10.3867 6.11337 10.3867C5.98671 10.3867 5.86004 10.3401 5.76004 10.2401C5.56671 10.0467 5.56671 9.72674 5.76004 9.53341L7.29337 8.00007L5.76004 6.46674C5.56671 6.2734 5.56671 5.9534 5.76004 5.76007C5.95337 5.56674 6.27337 5.56674 6.46671 5.76007L8.00004 7.2934L9.53337 5.76007C9.72671 5.56674 10.0467 5.56674 10.24 5.76007C10.4334 5.9534 10.4334 6.2734 10.24 6.46674L8.70671 8.00007L10.24 9.53341Z"

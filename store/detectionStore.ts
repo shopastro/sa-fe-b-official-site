@@ -49,10 +49,24 @@ type DataSource = {
   imageName?: string
 }
 
+/**
+ * 模拟实现jsonp
+ * @param {Object} url
+ */
+function jsonp(url: string, onload: (e: any) => void, onerror: (e: any) => void) {
+  const callbackName = 'jsonp_callback_' + new Date().getTime()
+
+  const script = document.createElement('script')
+  script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName
+  script.onload = (e) => onload && onload(e)
+  script.onerror = (e) => onerror && onerror(e)
+  document.body.appendChild(script)
+}
+
 let TIMEROUT = 0
 
 const keyList: string[] = []
-const cheatCode = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowLeft,ArrowRight,ArrowRight,KeyB,KeyA,KeyB,KeyA'
+const cheatCode = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,KeyB,KeyA,KeyB,KeyA'
 
 function DetectionStore() {
   const [dataSource, setDataSource] = useState<DataSource>({})
@@ -60,6 +74,7 @@ function DetectionStore() {
   const [isUnlock, setUnlock] = useState(false)
   const [showModal, setShowMoadl] = useState(false)
   const [errorText, setErrorText] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const timer = useRef<NodeJS.Timeout>()
 
@@ -69,19 +84,19 @@ function DetectionStore() {
   const clearTimer = () => {
     TIMEROUT = 0
     timer.current && clearInterval(timer.current)
+    setLoading(false)
+    setDataSource({})
   }
 
   /**
    * 轮询结果
    */
   const loopResult = useCallback(() => {
-    setDataSource({})
     timer.current = setInterval(() => {
-      TIMEROUT += 1000
-      console.log(TIMEROUT)
+      TIMEROUT += 2000
       if (TIMEROUT >= 60000) {
         clearTimer()
-        setErrorText('查询url超时，请确认url是否正确')
+        setErrorText('查询url超时，请稍后再试')
         setCurrentUrl('')
       }
       getSeoResult(currentUrl)
@@ -91,32 +106,37 @@ function DetectionStore() {
           //轮询到数据
           if (data) {
             data.time = formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
-            setDataSource(data)
             clearTimer()
+            setDataSource(data)
           }
         })
         .catch((e) => {
           console.error(e)
           clearTimer()
         })
-    }, 1000)
+    }, 2000)
   }, [currentUrl])
 
   /**
    * 检测url是否正常能访问
    */
-  const getStatusCode = useCallback(() => {
-    const image = new Image()
-    image.src = currentUrl
-    image.onload = () => {
-      setDataSource({})
-      console.log('111')
-    }
-    image.onerror = (e) => {
-      console.log(e)
-      console.log('2333')
-      // setErrorText('当前url不能访问，请重新输入')
-    }
+  const getStatusCode = useCallback(async () => {
+    // const status = await new Promise((resolve) => {
+    //   jsonp(
+    //     currentUrl,
+    //     (e) => {
+    //       resolve(true)
+    //     },
+    //     (e) => {
+    //       resolve(false)
+    //     }
+    //   )
+    // })
+    // if (!status) {
+    //   clearTimer()
+    //   setErrorText('请输入正确的域名或者URL')
+    //   setCurrentUrl('')
+    // }
   }, [currentUrl])
 
   /**
@@ -126,17 +146,18 @@ function DetectionStore() {
     if (keyList.toString().includes(cheatCode) || localStorage.getItem('__ENV__') === 'dev') return true
     //是否解锁
     const urlList = atob(localStorage.getItem('sa-seo') ?? '').split(',')
-    return Boolean(urlList.includes(currentUrl))
+    return Boolean(urlList.includes(currentUrl ?? ''))
   }, [currentUrl])
 
   useEffect(() => {
-    if (!currentUrl) return
+    clearTimer()
     // getStatusCode()
     setUnlock(getUrlOnlock())
     //提交需要爬取的网站
     getSeoSubmit(currentUrl)
+    setLoading(true)
     loopResult()
-  }, [currentUrl, getStatusCode, getUrlOnlock, loopResult])
+  }, [currentUrl])
 
   useEffect(() => {
     let isopen = false
@@ -167,6 +188,7 @@ function DetectionStore() {
   }, [])
 
   return {
+    loading,
     dataSource,
     currentUrl,
     setCurrentUrl,
@@ -176,6 +198,7 @@ function DetectionStore() {
     showModal,
     errorText,
     setErrorText,
+    loopResult,
   }
 }
 

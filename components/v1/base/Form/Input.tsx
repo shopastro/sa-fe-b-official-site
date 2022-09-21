@@ -5,6 +5,7 @@ import styles from './index.module.scss'
 type IProps = {
   maxLength?: number
   onChange: (k: string, v: string) => any
+  onKeyPress?: (e?: any) => void
   name: string
   placeholder: string
   require?: boolean
@@ -16,7 +17,18 @@ type IProps = {
 }
 
 const Input: React.FC<IProps> = (props) => {
-  const { type = 'text', label, placeholder, maxLength, name, error = false, className, children, value } = props
+  const {
+    type = 'text',
+    label,
+    placeholder,
+    maxLength,
+    name,
+    error = false,
+    className,
+    children,
+    value,
+    onKeyPress,
+  } = props
   const [selected, setSelected] = useState(false)
   const [inputValue, setInputValue] = useState('')
 
@@ -41,6 +53,7 @@ const Input: React.FC<IProps> = (props) => {
               props.onChange(name, e.target.value)
               setInputValue(e.target.value)
             }}
+            onKeyPress={onKeyPress}
           />
         </>
       )}

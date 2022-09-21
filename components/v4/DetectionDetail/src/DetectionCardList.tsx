@@ -5,6 +5,7 @@ import styles from '../index.module.scss'
 import { useMemo } from 'react'
 import classNames from 'classnames'
 import Button from '../../../v3/base/Button'
+import { ErrorIcon } from './DetectionTab'
 
 export const ScuessIcon = ({ style }: { style?: CSSProperties }) => {
   return (
@@ -71,7 +72,12 @@ export default function () {
             return (
               <div key={item.groupType} className={styles.card}>
                 <div className={styles.cardClass} id={item.groupName}>
-                  <ScuessIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
+                  {item.passed ? (
+                    <ScuessIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
+                  ) : (
+                    <ErrorIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
+                  )}
+
                   {item.groupName}
                 </div>
                 <div className={styles.cardLabel}>

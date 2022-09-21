@@ -165,7 +165,7 @@
   resolved "https://registry.npmmirror.com/@emotion/memoize/-/memoize-0.8.0.tgz#f580f9beb67176fa57aae70b08ed510e1b18980f"
   integrity sha512-G/YwXTkv7Den9mXDO7AhLWkE3q+I92B+VqAE+dYG4NGPaHZGvt3G8Q0p9vmE+sq7rTGphUbAvmQ9YpbfMQGGlA==
 
-"@emotion/react@^11.7.1", "@emotion/react@^11.8.1":
+"@emotion/react@^11.4.1", "@emotion/react@^11.7.1", "@emotion/react@^11.8.1":
   version "11.10.4"
   resolved "https://registry.npmmirror.com/@emotion/react/-/react-11.10.4.tgz#9dc6bccbda5d70ff68fdb204746c0e8b13a79199"
   integrity sha512-j0AkMpr6BL8gldJZ6XQsQ8DnS9TxEQu1R+OGmDZiWjBAJtCcbt0tS3I/YffoqHXxH6MjgI7KdMbYKw3MEiU9eA==
@@ -195,7 +195,7 @@
   resolved "https://registry.npmmirror.com/@emotion/sheet/-/sheet-1.2.0.tgz#771b1987855839e214fc1741bde43089397f7be5"
   integrity sha512-OiTkRgpxescko+M51tZsMq7Puu/KP55wMT8BgpcXVG2hqXc0Vo0mfymJ/Uj24Hp0i083ji/o0aLddh08UEjq8w==
 
-"@emotion/styled@^11.6.0":
+"@emotion/styled@^11.3.0", "@emotion/styled@^11.6.0":
   version "11.10.4"
   resolved "https://registry.npmmirror.com/@emotion/styled/-/styled-11.10.4.tgz#e93f84a4d54003c2acbde178c3f97b421fce1cd4"
   integrity sha512-pRl4R8Ez3UXvOPfc2bzIoV8u9P97UedgHS4FPX594ntwEuAMA114wlaHvOK24HB48uqfXiGlYIZYCxVJ1R1ttQ==
@@ -400,6 +400,29 @@
   version "1.1.4"
   resolved "https://registry.npmmirror.com/@rushstack/eslint-patch/-/eslint-patch-1.1.4.tgz#0c8b74c50f29ee44f423f7416829c0bf8bb5eb27"
   integrity sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==
+
+"@shopastro/common-utils@^0.10.17":
+  version "0.10.17"
+  resolved "https://npm.pkg.github.com/download/@shopastro/common-utils/0.10.17/0aa90e6c5837dc298c5ab88802e6ba086f21b193#0aa90e6c5837dc298c5ab88802e6ba086f21b193"
+  integrity sha512-skVm4F84AgO4HcJ4NCuZVZ6AdYbyzsU3ulNTsJ/7b3pWUEBW47qhftUTwCTb8QVsncaK3G79eFTuN6k3/GPcMA==
+
+"@shopastro/sa-ui-box@^0.0.10":
+  version "0.0.10"
+  resolved "https://npm.pkg.github.com/download/@shopastro/sa-ui-box/0.0.10/403c12fb5cafbf78d9a037ae6ae9c7da46ddccb0#403c12fb5cafbf78d9a037ae6ae9c7da46ddccb0"
+  integrity sha512-Y5JM+6I0g+hEzYmUCqOxHfelJ08f05xLFAaLNPiOloYuCUEZeRicSWTO2B6yqwBogeAFBHeS4GCFTKGWD65n6Q==
+  dependencies:
+    "@emotion/react" "^11.4.1"
+    "@emotion/styled" "^11.3.0"
+
+"@shopastro/sa-ui-svg-base@^0.0.26":
+  version "0.0.26"
+  resolved "https://npm.pkg.github.com/download/@shopastro/sa-ui-svg-base/0.0.26/cbc6930021fa23289344c93b5c1a89f72087e7bb#cbc6930021fa23289344c93b5c1a89f72087e7bb"
+  integrity sha512-dj6N7ZYodnTNlD8ahca7NRANLAd1rdMl2VFynwaxbNiOnT346Zep7G95mZLggOU7y96G3g8zgt6QZ6rtq7AqhQ==
+
+"@shopastro/sa-ui@^0.6.92":
+  version "0.6.92"
+  resolved "https://npm.pkg.github.com/download/@shopastro/sa-ui/0.6.92/b912e651fac39130557c9638cf0b011b86ee1c77#b912e651fac39130557c9638cf0b011b86ee1c77"
+  integrity sha512-/H83C9viTQotU6nUKLcGh7tvtZTqi8iaexMaeFLcEx0izYaSxAdszzy6BmGM3skVOOv8/cE3m07wneOye8mLdA==
 
 "@types/classnames@^2.3.1":
   version "2.3.1"

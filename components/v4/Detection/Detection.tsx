@@ -5,25 +5,66 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { useContainer } from 'unstated-next'
 import detectionStore from '../../../store/detectionStore'
+import Message from '../../biz/Message/message.min.js'
 
 const https = (url: string) => {
   if (url.search('https://') === 0 || url.search('http://') === 0) return url
-  return `https://${url}`
+  if (url.lastIndexOf('/') === url.length) return `https://${url}`
+  return `https://${url}/`
 }
 
 const isUrl = (url: string) => {
   try {
-    if (!url || !Boolean(/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z0-9]+/.test(url))) throw new Error()
+    if (!url || !Boolean(/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-/.]+$/g.test(url))) throw new Error()
     return Boolean(new URL(https(url)))
   } catch (error) {
     return false
   }
 }
 
+const checkMap: Record<string, number> = {}
+
 const Detection: React.FC = () => {
   const loader = ({ src }: { src: string }) => `https://media.cdn.ishopastro.com/${src}`
   const [inputValue, setInputValue] = useState('')
-  const { setCurrentUrl, currentUrl, dataSource, errorText, setErrorText } = useContainer(detectionStore)
+  const { setCurrentUrl, currentUrl, dataSource, errorText, setErrorText, loopResult, loading } =
+    useContainer(detectionStore)
+
+  const checkOutTime = (startTime: number, endTime: number) => {
+    const dTime = startTime + 60000 - endTime
+    if (Math.floor(dTime / 1000) <= 1) return
+    Message().warning(``, {
+      timeout: 2000,
+      html: true,
+      content: `<div style="color:#333333;display:flex;">一分钟内仅能进行一次检测，请稍后再试 <div style="color:#999;margin-left:12px;">${Math.floor(
+        dTime / 1000
+      )}s</div></div> `,
+    })
+  }
+
+  const onSubmit = () => {
+    const error = !Boolean(isUrl(inputValue) && inputValue)
+    if (error) {
+      return Message().warning(``, {
+        timeout: 2000,
+        html: true,
+        content: `<div style="color:#333333;display:flex;">请输入正确的域名或者URL`,
+      })
+    }
+
+    const url = https(inputValue)
+    if (checkMap[`${url}`] && currentUrl) {
+      if (new Date().getTime() - checkMap[`${url}`] > 60000) {
+        loopResult()
+      } else {
+        checkOutTime(checkMap[`${url}`], new Date().getTime())
+      }
+    } else {
+      setInputValue(url)
+      setCurrentUrl(url)
+      checkMap[`${url}`] = new Date().getTime()
+    }
+  }
 
   return (
     <div className={styles.detection}>
@@ -32,9 +73,12 @@ const Detection: React.FC = () => {
         placeholder="输入域名或者URL"
         value={inputValue}
         onChange={(_name, value) => {
-          const error = !Boolean(isUrl(value) && value)
-          setErrorText(error ? '请输入正确的URL' : '')
           setInputValue(value)
+        }}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            onSubmit()
+          }
         }}
         className={styles.input}
       >
@@ -46,11 +90,13 @@ const Detection: React.FC = () => {
             loader={loader}
             width={14}
             height={14}
-            onClick={() => setInputValue('')}
+            onClick={() => {
+              setInputValue('')
+            }}
           />
         )}
         {errorText && <div className={styles.tips}>{errorText}</div>}
-        {currentUrl && !dataSource?.url && !errorText && (
+        {currentUrl && loading && (
           <div className={styles.loadingBox}>
             <div className={styles.loading}></div>
           </div>
@@ -60,10 +106,9 @@ const Detection: React.FC = () => {
         text="开始检测"
         type="ghost"
         className={styles.start}
-        disabled={!Boolean(inputValue) || Boolean(errorText)}
+        disabled={!Boolean(inputValue)}
         onClick={() => {
-          setInputValue(https(inputValue))
-          setCurrentUrl(https(inputValue))
+          onSubmit()
         }}
       />
     </div>

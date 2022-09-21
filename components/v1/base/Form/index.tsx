@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import Input from './Input'
 import Button from '../Button'
@@ -31,6 +31,23 @@ const Form: React.FC<IProps> = (props) => {
   const [error, setError] = useState(false)
   const [verification, setVerification] = useState(false)
   const { dataSource, setUnlock } = useContainer(detectionStore)
+  const [{ fNumber, sNumber }] = useState({
+    fNumber: Math.ceil(Math.random() * 100),
+    sNumber: Math.ceil(Math.random() * 100),
+  })
+
+  const newList = [
+    ...list,
+    {
+      maxLength: 20,
+      require: true,
+      name: 'number',
+      placeholder: '',
+      label: `请输入 ${fNumber} + ${sNumber} 计算结果`,
+    },
+  ]
+
+  const formList = dataSource ? newList : list
 
   const handleChange = (key: string, value: string) => {
     setValues({
@@ -45,10 +62,18 @@ const Form: React.FC<IProps> = (props) => {
     }
 
     const value = values[key]
-    const isRequire = list.find((it) => it.name === key)?.require
+    const isRequire = formList.find((it) => it.name === key)?.require
+
+    if (key === 'number') {
+      console.log(value, fNumber + sNumber)
+      if (value == fNumber + sNumber) return false
+      return true
+    }
+
     if (isRequire && !value) {
       return true
     }
+
     let reg = /^1[3|4|5|7|8]\d{9}$/
     if (key === 'phoneNum' || key === 'email') {
       if (key === 'email') {
@@ -93,7 +118,10 @@ const Form: React.FC<IProps> = (props) => {
       }
 
       setRequested(true)
+      // if (dataSource) {
+      // } else {
       successCallback && successCallback()
+      // }
     } else {
       setError(true)
     }
@@ -102,7 +130,7 @@ const Form: React.FC<IProps> = (props) => {
   const verificationAll = () => {
     setVerification(true)
     setError(false)
-    const result = list.filter((it) => {
+    const result = formList.filter((it) => {
       return hasError(it.name, true)
     })
     if (result.length === 0) {
@@ -124,7 +152,7 @@ const Form: React.FC<IProps> = (props) => {
 
   return (
     <div className={`${styles.form} ${styles[row]}`}>
-      {list.map((it) => {
+      {formList.map((it) => {
         return <Input key={it.name} {...it} onChange={handleChange} error={hasError(it.name, verification)} />
       })}
       {error && (

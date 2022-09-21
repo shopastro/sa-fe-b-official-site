@@ -26,11 +26,14 @@
   .urlInfo {
     display: flex;
     align-items: center;
+    max-width: 50%;
 
     .url {
       font-weight: 500;
       font-size: 20px;
       color: #333333;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 
@@ -137,6 +140,12 @@
       margin-top: 24px;
       max-width: 560px;
       line-height: 1.5;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
     }
 
     .urlTip {

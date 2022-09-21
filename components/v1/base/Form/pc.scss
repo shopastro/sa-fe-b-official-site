@@ -103,3 +103,13 @@
     }
   }
 }
+
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .addInput {
+    flex: 1;
+    margin-left: 20px;
+  }
+}
