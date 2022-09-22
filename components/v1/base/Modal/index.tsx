@@ -10,7 +10,7 @@ import detectionStore from '../../../../store/detectionStore'
 type IProps = {
   visiable: boolean
   handleClose: () => void
-  children: any
+  children?: any
 }
 
 const Modal: React.FC<IProps> = (props: IProps) => {
