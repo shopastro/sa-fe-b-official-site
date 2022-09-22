@@ -1,6 +1,21 @@
 import { createContainer } from 'unstated-next'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getSeoResult, getSeoSubmit, getUrlBody } from '../service'
+import { getSeoResult, getSeoSubmit, getUploadTicket, uploadFile } from '../service'
+import Message from '../components/biz/Message/message.min.js'
+import htmlToPdf from '../utils/htmlToPdf'
+
+function base64toFile(dataurl: string, filename: string) {
+  var arr = dataurl.split(','),
+    //@ts-ignore
+    mime = arr[0].match(/:(.*?);/)[1],
+    bstr = atob(arr[1]),
+    n = bstr.length,
+    u8arr = new Uint8Array(n)
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
+  }
+  return new File([u8arr], filename, { type: mime })
+}
 
 //@ts-ignore
 function formatDate(date: Date, fmt: string): string {
@@ -49,24 +64,12 @@ type DataSource = {
   imageName?: string
 }
 
-/**
- * 模拟实现jsonp
- * @param {Object} url
- */
-function jsonp(url: string, onload: (e: any) => void, onerror: (e: any) => void) {
-  const callbackName = 'jsonp_callback_' + new Date().getTime()
-
-  const script = document.createElement('script')
-  script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName
-  script.onload = (e) => onload && onload(e)
-  script.onerror = (e) => onerror && onerror(e)
-  document.body.appendChild(script)
-}
-
 let TIMEROUT = 0
 
 const keyList: string[] = []
 const cheatCode = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,KeyB,KeyA,KeyB,KeyA'
+
+const uploadList = []
 
 function DetectionStore() {
   const [dataSource, setDataSource] = useState<DataSource>({})
@@ -75,6 +78,8 @@ function DetectionStore() {
   const [showModal, setShowMoadl] = useState(false)
   const [errorText, setErrorText] = useState('')
   const [loading, setLoading] = useState(false)
+  const [modalVisiabl, setModalVisiabl] = useState(false)
+  const [fileS3Url, setFileS3Url] = useState('')
 
   const timer = useRef<NodeJS.Timeout>()
 
@@ -92,12 +97,16 @@ function DetectionStore() {
    * 轮询结果
    */
   const loopResult = useCallback(() => {
+    setLoading(true)
     timer.current = setInterval(() => {
       TIMEROUT += 2000
       if (TIMEROUT >= 60000) {
         clearTimer()
-        setErrorText('查询url超时，请稍后再试')
-        setCurrentUrl('')
+        Message().error(``, {
+          timeout: 2000,
+          html: true,
+          content: `<div style="color:#333333;display:flex;">查询url超时，请稍后再试`,
+        })
       }
       getSeoResult(currentUrl)
         .then(({ data, success }) => {
@@ -107,7 +116,10 @@ function DetectionStore() {
           if (data) {
             data.time = formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
             clearTimer()
+            setUnlock(getUrlOnlock(data))
             setDataSource(data)
+            upLoadFile(data)
+            uploadList.push(1)
           }
         })
         .catch((e) => {
@@ -118,44 +130,41 @@ function DetectionStore() {
   }, [currentUrl])
 
   /**
-   * 检测url是否正常能访问
+   * 文件上传
    */
-  const getStatusCode = useCallback(async () => {
-    // const status = await new Promise((resolve) => {
-    //   jsonp(
-    //     currentUrl,
-    //     (e) => {
-    //       resolve(true)
-    //     },
-    //     (e) => {
-    //       resolve(false)
-    //     }
-    //   )
-    // })
-    // if (!status) {
-    //   clearTimer()
-    //   setErrorText('请输入正确的域名或者URL')
-    //   setCurrentUrl('')
-    // }
-  }, [currentUrl])
+  const upLoadFile = async (data: DataSource) => {
+    if (uploadList.length > 0) return
+    const { success, data: ticketData } = await getUploadTicket({ fileName: data.title ?? '', fileSuffix: '.pdf' })
+    if (success && ticketData) {
+      htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf', save: false }).then((pdfData) => {
+        const pdfdataStream = base64toFile(pdfData as string, data.title + '.pdf')
+        console.log(pdfdataStream)
+        uploadFile({ uploadTicket: ticketData.uploadTicket, file: pdfData })
+          .then((res) => {
+            setFileS3Url(ticketData.fileName)
+            uploadList.length = 0
+          })
+          .catch((e) => console.log(e))
+      })
+    }
+  }
 
   /**
    * 检测当前url是否解锁
    */
-  const getUrlOnlock = useCallback(() => {
+  const getUrlOnlock = useCallback((data) => {
     if (keyList.toString().includes(cheatCode) || localStorage.getItem('__ENV__') === 'dev') return true
     //是否解锁
     const urlList = atob(localStorage.getItem('sa-seo') ?? '').split(',')
-    return Boolean(urlList.includes(currentUrl ?? ''))
-  }, [currentUrl])
+    return Boolean(urlList.includes(data.url ?? ''))
+  }, [])
 
   useEffect(() => {
+    if (!currentUrl) return
     clearTimer()
-    // getStatusCode()
-    setUnlock(getUrlOnlock())
     //提交需要爬取的网站
     getSeoSubmit(currentUrl)
-    setLoading(true)
+    //循环获取结果
     loopResult()
   }, [currentUrl])
 
@@ -199,6 +208,9 @@ function DetectionStore() {
     errorText,
     setErrorText,
     loopResult,
+    modalVisiabl,
+    setModalVisiabl,
+    fileS3Url,
   }
 }
 

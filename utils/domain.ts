@@ -11,3 +11,10 @@ export const getBelugaDomain = () => {
   }
   return 'https://site-api.beta.ishopastro.com'
 }
+
+export const getMediaDomain = () => {
+  if (process.env.APP_ENV === 'dev') {
+    return 'https://media.cdn.beta.ishopastro.com/'
+  }
+  return 'https://media.cdn.ishopastro.com/'
+}

@@ -9,13 +9,9 @@ import classNames from 'classnames'
 import DetectionCardList from './src/DetectionCardList'
 import { useContainer } from 'unstated-next'
 import detectionStore from '../../../store/detectionStore'
-
-const a = (
-  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="17" cy="17" r="17" fill="#333333" />
-    <path d="M12.4 9.72V24H14.58V17.6H21.68V15.74H14.58V11.58H22.1V9.72H12.4Z" fill="white" />
-  </svg>
-)
+import Modal from '../../v1/base/Modal'
+import QRCode from 'qrcode'
+import { getMediaDomain } from '../../../utils/domain'
 
 const UrlTitleCase = (url: string) => {
   if (!url) return url
@@ -30,7 +26,7 @@ const UrlTitleCase = (url: string) => {
 const DetectionDetail: React.FC = () => {
   const [currentType, setCurrentType] = useState<'header' | 'download'>('header')
   const currentTypeRef = useRef({})
-  const { dataSource, currentUrl, isUnlock } = useContainer(detectionStore)
+  const { dataSource, currentUrl, isUnlock, setModalVisiabl, modalVisiabl, fileS3Url } = useContainer(detectionStore)
 
   const scrollCallBack = (e: Event) => {
     const scrollTop = document.documentElement.scrollTop
@@ -46,10 +42,20 @@ const DetectionDetail: React.FC = () => {
     }
   }
 
+  const createQRCode = (e: any) => {
+    QRCode.toCanvas(e, getMediaDomain() + fileS3Url, { width: 280 })
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', scrollCallBack)
     return () => window.removeEventListener('scroll', scrollCallBack)
   }, [])
+
+  useEffect(() => {
+    if (modalVisiabl) {
+      htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf' })
+    }
+  }, [dataSource.title, modalVisiabl])
 
   const downloadNode = (
     <div
@@ -59,14 +65,13 @@ const DetectionDetail: React.FC = () => {
     >
       <div className={styles.urlInfo}>
         <div className={styles.fiocn}>
-          <div className={styles.fLetter}>{UrlTitleCase(dataSource?.url || currentUrl)}</div>
+          <div className={styles.fLetter}>{UrlTitleCase(currentUrl)}</div>
         </div>
-        <div className={styles.url}>{dataSource?.url || currentUrl}</div>
+        <div className={styles.url}>{currentUrl}</div>
       </div>
       <Button
         className={styles.download}
         onClick={() => htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf' })}
-        // disabled={Boolean(currentUrl && dataSource.url && !isUnlock)}
         disabled={Boolean(!isUnlock)}
       >
         下载详细报告
@@ -111,6 +116,30 @@ const DetectionDetail: React.FC = () => {
       </div>
 
       <div style={{ marginBottom: '72px' }} />
+
+      <Modal
+        visiable={modalVisiabl}
+        handleClose={() => {
+          setModalVisiabl(false)
+        }}
+      >
+        <div className={styles.modal}>
+          <div className={styles.tips}>信息提交成功！您的报告下载已经自动开始</div>
+          <div className={styles.download}>
+            若浏览器没有自动下载，可点击
+            <div
+              className={styles.redownload}
+              onClick={() => htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf' })}
+            >
+              重新下载
+            </div>
+          </div>
+          <div className={styles.qrcode}>
+            <canvas ref={createQRCode} width="280px" height="280px" id="qrcode" />
+          </div>
+          <div className={styles.save}>手机扫码保存报告</div>
+        </div>
+      </Modal>
     </>
   )
 }

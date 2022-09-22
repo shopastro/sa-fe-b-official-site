@@ -52,3 +52,33 @@ export async function getSeoResult(url: string): Promise<SeoResult> {
       return {}
     })
 }
+
+export async function getUploadTicket({
+  fileName,
+  fileSuffix,
+}: {
+  fileName: string
+  fileSuffix: string
+}): Promise<{ data?: { fileName: string; uploadTicket: string }; success: boolean }> {
+  return axios('https://site-api.beta.ishopastro.com/sitecenter/file/upload', {
+    method: 'GET',
+    params: { fileName, fileSuffix },
+  })
+    .then((res) => {
+      return res.data
+    })
+    .catch((err) => {
+      return {}
+    })
+}
+
+export async function uploadFile({ uploadTicket, file }: { uploadTicket: string; file: any }): Promise<SeoResult> {
+  return axios
+    .put(uploadTicket, file)
+    .then((res) => {
+      return res.data
+    })
+    .catch((err) => {
+      return {}
+    })
+}

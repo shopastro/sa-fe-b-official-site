@@ -111,17 +111,14 @@ const Form: React.FC<IProps> = (props) => {
         },
       })
 
-      if (dataSource.url) {
+      if (dataSource?.url) {
         const urlList = atob(localStorage.getItem('sa-seo') ?? '').split(',')
         localStorage.setItem('sa-seo', btoa(`${urlList.toString()},${dataSource.url}`))
         setUnlock(true)
       }
 
       setRequested(true)
-      // if (dataSource) {
-      // } else {
       successCallback && successCallback()
-      // }
     } else {
       setError(true)
     }

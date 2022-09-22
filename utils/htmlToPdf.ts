@@ -1,7 +1,7 @@
 import html2Canvas from 'html2canvas'
 import JsPDF from 'jspdf'
 
-const htmlToPdf = ({ id, title }: { id: string; title: string }) => {
+const htmlToPdf = ({ id, title, save = true }: { id: string; title: string; save?: boolean }) => {
   const element = document.getElementById(`${id}`) as HTMLElement
   const opts = {
     scale: 5, // 缩放比例，提高生成图片清晰度
@@ -11,7 +11,7 @@ const htmlToPdf = ({ id, title }: { id: string; title: string }) => {
     logging: true, // 日志开关，发布的时候记得改成 false
   }
 
-  html2Canvas(element, opts)
+  return html2Canvas(element, opts)
     .then((canvas) => {
       let contentWidth = canvas.width
       let contentHeight = canvas.height
@@ -44,7 +44,12 @@ const htmlToPdf = ({ id, title }: { id: string; title: string }) => {
           }
         }
       }
-      PDF.save(title + '.pdf')
+
+      if (save) {
+        PDF.save(title + '.pdf')
+      }
+
+      return PDF.output('datauristring')
     })
     .catch((error) => {
       console.log('打印失败', error)
