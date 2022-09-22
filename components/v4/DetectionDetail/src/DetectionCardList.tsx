@@ -24,7 +24,7 @@ export const ScuessIcon = ({ style }: { style?: CSSProperties }) => {
     </svg>
   )
 }
-export default function () {
+export default function ({ showLock = true }: { showLock: boolean }) {
   const { dataSource, isUnlock, setShowMoadl } = useContainer(detectionStore)
 
   const unlockNode = (
@@ -94,11 +94,18 @@ export default function () {
                           <div
                             key={ruleItem.name}
                             className={classNames(styles.resultLabelItem, {
-                              [styles.unlock]: isUnlock,
+                              [styles.unlock]: !showLock ? true : isUnlock,
                             })}
                           >
                             <div className={styles.error}>{ruleItem.name}</div>
-                            <div className={styles.resultText}>{ruleItem.solution}</div>
+                            {item.groupType === 'grammar' ? (
+                              <div
+                                className={styles.resultText}
+                                dangerouslySetInnerHTML={{ __html: ruleItem.solution }}
+                              />
+                            ) : (
+                              <div className={styles.resultText}>{ruleItem.solution}</div>
+                            )}
                             {!isUnlock && index === 0 && unlockNode}
                           </div>
                         )

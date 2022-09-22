@@ -111,7 +111,7 @@ const DetectionDetail: React.FC = () => {
       <div id="pdf" style={{ position: 'fixed', width: '1455px', left: '-10000px', padding: ' 30px 60px 0' }}>
         <DetailDes />
         <div className={styles.list}>
-          <DetectionCardList />
+          <DetectionCardList showLock={false} />
         </div>
       </div>
 
