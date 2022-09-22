@@ -74,7 +74,9 @@ export async function getUploadTicket({
 
 export async function uploadFile({ uploadTicket, file }: { uploadTicket: string; file: any }): Promise<SeoResult> {
   return axios
-    .put(uploadTicket, file)
+    .put(uploadTicket, file, {
+      headers: { 'Content-Type': file.type },
+    })
     .then((res) => {
       return res.data
     })

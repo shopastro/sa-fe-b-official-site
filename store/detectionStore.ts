@@ -138,8 +138,7 @@ function DetectionStore() {
     if (success && ticketData) {
       htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf', save: false }).then((pdfData) => {
         const pdfdataStream = base64toFile(pdfData as string, data.title + '.pdf')
-        console.log(pdfdataStream)
-        uploadFile({ uploadTicket: ticketData.uploadTicket, file: pdfData })
+        uploadFile({ uploadTicket: ticketData.uploadTicket, file: pdfdataStream })
           .then((res) => {
             setFileS3Url(ticketData.fileName)
             uploadList.length = 0
