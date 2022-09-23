@@ -1,5 +1,5 @@
 import axios from 'axios'
-const url = '//sys.api.beta.ishopastro.com/shop/v1/partner/create.json'
+const url = '//sys.api.ishopastro.com/shop/v1/partner/create.json'
 
 export const axiosFun = (data = {}, callback: (p: any) => void) => {
   return axios

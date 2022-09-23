@@ -64,12 +64,12 @@ type DataSource = {
   imageName?: string
 }
 
-let TIMEROUT = 0
-
 const keyList: string[] = []
 const cheatCode = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,KeyB,KeyA,KeyB,KeyA'
 
 const uploadList = []
+
+let OUTTIME = 0
 
 function DetectionStore() {
   const [dataSource, setDataSource] = useState<DataSource>({})
@@ -82,15 +82,41 @@ function DetectionStore() {
   const [fileS3Url, setFileS3Url] = useState('')
 
   const timer = useRef<NodeJS.Timeout>()
+  // const time = useRef<number>(0)
 
   /**
    * 清除定时器
    */
   const clearTimer = () => {
-    TIMEROUT = 0
+    OUTTIME = 0
     timer.current && clearInterval(timer.current)
     setLoading(false)
     setDataSource({})
+  }
+
+  const getSeoData = () => {
+    getSeoResult(currentUrl)
+      .then(({ data, success }) => {
+        //报错
+        if (!success) clearTimer()
+        //轮询到数据
+        if (data) {
+          data.time = formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
+          clearTimer()
+          setUnlock(getUrlOnlock(data))
+          setDataSource(data)
+          upLoadFile(data)
+          uploadList.push(1)
+        } else {
+          if (OUTTIME < 120000) {
+            setTimeout(getSeoData, 2000)
+          }
+        }
+      })
+      .catch((e) => {
+        console.error(e)
+        clearTimer()
+      })
   }
 
   /**
@@ -98,9 +124,10 @@ function DetectionStore() {
    */
   const loopResult = useCallback(() => {
     setLoading(true)
+
     timer.current = setInterval(() => {
-      TIMEROUT += 2000
-      if (TIMEROUT >= 60000) {
+      OUTTIME += 2000
+      if (OUTTIME >= 120000) {
         clearTimer()
         Message().error(``, {
           timeout: 2000,
@@ -108,25 +135,9 @@ function DetectionStore() {
           content: `<div style="color:#333333;display:flex;">查询url超时，请稍后再试`,
         })
       }
-      getSeoResult(currentUrl)
-        .then(({ data, success }) => {
-          //报错
-          if (!success) clearTimer()
-          //轮询到数据
-          if (data) {
-            data.time = formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
-            clearTimer()
-            setUnlock(getUrlOnlock(data))
-            setDataSource(data)
-            upLoadFile(data)
-            uploadList.push(1)
-          }
-        })
-        .catch((e) => {
-          console.error(e)
-          clearTimer()
-        })
     }, 2000)
+
+    getSeoData()
   }, [currentUrl])
 
   /**

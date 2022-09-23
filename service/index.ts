@@ -60,7 +60,7 @@ export async function getUploadTicket({
   fileName: string
   fileSuffix: string
 }): Promise<{ data?: { fileName: string; uploadTicket: string }; success: boolean }> {
-  return axios('https://site-api.beta.ishopastro.com/sitecenter/file/upload', {
+  return axios(getBelugaDomain() + '/sitecenter/file/upload', {
     method: 'GET',
     params: { fileName, fileSuffix },
   })
