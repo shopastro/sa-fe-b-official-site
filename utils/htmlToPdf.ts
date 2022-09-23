@@ -4,7 +4,7 @@ import JsPDF from 'jspdf'
 const htmlToPdf = ({ id, title, save = true }: { id: string; title: string; save?: boolean }) => {
   const element = document.getElementById(`${id}`) as HTMLElement
   const opts = {
-    scale: 5, // 缩放比例，提高生成图片清晰度
+    scale: 1, // 缩放比例，提高生成图片清晰度
     useCORS: true, // 允许加载跨域的图片
     allowTaint: false, // 允许图片跨域，和 useCORS 二者不可共同使用
     tainttest: true, // 检测每张图片已经加载完成
