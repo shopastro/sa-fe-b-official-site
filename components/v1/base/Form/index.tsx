@@ -65,7 +65,6 @@ const Form: React.FC<IProps> = (props) => {
     const isRequire = formList.find((it) => it.name === key)?.require
 
     if (key === 'number') {
-      console.log(value, fNumber + sNumber)
       if (value == fNumber + sNumber) return false
       return true
     }

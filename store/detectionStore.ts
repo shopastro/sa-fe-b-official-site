@@ -143,7 +143,7 @@ function DetectionStore() {
             setFileS3Url(ticketData.fileName)
             uploadList.length = 0
           })
-          .catch((e) => console.log(e))
+          .catch((e) => console.error(e))
       })
     }
   }

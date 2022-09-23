@@ -15,7 +15,7 @@ const https = (url: string) => {
 
 const isUrl = (url: string) => {
   try {
-    if (!url || !Boolean(/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-/.?=&]+$/g.test(url))) throw new Error()
+    if (!url || !Boolean(/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z0-9/\S]+$/g.test(url))) throw new Error()
     return Boolean(new URL(https(url)))
   } catch (error) {
     return false

@@ -52,7 +52,7 @@ const htmlToPdf = ({ id, title, save = true }: { id: string; title: string; save
       return PDF.output('datauristring')
     })
     .catch((error) => {
-      console.log('打印失败', error)
+      console.error('打印失败', error)
     })
 }
 
