@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import Input from './Input'
 import Button from '../Button'
 import { axiosFun } from '../../../../utils/asios'
 import Success from '../../Success'
 import { buryingPoint } from '../../../../utils/buryingPoint'
+import { useContainer } from 'unstated-next'
+import detectionStore from '../../../../store/detectionStore'
 
 type IProps = {
   list: List[]
@@ -28,6 +30,24 @@ const Form: React.FC<IProps> = (props) => {
   const [requested, setRequested] = useState(false)
   const [error, setError] = useState(false)
   const [verification, setVerification] = useState(false)
+  const { dataSource, setUnlock } = useContainer(detectionStore)
+  const [{ fNumber, sNumber }] = useState({
+    fNumber: Math.ceil(Math.random() * 10),
+    sNumber: Math.ceil(Math.random() * 10),
+  })
+
+  const newList = [
+    ...list,
+    {
+      maxLength: 20,
+      require: true,
+      name: 'number',
+      placeholder: '请输入答案（必填）',
+      label: `请输入 ${fNumber} + ${sNumber} 计算结果`,
+    },
+  ]
+
+  const formList = dataSource.url ? newList : list
 
   const handleChange = (key: string, value: string) => {
     setValues({
@@ -42,10 +62,17 @@ const Form: React.FC<IProps> = (props) => {
     }
 
     const value = values[key]
-    const isRequire = list.find((it) => it.name === key)?.require
+    const isRequire = formList.find((it) => it.name === key)?.require
+
+    if (key === 'number') {
+      if (value == fNumber + sNumber) return false
+      return true
+    }
+
     if (isRequire && !value) {
       return true
     }
+
     let reg = /^1[3|4|5|7|8]\d{9}$/
     if (key === 'phoneNum' || key === 'email') {
       if (key === 'email') {
@@ -78,9 +105,16 @@ const Form: React.FC<IProps> = (props) => {
               city: values.city,
               country: 'CN',
             },
+            user_domain: dataSource.url,
           },
         },
       })
+
+      if (dataSource?.url) {
+        const urlList = atob(localStorage.getItem('sa-seo') ?? '').split(',')
+        localStorage.setItem('sa-seo', btoa(`${urlList.toString()},${dataSource.url}`))
+        setUnlock(true)
+      }
 
       setRequested(true)
       successCallback && successCallback()
@@ -92,7 +126,7 @@ const Form: React.FC<IProps> = (props) => {
   const verificationAll = () => {
     setVerification(true)
     setError(false)
-    const result = list.filter((it) => {
+    const result = formList.filter((it) => {
       return hasError(it.name, true)
     })
     if (result.length === 0) {
@@ -101,6 +135,7 @@ const Form: React.FC<IProps> = (props) => {
         {
           ...values,
           category: type,
+          checkDomain: dataSource?.url,
         },
         callback
       )
@@ -113,7 +148,7 @@ const Form: React.FC<IProps> = (props) => {
 
   return (
     <div className={`${styles.form} ${styles[row]}`}>
-      {list.map((it) => {
+      {formList.map((it) => {
         return <Input key={it.name} {...it} onChange={handleChange} error={hasError(it.name, verification)} />
       })}
       {error && (

@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './index.module.scss'
 
 type IProps = {
-  type?: 'primary' | 'ghost' | 'form' | 'successForm'
+  type?: 'primary' | 'ghost' | 'form' | 'successForm' | 'black'
   onClick?: () => any
   text?: string
   disabled?: boolean
@@ -18,6 +18,7 @@ const Button: React.FC<IProps> = (props) => {
         [styles.disabled]: disabled,
       })}
       onClick={() => {
+        if (disabled) return
         onClick && onClick()
       }}
     >

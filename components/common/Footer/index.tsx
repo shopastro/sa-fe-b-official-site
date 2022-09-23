@@ -173,4 +173,4 @@ const Vision: React.FC<any> = (props) => {
     );
 };
 
-export default withRouter(Vision);
+export default Vision

@@ -37,7 +37,7 @@ const FooterItem: React.FC<IProps> = (props) => {
       setOpen(true)
     }
     window.addEventListener('resize', onResize, true)
-    return window.removeEventListener('resize', onResize)
+    return window.removeEventListener('resize', onResize, true)
   }, [])
 
   return (

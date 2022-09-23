@@ -6,8 +6,8 @@
     // font-family: Outfit;
 
     &.disabled {
-      opacity: 0.7;
-      pointer-events: none;
+      opacity: 0.5;
+      cursor: no-drop;
     }
 
     &.primary {
@@ -51,6 +51,20 @@
       //   background: #004ed1;
       //   color: #fff;
       // }
+    }
+
+    &.black {
+      border: 0.1rem solid #5b5b5b;
+      color: #333333;
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+      padding: 0.9rem 2.4rem;
+      &:hover {
+        font-weight: 500;
+        border: 1px solid #004ed1;
+        color: #004ed1;
+      }
     }
   }
 }
