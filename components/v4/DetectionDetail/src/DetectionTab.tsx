@@ -62,7 +62,7 @@ export const ErrorIcon = ({ style }: { style?: CSSProperties }) => {
   )
 }
 
-export default function () {
+const DetectionTab = () => {
   const { dataSource } = useContainer(detectionStore)
   const [type, setType] = useState('')
 
@@ -122,3 +122,5 @@ export default function () {
     </div>
   )
 }
+
+export default DetectionTab
