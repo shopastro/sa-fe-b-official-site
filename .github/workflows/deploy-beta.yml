@@ -5,14 +5,14 @@ on:
       - beta
 env:
   ACR_REPOSITORY: ${{ github.repository }}
-  CLUSTER_ID : c2e42dd5a7a594cdf8592d9d490f976d4    # beta
+  CLUSTER_ID: c2e42dd5a7a594cdf8592d9d490f976d4 # beta
   ACR_REGISTRY: registry.cn-hangzhou.aliyuncs.com
   K8S_NAMESPACE: default
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v2
 
@@ -20,7 +20,7 @@ jobs:
         uses: aliyun/acr-login@v1
         with:
           login-server: https://${{ env.ACR_REGISTRY }}
-          region-id: cn-hangzhou 
+          region-id: cn-hangzhou
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Build and push image
