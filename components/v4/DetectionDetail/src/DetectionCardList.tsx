@@ -24,7 +24,7 @@ export const ScuessIcon = ({ style }: { style?: CSSProperties }) => {
     </svg>
   )
 }
-export default function ({ showLock = true }: { showLock: boolean }) {
+export default function ({ showLock = true }: { showLock?: boolean }) {
   const { dataSource, isUnlock, setShowMoadl } = useContainer(detectionStore)
 
   const unlockNode = (
@@ -91,23 +91,23 @@ export default function ({ showLock = true }: { showLock: boolean }) {
                     {!item.passed &&
                       item.rules?.map((ruleItem) => {
                         return (
-                            <div
-                              key={ruleItem.name}
-                              className={classNames(styles.resultLabelItem, {
-                                [styles.unlock]: isUnlock,
-                              })}
-                            >
-                              <div className={styles.error}>{ruleItem.name}</div>
-                              {item.groupType === 'grammar' ? (
-                                <div
-                                  className={styles.resultText}
-                                  dangerouslySetInnerHTML={{ __html: ruleItem.solution }}
-                                />
-                              ) : (
-                                <div className={styles.resultText}>{ruleItem.solution}</div>
-                              )}
-                              {!showLock ? <> </> : !isUnlock && index === 0 && unlockNode}
-                            </div>
+                          <div
+                            key={ruleItem.name}
+                            className={classNames(styles.resultLabelItem, {
+                              [styles.unlock]: isUnlock,
+                            })}
+                          >
+                            <div className={styles.error}>{ruleItem.name}</div>
+                            {item.groupType === 'grammar' ? (
+                              <div
+                                className={styles.resultText}
+                                dangerouslySetInnerHTML={{ __html: ruleItem.solution }}
+                              />
+                            ) : (
+                              <div className={styles.resultText}>{ruleItem.solution}</div>
+                            )}
+                            {!showLock ? <> </> : !isUnlock && index === 0 && unlockNode}
+                          </div>
                         )
                       })}
                     {item.passed && (
