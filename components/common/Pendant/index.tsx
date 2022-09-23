@@ -106,7 +106,6 @@ const Pendant: React.FC<IProps> = () => {
           </div>
         </li>
       </ul>
-
       {(isOpen || showModal) && <Modal visiable={isOpen || showModal} handleClose={handleClose} />}
     </div>
   )

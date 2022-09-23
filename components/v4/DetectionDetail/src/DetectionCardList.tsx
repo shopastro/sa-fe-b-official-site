@@ -118,7 +118,7 @@ export default function ({ showLock = true }: { showLock?: boolean }) {
                       >
                         <div className={styles.sucess}>正常状态</div>
                         <div className={styles.resultText}>{item.success} </div>
-                        {!isUnlock && index === 0 && unlockNode}
+                        {!showLock ? <></> : !isUnlock && index === 0 && unlockNode}
                       </div>
                     )}
                   </div>

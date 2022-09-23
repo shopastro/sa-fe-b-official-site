@@ -17,7 +17,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [requested, setRequested] = useState(false)
   const { visiable = false } = props
-  const { dataSource, setModalVisiabl, modalVisiabl } = useContainer(detectionStore)
+  const { dataSource, setModalVisiabl } = useContainer(detectionStore)
 
   useEffect(() => {
     setIsOpen(visiable)
@@ -62,6 +62,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
                       if (dataSource.url) {
                         setModalVisiabl(true)
                         setIsOpen(false)
+                        props.handleClose && props.handleClose()
                       }
                       setRequested(true)
                     }}
