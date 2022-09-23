@@ -65,6 +65,18 @@ const Detection: React.FC = () => {
       setCurrentUrl(url)
       checkMap[`${url}`] = new Date().getTime()
     }
+
+    window.dataLayer.push({
+      gtm: {
+        elementId: 'seo_check_search',
+      },
+      event: 'search',
+      eventModel: {
+        user_data: {
+          user_domain: url,
+        },
+      },
+    })
   }
 
   return (

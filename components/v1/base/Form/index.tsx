@@ -32,8 +32,8 @@ const Form: React.FC<IProps> = (props) => {
   const [verification, setVerification] = useState(false)
   const { dataSource, setUnlock } = useContainer(detectionStore)
   const [{ fNumber, sNumber }] = useState({
-    fNumber: Math.ceil(Math.random() * 100),
-    sNumber: Math.ceil(Math.random() * 100),
+    fNumber: Math.ceil(Math.random() * 10),
+    sNumber: Math.ceil(Math.random() * 10),
   })
 
   const newList = [
@@ -42,7 +42,7 @@ const Form: React.FC<IProps> = (props) => {
       maxLength: 20,
       require: true,
       name: 'number',
-      placeholder: '',
+      placeholder: '请输入答案（必填）',
       label: `请输入 ${fNumber} + ${sNumber} 计算结果`,
     },
   ]
