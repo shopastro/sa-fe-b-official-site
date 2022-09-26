@@ -33,11 +33,13 @@ export async function getUrlBody(url: string): Promise<AxiosPromise> {
   })
 }
 
-export async function getSeoSubmit(url: string): Promise<AxiosPromise> {
+export async function getSeoSubmit(url: string): Promise<any> {
   return axios(getBelugaDomain() + '/sitecenter/seo/submit', {
     method: 'GET',
     params: { url },
   })
+    .then()
+    .catch((e) => console.error(e))
 }
 
 export async function getSeoResult(url: string): Promise<SeoResult> {
