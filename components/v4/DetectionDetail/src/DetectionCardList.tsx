@@ -223,10 +223,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
                             )}
 
                             {!['grammar', 'imageAlt'].includes(item.groupType ?? '') && (
-                              <div
-                                className={styles.resultText}
-                                dangerouslySetInnerHTML={{ __html: ruleItem.solution }}
-                              />
+                              <div className={styles.resultText}>{ruleItem.solution}</div>
                             )}
 
                             {!showLock ? <> </> : !isUnlock && index === 0 && unlockNode}
