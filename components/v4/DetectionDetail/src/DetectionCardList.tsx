@@ -26,6 +26,24 @@ export const ScuessIcon = ({ style }: { style?: CSSProperties }) => {
   )
 }
 
+export const WarningIcon = ({ style }: { style?: CSSProperties }) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={style ?? { marginRight: '4px' }}
+    >
+      <path
+        d="M11.0002 1.83334C5.94933 1.83334 1.8335 5.94918 1.8335 11C1.8335 16.0508 5.94933 20.1667 11.0002 20.1667C16.051 20.1667 20.1668 16.0508 20.1668 11C20.1668 5.94918 16.051 1.83334 11.0002 1.83334ZM10.3127 7.33334C10.3127 6.95751 10.6243 6.64584 11.0002 6.64584C11.376 6.64584 11.6877 6.95751 11.6877 7.33334V11.9167C11.6877 12.2925 11.376 12.6042 11.0002 12.6042C10.6243 12.6042 10.3127 12.2925 10.3127 11.9167V7.33334ZM11.8435 15.015C11.7977 15.1342 11.7335 15.2258 11.651 15.3175C11.5593 15.4 11.4585 15.4642 11.3485 15.51C11.2385 15.5558 11.1193 15.5833 11.0002 15.5833C10.881 15.5833 10.7618 15.5558 10.6518 15.51C10.5418 15.4642 10.441 15.4 10.3493 15.3175C10.2668 15.2258 10.2027 15.1342 10.1568 15.015C10.111 14.905 10.0835 14.7858 10.0835 14.6667C10.0835 14.5475 10.111 14.4283 10.1568 14.3183C10.2027 14.2083 10.2668 14.1075 10.3493 14.0158C10.441 13.9333 10.5418 13.8692 10.6518 13.8233C10.8718 13.7317 11.1285 13.7317 11.3485 13.8233C11.4585 13.8692 11.5593 13.9333 11.651 14.0158C11.7335 14.1075 11.7977 14.2083 11.8435 14.3183C11.8893 14.4283 11.9168 14.5475 11.9168 14.6667C11.9168 14.7858 11.8893 14.905 11.8435 15.015Z"
+        fill="#EC9A20"
+      />
+    </svg>
+  )
+}
+
 const IconList = {
   标签检测: (
     <>
@@ -182,6 +200,8 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
                 <div className={styles.cardClass} id={item.groupName}>
                   {item.passed ? (
                     <ScuessIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
+                  ) : item.errorLevel === 'WARNING' ? (
+                    <WarningIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
                   ) : (
                     <ErrorIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
                   )}
@@ -205,21 +225,29 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
                               [styles.unlock]: isUnlock,
                             })}
                           >
-                            {ruleItem ? <div className={styles.error}>{ruleItem?.name ?? ''}</div> : null}
+                            {ruleItem ? (
+                              <div
+                                className={styles.error}
+                                style={{ color: item.errorLevel === 'WARNING' ? '#E88D06' : '' }}
+                              >
+                                {ruleItem?.name ?? ''}
+                              </div>
+                            ) : null}
 
                             {item.groupType === 'imageAlt' && (
                               <>
                                 <div className={styles.resultText}>{ruleItem.solution}</div>
                                 <div>
-                                  {imageNoAltUrlList.map((item) => {
-                                    return (
-                                      <ImageView key={item} src={item}>
-                                        <a className={styles.iamgeLink} href={item} target={item}>
-                                          {item}
-                                        </a>
-                                      </ImageView>
-                                    )
-                                  })}
+                                  {imageNoAltUrlList &&
+                                    imageNoAltUrlList.map((item) => {
+                                      return (
+                                        <ImageView key={item} src={item}>
+                                          <a className={styles.iamgeLink} href={item} target={item}>
+                                            {item}
+                                          </a>
+                                        </ImageView>
+                                      )
+                                    })}
                                 </div>
                               </>
                             )}

@@ -12,7 +12,6 @@ import detectionStore from '../../../store/detectionStore'
 import Modal from '../../v1/base/Modal'
 import QRCode from 'qrcode'
 import { getMediaDomain } from '../../../utils/domain'
-import ImageView from '../ImageView/ImageView'
 
 const UrlTitleCase = (url: string) => {
   if (!url) return url
@@ -90,14 +89,6 @@ const DetectionDetail: React.FC = () => {
   if (!currentUrl) {
     return <></>
   }
-
-  // return (
-  //   <>
-  //     <ImageView src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/newfanyi-da0cea8f7e.png">
-  //       https://media.cdn.ishopastro.com/223759264913852/media/image/4c96f68b425222641610495.gif?width=1700&height=1028
-  //     </ImageView>
-  //   </>
-  // )
 
   if (currentUrl && !dataSource.url) {
     return (

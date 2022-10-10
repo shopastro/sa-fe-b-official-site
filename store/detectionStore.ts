@@ -52,9 +52,10 @@ type DataSource = {
       score?: number
       success?: string
       weight?: number
+      errorLevel?: 'WARNING' | 'CRITICAL'
     }>
   }
-  imageNoAltUrlList: string[]
+  imageNoAltUrlList?: string[]
   domain?: string
   itemCnt?: number
   score?: number
