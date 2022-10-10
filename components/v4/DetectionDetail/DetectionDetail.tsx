@@ -12,6 +12,7 @@ import detectionStore from '../../../store/detectionStore'
 import Modal from '../../v1/base/Modal'
 import QRCode from 'qrcode'
 import { getMediaDomain } from '../../../utils/domain'
+import ImageView from '../ImageView/ImageView'
 
 const UrlTitleCase = (url: string) => {
   if (!url) return url
@@ -26,7 +27,8 @@ const UrlTitleCase = (url: string) => {
 const DetectionDetail: React.FC = () => {
   const [currentType, setCurrentType] = useState<'header' | 'download'>('header')
   const currentTypeRef = useRef({})
-  const { dataSource, currentUrl, isUnlock, setModalVisiabl, modalVisiabl, fileS3Url } = useContainer(detectionStore)
+  const { dataSource, currentUrl, isUnlock, setModalVisiabl, modalVisiabl, setShowMoadl, fileS3Url } =
+    useContainer(detectionStore)
 
   const scrollCallBack = (e: Event) => {
     const scrollTop = document.documentElement.scrollTop
@@ -52,10 +54,10 @@ const DetectionDetail: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    if (modalVisiabl) {
+    if (modalVisiabl && isUnlock) {
       htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf' })
     }
-  }, [dataSource.title, modalVisiabl])
+  }, [dataSource.title, isUnlock, modalVisiabl])
 
   const downloadNode = (
     <div
@@ -71,8 +73,14 @@ const DetectionDetail: React.FC = () => {
       </div>
       <Button
         className={styles.download}
-        onClick={() => htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf' })}
-        disabled={Boolean(!isUnlock)}
+        onClick={() => {
+          if (!isUnlock) {
+            setShowMoadl(true)
+          } else {
+            htmlToPdf({ id: 'pdf', title: dataSource.title ?? 'pdf' })
+          }
+        }}
+        disabled={Boolean(!dataSource.url)}
       >
         下载详细报告
       </Button>
@@ -82,6 +90,14 @@ const DetectionDetail: React.FC = () => {
   if (!currentUrl) {
     return <></>
   }
+
+  // return (
+  //   <>
+  //     <ImageView src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/newfanyi-da0cea8f7e.png">
+  //       https://media.cdn.ishopastro.com/223759264913852/media/image/4c96f68b425222641610495.gif?width=1700&height=1028
+  //     </ImageView>
+  //   </>
+  // )
 
   if (currentUrl && !dataSource.url) {
     return (

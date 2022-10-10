@@ -6,6 +6,7 @@ import { useMemo } from 'react'
 import classNames from 'classnames'
 import Button from '../../../v3/base/Button'
 import { ErrorIcon } from './DetectionTab'
+import ImageView from '../../ImageView/ImageView'
 
 export const ScuessIcon = ({ style }: { style?: CSSProperties }) => {
   return (
@@ -161,7 +162,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
   )
 
   const cardList = useMemo(() => {
-    const { checkGroupMap } = dataSource
+    const { checkGroupMap, imageNoAltUrlList } = dataSource
     const cardNodeList: React.ReactNode[] = []
 
     let index = 0
@@ -205,14 +206,38 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
                             })}
                           >
                             {ruleItem ? <div className={styles.error}>{ruleItem?.name ?? ''}</div> : null}
-                            {item.groupType === 'grammar' ? (
+
+                            {item.groupType === 'imageAlt' && (
+                              <>
+                                <div className={styles.resultText}>{ruleItem.solution}</div>
+                                <div>
+                                  {imageNoAltUrlList.map((item) => {
+                                    return (
+                                      <ImageView key={item} src={item}>
+                                        <a className={styles.iamgeLink} href={item} target={item}>
+                                          {item}
+                                        </a>
+                                      </ImageView>
+                                    )
+                                  })}
+                                </div>
+                              </>
+                            )}
+
+                            {item.groupType === 'grammar' && (
                               <div
                                 className={styles.resultText}
                                 dangerouslySetInnerHTML={{ __html: ruleItem.solution }}
                               />
-                            ) : (
-                              <div className={styles.resultText}>{ruleItem.solution}</div>
                             )}
+
+                            {!['grammar', 'imageAlt'].includes(item.groupType ?? '') && (
+                              <div
+                                className={styles.resultText}
+                                dangerouslySetInnerHTML={{ __html: ruleItem.solution }}
+                              />
+                            )}
+
                             {!showLock ? <> </> : !isUnlock && index === 0 && unlockNode}
                           </div>
                         )

@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import classname from 'classname'
 import Modal from '../base/Modal'
 import { buryingPoint } from '../../../utils/buryingPoint'
+import { FireIcon } from '../../biz/Icon'
 
 type IProps = { text?: string }
 
@@ -99,7 +100,12 @@ const Title: React.FC<IProps> = (props) => {
 
           <li className={styles.contentUs}>
             <Button type="black" className={styles.measure} onClick={() => router.push('/measure')}>
-              <Link href="/measure">免费SEO检测</Link>
+              <Link href="/measure">
+                <>
+                  <FireIcon style={{ marginRight: '4px' }} />
+                  免费SEO检测
+                </>
+              </Link>
             </Button>
 
             <Button

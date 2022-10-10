@@ -54,6 +54,7 @@ type DataSource = {
       weight?: number
     }>
   }
+  imageNoAltUrlList: string[]
   domain?: string
   itemCnt?: number
   score?: number

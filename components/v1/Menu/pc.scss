@@ -60,7 +60,17 @@
       }
       .contentUs {
         .measure {
+          background: white;
+          border: none;
+          font-weight: 500;
+          font-size: 14px;
+          color: #f52121;
           margin-right: 24px;
+          display: flex;
+          align-items: center;
+          user-select: none;
+          padding: 9px 12px;
+          border-radius: 4px;
           a {
             color: unset;
           }
