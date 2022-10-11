@@ -9,7 +9,7 @@ export const getBelugaDomain = () => {
   if (process.env.APP_ENV === 'dev') {
     return 'https://site-api.beta.ishopastro.com'
   }
-  return 'https://site-api.beta.ishopastro.com'
+  return 'https://site-api.cdn.ishopastro.com'
 }
 
 export const getMediaDomain = () => {
