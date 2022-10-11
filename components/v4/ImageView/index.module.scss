@@ -1,0 +1,21 @@
+.imageView {
+  position: relative;
+  display: inline-block;
+}
+
+.imgBox {
+  position: fixed;
+  padding: 12px;
+  background-color: white;
+  box-shadow: 0px 0px 14px rgba(229, 229, 229, 0.5);
+  border-radius: 4px;
+  margin-top: 4px;
+  display: none;
+  z-index: 1;
+  display: inline-block;
+  img {
+    max-height: calc(100vh / 1.666);
+    width: auto;
+    object-fit: contain;
+  }
+}

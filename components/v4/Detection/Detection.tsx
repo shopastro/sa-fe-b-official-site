@@ -6,6 +6,8 @@ import { useState } from 'react'
 import { useContainer } from 'unstated-next'
 import detectionStore from '../../../store/detectionStore'
 import Message from '../../biz/Message/message.min.js'
+import classNames from 'classnames'
+import { Loading } from '../../biz/Icon'
 
 const https = (url: string) => {
   if (url.search('https://') === 0 || url.search('http://') === 0) return url
@@ -109,21 +111,27 @@ const Detection: React.FC = () => {
           />
         )}
         {errorText && <div className={styles.tips}>{errorText}</div>}
-        {currentUrl && loading && (
+        {/* {currentUrl && loading && (
           <div className={styles.loadingBox}>
             <div className={styles.loading}></div>
           </div>
-        )}
+        )} */}
       </Input>
-      <Button
-        text="开始检测"
-        type="ghost"
-        className={styles.start}
-        disabled={!Boolean(inputValue)}
-        onClick={() => {
-          onSubmit()
-        }}
-      />
+      {currentUrl && loading ? (
+        <Button type="ghost" className={classNames(styles.start, styles.loading)}>
+          <Loading />
+        </Button>
+      ) : (
+        <Button
+          text="开始检测"
+          type="ghost"
+          className={styles.start}
+          disabled={!Boolean(inputValue)}
+          onClick={() => {
+            onSubmit()
+          }}
+        />
+      )}
     </div>
   )
 }

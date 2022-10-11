@@ -1,29 +1,11 @@
-import { CSSProperties } from 'react'
 import { useContainer } from 'unstated-next'
 import detectionStore from '../../../../store/detectionStore'
 import styles from '../index.module.scss'
 import { useMemo } from 'react'
 import classNames from 'classnames'
 import Button from '../../../v3/base/Button'
-import { ErrorIcon } from './DetectionTab'
-
-export const ScuessIcon = ({ style }: { style?: CSSProperties }) => {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={style ?? { marginRight: '4px' }}
-    >
-      <path
-        d="M8.00004 1.33337C4.32671 1.33337 1.33337 4.32671 1.33337 8.00004C1.33337 11.6734 4.32671 14.6667 8.00004 14.6667C11.6734 14.6667 14.6667 11.6734 14.6667 8.00004C14.6667 4.32671 11.6734 1.33337 8.00004 1.33337ZM11.1867 6.46671L7.40671 10.2467C7.31337 10.34 7.18671 10.3934 7.05337 10.3934C6.92004 10.3934 6.79337 10.34 6.70004 10.2467L4.81337 8.36004C4.62004 8.16671 4.62004 7.84671 4.81337 7.65337C5.00671 7.46004 5.32671 7.46004 5.52004 7.65337L7.05337 9.18671L10.48 5.76004C10.6734 5.56671 10.9934 5.56671 11.1867 5.76004C11.38 5.95337 11.38 6.26671 11.1867 6.46671Z"
-        fill="#29A72F"
-      />
-    </svg>
-  )
-}
+import { ErrorIcon, ScuessIcon, WarningIcon } from './DetectionTab'
+import ImageView from '../../ImageView/ImageView'
 
 const IconList = {
   标签检测: (
@@ -161,7 +143,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
   )
 
   const cardList = useMemo(() => {
-    const { checkGroupMap } = dataSource
+    const { checkGroupMap, imageNoAltUrlList } = dataSource
     const cardNodeList: React.ReactNode[] = []
 
     let index = 0
@@ -181,6 +163,8 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
                 <div className={styles.cardClass} id={item.groupName}>
                   {item.passed ? (
                     <ScuessIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
+                  ) : item.errorLevel === 'WARNING' ? (
+                    <WarningIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
                   ) : (
                     <ErrorIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
                   )}
@@ -204,15 +188,44 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
                               [styles.unlock]: isUnlock,
                             })}
                           >
-                            {ruleItem ? <div className={styles.error}>{ruleItem?.name ?? ''}</div> : null}
-                            {item.groupType === 'grammar' ? (
+                            {ruleItem ? (
+                              <div
+                                className={styles.error}
+                                style={{ color: item.errorLevel === 'WARNING' ? '#E88D06' : '' }}
+                              >
+                                {ruleItem?.name ?? ''}
+                              </div>
+                            ) : null}
+
+                            {item.groupType === 'imageAlt' && (
+                              <>
+                                <div className={styles.resultText}>{ruleItem.solution}</div>
+                                <div>
+                                  {imageNoAltUrlList &&
+                                    imageNoAltUrlList.map((item) => {
+                                      return (
+                                        <ImageView key={item} src={item}>
+                                          <a className={styles.iamgeLink} href={item} target={item}>
+                                            {item}
+                                          </a>
+                                        </ImageView>
+                                      )
+                                    })}
+                                </div>
+                              </>
+                            )}
+
+                            {item.groupType === 'grammar' && (
                               <div
                                 className={styles.resultText}
                                 dangerouslySetInnerHTML={{ __html: ruleItem.solution }}
                               />
-                            ) : (
+                            )}
+
+                            {!['grammar', 'imageAlt'].includes(item.groupType ?? '') && (
                               <div className={styles.resultText}>{ruleItem.solution}</div>
                             )}
+
                             {!showLock ? <> </> : !isUnlock && index === 0 && unlockNode}
                           </div>
                         )
