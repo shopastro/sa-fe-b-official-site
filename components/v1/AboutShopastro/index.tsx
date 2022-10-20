@@ -7,7 +7,7 @@ type IProps = {}
 const AboutShopastro: React.FC<IProps> = (props) => {
   return (
     <div className={styles.aboutShopastro} id="aboutShopastro">
-      <div className={styles.title}>关于 shopastro</div>
+      <h3 className={styles.title}>关于 shopastro</h3>
       <div className={styles.desc}>
         <span>帮助跨境卖家一站式出海，</span>
         <span>让获客、交易、支付、物流、客户管理轻松简单</span>
