@@ -13,9 +13,7 @@ import HomeBg from '../components/v1/HomeBg'
 const Home: NextPage = () => {
   return (
     <div style={{ position: 'relative' }}>
-      <Header>
-        <link rel="canonical" href="https://www.ishopastro.com/" />
-      </Header>
+      <Header />
       <section className="sec-container">
         <Menu />
         <Banner />
