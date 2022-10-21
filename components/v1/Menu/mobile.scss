@@ -17,7 +17,9 @@
       background-size: contain;
       display: flex;
       width: 9.85rem;
-      height: 1.75rem;
+      padding-top: 1.75rem;
+      height: 0;
+      overflow: hidden;
     }
 
     .menuIcon {
@@ -71,6 +73,9 @@
         span {
           width: 100%;
           display: flex;
+        }
+        .menuItem {
+          font-size: 14px;
         }
         &.contentUs {
           display: none;

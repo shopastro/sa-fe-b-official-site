@@ -71,7 +71,7 @@ const Title: React.FC<IProps> = (props) => {
       })}
     >
       <Link href="/" passHref>
-        <div className={styles.logo} />
+        <h1 className={styles.logo}>shopastro 星盘跨境</h1>
       </Link>
 
       {openMenu && <div className={styles.closeIcon} onClick={() => setOpenMenu(false)} />}
@@ -81,7 +81,6 @@ const Title: React.FC<IProps> = (props) => {
         <ul className={styles.menuList}>
           {list.map((it) => {
             const { text, href } = it
-
             return (
               <li
                 key={text}
@@ -92,7 +91,7 @@ const Title: React.FC<IProps> = (props) => {
                 })}
               >
                 <Link href={href} passHref>
-                  <span> {text}</span>
+                  <h2 className={styles.menuItem}>{ text }</h2>
                 </Link>
               </li>
             )

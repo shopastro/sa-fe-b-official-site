@@ -19,7 +19,6 @@ const Home: NextPage = () => {
         <Banner />
         <AboutShopastro />
         <Cards />
-
         <Prospect />
         <Partner />
       </section>
