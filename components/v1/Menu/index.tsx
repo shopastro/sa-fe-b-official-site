@@ -71,7 +71,7 @@ const Title: React.FC<IProps> = (props) => {
       })}
     >
       <Link href="/" passHref>
-        <h1 className={styles.logo}>shopastro星盘跨境</h1>
+        <h1 className={styles.logo}>shopastro 星盘跨境</h1>
       </Link>
 
       {openMenu && <div className={styles.closeIcon} onClick={() => setOpenMenu(false)} />}
