@@ -106,7 +106,6 @@ const DetectionDetail: React.FC = () => {
 
       <div style={{ position: 'relative', width: '100%' }}>
         <DetailDes />
-
         <div className={styles.list}>
           <div style={{ minWidth: '185px' }}>
             <DetectionTab />

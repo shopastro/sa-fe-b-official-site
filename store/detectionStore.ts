@@ -39,6 +39,13 @@ function formatDate(date: Date, fmt: string): string {
   }
   return fmt
 }
+type PerformanceItem = {
+  name?: string
+  description?: string
+  numericValue?: number
+  numericUnit?: string
+  score?: number
+}
 
 type DataSource = {
   checkGroupMap?: {
@@ -55,6 +62,12 @@ type DataSource = {
       errorLevel?: 'WARNING' | 'CRITICAL'
     }>
   }
+
+  pcPerformanceScore?: number
+  mobilePerformanceScore?: number
+  pcPerformanceItems?: PerformanceItem[]
+  mobilePerformanceItems?: PerformanceItem[]
+
   imageNoAltUrlList?: string[]
   domain?: string
   itemCnt?: number
