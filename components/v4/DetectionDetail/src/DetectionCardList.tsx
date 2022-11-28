@@ -8,6 +8,7 @@ import { ErrorIcon, ScuessIcon, WarningIcon } from './DetectionTab'
 import ImageView from '../../ImageView/ImageView'
 import { getIcon, getType } from '../utils'
 import ReactMarkdown from 'react-markdown'
+import { PerformanceItem } from '../type'
 
 const IconList = {
   标签检测: (
@@ -257,7 +258,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
     return cardNodeList
   }, [dataSource, isUnlock, showLock, unlockNode])
 
-  const getItem = (it: SiteCenterApi.PerformanceItem, type: 'pc' | 'mb') => {
+  const getItem = (it: PerformanceItem, type: 'pc' | 'mb') => {
     return (
       <div key={it.name} id={`${it.name}_${type}`} className={styles.contentGroupItem}>
         <div className={styles.contentGroupItemSubTitle}>
