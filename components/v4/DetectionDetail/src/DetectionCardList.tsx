@@ -7,7 +7,7 @@ import Button from '../../../v3/base/Button'
 import { ErrorIcon, ScuessIcon, WarningIcon } from './DetectionTab'
 import ImageView from '../../ImageView/ImageView'
 import { getIcon, getType } from '../utils'
-import ReactMarkdown from 'react-markdown'
+// import ReactMarkdown from 'react-markdown'
 import { PerformanceItem } from '../type'
 
 const IconList = {
