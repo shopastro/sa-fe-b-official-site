@@ -7,7 +7,7 @@ import Button from '../../../v3/base/Button'
 import { ErrorIcon, ScuessIcon, WarningIcon } from './DetectionTab'
 import ImageView from '../../ImageView/ImageView'
 import { getIcon, getType } from '../utils'
-// import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown'
 import { PerformanceItem } from '../type'
 
 const IconList = {
@@ -267,7 +267,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
           <span className={getType(type, it.numericValue, it.name)}>{`${it.numericValue}${it.numericUnit || ''}`}</span>
         </div>
         <div className={styles.contentGroupItemDesc}>
-          {/* <ReactMarkdown
+          <ReactMarkdown
             components={{
               a: (res) => {
                 return (
@@ -279,8 +279,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
             }}
           >
             {it.description || ''}
-          </ReactMarkdown> */}
-          {it.description || ''}
+          </ReactMarkdown>
         </div>
       </div>
     )
