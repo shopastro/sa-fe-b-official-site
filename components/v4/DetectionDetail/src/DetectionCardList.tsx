@@ -267,7 +267,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
           <span className={getType(type, it.numericValue, it.name)}>{`${it.numericValue}${it.numericUnit || ''}`}</span>
         </div>
         <div className={styles.contentGroupItemDesc}>
-          <ReactMarkdown
+          {/* <ReactMarkdown
             components={{
               a: (res) => {
                 return (
@@ -279,7 +279,8 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
             }}
           >
             {it.description || ''}
-          </ReactMarkdown>
+          </ReactMarkdown> */}
+          {it.description || ''}
         </div>
       </div>
     )
