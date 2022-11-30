@@ -26,8 +26,9 @@ const UrlTitleCase = (url: string) => {
 const DetectionDetail: React.FC = () => {
   const [currentType, setCurrentType] = useState<'header' | 'download'>('header')
   const currentTypeRef = useRef({})
-  const { dataSource, currentUrl, isUnlock, setModalVisiabl, modalVisiabl, setShowMoadl, fileS3Url } =
+  const { dataSource, currentUrl, isUnlock, setModalVisiabl, modalVisiabl, setShowMoadl, fileS3Url, reqNoData } =
     useContainer(detectionStore)
+  console.log('🚀 ~ file: DetectionDetail.tsx:162 ~ reqNoData', reqNoData)
 
   const scrollCallBack = (e: Event) => {
     const scrollTop = document.documentElement.scrollTop
@@ -86,6 +87,18 @@ const DetectionDetail: React.FC = () => {
     </div>
   )
 
+  if (reqNoData) {
+    return (
+      <div>
+        {downloadNode}
+        <div className={styles.errorBox}>
+          <img className={styles.errorImg} src="//media.cdn.ishopastro.com/svg/sa-fe-b-background/nodata.svg" />
+          <div>检测失败</div>
+        </div>
+      </div>
+    )
+  }
+
   if (!currentUrl) {
     return <></>
   }
@@ -103,23 +116,26 @@ const DetectionDetail: React.FC = () => {
     <>
       {downloadNode}
       <div style={{ marginTop: '24px' }} />
-
-      <div style={{ position: 'relative', width: '100%' }}>
-        <DetailDes />
-        <div className={styles.list}>
-          <div style={{ minWidth: '185px' }}>
-            <DetectionTab />
+      {!reqNoData && (
+        <>
+          <div style={{ position: 'relative', width: '100%' }}>
+            <DetailDes />
+            <div className={styles.list}>
+              <div style={{ minWidth: '185px' }}>
+                <DetectionTab />
+              </div>
+              <DetectionCardList />
+            </div>
           </div>
-          <DetectionCardList />
-        </div>
-      </div>
 
-      <div id="pdf" style={{ position: 'fixed', width: '1455px', left: '-10000px', padding: ' 30px 60px 0' }}>
-        <DetailDes />
-        <div className={styles.list}>
-          <DetectionCardList showLock={false} />
-        </div>
-      </div>
+          <div id="pdf" style={{ position: 'fixed', width: '1455px', left: '-10000px', padding: ' 30px 60px 0' }}>
+            <DetailDes />
+            <div className={styles.list}>
+              <DetectionCardList showLock={false} />
+            </div>
+          </div>
+        </>
+      )}
 
       <div style={{ marginBottom: '72px' }} />
 

@@ -84,8 +84,6 @@ const cheatCode = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,Arro
 
 const uploadList = []
 
-let OUTTIME = 0
-
 function DetectionStore() {
   const [dataSource, setDataSource] = useState<DataSource>({})
   const [currentUrl, setCurrentUrl] = useState('')
@@ -95,15 +93,17 @@ function DetectionStore() {
   const [loading, setLoading] = useState(false)
   const [modalVisiabl, setModalVisiabl] = useState(false)
   const [fileS3Url, setFileS3Url] = useState('')
+  const [reqNoData, setReqNoData] = useState(false)
 
   const timer = useRef<NodeJS.Timeout>()
+  const OUTTIME = useRef(0)
   // const time = useRef<number>(0)
 
   /**
    * 清除定时器
    */
   const clearTimer = () => {
-    OUTTIME = 0
+    OUTTIME.current = 0
     timer.current && clearInterval(timer.current)
     setLoading(false)
     setDataSource({})
@@ -112,8 +112,12 @@ function DetectionStore() {
   const getSeoData = () => {
     getSeoResult(currentUrl)
       .then(({ data, success }) => {
+
         //报错
-        if (!success) clearTimer()
+        if (!success) {
+          clearTimer()
+          setReqNoData(true)
+        }
         //轮询到数据
         if (data) {
           data.time = formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
@@ -123,13 +127,16 @@ function DetectionStore() {
           upLoadFile(data)
           uploadList.push(1)
         } else {
-          if (OUTTIME < 120000) {
+          if (OUTTIME.current < 8000) {
             setTimeout(getSeoData, 2000)
+          } else {
+            setReqNoData(true)
           }
         }
       })
       .catch((e) => {
         console.error(e)
+        setReqNoData(true)
         clearTimer()
       })
   }
@@ -139,16 +146,18 @@ function DetectionStore() {
    */
   const loopResult = useCallback(() => {
     setLoading(true)
+    setReqNoData(false)
 
     timer.current = setInterval(() => {
-      OUTTIME += 2000
-      if (OUTTIME >= 120000) {
+      OUTTIME.current += 2000
+      if (OUTTIME.current >= 120000) {
         clearTimer()
         Message().error(``, {
           timeout: 2000,
           html: true,
           content: `<div style="color:#333333;display:flex;">查询url超时，请稍后再试`,
         })
+        setReqNoData(true)
       }
     }, 2000)
 
@@ -236,6 +245,7 @@ function DetectionStore() {
     modalVisiabl,
     setModalVisiabl,
     fileS3Url,
+    reqNoData,
   }
 }
 

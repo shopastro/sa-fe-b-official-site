@@ -619,3 +619,20 @@
     transform: translateX(-50%);
   }
 }
+
+.errorBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  text-align: center;
+  color: #222222;
+  margin-top: 68px;
+}
+
+.errorImg {
+  width: 210px;
+}
