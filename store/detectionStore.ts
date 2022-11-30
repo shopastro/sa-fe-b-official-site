@@ -112,11 +112,11 @@ function DetectionStore() {
   const getSeoData = () => {
     getSeoResult(currentUrl)
       .then(({ data, success }) => {
-
         //报错
         if (!success) {
           clearTimer()
           setReqNoData(true)
+          setLoading(false)
         }
         //轮询到数据
         if (data) {
@@ -131,12 +131,14 @@ function DetectionStore() {
             setTimeout(getSeoData, 2000)
           } else {
             setReqNoData(true)
+            setLoading(false)
           }
         }
       })
       .catch((e) => {
         console.error(e)
         setReqNoData(true)
+        setLoading(false)
         clearTimer()
       })
   }
@@ -158,6 +160,7 @@ function DetectionStore() {
           content: `<div style="color:#333333;display:flex;">查询url超时，请稍后再试`,
         })
         setReqNoData(true)
+        setLoading(false)
       }
     }, 2000)
 

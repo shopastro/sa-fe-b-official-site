@@ -28,7 +28,6 @@ const DetectionDetail: React.FC = () => {
   const currentTypeRef = useRef({})
   const { dataSource, currentUrl, isUnlock, setModalVisiabl, modalVisiabl, setShowMoadl, fileS3Url, reqNoData } =
     useContainer(detectionStore)
-  console.log('🚀 ~ file: DetectionDetail.tsx:162 ~ reqNoData', reqNoData)
 
   const scrollCallBack = (e: Event) => {
     const scrollTop = document.documentElement.scrollTop

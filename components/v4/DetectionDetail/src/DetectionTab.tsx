@@ -84,8 +84,6 @@ export const WarningIcon = ({ style }: { style?: CSSProperties }) => {
 const DetectionTab = () => {
   const { dataSource } = useContainer(detectionStore)
   const { mobilePerformanceItems, pcPerformanceItems } = dataSource
-  console.log('🚀 ~ file: DetectionTab.tsx ~ line 87 ~ DetectionTab ~ mobilePerformanceItems', mobilePerformanceItems)
-  console.log('🚀 ~ file: DetectionTab.tsx ~ line 87 ~ DetectionTab ~ pcPerformanceItems', pcPerformanceItems)
 
   const [type, setType] = useState('')
 
