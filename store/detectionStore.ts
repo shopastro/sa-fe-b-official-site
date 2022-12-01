@@ -127,7 +127,7 @@ function DetectionStore() {
           upLoadFile(data)
           uploadList.push(1)
         } else {
-          if (OUTTIME.current < 8000) {
+          if (OUTTIME.current < 12000) {
             setTimeout(getSeoData, 2000)
           } else {
             setReqNoData(true)

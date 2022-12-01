@@ -44,7 +44,7 @@ const Detection: React.FC = () => {
   }
 
   const onSubmit = () => {
-    const error = !Boolean(isUrl(inputValue) && inputValue)
+    const error = !Boolean(isUrl(inputValue.trim()) && inputValue.trim())
     if (error) {
       return Message().warning(``, {
         timeout: 2000,
