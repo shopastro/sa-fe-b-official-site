@@ -1,7 +1,9 @@
-import '../styles/globals.css'
-import '../components/biz/Message/message.min.css'
 import type { AppProps } from 'next/app'
+import 'tailwindcss/tailwind.css'
+
+import '../components/biz/Message/message.min.css'
 import DetectionStore from '../store/detectionStore'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
