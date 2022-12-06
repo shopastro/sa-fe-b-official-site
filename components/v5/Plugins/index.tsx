@@ -25,7 +25,7 @@ const Plugins = () => {
                     return (
                       <div key={index} className="flex w-[368px] h-[138px] mb-[18px] p-[18px] bg-white rounded-[12px]">
                         <div className="flex-shrink-0 w-[64px] h-[64px] mr-[16px]">
-                          <Image width={64} height={64} src={pluginData.icon} alt={pluginData.title} />
+                          <Image width={64} height={64} quality={100} src={pluginData.icon} alt={pluginData.title} />
                         </div>
                         <div>
                           <div className="mb-[12px] text-[20px] leading-[24px] text-[#0E1E46]">{pluginData.title}</div>

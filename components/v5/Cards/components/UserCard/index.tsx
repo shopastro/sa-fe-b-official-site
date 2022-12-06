@@ -1,43 +1,47 @@
+import Image from 'next/image'
+
 import Description from '../Description'
 import FreeButton from '../FreeButton'
 import SubTitle from '../SubTitle'
 import Title from '../Title'
 
-const Quick = () => {
+const UserCard = () => {
   return (
-    <div className="flex">
-      <div></div>
-      <div>
-        <Title>快速建站</Title>
-        <div>
-          <SubTitle>快速建站: </SubTitle>
-          <Description>灵活的编辑器和主流行业模板;</Description>
-          <Description>一键导入Shopify、Amazon等主流平台的商品, 提升运营人效;</Description>
-        </div>
-        <div>
-          <SubTitle>丰富的原生插件: </SubTitle>
+    <div className="flex w-[1440px] mb-[150px]">
+      <div className="flex flex-col flex-1">
+        <Title>白鲸用户运营</Title>
+        <div className="mb-[20px]">
+          <SubTitle>会员管理: </SubTitle>
           <Description>
-            顶级的研发团队贴近客户的实操场景，自研多款内置的免费插件，覆盖选品、店铺管理、营销推广、订单履约、客户服务等全方面为您的生意提供增长助力;
+            无上限会员记录数、大数据系统自动打标、支持自定义会员圈选并进行私域触达、详细的站内用户轨迹数据,
+            并与广告平台进行打通, 实现精准的用户行为分析
           </Description>
         </div>
-        <div>
-          <SubTitle>安全稳定: </SubTitle>
+        <div className="mb-[20px]">
+          <SubTitle>EDM邮件营销</SubTitle>
           <Description>
-            服务器多云多区域部署, 系统全链路追踪监控与告警, SLA/SLO/SLI服务体系全方位保障业务的稳定运营;
-            强技术护航商家账号和数据资产的安全私有性和长期有效性, 并通过成熟通用的解决方案让您的店铺符合GDPR合规;
+            高送达率的邮件发送系统支持、自动化弃单召回、支持邮件模版和装修, 与会员管理及促销工具打通, 实现定向用户运营
           </Description>
         </div>
-        <div>
-          <SubTitle>赋能B2B: </SubTitle>
+        <div className="mb-[66px]">
+          <SubTitle>短信营销</SubTitle>
           <Description>
-            自定义询盘表单、询盘智能提醒和便捷回复、分段小额批发、询盘和客户的数据看版等多维度产品能力,
-            全方位触达外贸客户需求;
+            支持采用短信进行弃单召回、短信营销模版, 并与会员管理及促销工具打通, 实现定向用户运营
           </Description>
         </div>
         <FreeButton />
+      </div>
+      <div className="flex flex-1">
+        <Image
+          width={1570}
+          height={1200}
+          quality={100}
+          src="https://media.cdn.ishopastro.com/upload/images/20221206-103811.png_2022-12-06-02-45-24.png"
+          alt="快速建站"
+        />
       </div>
     </div>
   )
 }
 
-export default Quick
+export default UserCard

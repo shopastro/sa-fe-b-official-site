@@ -10,7 +10,7 @@ const Menu = () => {
       <div className="flex h-[120px] w-[1200px] items-center justify-between">
         <Link href="/" passHref>
           <h1 className="cursor-pointer">
-            <Image src={darkLogo} width={220} height={40} alt="logo" />
+            <Image src={darkLogo} width={220} height={40} quality={100} alt="logo" />
           </h1>
         </Link>
 

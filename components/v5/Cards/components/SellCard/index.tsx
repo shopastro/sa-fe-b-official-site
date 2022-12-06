@@ -1,37 +1,36 @@
+import Image from 'next/image'
+
 import Description from '../Description'
 import FreeButton from '../FreeButton'
 import SubTitle from '../SubTitle'
 import Title from '../Title'
 
-const Quick = () => {
+const SellCard = () => {
   return (
-    <div className="flex">
-      <div></div>
-      <div>
-        <Title>快速建站</Title>
-        <div>
-          <SubTitle>快速建站: </SubTitle>
-          <Description>灵活的编辑器和主流行业模板;</Description>
-          <Description>一键导入Shopify、Amazon等主流平台的商品, 提升运营人效;</Description>
-        </div>
-        <div>
-          <SubTitle>丰富的原生插件: </SubTitle>
+    <div className="flex w-[1440px] mb-[150px]">
+      <div className="flex flex-1">
+        <Image
+          width={1570}
+          height={1200}
+          quality={100}
+          src="https://media.cdn.ishopastro.com/upload/images/20221206-103816.png_2022-12-06-02-45-24.png"
+          alt="快速建站"
+        />
+      </div>
+      <div className="flex flex-col flex-1">
+        <Title>营销能力</Title>
+        <div className="mb-[20px]">
+          <SubTitle>联盟营销</SubTitle>
           <Description>
-            顶级的研发团队贴近客户的实操场景，自研多款内置的免费插件，覆盖选品、店铺管理、营销推广、订单履约、客户服务等全方面为您的生意提供增长助力;
+            联盟营销可帮助商家, 通过CPS的模式与KOC、KOL进行合作, 获取社交和社媒的流量。支持商家招募自己的分销员,
+            设置商品佣金等, 并通过线上系统进行推广订单追踪, 与推广者建立信任关系, 并清晰记录佣金
           </Description>
         </div>
-        <div>
-          <SubTitle>安全稳定: </SubTitle>
+        <div className="mb-[40px]">
+          <SubTitle>推荐有礼</SubTitle>
           <Description>
-            服务器多云多区域部署, 系统全链路追踪监控与告警, SLA/SLO/SLI服务体系全方位保障业务的稳定运营;
-            强技术护航商家账号和数据资产的安全私有性和长期有效性, 并通过成熟通用的解决方案让您的店铺符合GDPR合规;
-          </Description>
-        </div>
-        <div>
-          <SubTitle>赋能B2B: </SubTitle>
-          <Description>
-            自定义询盘表单、询盘智能提醒和便捷回复、分段小额批发、询盘和客户的数据看版等多维度产品能力,
-            全方位触达外贸客户需求;
+            通过推荐有礼, 可发展客户为店铺进行推广, 获取社群裂变流量。商家以折扣码为激励, 鼓励店铺的客户进行分享,
+            分享与被分享双方均可获得优惠
           </Description>
         </div>
         <FreeButton />
@@ -40,4 +39,4 @@ const Quick = () => {
   )
 }
 
-export default Quick
+export default SellCard
