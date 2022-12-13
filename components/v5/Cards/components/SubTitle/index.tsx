@@ -4,7 +4,7 @@ import React from 'react'
 
 const SubTitle: React.FC = (props) => {
   return (
-    <div className="flex mb-[4px] text-[20px] leading-[24px] text-[#365196]">
+    <div className="flex mb-[4px] text-[18px] leading-[22px] text-[#365196] md:text-[20px] md:leading-[24px]">
       <span className="w-[24px] h-[24px] mr-[20px]">
         <Image
           src="https://media.cdn.ishopastro.com/svg/shopastrohome/bbbdf92fef7fd9cb4dc206f8c099f0ea.svg"

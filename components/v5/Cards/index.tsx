@@ -8,7 +8,7 @@ import UserCard from './components/UserCard'
 
 const Cards = () => {
   return (
-    <div className="flex flex-col items-center py-[80px]">
+    <div className="flex flex-col items-center md:py-[80px]">
       <QuickCard />
       <AdsCard />
       <SellCard />

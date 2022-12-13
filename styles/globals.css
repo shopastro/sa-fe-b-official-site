@@ -72,3 +72,9 @@ ul {
     position: relative;
   }
 }
+
+.overflow-auto::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}

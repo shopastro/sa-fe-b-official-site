@@ -5,8 +5,8 @@ import React from 'react'
 const FreeButton: React.FC<FreeButtonProps> = (props) => {
   return (
     <Link href={props.href ?? ''} passHref>
-      <div className="flex items-center w-[178px] py-[14px] px-[28px] border border-solid border-[#104CBC] rounded-[8px]">
-        <span className="mr-[24px] text-[18px] text-[#004DD1]">免费试用</span>
+      <div className="flex items-center w-[178px] py-[8px] px-[28px] border border-solid border-[#104CBC] rounded-[8px] md:py-[14px]">
+        <span className="mr-[24px] text-[16px] text-[#004DD1] md:text-[18px]">免费试用</span>
         <span className="w-[23px] h-[23px] text-[#004DD1]">
           <Image
             width={23}
