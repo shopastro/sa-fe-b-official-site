@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Banner = () => {
   return (
-    <div className="flex justify-center w-screen text-white bg-[#003892]">
+    <div className="flex justify-center w-screen text-white">
       <div className="flex flex-col items-center relative px-[20px] overflow-hidden md:w-[1440px] md:h-[840px]">
         <div className="flex flex-col justify-between relative z-10 md:flex-row md:w-[1200px] md:mb-[80px]">
           <div className="flex flex-col mt-[8px] md:mt-[95px]">
@@ -39,11 +39,11 @@ const Banner = () => {
               多种生意场景套件, 行业专家全案运营
             </div>
             <div className="hidden text-[18px] leading-[26px] md:flex">
-              <Link href="/" passHref>
-                <span className="py-[12px] px-[54px] border border-solid border-[#FE8953] rounded-[8px] bg-[#FE8953]">
+              <span className="py-[12px] px-[54px] border border-solid border-[#FE8953] rounded-[8px] bg-[#FE8953]">
+                <Link href="/product" passHref>
                   免费试用
-                </span>
-              </Link>
+                </Link>
+              </span>
             </div>
           </div>
           <div className="hidden items-center md:flex">
@@ -171,25 +171,6 @@ const Banner = () => {
               <span>持续更新</span>
             </div>
           </div>
-        </div>
-
-        <div className="absolute w-[220px] top-[86px] left-[-15px] md:top-[150px] md:left-[624px] md:w-[353px]">
-          <Image
-            width={353}
-            height={554}
-            quality={100}
-            src="https://media.cdn.ishopastro.com/upload/images/20221202-103722.png_2022-12-02-06-30-12.png"
-            alt="bg1"
-          />
-        </div>
-        <div className="absolute w-[220px] top-[8px] right-[-85px] md:top-[35px] md:right-[-48px] md:w-[353px]">
-          <Image
-            width={353}
-            height={649}
-            quality={100}
-            src="https://media.cdn.ishopastro.com/upload/images/20221202-103716.png_2022-12-02-06-30-12.png"
-            alt="bg2"
-          />
         </div>
       </div>
     </div>
