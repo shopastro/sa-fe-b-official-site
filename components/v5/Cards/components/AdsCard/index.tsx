@@ -29,7 +29,7 @@ const Quick = () => {
               通过系统化能力实现超大规模的SKU数量管理和广告平台同步
             </Description>
           </div>
-          <FreeButton />
+          <FreeButton href="/product" />
         </div>
       </div>
       <div className="flex flex-1 order-1 md:order-3 mb-[20px] mb:mb-0">

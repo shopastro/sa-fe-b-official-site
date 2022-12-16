@@ -45,7 +45,7 @@ const Quick = () => {
               全方位触达外贸客户需求;
             </Description>
           </div>
-          <FreeButton />
+          <FreeButton href="/product" />
         </div>
       </div>
     </div>

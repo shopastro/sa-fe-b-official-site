@@ -34,7 +34,7 @@ const SellCard = () => {
               分享与被分享双方均可获得优惠
             </Description>
           </div>
-          <FreeButton />
+          <FreeButton href="/product" />
         </div>
       </div>
     </div>

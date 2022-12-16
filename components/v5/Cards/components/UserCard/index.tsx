@@ -30,7 +30,7 @@ const UserCard = () => {
               支持采用短信进行弃单召回、短信营销模版, 并与会员管理及促销工具打通, 实现定向用户运营
             </Description>
           </div>
-          <FreeButton />
+          <FreeButton href="/product" />
         </div>
       </div>
       <div className="flex flex-1 order-1 md:order-3 mb-[20px] mb:mb-0">
