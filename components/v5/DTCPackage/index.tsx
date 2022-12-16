@@ -20,14 +20,14 @@ const DTCPackage = () => {
         <div className="flex justify-center mb-[20px] text-[18px] leading-[24px] md:mb-[32px]">
           <div className="flex bg-[#D9E6FA] rounded-[100vw]">
             <span
-              className="px-[36px] py-[6px] rounded-[100vw] md:py-[8px] md:text-[20px] md:leading-[28px]"
+              className="px-[36px] py-[6px] rounded-[100vw] md:py-[8px] md:text-[20px] md:leading-[28px] cursor-pointer"
               style={{ backgroundColor: showMonth ? '#0B58D8' : 'transparent', color: showMonth ? '#FFF' : '#0B58D8' }}
               onClick={() => setShowMonth(true)}
             >
               月付
             </span>
             <span
-              className="px-[36px] py-[6px] ml-[-18px] rounded-[100vw] md:py-[8px] md:text-[20px] md:leading-[28px]"
+              className="px-[36px] py-[6px] ml-[-18px] rounded-[100vw] md:py-[8px] md:text-[20px] md:leading-[28px] cursor-pointer"
               style={{
                 backgroundColor: !showMonth ? '#0B58D8' : 'transparent',
                 color: !showMonth ? '#FFF' : '#0B58D8'
@@ -41,7 +41,9 @@ const DTCPackage = () => {
         <div className="mb-[40px] text-[14px] leading-[22px] text-[#535D77] text-center md:w-[640px] md:mb-[32px]">
           针对不同业务与不同量级的建站需求, 星盘为您精心准备了以下3种套餐,
           最合适的才是最好的。助您跨境业务更轻松。所有版本均包含
-          <a className="text-[#0B58D8]">星盘白鲸</a>
+          <span className="text-[#0B58D8]">
+            <Link href="/beluga">星盘白鲸</Link>
+          </span>
           [1]相关服务。
         </div>
 
@@ -112,7 +114,7 @@ const DTCPackage = () => {
         <div className="hidden flex-col md:flex">
           <div className="mb-[8px] text-[32px] leading-[38px] text-center">抢先体验, 开始免费试用! </div>
           <div className="mb-[24px] text-[18px] leading-[22px] text-center">直接免费7天试用体验星盘DTC建站。</div>
-          <div className="flex justify-center mb-[70px]">
+          <div className="flex justify-center mb-[70px] cursor-pointer">
             <span className="px-[56px] py-[16px] text-[18px] leading-[26px] text-[#FFF] bg-[#FE8953] rounded-[8px]">
               免费试用
             </span>
@@ -153,7 +155,7 @@ const DTCPackage = () => {
             </div>
             <div className="flex text-[14px] leading-[20px] bg-[#D9E6FA] rounded-[100vw]">
               <span
-                className="px-[16px] py-[8px] rounded-[100vw] md:px-[36px]"
+                className="px-[16px] py-[8px] rounded-[100vw] md:px-[36px] cursor-pointer"
                 style={{
                   backgroundColor: showMonth ? '#0B58D8' : 'transparent',
                   color: showMonth ? '#FFF' : '#0B58D8'
@@ -163,7 +165,7 @@ const DTCPackage = () => {
                 月付
               </span>
               <span
-                className="px-[16px] py-[8px] ml-[-8px] rounded-[100vw] md:px-[36px] md:ml-[-18px]"
+                className="px-[16px] py-[8px] ml-[-8px] rounded-[100vw] md:px-[36px] md:ml-[-18px] cursor-pointer"
                 style={{
                   backgroundColor: !showMonth ? '#0B58D8' : 'transparent',
                   color: !showMonth ? '#FFF' : '#0B58D8'
@@ -194,7 +196,7 @@ const DTCPackage = () => {
                       </span>
                     </div>
                     <div
-                      className="border border-[#D6E0EA] rounded-[4px]"
+                      className="border border-[#D6E0EA] rounded-[4px] cursor-pointer"
                       style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
                     >
                       <span className="px-[24px] py-[4px] text-[14px] leading-[22px]">

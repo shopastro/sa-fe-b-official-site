@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import useIsMobile from '../../../hooks/useIsMobile'
@@ -64,11 +65,21 @@ const Footer = () => {
               className="flex flex-col text-[14px] leading-[24px] text-[#535D77] transition-all overflow-hidden"
               style={{ maxHeight: showAbout ? '100vh' : '0' }}
             >
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">公司简介</div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">隐私政策</div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">用户协议</div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">解决方案</div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">帮助中心</div>
+              <div className="py-[16px] md:py-[0] md:mb-[8px]">
+                <Link href="/about">公司简介</Link>
+              </div>
+              <div className="py-[16px] md:py-[0] md:mb-[8px]">
+                <Link href="/privacy">隐私政策</Link>
+              </div>
+              <div className="py-[16px] md:py-[0] md:mb-[8px]">
+                <Link href="/agreement">用户协议</Link>
+              </div>
+              <div className="py-[16px] md:py-[0] md:mb-[8px]">
+                <Link href="/solutions">解决方案</Link>
+              </div>
+              <div className="py-[16px] md:py-[0] md:mb-[8px]">
+                <Link href="/solutions">帮助中心</Link>
+              </div>
             </div>
           </div>
 
@@ -88,8 +99,14 @@ const Footer = () => {
               className="flex flex-col text-[14px] leading-[24px] text-[#535D77] transition-all overflow-hidden"
               style={{ maxHeight: showJoin ? '100vh' : '0' }}
             >
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">在招岗位</div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">投递简历</div>
+              <div className="py-[16px] md:py-[0] md:mb-[8px]">
+                <Link href="https://www.zhipin.com/gongsir/0c4a441aa82110141nx82Nm9EFI~.html?ka=company-jobs">
+                  在招岗位
+                </Link>
+              </div>
+              <div className="py-[16px] md:py-[0] md:mb-[8px]">
+                <Link href="https://www.zhipin.com/gongsi/0c4a441aa82110141nx82Nm9EFI~.html">投递简历</Link>
+              </div>
             </div>
           </div>
         </div>

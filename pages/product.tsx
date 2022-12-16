@@ -38,7 +38,7 @@ const Home: NextPage = () => {
                 <div className="mb-[16px] text-[14px] leading-[26px] font-[700] text-[#18214D]">
                   Create screens directly in Method or add your images from Sketch…
                 </div>
-                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px]">
+                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer">
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">免费试用</span>
                   <span className="w-[22px] h-[22px]">
                     <Image
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
                 <div className="mb-[16px] text-[14px] leading-[26px] font-[700] text-[#18214D]">
                   Create screens directly in Method or add your images from Sketch…
                 </div>
-                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px]">
+                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer">
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">咨询</span>
                   <span className="w-[22px] h-[22px]">
                     <Image
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
                 <div className="mb-[16px] text-[14px] leading-[26px] font-[700] text-[#18214D]">
                   Create screens directly in Method or add your images from Sketch…
                 </div>
-                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px]">
+                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer">
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">咨询</span>
                   <span className="w-[22px] h-[22px]">
                     <Image
