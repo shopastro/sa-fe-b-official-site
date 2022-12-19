@@ -19,7 +19,7 @@ const Plugins = () => {
   return (
     <div className="flex flex-col w-screen py-[40px] bg-[#F5F6FA] md:items-center md:py-[80px]">
       <div className="flex flex-col px-[20px] md:w-[1400px] md:pl-[120px]">
-        <div className="mb-[14px] text-[28px] leading-[32px] text-[#0E1E46] md:text-[36px] md:leading-[62px]">
+        <div className="mb-[14px] text-[28px] leading-[32px] text-[#0E1E46] font-[700] md:text-[36px] md:leading-[62px]">
           丰富插件，开箱即用
         </div>
         <div className="flex items-center mb-[14px]">

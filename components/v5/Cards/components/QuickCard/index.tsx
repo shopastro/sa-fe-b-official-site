@@ -8,7 +8,7 @@ import Title from '../Title'
 const Quick = () => {
   return (
     <div className="flex flex-col mb-[28px] md:flex-row md:w-[1440px] md:mb-[120px]">
-      <div className="flex flex-1 mb-[20px] mb:mb-0">
+      <div className="flex flex-1 mb-[20px] md:mb-0">
         <Image
           width={1570}
           height={1200}

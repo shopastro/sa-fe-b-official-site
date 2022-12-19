@@ -4,11 +4,11 @@ import Link from 'next/link'
 const Banner = () => {
   return (
     <div className="flex justify-center w-screen text-white">
-      <div className="flex flex-col items-center relative px-[20px] overflow-hidden md:w-[1440px] md:h-[840px]">
-        <div className="flex flex-col justify-between relative z-10 md:flex-row md:w-[1200px] md:mb-[80px]">
-          <div className="flex flex-col mt-[8px] md:mt-[95px]">
-            <div className="text-[36px] leading-[50.4px] md:text-[48px] md:leading-[67.2px]">
-              <div>一站式跨境</div>
+      <div className="flex flex-col items-center relative px-[20px] overflow-hidden md:w-[1200px] md:h-[830px]">
+        <div className="flex flex-col justify-between relative z-10 md:flex-row md:w-[1200px] md:mb-[42px]">
+          <div className="flex flex-col mt-[8px] md:mt-[85px]">
+            <div className="text-[36px] leading-[50.4px] font-[700] md:text-[48px] md:leading-[67.2px]">
+              <div>品牌一站式跨境</div>
               <div className="mb-[8px] md:mb-[28px]">
                 私域增长 <span className="text-[#FE8953]">解决方案</span>
               </div>
@@ -16,9 +16,9 @@ const Banner = () => {
             <div className="flex items-center md:hidden">
               <Image
                 width={1352}
-                height={1078}
+                height={1050}
                 quality={100}
-                src="https://media.cdn.ishopastro.com/upload/images/20221212-151737.png_2022-12-12-07-35-32.png"
+                src="https://media.cdn.ishopastro.com/upload/images/20221219.png_2022-12-19-12-02-37.png"
                 alt="banner1"
               />
             </div>

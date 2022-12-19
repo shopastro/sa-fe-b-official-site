@@ -14,8 +14,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Header />
-      <div className="flex items-center justify-center absolute top-0 left-0 w-screen h-[1100px] md:h-[960px] bg-[#003892] overflow-hidden">
-        <div className="relative w-screen h-full md:w-[1440px] md:m-auto">
+      <div className="flex items-center justify-center absolute top-0 left-0 w-screen h-[1100px] md:h-[950px] bg-[#003892] overflow-hidden">
+        <div className="relative w-screen h-full md:w-[1200px] md:m-auto">
           <div className="absolute w-[220px] top-[75px] left-[-15px] md:top-[270px] md:left-[624px] md:w-[353px]">
             <Image
               width={353}
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="relative">
         <Menu theme="light" />
         <Banner />
         <Plugins />

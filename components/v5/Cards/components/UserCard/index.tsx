@@ -33,7 +33,7 @@ const UserCard = () => {
           <FreeButton href="/product" />
         </div>
       </div>
-      <div className="flex flex-1 order-1 md:order-3 mb-[20px] mb:mb-0">
+      <div className="flex flex-1 order-1 md:order-3 mb-[20px] md:mb-0">
         <Image
           width={1570}
           height={1200}
