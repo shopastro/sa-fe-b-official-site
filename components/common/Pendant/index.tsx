@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import classNames from 'classnames'
+import React, { useEffect, useState } from 'react'
+import { useContainer } from 'unstated-next'
+
+import detectionStore from '../../../store/detectionStore'
+import { buryingPoint } from '../../../utils/buryingPoint'
 import Modal from '../../v1/base/Modal'
 import styles from './index.module.scss'
-import classNames from 'classnames'
-import { buryingPoint } from '../../../utils/buryingPoint'
-import { useContainer } from 'unstated-next'
-import detectionStore from '../../../store/detectionStore'
+
 // import classNames from 'classnames'
 
 type IProps = {
@@ -40,44 +42,7 @@ const Pendant: React.FC<IProps> = () => {
 
   return (
     <div className={styles.pendantContainer}>
-      <ul>
-        <li>
-          <div
-            className={classNames(styles.pendantItem)}
-            id={'pendantItem'}
-            onClick={() => {
-              //添加埋点
-              buryingPoint('click_online_chat')
-            }}
-          >
-            {isPc ? (
-              <>
-                <div className={styles.imgItem} />
-                <div className={styles.textItem}> 在线咨询</div>
-              </>
-            ) : (
-              <>
-                <span className={styles.imgItem} />
-                <span className={styles.textItem}>在线咨询</span>
-              </>
-            )}
-          </div>
-        </li>
-        <li>
-          <div
-            className={styles.pendantItem}
-            onMouseEnter={() => {
-              //添加埋点
-              buryingPoint('hover_contact_info')
-            }}
-          >
-            <div className={styles.imgItem} />
-            <div className={styles.textItem}>电话咨询</div>
-          </div>
-          <div className={styles.arrow_box}>
-            <div className={styles.boxText}>出海咨询热线: 400-669-2228</div>
-          </div>
-        </li>
+      <ul id={'pendantItem'}>
         <li>
           <div
             className={styles.pendantItem}
@@ -102,7 +67,7 @@ const Pendant: React.FC<IProps> = () => {
             }}
           >
             <div className={styles.imgItem} />
-            <div className={styles.textItem}>立即试用</div>
+            <div className={styles.textItem}>免费试用</div>
           </div>
         </li>
       </ul>
