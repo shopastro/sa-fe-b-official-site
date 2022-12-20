@@ -138,7 +138,10 @@ const DTCPackage = () => {
                   <span className="mb-[6px]" style={{ fontWeight: item.type === activeTypeIndex ? '700' : '400' }}>
                     {item.title}
                   </span>
-                  {item.type === activeTypeIndex && <span className="w-[50px] h-[2px] bg-[#004ED1]" />}
+                  <span
+                    className="w-[50px] h-[2px] bg-[#004ED1]"
+                    style={{ backgroundColor: item.type === activeTypeIndex ? '#004ED1' : 'transparent' }}
+                  />
                 </div>
               )
             })}
