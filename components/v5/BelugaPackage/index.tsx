@@ -14,11 +14,11 @@ const DTCPackage = () => {
   const isMobile = useIsMobile()
 
   return (
-    <div className="flex justify-center w-screen">
-      <div className="flex flex-col flex-1 relative px-[20px] pb-[40px] overflow-hidden">
-        <div className="mb-[20px] text-[28px] leading-[34px] text-center">白鲸套餐</div>
+    <div className="flex flex-col items-center w-screen">
+      <div className="flex flex-col relative px-[20px] pb-[40px] overflow-hidden md:w-[1200px] md:pb-[80px] md:px-0">
+        <div className="mb-[20px] text-[28px] leading-[34px] text-center md:hidden">白鲸套餐</div>
         {/* menu */}
-        <div className="flex justify-center mb-[20px]">
+        <div className="flex justify-center mb-[20px] md:hidden">
           {belugaTypeInfo.map((item) => {
             return (
               <div
@@ -40,7 +40,7 @@ const DTCPackage = () => {
           })}
         </div>
         {/* switch */}
-        <div className="flex justify-between mb-[20px]">
+        <div className="flex justify-between mb-[20px] md:mb-[32px] md:items-center">
           <div className="flex items-center text-[#18214D] md:hidden">
             <span className="mr-[10px] text-[18px] leading-[22px]">{curType.title}</span>
             <span className="text-[16px] leading-[18px]">
@@ -49,6 +49,7 @@ const DTCPackage = () => {
               <span className="text-[#18214D] text-opacity-80">{showMonth ? '/月' : '/年'}</span>
             </span>
           </div>
+          <div className="hidden text-[32px] leading-[44px] text-center md:flex">白鲸套餐</div>
           <div className="flex text-[14px] leading-[20px] bg-[#D9E6FA] rounded-[100vw]">
             <span
               className="px-[16px] py-[8px] rounded-[100vw] md:px-[36px] cursor-pointer"
@@ -74,6 +75,32 @@ const DTCPackage = () => {
         </div>
         {/* form */}
         <div>
+          <div className="hidden md:flex border border-[#DDE0F1] border-b-0">
+            <div className="flex flex-1 w-[360px] px-[16px] py-[32px] border-r border-[#DDE0F1]" />
+            {belugaTypeInfo.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex items-center justify-center flex-1 w-[280px] px-[16px] py-[32px] border-r border-[#DDE0F1] last:border-r-0"
+                >
+                  <span className="mr-[10px] text-[18px] leading-[22px] font-[700]">{item.title}</span>
+                  <span className="mr-[16px] text-[16px] leading-[18px]">
+                    <span className="text-[#18214D] text-opacity-80">¥</span>
+                    <span>{showMonth ? item.monthPrice : item.yearPrice}</span>
+                    <span className="text-[#18214D] text-opacity-80">{showMonth ? '/月' : '/年'}</span>
+                  </span>
+                  <span
+                    className="border border-[#D6E0EA] rounded-[4px] cursor-pointer"
+                    style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
+                  >
+                    <span className="px-[8px] py-[4px] text-[14px] leading-[22px]">
+                      <Link href="/dtc">免费试用</Link>
+                    </span>
+                  </span>
+                </div>
+              )
+            })}
+          </div>
           {data.map((subData, index) => {
             return (
               <div
@@ -87,7 +114,7 @@ const DTCPackage = () => {
                     return (
                       <div
                         key={subIndex}
-                        className="flex flex-col justify-center flex-1 p-[12px] border-r border-[#DDE0F1]"
+                        className="flex flex-col justify-center flex-1 p-[12px] border-r border-[#DDE0F1] md:flex-row md:justify-between md:w-[360px] md:px-[16px] md:py-[18px]"
                       >
                         <div className="flex flex-col">
                           <span className="">{title}</span>
@@ -109,7 +136,7 @@ const DTCPackage = () => {
                     return (
                       <div
                         key={subIndex}
-                        className="flex flex-col justify-center flex-1 p-[12px] text-[#004ED1] border-r border-[#DDE0F1] bg-[#FAFCFF]"
+                        className="flex flex-col justify-center flex-1 p-[12px] text-[#004ED1] border-r border-[#DDE0F1] bg-[#FAFCFF] md:w-[280px] md:px-[16px] md:py-[18px] md:text-[#18214D] md:bg-white md:last:text-[#004ED1] md:last:bg-[#FAFCFF]"
                         style={{ display: isMobile ? (subIndex === activeTypeIndex ? 'flex' : 'none') : 'flex' }}
                       >
                         {info.map((i, index) => {

@@ -8,8 +8,8 @@ const BelugaBanner = () => {
   const [show, setShow] = useState(false)
 
   return (
-    <div className="flex justify-center w-screen">
-      <div className="flex flex-col items-center relative py-[40px] bg-[#F5F6FA] overflow-hidden">
+    <div className="flex flex-col justify-center w-screen bg-[#F5F6FA]">
+      <div className="flex flex-col items-center relative py-[40px] overflow-hidden md:py-[80px]">
         <div className="w-[185px] h-[30px] mb-[32px]">
           <Image
             width={185}
@@ -19,16 +19,16 @@ const BelugaBanner = () => {
             alt="beluga logo"
           />
         </div>
-        <div className="mb-[40px] px-[28px] text-[40px] leading-[48px] text-[#0E1E46] text-center font-[700]">
+        <div className="mb-[40px] px-[28px] text-[40px] leading-[48px] text-[#0E1E46] text-center font-[700] md:mb-[72px] md:text-[48px] md:leading-[58px]">
           一站式的面向品牌站独立站的营销SaaS
         </div>
         {/* 功能 */}
-        <div className="flex flex-col px-[20px] mb-[40px]">
+        <div className="flex flex-col px-[20px] mb-[40px] md:flex-row">
           {bannerData.map((data, index) => {
             return (
               <div
                 key={index}
-                className="flex flex-col py-[28px] mb-[30px] border border-white bg-[#F8F8F8] rounded-[12px] last:mb-0"
+                className="flex flex-col py-[28px] mb-[30px] border border-white bg-[#F8F8F8] rounded-[12px] last:mb-0 md:w-[260px] md:mr-[38px] md:last:mr-0 md:mb-0"
               >
                 <div className="flex justify-center mb-[12px]">
                   <span className="px-[36px] py-[4px] text-[14px] leading-[20px] text-[#FFF] rounded-[100vw] bg-[#004DD1]">
@@ -38,7 +38,7 @@ const BelugaBanner = () => {
                 <div className="mb-[12px] text-[22px] leading-[30px] text-[#18214D] text-center font-[700]">
                   {data.title}
                 </div>
-                <div className="mb-[32px] text-[16px] leading-[24px] text-[#3E4462] text-opacity-80 text-center">
+                <div className="mb-[32px] text-[16px] leading-[24px] text-[#3E4462] text-opacity-80 text-center md:px-[28px]">
                   {data.info}
                 </div>
                 <div className="px-[20px]">
@@ -50,7 +50,7 @@ const BelugaBanner = () => {
         </div>
         {/* 二维码 */}
         <div className="flex flex-col items-center">
-          <span className="w-[120px] h-[120px] mb-[32px]">
+          <span className="w-[120px] h-[120px] mb-[32px] md:w-[132px] md:h-[132px] md:p-[12px] md:rounded-[8px] md:bg-[#FFF]">
             <Image
               width={210}
               height={210}
