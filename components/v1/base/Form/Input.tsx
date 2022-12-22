@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
+
 import styles from './index.module.scss'
 
 type IProps = {
@@ -14,6 +15,7 @@ type IProps = {
   error?: boolean
   className?: string
   value?: string
+  id?: string
 }
 
 const Input: React.FC<IProps> = (props) => {
@@ -28,6 +30,7 @@ const Input: React.FC<IProps> = (props) => {
     children,
     value,
     onKeyPress,
+    id
   } = props
   const [selected, setSelected] = useState(false)
   const [inputValue, setInputValue] = useState('')
@@ -44,6 +47,7 @@ const Input: React.FC<IProps> = (props) => {
         <>
           {inputLabel}
           <input
+            id={id}
             className={styles.input}
             type={type}
             placeholder={placeholder}
@@ -64,7 +68,7 @@ const Input: React.FC<IProps> = (props) => {
           <select
             placeholder={placeholder}
             className={classNames({
-              [styles.unselect]: !selected,
+              [styles.unselect]: !selected
             })}
             onChange={(e) => {
               props.onChange(name, e.target.value)

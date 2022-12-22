@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import styles from './index.module.scss'
-import Input from './Input'
-import Button from '../Button'
-import { axiosFun } from '../../../../utils/asios'
-import Success from '../../Success'
-import { buryingPoint } from '../../../../utils/buryingPoint'
 import { useContainer } from 'unstated-next'
+
 import detectionStore from '../../../../store/detectionStore'
+import { axiosFun } from '../../../../utils/asios'
+import { buryingPoint } from '../../../../utils/buryingPoint'
+import Success from '../../Success'
+import Button from '../Button'
+import Input from './Input'
+import styles from './index.module.scss'
 
 type IProps = {
   list: List[]
@@ -33,7 +34,7 @@ const Form: React.FC<IProps> = (props) => {
   const { dataSource, setUnlock } = useContainer(detectionStore)
   const [{ fNumber, sNumber }] = useState({
     fNumber: Math.ceil(Math.random() * 10),
-    sNumber: Math.ceil(Math.random() * 10),
+    sNumber: Math.ceil(Math.random() * 10)
   })
 
   const newList = [
@@ -43,8 +44,8 @@ const Form: React.FC<IProps> = (props) => {
       require: true,
       name: 'number',
       placeholder: '请输入答案（必填）',
-      label: `请输入 ${fNumber} + ${sNumber} 计算结果`,
-    },
+      label: `请输入 ${fNumber} + ${sNumber} 计算结果`
+    }
   ]
 
   const formList = dataSource.url ? newList : list
@@ -52,7 +53,7 @@ const Form: React.FC<IProps> = (props) => {
   const handleChange = (key: string, value: string) => {
     setValues({
       ...values,
-      [key]: value,
+      [key]: value
     })
   }
 
@@ -103,11 +104,11 @@ const Form: React.FC<IProps> = (props) => {
               first_name: values.username,
               last_name: values.username,
               city: values.city,
-              country: 'CN',
+              country: 'CN'
             },
-            user_domain: dataSource.url,
-          },
-        },
+            user_domain: dataSource.url
+          }
+        }
       })
 
       if (dataSource?.url) {
@@ -135,7 +136,7 @@ const Form: React.FC<IProps> = (props) => {
         {
           ...values,
           category: type,
-          checkDomain: dataSource?.url,
+          checkDomain: dataSource?.url
         },
         callback
       )
@@ -149,7 +150,9 @@ const Form: React.FC<IProps> = (props) => {
   return (
     <div className={`${styles.form} ${styles[row]}`}>
       {formList.map((it) => {
-        return <Input key={it.name} {...it} onChange={handleChange} error={hasError(it.name, verification)} />
+        return (
+          <Input id={it.name} key={it.name} {...it} onChange={handleChange} error={hasError(it.name, verification)} />
+        )
       })}
       {error && (
         <div

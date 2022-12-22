@@ -6,9 +6,9 @@ import Banner from '../components/v5/About/Banner'
 import Concat from '../components/v5/About/Concat'
 import Join from '../components/v5/About/Join'
 import Position from '../components/v5/About/Position'
-import Try from '../components/v5/About/Try'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
+import TryNow from '../components/v5/TryNow'
 
 const About: NextPage = () => {
   return (
@@ -52,7 +52,7 @@ const About: NextPage = () => {
         <Position />
         <Join />
         <Concat />
-        <Try />
+        <TryNow />
         <Footer />
       </div>
     </>
