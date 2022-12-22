@@ -31,7 +31,7 @@ export const DTCChooseData: DTCChooseDataItem[] = [
       [
         {
           title: '无限制',
-          subTitle: '功能用量无限制，时间 花在业务上'
+          subTitle: '功能用量无限制，时间花在业务上'
         },
         {
           icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/efdd9b443b7b98b27b5ab05602e62814.svg'
@@ -95,7 +95,7 @@ export const DTCChooseData: DTCChooseDataItem[] = [
         },
         {
           icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg',
-          info: '清晰掌握过程指标和ROI'
+          info: '所有营销工具均与数据报告深度打通, 可清晰知道每一种工具类型的有效性和效果'
         }
       ]
     ]
@@ -153,6 +153,63 @@ export const DTCChooseData: DTCChooseDataItem[] = [
         {
           icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg',
           info: '智能文案生成/SEO检测/评论搬家等免费数智化小工具, 并不断新增'
+        }
+      ]
+    ]
+  },
+  {
+    type: '系统能力',
+    data: [
+      [
+        {
+          title: '全球多云部署',
+          subTitle: '充分利用全球主流云的基础设施能力'
+        },
+        {
+          icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/efdd9b443b7b98b27b5ab05602e62814.svg'
+        },
+        {
+          icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg',
+          info: '谷歌云/微软云/亚马逊云/阿里云资源按需调度, 用户系统多区域部署'
+        }
+      ],
+      [
+        {
+          title: '全球CDN加速',
+          subTitle: '让全球用户就近访问'
+        },
+        {
+          icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg'
+        },
+        {
+          icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg',
+          info: '基于Cloudflare/Cloudfront/Akamai等主流CDN进行访问加速'
+        }
+      ],
+      [
+        {
+          title: '高性能',
+          subTitle: '良好的用户访问性能'
+        },
+        {
+          icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg'
+        },
+        {
+          icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg',
+          info: '基于Google评分机制和优化实践对所有网页进行不断优化。满足体验, SEO等多方面要求'
+        }
+      ],
+      [
+        {
+          title: '可定制',
+          subTitle: '系统和功能定制/PaaS模式/独立部署'
+        },
+        {
+          icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/efdd9b443b7b98b27b5ab05602e62814.svg'
+        },
+        {
+          icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg',
+          info: '良好的系统可扩展性, 支持大客户的功能定制。并支持PaaS模式建站, 客户独立部署等需求。'
         }
       ]
     ]

@@ -5,6 +5,8 @@ import { useState } from 'react'
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { belugaMonthData, belugaTypeInfo, belugaYearData } from './data'
 
+const freeLink = 'https://mystro.admin.ishopastro.com/admin/user/login?type=beluga'
+
 const DTCPackage = () => {
   const [showMonth, setShowMonth] = useState(true)
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
@@ -94,7 +96,7 @@ const DTCPackage = () => {
                     style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
                   >
                     <span className="px-[8px] py-[4px] text-[14px] leading-[22px]">
-                      <Link href="/dtc">免费试用</Link>
+                      <Link href={freeLink}>免费试用</Link>
                     </span>
                   </span>
                 </div>
@@ -114,7 +116,7 @@ const DTCPackage = () => {
                     return (
                       <div
                         key={subIndex}
-                        className="flex flex-col justify-center flex-1 p-[12px] border-r border-[#DDE0F1] md:flex-row md:justify-between md:w-[360px] md:px-[16px] md:py-[18px]"
+                        className="flex flex-col items-center justify-center flex-1 p-[12px] border-r border-[#DDE0F1] md:flex-row md:justify-between md:w-[360px] md:px-[16px] md:py-[18px]"
                       >
                         <div className="flex flex-col">
                           <span className="">{title}</span>

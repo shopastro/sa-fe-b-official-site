@@ -13,7 +13,7 @@ const Quick = () => {
           width={1570}
           height={1200}
           quality={100}
-          src="https://media.cdn.ishopastro.com/upload/images/20221206-103824.png_2022-12-06-02-45-25.png"
+          src="https://media.cdn.ishopastro.com/upload/images/1.png_2022-12-22-08-13-25.png"
           alt="快速建站"
         />
       </div>
@@ -45,7 +45,9 @@ const Quick = () => {
               全方位触达外贸客户需求;
             </Description>
           </div>
-          <FreeButton href="/product" />
+          <div className="flex">
+            <FreeButton href="/product" />
+          </div>
         </div>
       </div>
     </div>

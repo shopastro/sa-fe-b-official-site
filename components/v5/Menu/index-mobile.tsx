@@ -2,13 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
-import useIsMobile from '../../../hooks/useIsMobile'
 import Header from './components/Header/index-mobile'
 
 const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo.svg'
 const lightMenuIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/4c69a3c7397eb8af714ef592bfa48af9.svg'
 const darkLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg'
 const darkMenuIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/d413df7dd29f56151bfb4be8d191eb70.svg'
+const addIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/7a7423a5d27fb477da06078dc3a6689a.svg'
+const minusIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/f0c77881530c6ee43515438ef4d8265f.svg'
 
 const Menu: React.FC<MenuProps> = (props) => {
   const { theme = 'dark' } = props
@@ -16,8 +17,8 @@ const Menu: React.FC<MenuProps> = (props) => {
   const menuIcon = theme === 'light' ? lightMenuIcon : darkMenuIcon
 
   const [showMenu, setShowMenu] = useState(false)
+  const [showMore, setShowMore] = useState(false)
   const [radio, setRadio] = useState(0)
-  const isMobile = useIsMobile()
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -89,47 +90,69 @@ const Menu: React.FC<MenuProps> = (props) => {
               width={24}
               height={24}
               quality={100}
-              alt="menu icon"
+              alt="close icon"
             />
           </div>
         </div>
 
         <div
-          className="p-[18px] text-[16px] leading-[20px] text-[#222]"
+          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
           style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
         >
           <Link href="/dtc">DTC建站</Link>
         </div>
         <div
-          className="p-[18px] text-[16px] leading-[20px] text-[#222]"
+          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
           style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
         >
           <Link href="/b2b">B2B建站</Link>
         </div>
         <div
-          className="p-[18px] text-[16px] leading-[20px] text-[#222]"
+          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
           style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
         >
           <Link href="/beluga">白鲸营销</Link>
         </div>
         <div
-          className="p-[18px] text-[16px] leading-[20px] text-[#222]"
+          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
           style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
         >
           <Link href="/solutions">解决方案</Link>
         </div>
-        <div
-          className="p-[18px] text-[16px] leading-[20px] text-[#222]"
-          style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
-        >
-          <Link href="/about">关于</Link>
-          <div></div>
+        <div className="flex flex-col">
+          <div
+            className="flex justify-between p-[16px] text-[16px] leading-[24px] text-[#222]"
+            style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+            onClick={() => {
+              setShowMore(!showMore)
+            }}
+          >
+            <span>关于</span>
+            <div className="flex">
+              <Image src={showMore ? minusIcon : addIcon} width={24} height={24} quality={100} alt="logo" />
+            </div>
+          </div>
+          <div
+            className="flex flex-col text-[14px] leading-[22px] text-[#222] bg-[#F9F9F9] overflow-hidden transition-all"
+            style={{ maxHeight: showMore ? '100vh' : 0 }}
+          >
+            <Link href="/about" passHref>
+              <span className="px-[48px] py-[16px]" style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}>
+                关于
+              </span>
+            </Link>
+            <Link href="/partners" passHref>
+              <span className="px-[48px] py-[16px]" style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}>
+                渠道合作&生态联盟
+              </span>
+            </Link>
+          </div>
         </div>
         <div
-          className="p-[18px] text-[16px] leading-[20px] text-[#222]"
+          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
           style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
         >
-          <Link href="/help">帮助</Link>
+          <Link href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg">帮助</Link>
         </div>
       </div>
     </>

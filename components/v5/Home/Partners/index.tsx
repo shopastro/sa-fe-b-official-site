@@ -1,19 +1,23 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
+import useIsMobile from '../../../../hooks/useIsMobile'
 import { partnersData } from './data'
 
 const Partners = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const { data } = partnersData[activeIndex]
+  const isMobile = useIsMobile()
 
   function handleTitleClick(e: any, index: number) {
-    e.target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-      inline: 'center'
-    })
     setActiveIndex(index)
+    if (isMobile) {
+      e.target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      })
+    }
   }
 
   return (
@@ -45,8 +49,10 @@ const Partners = () => {
         <div className="flex flex-wrap px-[16px]">
           {data.map(({ icon, link }, index) => {
             return (
-              <div key={index} className="w-1/3 px-[4px] mb-[12px] md:w-1/5 md:px-[12px] md:mb-[32px]">
-                <Image src={icon} width={474} height={240} alt={link} />
+              <div key={index} className="w-1/3 px-[4px] mb-[12px] cursor-pointer md:w-1/5 md:px-[12px] md:mb-[32px]">
+                <a href={link} target="_blank" rel="noreferrer">
+                  <Image src={icon} width={474} height={240} alt={link} />
+                </a>
               </div>
             )
           })}

@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { useContainer } from 'unstated-next'
 
-import Modal from '../../../v1/base/Modal'
+import detectionStore from '../../../../store/detectionStore'
 
 const Banner = () => {
-  const [show, setShow] = useState(false)
+  const { setShowMoadl } = useContainer(detectionStore)
 
   return (
     <div className="flex justify-center w-screen">
@@ -42,7 +42,7 @@ const Banner = () => {
             <div
               className="flex fixed bottom-0 left-0 z-10 w-screen px-[20px] py-[10px] bg-[#FFF] cursor-pointer md:mt-[48px] md:static md:w-auto md:p-0 md:bg-transparent"
               onClick={() => {
-                setShow(true)
+                setShowMoadl(true)
               }}
             >
               <span className="flex-1 py-[12px] px-[54px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[12px] md:flex-none md:py-[18px]">
@@ -52,14 +52,6 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      {show && (
-        <Modal
-          visiable={show}
-          handleClose={() => {
-            setShow(false)
-          }}
-        />
-      )}
     </div>
   )
 }

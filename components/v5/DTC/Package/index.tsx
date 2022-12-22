@@ -5,6 +5,8 @@ import { useState } from 'react'
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { dtcMonthData, dtcTypeInfo, dtcYearData } from './data'
 
+const freeLink = 'https://mystro.admin.ishopastro.com/admin/user/login?type=dtc'
+
 const DTCPackage = () => {
   const [showMonth, setShowMonth] = useState(true)
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
@@ -80,7 +82,7 @@ const DTCPackage = () => {
                 <div className="flex items-center justify-center h-[56px] mb-[36px] md:mb-[38px]">
                   <span className="self-start text-[26px] leading-[36px] text-[#18214D] text-opacity-80">¥</span>
                   <span className="text-[56px]">{showMonth ? item.monthPrice : item.yearPrice}</span>
-                  <span className="self-end text-[26px] leading-[36px] text-[#18214D] text-opacity-80">
+                  <span className="self-end text-[26px] leading-[36px] text-[#18214D] text-opacity-80 whitespace-nowrap">
                     {showMonth ? '/月' : '/年'}
                   </span>
                 </div>
@@ -114,11 +116,13 @@ const DTCPackage = () => {
         <div className="hidden flex-col md:flex">
           <div className="mb-[8px] text-[32px] leading-[38px] text-center">抢先体验, 开始免费试用! </div>
           <div className="mb-[24px] text-[18px] leading-[22px] text-center">直接免费7天试用体验星盘DTC建站。</div>
-          <div className="flex justify-center mb-[70px] cursor-pointer">
-            <span className="px-[56px] py-[16px] text-[18px] leading-[26px] text-[#FFF] bg-[#FE8953] rounded-[8px]">
-              免费试用
-            </span>
-          </div>
+          <Link href={freeLink} passHref>
+            <div className="flex justify-center mb-[70px] cursor-pointer">
+              <span className="px-[56px] py-[16px] text-[18px] leading-[26px] text-[#FFF] bg-[#FE8953] rounded-[8px]">
+                免费试用
+              </span>
+            </div>
+          </Link>
         </div>
 
         <div className="flex flex-col md:py-[80px]">
@@ -188,7 +192,7 @@ const DTCPackage = () => {
                 return (
                   <div
                     key={item.type}
-                    className="flex justify-between w-[280px] px-[16px] py-[32px] text-[18px] leading-[22px] border-r border-[#DDE0F1] last:border-r-0"
+                    className="flex items-center justify-between w-[280px] px-[16px] py-[32px] text-[18px] leading-[22px] border-r border-[#DDE0F1] last:border-r-0"
                   >
                     <div>
                       <span>{item.title}</span>
@@ -203,7 +207,7 @@ const DTCPackage = () => {
                       style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
                     >
                       <span className="px-[24px] py-[4px] text-[14px] leading-[22px]">
-                        <Link href="/dtc">免费试用</Link>
+                        <Link href={freeLink}>免费试用</Link>
                       </span>
                     </div>
                   </div>
@@ -217,7 +221,7 @@ const DTCPackage = () => {
                   className="flex text-[14px] leading-[22px] border border-b-0 border-[#DDE0F1] last:border-b"
                 >
                   {subData.map((item, subIndex) => {
-                    const { title, subTitle, logo, icon, info } = item
+                    const { title, subTitle, logo, info } = item
                     // 类目
                     if (title) {
                       return (
@@ -240,19 +244,16 @@ const DTCPackage = () => {
                       )
                     }
                     // 信息
-                    if (info || icon) {
+                    if (info) {
                       return (
                         <div
                           key={subIndex}
-                          className="flex items-center flex-1 p-[12px] text-[#004ED1] border-r border-[#DDE0F1] last:border-none md:w-[280px] md:flex-none md:text-[#18214D] md:last:text-[#004ED1]"
+                          className="flex flex-col justify-center flex-1 p-[12px] text-[#004ED1] border-r border-[#DDE0F1] last:border-none md:w-[280px] md:flex-none md:text-[#18214D] md:last:text-[#004ED1]"
                           style={{ display: isMobile ? (subIndex === activeTypeIndex ? 'flex' : 'none') : 'flex' }}
                         >
-                          {info && <span>{info}</span>}
-                          {icon && (
-                            <span>
-                              <Image src={icon} width={24} height={24} quality={100} alt="icon" />
-                            </span>
-                          )}
+                          {info.map((i, index) => {
+                            return <span key={index}>{i}</span>
+                          })}
                         </div>
                       )
                     }
@@ -265,7 +266,7 @@ const DTCPackage = () => {
 
           <div className="flex justify-center text-[14px] leading-[22px] text-[#FFF] md:hidden">
             <div className=" px-[24px] py-[4px] bg-[#004ED1] rounded-[4px]">
-              <Link href="/dtc">免费试用</Link>
+              <Link href={freeLink}>免费试用</Link>
             </div>
           </div>
         </div>

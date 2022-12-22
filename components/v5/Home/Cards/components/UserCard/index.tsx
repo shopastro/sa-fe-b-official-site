@@ -30,7 +30,9 @@ const UserCard = () => {
               支持采用短信进行弃单召回、短信营销模版, 并与会员管理及促销工具打通, 实现定向用户运营
             </Description>
           </div>
-          <FreeButton href="/product" />
+          <div className="flex">
+            <FreeButton href="/product" />
+          </div>
         </div>
       </div>
       <div className="flex flex-1 order-1 md:order-3 mb-[20px] md:mb-0">
@@ -38,7 +40,7 @@ const UserCard = () => {
           width={1570}
           height={1200}
           quality={100}
-          src="https://media.cdn.ishopastro.com/upload/images/20221206-103811.png_2022-12-06-02-45-24.png"
+          src="https://media.cdn.ishopastro.com/upload/images/4.png_2022-12-22-08-13-26.png"
           alt="快速建站"
         />
       </div>

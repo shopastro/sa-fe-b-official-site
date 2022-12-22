@@ -29,7 +29,9 @@ const Quick = () => {
               通过系统化能力实现超大规模的SKU数量管理和广告平台同步
             </Description>
           </div>
-          <FreeButton href="/product" />
+          <div className="flex">
+            <FreeButton href="/product" />
+          </div>
         </div>
       </div>
       <div className="flex flex-1 order-1 md:order-3 mb-[20px] md:mb-0">
@@ -37,7 +39,7 @@ const Quick = () => {
           width={1570}
           height={1200}
           quality={100}
-          src="https://media.cdn.ishopastro.com/upload/images/20221206-103821.png_2022-12-06-02-45-25.png"
+          src="https://media.cdn.ishopastro.com/upload/images/2.png_2022-12-22-08-13-25.png"
           alt="白鲸广告管理"
         />
       </div>

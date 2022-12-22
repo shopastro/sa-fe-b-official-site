@@ -13,7 +13,7 @@ const SellCard = () => {
           width={1570}
           height={1200}
           quality={100}
-          src="https://media.cdn.ishopastro.com/upload/images/20221206-103816.png_2022-12-06-02-45-24.png"
+          src="https://media.cdn.ishopastro.com/upload/images/3.png_2022-12-22-08-13-26.png"
           alt="快速建站"
         />
       </div>
@@ -34,7 +34,9 @@ const SellCard = () => {
               分享与被分享双方均可获得优惠
             </Description>
           </div>
-          <FreeButton href="/product" />
+          <div className="flex">
+            <FreeButton href="/product" />
+          </div>
         </div>
       </div>
     </div>

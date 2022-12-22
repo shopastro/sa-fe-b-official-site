@@ -53,7 +53,7 @@ const DTCPackage = () => {
               <span>星盘</span>
               <div>
                 <span className="px-[32px] py-[4px] text-[14px] leading-[22px] text-[#FFF] font-[400] bg-[#004ED1] rounded-[4px]">
-                  <Link href="/dtc">免费试用</Link>
+                  <Link href="https://mystro.admin.ishopastro.com/admin/user/login?type=dtc">免费试用</Link>
                 </span>
               </div>
             </div>

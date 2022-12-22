@@ -14,7 +14,7 @@ const About: NextPage = () => {
   return (
     <>
       <Header />
-      <div className="absolute top-0 left-0 w-screen">
+      <div className="absolute top-0 left-0 w-screen hidden md:block">
         <div>
           <Image
             width={1440}

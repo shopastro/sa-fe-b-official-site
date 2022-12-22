@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
 import FreeButton from '../../FreeButton'
@@ -17,8 +16,8 @@ const Customer = () => {
         <div className="flex flex-col mb-[20px] md:flex-row md:flex-wrap md:mx-[-15px]">
           {customerData.map((item, index) => {
             return (
-              <Link key={index} href={item.link} passHref>
-                <div className="flex mb-[20px] last:mb-0 md:w-1/2 md:px-[15px] md:mb-[40px]">
+              <div key={index} className="flex mb-[20px] last:mb-0 md:w-1/2 md:px-[15px] md:mb-[40px]">
+                <a href={item.link} target="_blank" rel="noreferrer">
                   <div className="flex flex-col p-[20px] bg-white rounded-[10px] md:p-[40px]">
                     <div className="mb-[20px]" style={{ display: isMobile ? 'flex' : 'none' }}>
                       <Image width={590} height={404} quality={100} src={item.imageMobile} alt="" />
@@ -33,8 +32,8 @@ const Customer = () => {
                       {item.info}
                     </div>
                   </div>
-                </div>
-              </Link>
+                </a>
+              </div>
             )
           })}
         </div>

@@ -1,15 +1,42 @@
 export const belugaMonthData: BelugaDataItem[][] = [
   [
     { title: '行业洞察数据' },
-    { info: ['可监控同行站点数50个'] },
-    { info: ['可监控同行站点数150个'] },
-    { info: ['可监控同行站点数500个'] }
+    { info: ['站点收藏数30个, 监控数5个'] },
+    { info: ['站点收藏数100个, 监控数20个'] },
+    { info: ['站点收藏数500个, 监控数100个'] }
   ],
   [
     { title: '广告BI工具' },
-    { info: ['大数据广告归因，精细化广告数据分析'] },
-    { info: ['大数据广告归因，精细化广告数据分析'] },
-    { info: ['大数据广告归因，精细化广告数据分析'] }
+    {
+      info: [
+        'Google Feed数1000',
+        'FB Catalog数1000',
+        'TikTok Catalog数1000',
+        '大数据广告归因',
+        '精细化广告数据分析',
+        '广告在线开户'
+      ]
+    },
+    {
+      info: [
+        'Google Feed数3000',
+        'FB Catalog数3000',
+        'TikTok Catalog数3000',
+        '大数据广告归因',
+        '精细化广告数据分析',
+        '广告在线开户'
+      ]
+    },
+    {
+      info: [
+        'Google Feed数30000',
+        'FB Catalog数30000',
+        'TikTok Catalog数30000',
+        '大数据广告归因',
+        '精细化广告数据分析',
+        '广告在线开户'
+      ]
+    }
   ],
   [
     { title: '一站式聊天' },
@@ -36,15 +63,42 @@ export const belugaMonthData: BelugaDataItem[][] = [
 export const belugaYearData: BelugaDataItem[][] = [
   [
     { title: '行业洞察数据' },
-    { info: ['可监控同行站点数50个'] },
-    { info: ['可监控同行站点数150个'] },
-    { info: ['可监控同行站点数500个'] }
+    { info: ['站点收藏数30个, 监控数5个'] },
+    { info: ['站点收藏数100个, 监控数20个'] },
+    { info: ['站点收藏数500个, 监控数100个'] }
   ],
   [
     { title: '广告BI工具' },
-    { info: ['大数据广告归因，精细化广告数据分析'] },
-    { info: ['大数据广告归因，精细化广告数据分析'] },
-    { info: ['大数据广告归因，精细化广告数据分析'] }
+    {
+      info: [
+        'Google Feed数1000',
+        'FB Catalog数1000',
+        'TikTok Catalog数1000',
+        '大数据广告归因',
+        '精细化广告数据分析',
+        '广告在线开户'
+      ]
+    },
+    {
+      info: [
+        'Google Feed数3000',
+        'FB Catalog数3000',
+        'TikTok Catalog数3000',
+        '大数据广告归因',
+        '精细化广告数据分析',
+        '广告在线开户'
+      ]
+    },
+    {
+      info: [
+        'Google Feed数30000',
+        'FB Catalog数30000',
+        'TikTok Catalog数30000',
+        '大数据广告归因',
+        '精细化广告数据分析',
+        '广告在线开户'
+      ]
+    }
   ],
   [
     { title: '一站式聊天' },
@@ -73,19 +127,19 @@ export const belugaTypeInfo = [
     type: 1,
     title: '基础版',
     monthPrice: 380,
-    yearPrice: 380
+    yearPrice: 3800
   },
   {
     type: 2,
     title: '专业版',
     monthPrice: 680,
-    yearPrice: 680
+    yearPrice: 6800
   },
   {
     type: 3,
     title: '旗舰版',
-    monthPrice: 1880,
-    yearPrice: 1880
+    monthPrice: 1980,
+    yearPrice: 19800
   }
 ]
 

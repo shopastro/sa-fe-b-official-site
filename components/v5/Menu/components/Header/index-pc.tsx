@@ -4,10 +4,13 @@ import React, { useEffect, useState } from 'react'
 
 const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo.svg'
 const darkLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg'
+const lightIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/1a3478cfd3dbd8a94bd03643bd927b16.svg'
+const darkIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/d23ef83b042d7975657988671fcacee5.svg'
 
 const Menu: React.FC<MenuProps> = (props) => {
   const { theme = 'dark' } = props
   const logo = theme === 'light' ? lightLogo : darkLogo
+  const icon = theme === 'light' ? lightIcon : darkIcon
 
   return (
     <div
@@ -36,12 +39,22 @@ const Menu: React.FC<MenuProps> = (props) => {
           <div className="mx-[20px] cursor-pointer">
             <Link href="/solutions">解决方案</Link>
           </div>
-          <div className="mx-[20px] cursor-pointer">
+          <div className="flex items-center relative mx-[20px] cursor-pointer">
             <Link href="/about">关于</Link>
-            <div></div>
+            <div className="flex items-center ml-[12px]">
+              <Image src={icon} width={10} height={5} quality={100} alt="icon" />
+            </div>
+            {/* <div className="flex flex-col absolute top-[32px] left-0 p-[20px] text-[14px] leading-[22px] text-[#222] bg-white bg-opacity-90 rounded-[4px]">
+              <Link href="/about" passHref>
+                <span className="mb-[16px] whitespace-nowrap">关于</span>
+              </Link>
+              <Link href="/partners" passHref>
+                <span className="whitespace-nowrap">渠道合作&生态联盟</span>
+              </Link>
+            </div> */}
           </div>
           <div className="mx-[20px] cursor-pointer">
-            <Link href="/help">帮助</Link>
+            <Link href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg">帮助</Link>
           </div>
         </div>
         <div className="ml-[56px] flex items-center">

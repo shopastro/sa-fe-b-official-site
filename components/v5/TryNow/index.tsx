@@ -1,6 +1,7 @@
 import Link from 'next/link'
+import React from 'react'
 
-const TryNow = () => {
+const TryNow: React.FC<TryNowProps> = (props) => {
   return (
     <div className="flex flex-col items-center w-screen bg-[#F5F6FA]">
       <div className="flex flex-col items-center relative px-[20px] py-[40px] overflow-hidden md:py-[80px]">
@@ -10,7 +11,7 @@ const TryNow = () => {
         <div className="mb-[10px] text-[18px] leading-[28px] text-[#535D77] md:mb-[20px]">
           光看不够? 立即开始免费7天试用。
         </div>
-        <Link href="/product" passHref>
+        <Link href={props.href ?? '/product'} passHref>
           <div className="flex cursor-pointer">
             <span className="px-[52px] py-[12px] text-[16px] leading-[24px] text-[#004DD1] font-[600] border border-[#004DD1] rounded-[12px] md:py-[18px]">
               免费试用
@@ -20,6 +21,10 @@ const TryNow = () => {
       </div>
     </div>
   )
+}
+
+export interface TryNowProps {
+  href?: string
 }
 
 export default TryNow

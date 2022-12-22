@@ -19,11 +19,11 @@ export const partnersData = [
         link: ''
       },
       {
-        icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103953.png_2022-12-13-02-40-26.png',
+        icon: 'https://media.cdn.ishopastro.com/upload/images/20221222-162929.png_2022-12-22-08-30-14.png',
         link: ''
       },
       {
-        icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103950.png_2022-12-13-02-40-26.png',
+        icon: 'https://media.cdn.ishopastro.com/upload/images/20221222-162934.png_2022-12-22-08-30-14.png',
         link: ''
       },
       {
@@ -37,19 +37,19 @@ export const partnersData = [
     data: [
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103943.png_2022-12-13-02-40-26.png',
-        link: ''
+        link: 'https://hawkemedia.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103938.png_2022-12-13-02-40-26.png',
-        link: ''
+        link: 'https://www.brand-plus.com.cn/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103935.png_2022-12-13-02-40-25.png',
-        link: ''
+        link: 'https://we-branding.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103931.png_2022-12-13-02-40-25.png',
-        link: ''
+        link: 'https://www.cozmox.cn/'
       }
     ]
   },
@@ -58,31 +58,31 @@ export const partnersData = [
     data: [
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103928.png_2022-12-13-02-40-25.png',
-        link: ''
+        link: 'https://www.bluefocusgroup.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103924.png_2022-12-13-02-40-25.png',
-        link: ''
+        link: 'https://overseas.cmcm.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103920.png_2022-12-13-02-40-25.png',
-        link: ''
+        link: 'https://www.yeahmobi.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103917.png_2022-12-13-02-40-24.png',
-        link: ''
+        link: 'https://www.qlinyun.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103914.png_2022-12-13-02-40-24.png',
-        link: ''
+        link: 'https://www.chijingmcn.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103910.png_2022-12-13-02-40-24.png',
-        link: ''
+        link: 'https://www.socialbook.com.cn/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103907.png_2022-12-13-02-40-24.png',
-        link: ''
+        link: 'https://www.wotokol.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103904.png_2022-12-13-02-40-23.png',
@@ -90,7 +90,7 @@ export const partnersData = [
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103900.png_2022-12-13-02-40-23.png',
-        link: ''
+        link: 'https://www.nxcloud.com'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103856.png_2022-12-13-02-40-23.png',
@@ -103,27 +103,27 @@ export const partnersData = [
     data: [
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103851.png_2022-12-13-02-40-23.png',
-        link: ''
+        link: 'https://paypal.com'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103848.png_2022-12-13-02-40-23.png',
-        link: ''
+        link: 'https://stripe.com'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103845.png_2022-12-13-02-40-22.png',
-        link: ''
+        link: 'https://www.oceanpayment.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103841.png_2022-12-13-02-40-22.png',
-        link: ''
+        link: 'https://swooshtransfer.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103837.png_2022-12-13-02-40-22.png',
-        link: ''
+        link: 'https://www.useepay.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103833.png_2022-12-13-02-40-22.png',
-        link: ''
+        link: 'https://global.lianlian.com/'
       }
     ]
   },
@@ -132,59 +132,59 @@ export const partnersData = [
     data: [
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103828.png_2022-12-13-02-40-22.png',
-        link: ''
+        link: 'http://express.4px.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103824.png_2022-12-13-02-40-22.png',
-        link: ''
+        link: 'https://www.yunexpress.cn/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103819.png_2022-12-13-02-40-21.png',
-        link: ''
+        link: 'https://www.jtexpress.cn/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103815.png_2022-12-13-02-40-21.png',
-        link: ''
+        link: 'http://www.sinotrans.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103811.png_2022-12-13-02-40-21.png',
-        link: ''
+        link: 'https://www.yw56.com.cn/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103808.png_2022-12-13-02-40-21.png',
-        link: ''
+        link: 'https://gpn.cainiao.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103803.png_2022-12-13-02-40-21.png',
-        link: ''
+        link: 'http://www.51-delivery.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103759.png_2022-12-13-02-40-21.png',
-        link: ''
+        link: 'http://www.styd168.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103755.png_2022-12-13-02-40-20.png',
-        link: ''
+        link: 'https://www.17track.net/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103750.png_2022-12-13-02-40-20.png',
-        link: ''
+        link: 'https://www.wangdian.cn/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103747.png_2022-12-13-02-40-20.png',
-        link: ''
+        link: 'https://www.mabangerp.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103743.png_2022-12-13-02-40-20.png',
-        link: ''
+        link: 'http://www.allroot.cn/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103739.png_2022-12-13-02-40-20.png',
-        link: ''
+        link: 'https://www.jushuitan.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103734.png_2022-12-13-02-40-20.png',
-        link: ''
+        link: 'https://www.eccang.com/'
       }
     ]
   }

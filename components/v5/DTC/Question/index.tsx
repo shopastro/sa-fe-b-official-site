@@ -84,16 +84,6 @@ const DTCPackage = () => {
           </span>
         </div>
       </div>
-      {/* 抢先体验 */}
-      <div className="flex flex-col px-[20px] py-[40px] text-center bg-[#F5F6FA] md:py-[80px]">
-        <div className="mb-[20px] text-[32px] leading-[38px] font-[600]">抢先体验? 立即开启免费试用</div>
-        <div className="mb-[20px] text-[18px] leading-[28px]">光看不够? 立即开始免费7天试用。</div>
-        <div className="flex justify-center">
-          <span className="px-[58px] py-[18px] text-[18px] leading-[26px] text-[#004DD1] border border-[#004DD1] rounded-[12px] ">
-            <Link href="/">免费试用</Link>
-          </span>
-        </div>
-      </div>
     </div>
   )
 }

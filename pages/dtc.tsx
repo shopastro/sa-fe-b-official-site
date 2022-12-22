@@ -7,6 +7,7 @@ import Package from '../components/v5/DTC/Package'
 import Question from '../components/v5/DTC/Question'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
+import TryNow from '../components/v5/TryNow'
 
 const DTC: NextPage = () => {
   return (
@@ -32,6 +33,7 @@ const DTC: NextPage = () => {
         <Package />
         <Choose />
         <Question />
+        <TryNow href="https://mystro.admin.ishopastro.com/admin/user/login?type=dtc" />
         <Footer />
       </div>
     </>
