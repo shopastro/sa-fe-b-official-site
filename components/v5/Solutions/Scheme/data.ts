@@ -10,7 +10,7 @@ export const schemaData = [
       '内置大量免费有效插件，所需即所得，降低运营和经营成本'
     ],
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/bceba1b10f0671629438c96905150c55.svg',
-    image: 'https://media.cdn.ishopastro.com/upload/images/20221221-145221.jpeg_2022-12-21-06-53-30.jpg'
+    image: 'https://media.cdn.ishopastro.com/upload/images/6.png_2022-12-22-03-04-04.png'
   },
   {
     title: '多渠道布局',
@@ -23,7 +23,7 @@ export const schemaData = [
       '支持亚马逊一键下单，让买家快速链接独立站到亚马逊'
     ],
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/a24296744c2182301aca144a41c2740f.svg',
-    image: 'https://media.cdn.ishopastro.com/upload/images/20221221-145218.jpeg_2022-12-21-06-53-29.jpg'
+    image: 'https://media.cdn.ishopastro.com/upload/images/1.png_2022-12-22-03-04-04.png'
   },
   {
     title: '商品定制POD',
@@ -34,7 +34,7 @@ export const schemaData = [
       '支持亚马逊一键下单，让买家快速链接独立站到亚马逊'
     ],
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/a7fe82e402e9b8c0fecd637fea3ac87e.svg',
-    image: 'https://media.cdn.ishopastro.com/upload/images/20221221-145216.jpeg_2022-12-21-06-53-29.jpg'
+    image: 'https://media.cdn.ishopastro.com/upload/images/3.png_2022-12-22-03-04-05.png'
   },
   {
     title: 'B2B 外贸',
@@ -46,7 +46,7 @@ export const schemaData = [
       '线上交易管理，及时性有效的进行线上化交易管理流程，并及时触达买家'
     ],
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/81a8cd913080fa8b5cb58ec422580984.svg',
-    image: 'https://media.cdn.ishopastro.com/upload/images/20221221-145212.jpeg_2022-12-21-06-53-29.jpg'
+    image: 'https://media.cdn.ishopastro.com/upload/images/7.png_2022-12-22-03-04-06.png'
   },
   {
     title: '无货源开店',
@@ -58,7 +58,7 @@ export const schemaData = [
       '自动履约，交易自动回传至星盘后台，通过物流模版实现订单的快速物流履约'
     ],
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/728648b4e5a8f029a5736a45e91b021d.svg',
-    image: 'https://media.cdn.ishopastro.com/upload/images/20221221-145208.jpeg_2022-12-21-06-53-29.jpg'
+    image: 'https://media.cdn.ishopastro.com/upload/images/4.png_2022-12-22-03-04-05.png'
   },
   {
     title: '供应链测品及卖货',
@@ -70,7 +70,7 @@ export const schemaData = [
       'Facebook 归因助手和盯盘工具，有效助力广告投入和决策'
     ],
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/ca9ec1b774741b209331564843aba533.svg',
-    image: 'https://media.cdn.ishopastro.com/upload/images/20221221-145206.jpeg_2022-12-21-06-53-29.jpg'
+    image: 'https://media.cdn.ishopastro.com/upload/images/2.png_2022-12-22-03-04-04.png'
   },
   {
     title: '一件代发供货',
@@ -84,6 +84,6 @@ export const schemaData = [
       '实现VAT等合规管理, 保障店铺经营的合规合法'
     ],
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/860ac5d7ddcb1cf64975634f9ec1723f.svg',
-    image: 'https://media.cdn.ishopastro.com/upload/images/20221221-145202.jpeg_2022-12-21-06-53-29.jpg'
+    image: 'https://media.cdn.ishopastro.com/upload/images/5.png_2022-12-22-03-04-04.png'
   }
 ]

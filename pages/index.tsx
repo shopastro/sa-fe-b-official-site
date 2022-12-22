@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 import Header from '../components/v2/Header'
 import Footer from '../components/v5/Footer'
-import Banner from '../components/v5/Index/Banner'
-import Cards from '../components/v5/Index/Cards'
-import Partners from '../components/v5/Index/Partners'
-import Plugins from '../components/v5/Index/Plugins'
-import Solution from '../components/v5/Index/Solution'
+import Banner from '../components/v5/Home/Banner'
+import Cards from '../components/v5/Home/Cards'
+import Partners from '../components/v5/Home/Partners'
+import Plugins from '../components/v5/Home/Plugins'
+import Solution from '../components/v5/Home/Solution'
 import Menu from '../components/v5/Menu'
 
 const Home: NextPage = () => {

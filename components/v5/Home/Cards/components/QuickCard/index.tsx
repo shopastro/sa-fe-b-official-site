@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
+import FreeButton from '../../../../FreeButton'
 import Description from '../Description'
-import FreeButton from '../FreeButton'
 import SubTitle from '../SubTitle'
 import Title from '../Title'
 

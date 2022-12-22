@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
+import FreeButton from '../../FreeButton'
 import { schemaData } from './data'
 
 const Banner = () => {
@@ -65,9 +66,9 @@ const Banner = () => {
                 }}
               >
                 <div className="mb-[28px] md:flex-1">
-                  <Image width={750} height={536} quality={100} src={item.image} alt="image" />
+                  <Image width={1156} height={830} quality={100} src={item.image} alt="image" />
                 </div>
-                <div className="flex flex-col px-[20px] md:flex-1 md:justify-center md:ml-[50px]">
+                <div className="flex flex-col px-[20px] md:flex-1 md:justify-center md:ml-[50px] md:px-0">
                   <div className="flex mb-[12px] md:flex-col md:mb-[24px]">
                     <span className="w-[40px] h-[40px] mr-[12px] md:w-[60px] md:h-[60px] md:mb-[24px]">
                       <Image width={60} height={60} quality={100} src={item.icon} alt="icon" />
@@ -97,19 +98,7 @@ const Banner = () => {
         </div>
 
         <div className="flex items-center justify-center mt-[20px] md:mt-[40px]">
-          <Link href="/product" passHref>
-            <div className="flex items-center py-[8px] px-[28px] border border-solid border-[#104CBC] bg-[#F0F3FF] rounded-[8px] md:py-[14px] cursor-pointer">
-              <span className="mr-[24px] text-[16px] text-[#004DD1] font-[700] md:text-[18px]">免费试用</span>
-              <span className="w-[23px] h-[23px] text-[#004DD1]">
-                <Image
-                  width={23}
-                  height={23}
-                  src="https://media.cdn.ishopastro.com/upload/images/20221206-110145.png_2022-12-06-03-01-59.png"
-                  alt=""
-                />
-              </span>
-            </div>
-          </Link>
+          <FreeButton href="/product" />
         </div>
       </div>
     </div>
