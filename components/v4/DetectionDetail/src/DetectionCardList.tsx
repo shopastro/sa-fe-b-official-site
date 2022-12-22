@@ -6,6 +6,9 @@ import classNames from 'classnames'
 import Button from '../../../v3/base/Button'
 import { ErrorIcon, ScuessIcon, WarningIcon } from './DetectionTab'
 import ImageView from '../../ImageView/ImageView'
+import { getIcon, getType } from '../utils'
+import ReactMarkdown from 'react-markdown'
+import { PerformanceItem } from '../type'
 
 const IconList = {
   标签检测: (
@@ -134,6 +137,7 @@ const IconList = {
 
 const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }) => {
   const { dataSource, isUnlock, setShowMoadl } = useContainer(detectionStore)
+  const { mobilePerformanceItems, pcPerformanceItems } = dataSource
 
   const unlockNode = (
     <div className={styles.unlockNode}>
@@ -151,7 +155,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
       const groupInfo = checkGroupMap[key]
 
       cardNodeList.push(
-        <div key={key} className={styles.cardItem}>
+        <div key={key} id={`${key}_subGroup`} className={styles.cardItem}>
           <div className={styles.class}>
             {IconList[key as '图片检测'] || IconList.标签检测}
             {key}
@@ -159,7 +163,7 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
           {/* children */}
           {groupInfo.map((item) => {
             return (
-              <div key={item.groupType} className={styles.card}>
+              <div key={item.groupType} id={item.groupName} className={styles.card}>
                 <div className={styles.cardClass} id={item.groupName}>
                   {item.passed ? (
                     <ScuessIcon style={{ marginRight: '8px', width: '24px', height: '24px' }} />
@@ -254,7 +258,58 @@ const DetectionCardList: React.FC<{ showLock?: boolean }> = ({ showLock = true }
     return cardNodeList
   }, [dataSource, isUnlock, showLock, unlockNode])
 
-  return <div className={styles.cardList}>{cardList}</div>
+  const getItem = (it: PerformanceItem, type: 'pc' | 'mb') => {
+    return (
+      <div key={it.name} id={`${it.name}_${type}`} className={styles.contentGroupItem}>
+        <div className={styles.contentGroupItemSubTitle}>
+          {getIcon(type, it.numericValue, it.name)}
+          {it.name}
+          <span className={getType(type, it.numericValue, it.name)}>{`${it.numericValue}${it.numericUnit || ''}`}</span>
+        </div>
+        <div className={styles.contentGroupItemDesc}>
+          <ReactMarkdown
+            components={{
+              a: (res) => {
+                return (
+                  <a href={res.href} target="_blank" rel="noreferrer">
+                    {res.children}
+                  </a>
+                )
+              },
+            }}
+          >
+            {it.description || ''}
+          </ReactMarkdown>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className={styles.cardList}>
+      <div className={styles.contentGroupItemTitle} id="pc_title_bar">
+        PC性能检测
+      </div>
+      <div className={styles.contentGroupItemBox}>
+        {pcPerformanceItems?.map((it) => {
+          return <div key={it.name}>{getItem(it, 'pc')}</div>
+        })}
+      </div>
+
+      <div className={styles.contentGroupItemTitle} id="mb_title_bar">
+        移动性能检测
+      </div>
+      <div className={styles.contentGroupItemBox}>
+        {mobilePerformanceItems?.map((it) => {
+          return <div key={it.name}>{getItem(it, 'mb')}</div>
+        })}
+      </div>
+      <div className={styles.contentGroupItemTitle} id="seo_title_bar">
+        SEO检测
+      </div>
+      {cardList}
+    </div>
+  )
 }
 
 export default DetectionCardList

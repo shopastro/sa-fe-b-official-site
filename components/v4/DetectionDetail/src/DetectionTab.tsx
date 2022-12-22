@@ -3,6 +3,7 @@ import { CSSProperties, useMemo, useState } from 'react'
 import { useContainer } from 'unstated-next'
 import detectionStore from '../../../../store/detectionStore'
 import styles from '../index.module.scss'
+import { getIcon } from '../utils'
 
 export const DownIcon = () => {
   return (
@@ -82,19 +83,21 @@ export const WarningIcon = ({ style }: { style?: CSSProperties }) => {
 
 const DetectionTab = () => {
   const { dataSource } = useContainer(detectionStore)
+  const { mobilePerformanceItems, pcPerformanceItems } = dataSource
+
   const [type, setType] = useState('')
 
-  const handleClick = (type: string) => {
-    const { offsetTop = 0 } = document.getElementById(type) || {}
-    let offset = -150
-
-    setType(type)
-
-    window.scrollTo({
-      top: offsetTop - offset,
-      left: 0,
-      behavior: 'smooth',
-    })
+  const moveItem = (
+    e: React.MouseEvent<HTMLLIElement, MouseEvent> | React.MouseEvent<HTMLDivElement, MouseEvent>,
+    id?: string
+  ) => {
+    id &&
+      document.getElementById(id)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest',
+      })
+    e.stopPropagation()
   }
 
   const tableList = useMemo(() => {
@@ -106,7 +109,15 @@ const DetectionTab = () => {
 
       tableNodeList.push(
         <li key={key} className={styles.item}>
-          <div className={styles.title}>
+          <div
+            className={classNames(styles.title, {
+              [`${styles.valueSelect}`]: type == `${key}_subGroup`,
+            })}
+            onClick={(e) => {
+              moveItem(e, `${key}_subGroup`)
+              setType(`${key}_subGroup`)
+            }}
+          >
             <DownIcon />
             <div>{key}</div>
           </div>
@@ -118,7 +129,10 @@ const DetectionTab = () => {
                   className={classNames(styles.value, {
                     [`${styles.valueSelect}`]: type == item.groupName,
                   })}
-                  onClick={() => handleClick(item.groupName ?? '')}
+                  onClick={(e) => {
+                    setType(item.groupName ?? '')
+                    moveItem(e, item.groupName)
+                  }}
                 >
                   {item.passed ? (
                     <ScuessIcon />
@@ -142,6 +156,82 @@ const DetectionTab = () => {
   return (
     <div className={styles.table}>
       <div className={styles.line} />
+      <div
+        className={classNames(styles.Group, {
+          [`${styles.valueSelect}`]: type == 'pc_title_bar',
+        })}
+        onClick={(e) => {
+          moveItem(e, `pc_title_bar`)
+          setType('pc_title_bar')
+        }}
+      >
+        <DownIcon />
+        PC性能检测
+      </div>
+      <div className={styles.GroupItemBox}>
+        {pcPerformanceItems?.map((it) => {
+          return (
+            <div
+              key={it.name}
+              className={classNames(styles.GroupItem, {
+                [`${styles.valueSelect}`]: type == `${it.name}_pc`,
+              })}
+              onClick={(e) => {
+                setType(it.name ?? '')
+                moveItem(e, `${it.name}_pc`)
+                setType(`${it.name}_pc`)
+              }}
+            >
+              {getIcon('pc', it.numericValue, it.name)}
+              {it.name}
+            </div>
+          )
+        })}
+      </div>
+      <div
+        className={classNames(styles.Group, {
+          [`${styles.valueSelect}`]: type == 'mb_title_bar',
+        })}
+        onClick={(e) => {
+          moveItem(e, `mb_title_bar`)
+          setType('mb_title_bar')
+        }}
+      >
+        <DownIcon />
+        移动性能检测
+      </div>
+      <div className={styles.GroupItemBox}>
+        {mobilePerformanceItems?.map((it) => {
+          return (
+            <div
+              key={it.name}
+              className={classNames(styles.GroupItem, {
+                [`${styles.valueSelect}`]: type == `${it.name}_mb`,
+              })}
+              onClick={(e) => {
+                setType(it.name ?? '')
+                moveItem(e, `${it.name}_mb`)
+                setType(`${it.name}_mb`)
+              }}
+            >
+              {getIcon('mb', it.numericValue, it.name)}
+              {it.name}
+            </div>
+          )
+        })}
+      </div>
+      <div
+        className={classNames(styles.Group, {
+          [`${styles.valueSelect}`]: type == 'seo_title_bar',
+        })}
+        onClick={(e) => {
+          setType('seo_title_bar')
+          moveItem(e, `seo_title_bar`)
+        }}
+      >
+        <DownIcon />
+        SEO检测
+      </div>
       <ul className={styles.list}>{tableList}</ul>
     </div>
   )
