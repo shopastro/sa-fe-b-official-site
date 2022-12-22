@@ -29,9 +29,9 @@ export const schemaData = [
     title: '商品定制POD',
     description: '满足客户个性化需求，上传图文进行商品的特殊化定制，从而提高顾客满意度，打造差异化优势，促进销量增长。',
     info: [
-      '亚马逊商品和评论信息一键同步迁移，提升运营人效',
-      '捆绑销售、满减满赠、会员积分等营销能力，助力私域客户沉淀',
-      '支持亚马逊一键下单，让买家快速链接独立站到亚马逊'
+      'POD后台设置, 快速编辑商品定制内容',
+      '买家上传定制化图文，便捷查看商品定制效果',
+      '订单打标，定制化商品图片回传，清晰获取用户定制需求'
     ],
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/a7fe82e402e9b8c0fecd637fea3ac87e.svg',
     image: 'https://media.cdn.ishopastro.com/upload/images/3.png_2022-12-22-03-04-05.png'

@@ -38,25 +38,14 @@ export const belugaMonthData: BelugaDataItem[][] = [
       ]
     }
   ],
+  [{ title: '联盟营销' }, { info: ['月分销订单数200'] }, { info: ['月分销订单数600'] }, { info: ['月分销订单数6000'] }],
   [
-    { title: '一站式聊天' },
-    { info: ['Web Chat', 'Whats App', 'Facebook Messenger'] },
-    { info: ['Web Chat', 'Whats App', 'Facebook Messenger'] },
-    { info: ['Web Chat', 'Whats App', 'Facebook Messenger'] }
-  ],
-  [
-    { title: '一站式社媒管理' },
+    { title: 'CRM' },
     {
-      info: ['Post管理', '粉丝互动', 'VOC检测']
+      info: ['月邮件发送量1000条', '月短信发送量200条', '人群管理', 'Chat', 'MA']
     },
-    { info: ['Post管理', '粉丝互动', 'VOC检测'] },
-    { info: ['Post管理', '粉丝互动', 'VOC检测'] }
-  ],
-  [
-    { title: '联系人管理及EDM' },
-    { info: ['月邮件发送量1000条', '联系人管理'] },
-    { info: ['月邮件发送量1000条', '联系人管理'] },
-    { info: ['月邮件发送量1000条', '联系人管理'] }
+    { info: ['月邮件发送量3000条', '月短信发送量500条', '人群管理', 'Chat', 'MA'] },
+    { info: ['月邮件发送量30000条', '月短信发送量5000条', '人群管理', 'Chat', 'MA'] }
   ]
 ]
 
@@ -100,25 +89,14 @@ export const belugaYearData: BelugaDataItem[][] = [
       ]
     }
   ],
+  [{ title: '联盟营销' }, { info: ['月分销订单数200'] }, { info: ['月分销订单数600'] }, { info: ['月分销订单数6000'] }],
   [
-    { title: '一站式聊天' },
-    { info: ['Web Chat', 'Whats App', 'Facebook Messenger'] },
-    { info: ['Web Chat', 'Whats App', 'Facebook Messenger'] },
-    { info: ['Web Chat', 'Whats App', 'Facebook Messenger'] }
-  ],
-  [
-    { title: '一站式社媒管理' },
+    { title: 'CRM' },
     {
-      info: ['Post管理', '粉丝互动', 'VOC检测']
+      info: ['月邮件发送量1000条', '月短信发送量200条', '人群管理', 'Chat', 'MA']
     },
-    { info: ['Post管理', '粉丝互动', 'VOC检测'] },
-    { info: ['Post管理', '粉丝互动', 'VOC检测'] }
-  ],
-  [
-    { title: '联系人管理及EDM' },
-    { info: ['月邮件发送量1000条', '联系人管理'] },
-    { info: ['月邮件发送量1000条', '联系人管理'] },
-    { info: ['月邮件发送量1000条', '联系人管理'] }
+    { info: ['月邮件发送量3000条', '月短信发送量500条', '人群管理', 'Chat', 'MA'] },
+    { info: ['月邮件发送量30000条', '月短信发送量5000条', '人群管理', 'Chat', 'MA'] }
   ]
 ]
 

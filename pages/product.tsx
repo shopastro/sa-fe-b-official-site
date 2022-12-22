@@ -9,7 +9,10 @@ import Menu from '../components/v5/Menu'
 const Product: NextPage = () => {
   return (
     <>
-      <Header />
+      <Header
+        description="shopastro, 星盘跨境, 提供一站式跨境私域增长解决方案, 您可方便快捷的建设DTC/B2B的站点或者可直接使用星盘的智数营销产品“白鲸营销”。--shopastro星盘跨境"
+        keywords="试用产品, 一站式, 跨境私域增长, 解决方案, DTC建站套餐, B2B建站, 白鲸营销"
+      />
       <div className="flex items-center justify-center absolute top-0 left-0 w-screen overflow-hidden"></div>
       <div>
         <Menu />
@@ -118,7 +121,7 @@ const Product: NextPage = () => {
               </div>
               <div className="mb-[24px] text-[16px] leading-[24px] text-[#535D77]">
                 Ask about Commerce Cloud pricing, implementation, or anything else. Our highly trained reps are standing
-                by, ready to help. 如果您对我们的产品有任何疑问，请放心与随时联系星盘跨境专属顾问。
+                by, ready to help. 如果您对我们的产品有任何疑问, 请放心与随时联系星盘跨境专属顾问。
               </div>
               <div className="flex flex-col items-center justify-center w-[148px] mb-[24px] px-[32px] py-[12px] border rounded-[6px]">
                 <span className="text-[18px] leading-[26px]">微信直聊</span>

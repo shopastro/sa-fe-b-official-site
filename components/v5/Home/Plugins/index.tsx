@@ -28,9 +28,23 @@ const Plugins = () => {
         <div className="mb-[36px] text-[14px] leading-[22px] text-[#535D77] md:mb-[46px] md:text-[18px] md:leading-[28px]">
           官方出品，覆盖主流商品与促销等实用工具，开箱即用。
         </div>
-        <div className="flex overflow-x-auto">
-          <div></div>
-
+        <div className="flex relative overflow-x-auto">
+          {/* pc */}
+          <div
+            className="flex items-center justify-center absolute top-0 left-0 w-[102px] h-[312px] z-10"
+            style={{
+              transform: 'rotateY(180deg)',
+              background: 'linear-gradient(280.97deg, #F5F6FA 35.98%, rgba(245, 246, 250, 0) 98.42%)'
+            }}
+          >
+            <Image
+              width={58}
+              height={58}
+              quality={100}
+              src="https://media.cdn.ishopastro.com/svg/shopastrohome/cd0fb76c374c39f5c1fc747a424b2d0c.svg"
+              alt=""
+            />
+          </div>
           <div className="hidden md:flex">
             {pcPluginsData.map((pluginsRowData, rowIndex) => {
               return (
@@ -52,7 +66,19 @@ const Plugins = () => {
               )
             })}
           </div>
-
+          <div
+            className="flex items-center justify-center absolute top-0 right-0 w-[102px] h-[312px]"
+            style={{ background: 'linear-gradient(280.97deg, #F5F6FA 35.98%, rgba(245, 246, 250, 0) 98.42%)' }}
+          >
+            <Image
+              width={58}
+              height={58}
+              quality={100}
+              src="https://media.cdn.ishopastro.com/svg/shopastrohome/cd0fb76c374c39f5c1fc747a424b2d0c.svg"
+              alt=""
+            />
+          </div>
+          {/* h5 */}
           <div className="flex md:hidden">
             {mobilePluginsData.map((pluginsRowData, rowIndex) => {
               return (
@@ -76,8 +102,6 @@ const Plugins = () => {
               )
             })}
           </div>
-
-          <div></div>
         </div>
       </div>
     </div>

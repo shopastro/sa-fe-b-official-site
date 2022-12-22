@@ -4,31 +4,31 @@ export const partnersData = [
     data: [
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-104005.png_2022-12-13-02-40-27.png',
-        link: ''
+        link: 'https://google.com'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-104002.png_2022-12-13-02-40-27.png',
-        link: ''
+        link: 'https://www.facebook.com'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103958.png_2022-12-13-02-40-27.png',
-        link: ''
+        link: 'https://www.tiktok.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103955.png_2022-12-13-02-40-27.png',
-        link: ''
+        link: 'https://cloud.google.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221222-162929.png_2022-12-22-08-30-14.png',
-        link: ''
+        link: 'https://azure.microsoft.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221222-162934.png_2022-12-22-08-30-14.png',
-        link: ''
+        link: 'https://aws.amazon.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103946.png_2022-12-13-02-40-26.png',
-        link: ''
+        link: 'https://www.aliyun.com/'
       }
     ]
   },
@@ -86,7 +86,7 @@ export const partnersData = [
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103904.png_2022-12-13-02-40-23.png',
-        link: ''
+        link: 'https://www.klaviyo.com/'
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103900.png_2022-12-13-02-40-23.png',
@@ -94,7 +94,7 @@ export const partnersData = [
       },
       {
         icon: 'https://media.cdn.ishopastro.com/upload/images/20221213-103856.png_2022-12-13-02-40-23.png',
-        link: ''
+        link: 'https://dtkj.net/'
       }
     ]
   },
