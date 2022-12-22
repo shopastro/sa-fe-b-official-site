@@ -2,18 +2,19 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 
 import Header from '../components/v2/Header'
-import Banner from '../components/v5/Banner'
-import Cards from '../components/v5/Cards'
 import Footer from '../components/v5/Footer'
+import Banner from '../components/v5/Index/Banner'
+import Cards from '../components/v5/Index/Cards'
+import Partners from '../components/v5/Index/Partners'
+import Plugins from '../components/v5/Index/Plugins'
+import Solution from '../components/v5/Index/Solution'
 import Menu from '../components/v5/Menu'
-import Partners from '../components/v5/Partners'
-import Plugins from '../components/v5/Plugins'
-import Solution from '../components/v5/Solution'
 
 const Home: NextPage = () => {
   return (
     <>
       <Header />
+      {/* 背景 */}
       <div className="flex items-center justify-center absolute top-0 left-0 w-screen h-[1100px] md:h-[950px] bg-[#003892] overflow-hidden">
         <div className="relative w-screen h-full md:w-[1200px] md:m-auto">
           <div className="absolute w-[220px] top-[75px] left-[-15px] md:top-[270px] md:left-[624px] md:w-[353px]">
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+      {/* 内容 */}
       <div className="relative">
         <Menu theme="light" />
         <Banner />

@@ -1,12 +1,14 @@
 import type { NextPage } from 'next'
-import Header from '../components/v2/Header'
-import styles from '../styles/Home.module.css'
 import React from 'react'
+
+import Doc from '../components/v1/Doc'
 import Footer from '../components/v1/Footer'
 import Menu from '../components/v1/Menu'
-import Doc from '../components/v1/Doc'
+import Header from '../components/v2/Header'
+import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+// 用户协议
+const Agreement: NextPage = () => {
   return (
     <div className={styles.container}>
       <Header />
@@ -19,4 +21,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Agreement

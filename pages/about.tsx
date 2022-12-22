@@ -10,7 +10,7 @@ import Try from '../components/v5/About/Try'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 
-const Solutions: NextPage = () => {
+const About: NextPage = () => {
   return (
     <>
       <Header />
@@ -59,4 +59,4 @@ const Solutions: NextPage = () => {
   )
 }
 
-export default Solutions
+export default About

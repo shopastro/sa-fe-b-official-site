@@ -6,6 +6,7 @@ import Menu from '../components/v5/Menu'
 import Banner from '../components/v5/Solutions/Banner'
 import Scheme from '../components/v5/Solutions/Scheme'
 
+// 解决方案
 const Solutions: NextPage = () => {
   return (
     <>

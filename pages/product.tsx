@@ -5,7 +5,8 @@ import Header from '../components/v2/Header'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 
-const Home: NextPage = () => {
+// 产品方案
+const Product: NextPage = () => {
   return (
     <>
       <Header />
@@ -147,4 +148,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Product

@@ -1,23 +1,20 @@
 import type { NextPage } from 'next'
+
 import Header from '../components/v2/Header'
-import Menu from '../components/v1/Menu'
-import Footer from '../components/v1/Footer'
-import EcologicalTop from '../components/v1/Ecological'
-import EcologicalForm from '../components/v1/EcologicalForm '
+import Footer from '../components/v5/Footer'
+import Menu from '../components/v5/Menu'
 
-const Ecological: NextPage = () => {
+// 渠道合作
+const Partners: NextPage = () => {
   return (
-    <div style={{ position: 'relative' }}>
+    <>
       <Header />
-
-      <section className="sec-container">
+      <div>
         <Menu />
-        <EcologicalTop />
-        <EcologicalForm />
-      </section>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   )
 }
 
-export default Ecological
+export default Partners

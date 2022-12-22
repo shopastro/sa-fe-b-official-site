@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
+import React from 'react'
+
+import Doc from '../components/v1/Doc'
+import Footer from '../components/v1/Footer'
+import Menu from '../components/v1/Menu'
 import Header from '../components/v2/Header'
 import styles from '../styles/Home.module.css'
 
-import Footer from '../components/v1/Footer'
-import React from 'react'
-import Menu from '../components/v1/Menu'
-import Doc from '../components/v1/Doc'
-
-const Home: NextPage = () => {
+// 隐私协议
+const Privacy: NextPage = () => {
   return (
     <div className={styles.container}>
       <Header />
@@ -20,4 +21,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Privacy
