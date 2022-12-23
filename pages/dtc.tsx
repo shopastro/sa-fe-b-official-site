@@ -5,6 +5,7 @@ import Header from '../components/v2/Header'
 import Choose from '../components/v5/DTC/Choose'
 import Package from '../components/v5/DTC/Package'
 import Question from '../components/v5/DTC/Question'
+import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 import TryNow from '../components/v5/TryNow'
@@ -39,6 +40,7 @@ const DTC: NextPage = () => {
         <TryNow href="https://mystro.admin.ishopastro.com/admin/user/login?type=dtc" />
         <Footer />
       </div>
+      <FixedButton href="https://mystro.admin.ishopastro.com/admin/user/login?type=dtc" />
     </>
   )
 }

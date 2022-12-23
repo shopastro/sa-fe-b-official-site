@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 
 import Header from '../components/v2/Header'
+import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
 import Banner from '../components/v5/Home/Banner'
 import Cards from '../components/v5/Home/Cards'
@@ -50,6 +51,7 @@ const Home: NextPage = () => {
         <Partners />
         <Footer />
       </div>
+      <FixedButton href="/product" />
     </>
   )
 }

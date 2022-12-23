@@ -120,22 +120,22 @@ export const pluginsData: PluginsDataItem[] = [
     icon: 'https://media.cdn.ishopastro.com/upload/images/20221202-160809.png_2022-12-02-08-10-50.png',
     title: '旺店通',
     description: '旺店通助力企业管理转型升级，成就企业规模化发展，选择旺店通，管理更…'
-  },
-  {
-    icon: 'https://media.cdn.ishopastro.com/upload/images/20221202-160818.png_2022-12-02-08-10-50.png',
-    title: '马帮ERP',
-    description: '为跨境卖家提供订单处理、商品库存管理、采购供应链管理'
-  },
-  {
-    icon: 'https://media.cdn.ishopastro.com/upload/images/20221202-160816.png_2022-12-02-08-10-50.png',
-    title: '普源ERP',
-    description: '跨境电商ERP一站式云服务平台'
-  },
-  {
-    icon: 'https://media.cdn.ishopastro.com/upload/images/20221202-160812.png_2022-12-02-08-10-50.png',
-    title: '询盘',
-    description: '提供B2B询盘解决方案'
   }
+  // {
+  //   icon: 'https://media.cdn.ishopastro.com/upload/images/20221202-160818.png_2022-12-02-08-10-50.png',
+  //   title: '马帮ERP',
+  //   description: '为跨境卖家提供订单处理、商品库存管理、采购供应链管理'
+  // },
+  // {
+  //   icon: 'https://media.cdn.ishopastro.com/upload/images/20221202-160816.png_2022-12-02-08-10-50.png',
+  //   title: '普源ERP',
+  //   description: '跨境电商ERP一站式云服务平台'
+  // },
+  // {
+  //   icon: 'https://media.cdn.ishopastro.com/upload/images/20221202-160812.png_2022-12-02-08-10-50.png',
+  //   title: '询盘',
+  //   description: '提供B2B询盘解决方案'
+  // }
 ]
 
 export interface PluginsDataItem {

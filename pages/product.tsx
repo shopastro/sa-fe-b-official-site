@@ -1,12 +1,19 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useContainer } from 'unstated-next'
 
 import Header from '../components/v2/Header'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
+import detectionStore from '../store/detectionStore'
+
+const freeLinkDTC = 'https://mystro.admin.ishopastro.com/admin/user/login?type=dtc'
 
 // 产品方案
 const Product: NextPage = () => {
+  const { setShowMoadl } = useContainer(detectionStore)
+
   return (
     <>
       <Header
@@ -20,7 +27,7 @@ const Product: NextPage = () => {
         <div className="flex flex-col md:items-center">
           <div className="flex flex-col px-[20px] py-[32px] md:w-[1200px]">
             <div className="mb-[20px] text-[40px] leading-[48px] text-[#0E1E46] font-[700] md:text-[48px] md:leading-[58px]">
-              选择试用产品
+              请选择试用产品
             </div>
             <div className="mb-[20px] text-[16px] leading-[24px] text-[#535D77] md:w-[640px] md:mb-[60px] md:text-[18px] md:leading-[28px]">
               星盘跨境提供一站式跨境私域增长解决方案,
@@ -40,20 +47,22 @@ const Product: NextPage = () => {
                   />
                 </span>
                 <div className="mb-[16px] text-[14px] leading-[26px] font-[700] text-[#18214D]">
-                  Create screens directly in Method or add your images from Sketch…
+                  简单几步, 直达消费者, 跨境生意马上开启
                 </div>
-                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer">
-                  <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">免费试用</span>
-                  <span className="w-[22px] h-[22px]">
-                    <Image
-                      src="https://media.cdn.ishopastro.com/svg/shopastrohome/aae57df8a5df86da3a336aea64203573.svg"
-                      width={22}
-                      height={22}
-                      layout="responsive"
-                      alt="icon"
-                    />
-                  </span>
-                </div>
+                <Link href={freeLinkDTC} passHref>
+                  <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer">
+                    <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">免费试用</span>
+                    <span className="w-[22px] h-[22px]">
+                      <Image
+                        src="https://media.cdn.ishopastro.com/svg/shopastrohome/aae57df8a5df86da3a336aea64203573.svg"
+                        width={22}
+                        height={22}
+                        layout="responsive"
+                        alt="icon"
+                      />
+                    </span>
+                  </div>
+                </Link>
               </div>
 
               <div className="flex flex-col mb-[20px] p-[20px] border border-[#EEF0F0] rounded-[12px] md:w-[350px]">
@@ -68,9 +77,14 @@ const Product: NextPage = () => {
                   />
                 </span>
                 <div className="mb-[16px] text-[14px] leading-[26px] font-[700] text-[#18214D]">
-                  Create screens directly in Method or add your images from Sketch…
+                  高效B2B出海, 从这里开始
                 </div>
-                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer">
+                <div
+                  className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer"
+                  onClick={() => {
+                    setShowMoadl(true)
+                  }}
+                >
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">咨询</span>
                   <span className="w-[22px] h-[22px]">
                     <Image
@@ -95,9 +109,14 @@ const Product: NextPage = () => {
                   />
                 </span>
                 <div className="mb-[16px] text-[14px] leading-[26px] font-[700] text-[#18214D]">
-                  Create screens directly in Method or add your images from Sketch…
+                  一站式的面向品牌站独立站的营销SaaS
                 </div>
-                <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer">
+                <div
+                  className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer"
+                  onClick={() => {
+                    setShowMoadl(true)
+                  }}
+                >
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">咨询</span>
                   <span className="w-[22px] h-[22px]">
                     <Image
@@ -120,8 +139,7 @@ const Product: NextPage = () => {
                 有任何问题？
               </div>
               <div className="mb-[24px] text-[16px] leading-[24px] text-[#535D77]">
-                Ask about Commerce Cloud pricing, implementation, or anything else. Our highly trained reps are standing
-                by, ready to help. 如果您对我们的产品有任何疑问, 请放心与随时联系星盘跨境专属顾问。
+                如果您对我们的产品有任何疑问, 或需要任何的帮助和支持, 请微信直聊。
               </div>
               <div className="flex flex-col items-center justify-center w-[148px] mb-[24px] px-[32px] py-[12px] border rounded-[6px]">
                 <span className="text-[18px] leading-[26px]">微信直聊</span>

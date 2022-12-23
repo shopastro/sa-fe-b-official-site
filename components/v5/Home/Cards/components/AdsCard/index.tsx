@@ -17,17 +17,15 @@ const Quick = () => {
           </div>
           <div className="mb-[20px]">
             <SubTitle>精准归因</SubTitle>
-            <Description>基于整合数据, 通过API实现精准广告归因, 提升广告ROI;</Description>
+            <Description>基于整合数据, 通过API实现精准广告归因, 提升广告ROI</Description>
             <Description>
               Facebook盯盘助手, 实现30分钟准实时站外站内链路节点数据, 实现全行业最快速的广告优化
             </Description>
           </div>
           <div className="mb-[20px] md:mb-[40px]">
             <SubTitle>GMC及Catalog</SubTitle>
-            <Description>
-              基于Micro Data等技术实现全行业领先的GMC及Facebook Catalog同步成功率;
-              通过系统化能力实现超大规模的SKU数量管理和广告平台同步
-            </Description>
+            <Description>基于Micro Data等技术实现全行业领先的GMC及Facebook Catalog同步成功率</Description>
+            <Description>通过系统化能力实现超大规模的SKU数量管理和广告平台同步</Description>
           </div>
           <div className="flex">
             <FreeButton href="/product" />

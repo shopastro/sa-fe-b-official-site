@@ -31,7 +31,7 @@ const Plugins = () => {
         <div className="flex relative overflow-x-auto">
           {/* pc */}
           <div
-            className="flex items-center justify-center absolute top-0 left-0 w-[102px] h-[312px] z-10"
+            className="hidden md:flex items-center justify-center absolute top-0 left-0 w-[102px] h-[312px] z-10"
             style={{
               transform: 'rotateY(180deg)',
               background: 'linear-gradient(280.97deg, #F5F6FA 35.98%, rgba(245, 246, 250, 0) 98.42%)'
@@ -67,7 +67,7 @@ const Plugins = () => {
             })}
           </div>
           <div
-            className="flex items-center justify-center absolute top-0 right-0 w-[102px] h-[312px]"
+            className="hidden md:flex items-center justify-center absolute top-0 right-0 w-[102px] h-[312px]"
             style={{ background: 'linear-gradient(280.97deg, #F5F6FA 35.98%, rgba(245, 246, 250, 0) 98.42%)' }}
           >
             <Image

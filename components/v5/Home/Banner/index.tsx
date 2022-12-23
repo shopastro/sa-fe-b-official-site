@@ -7,12 +7,12 @@ const Banner = () => {
       <div className="flex flex-col items-center relative px-[20px] overflow-hidden md:w-[1200px] md:h-[830px]">
         <div className="flex flex-col justify-between relative z-10 md:flex-row md:w-[1200px] md:mb-[42px]">
           <div className="flex flex-col mt-[8px] md:mt-[85px]">
-            <div className="text-[36px] leading-[50.4px] font-[700] md:text-[48px] md:leading-[67.2px]">
-              <div>品牌一站式跨境</div>
-              <div className="mb-[8px] md:mb-[28px]">
-                私域增长 <span className="text-[#FE8953]">解决方案</span>
-              </div>
-            </div>
+            <h1 className="text-[36px] leading-[50.4px] font-[700] md:text-[48px] md:leading-[67.2px]">
+              <span>星盘跨境, 品牌出海</span>
+              <span className="mb-[8px] md:mb-[28px]">
+                一站式数智化 <span className="text-[#FE8953]">解决方案</span>
+              </span>
+            </h1>
             <div className="flex items-center md:hidden">
               <Image
                 width={1352}
@@ -24,11 +24,11 @@ const Banner = () => {
             </div>
             <div className="flex items-center mb-[4px] text-[12px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]">
               <span className="flex w-[8px] h-[8px] mr-[16px] rounded-[4px] bg-white" />
-              十五分钟快速建站
+              十五分钟快速建站, 搭建更具本土化的品牌独立站
             </div>
             <div className="flex items-center mb-[4px] text-[12px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]">
               <span className="flex w-[8px] h-[8px] mr-[16px] rounded-[4px] bg-white" />
-              最优建站产品组合,丰富的免费插件 紧贴您的行业需求
+              最优建站产品组合, 丰富的免费插件, 紧贴您的行业需求
             </div>
             <div className="flex items-center mb-[4px] text-[12px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]">
               <span className="flex w-[8px] h-[8px] mr-[16px] rounded-[4px] bg-white" />

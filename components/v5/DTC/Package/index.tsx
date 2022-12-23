@@ -186,7 +186,7 @@ const DTCPackage = () => {
 
           {/* form */}
           <div className="flex flex-col mb-[20px]">
-            <div className="hidden w-[1200px] border border-b-0 border-[#DDE0F1] md:flex">
+            <div className="hidden sticky top-[48px] w-[1200px] border border-b-0 border-[#DDE0F1] bg-white md:flex md:top-[80px]">
               <div className="flex flex-1 border-r border-[#DDE0F1]"></div>
               {dtcTypeInfo.map((item) => {
                 return (

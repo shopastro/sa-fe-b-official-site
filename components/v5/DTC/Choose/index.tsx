@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { DTCChooseData } from './data'
@@ -8,6 +8,10 @@ import { DTCChooseData } from './data'
 const DTCPackage = () => {
   const [activeIndex, setActiveIndex] = useState(1)
   const isMobile = useIsMobile()
+
+  useEffect(() => {
+    setActiveIndex(isMobile ? 2 : 1)
+  }, [isMobile])
 
   return (
     <div className="flex flex-col">
@@ -42,7 +46,7 @@ const DTCPackage = () => {
 
         {/* form */}
         <div className="flex flex-col md:items-center">
-          <div className="hidden sticky top-0 justify-center mb-[14px] text-[18px] leading-[22px] font-[700] border border-[#DDE0F1] bg-[#FCFCFC] md:flex">
+          <div className="hidden sticky top-[48px] justify-center mb-[14px] text-[18px] leading-[22px] font-[700] border border-[#DDE0F1] bg-[#FCFCFC] md:flex md:top-[80px] z-10">
             <div className="w-[530px] px-[16px] py-[32px] border-r border-[#DDE0F1]">
               <span>产品特色</span>
             </div>

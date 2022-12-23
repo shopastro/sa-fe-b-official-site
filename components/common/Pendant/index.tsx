@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { useContainer } from 'unstated-next'
 
@@ -40,16 +41,18 @@ const Pendant: React.FC<IProps> = () => {
           </div>
         </li>
         <li>
-          <div
-            className={classNames(styles.pendantItem)}
-            onClick={() => {
-              buryingPoint('click_touch_contact_form')
-              setIsOpen(true)
-            }}
-          >
-            <div className={styles.imgItem} />
-            <div className={styles.textItem}>免费试用</div>
-          </div>
+          <Link href="/product" passHref>
+            <div
+              className={classNames(styles.pendantItem)}
+              onClick={() => {
+                buryingPoint('click_touch_contact_form')
+                // setIsOpen(true)
+              }}
+            >
+              <div className={styles.imgItem} />
+              <div className={styles.textItem}>免费试用</div>
+            </div>
+          </Link>
         </li>
         <li id={'pendantItem'} style={{ display: 'none' }} />
       </ul>
