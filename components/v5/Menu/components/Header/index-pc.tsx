@@ -67,7 +67,7 @@ const Menu: React.FC<MenuProps> = (props) => {
           </div>
           <div className="ml-[56px] flex items-center">
             <div className="mr-[16px] cursor-pointer">
-              <Link href="https://mystro.admin.ishopastro.com/admin/user/login">登录</Link>
+              <Link href="https://sys.admin.ishopastro.com/admin/user/signup">登录</Link>
             </div>
             <div
               className="cursor-pointer rounded-[8px] border border-solid border-[#FFF] px-[30px] py-[10px]"

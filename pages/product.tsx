@@ -8,7 +8,7 @@ import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 import detectionStore from '../store/detectionStore'
 
-const freeLinkDTC = 'https://mystro.admin.ishopastro.com/admin/user/login?type=dtc'
+const freeLinkDTC = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc'
 
 // 产品方案
 const Product: NextPage = () => {

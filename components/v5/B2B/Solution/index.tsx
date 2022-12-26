@@ -86,7 +86,7 @@ const B2BSolution = () => {
         </div>
         {/* btn */}
         <div className="flex items-center justify-center">
-          <Link href="https://mystro.admin.ishopastro.com/admin/user/login?type=b2b" passHref>
+          <Link href="https://sys.admin.ishopastro.com/admin/user/signup?type=b2b" passHref>
             <div className="flex items-center py-[8px] px-[28px] border border-solid border-[#104CBC] bg-[#F0F3FF] rounded-[8px] md:py-[14px] cursor-pointer">
               <span className="mr-[24px] text-[16px] text-[#004DD1] font-[700] md:text-[18px]">免费试用</span>
               <span className="w-[23px] h-[23px] text-[#004DD1]">

@@ -37,10 +37,10 @@ const DTC: NextPage = () => {
         <Package />
         <Choose />
         <Question />
-        <TryNow href="https://mystro.admin.ishopastro.com/admin/user/login?type=dtc" />
+        <TryNow href="https://sys.admin.ishopastro.com/admin/user/signup?type=dtc" />
         <Footer />
       </div>
-      <FixedButton href="https://mystro.admin.ishopastro.com/admin/user/login?type=dtc" />
+      <FixedButton href="https://sys.admin.ishopastro.com/admin/user/signup?type=dtc" />
     </>
   )
 }

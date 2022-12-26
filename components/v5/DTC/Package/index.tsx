@@ -5,7 +5,7 @@ import { useState } from 'react'
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { dtcMonthData, dtcTypeInfo, dtcYearData } from './data'
 
-const freeLink = 'https://mystro.admin.ishopastro.com/admin/user/login?type=dtc'
+const freeLink = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc'
 
 const DTCPackage = () => {
   const [showMonth, setShowMonth] = useState(true)
