@@ -116,7 +116,7 @@ export const dtcTypeInfo = [
   {
     type: 1,
     title: '基础版',
-    subTitle: ['适合新手卖家, 快速启动', '满足跨境电商基础运营功能需求'],
+    subTitle: ['适合新手卖家, 快速启动', '满足跨境电商基础运营需求'],
     info: ['佣金0.8%', '多国家,多语言', '分销订单200', '竞手站点洞察10个', 'EDM500条'],
     monthPrice: 180,
     yearPrice: 1180

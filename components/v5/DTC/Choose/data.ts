@@ -183,7 +183,7 @@ export const DTCChooseData: DTCChooseDataItem[] = [
         },
         {
           icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/4a4546ac1e670923cc63a6a983dcad6d.svg',
-          info: '基于Cloudflare/Cloudfront/Akamai等主流CDN进行访问加速'
+          info: '基于 Cloudflare / Cloudfront / Akamai 等主流CDN进行访问加速'
         }
       ],
       [
