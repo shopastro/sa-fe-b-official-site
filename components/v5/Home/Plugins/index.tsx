@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useCallback, useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { Navigation } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/grid'
@@ -24,9 +24,10 @@ pluginsData.forEach((item, index) => {
   if (!mobilePluginsData[mobileIndex]) mobilePluginsData[mobileIndex] = []
   mobilePluginsData[mobileIndex].push(item)
 })
-console.log(pcPluginsData)
 
 const Plugins = () => {
+  const [reachBeginning, setReachBeginning] = useState(true)
+  const [reachEnd, setReachEnd] = useState(false)
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
   const sliderRef = useRef<any>(null)
@@ -59,7 +60,7 @@ const Plugins = () => {
           <div
             ref={navigationPrevRef}
             onClick={handlePrev}
-            style={{ transform: 'rotateY(180deg)' }}
+            style={{ transform: 'rotateY(180deg)', visibility: reachBeginning ? 'hidden' : 'visible' }}
             className={'hidden min-w-[58px] min-h-[58px] mr-[28px] cursor-pointer md:flex items-center'}
           >
             <Image
@@ -83,7 +84,28 @@ const Plugins = () => {
             pagination={{
               clickable: true
             }}
-            onInit={(swiper) => {}}
+            onInit={(xx) => {
+              setReachBeginning(true)
+            }}
+            onReachBeginning={() => {
+              setReachBeginning(true)
+            }}
+            onReachEnd={() => {
+              setReachEnd(true)
+            }}
+            onSlideChange={(swiper) => {
+              if (swiper.activeIndex === 0) {
+                setReachBeginning(true)
+              } else {
+                setReachBeginning(false)
+              }
+
+              if (swiper.isEnd) {
+                setReachEnd(true)
+              } else {
+                setReachEnd(false)
+              }
+            }}
             className={'hidden md:block'}
           >
             {pcPluginsData.map((item, index) => {
@@ -110,6 +132,7 @@ const Plugins = () => {
           <div
             ref={navigationNextRef}
             onClick={handleNext}
+            style={{ visibility: reachEnd ? 'hidden' : 'visible' }}
             className={'hidden min-w-[58px] min-h-[58px] ml-[28px] cursor-pointer md:flex align-middle'}
           >
             <Image
