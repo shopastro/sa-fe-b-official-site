@@ -20,7 +20,7 @@ const Solutions: NextPage = () => {
       {/* 背景 */}
       <div className="flex absolute top-0 left-0 w-screen h-[150px] bg-[#F5F6FA] overflow-hidden" />
       {/* 内容 */}
-      <div className="relative">
+      <div className="relative pb-[70px] md:pb-0">
         <Menu />
         <Banner />
         <Scheme />

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
 
 const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo.svg'
@@ -11,7 +12,9 @@ const Menu: React.FC<MenuProps> = (props) => {
   const { theme = 'dark', style = {} } = props
   const logo = theme === 'light' ? lightLogo : darkLogo
   const icon = theme === 'light' ? lightIcon : darkIcon
+  const activeColor = theme === 'light' ? '#FE8952' : '#004DD1'
 
+  const { route } = useRouter()
   const [showMore, setShowMore] = useState(false)
   const [fixedStyle, setFixedStyle] = useState({ top: 0, left: 0 })
   const token = useRef<any>(null)
@@ -45,27 +48,31 @@ const Menu: React.FC<MenuProps> = (props) => {
         }}
       >
         <Link href="/" passHref>
-          <h1 className="w-[220px] h-[40px] cursor-pointer">
+          <div className="w-[220px] h-[40px] cursor-pointer">
             <Image src={logo} width={220} height={40} quality={100} alt="logo" />
-          </h1>
+          </div>
         </Link>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
-            <div className="mx-[20px] cursor-pointer">
+            <div className="mx-[20px] cursor-pointer" style={{ color: route === '/dtc' ? activeColor : 'inherit' }}>
               <Link href="/dtc">DTC建站</Link>
             </div>
-            <div className="mx-[20px] cursor-pointer">
+            <div className="mx-[20px] cursor-pointer" style={{ color: route === '/b2b' ? activeColor : 'inherit' }}>
               <Link href="/b2b">B2B建站</Link>
             </div>
-            <div className="mx-[20px] cursor-pointer">
+            <div className="mx-[20px] cursor-pointer" style={{ color: route === '/beluga' ? activeColor : 'inherit' }}>
               <Link href="/beluga">白鲸营销</Link>
             </div>
-            <div className="mx-[20px] cursor-pointer">
+            <div
+              className="mx-[20px] cursor-pointer"
+              style={{ color: route === '/solutions' ? activeColor : 'inherit' }}
+            >
               <Link href="/solutions">解决方案</Link>
             </div>
             <div
               className="flex items-center relative mx-[20px] cursor-pointer"
+              style={{ color: route === '/about' ? activeColor : 'inherit' }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >

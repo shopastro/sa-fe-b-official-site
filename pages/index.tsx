@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       {/* 内容 */}
-      <div className="relative">
+      <div className="relative pb-[70px] md:pb-0">
         <Menu theme="light" />
         <Banner />
         <Plugins />

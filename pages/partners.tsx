@@ -15,7 +15,7 @@ const Partners: NextPage = () => {
       <Header />
       {/* 背景 */}
       <div className="flex absolute top-0 left-0 w-screen h-[150px] bg-[#003892] overflow-hidden" />
-      <div className="relative">
+      <div className="relative pb-[70px] md:pb-0">
         <Menu theme="light" />
         <Banner />
         <Form />

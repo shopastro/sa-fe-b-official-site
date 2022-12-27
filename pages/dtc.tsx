@@ -32,7 +32,7 @@ const DTC: NextPage = () => {
         />
       </div>
       {/* 内容 */}
-      <div className="relative">
+      <div className="relative pb-[70px] md:pb-0">
         <Menu />
         <Package />
         <Choose />
