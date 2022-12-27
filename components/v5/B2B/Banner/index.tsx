@@ -4,7 +4,7 @@ import { useContainer } from 'unstated-next'
 import detectionStore from '../../../../store/detectionStore'
 
 const Banner = () => {
-  const { setShowMoadl } = useContainer(detectionStore)
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
 
   return (
     <div className="flex justify-center w-screen">
@@ -43,6 +43,7 @@ const Banner = () => {
               className="flex fixed bottom-0 left-0 z-10 w-screen px-[20px] py-[10px] bg-[#FFF] cursor-pointer md:mt-[48px] md:static md:w-auto md:p-0 md:bg-transparent"
               onClick={() => {
                 setShowMoadl(true)
+                setButtonType('topbanner')
               }}
             >
               <span className="flex-1 py-[12px] px-[54px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[12px] md:flex-none md:py-[18px]">

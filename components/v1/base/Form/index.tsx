@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { useContainer } from 'unstated-next'
 
@@ -31,11 +32,13 @@ const Form: React.FC<IProps> = (props) => {
   const [requested, setRequested] = useState(false)
   const [error, setError] = useState(false)
   const [verification, setVerification] = useState(false)
-  const { dataSource, setUnlock } = useContainer(detectionStore)
+  const { dataSource, setUnlock, buttonType } = useContainer(detectionStore)
   const [{ fNumber, sNumber }] = useState({
     fNumber: Math.ceil(Math.random() * 10),
     sNumber: Math.ceil(Math.random() * 10)
   })
+
+  const { route } = useRouter()
 
   const newList = [
     ...list,
@@ -136,7 +139,13 @@ const Form: React.FC<IProps> = (props) => {
         {
           ...values,
           category: type,
-          checkDomain: dataSource?.url
+          checkDomain: dataSource?.url,
+          source: {
+            page: route.replace('/', ''),
+            button: buttonType,
+            client: window.innerWidth < 768 ? 'mobile' : 'pc',
+            ua: window.navigator.userAgent
+          }
         },
         callback
       )

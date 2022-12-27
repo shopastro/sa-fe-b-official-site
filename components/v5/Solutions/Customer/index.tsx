@@ -1,11 +1,14 @@
 import Image from 'next/image'
+import { useContainer } from 'unstated-next'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
+import detectionStore from '../../../../store/detectionStore'
 import FreeButton from '../../FreeButton'
 import { customerData } from './data'
 
 const Customer = () => {
   const isMobile = useIsMobile()
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
 
   return (
     <div className="flex flex-col justify-center w-screen bg-[#F5F6FA] md:items-center">
@@ -37,7 +40,13 @@ const Customer = () => {
             )
           })}
         </div>
-        <FreeButton href="/product" />
+        <FreeButton
+          text="立即咨询"
+          onClick={() => {
+            setShowMoadl(true)
+            setButtonType('customerCases')
+          }}
+        />
       </div>
     </div>
   )

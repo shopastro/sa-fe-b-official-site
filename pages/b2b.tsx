@@ -11,7 +11,7 @@ import Menu from '../components/v5/Menu'
 import detectionStore from '../store/detectionStore'
 
 const B2B: NextPage = () => {
-  const { setShowMoadl } = useContainer(detectionStore)
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
 
   return (
     <>
@@ -29,6 +29,7 @@ const B2B: NextPage = () => {
       <FixedButton
         onClick={() => {
           setShowMoadl(true)
+          setButtonType('stickyBottom')
         }}
       />
     </>

@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { useContainer } from 'unstated-next'
 
 import Header from '../components/v2/Header'
 import FixedButton from '../components/v5/FixedButton'
@@ -7,9 +8,12 @@ import Menu from '../components/v5/Menu'
 import Banner from '../components/v5/Solutions/Banner'
 import Customer from '../components/v5/Solutions/Customer'
 import Scheme from '../components/v5/Solutions/Scheme'
+import detectionStore from '../store/detectionStore'
 
 // 解决方案
 const Solutions: NextPage = () => {
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
+
   return (
     <>
       <Header />
@@ -23,7 +27,12 @@ const Solutions: NextPage = () => {
         <Customer />
         <Footer />
       </div>
-      <FixedButton href="/product" />
+      <FixedButton
+        onClick={() => {
+          setShowMoadl(true)
+          setButtonType('stickyBottom')
+        }}
+      />
     </>
   )
 }

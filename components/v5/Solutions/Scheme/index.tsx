@@ -1,12 +1,14 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import { useContainer } from 'unstated-next'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
+import detectionStore from '../../../../store/detectionStore'
 import FreeButton from '../../FreeButton'
 import { schemaData } from './data'
 
 const Banner = () => {
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
   const [activeIndex, setActiveIndex] = useState(0)
   const contentRefs = useRef<HTMLDivElement[]>([])
   const beforeScrollY = useRef(0)
@@ -80,7 +82,7 @@ const Banner = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col md:flex-row"
+                className="flex flex-col mb-[20px] last:mb-0 md:flex-row md:mb-[100px]"
                 ref={(contentRef) => {
                   if (contentRef) contentRefs.current[index] = contentRef
                 }}
@@ -111,14 +113,19 @@ const Banner = () => {
                       )
                     })}
                   </div>
+                  <div className="flex mt-[20px] md:mt-[24px]">
+                    <FreeButton
+                      text="立即咨询"
+                      onClick={() => {
+                        setShowMoadl(true)
+                        setButtonType(`story${index}`)
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             )
           })}
-        </div>
-
-        <div className="flex items-center justify-center mt-[20px] md:mt-[40px]">
-          <FreeButton href="/product" />
         </div>
       </div>
     </div>

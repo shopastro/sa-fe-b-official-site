@@ -12,7 +12,7 @@ import Menu from '../components/v5/Menu'
 import detectionStore from '../store/detectionStore'
 
 const Beluga: NextPage = () => {
-  const { setShowMoadl } = useContainer(detectionStore)
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
 
   return (
     <>
@@ -34,6 +34,7 @@ const Beluga: NextPage = () => {
       <FixedButton
         onClick={() => {
           setShowMoadl(true)
+          setButtonType('stickyBottom')
         }}
       />
     </>

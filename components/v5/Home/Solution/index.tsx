@@ -56,7 +56,7 @@ const Solution = () => {
               >
                 <div
                   className="flex flex-1 md:px-[10px] border-black border-opacity-25 md:border-r md:border-dashed"
-                  style={!isMobile ? { borderRightWidth: index === 3 || index === 6 ? '0' : '1px' } : {}}
+                  style={!isMobile ? { borderRightWidth: index === 3 || index === 7 ? '0' : '1px' } : {}}
                 >
                   <div className="flex flex-1 md:px-[10px] md:py-[60px] rounded-[20px] md:flex-col md:hover:bg-[#FFF]">
                     <div className="flex flex-shrink-0 w-[60px] h-[60px] mr-[8px] md:mb-[20px]">

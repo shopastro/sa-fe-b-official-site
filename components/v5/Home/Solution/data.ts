@@ -38,6 +38,11 @@ export const solutionData = [
     title: '一件代发供货',
     description:
       '具备供应链及物流整合优势的卖家, 只需一次开通, 即可通过星盘一键代发平台为星盘独立站卖家提供供应链和履约能力。并通过拓峰科技的shopify一件代发能力链接海量shopify店主。'
+  },
+  {
+    icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/ae6787fb54dda47c7949211ffa4c87a2.svg',
+    title: '全链路运营',
+    description: '针对不同客户诉求和跨境生意场景，提供一站式更简单、更高效、更专业的全链路运营方案'
   }
 ]
 

@@ -1,10 +1,12 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import { useContainer } from 'unstated-next'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
+import detectionStore from '../../../../store/detectionStore'
 import { data } from './data'
 
 const Banner = () => {
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
   const isMobile = useIsMobile()
 
   return (
@@ -111,13 +113,17 @@ const Banner = () => {
         </div>
 
         {/* 免费试用 */}
-        <Link href="/product" passHref>
-          <div className="hidden md:flex mt-[30px] cursor-pointer">
-            <span className="px-[56px] py-[16px] text-[18px] leading-[26px] text-[#FFF] bg-[#FE8953] rounded-[8px]">
-              联系我们
-            </span>
-          </div>
-        </Link>
+        <div
+          className="hidden md:flex mt-[30px] cursor-pointer"
+          onClick={() => {
+            setShowMoadl(true)
+            setButtonType('topbanner')
+          }}
+        >
+          <span className="px-[56px] py-[16px] text-[18px] leading-[26px] text-[#FFF] bg-[#FE8953] rounded-[8px]">
+            联系我们
+          </span>
+        </div>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ const freeLinkDTC = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc
 
 // 产品方案
 const Product: NextPage = () => {
-  const { setShowMoadl } = useContainer(detectionStore)
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
 
   return (
     <>
@@ -83,6 +83,7 @@ const Product: NextPage = () => {
                   className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer"
                   onClick={() => {
                     setShowMoadl(true)
+                    setButtonType('topbanner')
                   }}
                 >
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">咨询</span>
@@ -115,6 +116,7 @@ const Product: NextPage = () => {
                   className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer"
                   onClick={() => {
                     setShowMoadl(true)
+                    setButtonType('topbanner')
                   }}
                 >
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">咨询</span>
