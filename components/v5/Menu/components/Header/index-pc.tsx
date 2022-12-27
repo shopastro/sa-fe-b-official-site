@@ -62,7 +62,9 @@ const Menu: React.FC<MenuProps> = (props) => {
               </div>
             </div>
             <div className="mx-[20px] cursor-pointer">
-              <Link href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg">帮助</Link>
+              <a href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg" target={'_blank'}>
+                帮助
+              </a>
             </div>
           </div>
           <div className="ml-[56px] flex items-center">

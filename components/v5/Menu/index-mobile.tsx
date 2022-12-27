@@ -152,7 +152,9 @@ const Menu: React.FC<MenuProps> = (props) => {
           className="p-[16px] text-[16px] leading-[24px] text-[#222]"
           style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
         >
-          <Link href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg">帮助</Link>
+          <a href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg" target={'_blank'}>
+            帮助
+          </a>
         </div>
       </div>
     </>
