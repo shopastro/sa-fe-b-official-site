@@ -11,12 +11,30 @@ const Solution = () => {
     <div className="flex flex-col items-center bg-[#F0F3FF]">
       <div className="flex flex-col relative px-[20px] py-[40px] md:w-[1400px] md:px-[120px] md:py-[80px]">
         {/* bg1 */}
-        <div className="absolute top-0 left-0 w-[392] h-[598px]">
+        <div className="absolute top-0 left-0 w-[392px] h-[598px]">
           <Image
             src="https://media.cdn.ishopastro.com/svg/shopastrohome/ef4bbe085ac94e09e17c3180bc111053.svg"
             width={392}
             height={598}
             alt="bg1"
+          />
+        </div>
+        {/* bg2 */}
+        <div className="absolute top-[18px] left-[245px] w-[12px] h-[12px] md:w-[25px] md:h-[25px] md:top-[150px] md:left-[400px]">
+          <Image
+            src="https://media.cdn.ishopastro.com/svg/shopastrohome/63fb7bd0d53c3938430f5784c01a82b0.svg"
+            width={25}
+            height={25}
+            alt="bg2"
+          />
+        </div>
+        {/* bg3 */}
+        <div className="absolute top-[13px] right-[12px] w-[12px] h-[12px] md:w-[24px] md:h-[25px] md:top-[66px] md:right-[46px]">
+          <Image
+            src="https://media.cdn.ishopastro.com/svg/shopastrohome/42d964babdb8554a0c73c1ba4c221cb8.svg"
+            width={24}
+            height={25}
+            alt="bg3"
           />
         </div>
 
@@ -40,12 +58,14 @@ const Solution = () => {
                   className="flex flex-1 md:px-[10px] border-black border-opacity-25 md:border-r md:border-dashed"
                   style={!isMobile ? { borderRightWidth: index === 3 || index === 6 ? '0' : '1px' } : {}}
                 >
-                  <div className="flex flex-1 md:px-[10px] md:py-[60px] rounded-[20px] md:hover:bg-[#FFF]">
+                  <div className="flex flex-1 md:px-[10px] md:py-[60px] rounded-[20px] md:flex-col md:hover:bg-[#FFF]">
                     <div className="flex flex-shrink-0 w-[60px] h-[60px] mr-[8px] md:mb-[20px]">
                       <Image src={item.icon} width={60} height={60} alt={item.title} />
                     </div>
                     <div className="flex flex-col">
-                      <span className="mb-[20px] text-[20px] leading-[24px] text-[#0E1E46]">{item.title}</span>
+                      <span className="mb-[20px] text-[20px] leading-[24px] text-[#0E1E46] font-[600]">
+                        {item.title}
+                      </span>
                       <span className="text-[14px] leading-[22px] text-[#535D77]">{item.description}</span>
                     </div>
                   </div>
@@ -56,7 +76,7 @@ const Solution = () => {
         </div>
 
         <div className="flex justify-center">
-          <FreeButton href="/product" />
+          <FreeButton href="/solutions" text="查看更多" />
         </div>
       </div>
     </div>

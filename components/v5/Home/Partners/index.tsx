@@ -33,13 +33,16 @@ const Partners = () => {
                 key={index}
                 className="flex flex-col items-center mr-[32px] text-[20px] leading-[24px] text-[#535D77] whitespace-nowrap cursor-pointer md:flex-1"
                 style={index === activeIndex ? { color: '#293963', fontWeight: 700 } : {}}
-                onClick={(e) => {
+                onMouseEnter={(e) => {
                   handleTitleClick(e, index)
                 }}
+                // onClick={(e) => {
+                //   handleTitleClick(e, index)
+                // }}
               >
                 <span className="mb-[10px]">{title}</span>
                 <span
-                  className="w-[32px] h-[2px]"
+                  className="w-[32px] h-[2px] md:w-[80px]"
                   style={{ backgroundColor: index === activeIndex ? '#004DD1' : '#FFF' }}
                 />
               </div>

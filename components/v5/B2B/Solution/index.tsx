@@ -7,25 +7,38 @@ import { solutionData } from './data'
 
 const B2BSolution = () => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const titleRefs = useRef<HTMLDivElement[]>([])
   const contentRefs = useRef<HTMLDivElement[]>([])
-  const isFirstRender = useRef(true)
+  const beforeScrollY = useRef(0)
   const isMobile = useIsMobile()
+  const offset = isMobile ? 48 + 90 : 80 + 90
 
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false
-      return
+  function handleScroll() {
+    const maxLength = contentRefs.current.length
+    const curContent = contentRefs.current[activeIndex]
+    const { top } = curContent?.getBoundingClientRect() ?? {}
+    const scrollY = window.scrollY ?? window.pageYOffset
+
+    if (scrollY - beforeScrollY.current > 0) {
+      if (top < offset - 5) {
+        const nextIndex = activeIndex + 1 > maxLength ? maxLength : activeIndex + 1
+        setActiveIndex(nextIndex)
+      }
+    } else {
+      if (top > offset + 5) {
+        const preIndex = activeIndex - 1 < 0 ? 0 : activeIndex - 1
+        setActiveIndex(preIndex)
+      }
     }
 
-    const contentRef = contentRefs.current[activeIndex]
-    const { top } = contentRef.getBoundingClientRect()
-    const scrollY = window.scrollY ?? window.pageYOffset
-    const offset = isMobile ? 48 + 90 : 80 + 90
-    window.scrollTo({
-      top: scrollY + top - offset,
-      left: 0,
-      behavior: 'smooth'
-    })
+    beforeScrollY.current = scrollY
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [activeIndex])
 
   return (
@@ -43,13 +56,18 @@ const B2BSolution = () => {
                     color: activeIndex === index ? '#FFF' : '#0E1E46',
                     backgroundColor: activeIndex === index ? '#004ED1' : 'transparent'
                   }}
+                  ref={(titleRef) => {
+                    if (titleRef) titleRefs.current[index] = titleRef
+                  }}
                   onClick={(e: any) => {
-                    // e.target.scrollIntoView({
-                    //   behavior: 'smooth',
-                    //   block: 'nearest',
-                    //   inline: 'center'
-                    // })
-                    setActiveIndex(index)
+                    const contentRef = contentRefs.current[index]
+                    const { top } = contentRef.getBoundingClientRect()
+                    const scrollY = window.scrollY ?? window.pageYOffset
+                    window.scrollTo({
+                      top: scrollY + top - offset,
+                      left: 0,
+                      behavior: 'smooth'
+                    })
                   }}
                 >
                   {data.title}

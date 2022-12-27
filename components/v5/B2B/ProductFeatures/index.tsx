@@ -1,8 +1,11 @@
 import Image from 'next/image'
 
+import useIsMobile from '../../../../hooks/useIsMobile'
 import { FeaturesData } from './data'
 
 const B2BProductFeatures = () => {
+  const isMobile = useIsMobile()
+
   return (
     <div className="flex justify-center w-screen bg-[#F5F6FA]">
       <div className="flex flex-col items-center relative px-[20px] py-[40px] text-[#0E1E46] overflow-hidden md:py-[80px] md:w-[1440px]">
@@ -14,7 +17,8 @@ const B2BProductFeatures = () => {
             return (
               <div
                 key={index}
-                className="flex py-[20px] border-b border-dashed border-black border-opacity-25 last:pb-0 last:border-b-0 md:w-1/3 md:last:border-b md:last:pb-[20px]"
+                className="flex py-[20px] border-b border-dashed border-black border-opacity-25 last:pb-0 last:border-b-0 md:w-1/3 md:last:border-b-0 md:last:pb-[20px]"
+                style={isMobile ? {} : { borderBottomWidth: index > 2 ? '0' : '1px' }}
               >
                 <div
                   className="flex border-none md:flex-1 md:px-[20px] md:border-r md:border-dashed md:border-black md:border-opacity-25"

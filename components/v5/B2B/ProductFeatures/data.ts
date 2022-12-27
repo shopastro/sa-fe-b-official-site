@@ -19,7 +19,7 @@ export const FeaturesData: FeaturesData[] = [
     description: ['支持企业信息、企业采购价', '企业客户全生命周期跟踪']
   },
   {
-    icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/1778d385c02b463c4add5750efc2ace0.svg',
+    icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/c0f77ebbc52bd87bb219b9751e9f1d14.svg',
     title: '沟通',
     description: ['在线chat实时沟通, 及时跟进意向', 'chat与询盘互通, 高效处理询盘']
   },

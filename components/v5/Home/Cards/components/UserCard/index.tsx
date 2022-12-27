@@ -7,12 +7,12 @@ import Title from '../Title'
 
 const UserCard = () => {
   return (
-    <div className="flex flex-col mb-[28px] md:flex-row md:w-[1440px] md:mb-[40px]">
+    <div className="flex flex-col items-center mb-[28px] md:flex-row md:w-[1440px] md:mb-[40px]">
       <div className="flex flex-col flex-1 order-2 px-[20px] md:px-0">
         <div className="md:pl-[120px]">
           <Title>白鲸用户运营</Title>
           <div className="mb-[20px]">
-            <SubTitle>会员管理: </SubTitle>
+            <SubTitle>会员管理</SubTitle>
             <Description>
               无上限会员记录数、大数据系统自动打标、支持自定义会员圈选并进行私域触达、详细的站内用户轨迹数据,
               并与广告平台进行打通, 实现精准的用户行为分析

@@ -27,12 +27,8 @@ const Menu: React.FC<MenuProps> = (props) => {
       className="flex flex-col items-center justify-center sticky top-0 w-screen text-[16px] leading-[20px] text-[#FFF] z-[100]"
       style={{ height: `${120 - 40 * radio}px`, backgroundColor: `rgba(255, 255, 255, ${radio})` }}
     >
-      <div className="absolute top-[50%] translate-y-[-50%]" style={{ opacity: `${1 - radio}` }}>
-        <Header theme={theme} />
-      </div>
-      <div className="absolute top-[50%] translate-y-[-50%]" style={{ opacity: `${radio}` }}>
-        <Header theme={'dark'} />
-      </div>
+      <Header theme={theme} style={{ opacity: `${1 - radio}` }} />
+      <Header theme={'dark'} style={{ opacity: `${radio}` }} />
     </div>
   )
 }

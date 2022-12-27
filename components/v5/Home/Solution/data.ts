@@ -34,7 +34,7 @@ export const solutionData = [
       '同时具备供应链整合及广告投放优势的卖家, 通过多个独立站快速进行各类目的热销验证, 并对ROI良好的品类站点进行快速放量。'
   },
   {
-    icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/c31d5106afa5c89e281c06e66b81bb8c.svg',
+    icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/860ac5d7ddcb1cf64975634f9ec1723f.svg',
     title: '一件代发供货',
     description:
       '具备供应链及物流整合优势的卖家, 只需一次开通, 即可通过星盘一键代发平台为星盘独立站卖家提供供应链和履约能力。并通过拓峰科技的shopify一件代发能力链接海量shopify店主。'

@@ -4,9 +4,20 @@ import { bannerData } from './data'
 
 const BelugaBanner = () => {
   return (
-    <div className="flex flex-col justify-center w-screen bg-[#F5F6FA]">
+    <div className="flex flex-col justify-center relative w-screen bg-[#F5F6FA]">
+      {/* bg */}
+      <div className="absolute top-[128px] left-[50%] transform translate-x-[-50%] w-screen overflow-hidden md:top-[410px] md:left-0 md:translate-x-0">
+        <div className="w-[1439px] md:w-auto">
+          <Image
+            src="https://media.cdn.ishopastro.com/upload/images/20221227-145807.png_2022-12-27-06-58-41.png"
+            width={2878}
+            height={894}
+            alt="bg1"
+          />
+        </div>
+      </div>
       <div className="flex flex-col items-center relative py-[40px] overflow-hidden md:py-[80px]">
-        <div className="w-[185px] h-[30px] mb-[32px]">
+        <div className="relative w-[185px] h-[30px] mb-[32px]">
           <Image
             width={185}
             height={30}

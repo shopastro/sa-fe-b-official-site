@@ -138,7 +138,7 @@ const Menu: React.FC<MenuProps> = (props) => {
           >
             <Link href="/about" passHref>
               <span className="px-[48px] py-[16px]" style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}>
-                关于
+                关于我们
               </span>
             </Link>
             <Link href="/partners" passHref>

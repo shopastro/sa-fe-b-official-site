@@ -7,12 +7,12 @@ import Title from '../Title'
 
 const Quick = () => {
   return (
-    <div className="flex flex-col mb-[28px] md:flex-row md:w-[1440px] md:mb-[120px]">
+    <div className="flex flex-col items-center mb-[28px] md:flex-row md:w-[1440px] md:mb-[120px]">
       <div className="flex flex-col flex-1 order-2 px-[20px] md:px-0">
         <div className="md:pl-[120px]">
           <Title>白鲸广告管理</Title>
           <div className="mb-[20px]">
-            <SubTitle>白鲸广告管理: </SubTitle>
+            <SubTitle>白鲸广告管理</SubTitle>
             <Description>广告与站内数据双向互通并整合，提供全方位的广告大数据分析</Description>
           </div>
           <div className="mb-[20px]">

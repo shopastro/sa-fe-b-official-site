@@ -7,7 +7,7 @@ import Title from '../Title'
 
 const SellCard = () => {
   return (
-    <div className="flex flex-col mb-[28px] md:flex-row md:w-[1440px] md:mb-[120px]">
+    <div className="flex flex-col items-center mb-[28px] md:flex-row md:w-[1440px] md:mb-[120px]">
       <div className="flex flex-1 mb-[20px] md:mb-0">
         <Image
           width={1570}

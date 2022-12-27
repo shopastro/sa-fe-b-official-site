@@ -114,7 +114,7 @@ const Banner = () => {
         <Link href="/product" passHref>
           <div className="hidden md:flex mt-[30px] cursor-pointer">
             <span className="px-[56px] py-[16px] text-[18px] leading-[26px] text-[#FFF] bg-[#FE8953] rounded-[8px]">
-              免费试用
+              联系我们
             </span>
           </div>
         </Link>

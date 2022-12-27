@@ -41,18 +41,16 @@ const Pendant: React.FC<IProps> = () => {
           </div>
         </li>
         <li>
-          <Link href="/product" passHref>
-            <div
-              className={classNames(styles.pendantItem)}
-              onClick={() => {
-                buryingPoint('click_touch_contact_form')
-                // setIsOpen(true)
-              }}
-            >
-              <div className={styles.imgItem} />
-              <div className={styles.textItem}>免费试用</div>
-            </div>
-          </Link>
+          <div
+            className={classNames(styles.pendantItem)}
+            onClick={() => {
+              buryingPoint('click_touch_contact_form')
+              setIsOpen(true)
+            }}
+          >
+            <div className={styles.imgItem} />
+            <div className={styles.textItem}>免费试用</div>
+          </div>
         </li>
         <li id={'pendantItem'} style={{ display: 'none' }} />
       </ul>

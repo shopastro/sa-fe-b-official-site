@@ -30,7 +30,7 @@ const Home: NextPage = () => {
               alt="bg1"
             />
           </div>
-          <div className="absolute w-[220px] top-[12px] right-[-85px] md:top-[145px] md:right-[-48px] md:w-[353px]">
+          <div className="absolute w-[220px] top-[12px] right-[-85px] md:top-[145px] md:left-[1135px] md:w-[353px]">
             <Image
               width={353}
               height={649}

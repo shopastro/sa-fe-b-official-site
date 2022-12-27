@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo.svg'
 const darkLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg'
@@ -8,27 +8,40 @@ const lightIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/1a3478cfd3
 const darkIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/d23ef83b042d7975657988671fcacee5.svg'
 
 const Menu: React.FC<MenuProps> = (props) => {
-  const { theme = 'dark' } = props
+  const { theme = 'dark', style = {} } = props
   const logo = theme === 'light' ? lightLogo : darkLogo
   const icon = theme === 'light' ? lightIcon : darkIcon
 
   const [showMore, setShowMore] = useState(false)
   const [fixedStyle, setFixedStyle] = useState({ top: 0, left: 0 })
+  const token = useRef<any>(null)
   function handleMouseEnter(e: any) {
     const { top, left } = e.target?.getBoundingClientRect() ?? {}
-    const leftOffset = (window.innerWidth - 1200) / 2
     setShowMore(true)
-    setFixedStyle({ top: top + 20, left: left - leftOffset })
+    setFixedStyle({ top: top + 32, left })
   }
 
-  function handleMouseLeave() {}
+  function handleMouseLeave() {
+    token.current = setTimeout(() => {
+      setShowMore(false)
+    }, 200)
+  }
+
+  function handleDialogEnter() {
+    clearTimeout(token.current)
+  }
+
+  function handleDialogLeave() {
+    setShowMore(false)
+  }
 
   return (
     <>
       <div
-        className="flex items-center justify-between w-[1200px] p-[12px]"
+        className="flex items-center justify-between absolute top-[50%] w-[1200px] p-[12px] translate-y-[-50%]"
         style={{
-          color: theme === 'light' ? '#FFF' : '#3E3E40'
+          color: theme === 'light' ? '#FFF' : '#3E3E40',
+          ...style
         }}
       >
         <Link href="/" passHref>
@@ -83,27 +96,36 @@ const Menu: React.FC<MenuProps> = (props) => {
           </div>
         </div>
       </div>
-      {/* <div
+      {/* 关于二级 */}
+      <div
         className="flex flex-col fixed p-[20px] text-[14px] leading-[22px] text-[#222] bg-white bg-opacity-90 rounded-[4px]"
         style={{
           display: showMore ? 'flex' : 'none',
+          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
           top: `${fixedStyle.top}px`,
           left: `${fixedStyle.left}px`
         }}
+        onMouseEnter={handleDialogEnter}
+        onMouseLeave={handleDialogLeave}
       >
         <Link href="/about" passHref>
-          <span className="mb-[16px] whitespace-nowrap">关于</span>
+          <span className="mb-[16px] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]">
+            关于我们
+          </span>
         </Link>
         <Link href="/partners" passHref>
-          <span className="whitespace-nowrap">渠道合作&生态联盟</span>
+          <span className="whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]">
+            渠道合作&生态联盟
+          </span>
         </Link>
-      </div> */}
+      </div>
     </>
   )
 }
 
 export interface MenuProps {
   theme?: 'dark' | 'light'
+  style?: React.CSSProperties
 }
 
 export default Menu
