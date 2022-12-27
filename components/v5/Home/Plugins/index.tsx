@@ -106,14 +106,21 @@ const Plugins = () => {
                 setReachEnd(false)
               }
             }}
-            className={'hidden md:block'}
+            className={`hidden md:block ${
+              reachEnd ? 'before:hidden' : 'before:block'
+            } before:content-[''] before:absolute before:top-0 before:right-0 before:bottom-0 before:block before:w-[50px] before:bg-[#F5F6FA] before:z-10 before:opacity-80 before:blur-md`}
           >
             {pcPluginsData.map((item, index) => {
               return (
                 <SwiperSlide key={index} className={'w-[400px] h-[100px]'} style={{ width: '367px' }}>
                   {item.map((pluginData, elementIndex) => {
                     return (
-                      <div key={elementIndex} className={'flex  h-[138px] mb-[18px] p-[18px] bg-white rounded-[12px]'}>
+                      <div
+                        key={elementIndex}
+                        className={`flex  h-[138px] ${
+                          elementIndex % 2 === 0 ? 'mb-[18px]' : ''
+                        } p-[18px] bg-white rounded-[12px]`}
+                      >
                         <div className="flex-shrink-0 w-[64px] h-[64px] mr-[16px]">
                           <Image width={64} height={64} quality={100} src={pluginData.icon} alt={pluginData.title} />
                         </div>
