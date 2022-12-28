@@ -37,10 +37,10 @@ const Banner = () => {
           <span className="mr-[4px] text-[#222222]">星盘跨境</span>
           <span className="text-[#004ED1]">shopastro</span>
         </div>
-        <div className="flex flex-col relative mb-[42px] text-[24px] leading-[34px] text-[#222] text-center font-[600] md:flex-row md:mb-[32px] md:text-[40px] md:leading-[56px]">
+        <h1 className="flex flex-col relative mb-[42px] text-[24px] leading-[34px] text-[#222] text-center font-[600] md:flex-row md:mb-[32px] md:text-[40px] md:leading-[56px]">
           <span>全链路运营方案</span>
           <span>一站式出海更简单、更高效</span>
-        </div>
+        </h1>
 
         <div className="flex relative mb-[40px]">
           <div className="flex items-center px-[8px] text-[16px] leading-[20px] text-[#263577] border-r md:px-[16px] md:text-[20px] md:leading-[24px]">

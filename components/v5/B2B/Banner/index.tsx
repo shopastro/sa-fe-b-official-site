@@ -32,8 +32,10 @@ const Banner = () => {
 
         <div className="absolute top-0 left-0 right-0 bottom-0 px-[20px] pt-[40px] text-white md:flex md:items-center md:justify-center">
           <div className="md:w-[1200px]">
-            <div className="mb-[8px] text-[48px] leading-[58px] font-[700]">星盘 B2B</div>
-            <div className="mb-[16px] text-[28px] leading-[45px] font-[700]">数智化助力外贸企业高效出海</div>
+            <h1 className="flex flex-col">
+              <span className="mb-[8px] text-[48px] leading-[58px] font-[700]">星盘 B2B</span>
+              <span className="mb-[16px] text-[28px] leading-[45px] font-[700]">数智化助力外贸企业高效出海</span>
+            </h1>
             <div className="text-[16px] leading-[26px] md:w-[550px]">
               提供品牌认知与建设、全链路数字化询盘跟进和管理的产品和服务, 支持各类批发场景,
               通过全路径洞察并挖掘访客意向与商机, 帮助外贸B2B商家在线上高效开展业务、获取高质量询盘

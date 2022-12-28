@@ -31,9 +31,9 @@ const Banner = () => {
         </div>
 
         <div className="flex flex-col md:w-[1200px] md:mb-[200px]">
-          <div className="relative px-[20px] mb-[20px] text-[32px] leading-[38px] text-[#0E1E46] font-[700] md:mb-[32px] md:text-[48px] md:leading-[58px]">
+          <h1 className="relative px-[20px] mb-[20px] text-[32px] leading-[38px] text-[#0E1E46] font-[700] md:mb-[32px] md:text-[48px] md:leading-[58px]">
             星盘跨境 shopastro
-          </div>
+          </h1>
           <div className="relative px-[20px] text-[14px] leading-[22px] text-[#535D77] md:w-[550px] md:text-[16px] m:leading-[26px]">
             shopastro是品牌出海服务领域的新锐者, 成立于2021年8月, 总部位于杭州, 在义乌、深圳、厦门三地设立分公司,
             目前已服务百家以上大客户。其致力于为中国品牌卖家提供一站式出海全链路解决方案,

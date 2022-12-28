@@ -17,10 +17,10 @@ const Banner = () => {
     <div className="flex flex-col w-screen bg-[#003892] md:items-center">
       <div className="flex flex-col relative px-[20px] py-[40px] overflow-hidden md:flex-row md:w-[1200px] md:py-[80px]">
         <div className="flex flex-col mb-[20px] md:justify-center md:w-[530px] md:mb-0 md:mr-[38px]">
-          <div className="mb-[16px] text-[28px] leading-[40px] font-[700] md:mb-[32px] md:text-[36px] md:leading-[42px]">
+          <h1 className="mb-[16px] text-[28px] leading-[40px] font-[700] md:mb-[32px] md:text-[36px] md:leading-[42px]">
             <span className="text-[#FFF]">欢迎成为</span>
             <span className="text-[#FF793A]">星盘服务商</span>
-          </div>
+          </h1>
           <div className="mb-[16px] text-[14px] leading-[22px] text-[#FFF] md:text-[16px] md:leading-[26px]">
             星盘跨境 shopastro, 依托一站式SaaS电商服务平台, 融合独立站搭建与品牌海外运营于一体, 赋能中国品牌全球化,
             助力品牌打造海外私域生态。

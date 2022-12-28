@@ -2,7 +2,7 @@
   .pendantContainer {
     position: fixed;
     right: 0;
-    top: calc(50vh - 16rem);
+    top: calc(90vh - 16rem);
     z-index: 100;
 
     ul {
@@ -69,6 +69,9 @@
 
       li:nth-child(2) {
         background-color: #FE8953;
+      }
+
+      li:nth-child(3) {
 
         .imgItem {
           background-image: url(./img/write.svg);

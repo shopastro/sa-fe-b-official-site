@@ -26,9 +26,9 @@ const BelugaBanner = () => {
             alt="beluga logo"
           />
         </div>
-        <div className="mb-[40px] px-[28px] text-[40px] leading-[48px] text-[#0E1E46] text-center font-[700] md:mb-[72px] md:text-[48px] md:leading-[58px]">
+        <h1 className="mb-[40px] px-[28px] text-[40px] leading-[48px] text-[#0E1E46] text-center font-[700] md:mb-[72px] md:text-[48px] md:leading-[58px]">
           一站式的面向品牌站独立站的营销SaaS
-        </div>
+        </h1>
         {/* 功能 */}
         <div className="flex flex-col px-[20px] mb-[40px] md:flex-row">
           {bannerData.map((data, index) => {

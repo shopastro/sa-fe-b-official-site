@@ -61,7 +61,7 @@ const Plugins = () => {
             ref={navigationPrevRef}
             onClick={handlePrev}
             style={{ transform: 'rotateY(180deg)', visibility: reachBeginning ? 'hidden' : 'visible' }}
-            className={'hidden min-w-[58px] min-h-[58px] mr-[28px] cursor-pointer md:flex items-center'}
+            className={'hidden min-w-[58px] min-h-[58px] mr-[16px] cursor-pointer md:flex items-center'}
           >
             <Image
               width={58}
@@ -140,7 +140,7 @@ const Plugins = () => {
             ref={navigationNextRef}
             onClick={handleNext}
             style={{ visibility: reachEnd ? 'hidden' : 'visible' }}
-            className={'hidden min-w-[58px] min-h-[58px] ml-[28px] cursor-pointer md:flex align-middle'}
+            className={'hidden min-w-[58px] min-h-[58px] ml-[16px] cursor-pointer md:flex align-middle'}
           >
             <Image
               width={58}

@@ -35,18 +35,17 @@ const DTCPackage = () => {
             {questions.map((item, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <div className="pb-[40px] md:flex md:flex-wrap md:w-[1200px] md:pb-[0]">
+                  <div className="pb-[40px] md:flex md:flex-wrap md:w-[1200px] md:pb-[20px]">
                     {item.map(({ q, a }, subIndex) => {
                       return (
-                        <div
+                        <a
                           key={subIndex}
-                          className="md:w-1/2"
-                          style={{
-                            paddingRight: !isMobile && subIndex % 2 === 0 ? '16px' : '0',
-                            paddingLeft: !isMobile && subIndex % 2 !== 0 ? '16px' : '0'
-                          }}
+                          className="md:flex md:w-1/2 md:px-[16px]"
+                          href="https://shopastro.feishu.cn/wiki/wikcn1CQ4eufBA27eYaDjR60rIg"
+                          target="_blank"
+                          rel="noreferrer"
                         >
-                          <div className="flex p-[12px] mb-[12px] border border-[#DDE0F1] rounded-[12px] last:mb-0 md:mb-[32px] md:last:mb-[32px]">
+                          <div className="flex flex-1 p-[12px] mb-[12px] border border-[#DDE0F1] rounded-[12px] last:mb-0 md:mb-[32px] md:last:mb-[32px]">
                             <div className="flex-shrink-0 w-[24px] h-[24px] mr-[14px]">
                               <Image
                                 src="https://media.cdn.ishopastro.com/svg/shopastrohome/12151393a75c4453f646467312e92978.svg"
@@ -57,11 +56,11 @@ const DTCPackage = () => {
                               />
                             </div>
                             <div className="flex flex-col">
-                              <div className="text-[14px] leading-[18px] mb-[10px]">{q}</div>
+                              <div className="h-[36px] text-[14px] leading-[18px] mb-[10px] line-clamp-2">{q}</div>
                               <div className="text-[12px] leading-[18px] line-clamp-3">{a}</div>
                             </div>
                           </div>
-                        </div>
+                        </a>
                       )
                     })}
                   </div>
@@ -71,18 +70,20 @@ const DTCPackage = () => {
           </Swiper>
         </div>
 
-        <div className="hidden items-center justify-center mb-[20px] text-[18px] leading-[26px] text-[#004DD1] md:flex">
-          <span className="mr-[12px]">查看更多</span>
-          <span className="w-[22px] h-[22px]">
-            <Image
-              src="https://media.cdn.ishopastro.com/svg/shopastrohome/9d2b02e36bed239d46bcc8be35a9c322.svg"
-              width={22}
-              height={22}
-              quality={100}
-              alt="icon"
-            />
-          </span>
-        </div>
+        <a href="https://shopastro.feishu.cn/wiki/wikcn1CQ4eufBA27eYaDjR60rIg" target="_blank" rel="noreferrer">
+          <div className="hidden items-center justify-center mb-[20px] text-[18px] leading-[26px] text-[#004DD1] md:flex">
+            <span className="mr-[12px]">查看更多</span>
+            <span className="w-[22px] h-[22px]">
+              <Image
+                src="https://media.cdn.ishopastro.com/svg/shopastrohome/9d2b02e36bed239d46bcc8be35a9c322.svg"
+                width={22}
+                height={22}
+                quality={100}
+                alt="icon"
+              />
+            </span>
+          </div>
+        </a>
       </div>
     </div>
   )
