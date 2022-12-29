@@ -10,7 +10,7 @@ const Position = () => {
           服务定位
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="flex items-center flex-1 px-[24px] py-[30px] mb-[20px] border border-[#DDE0F1] rounded-[12px] md:mb-0 md:mr-[38px]">
+          <div className="flex items-center flex-1 px-[24px] py-[30px] mb-[20px] border border-[#DDE0F1] bg-white rounded-[12px] md:mb-0 md:mr-[38px]">
             <span className="w-[40px] h-[40px] mr-[20px] md:w-[80px] md:h-[80px]">
               <Image
                 width={80}
@@ -28,7 +28,7 @@ const Position = () => {
             </div>
           </div>
 
-          <div className="flex items-center flex-1 px-[24px] py-[30px] mb-[20px] border border-[#DDE0F1] rounded-[12px] md:mb-0 md:mr-[38px]">
+          <div className="flex items-center flex-1 px-[24px] py-[30px] mb-[20px] border border-[#DDE0F1] bg-white rounded-[12px] md:mb-0 md:mr-[38px]">
             <span className="w-[40px] h-[40px] mr-[20px] md:w-[80px] md:h-[80px]">
               <Image
                 width={80}
@@ -46,7 +46,7 @@ const Position = () => {
             </div>
           </div>
 
-          <div className="flex items-center flex-1 px-[24px] py-[30px] border border-[#DDE0F1] rounded-[12px]">
+          <div className="flex items-center flex-1 px-[24px] py-[30px] border border-[#DDE0F1] bg-white rounded-[12px]">
             <span className="w-[40px] h-[40px] mr-[20px] md:w-[80px] md:h-[80px]">
               <Image
                 width={80}

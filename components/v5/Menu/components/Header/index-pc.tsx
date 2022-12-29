@@ -72,7 +72,7 @@ const Menu: React.FC<MenuProps> = (props) => {
             </div>
             <div
               className="flex items-center relative mx-[20px] cursor-pointer"
-              style={{ color: route === '/about' ? activeColor : 'inherit' }}
+              style={{ color: route === '/about' || route === '/partners' ? activeColor : 'inherit' }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -94,8 +94,8 @@ const Menu: React.FC<MenuProps> = (props) => {
             <div
               className="cursor-pointer rounded-[8px] border border-solid border-[#FFF] px-[30px] py-[10px]"
               style={{
-                color: theme === 'light' ? '#FFF' : '#004DD1',
-                borderColor: theme === 'light' ? '#FFF' : '#004DD1'
+                color: route === '/about' ? '#3E3E40' : theme === 'light' ? '#FFF' : '#004DD1',
+                borderColor: route === '/about' ? '#3E3E40' : theme === 'light' ? '#FFF' : '#004DD1'
               }}
             >
               <Link href="/product">免费试用</Link>

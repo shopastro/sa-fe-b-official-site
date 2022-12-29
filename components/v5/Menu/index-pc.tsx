@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
 import Header from './components/Header/index-pc'
 
 const Menu: React.FC<MenuProps> = (props) => {
+  const { route } = useRouter()
   const { theme = 'dark' } = props
   const [radio, setRadio] = useState(0)
 
@@ -25,7 +27,10 @@ const Menu: React.FC<MenuProps> = (props) => {
   return (
     <div
       className="flex flex-col items-center justify-center sticky top-0 w-screen text-[16px] leading-[20px] text-[#FFF] z-[100]"
-      style={{ height: `${120 - 40 * radio}px`, backgroundColor: `rgba(255, 255, 255, ${radio})` }}
+      style={{
+        height: `${120 - 40 * radio}px`,
+        backgroundColor: `rgba(255, 255, 255, ${route === '/about' && radio < 0.7 ? 0.7 : radio})`
+      }}
     >
       <Header theme={theme} style={{ opacity: `${1 - radio}` }} />
       <Header theme={'dark'} style={{ opacity: `${radio}` }} />

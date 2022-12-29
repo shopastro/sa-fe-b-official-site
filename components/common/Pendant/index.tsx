@@ -43,19 +43,6 @@ const Pendant: React.FC<IProps> = () => {
         <li>
           <div
             className={classNames(styles.pendantItem)}
-            id={'pendantItem'}
-            onClick={() => {
-              //添加埋点
-              buryingPoint('click_online_chat')
-            }}
-          >
-            <div className={styles.imgItem} />
-            <div className={styles.textItem}> 立即咨询</div>
-          </div>
-        </li>
-        <li>
-          <div
-            className={classNames(styles.pendantItem)}
             onClick={() => {
               buryingPoint('click_touch_contact_form')
               setShowMoadl(true)
@@ -63,9 +50,18 @@ const Pendant: React.FC<IProps> = () => {
             }}
           >
             <div className={styles.imgItem} />
-            <div className={styles.textItem}>联系我们</div>
+            <div className={styles.textItem}>立即咨询</div>
           </div>
         </li>
+        <li>
+          <Link href="/product" passHref>
+            <div className={classNames(styles.pendantItem)}>
+              <div className={styles.imgItem} />
+              <div className={styles.textItem}> 免费试用</div>
+            </div>
+          </Link>
+        </li>
+        <li id="pendantItem" style={{ display: 'none' }}></li>
       </ul>
       {(isOpen || showModal) && <Modal visiable={isOpen || showModal} handleClose={handleClose} />}
     </div>

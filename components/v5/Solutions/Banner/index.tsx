@@ -121,7 +121,7 @@ const Banner = () => {
           }}
         >
           <span className="px-[56px] py-[16px] text-[18px] leading-[26px] text-[#FFF] bg-[#FE8953] rounded-[8px]">
-            联系我们
+            立即咨询
           </span>
         </div>
       </div>

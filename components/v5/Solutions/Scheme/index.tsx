@@ -16,7 +16,7 @@ const Banner = () => {
   const offset = isMobile ? 48 + 90 : 80 + 90
 
   function handleScroll() {
-    const maxLength = contentRefs.current.length
+    const maxLength = contentRefs.current.length - 1
     const curContent = contentRefs.current[activeIndex]
     const { top } = curContent?.getBoundingClientRect() ?? {}
     const scrollY = window.scrollY ?? window.pageYOffset

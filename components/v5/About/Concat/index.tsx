@@ -31,16 +31,10 @@ const Concat = () => {
             </div>
             <div className="flex flex-col mb-[8px] text-[14px] leading-[22px] text-[#0E1E46] md:flex-row md:text-[16px] md:leading-[26px]">
               <span className="mr-[8px]">总部地址: </span>
-              <span>浙江省杭州市余杭区奥克斯未来中心5幢1701室</span>
+              <span>浙江省杭州市滨江区施强广场1号楼1902室</span>
             </div>
             <div className="mb-[8px] text-[14px] leading-[22px] text-[#525B76] md:text-[16px] md:leading-[26px]">
               contact@shopastro.com
-            </div>
-            <div className="flex text-[14px] leading-[22px] text-[#525B76] md:text-[16px] md:leading-[26px]">
-              <span className="mr-[8px]">合作咨询: </span>
-              <a className="underline" href="tel:400-669-2228">
-                400-669-2228
-              </a>
             </div>
           </div>
         </div>

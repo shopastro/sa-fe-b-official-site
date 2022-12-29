@@ -137,15 +137,17 @@ const Banner = () => {
             <div className="flex items-end flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB]">
               <span className="absolute top-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
               <div className="flex flex-col">
-                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/08</span>
-                <span className="text-[14px] leading-[16px] text-[#313945]">星盘跨境shopastro在杭州成立</span>
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/09</span>
+                <span className="text-[14px] leading-[16px] text-[#313945]">
+                  shopastro获蓝湖资本, 深瑾资本等机构数百万美元天使投资
+                </span>
               </div>
             </div>
             <div className="flex items-end flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB]">
               <span className="absolute top-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
               <div className="flex flex-col">
-                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/08</span>
-                <span className="text-[14px] leading-[16px] text-[#313945]">星盘跨境shopastro在杭州成立</span>
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/09</span>
+                <span className="text-[14px] leading-[16px] text-[#313945]">shopastro深圳分公司成立</span>
               </div>
             </div>
           </div>
