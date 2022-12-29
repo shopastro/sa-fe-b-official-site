@@ -42,13 +42,13 @@ const Banner = () => {
             </div>
             {/* fixed btn */}
             <div
-              className="flex fixed bottom-0 left-0 z-10 w-screen px-[20px] py-[10px] bg-[#FFF] cursor-pointer md:mt-[48px] md:static md:w-auto md:p-0 md:bg-transparent"
+              className="hidden md:flex md:mt-[48px] cursor-pointer"
               onClick={() => {
                 setShowMoadl(true)
                 setButtonType('topbanner')
               }}
             >
-              <span className="flex-1 py-[12px] px-[54px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[12px] md:flex-none md:py-[18px]">
+              <span className="flex-1 px-[54px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[12px] md:flex-none md:py-[18px]">
                 立即咨询
               </span>
             </div>

@@ -12,7 +12,7 @@ const BelugaQuestion = () => {
         <div className="flex flex-col px-[20px] md:flex-row md:flex-wrap md:justify-between md:max-w-[1200px] md:px-0">
           {questions.map(({ q, a }, index) => {
             return (
-              <div key={index} className="mb-[12px] last:mb-0 md:max-w-[570px] md:mb-[32px]">
+              <div key={index} className="flex mb-[12px] last:mb-0 md:max-w-[570px] md:mb-[32px] md:last:mb-[32px]">
                 <div className="flex p-[12px] border border-[#DDE0F1] rounded-[12px] md:p-[24px]">
                   <div className="flex-shrink-0 w-[24px] h-[24px] mr-[14px]">
                     <Image
@@ -27,7 +27,7 @@ const BelugaQuestion = () => {
                     <div className="text-[14px] leading-[18px] mb-[10px] md:mb-[12px] md:text-[16px] md:leading-[26px]">
                       {q}
                     </div>
-                    <div className="text-[12px] leading-[18px] text-[#525B76] line-clamp-3">{a}</div>
+                    <div className="text-[13px] leading-[20px] text-[#525B76] line-clamp-3">{a}</div>
                   </div>
                 </div>
               </div>

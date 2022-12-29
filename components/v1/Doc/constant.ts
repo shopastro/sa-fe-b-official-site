@@ -1,9 +1,9 @@
-export const privacy =  `<p style="text-align: center;"><span style="font-size: 24px;"><strong>隐私</strong><strong>政策</strong></span></p>
+export const privacy = `<p style="text-align: center;"><span style="font-size: 24px;"><strong>隐私</strong><strong>政策</strong></span></p>
 <p>发布日期：2021年12月6日</p>
 <p>生效日期：2021年12月6日</p>
 <h3><strong>&nbsp;</strong></h3>
 <h3><strong>引言</strong></h3>
-<p>&nbsp; &nbsp; &nbsp; SHOPASTRO产品与/或服务平台（以下简称&ldquo;SHOPASTRO&rdquo;或&ldquo;本平台&rdquo;）是由星盘起航（杭州）网络技术有限公司（注册地址：【 浙江省杭州市余杭区仓前街道时代未来之城5幢1701室】）及其关联公司（以下统称&ldquo;我们&rdquo;）拥有并经营，并通过SHOPASTRO网站 www.shopastro.com 向卖家用户（以下简称&ldquo;用户&rdquo;&ldquo;您&rdquo;或&ldquo;卖家&rdquo;）提供网店建站、流量、支付和物流完整解决方案的SaaS平台。</p>
+<p>&nbsp; &nbsp; &nbsp; SHOPASTRO产品与/或服务平台（以下简称&ldquo;SHOPASTRO&rdquo;或&ldquo;本平台&rdquo;）是由星盘起航（杭州）网络技术有限公司（注册地址：【 浙江省杭州市滨江区施强广场1号楼1902室 】）及其关联公司（以下统称&ldquo;我们&rdquo;）拥有并经营，并通过SHOPASTRO网站 www.shopastro.com 向卖家用户（以下简称&ldquo;用户&rdquo;&ldquo;您&rdquo;或&ldquo;卖家&rdquo;）提供网店建站、流量、支付和物流完整解决方案的SaaS平台。</p>
 <p>&nbsp;</p>
 <p>&nbsp; &nbsp; &nbsp; 您在使用我们的平台时，我们可能会收集和使用您（包括员工和/或代表您操作业务的人员）的相关信息以及受您委托处理您终端用户（以下合称&ldquo;个人信息主体&rdquo;）的个人信息。我们深知个人信息对个人信息主体的重要性，我们根据适用的法律法规，制订《SHOPASTRO隐私政策》（以下简称&ldquo;本政策&rdquo;），并致力于保护您和/或您终端用户的个人信息安全。</p>
 <p>&nbsp;</p>
@@ -284,7 +284,7 @@ export const privacy =  `<p style="text-align: center;"><span style="font-size: 
 <p><strong>若您和我们发生任何纠纷或争议，首先应友好协商解决；协商不成的，您同意将纠纷或争议提交</strong><strong>杭州市互联网</strong><strong>法院通过诉讼解决。</strong></p>
 <p>&nbsp;</p>
 <h4><strong>九、如何联系我们 </strong></h4>
-<p><strong>&nbsp; &nbsp; &nbsp; </strong>如对本政策内容有任何疑问、意见或建议，您可以通过以下方式与我们联系：1）SHOPASTRO的客户服务热线：400-669-2228；2）个人信息保护专职部门邮箱：shopastro@shopastro-inc.com ；或3）将信件寄至：常用办公地址：&nbsp;浙江省杭州市余杭区仓前街道时代未来之城5幢1701室收。&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p><strong>&nbsp; &nbsp; &nbsp; </strong>如对本政策内容有任何疑问、意见或建议，您可以通过以下方式与我们联系：1）个人信息保护专职部门邮箱：contact@shopastro.com ；或2）将信件寄至：常用办公地址：&nbsp;浙江省杭州市滨江区施强广场1号楼1902室收。&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p>&nbsp;</p>
 <h4><strong>十</strong><strong>、</strong><strong>关键词定义</strong><strong>&nbsp;</strong></h4>
 <p><strong>&nbsp; &nbsp; &nbsp; 您：</strong>指注册并使用SHOPASTRO的卖家用户和/或其员工和/或授权操作本平台的其他人员。</p>
@@ -303,11 +303,11 @@ export const privacy =  `<p style="text-align: center;"><span style="font-size: 
 <p>&nbsp;</p>
 <p><strong>&nbsp; &nbsp; &nbsp; </strong>注：本政策以中文书就，其他语言的翻译版本仅作参考。若本协议的任何语言的翻译件与中文版本有不一致的，以中文版本为准。</p>`
 
-export const agreement =  `<p style="text-align: center;"><span style="font-size: 24px;"><strong>用户协议</strong></span></p>
+export const agreement = `<p style="text-align: center;"><span style="font-size: 24px;"><strong>用户协议</strong></span></p>
 <p>发布日期：2021年12月6日</p>
 <p>生效日期：2021年12月6日&nbsp;</p>
 <p><strong>关于我们</strong></p>
-<p>&nbsp; &nbsp; &nbsp; SHOPASTRO产品与/或服务平台（以下简称&ldquo;SHOPASTRO&rdquo;或&ldquo;本平台&rdquo;）是由星盘起航（杭州）网络技术有限公司（注册地址：【 浙江省杭州市余杭区仓前街道时代未来之城5幢1701室】）及其关联公司（以下统称&ldquo;我们&rdquo;）拥有并经营，并通过SHOPASTRO网站www.shopastro.com向卖家用户（以下简称&ldquo;用户&rdquo;&ldquo;您&rdquo;或&ldquo;卖家&rdquo;）提供网店建站、流量、支付和物流完整解决方案的SaaS平台。</p>
+<p>&nbsp; &nbsp; &nbsp; SHOPASTRO产品与/或服务平台（以下简称&ldquo;SHOPASTRO&rdquo;或&ldquo;本平台&rdquo;）是由星盘起航（杭州）网络技术有限公司（注册地址：【 浙江省杭州市滨江区施强广场1号楼1902室 】）及其关联公司（以下统称&ldquo;我们&rdquo;）拥有并经营，并通过SHOPASTRO网站www.shopastro.com向卖家用户（以下简称&ldquo;用户&rdquo;&ldquo;您&rdquo;或&ldquo;卖家&rdquo;）提供网店建站、流量、支付和物流完整解决方案的SaaS平台。</p>
 <p>&nbsp;</p>
 <p><strong>一、协议范围及生效</strong></p>
 <ol>
@@ -319,7 +319,7 @@ export const agreement =  `<p style="text-align: center;"><span style="font-size
 </ol>
 <p>&nbsp;</p>
 <ol start="3">
-<li>在阅读本协议的过程中，如您有任何疑问或反馈，可以通过SHOPASTRO的客户服务热线：400-669-2228联系我们。当您按照注册页面提示填写信息、完成全部注册程序，且阅读并勾选同意本协议，即表示您接受本协议的全部内容，成为SHOPASTRO的用户。如果您不同意本服务协议或其中任何条款约定，应立即停止注册程或使用本平台。</li>
+<li>在阅读本协议的过程中，如您有任何疑问或反馈，可以通过SHOPASTRO的email【 contact@shopastro.com 】联系我们。当您按照注册页面提示填写信息、完成全部注册程序，且阅读并勾选同意本协议，即表示您接受本协议的全部内容，成为SHOPASTRO的用户。如果您不同意本服务协议或其中任何条款约定，应立即停止注册程或使用本平台。</li>
 </ol>
 <p>&nbsp;</p>
 <ol start="4">
@@ -578,14 +578,11 @@ export const agreement =  `<p style="text-align: center;"><span style="font-size
 <p>&nbsp;</p>
 <p><strong>十三、联系方式</strong></p>
 <ol>
-<li>如对本协议内容有任何疑问、意见或建议，您可以联系SHOPASTRO客户服务热线：shopastro@shopastro-inc.com；</li>
+<li>如对本协议内容有任何疑问、意见或建议，您可以通过以下方式联系我们：</li>
 </ol>
 <p>&nbsp;</p>
-<ol start="2">
-<li>我们还设立了个人信息保护专职部门，您可以通过以下方式与我们取得联系。</li>
-</ol>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.1 邮箱：shopastro@shopastro-inc.com</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.2 常用办公地址：浙江省杭州市余杭区仓前街道时代未来之城5幢1701室（收）</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 邮箱：contact@shopastro.com</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 常用办公地址：浙江省杭州市滨江区施强广场1号楼1902室（收）</p>
 <p>&nbsp;</p>
 <ol start="3">
 <li>本协议以中文书就，其他语言的翻译版本仅作参考。若本协议的任何语言的翻译件与中文版本有不一致的，以中文版本为准。</li>

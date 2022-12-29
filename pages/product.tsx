@@ -86,7 +86,7 @@ const Product: NextPage = () => {
                     setButtonType('topbanner')
                   }}
                 >
-                  <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">咨询</span>
+                  <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">立即咨询</span>
                   <span className="w-[22px] h-[22px]">
                     <Image
                       src="https://media.cdn.ishopastro.com/svg/shopastrohome/aae57df8a5df86da3a336aea64203573.svg"
@@ -119,7 +119,7 @@ const Product: NextPage = () => {
                     setButtonType('topbanner')
                   }}
                 >
-                  <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">咨询</span>
+                  <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">立即咨询</span>
                   <span className="w-[22px] h-[22px]">
                     <Image
                       src="https://media.cdn.ishopastro.com/svg/shopastrohome/aae57df8a5df86da3a336aea64203573.svg"

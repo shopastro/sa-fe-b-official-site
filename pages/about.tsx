@@ -13,7 +13,10 @@ import TryNow from '../components/v5/TryNow'
 const About: NextPage = () => {
   return (
     <>
-      <Header />
+      <Header
+        description="shopastro, 星盘跨境, 品牌出海一站式数智化解决方案; shopastro是品牌出海服务领域的新锐者, 成立于2021年8月, 总部位于杭州, 在义乌、深圳、厦门三地设立分公司, 目前已服务百家以上大客户"
+        keywords="关于星盘, 发展历程, 服务定位, 品牌, 长期价值, 加入我们, 联系我们, 免费试用;"
+      />
       <div className="absolute top-0 left-0 w-screen hidden md:block">
         <div>
           <Image

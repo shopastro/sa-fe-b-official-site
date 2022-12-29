@@ -13,7 +13,10 @@ import TryNow from '../components/v5/TryNow'
 const Partners: NextPage = () => {
   return (
     <>
-      <Header />
+      <Header
+        description="shopastro, 星盘跨境, 品牌出海一站式数智化解决方案; 欢迎成为星盘服务商;"
+        keywords="星盘服务商, 合作伙伴, 助力助力中国品牌出海, 立即加入;"
+      />
       {/* 背景 */}
       <div className="flex absolute top-0 left-0 w-screen h-[556px] md:h-[700px] overflow-hidden">
         <Image

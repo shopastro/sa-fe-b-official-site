@@ -1,8 +1,14 @@
 import Image from 'next/image'
+import { useContainer } from 'unstated-next'
 
+import useIsMobile from '../../../../hooks/useIsMobile'
+import detectionStore from '../../../../store/detectionStore'
 import { bannerData } from './data'
 
 const BelugaBanner = () => {
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
+  const isMobile = useIsMobile()
+
   return (
     <div className="flex flex-col justify-center relative w-screen bg-[#F5F6FA]">
       {/* bg */}
@@ -17,17 +23,18 @@ const BelugaBanner = () => {
         </div>
       </div>
       <div className="flex flex-col items-center relative py-[40px] overflow-hidden md:py-[80px]">
-        <div className="relative w-[185px] h-[30px] mb-[32px]">
+        <div className="relative w-[239px] h-[39px] mb-[40px]">
           <Image
-            width={185}
-            height={30}
+            width={239}
+            height={37}
             quality={100}
-            src="https://media.cdn.ishopastro.com/svg/shopastrohome/97d7732652dd2a9b4e9cf81047e76b0d.svg"
+            src="https://media.cdn.ishopastro.com/svg/shopastrohome/64f6aaf04e35facb31aa17b3170289fb.svg"
             alt="beluga logo"
           />
         </div>
-        <h1 className="mb-[40px] px-[28px] text-[40px] leading-[48px] text-[#0E1E46] text-center font-[700] md:mb-[72px] md:text-[48px] md:leading-[58px]">
-          一站式的面向品牌站独立站的营销SaaS
+        <h1 className="flex flex-col mb-[40px] px-[28px] text-[40px] leading-[48px] text-[#0E1E46] text-center font-[700] md:mb-[42px] md:text-[48px] md:leading-[58px]">
+          <span>星盘白鲸：面向品牌独立站的</span>
+          <span className="text-[#FE8952]">一站式营销SaaS</span>
         </h1>
         {/* 功能 */}
         <div className="flex flex-col px-[20px] mb-[40px] md:flex-row">
@@ -37,7 +44,7 @@ const BelugaBanner = () => {
                 key={index}
                 className="flex flex-col py-[28px] mb-[30px] border border-white bg-[#F8F8F8] rounded-[12px] last:mb-0 md:w-[260px] md:mr-[38px] md:last:mr-0 md:mb-0"
               >
-                <div className="flex justify-center mb-[12px]">
+                <div className="flex justify-center mb-[12px] md:hidden">
                   <span className="px-[36px] py-[4px] text-[14px] leading-[20px] text-[#FFF] rounded-[100vw] bg-[#004DD1]">
                     {data.type}
                   </span>
@@ -45,8 +52,8 @@ const BelugaBanner = () => {
                 <div className="mb-[12px] text-[22px] leading-[30px] text-[#18214D] text-center font-[700]">
                   {data.title}
                 </div>
-                <div className="mb-[32px] text-[16px] leading-[24px] text-[#3E4462] text-opacity-80 text-center md:px-[28px]">
-                  {data.info}
+                <div className="mb-[32px] px-[40px] text-[16px] leading-[24px] text-[#3E4462] text-opacity-80 text-center md:px-[28px]">
+                  {isMobile ? data.infoMobile : data.info}
                 </div>
                 <div className="px-[20px]">
                   <Image width={520} height={400} quality={100} src={data.image} alt={data.title} />
@@ -56,17 +63,16 @@ const BelugaBanner = () => {
           })}
         </div>
         {/* 二维码 */}
-        <div className="flex flex-col items-center">
-          <span className="w-[120px] h-[120px] mb-[32px] md:w-[132px] md:h-[132px] md:p-[12px] md:rounded-[8px] md:bg-[#FFF]">
-            <Image
-              width={210}
-              height={210}
-              quality={100}
-              src="https://media.cdn.ishopastro.com/upload/images/20221220-164020.png_2022-12-20-08-40-34.png"
-              alt="二维码"
-            />
+        <div
+          className="hidden md:flex cursor-pointer"
+          onClick={() => {
+            setShowMoadl(true)
+            setButtonType('topbanner')
+          }}
+        >
+          <span className="flex-1 px-[54px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[12px] md:flex-none md:py-[18px]">
+            立即咨询
           </span>
-          <span className="text-[16px] leading-[24px] text-[#000]">试用请扫码联系企业微信。</span>
         </div>
       </div>
     </div>
