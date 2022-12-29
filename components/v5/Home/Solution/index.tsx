@@ -11,7 +11,7 @@ const Solution = () => {
     <div className="flex flex-col items-center bg-[#F0F3FF]">
       <div className="flex flex-col relative px-[20px] py-[40px] md:w-[1400px] md:px-[120px] md:py-[80px]">
         {/* bg1 */}
-        <div className="absolute top-0 left-0 w-[392px] h-[598px]">
+        <div className="absolute top-0 left-0 w-[100px] h-[157px] md:w-[392px] md:h-[598px]">
           <Image
             src="https://media.cdn.ishopastro.com/svg/shopastrohome/ef4bbe085ac94e09e17c3180bc111053.svg"
             width={392}
