@@ -87,8 +87,9 @@ const Banner = () => {
             <div className="flex items-center mb-[42px]">
               <span className="flex-shrink-0 w-[22px] h-[22px] ml-[-12px] mr-[12px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
               <div className="flex flex-col">
-                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[600]">2021/09</span>
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[600]">2022/02</span>
                 <span className="text-[14px] leading-[16px] text-[#313945]">shopastro深圳分公司成立</span>
+                <span className="text-[14px] leading-[16px] text-[#313945]">shopastro厦门分公司成立</span>
               </div>
             </div>
             <div className="flex items-center">
@@ -146,8 +147,9 @@ const Banner = () => {
             <div className="flex items-end flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB]">
               <span className="absolute top-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
               <div className="flex flex-col">
-                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/09</span>
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2022/02</span>
                 <span className="text-[14px] leading-[16px] text-[#313945]">shopastro深圳分公司成立</span>
+                <span className="text-[14px] leading-[16px] text-[#313945]">shopastro厦门分公司成立</span>
               </div>
             </div>
           </div>
