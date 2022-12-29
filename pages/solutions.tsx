@@ -16,7 +16,11 @@ const Solutions: NextPage = () => {
 
   return (
     <>
-      <Header />
+      <Header
+        description="shopastro, 星盘跨境, 品牌出海一站式数智化解决方案; 面向商家的不同运营诉求, 星盘提供多种产品和行业解决方案; shopastro星盘跨境"
+        keywords="解决方案; 自主品牌打造, 海量的竞争情报数据, 内置免费有效插件; 多渠道布局, 一键同步迁移, 捆绑销售, 满减满赠, 会员积分; 商品定制POD, 
+        客户个性化需求, 商品的特殊化定制; B2B 外贸, 私域获客, 询盘转化, 履约交付, 健康经营; 无货源开店, 官方DS插件, 一键上架, 自动履约; 供应链测品及卖货, 便捷开通, 归因助手, 盯盘工具; 一件代发供货, 自主上架商品, 打通1688商品池, Shopify店主的跨境交易支付; 免费试用;"
+      />
       {/* 背景 */}
       <div className="flex absolute top-0 left-0 w-screen h-[150px] bg-[#F5F6FA] overflow-hidden" />
       {/* 内容 */}
