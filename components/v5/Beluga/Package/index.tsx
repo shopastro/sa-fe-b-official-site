@@ -1,13 +1,13 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState } from 'react'
+import { useContainer } from 'unstated-next'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
+import detectionStore from '../../../../store/detectionStore'
 import { belugaMonthData, belugaTypeInfo, belugaYearData } from './data'
 
-const freeLink = 'https://sys.admin.ishopastro.com/admin/user/signup?type=beluga'
-
 const DTCPackage = () => {
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
   const [showMonth, setShowMonth] = useState(true)
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
   const data = showMonth ? belugaMonthData : belugaYearData
@@ -94,10 +94,12 @@ const DTCPackage = () => {
                   <span
                     className="border border-[#D6E0EA] rounded-[4px] cursor-pointer"
                     style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
+                    onClick={() => {
+                      setShowMoadl(true)
+                      setButtonType(`package-${index}`)
+                    }}
                   >
-                    <span className="px-[8px] py-[4px] text-[14px] leading-[22px]">
-                      <Link href={freeLink}>免费试用</Link>
-                    </span>
+                    <span className="px-[8px] py-[4px] text-[14px] leading-[22px]">立即咨询</span>
                   </span>
                 </div>
               )

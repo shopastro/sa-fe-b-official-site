@@ -16,7 +16,7 @@ const DTCPackage = () => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col px-[20px] text-[#0E1E46]">
-        <div className="mb-[10px] text-[24px] leading-[28px] text-center md:mb-[20px] md:text-[32px] md:leading-[38px]">
+        <div className="mb-[10px] text-[24px] leading-[28px] text-center font-[700] md:mb-[20px] md:text-[32px] md:leading-[38px]">
           为什么选择星盘DTC?
         </div>
         <div className="mb-[20px] text-[14px] leading-[22px] text-[#535D77] text-center md:mb-[40px] md:text-[18px] md:leading-[28px]">

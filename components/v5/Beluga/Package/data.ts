@@ -104,20 +104,20 @@ export const belugaTypeInfo = [
   {
     type: 1,
     title: '基础版',
-    monthPrice: 380,
-    yearPrice: 3800
+    monthPrice: '???',
+    yearPrice: '????'
   },
   {
     type: 2,
     title: '专业版',
-    monthPrice: 680,
-    yearPrice: 6800
+    monthPrice: '???',
+    yearPrice: '????'
   },
   {
     type: 3,
     title: '旗舰版',
-    monthPrice: 1980,
-    yearPrice: 19800
+    monthPrice: '????',
+    yearPrice: '?????'
   }
 ]
 

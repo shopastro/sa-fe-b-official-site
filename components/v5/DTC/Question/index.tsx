@@ -40,7 +40,7 @@ const DTCPackage = () => {
                       return (
                         <a
                           key={subIndex}
-                          className="md:flex md:w-1/2 md:px-[16px]"
+                          className="flex mb-[10px] last:mb-0 md:w-1/2 md:px-[16px] md:mb-0"
                           href="https://shopastro.feishu.cn/wiki/wikcn1CQ4eufBA27eYaDjR60rIg"
                           target="_blank"
                           rel="noreferrer"

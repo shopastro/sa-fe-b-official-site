@@ -35,6 +35,7 @@ const Partners: NextPage = () => {
         <Footer />
       </div>
       <FixedButton
+        text="立即加入"
         onClick={() => {
           const usernameInput = document.getElementById('username')
           if (usernameInput) {

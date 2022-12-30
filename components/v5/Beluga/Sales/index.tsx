@@ -1,9 +1,13 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import { useContainer } from 'unstated-next'
 
+import detectionStore from '../../../../store/detectionStore'
+import FreeButton from '../../FreeButton'
 import { platformList, salesData } from './data'
 
 const BelugaSales = () => {
+  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
+
   return (
     <div className="flex flex-col justify-center w-screen">
       <div className="flex flex-col items-center relative overflow-hidden">
@@ -23,7 +27,7 @@ const BelugaSales = () => {
                 </span>
               )
             })}
-            <span className="flex flex-1 text-[16px] leading-[26px] text-[#535D77] text-center md:items-center md:flex-none md:w-[64px] md:px-[10px] md:text-[20px] md:leading-[32px] md:border md:border-[#E5E5E5] md:rounded-[8px]">
+            <span className="flex flex-1 justify-center text-[16px] leading-[26px] text-[#535D77] text-center md:items-center md:flex-none md:w-[64px] md:px-[10px] md:text-[20px] md:leading-[32px] md:border md:border-[#E5E5E5] md:rounded-[8px]">
               敬请期待
             </span>
           </div>
@@ -61,19 +65,13 @@ const BelugaSales = () => {
             })}
           </div>
           <div className="flex items-center justify-center">
-            <Link href="https://sys.admin.ishopastro.com/admin/user/signup?type=beluga" passHref>
-              <div className="flex items-center py-[8px] px-[28px] border border-solid border-[#104CBC] bg-[#F0F3FF] rounded-[8px] md:py-[14px] cursor-pointer">
-                <span className="mr-[24px] text-[16px] text-[#004DD1] font-[700] md:text-[18px]">免费试用</span>
-                <span className="w-[23px] h-[23px] text-[#004DD1]">
-                  <Image
-                    width={23}
-                    height={23}
-                    src="https://media.cdn.ishopastro.com/upload/images/20221206-110145.png_2022-12-06-03-01-59.png"
-                    alt=""
-                  />
-                </span>
-              </div>
-            </Link>
+            <FreeButton
+              text="立即咨询"
+              onClick={() => {
+                setShowMoadl(true)
+                setButtonType(`story`)
+              }}
+            />
           </div>
         </div>
       </div>

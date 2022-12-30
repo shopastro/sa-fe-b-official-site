@@ -95,30 +95,38 @@ const Menu: React.FC<MenuProps> = (props) => {
           </div>
         </div>
 
-        <div
-          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
-          style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
-        >
-          <Link href="/dtc">DTC建站</Link>
-        </div>
-        <div
-          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
-          style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
-        >
-          <Link href="/b2b">B2B建站</Link>
-        </div>
-        <div
-          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
-          style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
-        >
-          <Link href="/beluga">白鲸营销</Link>
-        </div>
-        <div
-          className="p-[16px] text-[16px] leading-[24px] text-[#222]"
-          style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
-        >
-          <Link href="/solutions">解决方案</Link>
-        </div>
+        <Link href="/dtc" passHref>
+          <div
+            className="p-[16px] text-[16px] leading-[24px] text-[#222]"
+            style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+          >
+            DTC建站
+          </div>
+        </Link>
+        <Link href="/b2b" passHref>
+          <div
+            className="p-[16px] text-[16px] leading-[24px] text-[#222]"
+            style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+          >
+            B2B建站
+          </div>
+        </Link>
+        <Link href="/beluga" passHref>
+          <div
+            className="p-[16px] text-[16px] leading-[24px] text-[#222]"
+            style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+          >
+            白鲸营销
+          </div>
+        </Link>
+        <Link href="/solutions" passHref>
+          <div
+            className="p-[16px] text-[16px] leading-[24px] text-[#222]"
+            style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+          >
+            解决方案
+          </div>
+        </Link>
         <div className="flex flex-col">
           <div
             className="flex justify-between p-[16px] text-[16px] leading-[24px] text-[#222]"

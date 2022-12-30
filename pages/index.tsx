@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         keywords="星盘跨境,独立站,十五分钟快速建站, 丰富的免费插件, 自建站,出海,跨境,DTC,电商,Saas,跨境物流,跨境支付, 白鲸广告管理, 白鲸用户运营, Google 投放, Facebook投放,精准归因, 跨境引流,ShopAstro,免费SEO检测、自主品牌打造、多渠道布局、商品定制POD、B2B外贸、无货源开店、一件代发供货、供应链测品及卖货"
       />
       {/* 背景 */}
-      <div className="flex items-center justify-center absolute top-0 left-0 w-screen h-[1100px] md:h-[950px] bg-[#003892] overflow-hidden">
+      <div className="flex items-center justify-center absolute top-0 left-0 w-screen h-[1300px] md:h-[950px] bg-[#003892] overflow-hidden">
         <div className="relative w-screen h-full md:w-[1200px] md:m-auto">
           <div className="absolute w-[220px] top-[75px] left-[-15px] md:top-[270px] md:left-[624px] md:w-[353px]">
             <Image

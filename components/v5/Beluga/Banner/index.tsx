@@ -44,11 +44,6 @@ const BelugaBanner = () => {
                 key={index}
                 className="flex flex-col py-[28px] mb-[30px] border border-white bg-[#F8F8F8] rounded-[12px] last:mb-0 md:w-[260px] md:mr-[38px] md:last:mr-0 md:mb-0"
               >
-                <div className="flex justify-center mb-[12px] md:hidden">
-                  <span className="px-[36px] py-[4px] text-[14px] leading-[20px] text-[#FFF] rounded-[100vw] bg-[#004DD1]">
-                    {data.type}
-                  </span>
-                </div>
                 <div className="mb-[12px] text-[22px] leading-[30px] text-[#18214D] text-center font-[700]">
                   {data.title}
                 </div>

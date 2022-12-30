@@ -6,10 +6,10 @@ const Banner = () => {
     <div className="flex justify-center w-screen text-white">
       <div className="flex flex-col items-center relative px-[20px] overflow-hidden md:w-[1200px] md:h-[830px]">
         <div className="flex flex-col justify-between relative z-10 md:flex-row md:w-[1200px] md:mb-[42px]">
-          <div className="flex flex-col mt-[8px] md:mt-[85px]">
-            <h1 className="text-[34px] leading-[50.4px] font-[700] md:text-[48px] md:leading-[67.2px] md:text-[36px]">
-              <span>星盘跨境, 品牌出海商家的</span>
-              <span className="mb-[8px] md:mb-[28px] block">
+          <div className="flex flex-col mt-[18px] md:mt-[85px]">
+            <h1 className="text-[28px] leading-[40px] font-[700] md:leading-[67.2px] md:text-[48px]">
+              <span className="flex">星盘跨境, 品牌出海商家的</span>
+              <span className="flex mb-[8px] md:mb-[28px]">
                 一站式数智化<span className="text-[#FE8953]">解决方案</span>
               </span>
             </h1>

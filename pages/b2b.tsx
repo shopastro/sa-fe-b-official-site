@@ -27,6 +27,7 @@ const B2B: NextPage = () => {
         <Footer />
       </div>
       <FixedButton
+        text="立即咨询"
         onClick={() => {
           setShowMoadl(true)
           setButtonType('stickyBottom')

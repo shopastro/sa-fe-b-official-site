@@ -10,6 +10,7 @@ import { schemaData } from './data'
 const Banner = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
   const [activeIndex, setActiveIndex] = useState(0)
+  const titleRefs = useRef<HTMLDivElement[]>([])
   const contentRefs = useRef<HTMLDivElement[]>([])
   const beforeScrollY = useRef(0)
   const isMobile = useIsMobile()
@@ -36,6 +37,13 @@ const Banner = () => {
     beforeScrollY.current = scrollY
   }
   useEffect(() => {
+    const titleRef = titleRefs.current[activeIndex]
+    titleRef.scrollIntoView({
+      block: 'nearest',
+      inline: 'center',
+      behavior: 'auto'
+    })
+
     window.addEventListener('scroll', handleScroll)
 
     return () => {
@@ -55,8 +63,12 @@ const Banner = () => {
                   key={index}
                   className="p-[12px] text-[18px] leading-[26px] rounded-[12px] whitespace-nowrap cursor-pointer md:text-[20px] md:leading-[28px]"
                   style={{
+                    transition: 'background .3s',
                     backgroundColor: activeIndex === index ? '#004ED1' : 'transparent',
                     color: activeIndex === index ? '#FFF' : '#0E1E46'
+                  }}
+                  ref={(titleRef) => {
+                    if (titleRef) titleRefs.current[index] = titleRef
                   }}
                   onClick={() => {
                     const contentRef = contentRefs.current[index]

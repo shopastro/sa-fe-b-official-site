@@ -18,7 +18,7 @@ const DTCPackage = () => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col px-[20px] py-[32px] text-[#0E1E46] md:items-center">
-        <h1 className="mb-[16px] text-[48px] leading-[58px] text-center md:mb-[32px]">DTC建站套餐</h1>
+        <h1 className="mb-[16px] text-[48px] leading-[58px] text-center font-[700] md:mb-[32px]">DTC建站套餐</h1>
         <div className="flex justify-center mb-[20px] text-[18px] leading-[24px] md:mb-[32px]">
           <div className="flex bg-[#D9E6FA] rounded-[100vw]">
             <span
@@ -126,7 +126,7 @@ const DTCPackage = () => {
         </div>
 
         <div className="flex flex-col md:py-[80px]">
-          <div className="mb-[20px] text-[28px] leading-[32px] text-center md:mb-[40px] md:text-[32px] md:leading-[38px] ">
+          <div className="mb-[20px] text-[28px] leading-[32px] text-center font-[700] md:mb-[40px] md:text-[32px] md:leading-[38px] ">
             DTC建站套餐比较
           </div>
           <div className="flex justify-center mb-[20px] md:hidden">
