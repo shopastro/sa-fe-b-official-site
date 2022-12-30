@@ -15,7 +15,7 @@ const Concat = () => {
               width={1343}
               height={928}
               quality={100}
-              src="https://media.cdn.ishopastro.com/upload/images/20221221-211632.png_2022-12-21-13-18-14.png"
+              src="https://media.cdn.ishopastro.com/upload/images/20221230-170159.png_2022-12-30-09-02-45.png"
               alt="icon"
             />
           </div>
