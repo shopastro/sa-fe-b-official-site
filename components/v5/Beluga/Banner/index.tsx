@@ -48,7 +48,7 @@ const BelugaBanner = () => {
                   {data.title}
                 </div>
                 <div className="mb-[32px] px-[40px] text-[16px] leading-[24px] text-[#3E4462] text-opacity-80 text-center md:px-[28px]">
-                  {isMobile ? data.infoMobile : data.info}
+                  {data.info}
                 </div>
                 <div className="px-[20px]">
                   <Image width={520} height={400} quality={100} src={data.image} alt={data.title} />
