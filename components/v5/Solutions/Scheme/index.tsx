@@ -1,3 +1,4 @@
+import anime from 'animejs'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { useContainer } from 'unstated-next'
@@ -10,8 +11,10 @@ import { schemaData } from './data'
 const Banner = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
   const [activeIndex, setActiveIndex] = useState(0)
+  const titleContainerRefs = useRef<HTMLDivElement>(null)
   const titleRefs = useRef<HTMLDivElement[]>([])
   const contentRefs = useRef<HTMLDivElement[]>([])
+  const isFirstRender = useRef(true)
   const beforeScrollY = useRef(0)
   const isMobile = useIsMobile()
   const offset = isMobile ? 48 + 90 : 80 + 90
@@ -36,18 +39,39 @@ const Banner = () => {
 
     beforeScrollY.current = scrollY
   }
-  useEffect(() => {
-    const titleRef = titleRefs.current[activeIndex]
-    titleRef.scrollIntoView({
-      block: 'nearest',
-      inline: 'center',
-      behavior: 'auto'
-    })
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
+    }
+  })
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
+    if (isMobile && titleContainerRefs.current) {
+      const titleRef = titleRefs.current[activeIndex]
+      const { left, width } = titleRef.getBoundingClientRect()
+      const { left: containerLeft, width: containerWidth } = titleContainerRefs.current.getBoundingClientRect() ?? {}
+      const offset = left - containerLeft - (containerWidth - width) / 2
+
+      const data = { offset: titleContainerRefs.current.scrollLeft }
+      anime({
+        targets: data,
+        offset: titleContainerRefs.current.scrollLeft + offset,
+        duration: 300,
+        easing: 'easeInOutQuad',
+        update: function () {
+          if (titleContainerRefs.current) {
+            titleContainerRefs.current.scrollLeft = data.offset
+          }
+        }
+      })
     }
   }, [activeIndex])
 
@@ -56,7 +80,7 @@ const Banner = () => {
       <div className="flex flex-col items-center relative pt-[20px] pb-[40px] md:pt-[60px] md:pb-[80px]">
         {/*  */}
         <div className="flex flex-col w-screen p-[20px] sticky top-[48px] z-10 bg-white md:w-[1200px] md:top-[80px] md:mb-[20px]">
-          <div className="flex overflow-x-auto md:justify-between">
+          <div className="flex overflow-x-auto md:justify-between" ref={titleContainerRefs}>
             {schemaData.map((item, index) => {
               return (
                 <div
