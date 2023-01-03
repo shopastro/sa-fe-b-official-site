@@ -156,14 +156,15 @@ const Menu: React.FC<MenuProps> = (props) => {
             </Link>
           </div>
         </div>
-        <div
+        <a
+          href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg"
+          target={'_blank'}
+          rel="noreferrer"
           className="p-[16px] text-[16px] leading-[24px] text-[#222]"
           style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
         >
-          <a href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg" target={'_blank'} rel="noreferrer">
-            帮助
-          </a>
-        </div>
+          帮助
+        </a>
       </div>
     </>
   )
