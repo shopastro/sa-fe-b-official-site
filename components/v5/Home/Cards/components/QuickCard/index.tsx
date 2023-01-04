@@ -13,7 +13,7 @@ const Quick = () => {
           width={1570}
           height={1200}
           quality={100}
-          src="https://media.cdn.ishopastro.com/upload/images/1.png_2022-12-22-08-13-25.png"
+          src="https://media.cdn.ishopastro.com/upload/images/20230104-173154.png_2023-01-04-09-34-23.png"
           alt="快速建站"
         />
       </div>
