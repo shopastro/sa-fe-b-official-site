@@ -40,7 +40,7 @@ const Banner = () => {
             height={860}
             quality={100}
             src="https://media.cdn.ishopastro.com/upload/images/20221222-143124.png_2022-12-22-06-32-44.png"
-            alt=""
+            alt="banner"
           />
         </div>
       </div>

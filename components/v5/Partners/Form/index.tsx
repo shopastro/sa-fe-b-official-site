@@ -13,7 +13,7 @@ const Banner = () => {
             height={918}
             quality={100}
             src="https://media.cdn.ishopastro.com/upload/images/20221222-140505.png_2022-12-22-06-05-57.png"
-            alt=""
+            alt="合作伙伴申请"
           />
         </div>
         <div className="flex flex-col md:flex-1">

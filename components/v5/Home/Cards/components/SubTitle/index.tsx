@@ -9,7 +9,7 @@ const SubTitle: React.FC = (props) => {
           src="https://media.cdn.ishopastro.com/svg/shopastrohome/bbbdf92fef7fd9cb4dc206f8c099f0ea.svg"
           width={24}
           height={24}
-          alt=""
+          alt="icon"
         />
       </span>
       <span>{props.children}</span>

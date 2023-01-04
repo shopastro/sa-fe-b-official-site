@@ -23,10 +23,10 @@ const Customer = () => {
                 <a href={item.link} target="_blank" rel="noreferrer">
                   <div className="flex flex-col p-[20px] bg-white rounded-[10px] md:p-[40px]">
                     <div className="mb-[20px]" style={{ display: isMobile ? 'flex' : 'none' }}>
-                      <Image width={590} height={404} quality={100} src={item.imageMobile} alt="" />
+                      <Image width={590} height={404} quality={100} src={item.imageMobile} alt={item.title} />
                     </div>
                     <div className="mb-[20px]" style={{ display: !isMobile ? 'flex' : 'none' }}>
-                      <Image width={1090} height={480} quality={100} src={item.imagePc} alt="" />
+                      <Image width={1090} height={480} quality={100} src={item.imagePc} alt={item.title} />
                     </div>
                     <div className="mb-[12px] text-[24px] leading-[34px] text-[#0E1E46] font-[600] md:text-[32px] md:leading-[44px]">
                       {item.title}

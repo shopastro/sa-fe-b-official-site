@@ -57,7 +57,7 @@ const Footer = () => {
             >
               <span>关于我们</span>
               <span className="md:hidden">
-                <Image src={showAbout ? minus : add} width={18} height={18} alt="" />
+                <Image src={showAbout ? minus : add} width={18} height={18} alt={showAbout ? 'minus' : 'add'} />
               </span>
             </div>
             <div
@@ -91,7 +91,7 @@ const Footer = () => {
             >
               <span>加入我们</span>
               <span className="md:hidden">
-                <Image src={showJoin ? minus : add} width={18} height={18} alt="" />
+                <Image src={showJoin ? minus : add} width={18} height={18} alt={showAbout ? 'minus' : 'add'} />
               </span>
             </div>
             <div
@@ -123,7 +123,7 @@ const Footer = () => {
                     src="https://media.cdn.ishopastro.com/upload/images/police.png_2022-12-14-06-58-53.png"
                     width={16}
                     height={16}
-                    alt=""
+                    alt="police png"
                   />
                 </span>
                 <a
@@ -141,7 +141,7 @@ const Footer = () => {
                     src="https://media.cdn.ishopastro.com/upload/images/police.png_2022-12-14-06-58-53.png"
                     width={16}
                     height={16}
-                    alt=""
+                    alt="police png"
                   />
                 </span>
                 <a
@@ -159,7 +159,7 @@ const Footer = () => {
                     src="https://media.cdn.ishopastro.com/upload/images/police.png_2022-12-14-06-58-53.png"
                     width={16}
                     height={16}
-                    alt=""
+                    alt="police png"
                   />
                 </span>
                 <a

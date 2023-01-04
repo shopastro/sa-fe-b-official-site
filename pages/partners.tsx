@@ -14,6 +14,7 @@ const Partners: NextPage = () => {
   return (
     <>
       <Header
+        title="欢迎成为shopastro 星盘跨境的渠道合作&生态联盟服务商！"
         description="shopastro, 星盘跨境, 品牌出海一站式数智化解决方案; 欢迎成为星盘服务商;"
         keywords="星盘服务商, 合作伙伴, 助力助力中国品牌出海, 立即加入;"
       />
@@ -24,7 +25,7 @@ const Partners: NextPage = () => {
           height={1236}
           quality={100}
           src="https://media.cdn.ishopastro.com/upload/images/20221229-101726.png_2022-12-29-02-22-39.png"
-          alt=""
+          alt="bg"
         />
       </div>
       <div className="relative pb-[70px] md:pb-0">

@@ -52,7 +52,7 @@ const Banner = () => {
               height={539}
               quality={100}
               src="https://media.cdn.ishopastro.com/upload/images/20221212-151737.png_2022-12-12-07-35-32.png"
-              alt=""
+              alt="banner"
             />
           </div>
         </div>

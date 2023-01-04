@@ -69,7 +69,7 @@ const Plugins = () => {
               quality={100}
               objectFit={'cover'}
               src="https://media.cdn.ishopastro.com/svg/shopastrohome/cd0fb76c374c39f5c1fc747a424b2d0c.svg"
-              alt=""
+              alt="arrow icon"
             />
           </div>
           <Swiper
@@ -147,7 +147,7 @@ const Plugins = () => {
               height={58}
               quality={100}
               src="https://media.cdn.ishopastro.com/svg/shopastrohome/cd0fb76c374c39f5c1fc747a424b2d0c.svg"
-              alt=""
+              alt="arrow icon"
             />
           </div>
           {/* h5 */}

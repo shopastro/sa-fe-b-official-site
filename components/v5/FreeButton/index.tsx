@@ -11,7 +11,7 @@ const FreeButton: React.FC<FreeButtonProps> = (props) => {
           width={23}
           height={23}
           src="https://media.cdn.ishopastro.com/upload/images/20221206-110145.png_2022-12-06-03-01-59.png"
-          alt=""
+          alt="icon"
         />
       </span>
     </div>
