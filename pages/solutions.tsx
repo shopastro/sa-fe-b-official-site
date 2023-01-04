@@ -6,7 +6,7 @@ import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 import Banner from '../components/v5/Solutions/Banner'
-import Customer from '../components/v5/Solutions/Customer'
+// import Customer from '../components/v5/Solutions/Customer'
 import Scheme from '../components/v5/Solutions/Scheme'
 import detectionStore from '../store/detectionStore'
 
@@ -28,7 +28,7 @@ const Solutions: NextPage = () => {
         <Menu />
         <Banner />
         <Scheme />
-        <Customer />
+        {/* <Customer /> */}
         <Footer />
       </div>
       <FixedButton
