@@ -39,6 +39,7 @@ const Form: React.FC<IProps> = (props) => {
   })
 
   const { route } = useRouter()
+  const page = route === '/' ? 'home' : route.replace('/', '')
 
   const newList = [
     ...list,
@@ -140,12 +141,12 @@ const Form: React.FC<IProps> = (props) => {
           ...values,
           category: type,
           checkDomain: dataSource?.url,
-          source: {
-            page: route.replace('/', ''),
+          source: JSON.stringify({
+            page,
             button: buttonType,
             client: window.innerWidth < 768 ? 'mobile' : 'pc',
             ua: window.navigator.userAgent
-          }
+          })
         },
         callback
       )
