@@ -20,7 +20,7 @@ const Banner = () => {
           <div className="mb-[16px] text-[24px] leading-[28px] text-[#0E1E46] font-[600] md:mb-[32px] md:text-[32px] md:leading-[38px] ">
             合作伙伴申请表
           </div>
-          <BaseForm list={list} type="agents" />
+          <BaseForm list={list} type="agents" customButtonType="join" />
         </div>
       </div>
     </div>

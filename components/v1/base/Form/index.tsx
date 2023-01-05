@@ -15,6 +15,7 @@ type IProps = {
   row?: 'row2'
   type: 'agents' | 'partners' | 'use'
   successCallback?: () => void
+  customButtonType?: string
 }
 type List = {
   maxLength?: number
@@ -26,7 +27,7 @@ type List = {
 }
 
 const Form: React.FC<IProps> = (props) => {
-  const { list = [], row = '1', type = 'use', successCallback } = props
+  const { list = [], row = '1', type = 'use', successCallback, customButtonType } = props
   const [values, setValues] = useState<Record<string, any>>({})
   const [load, setLoad] = useState(false)
   const [requested, setRequested] = useState(false)
@@ -143,7 +144,7 @@ const Form: React.FC<IProps> = (props) => {
           checkDomain: dataSource?.url,
           source: JSON.stringify({
             page,
-            button: buttonType,
+            button: customButtonType ?? buttonType,
             client: window.innerWidth < 768 ? 'mobile' : 'pc',
             ua: window.navigator.userAgent
           })
