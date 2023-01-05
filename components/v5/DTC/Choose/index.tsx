@@ -20,7 +20,7 @@ const DTCPackage = () => {
           为什么选择星盘DTC?
         </div>
         <div className="mb-[20px] text-[14px] leading-[22px] text-[#535D77] text-center md:mb-[40px] md:text-[18px] md:leading-[28px]">
-          开启出海独立站，我们为您提供一站式建站+运营SaaSa功能, 让出海更简单。
+          开启出海独立站，我们为您提供一站式建站+运营SaaS功能, 让出海更简单。
         </div>
 
         <div className="flex justify-center mb-[20px] text-[20px] leading-[32px] md:hidden">

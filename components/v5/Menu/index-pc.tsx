@@ -19,8 +19,9 @@ const Menu: React.FC<MenuProps> = (props) => {
 
   function handleScroll() {
     window.requestAnimationFrame(() => {
+      const offset = route === '/product' ? 200 : 500
       const scrollY = window.scrollY ?? window.pageYOffset
-      setRadio(scrollY / 500 > 1 ? 1 : scrollY / 500)
+      setRadio(scrollY / offset > 1 ? 1 : scrollY / offset)
     })
   }
 
