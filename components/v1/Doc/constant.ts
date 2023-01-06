@@ -324,12 +324,12 @@ export const privacy = `<p style="text-align: center;"><span style="font-size: 2
     Zhejiang Province) and its affiliates (hereinafter collectively referred to as "we"), providing online shops to
     seller users (hereinafter referred to as "users", "you" or "sellers")</span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
-    style="font-family:Arial; color:#1f2329; background-color:#ffffff">through SHOPASTRO website [</span><span
+    style="font-family:Arial; color:#1f2329; background-color:#ffffff">through SHOPASTRO website </span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
-    style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">fill in website
+    style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">www.ishopastro.com
     address</span><span
     style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
-    style="font-family:Arial; color:#1f2329; background-color:#ffffff">] A SaaS platform with complete solutions for
+    style="font-family:Arial; color:#1f2329; background-color:#ffffff"> A SaaS platform with complete solutions for
     site building, traffic, payment and logistics.</span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span></p>
 <p style="margin-top:6pt; margin-bottom:6pt; text-indent:21pt; line-height:120%; font-size:11pt"><span
@@ -1453,10 +1453,10 @@ export const privacy = `<p style="text-align: center;"><span style="font-size: 2
     time to view your personal information.</span><span style="font-family:Arial; color:#1f2329">&nbsp;</span><span
     style="font-family:Arial; color:#1f2329">If you find that your personal information that we collect, store, use,
     and disclose is incorrect or incomplete, or under other circumstances as required by laws and regulations, you can
-    log in [</span><span style="font-family:Arial; color:#1f2329">&nbsp;</span><span
-    style="font-family:Arial; font-style:italic; color:#1f2329">Fill in the merchant site URL</span><span
+    log in </span><span style="font-family:Arial; color:#1f2329">&nbsp;</span><span
+    style="font-family:Arial; font-style:italic; color:#1f2329">www.shopastro.com</span><span
     style="font-family:Arial; font-style:italic; color:#1f2329">&nbsp;</span><span
-    style="font-family:Arial; color:#1f2329">] and enter the "Personal Center" "After correcting or supplementing your
+    style="font-family:Arial; color:#1f2329"> and enter the "Personal Center" "After correcting or supplementing your
     personal information.</span></p>
 <p style="margin-top:6pt; margin-bottom:6pt; line-height:120%; font-size:11pt"><span
     style="font-family:Arial; color:#1f2329">&nbsp;</span></p>
@@ -2460,12 +2460,12 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">) and its affiliates (hereinafter collectively
     referred to as "we"), providing online shops to seller users (hereinafter referred to as "users", "you" or
     "sellers")</span><span style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
-    style="font-family:Arial; color:#1f2329; background-color:#ffffff">through SHOPASTRO website [</span><span
+    style="font-family:Arial; color:#1f2329; background-color:#ffffff">through SHOPASTRO website </span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
-    style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">fill in website
+    style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">www.ishopastro.com
     address</span><span
     style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
-    style="font-family:Arial; color:#1f2329; background-color:#ffffff">] A SaaS platform with complete solutions for
+    style="font-family:Arial; color:#1f2329; background-color:#ffffff"> A SaaS platform with complete solutions for
     site building, traffic, payment and logistics.</span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
     style="font-family:Arial; color:#1f2329">&nbsp;</span></p>
@@ -2784,11 +2784,11 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
     style="font-family:Arial; color:#1f2329">After registering an account, you can</span><span
     style="font-family:Arial; color:#1f2329">&nbsp;</span><span style="font-family:Arial; color:#1f2329">choose the
     service you need</span><span style="font-family:Arial; color:#1f2329">&nbsp;</span><span
-    style="font-family:Arial; color:#1f2329">on the SHOPASTRO website [</span><span
+    style="font-family:Arial; color:#1f2329">on the SHOPASTRO website </span><span
     style="font-family:Arial; color:#1f2329">&nbsp;</span><span
-    style="font-family:Arial; font-style:italic; color:#1f2329">fill in the website address</span><span
+    style="font-family:Arial; font-style:italic; color:#1f2329">www.shopastro.com</span><span
     style="font-family:Arial; font-style:italic; color:#1f2329">&nbsp;</span><span
-    style="font-family:Arial; color:#1f2329">].</span></p>
+    style="font-family:Arial; color:#1f2329">.</span></p>
 <p style="margin-top:6pt; margin-bottom:6pt; text-indent:21pt; line-height:120%; font-size:11pt"><span
     style="font-family:Arial; color:#1f2329">&nbsp;</span></p>
 <p style="margin-top:6pt; margin-bottom:6pt; text-indent:21pt; line-height:120%; font-size:11pt"><span
@@ -2836,7 +2836,7 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
     style="font-family:Arial; color:#1f2329">cancel the subscription service of your account</span><span
     style="font-family:Arial; color:#1f2329">&nbsp;</span><span style="font-family:Arial; color:#1f2329">at any time
     through the management panel or email [</span><span style="font-family:Arial; color:#1f2329">&nbsp;</span><span
-    style="font-family:Arial; font-style:italic; color:#1f2329">fill in the customer service mailbox</span><span
+    style="font-family:Arial; font-style:italic; color:#1f2329">contact@shopastro.com</span><span
     style="font-family:Arial; font-style:italic; color:#1f2329">&nbsp;</span><span
     style="font-family:Arial; color:#1f2329">].</span></p>
 <p style="margin-top:6pt; margin-bottom:6pt; text-indent:21pt; line-height:120%; font-size:11pt"><span
@@ -3203,7 +3203,7 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
     style="font-family:Arial; color:#1f2329">contact us for feedback</span><span
     style="font-family:Arial; color:#1f2329">&nbsp;</span><span style="font-family:Arial; color:#1f2329">via
     [</span><span style="font-family:Arial; color:#1f2329">&nbsp;</span><span
-    style="font-family:Arial; font-style:italic; color:#1f2329">fill in the customer service mailbox</span><span
+    style="font-family:Arial; font-style:italic; color:#1f2329">contact@shopastro.com</span><span
     style="font-family:Arial; font-style:italic; color:#1f2329">&nbsp;</span><span
     style="font-family:Arial; color:#1f2329">].</span></p>
 <p style="margin-top:6pt; margin-bottom:6pt; line-height:120%; font-size:11pt"><span
