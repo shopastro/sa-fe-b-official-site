@@ -45,7 +45,7 @@ const Pendant: React.FC<IProps> = () => {
             className={classNames(styles.pendantItem)}
             onClick={() => {
               buryingPoint('click_touch_contact_form')
-              setShowMoadl(true)
+              setIsOpen(true)
               setButtonType('toolbar')
             }}
           >
