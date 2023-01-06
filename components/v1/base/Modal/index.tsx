@@ -1,11 +1,12 @@
-import React, { ReactChild, useEffect, useState } from 'react'
-import styles from './index.module.scss'
+import React, { useEffect, useState } from 'react'
 import RcModal from 'react-modal'
+import { useContainer } from 'unstated-next'
+
+import detectionStore from '../../../../store/detectionStore'
+import Success from '../../Success'
 import Form from '../../base/Form'
 import { list } from './constant'
-import Success from '../../Success'
-import { useContainer } from 'unstated-next'
-import detectionStore from '../../../../store/detectionStore'
+import styles from './index.module.scss'
 
 type IProps = {
   visiable: boolean
@@ -17,22 +18,17 @@ const Modal: React.FC<IProps> = (props: IProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [requested, setRequested] = useState(false)
   const { visiable = false } = props
-  const { dataSource, setModalVisiabl } = useContainer(detectionStore)
+  const { dataSource, setModalVisiabl, setShowMoadl } = useContainer(detectionStore)
 
   useEffect(() => {
     setIsOpen(visiable)
+    if (visiable) document.body.style.overflow = 'hidden'
   }, [visiable])
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
 
   const handleClose = () => {
     setIsOpen(false)
+    setShowMoadl(false)
+    document.body.style.overflow = 'unset'
   }
 
   return (
@@ -45,7 +41,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
               <div
                 className={styles.close}
                 onClick={() => {
-                  setIsOpen(false)
+                  handleClose()
                   setTimeout(() => {
                     props.handleClose()
                   }, 0)

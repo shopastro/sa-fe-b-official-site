@@ -2274,7 +2274,7 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
 </ol>
 <p>&nbsp;</p>
 <ol start="5">
-<li>您理解并接受，您的订阅服务到期后将自动续订，您授权我们（不另行通知）收取当时适用的订阅费用。您可以在任何时候通过管理面板或电子邮件shopastro@shopastro-inc.com来取消您账号的订阅服务。</li>
+<li>您理解并接受，您的订阅服务到期后将自动续订，您授权我们（不另行通知）收取当时适用的订阅费用。您可以在任何时候通过管理面板或电子邮件contact@shopastro.com来取消您账号的订阅服务。</li>
 </ol>
 <p>&nbsp;</p>
 <ol start="6">
@@ -2388,7 +2388,7 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
 </ol>
 <p>&nbsp;</p>
 <ol start="2">
-<li>您理解并同意，您在协议变更生效日期之后使用本网站将被视为接受更新后的协议。如您对变更内容有任何问题或意见，可以通过shopastro@shopastro-inc.com联系我们进行反馈。</li>
+<li>您理解并同意，您在协议变更生效日期之后使用本网站将被视为接受更新后的协议。如您对变更内容有任何问题或意见，可以通过contact@shopastro.com联系我们进行反馈。</li>
 </ol>
 <p>&nbsp;</p>
 <p><strong>十、通用条款</strong></p>

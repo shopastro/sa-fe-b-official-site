@@ -83,7 +83,7 @@ const Product: NextPage = () => {
                   className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer"
                   onClick={() => {
                     setShowMoadl(true)
-                    setButtonType('topbanner')
+                    setButtonType('topbanner-b2b')
                   }}
                 >
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">立即咨询</span>
@@ -116,7 +116,7 @@ const Product: NextPage = () => {
                   className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer"
                   onClick={() => {
                     setShowMoadl(true)
-                    setButtonType('topbanner')
+                    setButtonType('topbanner-beluga')
                   }}
                 >
                   <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">立即咨询</span>
