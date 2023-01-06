@@ -14,11 +14,9 @@ type IProps = {
 }
 
 const Pendant: React.FC<IProps> = () => {
-  const [isOpen, setIsOpen] = useState(false)
   const { showModal, setShowMoadl, setButtonType } = useContainer(detectionStore)
 
   const handleClose = () => {
-    setIsOpen(false)
     setShowMoadl(false)
   }
 
@@ -45,7 +43,7 @@ const Pendant: React.FC<IProps> = () => {
             className={classNames(styles.pendantItem)}
             onClick={() => {
               buryingPoint('click_touch_contact_form')
-              setIsOpen(true)
+              setShowMoadl(true)
               setButtonType('toolbar')
             }}
           >
@@ -63,7 +61,7 @@ const Pendant: React.FC<IProps> = () => {
         </li>
         <li id="pendantItem" style={{ display: 'none' }}></li>
       </ul>
-      {(isOpen || showModal) && <Modal visiable={isOpen || showModal} handleClose={handleClose} />}
+      {showModal && <Modal visiable={showModal} handleClose={handleClose} />}
     </div>
   )
 }

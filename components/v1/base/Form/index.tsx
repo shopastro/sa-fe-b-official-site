@@ -33,7 +33,7 @@ const Form: React.FC<IProps> = (props) => {
   const [requested, setRequested] = useState(false)
   const [error, setError] = useState(false)
   const [verification, setVerification] = useState(false)
-  const { dataSource, setUnlock, buttonType } = useContainer(detectionStore)
+  const { dataSource, setUnlock, setShowMoadl, buttonType } = useContainer(detectionStore)
   const [{ fNumber, sNumber }] = useState({
     fNumber: Math.ceil(Math.random() * 10),
     sNumber: Math.ceil(Math.random() * 10)
@@ -156,6 +156,7 @@ const Form: React.FC<IProps> = (props) => {
 
   const handleClose = () => {
     setRequested(false)
+    setShowMoadl(false)
   }
 
   return (
