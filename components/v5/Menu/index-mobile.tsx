@@ -21,7 +21,12 @@ const Menu: React.FC<MenuProps> = (props) => {
   const [radio, setRadio] = useState(0)
 
   useEffect(() => {
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   useEffect(() => {
