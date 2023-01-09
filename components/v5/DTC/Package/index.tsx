@@ -1,20 +1,25 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { dtcMonthData, dtcTypeInfo, dtcYearData } from './data'
 
-const freeLink = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc'
-
 const DTCPackage = () => {
   const [showMonth, setShowMonth] = useState(true)
+  const [freeLink, setFreeLink] = useState('https://sys.admin.ishopastro.com/admin/user/signup?type=dtc')
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
   const contentRef = useRef<HTMLDivElement>(null)
   const data = showMonth ? dtcMonthData : dtcYearData
   const curType = dtcTypeInfo[activeTypeIndex - 1]
 
   const isMobile = useIsMobile()
+
+  useEffect(() => {
+    if (/beta/.test(location.host)) {
+      setFreeLink('https://sys.beta.admin.ishopastro.com/admin/user/signup?type=dtc')
+    }
+  }, [])
 
   return (
     <div className="flex flex-col">

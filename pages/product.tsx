@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { useContainer } from 'unstated-next'
 
 import Header from '../components/v2/Header'
@@ -8,11 +9,16 @@ import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 import detectionStore from '../store/detectionStore'
 
-const freeLinkDTC = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc'
-
 // 产品方案
 const Product: NextPage = () => {
+  const [freeLink, setFreeLink] = useState('https://sys.admin.ishopastro.com/admin/user/signup?type=dtc')
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
+
+  useEffect(() => {
+    if (/beta/.test(location.host)) {
+      setFreeLink('https://sys.beta.admin.ishopastro.com/admin/user/signup?type=dtc')
+    }
+  }, [])
 
   return (
     <>
@@ -49,7 +55,7 @@ const Product: NextPage = () => {
                 <div className="mb-[16px] text-[14px] leading-[26px] font-[700] text-[#18214D]">
                   简单几步, 直达消费者, 跨境生意马上开启
                 </div>
-                <Link href={freeLinkDTC} passHref>
+                <Link href={freeLink} passHref>
                   <div className="flex items-center justify-between w-[148px] px-[18px] py-[12px] bg-[#004DD1] rounded-[8px] cursor-pointer">
                     <span className="text-[14px] leading-[16px] text-[#FFF] font-[700]">免费试用</span>
                     <span className="w-[22px] h-[22px]">
