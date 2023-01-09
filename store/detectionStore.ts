@@ -1,7 +1,8 @@
-import { createContainer } from 'unstated-next'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getSeoResult, getSeoSubmit, getUploadTicket, uploadFile } from '../service'
+import { createContainer } from 'unstated-next'
+
 import Message from '../components/biz/Message/message.min.js'
+import { getSeoResult, getSeoSubmit, getUploadTicket, uploadFile } from '../service'
 import htmlToPdf from '../utils/htmlToPdf'
 
 function base64toFile(dataurl: string, filename: string) {
@@ -25,7 +26,7 @@ function formatDate(date: Date, fmt: string): string {
     'd+': date.getDate().toString(), // 日
     'h+': date.getHours().toString(), // 时
     'm+': date.getMinutes().toString(), // 分
-    's+': date.getSeconds().toString(), // 秒
+    's+': date.getSeconds().toString() // 秒
   }
   for (const k in opt) {
     const ret = new RegExp('(' + k + ')').exec(fmt)
@@ -94,6 +95,7 @@ function DetectionStore() {
   const [modalVisiabl, setModalVisiabl] = useState(false)
   const [fileS3Url, setFileS3Url] = useState('')
   const [reqNoData, setReqNoData] = useState(false)
+  const [buttonType, setButtonType] = useState('')
 
   const timer = useRef<NodeJS.Timeout>()
   const OUTTIME = useRef(0)
@@ -157,7 +159,7 @@ function DetectionStore() {
         Message().error(``, {
           timeout: 2000,
           html: true,
-          content: `<div style="color:#333333;display:flex;">查询url超时，请稍后再试`,
+          content: `<div style="color:#333333;display:flex;">查询url超时，请稍后再试`
         })
         setReqNoData(true)
         setLoading(false)
@@ -249,6 +251,8 @@ function DetectionStore() {
     setModalVisiabl,
     fileS3Url,
     reqNoData,
+    buttonType,
+    setButtonType
   }
 }
 

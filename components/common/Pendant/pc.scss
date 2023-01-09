@@ -2,8 +2,7 @@
   .pendantContainer {
     position: fixed;
     right: 0;
-    height: 32rem;
-    top: calc(50vh - 16rem);
+    top: calc(90vh - 16rem);
     z-index: 100;
 
     ul {
@@ -39,26 +38,7 @@
         }
       }
 
-      li:nth-child(2) {
-        background-color: #fff;
-        position: relative;
-
-        &:hover {
-          .arrow_box {
-            display: block;
-            transition: all 0.3s ease;
-          }
-        }
-
-        .imgItem {
-          background-image: url(./img/phone.svg);
-        }
-        .textItem {
-          color: #004ed1;
-        }
-      }
-
-      li:nth-child(3) {
+      li:nth-child(1) {
         position: relative;
         .imgItem {
           background-image: url(./img/weChat.svg);
@@ -87,9 +67,18 @@
         }
       }
 
-      li:nth-child(4) {
+      li:nth-child(2) {
+        background-color: #FE8953;
+
         .imgItem {
           background-image: url(./img/write.svg);
+        }
+      }
+
+      li:nth-child(3) {
+
+        .imgItem {
+          background-image: url(./img/free.svg);
         }
       }
     }

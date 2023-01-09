@@ -1,18 +1,21 @@
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import styles from './index.module.scss'
-import Input from './Input'
-import Button from '../Button'
-import { axiosFun } from '../../../../utils/asios'
-import Success from '../../Success'
-import { buryingPoint } from '../../../../utils/buryingPoint'
 import { useContainer } from 'unstated-next'
+
 import detectionStore from '../../../../store/detectionStore'
+import { axiosFun } from '../../../../utils/asios'
+import { buryingPoint } from '../../../../utils/buryingPoint'
+import Success from '../../Success'
+import Button from '../Button'
+import Input from './Input'
+import styles from './index.module.scss'
 
 type IProps = {
   list: List[]
   row?: 'row2'
   type: 'agents' | 'partners' | 'use'
   successCallback?: () => void
+  customButtonType?: string
 }
 type List = {
   maxLength?: number
@@ -24,17 +27,20 @@ type List = {
 }
 
 const Form: React.FC<IProps> = (props) => {
-  const { list = [], row = '1', type = 'use', successCallback } = props
+  const { list = [], row = '1', type = 'use', successCallback, customButtonType } = props
   const [values, setValues] = useState<Record<string, any>>({})
   const [load, setLoad] = useState(false)
   const [requested, setRequested] = useState(false)
   const [error, setError] = useState(false)
   const [verification, setVerification] = useState(false)
-  const { dataSource, setUnlock } = useContainer(detectionStore)
+  const { dataSource, setUnlock, setShowMoadl, buttonType } = useContainer(detectionStore)
   const [{ fNumber, sNumber }] = useState({
     fNumber: Math.ceil(Math.random() * 10),
-    sNumber: Math.ceil(Math.random() * 10),
+    sNumber: Math.ceil(Math.random() * 10)
   })
+
+  const { route } = useRouter()
+  const page = route === '/' ? 'home' : route.replace('/', '')
 
   const newList = [
     ...list,
@@ -43,8 +49,8 @@ const Form: React.FC<IProps> = (props) => {
       require: true,
       name: 'number',
       placeholder: '请输入答案（必填）',
-      label: `请输入 ${fNumber} + ${sNumber} 计算结果`,
-    },
+      label: `请输入 ${fNumber} + ${sNumber} 计算结果`
+    }
   ]
 
   const formList = dataSource.url ? newList : list
@@ -52,7 +58,7 @@ const Form: React.FC<IProps> = (props) => {
   const handleChange = (key: string, value: string) => {
     setValues({
       ...values,
-      [key]: value,
+      [key]: value
     })
   }
 
@@ -103,11 +109,11 @@ const Form: React.FC<IProps> = (props) => {
               first_name: values.username,
               last_name: values.username,
               city: values.city,
-              country: 'CN',
+              country: 'CN'
             },
-            user_domain: dataSource.url,
-          },
-        },
+            user_domain: dataSource.url
+          }
+        }
       })
 
       if (dataSource?.url) {
@@ -136,6 +142,12 @@ const Form: React.FC<IProps> = (props) => {
           ...values,
           category: type,
           checkDomain: dataSource?.url,
+          source: JSON.stringify({
+            page,
+            button: customButtonType ?? buttonType,
+            client: window.innerWidth < 768 ? 'mobile' : 'pc',
+            ua: window.navigator.userAgent
+          })
         },
         callback
       )
@@ -144,12 +156,15 @@ const Form: React.FC<IProps> = (props) => {
 
   const handleClose = () => {
     setRequested(false)
+    setShowMoadl(false)
   }
 
   return (
     <div className={`${styles.form} ${styles[row]}`}>
       {formList.map((it) => {
-        return <Input key={it.name} {...it} onChange={handleChange} error={hasError(it.name, verification)} />
+        return (
+          <Input id={it.name} key={it.name} {...it} onChange={handleChange} error={hasError(it.name, verification)} />
+        )
       })}
       {error && (
         <div

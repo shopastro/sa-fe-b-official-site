@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
+
 import styles from './index.module.scss'
 
 type IProps = {
@@ -14,6 +15,7 @@ type IProps = {
   error?: boolean
   className?: string
   value?: string
+  id?: string
 }
 
 const Input: React.FC<IProps> = (props) => {
@@ -28,6 +30,7 @@ const Input: React.FC<IProps> = (props) => {
     children,
     value,
     onKeyPress,
+    id
   } = props
   const [selected, setSelected] = useState(false)
   const [inputValue, setInputValue] = useState('')
@@ -44,6 +47,7 @@ const Input: React.FC<IProps> = (props) => {
         <>
           {inputLabel}
           <input
+            id={id}
             className={styles.input}
             type={type}
             placeholder={placeholder}
@@ -63,15 +67,16 @@ const Input: React.FC<IProps> = (props) => {
           {inputLabel}
           <select
             placeholder={placeholder}
+            defaultValue={''}
             className={classNames({
-              [styles.unselect]: !selected,
+              [styles.unselect]: !selected
             })}
             onChange={(e) => {
               props.onChange(name, e.target.value)
               setSelected(true)
             }}
           >
-            <option disabled selected value="" style={{ color: 'red' }}>
+            <option disabled value="" style={{ color: 'red' }}>
               请选择出海经验（必填）
             </option>
             <option value="亚马逊、ebay等海外平台经验">亚马逊、ebay等海外平台经验</option>
