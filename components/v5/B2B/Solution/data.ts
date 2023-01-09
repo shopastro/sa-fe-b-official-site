@@ -5,11 +5,6 @@ export const solutionData = [
     description: '行业趋势，竞品分析，品牌理念，产品定位，消费者洞察，流量矩阵推荐'
   },
   {
-    image: 'https://media.cdn.ishopastro.com/upload/images/4.png_2022-12-20-03-51-58.png',
-    title: '生态资源',
-    description: '全球物流海外仓ERP对接发货无忧, 跨境财务合规服务商推荐, 多途径支付渠道轻松收款; 品牌内容服务商对接'
-  },
-  {
     image: 'https://media.cdn.ishopastro.com/upload/images/5.png_2022-12-20-03-51-58.png',
     title: '无忧建站',
     description: '网站风格推荐, 网站全类目架构梳理, 全托管专业建站, 全站视觉/内容优化'
@@ -37,6 +32,11 @@ export const solutionData = [
     title: '站内深度运营',
     description:
       '全年网站营销活动规划, 客户行为分析优化站点, 产品痛点打磨优化落地页, 客户分层制定不同邮件营销策略促进转化, 私域客户运营提升复购率'
+  },
+  {
+    image: 'https://media.cdn.ishopastro.com/upload/images/4.png_2022-12-20-03-51-58.png',
+    title: '生态资源',
+    description: '全球物流海外仓ERP对接发货无忧, 跨境财务合规服务商推荐, 多途径支付渠道轻松收款; 品牌内容服务商对接'
   }
 ]
 
