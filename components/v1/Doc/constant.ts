@@ -326,7 +326,7 @@ export const privacy = `<p style="text-align: center;"><span style="font-size: 2
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">through SHOPASTRO website </span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
-    style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">www.ishopastro.com
+    style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">www.shopastro.com
     address</span><span
     style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff"> A SaaS platform with complete solutions for
@@ -2462,7 +2462,7 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
     "sellers")</span><span style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">through SHOPASTRO website </span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
-    style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">www.ishopastro.com
+    style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">www.shopastro.com
     address</span><span
     style="font-family:Arial; font-style:italic; color:#1f2329; background-color:#ffffff">&nbsp;</span><span
     style="font-family:Arial; color:#1f2329; background-color:#ffffff"> A SaaS platform with complete solutions for
