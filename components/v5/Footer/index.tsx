@@ -77,7 +77,7 @@ const Footer = () => {
                 <Link href="/solutions">解决方案</Link>
               </div>
               <div className="py-[16px] md:py-[0] md:mb-[8px]">
-                <Link href="/solutions">帮助中心</Link>
+                <Link href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg">帮助中心</Link>
               </div>
             </div>
           </div>
