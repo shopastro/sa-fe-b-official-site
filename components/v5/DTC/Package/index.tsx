@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { dtcMonthData, dtcTypeInfo, dtcYearData } from './data'
@@ -10,6 +10,7 @@ const freeLink = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc'
 const DTCPackage = () => {
   const [showMonth, setShowMonth] = useState(true)
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
+  const contentRef = useRef<HTMLDivElement>(null)
   const data = showMonth ? dtcMonthData : dtcYearData
   const curType = dtcTypeInfo[activeTypeIndex - 1]
 
@@ -71,6 +72,16 @@ const DTCPackage = () => {
                 }
                 onClick={() => {
                   setActiveTypeIndex(item.type)
+                  if (typeof window !== 'undefined' && contentRef.current) {
+                    const { top = 0 } = contentRef.current?.getBoundingClientRect() ?? {}
+                    const offset = isMobile ? 48 : 80
+                    const scrollY = window.scrollY ?? window.pageYOffset
+
+                    window.scrollTo({
+                      top: scrollY + top - offset,
+                      behavior: 'smooth'
+                    })
+                  }
                 }}
               >
                 <div className="mb-[12px] text-[22px] leading-[30px]">{item.title}</div>
@@ -125,7 +136,7 @@ const DTCPackage = () => {
           </Link>
         </div>
 
-        <div className="flex flex-col md:py-[80px]">
+        <div className="flex flex-col md:py-[80px]" id="content" ref={contentRef}>
           <div className="mb-[20px] text-[28px] leading-[32px] text-center font-[700] md:mb-[40px] md:text-[32px] md:leading-[38px] ">
             DTC建站套餐比较
           </div>
