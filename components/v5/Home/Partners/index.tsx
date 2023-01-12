@@ -38,7 +38,10 @@ const Partners = () => {
   return (
     <div className="flex flex-col py-[40px] md:items-center md:pt-[80px] md:pb-[48px]">
       <div className="flex flex-col md:w-[1280px]">
-        <div className="mb-[20px] text-[28px] leading-[34px] text-[#0E1E46] text-center font-[700] md:mb-[40px] md:text-[48px] md:leading-[62px]">
+        <div
+          id="partners"
+          className="mb-[20px] text-[28px] leading-[34px] text-[#0E1E46] text-center font-[700] md:mb-[40px] md:text-[48px] md:leading-[62px]"
+        >
           合作伙伴
         </div>
         <div className="flex pl-[20px] mb-[20px] overflow-x-auto md:justify-between">

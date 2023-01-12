@@ -15,7 +15,7 @@ export const FeaturesData: FeaturesData[] = [
   },
   {
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/779a26477200c06a75cf851f5472558a.svg',
-    title: 'B 类 CRM',
+    title: 'B类CRM',
     description: ['支持企业信息、企业采购价', '企业客户全生命周期跟踪']
   },
   {
