@@ -1,7 +1,7 @@
 export const questions = [
   {
     q: '我没有星盘的 SaaS 站点，但我有一个 Shopify 站点, 可以使用白鲸营销SaaS 吗？',
-    a: '可以的, 白鲸营销SaaS适配了shopify, 可以完美使用。BigCommerce等平台会持续适配, 适配的平台陆续增加中。'
+    a: '可以的, 白鲸营销SaaS适配了Shopify, 可以完美使用。BigCommerce等平台会持续适配, 适配的平台陆续增加中。'
   },
   {
     q: '哪个套餐更适合我？',

@@ -19,7 +19,7 @@ export const solutionData = [
     image: 'https://media.cdn.ishopastro.com/upload/images/1.png_2022-12-20-03-51-58.png',
     title: '多渠道营销投放',
     description:
-      '广告账户开户指导, 异常账户辅助解封, 多渠道广告投放策略, 广告结构搭建, 人群标签管理, 广告以及广告素材优化, 数据分析复盘;'
+      '广告账户开户指导, 异常账户辅助解封, 多渠道广告投放策略, 广告结构搭建, 人群标签管理, 广告以及广告素材优化, 数据分析复盘'
   },
   {
     image: 'https://media.cdn.ishopastro.com/upload/images/3.png_2022-12-20-03-51-58.png',

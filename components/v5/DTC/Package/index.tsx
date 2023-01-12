@@ -47,7 +47,7 @@ const DTCPackage = () => {
           <span className="text-[#0B58D8]">
             <Link href="/beluga">星盘白鲸</Link>
           </span>
-          [1]相关服务。
+          相关服务。
         </div>
 
         <div className="flex flex-col md:hidden">

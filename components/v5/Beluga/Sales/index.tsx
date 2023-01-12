@@ -17,7 +17,7 @@ const BelugaSales = () => {
             一站式营销 SaaS
           </div>
           <div className="mb-[30px] text-[16px] leading-[26px] text-[#535D77] text-center md:mb-[30px] md:text-[20px] md:leading-[32px]">
-            一站式的面向品牌站独立站的营销SaaS, cover以下平台, 已经支持shopify, 持续升级中
+            一站式的面向品牌站独立站的营销SaaS, 覆盖以下平台, 已经支持Shopify, 持续升级中
           </div>
           <div className="flex flex-wrap mx-[-4px] md:mx-0 md:flex-nowrap md:max-w-[1280px]">
             {platformList.map((platform, index) => {

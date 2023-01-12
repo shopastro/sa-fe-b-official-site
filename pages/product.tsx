@@ -29,9 +29,9 @@ const Product: NextPage = () => {
             <div className="mb-[20px] text-[40px] leading-[48px] text-[#0E1E46] font-[700] md:text-[48px] md:leading-[58px]">
               请选择试用产品
             </div>
-            <div className="mb-[20px] text-[16px] leading-[24px] text-[#535D77] md:w-[640px] md:mb-[60px] md:text-[18px] md:leading-[28px]">
-              星盘跨境提供一站式跨境私域增长解决方案,
-              您可方便快捷的建设DTC/B2B的站点或者可直接使用星盘的智数营销产品“白鲸营销”。
+            <div className="flex flex-col mb-[20px] text-[16px] leading-[24px] text-[#535D77] md:mb-[60px] md:text-[18px] md:leading-[28px]">
+              <span>星盘跨境提供一站式跨境私域增长解决方案,您可方便快捷的建设DTC/B2B的站点</span>
+              <span>或者可直接使用星盘的智数营销产品“白鲸营销”。</span>
             </div>
 
             <div className="flex flex-col md:flex-row md:justify-between">

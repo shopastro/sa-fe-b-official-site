@@ -27,7 +27,7 @@ export const FeaturesData: FeaturesData[] = [
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/1778d385c02b463c4add5750efc2ace0.svg',
     title: '一件代发供货',
     description: [
-      '为星盘客户链接海量shopify店主, 支持shopify店主一件代发',
+      '为星盘客户链接海量Shopify店主, 支持Shopify店主一件代发',
       '打通1688商品池, 实现一键翻译/一键上架/一键下单',
       '支持星盘客户与Shopify店主的跨境交易支付, 费率具备行业优势'
     ]
