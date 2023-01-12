@@ -23,7 +23,7 @@ const Position = () => {
             <div className="flex flex-col">
               <span className="mb-[6px] text-[18px] leading-[30px] text-[#0E1E46] font-[700] md:text-[22px]">品牌</span>
               <span className="text-[14px] leading-[22px] text-[#3E4462CC] text-opacity-80 md:text-[16px] md:leading-[26px]">
-                已客户品牌为载体
+                以客户品牌为载体
               </span>
             </div>
           </div>

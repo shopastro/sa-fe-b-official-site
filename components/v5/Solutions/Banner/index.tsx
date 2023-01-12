@@ -33,12 +33,8 @@ const Banner = () => {
           />
         </div>
         {/* 内容 */}
-        <div className="relative mb-[12px] text-[20px] leading-[28px] md:mb-[32px]">
-          <span className="mr-[4px] text-[#222222]">星盘跨境</span>
-          <span className="text-[#004ED1]">shopastro</span>
-        </div>
         <h1 className="flex flex-col relative mb-[42px] text-[24px] leading-[34px] text-[#222] text-center font-[600] md:flex-row md:mb-[32px] md:text-[40px] md:leading-[56px]">
-          <span>全链路运营方案</span>
+          <span className="text-[#FE8953] md:mr-[12px]">全链路运营方案</span>
           <span>一站式出海更简单、更高效</span>
         </h1>
 

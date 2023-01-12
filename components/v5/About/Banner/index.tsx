@@ -34,14 +34,22 @@ const Banner = () => {
           <h1 className="relative px-[20px] mb-[20px] text-[32px] leading-[38px] text-[#0E1E46] font-[700] md:mb-[32px] md:text-[48px] md:leading-[58px]">
             星盘跨境 shopastro
           </h1>
-          <div className="relative px-[20px] text-[14px] leading-[22px] text-[#535D77] md:w-[550px] md:text-[16px] m:leading-[26px]">
+          <div className="relative px-[20px] mb-[4px] text-[14px] leading-[22px] text-[#535D77] md:w-[550px] md:mb-[8px] md:text-[16px] m:leading-[26px]">
             shopastro是品牌出海服务领域的新锐者, 成立于2021年8月, 总部位于杭州, 在义乌、深圳、厦门三地设立分公司,
             目前已服务百家以上大客户。其致力于为中国品牌卖家提供一站式出海全链路解决方案,
             以「大数据和AI技术驱动的精细化运营」实现品牌价值输出和流量变现
           </div>
+          <a
+            href="https://shopastro.feishu.cn/wiki/wikcn1rjK4qU03PRdyRB1tXpgIe"
+            target="_blank"
+            rel="noreferrer"
+            className="flex relative px-[20px] text-[16px] leading-[26px] text-[#004ED1]"
+          >
+            查看星盘详细介绍
+          </a>
         </div>
         {/* 背景图2 h5 */}
-        <div className="relative w-screen mt-[-22px] mb-[36px] md:hidden">
+        <div className="relative w-screen mb-[36px] md:hidden">
           <Image
             width={375}
             height={441}

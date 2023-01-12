@@ -33,7 +33,7 @@ const Banner = () => {
         <div className="absolute top-0 left-0 right-0 bottom-0 px-[20px] pt-[40px] text-white md:flex md:items-center md:justify-center">
           <div className="md:w-[1200px]">
             <h1 className="flex flex-col">
-              <span className="mb-[8px] text-[48px] leading-[58px] font-[700]">星盘 B2B</span>
+              <span className="mb-[8px] text-[48px] leading-[58px] font-[700]">星盘 B2B 建站</span>
               <span className="mb-[16px] text-[24px] leading-[38px] font-[700]">数智化助力外贸企业高效出海</span>
             </h1>
             <div className="text-[16px] leading-[26px] md:w-[550px]">

@@ -85,7 +85,7 @@ const B2BSolution = () => {
               return (
                 <div
                   key={index}
-                  className="p-[12px] mr-[12px] text-[18px] leading-[26px] font-[700] text-center whitespace-nowrap rounded-[12px] last:mr-0 md:w-[14.28%] md:mr-0"
+                  className="p-[12px] mr-[12px] text-[18px] leading-[26px] font-[700] text-center whitespace-nowrap rounded-[12px] last:mr-0 md:w-[14.28%] md:mr-0 cursor-pointer"
                   style={{
                     transition: 'background .3s',
                     color: activeIndex === index ? '#FFF' : '#0E1E46',

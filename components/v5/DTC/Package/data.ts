@@ -40,9 +40,9 @@ export const dtcMonthData: DTCDataItem[][] = [
       subTitle: '人群管理/邮件营销/Chat/SMS',
       logo: 'https://media.cdn.ishopastro.com/svg/shopastrohome/a1dd7e9ec57d8c705009a2eb49919ecf.svg'
     },
-    { info: ['月邮件发送量1000条', '月短信发送量200条', '人群管理', 'Chat', 'MA'] },
-    { info: ['月邮件发送量3000条', '月短信发送量500条', '人群管理', 'Chat', 'MA'] },
-    { info: ['月邮件发送量30000条', '月短信发送量5000条', '人群管理', 'Chat', 'MA'] }
+    { info: ['月邮件发送量1000条', '月短信发送量200条', '人群管理', '消息(chat)', '自动化营销'] },
+    { info: ['月邮件发送量3000条', '月短信发送量500条', '人群管理', '消息(chat)', '自动化营销'] },
+    { info: ['月邮件发送量30000条', '月短信发送量5000条', '人群管理', '消息(chat)', '自动化营销'] }
   ],
   [
     {

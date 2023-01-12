@@ -19,7 +19,7 @@ const DTCPackage = () => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col px-[20px] py-[32px] text-[#0E1E46] md:items-center">
-        <h1 className="mb-[16px] text-[48px] leading-[58px] text-center font-[700] md:mb-[32px]">DTC建站套餐</h1>
+        <h1 className="mb-[16px] text-[48px] leading-[58px] text-center font-[700] md:mb-[32px]">星盘 DTC 建站套餐</h1>
         <div className="flex justify-center mb-[20px] text-[18px] leading-[24px] md:mb-[32px]">
           <div className="flex bg-[#D9E6FA] rounded-[100vw]">
             <span
@@ -47,7 +47,7 @@ const DTCPackage = () => {
           <span className="text-[#0B58D8]">
             <Link href="/beluga">星盘白鲸</Link>
           </span>
-          [1]相关服务。
+          相关服务。
         </div>
 
         <div className="flex flex-col md:hidden">

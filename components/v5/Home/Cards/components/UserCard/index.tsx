@@ -19,7 +19,7 @@ const UserCard = () => {
             </Description>
           </div>
           <div className="mb-[20px]">
-            <SubTitle>EDM邮件营销</SubTitle>
+            <SubTitle>邮件营销</SubTitle>
             <Description>
               高送达率的邮件发送系统支持、自动化弃单召回、支持邮件模版和装修, 与会员管理及促销工具打通, 实现定向用户运营
             </Description>
