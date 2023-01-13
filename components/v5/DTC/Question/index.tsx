@@ -45,7 +45,7 @@ const DTCPackage = () => {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <div className="flex flex-1 p-[12px] mb-[12px] border border-[#DDE0F1] rounded-[12px] last:mb-0 md:mb-[32px] md:last:mb-[32px]">
+                          <div className="flex flex-1 p-[24px] mb-[12px] border border-[#DDE0F1] rounded-[12px] last:mb-0 md:mb-[32px] md:last:mb-[32px]">
                             <div className="flex-shrink-0 w-[24px] h-[24px] mr-[14px]">
                               <Image
                                 src="https://media.cdn.ishopastro.com/svg/shopastrohome/12151393a75c4453f646467312e92978.svg"
@@ -56,7 +56,7 @@ const DTCPackage = () => {
                               />
                             </div>
                             <div className="flex flex-col">
-                              <div className="h-[36px] text-[14px] leading-[18px] mb-[10px] line-clamp-2">{q}</div>
+                              <div className="text-[14px] leading-[18px] mb-[16px] line-clamp-2">{q}</div>
                               <div className="text-[12px] leading-[18px] line-clamp-3">{a}</div>
                             </div>
                           </div>

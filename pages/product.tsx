@@ -155,7 +155,7 @@ const Product: NextPage = () => {
                 </span>
               </div>
             </div>
-            <div className="w-full mb-[8px]">
+            <div className="flex w-full">
               <Image
                 src="https://media.cdn.ishopastro.com/upload/images/20221216-012315.png_2022-12-15-17-23-53.png"
                 width={682}

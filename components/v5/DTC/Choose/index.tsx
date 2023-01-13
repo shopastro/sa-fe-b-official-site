@@ -1,29 +1,53 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { DTCChooseData } from './data'
 
 const DTCPackage = () => {
   const [activeIndex, setActiveIndex] = useState(1)
+  const [shadowStyle, setShadowStyle] = useState<any>({})
+  const stickyContentRef = useRef<HTMLDivElement>(null)
   const isMobile = useIsMobile()
 
   useEffect(() => {
     setActiveIndex(isMobile ? 2 : 1)
   }, [isMobile])
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  })
+
+  function handleScroll() {
+    window?.requestAnimationFrame(() => {
+      if (stickyContentRef.current) {
+        const { top } = stickyContentRef.current.getBoundingClientRect()
+        const offset = isMobile ? 48 : 80
+        if (top === offset) {
+          setShadowStyle({ boxShadow: '0px 4px 10px rgba(77, 77, 77, 0.1)' })
+        } else {
+          setShadowStyle({})
+        }
+      }
+    })
+  }
+
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col px-[20px] text-[#0E1E46]">
-        <div className="mb-[10px] text-[24px] leading-[28px] text-center font-[700] md:mb-[20px] md:text-[32px] md:leading-[38px]">
+      <div className="flex flex-col text-[#0E1E46]">
+        <div className="mb-[10px] px-[20px] text-[24px] leading-[28px] text-center font-[700] md:mb-[20px] md:text-[32px] md:leading-[38px]">
           为什么选择星盘DTC?
         </div>
-        <div className="mb-[20px] text-[14px] leading-[22px] text-[#535D77] text-center md:mb-[40px] md:text-[18px] md:leading-[28px]">
+        <div className="mb-[20px] px-[20px] text-[14px] leading-[22px] text-[#535D77] text-center md:mb-[40px] md:text-[18px] md:leading-[28px]">
           开启出海独立站，我们为您提供一站式建站+运营SaaS功能, 让出海更简单。
         </div>
 
-        <div className="flex justify-center mb-[20px] text-[20px] leading-[32px] md:hidden">
+        <div className="flex justify-center mb-[20px] px-[20px] text-[20px] leading-[32px] md:hidden">
           <div
             className="flex flex-col items-center px-[14px]"
             onClick={() => {
@@ -45,20 +69,26 @@ const DTCPackage = () => {
         </div>
 
         {/* form */}
-        <div className="flex flex-col md:items-center">
-          <div className="hidden sticky top-[48px] justify-center mb-[14px] text-[18px] leading-[22px] font-[700] border border-[#DDE0F1] bg-[#FCFCFC] md:flex md:top-[80px] z-10">
-            <div className="w-[530px] px-[16px] py-[32px] border-r border-[#DDE0F1]">
-              <span>产品特色</span>
-            </div>
-            <div className="w-[335px] px-[16px] py-[32px] border-r border-[#DDE0F1]">
-              <span>友商</span>
-            </div>
-            <div className="flex justify-between w-[335px] px-[16px] py-[32px] bg-[#FAFCFF]">
-              <span>星盘</span>
-              <div>
-                <span className="px-[32px] py-[4px] text-[14px] leading-[22px] text-[#FFF] font-[400] bg-[#004ED1] rounded-[4px]">
-                  <Link href="https://sys.admin.ishopastro.com/admin/user/signup?type=dtc">免费试用</Link>
-                </span>
+        <div className="flex flex-col px-[20px] md:items-center md:px-0">
+          <div
+            ref={stickyContentRef}
+            className="flex flex-col sticky top-[48px] w-full mb-[14px] md:items-center md:top-[80px] bg-[#FFF] z-10"
+            style={shadowStyle}
+          >
+            <div className="hidden justify-center md:w-[1200px] text-[18px] leading-[22px] font-[700] border border-[#DDE0F1] md:flex z-10">
+              <div className="w-[530px] px-[16px] py-[32px] border-r border-[#DDE0F1] bg-[#FFF]">
+                <span>产品特色</span>
+              </div>
+              <div className="w-[335px] px-[16px] py-[32px] border-r border-[#DDE0F1] bg-[#FFF]">
+                <span>友商</span>
+              </div>
+              <div className="flex justify-between w-[335px] px-[16px] py-[32px] bg-[#FAFCFF]">
+                <span>星盘</span>
+                <div>
+                  <span className="flex px-[32px] py-[4px] text-[14px] leading-[22px] text-[#FFF] font-[400] bg-[#004ED1] rounded-[4px]">
+                    <Link href="https://sys.admin.ishopastro.com/admin/user/signup?type=dtc">免费试用</Link>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -125,7 +155,7 @@ const DTCPackage = () => {
           })}
         </div>
         {/* btn */}
-        <div className="flex justify-center text-[14px] leading-[22px] text-[#FFF] md:hidden">
+        <div className="flex justify-center px-[20px] text-[14px] leading-[22px] text-[#FFF] md:hidden">
           <div className=" px-[24px] py-[4px] bg-[#004ED1] rounded-[4px]">
             <Link href="/dtc">免费试用</Link>
           </div>

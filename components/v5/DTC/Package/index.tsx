@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { dtcMonthData, dtcTypeInfo, dtcYearData } from './data'
@@ -10,17 +10,43 @@ const freeLink = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc'
 const DTCPackage = () => {
   const [showMonth, setShowMonth] = useState(true)
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
+  const [shadowStyle, setShadowStyle] = useState<any>({})
   const contentRef = useRef<HTMLDivElement>(null)
+  const stickyContentRef = useRef<HTMLDivElement>(null)
   const data = showMonth ? dtcMonthData : dtcYearData
   const curType = dtcTypeInfo[activeTypeIndex - 1]
 
   const isMobile = useIsMobile()
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  })
+
+  function handleScroll() {
+    window?.requestAnimationFrame(() => {
+      if (stickyContentRef.current) {
+        const { top } = stickyContentRef.current.getBoundingClientRect()
+        const offset = isMobile ? 48 : 80
+        if (top === offset) {
+          setShadowStyle({ boxShadow: '0px 4px 10px rgba(77, 77, 77, 0.1)' })
+        } else {
+          setShadowStyle({})
+        }
+      }
+    })
+  }
+
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col px-[20px] py-[32px] text-[#0E1E46] md:items-center">
-        <h1 className="mb-[16px] text-[48px] leading-[58px] text-center font-[700] md:mb-[32px]">星盘 DTC 建站套餐</h1>
-        <div className="flex justify-center mb-[20px] text-[18px] leading-[24px] md:mb-[32px]">
+      <div className="flex flex-col py-[32px] text-[#0E1E46] md:items-center">
+        <h1 className="mb-[16px] px-[20px] text-[40px] leading-[58px] text-center font-[700] md:mb-[32px]">
+          星盘 DTC 建站套餐
+        </h1>
+        <div className="flex justify-center mb-[20px] px-[20px] text-[18px] leading-[24px] md:mb-[32px]">
           <div className="flex bg-[#D9E6FA] rounded-[100vw]">
             <span
               className="px-[36px] py-[6px] rounded-[100vw] md:py-[8px] md:text-[20px] md:leading-[28px] cursor-pointer"
@@ -41,7 +67,7 @@ const DTCPackage = () => {
             </span>
           </div>
         </div>
-        <div className="mb-[40px] text-[14px] leading-[22px] text-[#535D77] text-center md:w-[640px] md:mb-[32px]">
+        <div className="mb-[40px] px-[20px] text-[14px] leading-[22px] text-[#535D77] text-center md:w-[640px] md:mb-[32px]">
           针对不同业务与不同量级的建站需求, 星盘为您精心准备了以下3种套餐,
           最合适的才是最好的。助您跨境业务更轻松。所有版本均包含
           <span className="text-[#0B58D8]">
@@ -50,13 +76,13 @@ const DTCPackage = () => {
           相关服务。
         </div>
 
-        <div className="flex flex-col md:hidden">
+        <div className="flex flex-col px-[20px] md:hidden">
           <div className="mb-[8px] text-[24px] leading-[28px] text-center">抢先体验, 开始免费试用! </div>
           <div className="mb-[46px] text-[16px] leading-[20px] text-center">直接免费7天试用体验星盘DTC建站。</div>
         </div>
 
         {/* dtc 卡片信息 */}
-        <div className="flex flex-col md:flex-row md:justify-center md:mb-[76px]">
+        <div className="flex flex-col px-[20px] md:flex-row md:justify-center md:mb-[76px]">
           {dtcTypeInfo.map((item, index) => {
             return (
               <div
@@ -124,7 +150,7 @@ const DTCPackage = () => {
           })}
         </div>
 
-        <div className="hidden flex-col md:flex">
+        <div className="hidden px-[20px] flex-col md:flex">
           <div className="mb-[8px] text-[32px] leading-[38px] text-center">抢先体验, 开始免费试用! </div>
           <div className="mb-[24px] text-[18px] leading-[22px] text-center">直接免费7天试用体验星盘DTC建站。</div>
           <Link href={freeLink} passHref>
@@ -136,7 +162,7 @@ const DTCPackage = () => {
           </Link>
         </div>
 
-        <div className="flex flex-col md:py-[80px]" id="content" ref={contentRef}>
+        <div className="flex flex-col items-center w-full md:py-[80px]" id="content" ref={contentRef}>
           <div className="mb-[20px] text-[28px] leading-[32px] text-center font-[700] md:mb-[40px] md:text-[32px] md:leading-[38px] ">
             DTC建站套餐比较
           </div>
@@ -162,13 +188,13 @@ const DTCPackage = () => {
             })}
           </div>
 
-          <div className="flex items-center justify-between mb-[20px] md:justify-center md:mb-[40px]">
+          <div className="flex items-center justify-between w-full mb-[20px] px-[20px] md:justify-center md:mb-[40px]">
             <div className="flex items-center md:hidden">
               <span className="mr-[10px] text-[18px] leading-[22px]">{curType.title}</span>
               <span className="text-[16px] leading-[18px]">
-                <span className="text-opacity-80">¥</span>
+                <span className="text-[#18214DCC] opacity-80">¥</span>
                 <span>{showMonth ? curType.monthPrice : curType.yearPrice}</span>
-                <span className="text-opacity-80">{showMonth ? '/月' : '/年'}</span>
+                <span className="text-[#18214DCC] opacity-80">{showMonth ? '/月' : '/年'}</span>
               </span>
             </div>
             <div className="flex text-[14px] leading-[20px] bg-[#D9E6FA] rounded-[100vw]">
@@ -196,40 +222,46 @@ const DTCPackage = () => {
           </div>
 
           {/* form */}
-          <div className="flex flex-col mb-[20px]">
-            <div className="hidden sticky top-[48px] w-[1200px] border border-b-0 border-[#DDE0F1] bg-white md:flex md:top-[80px]">
-              <div className="flex flex-1 border-r border-[#DDE0F1]"></div>
-              {dtcTypeInfo.map((item) => {
-                return (
-                  <div
-                    key={item.type}
-                    className="flex items-center justify-between w-[280px] px-[16px] py-[32px] text-[18px] leading-[22px] border-r border-[#DDE0F1] last:border-r-0"
-                  >
-                    <div>
-                      <span>{item.title}</span>
-                      <span>
-                        <span className="text-opacity-80">¥</span>
-                        <span>{showMonth ? item.monthPrice : item.yearPrice}</span>
-                        <span className="text-opacity-80">{showMonth ? '/月' : '/年'}</span>
-                      </span>
-                    </div>
+          <div className="flex flex-col w-full mb-[20px] px-[20px] md:items-center md:px-0">
+            <div
+              className="hidden flex-col items-center w-full sticky top-[48px] md:flex md:top-[80px]"
+              ref={stickyContentRef}
+              style={shadowStyle}
+            >
+              <div className="flex w-[1200px] border border-b-0 border-[#DDE0F1] bg-white">
+                <div className="flex flex-1 border-r border-[#DDE0F1]"></div>
+                {dtcTypeInfo.map((item) => {
+                  return (
                     <div
-                      className="border border-[#D6E0EA] rounded-[4px] cursor-pointer"
-                      style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
+                      key={item.type}
+                      className="flex items-center justify-between w-[280px] px-[16px] py-[32px] text-[18px] leading-[22px] border-r border-[#DDE0F1] last:border-r-0 last:bg-[#FAFCFF]"
                     >
-                      <span className="px-[24px] py-[4px] text-[14px] leading-[22px]">
-                        <Link href={freeLink}>免费试用</Link>
-                      </span>
+                      <div>
+                        <span>{item.title}</span>
+                        <span>
+                          <span className="text-[#18214DCC] opacity-80">¥</span>
+                          <span>{showMonth ? item.monthPrice : item.yearPrice}</span>
+                          <span className="text-[#18214DCC] opacity-80">{showMonth ? '/月' : '/年'}</span>
+                        </span>
+                      </div>
+                      <div
+                        className="border border-[#D6E0EA] rounded-[4px] cursor-pointer"
+                        style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
+                      >
+                        <span className="flex px-[24px] py-[4px] text-[14px] leading-[22px]">
+                          <Link href={freeLink}>免费试用</Link>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
             {data.map((subData, index) => {
               return (
                 <div
                   key={index}
-                  className="flex text-[14px] leading-[22px] border border-b-0 border-[#DDE0F1] last:border-b"
+                  className="flex text-[14px] leading-[22px] border border-b-0 border-[#DDE0F1] last:border-b md:w-[1200px]"
                 >
                   {subData.map((item, subIndex) => {
                     const { title, subTitle, logo, info } = item
@@ -238,7 +270,7 @@ const DTCPackage = () => {
                       return (
                         <div
                           key={subIndex}
-                          className="flex flex-col flex-1 p-[12px] border-r border-[#DDE0F1] md:flex-1"
+                          className="flex flex-col justify-center flex-1 px-[16px] py-[12px] border-r border-[#DDE0F1] md:flex-1"
                         >
                           <div className="flex flex-col">
                             <span className="">{title}</span>
@@ -259,7 +291,7 @@ const DTCPackage = () => {
                       return (
                         <div
                           key={subIndex}
-                          className="flex flex-col justify-center flex-1 p-[12px] text-[#004ED1] border-r border-[#DDE0F1] last:border-none md:w-[280px] md:flex-none md:text-[#18214D] md:last:text-[#004ED1]"
+                          className="flex flex-col justify-center flex-1 px-[16px] py-[12px] text-[#004ED1] border-r border-[#DDE0F1] last:border-none md:w-[280px] md:flex-none md:text-[#18214D] md:last:text-[#004ED1] last:bg-[#FAFCFF]"
                           style={{ display: isMobile ? (subIndex === activeTypeIndex ? 'flex' : 'none') : 'flex' }}
                         >
                           {info.map((i, index) => {
