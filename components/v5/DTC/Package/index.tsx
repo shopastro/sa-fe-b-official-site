@@ -237,8 +237,8 @@ const DTCPackage = () => {
                       className="flex items-center justify-between w-[280px] px-[16px] py-[32px] text-[18px] leading-[22px] border-r border-[#DDE0F1] last:border-r-0 last:bg-[#FAFCFF]"
                     >
                       <div>
-                        <span>{item.title}</span>
-                        <span>
+                        <span className="mr-[8px]">{item.title}</span>
+                        <span className="text-[16px]">
                           <span className="text-[#18214DCC] opacity-80">¥</span>
                           <span>{showMonth ? item.monthPrice : item.yearPrice}</span>
                           <span className="text-[#18214DCC] opacity-80">{showMonth ? '/月' : '/年'}</span>
@@ -248,7 +248,7 @@ const DTCPackage = () => {
                         className="border border-[#D6E0EA] rounded-[4px] cursor-pointer"
                         style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
                       >
-                        <span className="flex px-[24px] py-[4px] text-[14px] leading-[22px]">
+                        <span className="flex px-[8px] py-[4px] text-[14px] leading-[22px]">
                           <Link href={freeLink}>免费试用</Link>
                         </span>
                       </div>
