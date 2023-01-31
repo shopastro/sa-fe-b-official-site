@@ -20,12 +20,29 @@ const Product: NextPage = () => {
         description="shopastro, 星盘跨境, 提供一站式跨境私域增长解决方案, 您可方便快捷的建设DTC/B2B的站点或者可直接使用星盘的智数营销产品“白鲸营销”。--shopastro星盘跨境"
         keywords="试用产品, 一站式, 跨境私域增长, 解决方案, DTC建站套餐, B2B建站, 白鲸营销"
       />
-      <div className="flex items-center justify-center absolute top-0 left-0 w-screen overflow-hidden"></div>
-      <div>
+      <div className="hidden md:flex items-center justify-center absolute top-0 left-0 w-screen overflow-hidden">
+        <Image
+          src="https://media.cdn.ishopastro.com/upload/images/20230131-102858.jpeg_2023-01-31-02-32-43.jpg"
+          width={2135}
+          height={1329}
+          quality={100}
+          alt="bg"
+        />
+      </div>
+      <div className="flex md:hidden items-center justify-center absolute top-0 left-0 w-screen overflow-hidden">
+        <Image
+          src=" https://media.cdn.ishopastro.com/upload/images/20230131-105614.png_2023-01-31-02-56-42.png"
+          width={750}
+          height={1145}
+          quality={100}
+          alt="bg"
+        />
+      </div>
+      <div className="relative">
         <Menu />
         {/* 选择产品 */}
         <div className="flex flex-col md:items-center">
-          <div className="flex flex-col px-[20px] py-[32px] md:w-[1200px]">
+          <div className="flex flex-col px-[20px] py-[40px] md:py-[80px] md:w-[1200px]">
             <div className="mb-[20px] text-[40px] leading-[48px] text-[#0E1E46] font-[700] md:text-[48px] md:leading-[58px]">
               请选择试用产品
             </div>
@@ -35,7 +52,7 @@ const Product: NextPage = () => {
             </div>
 
             <div className="flex flex-col md:flex-row md:justify-between">
-              <div className="flex flex-col mb-[20px] p-[20px] border border-[#EEF0F0] rounded-[12px] md:w-[350px]">
+              <div className="flex flex-col mb-[20px] p-[20px] border border-[#EEF0F0] rounded-[12px] md:w-[350px] bg-white">
                 <div className="mb-[8px] text-[20px] leading-[30px] font-[700] text-[#122B6D]">DTC建站</div>
                 <span className="w-full mb-[8px]">
                   <Image
@@ -65,7 +82,7 @@ const Product: NextPage = () => {
                 </Link>
               </div>
 
-              <div className="flex flex-col mb-[20px] p-[20px] border border-[#EEF0F0] rounded-[12px] md:w-[350px]">
+              <div className="flex flex-col mb-[20px] p-[20px] border border-[#EEF0F0] rounded-[12px] md:w-[350px] bg-white">
                 <div className="mb-[8px] text-[20px] leading-[30px] font-[700] text-[#122B6D]">B2B建站</div>
                 <span className="w-full mb-[8px]">
                   <Image
@@ -98,7 +115,7 @@ const Product: NextPage = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col mb-[20px] p-[20px] border border-[#EEF0F0] rounded-[12px] md:w-[350px]">
+              <div className="flex flex-col mb-[20px] p-[20px] border border-[#EEF0F0] rounded-[12px] md:w-[350px] bg-white">
                 <div className="mb-[8px] text-[20px] leading-[30px] font-[700] text-[#122B6D]">白鲸营销</div>
                 <span className="w-full mb-[8px]">
                   <Image
@@ -134,9 +151,9 @@ const Product: NextPage = () => {
           </div>
         </div>
         {/* 联系我们 */}
-        <div className="flex flex-col md:items-center">
-          <div className="flex flex-col px-[20px] md:w-[1200px] md:flex-row">
-            <div className="flex flex-col md:mr-[32px]">
+        <div className="flex flex-col md:items-center bg-[#FDFDFD] pt-[40px] md:pt-[80px]">
+          <div className="flex flex-col px-[20px] md:w-[1200px] md:flex-row md:justify-between">
+            <div className="flex flex-col md:mr-[32px] md:mb-[80px]">
               <div className="mb-[24px] text-[40px] leading-[48px] text-[#0E1E46] font-[700] md:text-[48px] md:leading-[58px]">
                 有任何问题？
               </div>
@@ -155,7 +172,7 @@ const Product: NextPage = () => {
                 </span>
               </div>
             </div>
-            <div className="flex w-full">
+            <div className="flex w-full md:w-[410px] items-end">
               <Image
                 src="https://media.cdn.ishopastro.com/upload/images/20221216-012315.png_2022-12-15-17-23-53.png"
                 width={682}
@@ -165,7 +182,9 @@ const Product: NextPage = () => {
             </div>
           </div>
         </div>
-        <Footer />
+        <div className="bg-white">
+          <Footer />
+        </div>
       </div>
     </>
   )
