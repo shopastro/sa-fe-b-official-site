@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useContainer } from 'unstated-next'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
@@ -12,12 +12,36 @@ const DTCPackage = () => {
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
   const data = showMonth ? belugaMonthData : belugaYearData
   const curType = belugaTypeInfo[activeTypeIndex - 1]
+  const stickyContentRef = useRef<HTMLDivElement>(null)
+  const [shadowStyle, setShadowStyle] = useState<any>({})
 
   const isMobile = useIsMobile()
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  })
+
+  function handleScroll() {
+    window?.requestAnimationFrame(() => {
+      if (stickyContentRef.current) {
+        const { top } = stickyContentRef.current.getBoundingClientRect()
+        const offset = isMobile ? 48 : 80
+        if (top === offset) {
+          setShadowStyle({ boxShadow: '0px 4px 10px rgba(77, 77, 77, 0.1)' })
+        } else {
+          setShadowStyle({})
+        }
+      }
+    })
+  }
+
   return (
-    <div className="flex flex-col items-center w-screen">
-      <div className="flex flex-col relative px-[20px] pb-[40px] overflow-hidden md:w-[1200px] md:pb-[80px] md:px-0">
+    <div className="flex flex-col items-center w-screen px-[20px] pb-[40px] md:pb-[80px] md:px-0">
+      <div className="flex flex-col md:w-[1200px]">
         <div className="mb-[20px] text-[28px] leading-[34px] text-center md:hidden">白鲸套餐</div>
         {/* menu */}
         <div className="flex justify-center mb-[20px] md:hidden">
@@ -75,15 +99,21 @@ const DTCPackage = () => {
             </span>
           </div>
         </div>
-        {/* form */}
-        <div>
-          <div className="hidden md:flex border border-[#DDE0F1] border-b-0">
-            <div className="flex flex-1 w-[360px] px-[16px] py-[32px] border-r border-[#DDE0F1]" />
+      </div>
+      {/* form */}
+      <div className="flex flex-col items-center md:w-screen">
+        <div
+          className="hidden md:flex justify-center w-screen sticky top-[80px] bg-white z-10"
+          ref={stickyContentRef}
+          style={shadowStyle}
+        >
+          <div className="flex items-center md:w-[1200px] border border-[#DDE0F1] border-b-0">
+            <div className="flex flex-1 w-[360px] md:h-[96px] px-[16px] py-[32px] border-r border-[#DDE0F1]" />
             {belugaTypeInfo.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex items-center justify-center flex-1 w-[280px] px-[16px] py-[32px] border-r border-[#DDE0F1] last:border-r-0"
+                  className="flex items-center flex-1 w-[280px] px-[16px] py-[32px] border-r border-[#DDE0F1] last:border-r-0"
                 >
                   <span className="mr-[10px] text-[18px] leading-[22px] font-[700]">{item.title}</span>
                   <span className="mr-[16px] text-[16px] leading-[18px]">
@@ -99,12 +129,14 @@ const DTCPackage = () => {
                       setButtonType(`package-${index}`)
                     }}
                   >
-                    <span className="px-[8px] py-[4px] text-[14px] leading-[22px]">立即咨询</span>
+                    <span className="flex px-[8px] py-[4px] text-[14px] leading-[22px]">立即咨询</span>
                   </span>
                 </div>
               )
             })}
           </div>
+        </div>
+        <div className="flex flex-col md:w-[1200px]">
           {data.map((subData, index) => {
             return (
               <div

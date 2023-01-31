@@ -22,7 +22,16 @@ const Modal: React.FC<IProps> = (props: IProps) => {
 
   useEffect(() => {
     setIsOpen(visiable)
-    if (visiable) document.body.style.overflow = 'hidden'
+    if (visiable) {
+      document.body.style.overflow = 'hidden'
+      if (window.dataLayer && window.dataLayer.push) {
+        // @ts-ignore
+        dataLayer.push?.({
+          event: 'gtm.click',
+          'gtm.elementId': 'lead_form'
+        })
+      }
+    }
   }, [visiable])
 
   const handleClose = () => {
