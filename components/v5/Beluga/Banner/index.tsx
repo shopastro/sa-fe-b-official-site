@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { useContainer } from 'unstated-next'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
@@ -8,7 +9,15 @@ import { bannerData } from './data'
 
 const BelugaBanner = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
+  const [freeLink, setFreeLink] = useState('https://sys.admin.ishopastro.com/admin/user/signup?type=dtc')
+
   const isMobile = useIsMobile()
+
+  useEffect(() => {
+    if (/beta/.test(location.host)) {
+      setFreeLink('https://sys.admin.beta.ishopastro.com/admin/user/signup?type=dtc')
+    }
+  }, [])
 
   return (
     <div className="flex flex-col justify-center relative w-screen bg-[#F5F6FA]">
@@ -44,7 +53,7 @@ const BelugaBanner = () => {
 
             const btnElement = (
               <div
-                className="hidden md:flex cursor-pointer"
+                className="flex item-center cursor-pointer"
                 onClick={() => {
                   if (!name) {
                     setShowMoadl(true)
@@ -53,10 +62,10 @@ const BelugaBanner = () => {
                 }}
               >
                 <span
-                  className="flex-1 px-[74px] py-[7px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#004DD1] rounded-[8px] md:flex-none"
+                  className="flex-1 py-[7px] text-[16px] md:text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#004DD1] rounded-[8px] md:flex-none"
                   style={{ backgroundColor: name ? '#FE8953' : '#004DD1' }}
                 >
-                  {name ? '点击试用' : '立即咨询'}
+                  {name ? '免费试用' : '立即咨询'}
                 </span>
               </div>
             )
@@ -76,7 +85,7 @@ const BelugaBanner = () => {
                   <Image width={520} height={400} quality={100} src={data.image} alt={data.title} />
                 </div>
                 <div className="md:w-[300px] px-[40px]">
-                  {data?.name ? <Link href={``}>{btnElement}</Link> : btnElement}
+                  {data?.name ? <Link href={freeLink}>{btnElement}</Link> : btnElement}
                 </div>
               </div>
             )

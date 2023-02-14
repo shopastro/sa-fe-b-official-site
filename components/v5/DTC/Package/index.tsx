@@ -5,18 +5,23 @@ import { useEffect, useRef, useState } from 'react'
 import useIsMobile from '../../../../hooks/useIsMobile'
 import { dtcMonthData, dtcTypeInfo, dtcYearData } from './data'
 
-const freeLink = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc'
-
 const DTCPackage = () => {
   const [showMonth, setShowMonth] = useState(true)
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
   const [shadowStyle, setShadowStyle] = useState<any>({})
+  const [freeLink, setFreeLink] = useState('https://sys.admin.ishopastro.com/admin/user/signup?type=dtc')
   const contentRef = useRef<HTMLDivElement>(null)
   const stickyContentRef = useRef<HTMLDivElement>(null)
   const data = showMonth ? dtcMonthData : dtcYearData
   const curType = dtcTypeInfo[activeTypeIndex - 1]
 
   const isMobile = useIsMobile()
+
+  useEffect(() => {
+    if (/beta/.test(location.host)) {
+      setFreeLink('https://sys.admin.beta.ishopastro.com/admin/user/signup?type=dtc')
+    }
+  }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
