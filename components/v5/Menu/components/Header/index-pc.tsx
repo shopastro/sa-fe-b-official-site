@@ -91,15 +91,17 @@ const Menu: React.FC<MenuProps> = (props) => {
             <div className="mr-[16px] cursor-pointer">
               <Link href="https://sys.admin.ishopastro.com/admin/user/login">登录</Link>
             </div>
-            <div
-              className="cursor-pointer rounded-[8px] border border-solid border-[#FFF] px-[30px] py-[10px]"
-              style={{
-                color: route === '/about' ? '#3E3E40' : theme === 'light' ? '#FFF' : '#004DD1',
-                borderColor: route === '/about' ? '#3E3E40' : theme === 'light' ? '#FFF' : '#004DD1'
-              }}
-            >
-              <Link href="/product">免费试用</Link>
-            </div>
+            <Link href="/product" passHref>
+              <div
+                className="cursor-pointer rounded-[8px] border border-solid border-[#FFF] px-[30px] py-[10px]"
+                style={{
+                  color: route === '/about' ? '#3E3E40' : theme === 'light' ? '#FFF' : '#004DD1',
+                  borderColor: route === '/about' ? '#3E3E40' : theme === 'light' ? '#FFF' : '#004DD1'
+                }}
+              >
+                免费试用
+              </div>
+            </Link>
           </div>
         </div>
       </div>
