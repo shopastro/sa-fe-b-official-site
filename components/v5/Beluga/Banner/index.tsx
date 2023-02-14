@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { useContainer } from 'unstated-next'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
@@ -39,35 +40,47 @@ const BelugaBanner = () => {
         {/* 功能 */}
         <div className="flex flex-col px-[20px] mb-[40px] md:flex-row">
           {bannerData.map((data, index) => {
+            const name = data?.name
+
+            const btnElement = (
+              <div
+                className="hidden md:flex cursor-pointer"
+                onClick={() => {
+                  if (!name) {
+                    setShowMoadl(true)
+                    setButtonType('topbanner')
+                  }
+                }}
+              >
+                <span
+                  className="flex-1 px-[74px] py-[7px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#004DD1] rounded-[8px] md:flex-none"
+                  style={{ backgroundColor: name ? '#FE8953' : '#004DD1' }}
+                >
+                  {name ? '点击试用' : '立即咨询'}
+                </span>
+              </div>
+            )
+
             return (
               <div
                 key={index}
-                className="flex flex-col py-[28px] mb-[30px] border border-white bg-[#F8F8F8] rounded-[12px] last:mb-0 md:w-[260px] md:mr-[38px] md:last:mr-0 md:mb-0"
+                className="flex flex-col py-[28px] mb-[30px] border border-white bg-[#fff] rounded-[12px] last:mb-0 md:w-[300px] md:mr-[38px] md:last:mr-0 md:mb-0"
               >
                 <div className="mb-[12px] text-[22px] leading-[30px] text-[#18214D] text-center font-[700]">
                   {data.title}
                 </div>
-                <div className="mb-[32px] px-[40px] text-[16px] leading-[24px] text-[#3E4462] text-opacity-80 text-center md:px-[28px]">
+                <div className="mb-[20px] px-[40px] text-[16px] leading-[24px] text-[#3E4462] text-opacity-80 text-center md:px-[40px]">
                   {data.info}
                 </div>
-                <div className="px-[20px]">
+                <div className="md:w-[300px] px-[20px]">
                   <Image width={520} height={400} quality={100} src={data.image} alt={data.title} />
+                </div>
+                <div className="md:w-[300px] px-[40px]">
+                  {data?.name ? <Link href={``}>{btnElement}</Link> : btnElement}
                 </div>
               </div>
             )
           })}
-        </div>
-        {/* 二维码 */}
-        <div
-          className="hidden md:flex cursor-pointer"
-          onClick={() => {
-            setShowMoadl(true)
-            setButtonType('topbanner')
-          }}
-        >
-          <span className="flex-1 px-[54px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[12px] md:flex-none md:py-[18px]">
-            立即咨询
-          </span>
         </div>
       </div>
     </div>
