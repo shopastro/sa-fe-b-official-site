@@ -1,23 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import { useContainer } from 'unstated-next'
 
-import useIsMobile from '../../../../hooks/useIsMobile'
 import detectionStore from '../../../../store/detectionStore'
+import { freeLink } from '../../../../utils/freeTrail'
 import { bannerData } from './data'
 
 const BelugaBanner = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
-  const [freeLink, setFreeLink] = useState('https://sys.admin.ishopastro.com/admin/user/signup?type=dtc')
-
-  const isMobile = useIsMobile()
-
-  useEffect(() => {
-    if (/beta/.test(location.host)) {
-      setFreeLink('https://sys.admin.beta.ishopastro.com/admin/user/signup?type=dtc')
-    }
-  }, [])
 
   return (
     <div className="flex flex-col justify-center relative w-screen bg-[#F5F6FA]">
@@ -85,7 +75,7 @@ const BelugaBanner = () => {
                   <Image width={520} height={400} quality={100} src={data.image} alt={data.title} />
                 </div>
                 <div className="md:w-[300px] px-[40px]">
-                  {data?.name ? <Link href={freeLink}>{btnElement}</Link> : btnElement}
+                  {data?.name ? <Link href={freeLink(data?.name, '/beluga')}>{btnElement}</Link> : btnElement}
                 </div>
               </div>
             )

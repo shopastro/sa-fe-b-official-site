@@ -3,25 +3,19 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
+import { freeLink } from '../../../../utils/freeTrail'
 import { dtcMonthData, dtcTypeInfo, dtcYearData } from './data'
 
 const DTCPackage = () => {
   const [showMonth, setShowMonth] = useState(true)
   const [activeTypeIndex, setActiveTypeIndex] = useState(1)
   const [shadowStyle, setShadowStyle] = useState<any>({})
-  const [freeLink, setFreeLink] = useState('https://sys.admin.ishopastro.com/admin/user/signup?type=dtc')
   const contentRef = useRef<HTMLDivElement>(null)
   const stickyContentRef = useRef<HTMLDivElement>(null)
   const data = showMonth ? dtcMonthData : dtcYearData
   const curType = dtcTypeInfo[activeTypeIndex - 1]
 
   const isMobile = useIsMobile()
-
-  useEffect(() => {
-    if (/beta/.test(location.host)) {
-      setFreeLink('https://sys.admin.beta.ishopastro.com/admin/user/signup?type=dtc')
-    }
-  }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -158,7 +152,7 @@ const DTCPackage = () => {
         <div className="hidden px-[20px] flex-col md:flex">
           <div className="mb-[8px] text-[32px] leading-[38px] text-center">抢先体验, 开始免费试用! </div>
           <div className="mb-[24px] text-[18px] leading-[22px] text-center">直接免费7天试用体验星盘DTC建站。</div>
-          <Link href={freeLink} passHref>
+          <Link href={freeLink('website_dtc', '/dtc')} passHref>
             <div className="flex justify-center mb-[70px] cursor-pointer">
               <span className="px-[56px] py-[16px] text-[18px] leading-[26px] text-[#FFF] bg-[#FE8953] rounded-[8px]">
                 免费试用
@@ -254,7 +248,7 @@ const DTCPackage = () => {
                         style={item.type === 3 ? { backgroundColor: '#004ED1', color: '#FFF' } : {}}
                       >
                         <span className="flex px-[8px] py-[4px] text-[14px] leading-[22px]">
-                          <Link href={freeLink}>免费试用</Link>
+                          <Link href={freeLink('website_dtc', '/dtc')}>免费试用</Link>
                         </span>
                       </div>
                     </div>
@@ -314,7 +308,7 @@ const DTCPackage = () => {
 
           <div className="flex justify-center text-[14px] leading-[22px] text-[#FFF] md:hidden">
             <div className=" px-[24px] py-[4px] bg-[#004ED1] rounded-[4px]">
-              <Link href={freeLink}>免费试用</Link>
+              <Link href={freeLink('website_dtc', '/dtc')}>免费试用</Link>
             </div>
           </div>
         </div>
