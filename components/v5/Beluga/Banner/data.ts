@@ -5,7 +5,7 @@ export const bannerData = [
     info: '高达300+万条, 覆盖100+国家的竞争对手数据，通过自然流量、广告流量、商品交易、人群画像、社媒运营、投放素材等多维度全方面深度研究并实时监控竞争对手，给运营决策提供高价值的参考。',
     infoMobile: '300+万条站点多维度信息实时跟踪',
     image: 'https://media.cdn.ishopastro.com/upload/images/20221229-172526.png_2022-12-29-09-26-07.png',
-    name: 'product_industry'
+    name: 'beluga_industry'
   },
   {
     type: '功能二',
