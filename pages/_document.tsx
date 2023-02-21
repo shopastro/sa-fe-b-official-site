@@ -17,7 +17,8 @@ export default function Document() {
     enableLinkTrace:true,
     behavior:true,
     enableSPA:true,
-    useFmp:true
+    useFmp:true,
+    environment:document.domain.indexOf('beta.ishopastro.com')>=0?'daily':document.domain.indexOf('localhost')>=0?'local':'prod'
   };
 with(b)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("crossorigin","",src=d)
 })(window,document,"https://retcode.alicdn.com/retcode/bl.js","__bl");
