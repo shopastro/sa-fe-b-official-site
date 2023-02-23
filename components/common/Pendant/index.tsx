@@ -5,6 +5,7 @@ import { useContainer } from 'unstated-next'
 
 import detectionStore from '../../../store/detectionStore'
 import { buryingPoint } from '../../../utils/buryingPoint'
+import { freeLink } from '../../../utils/freeTrail'
 import Modal from '../../v1/base/Modal'
 import styles from './index.module.scss'
 
@@ -52,7 +53,7 @@ const Pendant: React.FC<IProps> = () => {
           </div>
         </li>
         <li>
-          <Link href="/product" passHref>
+          <Link href={freeLink('', '')} passHref>
             <div className={classNames(styles.pendantItem)}>
               <div className={styles.imgItem} />
               <div className={styles.textItem}> 免费试用</div>

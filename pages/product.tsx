@@ -7,8 +7,9 @@ import Header from '../components/v2/Header'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 import detectionStore from '../store/detectionStore'
+import { freeLink } from '../utils/freeTrail'
 
-const freeLinkDTC = 'https://sys.admin.ishopastro.com/admin/user/signup?type=dtc'
+const freeLinkDTC = freeLink('website_dtc', '')
 
 // 产品方案
 const Product: NextPage = () => {
