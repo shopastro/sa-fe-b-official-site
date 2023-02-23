@@ -75,7 +75,11 @@ const BelugaBanner = () => {
                   <Image width={520} height={400} quality={100} src={data.image} alt={data.title} />
                 </div>
                 <div className="md:w-[300px] px-[40px]">
-                  {data?.name ? <Link href={freeLink(data?.name, '/beluga')}>{btnElement}</Link> : btnElement}
+                  {data?.name ? (
+                    <Link href={freeLink(data?.name, '/beluga', window.location.host)}>{btnElement}</Link>
+                  ) : (
+                    btnElement
+                  )}
                 </div>
               </div>
             )

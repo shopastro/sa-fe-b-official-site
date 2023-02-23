@@ -9,6 +9,12 @@ type IProps = {
   keywords?: string
 }
 
+declare global {
+  interface Window {
+    dataLayer: any
+  }
+}
+
 const Header: React.FC<IProps> = (props) => {
   const {
     title = 'shopastro 星盘跨境 一站式跨境电商SaaS服务平台，跨境卖家的出海首选！',
