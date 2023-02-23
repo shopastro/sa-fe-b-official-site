@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { freeLink } from '../../../../utils/freeTrail'
+
 const Banner = () => {
   return (
     <div className="flex justify-center w-screen text-white">
@@ -40,7 +42,7 @@ const Banner = () => {
             </div>
             <div className="hidden text-[18px] leading-[26px] md:flex">
               <span className="py-[12px] px-[54px] border border-solid border-[#FE8953] rounded-[8px] bg-[#FE8953]">
-                <Link href="/product" passHref>
+                <Link href={freeLink('', '')} passHref>
                   免费试用
                 </Link>
               </span>

@@ -10,6 +10,7 @@ import Partners from '../components/v5/Home/Partners'
 import Plugins from '../components/v5/Home/Plugins'
 import Solution from '../components/v5/Home/Solution'
 import Menu from '../components/v5/Menu'
+import { freeLink } from '../utils/freeTrail'
 
 const Home: NextPage = () => {
   return (
@@ -52,7 +53,7 @@ const Home: NextPage = () => {
         <Partners />
         <Footer />
       </div>
-      <FixedButton href="/product" />
+      <FixedButton href={freeLink('', '')} />
     </>
   )
 }

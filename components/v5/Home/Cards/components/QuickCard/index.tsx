@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import { freeLink } from '../../../../../../utils/freeTrail'
 import FreeButton from '../../../../FreeButton'
 import Description from '../Description'
 import SubTitle from '../SubTitle'
@@ -48,7 +49,7 @@ const Quick = () => {
             </Description>
           </div>
           <div className="flex">
-            <FreeButton href="/product" />
+            <FreeButton href={freeLink('', '')} />
           </div>
         </div>
       </div>
