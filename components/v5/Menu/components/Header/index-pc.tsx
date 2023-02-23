@@ -94,7 +94,7 @@ const Menu: React.FC<MenuProps> = (props) => {
               <Link href="https://sys.admin.ishopastro.com/admin/user/login">登录</Link>
             </div>
 
-            <Link href={freeLink('', '', window.location.host)} passHref>
+            <Link href={freeLink('', '')} passHref>
               <div
                 className="cursor-pointer rounded-[8px] border border-solid border-[#FFF] px-[30px] py-[10px]"
                 style={{
