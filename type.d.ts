@@ -1,2 +1,2 @@
-declare module 'classname';
-declare module 'react-file-viewer';
+declare module 'classname'
+declare module 'react-file-viewer'
