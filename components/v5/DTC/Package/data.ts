@@ -30,9 +30,9 @@ export const dtcMonthData: DTCDataItem[][] = [
       title: '白鲸-行业洞察数据',
       logo: 'https://media.cdn.ishopastro.com/svg/shopastrohome/a1dd7e9ec57d8c705009a2eb49919ecf.svg'
     },
-    { info: ['站点收藏数30个, 监控数5个'] },
-    { info: ['站点收藏数100个, 监控数20个'] },
-    { info: ['站点收藏数500个, 监控数100个'] }
+    { info: ['查看站点10次/日', '关注额度 10个'] },
+    { info: ['查看站点200次/日', '关注额度 30个'] },
+    { info: ['查看站点500次/日', '关注额度 100个'] }
   ],
   [
     {
