@@ -164,7 +164,7 @@ const Product: NextPage = () => {
                 <span className="text-[18px] leading-[26px]">微信直聊</span>
                 <span className="w-[124px] h-[124px] p-[12px] bg-[#FFF]">
                   <Image
-                    src="https://media.cdn.ishopastro.com/upload/images/weChatOrCode.jpg_2023-01-11-02-43-36.jpg"
+                    src="https://media.cdn.ishopastro.com/upload/images/20230217-171938.jpeg_2023-02-17-09-21-33.jpg"
                     width={150}
                     height={150}
                     alt="icon"
