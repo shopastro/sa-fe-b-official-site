@@ -9,6 +9,7 @@ import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 import TryNow from '../components/v5/TryNow'
+import { freeLink } from '../utils/freeTrail'
 
 const DTC: NextPage = () => {
   return (
@@ -38,10 +39,10 @@ const DTC: NextPage = () => {
         <Package />
         <Choose />
         <Question />
-        <TryNow href="https://sys.admin.ishopastro.com/admin/user/signup?type=dtc" />
+        <TryNow href={freeLink('website_dtc', '')} />
         <Footer />
       </div>
-      <FixedButton href="https://sys.admin.ishopastro.com/admin/user/signup?type=dtc" />
+      <FixedButton href={freeLink('website_dtc', '')} />
     </>
   )
 }

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 
+import { freeLink } from '../../../utils/freeTrail'
+
 const TryNow: React.FC<TryNowProps> = (props) => {
   return (
     <div className="flex flex-col items-center w-screen bg-[#F5F6FA]">
@@ -11,7 +13,7 @@ const TryNow: React.FC<TryNowProps> = (props) => {
         <div className="mb-[10px] text-[18px] leading-[28px] text-[#535D77] md:mb-[20px]">
           光看不够? 立即开始免费7天试用。
         </div>
-        <Link href={props.href ?? '/product'} passHref>
+        <Link href={props.href ?? freeLink('', '')} passHref>
           <div className="flex cursor-pointer">
             <span className="px-[52px] py-[12px] text-[16px] leading-[24px] text-[#004DD1] font-[600] border border-[#004DD1] rounded-[12px] md:py-[18px]">
               免费试用
