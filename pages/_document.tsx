@@ -25,6 +25,7 @@ with(b)with(body)with(insertBefore(createElement("script"),firstChild))setAttrib
         `
           }}
         ></script>
+        <link rel="prefetch" href="https://sys.cdn.ishopastro.com/fe/common/lib.min@1.0.0.js" as="script" />
         <Main />
         <NextScript />
       </body>
