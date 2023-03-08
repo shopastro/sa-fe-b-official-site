@@ -4,35 +4,13 @@ import { useRouter } from 'next/router'
 import React, { useRef, useState } from 'react'
 
 import { freeLink } from '../../../../../utils/freeTrail'
+import { routeList } from './constant'
+import type { Pathname } from './constant'
 
 const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo.svg'
 const darkLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg'
 const lightIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/1a3478cfd3dbd8a94bd03643bd927b16.svg'
 const darkIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/d23ef83b042d7975657988671fcacee5.svg'
-
-type Pathname = {
-  about?: boolean
-  beluga?: boolean
-}
-
-const routeList: { [key: string]: { name: string; link: string }[] } = {
-  about: [
-    {
-      name: '关于我们',
-      link: '/about'
-    },
-    {
-      name: '渠道合作&生态联盟',
-      link: '/partners'
-    }
-  ],
-  beluga: [
-    {
-      name: '行业情报',
-      link: '/industry'
-    }
-  ]
-}
 
 const Menu: React.FC<MenuProps> = (props) => {
   const { theme = 'dark', style = {} } = props

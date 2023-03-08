@@ -2,22 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
+import type { Pathname } from './components/Header/constant'
 import Header from './components/Header/index-mobile'
 
-const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo.svg'
-const lightMenuIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/4c69a3c7397eb8af714ef592bfa48af9.svg'
 const darkLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg'
-const darkMenuIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/d413df7dd29f56151bfb4be8d191eb70.svg'
 const addIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/7a7423a5d27fb477da06078dc3a6689a.svg'
 const minusIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/f0c77881530c6ee43515438ef4d8265f.svg'
 
 const Menu: React.FC<MenuProps> = (props) => {
   const { theme = 'dark' } = props
-  const logo = theme === 'light' ? lightLogo : darkLogo
-  const menuIcon = theme === 'light' ? lightMenuIcon : darkMenuIcon
 
   const [showMenu, setShowMenu] = useState(false)
-  const [showMore, setShowMore] = useState(false)
+  const [showMore, setShowMore] = useState<Pathname>({})
   const [radio, setRadio] = useState(0)
 
   useEffect(() => {
@@ -79,7 +75,7 @@ const Menu: React.FC<MenuProps> = (props) => {
           style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
         >
           <Link href="/" passHref>
-            <h1 className="w-[110px] h-[20px] md:w-[220px] md:h-[40px] cursor-pointer">
+            <h1 className="w-[110px] h-[20px] md:w-[220px] md:h-[40px]">
               <Image src={darkLogo} width={220} height={40} quality={100} alt="logo" />
             </h1>
           </Link>
@@ -116,14 +112,31 @@ const Menu: React.FC<MenuProps> = (props) => {
             B2B建站
           </div>
         </Link>
-        <Link href="/beluga" passHref>
+        <div className="flex flex-col">
           <div
-            className="p-[16px] text-[16px] leading-[24px] text-[#222]"
+            className="flex justify-between p-[16px] text-[16px] leading-[24px] text-[#222]"
             style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+            onClick={() => {
+              setShowMore({ ...showMore, beluga: !!!showMore.beluga })
+            }}
           >
-            白鲸营销
+            <Link href="/beluga">白鲸营销</Link>
+            <div className="flex">
+              <Image src={showMore.beluga ? minusIcon : addIcon} width={24} height={24} quality={100} alt="logo" />
+            </div>
           </div>
-        </Link>
+          <div
+            className="flex flex-col text-[14px] leading-[22px] text-[#222] bg-[#F9F9F9] overflow-hidden transition-all"
+            style={{ maxHeight: showMore.beluga ? '100vh' : 0 }}
+          >
+            <Link href="/industry" passHref>
+              <span className="px-[48px] py-[16px]" style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}>
+                行业情报
+              </span>
+            </Link>
+          </div>
+        </div>
+
         <Link href="/solutions" passHref>
           <div
             className="p-[16px] text-[16px] leading-[24px] text-[#222]"
@@ -137,17 +150,17 @@ const Menu: React.FC<MenuProps> = (props) => {
             className="flex justify-between p-[16px] text-[16px] leading-[24px] text-[#222]"
             style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
             onClick={() => {
-              setShowMore(!showMore)
+              setShowMore({ ...showMore, about: !!!showMore.about })
             }}
           >
-            <span>关于</span>
+            <Link href="/about">关于</Link>
             <div className="flex">
-              <Image src={showMore ? minusIcon : addIcon} width={24} height={24} quality={100} alt="logo" />
+              <Image src={showMore.about ? minusIcon : addIcon} width={24} height={24} quality={100} alt="logo" />
             </div>
           </div>
           <div
             className="flex flex-col text-[14px] leading-[22px] text-[#222] bg-[#F9F9F9] overflow-hidden transition-all"
-            style={{ maxHeight: showMore ? '100vh' : 0 }}
+            style={{ maxHeight: showMore.about ? '100vh' : 0 }}
           >
             <Link href="/about" passHref>
               <span className="px-[48px] py-[16px]" style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}>
