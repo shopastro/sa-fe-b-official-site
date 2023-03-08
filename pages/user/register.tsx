@@ -1,6 +1,8 @@
-import { Button, Card, Checkbox, Footer, Form, Input, NavBar, Result, SafeArea, Space } from 'antd-mobile'
+import { Button, Card, Checkbox, Form, Input, Modal, NavBar, Result, SafeArea, Space, Toast } from 'antd-mobile'
 import axios from 'axios'
+import copy from 'copy-to-clipboard'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 
 import Pendant from '../../components/common/Pendant'
@@ -9,15 +11,17 @@ import { passwordValidator, phoneNumberValidator } from '../../utils/check'
 
 const prodUrl = '//sys.api.ishopastro.com/common/v1/register.json'
 const betaUrl = '//sys.api.beta.ishopastro.com/common/v1/register.json'
-const currentYear = new Date().getFullYear().toString()
+const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
 
 const Register = () => {
   const [form] = Form.useForm()
+  const router = useRouter()
 
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [agreement, setAgreement] = useState(false)
 
-  const onFinish = async (values: any) => {
+  const handleRegister = async () => {
     setLoading(true)
     const url = /beta/.test(location.host) ? betaUrl : prodUrl
     try {
@@ -34,6 +38,40 @@ const Register = () => {
       setLoading(false)
     }
   }
+  const onFinish = async (values: any) => {
+    console.log(values)
+    if (!agreement) {
+      Modal.show({
+        title: <>用户协议及隐私保护</>,
+        closeOnAction: true,
+        content: (
+          <div className={'text-[12px] text-center'}>
+            我已阅读并同意
+            <a href={AGREEMENT_LINK} target={'_blank'} rel="noreferrer">
+              《shopastro用户协议》
+            </a>
+          </div>
+        ),
+        actions: [
+          {
+            key: 'agree',
+            text: '同意并注册',
+            primary: true,
+            onClick: () => {
+              setAgreement(true)
+              handleRegister()
+            }
+          },
+          {
+            key: 'cancel',
+            text: '取消'
+          }
+        ]
+      })
+      return
+    }
+    await handleRegister()
+  }
 
   return (
     <>
@@ -42,7 +80,11 @@ const Register = () => {
         description="shopastro, 星盘跨境, 品牌出海一站式数智化解决方案；星盘 B2B, 数智化助力外贸企业高效出海；提供品牌认知与建设、全链路数字化询盘跟进和管理的产品和服务, 支持各类批发场景, 通过全路径洞察并挖掘访客意向与商机, 帮助外贸B2B商家在线上高效开展业务、获取高质量询盘--shopastro星盘跨境"
         keywords="B2B数智化, 智能询盘, 意向洞察, B 类 CRM, chat与询盘互通, 一件代发供货, 小额批发, 免费试用, 企业客户全生命周期跟踪, 打通1688商品池,支持星盘客户与Shopify店主的跨境交易"
       />
-      <NavBar onBack={() => {}}></NavBar>
+      <NavBar
+        onBack={() => {
+          router.back()
+        }}
+      ></NavBar>
       {success ? (
         <>
           <Result
@@ -57,9 +99,17 @@ const Register = () => {
           />
           <Card bodyClassName={'bg-[red] h-[140px] bg-[#F7F9FE] flex flex-col justify-between'}>
             <div className={'text-center text-[#18214D] text-[16px] font-medium'}>链接地址</div>
-            <div className="text-center text-[#909EB0]">https://admin.ishopastro.com</div>
+            <div className="text-center text-[#909EB0]">https://sys.admin.ishopastro.com/admin/user/login</div>
             <Space justify="center" block>
-              <Button onClick={() => {}} size={'small'}>
+              <Button
+                onClick={() => {
+                  copy('https://sys.admin.ishopastro.com/admin/user/login')
+                  Toast.show({
+                    content: '复制成功'
+                  })
+                }}
+                size={'small'}
+              >
                 复制链接
               </Button>
             </Space>
@@ -99,7 +149,7 @@ const Register = () => {
               validateTrigger={'onChange'}
               validateFirst={true}
             >
-              <Input placeholder="请输入手机号码" type={'number'} />
+              <Input placeholder="请输入手机号码" type={'number'} className={''} />
             </Form.Item>
             <Form.Item
               extra={<a>发送验证码</a>}
@@ -122,21 +172,24 @@ const Register = () => {
             >
               <Input placeholder="请输入密码" clearable type="password" />
             </Form.Item>
+          </Form>
+          <Form style={{ '--border-bottom': 'none', '--border-top': 'none' }}>
             <Form.Item>
-              <Input placeholder="Email 邮箱地址" />
-            </Form.Item>
-            <Form.Item>
-              <Checkbox>
+              <Checkbox
+                checked={agreement}
+                onChange={(value) => {
+                  setAgreement(value)
+                }}
+              >
                 <span className="text-[12px] lead-[18px]">
-                  阅读并同意<a>《shopastro 用户协议》</a>
+                  阅读并同意
+                  <a href={AGREEMENT_LINK} target={'_blank'} rel="noreferrer">
+                    《shopastro 用户协议》
+                  </a>
                 </span>
               </Checkbox>
             </Form.Item>
           </Form>
-          <Footer
-            content={`©${currentYear} shopastro All Rights Reserved.`}
-            style={{ position: 'fixed', bottom: '0', width: '100%' }}
-          ></Footer>
         </>
       )}
       <div style={{ background: '#ffcfac' }}>
