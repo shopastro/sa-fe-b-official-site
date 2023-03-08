@@ -2,16 +2,16 @@ import type { NextPage } from 'next'
 import { useContainer } from 'unstated-next'
 
 import Header from '../components/v2/Header'
-import Banner from '../components/v5/Beluga/Banner'
-import Package from '../components/v5/Beluga/Package'
-import Question from '../components/v5/Beluga/Question'
-import Sales from '../components/v5/Beluga/Sales'
 import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
+import Banner from '../components/v5/Industry/Banner'
+import Package from '../components/v5/Industry/Package'
+import Question from '../components/v5/Industry/Question'
+import Sales from '../components/v5/Industry/Sales'
 import Menu from '../components/v5/Menu'
 import detectionStore from '../store/detectionStore'
 
-const Beluga: NextPage = () => {
+const Industry: NextPage = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
 
   return (
@@ -43,4 +43,4 @@ const Beluga: NextPage = () => {
   )
 }
 
-export default Beluga
+export default Industry

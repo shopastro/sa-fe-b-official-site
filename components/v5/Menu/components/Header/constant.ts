@@ -3,7 +3,7 @@ export type Pathname = {
   beluga?: boolean
 }
 
-export const routeList: { [key: string]: { name: string; link: string }[] } = {
+export const routeMapObj: { [key: string]: { name: string; link: string }[] } = {
   about: [
     {
       name: '关于我们',
@@ -20,4 +20,10 @@ export const routeList: { [key: string]: { name: string; link: string }[] } = {
       link: '/industry'
     }
   ]
+}
+
+//一级路由高亮 对应的二级 路由
+export const routeListMap: { [key: string]: string[] } = {
+  about: ['/partners', '/about'],
+  beluga: ['/beluga', '/industry']
 }

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import React, { useRef, useState } from 'react'
 
 import { freeLink } from '../../../../../utils/freeTrail'
-import { routeList } from './constant'
+import { routeListMap, routeMapObj } from './constant'
 import type { Pathname } from './constant'
 
 const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo.svg'
@@ -70,7 +70,7 @@ const Menu: React.FC<MenuProps> = (props) => {
             </div>
             <div
               className="flex items-center relative mx-[20px] cursor-pointer"
-              style={{ color: route === '/beluga' || route === '/partners' ? activeColor : 'inherit' }}
+              style={{ color: routeListMap.beluga.includes(route) ? activeColor : 'inherit' }}
               onMouseEnter={(e) => {
                 handleMouseEnter(e, 'beluga')
               }}
@@ -90,7 +90,7 @@ const Menu: React.FC<MenuProps> = (props) => {
             </div>
             <div
               className="flex items-center relative mx-[20px] cursor-pointer"
-              style={{ color: route === '/about' || route === '/partners' ? activeColor : 'inherit' }}
+              style={{ color: routeListMap.about.includes(route) ? activeColor : 'inherit' }}
               onMouseEnter={(e) => {
                 handleMouseEnter(e, 'about')
               }}
@@ -138,12 +138,12 @@ const Menu: React.FC<MenuProps> = (props) => {
         onMouseEnter={handleDialogEnter}
         onMouseLeave={handleDialogLeave}
       >
-        {routeList[currentSubMore]?.map((el, i) => {
+        {routeMapObj[currentSubMore]?.map((el, i) => {
           return (
             <Link href={el.link} passHref key={el.name}>
               <span
                 className={`mb-[${
-                  i < routeList[currentSubMore].length - 1 ? '16px' : ''
+                  i < routeMapObj[currentSubMore].length - 1 ? '16px' : ''
                 }] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]`}
               >
                 {el.name}
