@@ -9,7 +9,10 @@ const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo
 const darkLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg'
 const lightIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/1a3478cfd3dbd8a94bd03643bd927b16.svg'
 const darkIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/d23ef83b042d7975657988671fcacee5.svg'
-
+type Pathname = {
+  about?: boolean
+  beluga?: boolean
+}
 const Menu: React.FC<MenuProps> = (props) => {
   const { theme = 'dark', style = {} } = props
   const logo = theme === 'light' ? lightLogo : darkLogo
@@ -17,18 +20,21 @@ const Menu: React.FC<MenuProps> = (props) => {
   const activeColor = theme === 'light' ? '#FE8952' : '#004DD1'
 
   const { route } = useRouter()
-  const [showMore, setShowMore] = useState(false)
+  const [showMore, setShowMore] = useState<Pathname>({})
   const [fixedStyle, setFixedStyle] = useState({ top: 0, left: 0 })
   const token = useRef<any>(null)
-  function handleMouseEnter(e: any) {
+
+  function handleMouseEnter(e: any, type: string) {
+    console.log(type)
+
     const { top, left } = e.target?.getBoundingClientRect() ?? {}
-    setShowMore(true)
+    // setShowMore(true)
     setFixedStyle({ top: top + 32, left })
   }
 
   function handleMouseLeave() {
     token.current = setTimeout(() => {
-      setShowMore(false)
+      setShowMore({})
     }, 200)
   }
 
@@ -37,7 +43,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   }
 
   function handleDialogLeave() {
-    setShowMore(false)
+    setShowMore({})
   }
 
   return (
@@ -63,9 +69,20 @@ const Menu: React.FC<MenuProps> = (props) => {
             <div className="mx-[20px] cursor-pointer" style={{ color: route === '/b2b' ? activeColor : 'inherit' }}>
               <Link href="/b2b">B2B建站</Link>
             </div>
-            <div className="mx-[20px] cursor-pointer" style={{ color: route === '/beluga' ? activeColor : 'inherit' }}>
+            <div
+              className="flex items-center relative mx-[20px] cursor-pointer"
+              style={{ color: route === '/beluga' || route === '/partners' ? activeColor : 'inherit' }}
+              onMouseEnter={(e) => {
+                handleMouseEnter(e, 'beluga')
+              }}
+              onMouseLeave={handleMouseLeave}
+            >
               <Link href="/beluga">白鲸营销</Link>
+              <div className="flex items-center ml-[12px]">
+                <Image src={icon} width={10} height={5} quality={100} alt="icon" />
+              </div>
             </div>
+
             <div
               className="mx-[20px] cursor-pointer"
               style={{ color: route === '/solutions' ? activeColor : 'inherit' }}
@@ -75,7 +92,9 @@ const Menu: React.FC<MenuProps> = (props) => {
             <div
               className="flex items-center relative mx-[20px] cursor-pointer"
               style={{ color: route === '/about' || route === '/partners' ? activeColor : 'inherit' }}
-              onMouseEnter={handleMouseEnter}
+              onMouseEnter={(e) => {
+                handleMouseEnter(e, 'about')
+              }}
               onMouseLeave={handleMouseLeave}
             >
               <Link href="/about">关于</Link>
