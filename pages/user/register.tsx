@@ -41,6 +41,9 @@ const Register = () => {
   const onFinish = async (values: any) => {
     console.log(values)
     if (!agreement) {
+      //@ts-ignore
+      document.activeElement?.blur()
+      window.scrollTo(0, 0)
       Modal.show({
         title: <>用户协议及隐私保护</>,
         closeOnAction: true,
@@ -105,6 +108,7 @@ const Register = () => {
                 onClick={() => {
                   copy('https://sys.admin.ishopastro.com/admin/user/login')
                   Toast.show({
+                    duration: 2000,
                     content: '复制成功'
                   })
                 }}
