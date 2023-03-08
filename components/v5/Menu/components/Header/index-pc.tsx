@@ -9,10 +9,31 @@ const lightLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/light-logo
 const darkLogo = 'https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg'
 const lightIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/1a3478cfd3dbd8a94bd03643bd927b16.svg'
 const darkIcon = 'https://media.cdn.ishopastro.com/svg/shopastrohome/d23ef83b042d7975657988671fcacee5.svg'
+
 type Pathname = {
   about?: boolean
   beluga?: boolean
 }
+
+const routeList: { [key: string]: { name: string; link: string }[] } = {
+  about: [
+    {
+      name: '关于我们',
+      link: '/about'
+    },
+    {
+      name: '渠道合作&生态联盟',
+      link: '/partners'
+    }
+  ],
+  beluga: [
+    {
+      name: '行业情报',
+      link: '/industry'
+    }
+  ]
+}
+
 const Menu: React.FC<MenuProps> = (props) => {
   const { theme = 'dark', style = {} } = props
   const logo = theme === 'light' ? lightLogo : darkLogo
@@ -23,12 +44,12 @@ const Menu: React.FC<MenuProps> = (props) => {
   const [showMore, setShowMore] = useState<Pathname>({})
   const [fixedStyle, setFixedStyle] = useState({ top: 0, left: 0 })
   const token = useRef<any>(null)
+  //当前hover 的二级菜单
+  const currentSubMore = Object.keys(showMore)?.[0] || ''
 
   function handleMouseEnter(e: any, type: string) {
-    console.log(type)
-
     const { top, left } = e.target?.getBoundingClientRect() ?? {}
-    // setShowMore(true)
+    setShowMore({ [type]: true })
     setFixedStyle({ top: top + 32, left })
   }
 
@@ -131,7 +152,7 @@ const Menu: React.FC<MenuProps> = (props) => {
       <div
         className="flex flex-col fixed p-[20px] text-[14px] leading-[22px] text-[#222] bg-white bg-opacity-90 rounded-[4px]"
         style={{
-          display: showMore ? 'flex' : 'none',
+          display: currentSubMore ? 'flex' : 'none',
           boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
           top: `${fixedStyle.top}px`,
           left: `${fixedStyle.left}px`
@@ -139,16 +160,19 @@ const Menu: React.FC<MenuProps> = (props) => {
         onMouseEnter={handleDialogEnter}
         onMouseLeave={handleDialogLeave}
       >
-        <Link href="/about" passHref>
-          <span className="mb-[16px] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]">
-            关于我们
-          </span>
-        </Link>
-        <Link href="/partners" passHref>
-          <span className="whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]">
-            渠道合作&生态联盟
-          </span>
-        </Link>
+        {routeList[currentSubMore]?.map((el, i) => {
+          return (
+            <Link href={el.link} passHref key={el.name}>
+              <span
+                className={`mb-[${
+                  i < routeList[currentSubMore].length - 1 ? '16px' : ''
+                }] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]`}
+              >
+                {el.name}
+              </span>
+            </Link>
+          )
+        })}
       </div>
     </>
   )

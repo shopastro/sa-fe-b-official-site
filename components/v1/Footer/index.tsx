@@ -1,9 +1,10 @@
-import React from 'react'
-import styles from './index.module.scss'
 import { withRouter } from 'next/router'
-import FooterItem from './FooterItem'
+import React from 'react'
+
 import Pendant from '../../common/Pendant'
-import { aboutUsList, joinList, contentList } from './constant'
+import FooterItem from './FooterItem'
+import { aboutUsList, contentList, joinList } from './constant'
+import styles from './index.module.scss'
 
 const Vision: React.FC<any> = (props) => {
   const currentYear = new Date().getFullYear().toString()
