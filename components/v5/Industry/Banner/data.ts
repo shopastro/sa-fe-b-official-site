@@ -1,24 +1,41 @@
 export const bannerData = [
   {
-    type: '功能一',
-    title: '行业情报',
-    info: '高达300+万条, 覆盖100+国家的竞争对手数据，通过自然流量、广告流量、商品交易、人群画像、社媒运营、投放素材等多维度全方面深度研究并实时监控竞争对手，给运营决策提供高价值的参考。',
-    infoMobile: '300+万条站点多维度信息实时跟踪',
+    type: 'website',
+    title: '站点情报',
+    info: [
+      '覆盖全球100+国家，300万+独立站',
+      '通过类目、关键词等多维检索，精准查找竞对站点',
+      '全面的资料，流量、关键词、消费者画像、广告、社媒、商品等一览无余',
+      '实时监控，最新动态第一时间跟进'
+    ],
     image: 'https://media.cdn.ishopastro.com/upload/images/20221229-172526.png_2022-12-29-09-26-07.png',
     name: 'beluga_industry'
   },
   {
-    type: '功能二',
-    title: '白鲸广告管理',
-    info: '全平台广告数据精准数据上报，提供精细化多维度的广告大数据分析，支持超大规模SKU总数和高成功率GMC和Catalog目录的商品刊登，多种手段帮助从源头上提高广告成效ROAS。',
-    infoMobile: '广告精准数据上报&归因，商品高成功率刊登',
+    type: 'originality',
+    title: '创意素材',
+    info: [
+      'AI识别，智能发现行业广告素材',
+      '多维检索，锁定优质广告素材，发掘爆款',
+      ' 以图搜图，快速找到适合商品的广告方案',
+      '关注广告主，投放趋势尽在掌握'
+    ],
     image: 'https://media.cdn.ishopastro.com/upload/images/Frame 627453.png_2022-12-20-08-30-06.png'
   },
   {
-    type: '功能三',
-    title: '个性化会员管理',
-    info: '无上限客户记录数，行为轨迹提供精准分析能力，针对大数据自动人群和自定义圈选的人群，通过高送达率的邮件发送、短信系统可进行私域触达，从而实现真正意义上的数据化精准营销。',
-    infoMobile: '高效邮件和短信触达',
+    type: 'intelligent',
+    title: '智能选品',
+    info: [
+      'Google权威数据，掌握全球独立站商品趋势',
+      '精准获取商品最新热度与需求趋势',
+      '竞对商品尽收眼底，新品快速跟进'
+    ],
+    image: 'https://media.cdn.ishopastro.com/upload/images/Frame 627454.png_2022-12-20-08-30-06.png'
+  },
+  {
+    type: 'seo',
+    title: 'SEO优解',
+    info: ['了解竞对关键词，有策略的进行SEO布局', '站点SEO智能检测，随时了解优化进展', '问题和解法，一份报告全知晓'],
     image: 'https://media.cdn.ishopastro.com/upload/images/Frame 627454.png_2022-12-20-08-30-06.png'
   }
 ]
