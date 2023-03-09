@@ -11,6 +11,7 @@ import { passwordValidator, phoneNumberValidator } from '../../utils/check'
 
 const prodUrl = '//sys.api.ishopastro.com/common/v1/register.json'
 const betaUrl = '//sys.api.beta.ishopastro.com/common/v1/register.json'
+
 const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
 
 const Register = () => {
@@ -25,6 +26,13 @@ const Register = () => {
 
   useEffect(() => {
     form.setFieldValue('phoneNum', phoneNum)
+    ;(async () => {
+      try {
+        await phoneNumberValidator(undefined, phoneNum.toString())
+        // TODO: 静默发送验证手机号是否重复的请求.用于服务端手机号的收集
+        console.log('TODO: 静默发送验证手机号是否重复的请求.用于服务端手机号的收集')
+      } catch (e) {}
+    })()
   }, [form, phoneNum])
 
   const handleRegister = async () => {
