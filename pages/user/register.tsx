@@ -39,24 +39,41 @@ const Register = () => {
     })()
   }, [form, phoneNum])
 
-  const handleRegister = async () => {
+  const handleRegister = async (values: { password: string; phoneNum: string; verifyCode: string }) => {
     setLoading(true)
     try {
       const res = await axios.post(`${apiDomain.current}/common/v1/register.json`, {
-        password: 'Hello1234',
-        phoneNum: '13888888234',
+        password: values.password,
+        phoneNum: values.phoneNum,
         region: '+86',
-        verifyCode: '2578',
+        verifyCode: values.verifyCode,
         origin: 'mobile'
       })
+      if (res.data) {
+        if (res.data.success) {
+          setSuccess(true)
+        } else {
+          Toast.show({
+            duration: 3000,
+            content: res.data.errMsg ?? <>服务器或网络异常, 请稍后重试.</>
+          })
+        }
+      } else {
+        Toast.show({
+          duration: 3000,
+          content: <>服务器或网络异常, 请稍后重试.</>
+        })
+      }
       setLoading(false)
-      setSuccess(true)
     } catch (e) {
       setLoading(false)
+      Toast.show({
+        duration: 3000,
+        content: <>服务器或网络异常, 请稍后重试.</>
+      })
     }
   }
   const onFinish = async (values: any) => {
-    console.log(values)
     if (!agreement) {
       //@ts-ignore
       document.activeElement?.blur()
@@ -79,7 +96,7 @@ const Register = () => {
             primary: true,
             onClick: () => {
               setAgreement(true)
-              handleRegister()
+              handleRegister(values)
             }
           },
           {
@@ -90,7 +107,7 @@ const Register = () => {
       })
       return
     }
-    await handleRegister()
+    await handleRegister(values)
   }
 
   return (
