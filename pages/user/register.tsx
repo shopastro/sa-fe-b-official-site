@@ -3,14 +3,11 @@ import axios from 'axios'
 import copy from 'copy-to-clipboard'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import Pendant from '../../components/common/Pendant'
 import Header from '../../components/v2/Header'
 import { passwordValidator, phoneNumberValidator } from '../../utils/check'
-
-const prodUrl = '//sys.api.ishopastro.com/common/v1/register.json'
-const betaUrl = '//sys.api.beta.ishopastro.com/common/v1/register.json'
 
 const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
 
@@ -21,25 +18,30 @@ const Register = () => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [agreement, setAgreement] = useState(false)
+  const apiDomain = useRef('//sys.api.ishopastro.com')
 
   const { phoneNum = '' } = router.query
+
+  useEffect(() => {
+    if (/beta/.test(location.host)) {
+      apiDomain.current = '//sys.api.beta.ishopastro.com'
+    }
+  }, [])
 
   useEffect(() => {
     form.setFieldValue('phoneNum', phoneNum)
     ;(async () => {
       try {
         await phoneNumberValidator(undefined, phoneNum.toString())
-        // TODO: 静默发送验证手机号是否重复的请求.用于服务端手机号的收集
-        console.log('TODO: 静默发送验证手机号是否重复的请求.用于服务端手机号的收集')
+        await axios.get(`${apiDomain.current}/common/v1/verify-phone.json?phoneNum=${phoneNum.toString()}`)
       } catch (e) {}
     })()
   }, [form, phoneNum])
 
   const handleRegister = async () => {
     setLoading(true)
-    const url = /beta/.test(location.host) ? betaUrl : prodUrl
     try {
-      const res = await axios.post(url, {
+      const res = await axios.post(`${apiDomain.current}/common/v1/register.json`, {
         password: 'Hello1234',
         phoneNum: '13888888234',
         region: '+86',
