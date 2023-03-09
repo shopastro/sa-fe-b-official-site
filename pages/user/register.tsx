@@ -214,7 +214,7 @@ const Register = () => {
             <Form.Item>
               <Checkbox
                 style={{
-                  '--icon-size': '18px'
+                  '--icon-size': '22px'
                 }}
                 checked={agreement}
                 onChange={(value) => {
