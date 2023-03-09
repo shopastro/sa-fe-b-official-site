@@ -15,6 +15,8 @@ const BelugaBanner = (props: IProps) => {
   return (
     <div>
       {bannerData.map((el, i) => {
+        console.log(el.image, el.imagePc)
+
         return (
           <div
             className={`md:flex ${
@@ -24,8 +26,13 @@ const BelugaBanner = (props: IProps) => {
             }]`}
             key={el.type}
           >
-            <div className="md:w-[689px] md:h-[294px] w-[100%] h-[223px] mb-[24px] md:mb-[0]">
-              <Image src={el.image} height={294} width={689} alt={el.name} />
+            <div className={`md:w-[689px] w-[100%] md:h-[230px] h-[${el.height}px] mb-[24px] md:mb-[0]`}>
+              <Image
+                src={isMobile ? el.image : el.imagePc}
+                height={isMobile ? el.height : el.heightPc}
+                width={isMobile ? 350 : el.widthPc}
+                alt=""
+              />
             </div>
 
             <div className={` ${i % 2 === 1 ? 'md:mr-[82px]' : 'md:ml-[82px]'} md:w-[430px]`}>
