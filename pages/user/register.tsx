@@ -7,9 +7,12 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import Pendant from '../../components/common/Pendant'
 import Header from '../../components/v2/Header'
+import SendBtn from '../../components/v5/SendBtn/SendBtn'
 import { passwordValidator, phoneNumberValidator } from '../../utils/check'
 
 const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
+
+type FormValues = { password?: string; phoneNum?: string; verifyCode?: string }
 
 const Register = () => {
   const [form] = Form.useForm()
@@ -18,7 +21,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [agreement, setAgreement] = useState(false)
-
+  const [formValue, setFormValue] = useState<FormValues>({})
   const apiDomain = useRef('//sys.api.ishopastro.com')
 
   const { phoneNum = '' } = router.query
@@ -33,7 +36,7 @@ const Register = () => {
     ;(async () => {
       try {
         const finalPhoneNum = Buffer.from(phoneNum.toString(), 'base64').toString()
-
+        setFormValue({ ...formValue, phoneNum: finalPhoneNum })
         form.setFieldValue('phoneNum', finalPhoneNum)
         await phoneNumberValidator(undefined, finalPhoneNum.toString())
         await axios.get(`${apiDomain.current}/common/v1/verify-phone.json?phoneNum=${finalPhoneNum.toString()}`)
@@ -41,7 +44,7 @@ const Register = () => {
     })()
   }, [form, phoneNum])
 
-  const handleRegister = async (values: { password: string; phoneNum: string; verifyCode: string }) => {
+  const handleRegister = async (values: FormValues) => {
     setLoading(true)
     try {
       const res = await axios.post(`${apiDomain.current}/common/v1/register.json`, {
@@ -75,7 +78,7 @@ const Register = () => {
       })
     }
   }
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: FormValues) => {
     if (!agreement) {
       //@ts-ignore
       document.activeElement?.blur()
@@ -171,6 +174,9 @@ const Register = () => {
           <Form
             form={form}
             onFinish={onFinish}
+            onValuesChange={(values: FormValues) => {
+              setFormValue({ ...values })
+            }}
             layout="horizontal"
             footer={
               <Button block type="submit" color="primary" size="large" loading={loading} loadingText={'注册中'}>
@@ -191,7 +197,7 @@ const Register = () => {
               <Input placeholder="请输入手机号码" type={'number'} />
             </Form.Item>
             <Form.Item
-              extra={<a>发送验证码</a>}
+              extra={<SendBtn phoneNum={formValue?.phoneNum || ''} />}
               required
               name="verifyCode"
               validateTrigger="onChange"
