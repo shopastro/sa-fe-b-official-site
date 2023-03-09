@@ -1,6 +1,4 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
-import { useContainer } from 'unstated-next'
 
 import Header from '../components/v2/Header'
 import FixedButton from '../components/v5/FixedButton'
@@ -9,27 +7,11 @@ import Banner from '../components/v5/Industry/Banner'
 import Introduce from '../components/v5/Industry/Introduce'
 import UseProduct from '../components/v5/Industry/UseProduct'
 import Menu from '../components/v5/Menu'
-import detectionStore from '../store/detectionStore'
+import useIsMobile from '../hooks/useIsMobile'
 
 const Industry: NextPage = () => {
-  const { setShowMoadl, setButtonType } = useContainer(detectionStore)
-  const [isMobile, setMobile] = useState(false)
+  const isMobile = useIsMobile()
 
-  const onResize = (e: any) => {
-    if (e.currentTarget.innerWidth < 770) {
-      setMobile(true)
-    } else {
-      setMobile(false)
-    }
-  }
-  useEffect(() => {
-    const bodyWidth = document.querySelector('body')?.offsetWidth
-    if (bodyWidth && bodyWidth < 770) {
-      setMobile(true)
-    }
-    window.addEventListener('resize', onResize, true)
-    return window.removeEventListener('resize', onResize, true)
-  }, [])
   return (
     <>
       <Header
@@ -47,13 +29,7 @@ const Industry: NextPage = () => {
         <UseProduct isMobile={isMobile} />
         <Footer />
       </div>
-      <FixedButton
-        text="立即咨询"
-        onClick={() => {
-          setShowMoadl(true)
-          setButtonType('stickyBottom')
-        }}
-      />
+      <FixedButton text="免费试用" href="/user/register" />
     </>
   )
 }

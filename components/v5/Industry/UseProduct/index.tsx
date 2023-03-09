@@ -9,7 +9,6 @@ type IProps = {
 const UseProduct = (props: IProps) => {
   const { isMobile } = props
   const link = isMobile ? `/user/register` : freeLink('beluga_industry', 'beluga')
-  console.log(link, 111)
 
   return (
     <div

@@ -1,4 +1,4 @@
-import { Input } from 'antd-mobile'
+import { Input, Toast } from 'antd-mobile'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -68,7 +68,11 @@ const BelugaQuestion = (props: IProps) => {
             <div
               onClick={() => {
                 if (!phone) {
+                  Toast.show('手机号不能为空')
                   setShowError(true)
+                }
+                if (showError) {
+                  Toast.show('请输入正确的11位手机号')
                 }
               }}
               className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[8px] flex item-center cursor-pointer"
