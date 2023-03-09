@@ -18,6 +18,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [agreement, setAgreement] = useState(false)
+
   const apiDomain = useRef('//sys.api.ishopastro.com')
 
   const { phoneNum = '' } = router.query
@@ -32,6 +33,7 @@ const Register = () => {
     ;(async () => {
       try {
         const finalPhoneNum = Buffer.from(phoneNum.toString(), 'base64').toString()
+
         form.setFieldValue('phoneNum', finalPhoneNum)
         await phoneNumberValidator(undefined, finalPhoneNum.toString())
         await axios.get(`${apiDomain.current}/common/v1/verify-phone.json?phoneNum=${finalPhoneNum.toString()}`)

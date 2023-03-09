@@ -17,7 +17,7 @@ const BelugaQuestion = (props: IProps) => {
   const trailLink = () => {
     if (isMobile) {
       if (phone && !showError) {
-        return `/user/register?phoneNumber=${Buffer.from(phone).toString('base64')}`
+        return `/user/register?phoneNum=${Buffer.from(phone).toString('base64')}`
       } else {
         return ''
       }
