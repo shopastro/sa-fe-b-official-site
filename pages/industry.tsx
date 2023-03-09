@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { useEffect, useState } from 'react'
 import { useContainer } from 'unstated-next'
 
 import Header from '../components/v2/Header'
@@ -11,7 +12,23 @@ import detectionStore from '../store/detectionStore'
 
 const Industry: NextPage = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
+  const [isMobile, setMobile] = useState(false)
 
+  const onResize = (e: any) => {
+    if (e.currentTarget.innerWidth < 770) {
+      setMobile(true)
+    } else {
+      setMobile(false)
+    }
+  }
+  useEffect(() => {
+    const bodyWidth = document.querySelector('body')?.offsetWidth
+    if (bodyWidth && bodyWidth < 770) {
+      setMobile(true)
+    }
+    window.addEventListener('resize', onResize, true)
+    return window.removeEventListener('resize', onResize, true)
+  }, [])
   return (
     <>
       <Header
@@ -24,8 +41,8 @@ const Industry: NextPage = () => {
       {/* 内容 */}
       <div className="pb-[70px] md:pb-0">
         <Menu />
-        <Introduce />
-        <Banner />
+        <Introduce isMobile={isMobile} />
+        <Banner isMobile={isMobile} />
 
         <Footer />
       </div>

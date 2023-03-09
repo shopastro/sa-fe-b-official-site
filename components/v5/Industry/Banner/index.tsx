@@ -4,7 +4,14 @@ import Link from 'next/link'
 import { freeLink } from '../../../../utils/freeTrail'
 import { bannerData } from './data'
 
-const BelugaBanner = () => {
+type IProps = {
+  isMobile: boolean
+}
+
+const BelugaBanner = (props: IProps) => {
+  const { isMobile } = props
+  const link = isMobile ? `/user/register` : freeLink('beluga_industry', 'beluga')
+
   return (
     <div>
       {bannerData.map((el, i) => {
@@ -17,7 +24,7 @@ const BelugaBanner = () => {
             }]`}
             key={el.type}
           >
-            <div className="md:w-[689px] md:h-[294px] w-[325px] h-[223px] mb-[24px] md:mb-[0]">
+            <div className="md:w-[689px] md:h-[294px] w-[100%] h-[223px] mb-[24px] md:mb-[0]">
               <Image src={el.image} height={294} width={689} alt={el.name} />
             </div>
 
@@ -28,13 +35,16 @@ const BelugaBanner = () => {
               <ul style={{ listStyle: 'disc' }} className="ml-[20px] md:ml-[0]">
                 {el.info.map((item) => {
                   return (
-                    <li className="font-[400] text-[#535D77] text-[16px] md:text-[18px] leading-loose" key={item}>
+                    <li
+                      className="font-[400] text-[#535D77] text-[16px] md:text-[18px] leading-relaxed	 md:leading-loose"
+                      key={item}
+                    >
                       {item}
                     </li>
                   )
                 })}
               </ul>
-              <Link passHref href={freeLink('beluga_industry', 'beluga')}>
+              <Link passHref href={link}>
                 <div className="md:px-[0] w-[110px] md:w-[130px] mt-[16px] md:mt-[32px] flex item-center cursor-pointer">
                   <span
                     className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[18px] leading-[26px] text-[#FFF] font-[600] text-center bg-[#004DD1] rounded-[8px]"

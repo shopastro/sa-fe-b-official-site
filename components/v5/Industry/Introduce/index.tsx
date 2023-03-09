@@ -4,9 +4,23 @@ import { useState } from 'react'
 
 import { freeLink } from '../../../../utils/freeTrail'
 
-const BelugaQuestion = () => {
+type IProps = {
+  isMobile: boolean
+}
+
+const BelugaQuestion = (props: IProps) => {
+  const { isMobile } = props
+
   const [phone, setPhone] = useState('')
   const [showError, setShowError] = useState(false)
+  const trailLink = () => {
+    if (isMobile) {
+      return `/user/register`
+    } else {
+      return freeLink('beluga_industry', 'beluga')
+    }
+  }
+
   const handleInputNumber = (v: string) => {
     if (v.length <= 11) {
       const isRightPhone = Boolean(/^1(3|4|5|6|7|8|9)\d{9}$/g.test(v))
@@ -27,10 +41,10 @@ const BelugaQuestion = () => {
 
       <div className="relative top-[62px] md:top-[167px] w-screen">
         <h1 className="flex items-center  w-screen flex-col  text-[#0E1E46]">
-          <span className="text-[#004DD1] md:text-[56px] text-[28px] md:mb-[10px] mb-[6px] font-[600]">
+          <span className="text-[#004DD1] md:text-[56px] text-[28px] md:mb-[10px] mb-[4px] font-[600]">
             白鲸行业情报
           </span>
-          <span className="text-[#0E1E46] md:text-[44px] text-[24px] font-[500]">品牌独立站的全方位竞对分析工具</span>
+          <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">品牌独立站的全方位竞对分析工具</span>
           <div className="w-screen px-[38px] md:hidden flex flex-col">
             <Input
               onChange={(v) => {
@@ -45,7 +59,7 @@ const BelugaQuestion = () => {
             />
             {showError && <div className="text-[#FF0000] text-[12px] mt-[8px]">请输入正确的11位手机号</div>}
           </div>
-          <Link passHref href={freeLink('beluga_industry', 'beluga')}>
+          <Link passHref href={trailLink()}>
             <div className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[8px] flex item-center cursor-pointer">
               <span
                 className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#004DD1] rounded-[8px]"
