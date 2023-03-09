@@ -15,8 +15,6 @@ const BelugaBanner = (props: IProps) => {
   return (
     <div>
       {bannerData.map((el, i) => {
-        console.log(el.image, el.imagePc)
-
         return (
           <div
             className={`md:flex ${

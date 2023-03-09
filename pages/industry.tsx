@@ -7,6 +7,7 @@ import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
 import Banner from '../components/v5/Industry/Banner'
 import Introduce from '../components/v5/Industry/Introduce'
+import UseProduct from '../components/v5/Industry/UseProduct'
 import Menu from '../components/v5/Menu'
 import detectionStore from '../store/detectionStore'
 
@@ -43,7 +44,7 @@ const Industry: NextPage = () => {
         <Menu />
         <Introduce isMobile={isMobile} />
         <Banner isMobile={isMobile} />
-
+        <UseProduct isMobile={isMobile} />
         <Footer />
       </div>
       <FixedButton
