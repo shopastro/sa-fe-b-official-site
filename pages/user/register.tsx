@@ -3,7 +3,7 @@ import axios from 'axios'
 import copy from 'copy-to-clipboard'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Pendant from '../../components/common/Pendant'
 import Header from '../../components/v2/Header'
@@ -20,6 +20,12 @@ const Register = () => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [agreement, setAgreement] = useState(false)
+
+  const { phoneNum = '' } = router.query
+
+  useEffect(() => {
+    form.setFieldValue('phoneNum', phoneNum)
+  }, [form, phoneNum])
 
   const handleRegister = async () => {
     setLoading(true)
@@ -153,7 +159,7 @@ const Register = () => {
               validateTrigger={'onChange'}
               validateFirst={true}
             >
-              <Input placeholder="请输入手机号码" type={'number'} className={''} />
+              <Input placeholder="请输入手机号码" type={'number'} />
             </Form.Item>
             <Form.Item
               extra={<a>发送验证码</a>}
