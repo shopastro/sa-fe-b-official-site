@@ -191,7 +191,7 @@ const Register = () => {
             <Form.Item
               extra={<a>发送验证码</a>}
               required
-              name="verificationCode"
+              name="verifyCode"
               validateTrigger="onChange"
               validateFirst={true}
               rules={[
