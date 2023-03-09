@@ -1,4 +1,4 @@
-import { Form, Input } from 'antd-mobile'
+import { Input } from 'antd-mobile'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -13,9 +13,14 @@ const BelugaQuestion = (props: IProps) => {
 
   const [phone, setPhone] = useState('')
   const [showError, setShowError] = useState(false)
+
   const trailLink = () => {
     if (isMobile) {
-      return `/user/register`
+      if (phone && !showError) {
+        return `/user/register?phoneNumber=${Buffer.from(phone).toString('base64')}`
+      } else {
+        return ''
+      }
     } else {
       return freeLink('beluga_industry', 'beluga')
     }
@@ -60,7 +65,14 @@ const BelugaQuestion = (props: IProps) => {
             {showError && <div className="text-[#FF0000] text-[12px] mt-[8px]">请输入正确的11位手机号</div>}
           </div>
           <Link passHref href={trailLink()}>
-            <div className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[8px] flex item-center cursor-pointer">
+            <div
+              onClick={() => {
+                if (!phone) {
+                  setShowError(true)
+                }
+              }}
+              className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[8px] flex item-center cursor-pointer"
+            >
               <span
                 className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#004DD1] rounded-[8px]"
                 style={{ backgroundColor: '#FE8953' }}
