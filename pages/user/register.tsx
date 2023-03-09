@@ -170,7 +170,6 @@ const Register = () => {
             form={form}
             onFinish={onFinish}
             layout="horizontal"
-            mode="card"
             footer={
               <Button block type="submit" color="primary" size="large" loading={loading} loadingText={'注册中'}>
                 注册
@@ -210,16 +209,17 @@ const Register = () => {
             >
               <Input placeholder="请输入密码" clearable type="password" />
             </Form.Item>
-          </Form>
-          <Form style={{ '--border-bottom': 'none', '--border-top': 'none' }}>
             <Form.Item>
               <Checkbox
+                style={{
+                  '--icon-size': '18px'
+                }}
                 checked={agreement}
                 onChange={(value) => {
                   setAgreement(value)
                 }}
               >
-                <span className="text-[12px] lead-[18px]">
+                <span className="text-[12px] leading-[25px]">
                   阅读并同意
                   <a href={AGREEMENT_LINK} target={'_blank'} rel="noreferrer">
                     《shopastro 用户协议》
