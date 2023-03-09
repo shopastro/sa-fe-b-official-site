@@ -4,7 +4,7 @@ import React from 'react'
 const FixedButton: React.FC<FreeButtonProps> = (props) => {
   const Button = (
     <div className="flex items-center fixed bottom-0 left-0 right-0 px-[20px] py-[10px] bg-white cursor-pointer z-20 md:hidden">
-      <span className="flex-1 py-[12px] text-[18px] leading-[26px] text-[#FFF] text-center font-[700] bg-[#FE8953] rounded-[8px]">
+      <span className="flex-1 py-[7px] text-[18px] leading-[26px] text-[#FFF] text-center font-[700] bg-[#FE8953] rounded-[8px]">
         {props.text ?? '免费试用'}
       </span>
     </div>
