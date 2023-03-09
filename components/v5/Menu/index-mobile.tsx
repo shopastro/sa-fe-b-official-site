@@ -120,7 +120,9 @@ const Menu: React.FC<MenuProps> = (props) => {
               setShowMore({ ...showMore, beluga: !!!showMore.beluga })
             }}
           >
-            <Link href="/beluga">白鲸营销</Link>
+            <Link href="/beluga" passHref>
+              <div className="text-[#222]">白鲸营销</div>
+            </Link>
             <div className="flex">
               <Image src={showMore.beluga ? minusIcon : addIcon} width={24} height={24} quality={100} alt="logo" />
             </div>
@@ -153,7 +155,9 @@ const Menu: React.FC<MenuProps> = (props) => {
               setShowMore({ ...showMore, about: !!!showMore.about })
             }}
           >
-            <Link href="/about">关于</Link>
+            <Link href="/about" passHref>
+              <div className="text-[#222]">关于</div>
+            </Link>
             <div className="flex">
               <Image src={showMore.about ? minusIcon : addIcon} width={24} height={24} quality={100} alt="logo" />
             </div>

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 import { useContainer } from 'unstated-next'
 
 import detectionStore from '../../../store/detectionStore'
