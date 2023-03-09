@@ -155,12 +155,12 @@ const Register = () => {
         </>
       ) : (
         <>
-          <div className={'flex justify-center mb-[40px]'}>
+          <div className={'flex justify-center mt-[44px] mb-[40px]'}>
             <Image
               src="https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg"
               alt="logo"
-              width={220}
-              height={40}
+              width={128}
+              height={24}
             />
           </div>
           <div className="flex justify-center text-[#004DD1] text-[24px] mb-[32px] font-semibold">
