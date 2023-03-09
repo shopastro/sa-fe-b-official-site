@@ -29,11 +29,12 @@ const Register = () => {
   }, [])
 
   useEffect(() => {
-    form.setFieldValue('phoneNum', phoneNum)
     ;(async () => {
       try {
-        await phoneNumberValidator(undefined, phoneNum.toString())
-        await axios.get(`${apiDomain.current}/common/v1/verify-phone.json?phoneNum=${phoneNum.toString()}`)
+        const finalPhoneNum = Buffer.from(phoneNum.toString(), 'base64').toString()
+        form.setFieldValue('phoneNum', finalPhoneNum)
+        await phoneNumberValidator(undefined, finalPhoneNum.toString())
+        await axios.get(`${apiDomain.current}/common/v1/verify-phone.json?phoneNum=${finalPhoneNum.toString()}`)
       } catch (e) {}
     })()
   }, [form, phoneNum])
