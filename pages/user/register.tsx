@@ -163,19 +163,23 @@ const Register = () => {
             status="success"
             title={<h3 className="text-[#222] font-[500] text-[24px]">注册成功</h3>}
             description={
-              <span className="text-[14px] text-[#666]">为了您更好的浏览体验，请复制以下链接，前往PC端使用</span>
+              <div className=" flex justify-center">
+                <div className="w-[266px] text-[14px] text-[#666]">
+                  为了您更好的浏览体验，请复制以下链接，前往PC端使用
+                </div>
+              </div>
             }
           />
           <Card bodyClassName={'bg-[red]  bg-[#F7F9FE] flex flex-col justify-between py-[16px]'}>
             <div className={'text-center text-[#18214D] text-[16px] font-medium '}>链接地址</div>
-            <div className="text-center text-[16px] text-[#909EB0] w-[200px] mt-[8px] mb-[16px]">
-              https://sys.admin.ishopastro.com/admin/user/login
+            <div className="text-center text-[16px] text-[#909EB0] mt-[8px] mb-[16px]">
+              https://sys.admin.ishopastro.com
             </div>
             <Space justify="center" block>
               <Button
                 className="h-[36px] w-[86px] text-[14px] text-[#30323F]"
                 onClick={() => {
-                  copy('https://sys.admin.ishopastro.com/admin/user/login')
+                  copy('https://sys.admin.ishopastro.com')
                   Toast.show({
                     duration: 2000,
                     content: '复制成功'
