@@ -71,7 +71,7 @@ const BelugaQuestion = (props: IProps) => {
               placeholder="输入您的手机号立即体验"
             />
             {showError && (
-              <div className="text-[#FF0000] text-[12px] mt-[8px]">
+              <div className="text-[#FF0000] text-[12px] mt-[12px]">
                 {phone ? '请输入正确的11位手机号' : '手机号不能为空'}{' '}
               </div>
             )}
@@ -86,7 +86,7 @@ const BelugaQuestion = (props: IProps) => {
                   }
                 }
               }}
-              className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[8px] flex item-center cursor-pointer"
+              className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[12px] flex item-center cursor-pointer"
             >
               <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[8px]">
                 免费试用
