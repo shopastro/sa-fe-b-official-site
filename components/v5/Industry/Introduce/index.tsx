@@ -1,4 +1,4 @@
-import { Input, Toast } from 'antd-mobile'
+import { Input } from 'antd-mobile'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -19,7 +19,7 @@ const BelugaQuestion = (props: IProps) => {
       if (phone && !showError) {
         return `/user/register?phoneNum=${Buffer.from(phone).toString('base64')}`
       } else {
-        return ''
+        return '#'
       }
     } else {
       return freeLink('beluga_industry', 'beluga')
@@ -38,16 +38,16 @@ const BelugaQuestion = (props: IProps) => {
   }
 
   return (
-    <div className="flex justify-center w-screen relative h-[320px] md:min-h-[440px]">
-      <div
-        className="absolute top-[0] left-[0] w-[100%] h-[320px] md:h-[540px]"
-        style={{
-          background: 'url(https://media.cdn.ishopastro.com/svg/sa-fe-b-background/industry_bg.svg) no-repeat',
-          backgroundSize: 'cover'
-        }}
-      />
-
-      <div className="relative top-[62px] md:top-[167px] w-screen">
+    <div
+      className="relative w-[100%] h-[320px] md:h-[0]"
+      style={{
+        background: 'url(https://media.cdn.ishopastro.com/svg/sa-fe-b-background/industry_bg.svg) no-repeat',
+        backgroundSize: 'cover',
+        width: '100%',
+        paddingTop: '30.56%'
+      }}
+    >
+      <div className="absolute top-[0] h-[100%] w-screen flex items-center justify-center">
         <h1 className="flex items-center  w-screen flex-col  text-[#0E1E46]">
           <span className="text-[#004DD1] md:text-[56px] text-[28px] md:mb-[10px] mb-[4px] font-[600]">
             白鲸行业情报
