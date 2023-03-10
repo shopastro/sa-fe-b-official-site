@@ -123,6 +123,17 @@ const Register = () => {
         keywords="B2B数智化, 智能询盘, 意向洞察, B 类 CRM, chat与询盘互通, 一件代发供货, 小额批发, 免费试用, 企业客户全生命周期跟踪, 打通1688商品池,支持星盘客户与Shopify店主的跨境交易"
       />
       <NavBar
+        className="px-[16px]"
+        backArrow={
+          <div style={{ transform: 'rotateY(180deg)', height: '32px' }}>
+            <Image
+              alt=""
+              src={'https://media.cdn.ishopastro.com/svg/sa-fe-b-icon/rightIcon.svg'}
+              height={32}
+              width={32}
+            />
+          </div>
+        }
         onBack={() => {
           router.back()
         }}
@@ -133,17 +144,23 @@ const Register = () => {
             className="text-[#29A72F]"
             style={{
               //@ts-ignore
-              '--adm-color-primary': '#29A72F'
+              '--adm-color-primary': '#29A72F',
+              padding: '40px 55px 24px 55px !important'
             }}
             status="success"
-            title="注册成功"
-            description="为了您更好的浏览体验，请复制以下链接，前往PC端使用"
+            title={<h3 className="text-[#222] font-[500] text-[24px]">注册成功</h3>}
+            description={
+              <span className="text-[14px] text-[#666]">为了您更好的浏览体验，请复制以下链接，前往PC端使用</span>
+            }
           />
-          <Card bodyClassName={'bg-[red] h-[140px] bg-[#F7F9FE] flex flex-col justify-between'}>
-            <div className={'text-center text-[#18214D] text-[16px] font-medium'}>链接地址</div>
-            <div className="text-center text-[#909EB0]">https://sys.admin.ishopastro.com/admin/user/login</div>
+          <Card bodyClassName={'bg-[red]  bg-[#F7F9FE] flex flex-col justify-between py-[16px]'}>
+            <div className={'text-center text-[#18214D] text-[16px] font-medium '}>链接地址</div>
+            <div className="text-center text-[16px] text-[#909EB0] w-[200px] mt-[8px] mb-[16px]">
+              https://sys.admin.ishopastro.com/admin/user/login
+            </div>
             <Space justify="center" block>
               <Button
+                className="h-[36px] w-[86px] text-[14px] text-[#30323F]"
                 onClick={() => {
                   copy('https://sys.admin.ishopastro.com/admin/user/login')
                   Toast.show({
@@ -160,7 +177,7 @@ const Register = () => {
         </>
       ) : (
         <>
-          <div className={'flex justify-center mt-[44px] mb-[40px]'}>
+          <div className={'flex justify-center mt-[30px] mb-[40px]'}>
             <Image
               src="https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg"
               alt="logo"
@@ -220,7 +237,8 @@ const Register = () => {
             <Form.Item>
               <Checkbox
                 style={{
-                  '--icon-size': '22px'
+                  '--icon-size': '22px',
+                  borderRadius: '8px !important'
                 }}
                 checked={agreement}
                 onChange={(value) => {
@@ -228,7 +246,7 @@ const Register = () => {
                 }}
               >
                 <span className="text-[12px] leading-[25px]">
-                  阅读并同意
+                  <span className="text-[#666]">阅读并同意</span>
                   <a href={AGREEMENT_LINK} target={'_blank'} rel="noreferrer">
                     《shopastro 用户协议》
                   </a>

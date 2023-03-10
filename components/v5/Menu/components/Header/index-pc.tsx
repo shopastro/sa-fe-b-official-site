@@ -127,31 +127,33 @@ const Menu: React.FC<MenuProps> = (props) => {
         </div>
       </div>
       {/* 关于二级 */}
-      <div
-        className="flex flex-col fixed p-[20px] text-[14px] leading-[22px] text-[#222] bg-white bg-opacity-90 rounded-[4px]"
-        style={{
-          display: currentSubMore ? 'flex' : 'none',
-          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
-          top: `${fixedStyle.top}px`,
-          left: `${fixedStyle.left}px`
-        }}
-        onMouseEnter={handleDialogEnter}
-        onMouseLeave={handleDialogLeave}
-      >
-        {routeMapObj[currentSubMore]?.map((el, i) => {
-          return (
-            <Link href={el.link} passHref key={el.name}>
-              <span
-                className={`mb-[${
-                  i < routeMapObj[currentSubMore].length - 1 ? '16px' : ''
-                }] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]`}
-              >
-                {el.name}
-              </span>
-            </Link>
-          )
-        })}
-      </div>
+      {currentSubMore && (
+        <div
+          className="flex flex-col fixed p-[20px] text-[14px] leading-[22px] text-[#222] bg-white bg-opacity-90 rounded-[4px]"
+          style={{
+            display: currentSubMore ? 'flex' : 'none',
+            boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
+            top: `${fixedStyle.top}px`,
+            left: `${fixedStyle.left}px`
+          }}
+          onMouseEnter={handleDialogEnter}
+          onMouseLeave={handleDialogLeave}
+        >
+          {routeMapObj[currentSubMore]?.map((el, i) => {
+            return (
+              <Link href={el.link} passHref key={el.name}>
+                <span
+                  className={`mb-[${
+                    i < routeMapObj[currentSubMore].length - 1 ? '16px' : ''
+                  }] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]`}
+                >
+                  {el.name}
+                </span>
+              </Link>
+            )
+          })}
+        </div>
+      )}
     </>
   )
 }
