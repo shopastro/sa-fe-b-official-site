@@ -30,6 +30,12 @@ const Register = () => {
     if (/beta/.test(location.host)) {
       apiDomain.current = '//sys.api.beta.ishopastro.com'
     }
+    ;(async () => {
+      try {
+        const res = await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)
+        console.log(res)
+      } catch {}
+    })()
   }, [])
 
   useEffect(() => {
