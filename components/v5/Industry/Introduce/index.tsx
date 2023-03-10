@@ -28,9 +28,11 @@ const BelugaQuestion = (props: IProps) => {
 
   const handleInputNumber = (v: string) => {
     if (v.length <= 11) {
-      const isRightPhone = Boolean(/^1(3|4|5|6|7|8|9)\d{9}$/g.test(v))
       setPhone(v)
-      setShowError(!isRightPhone)
+      if (v.length === 11) {
+        const isRightPhone = Boolean(/^1(3|4|5|6|7|8|9)\d{9}$/g.test(v))
+        setShowError(!isRightPhone)
+      }
     }
   }
 
@@ -54,6 +56,11 @@ const BelugaQuestion = (props: IProps) => {
             <Input
               onChange={(v) => {
                 handleInputNumber(v)
+              }}
+              onBlur={(v) => {
+                const values = v.target.value
+                const isRightPhone = Boolean(/^1(3|4|5|6|7|8|9)\d{9}$/g.test(values))
+                setShowError(!isRightPhone)
               }}
               value={phone}
               type="number"
