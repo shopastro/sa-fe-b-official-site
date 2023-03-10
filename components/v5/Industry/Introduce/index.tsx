@@ -66,7 +66,7 @@ const BelugaQuestion = (props: IProps) => {
               value={phone}
               type="number"
               maxLength={11}
-              style={{ fontSize: '12px', '--placeholder-color': '#D5D5D5', '--font-size': '12px' }}
+              style={{ '--placeholder-color': '#D5D5D5' }}
               className="w-screen font-[12px] px-[15px] mt-[20px] h-[38px] rounded-[6px] border-[1px] border-[#BFBFBF]"
               placeholder="输入您的手机号立即体验"
             />
