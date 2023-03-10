@@ -88,10 +88,7 @@ const BelugaQuestion = (props: IProps) => {
               }}
               className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[8px] flex item-center cursor-pointer"
             >
-              <span
-                className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#004DD1] rounded-[8px]"
-                style={{ backgroundColor: '#FE8953' }}
-              >
+              <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[8px]">
                 免费试用
               </span>
             </div>

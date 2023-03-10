@@ -32,8 +32,9 @@ const Register = () => {
     }
     ;(async () => {
       try {
-        const res = await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)
-        console.log(res)
+        const res = await (await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)).request
+
+        console.log(res, 'res')
       } catch {}
     })()
   }, [])
@@ -59,13 +60,16 @@ const Register = () => {
   const handleRegister = async (values: FormValues) => {
     setLoading(true)
     try {
-      const res = await axios.post(`${apiDomain.current}/common/v1/register.json`, {
-        password: values.password,
-        phoneNum: values.phoneNum,
-        region: '+86',
-        verifyCode: values.verifyCode,
-        origin: 'mobile'
-      })
+      const res = await axios.post(
+        `${apiDomain.current}/common/v1/register.json?_csrf=f95edc95-4ce8-49d5-828a-20ca0fbafd21`,
+        {
+          password: values.password,
+          phoneNum: values.phoneNum,
+          region: '+86',
+          verifyCode: values.verifyCode,
+          origin: 'mobile'
+        }
+      )
       if (res.data) {
         if (res.data.success) {
           setSuccess(true)
