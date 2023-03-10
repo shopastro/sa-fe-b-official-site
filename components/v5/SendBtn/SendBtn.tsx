@@ -35,20 +35,20 @@ const Component = (props: IProps) => {
       ctx.current.cdSID = requestAnimationFrame(calc)
     }
   }
-  console.log('test')
 
-  const handleSendCode = () => {
+  const handleSendCode = async () => {
     if (ctx.current.reqLocked) {
       return
     }
+    setLoading(true)
 
     const isValid = isValidPhoneNumber(phoneNum, '+86')
-    setLoading(true)
+
     if (isValid) {
       ctx.current.reqLocked = true
 
       try {
-        axios
+        await axios
           .get(
             `${apiDomain.current}/common/v1/obtain/verification-code.json?phoneNum=${phoneNum}&region=+86&origin=mobile`
           )
@@ -86,13 +86,14 @@ const Component = (props: IProps) => {
     }
   }
 
-  const disableStatus = loading || count > 0
-
-  let btnTest = '发送验证码'
-  if (loading) {
-    btnTest = ''
-  } else if (disableStatus) {
-    btnTest = `${count}秒`
+  const renderBtnTest = () => {
+    let btnTest = '发送验证码'
+    if (loading) {
+      btnTest = ''
+    } else if (loading || count > 0) {
+      btnTest = `${count}秒`
+    }
+    return btnTest
   }
 
   return (
@@ -100,11 +101,11 @@ const Component = (props: IProps) => {
       <Button
         size="large"
         loading={loading}
-        disabled={disableStatus}
+        disabled={loading || count > 0}
         style={{ border: 'none', fontSize: '14px', color: '#004ED1' }}
         onClick={handleSendCode}
       >
-        {btnTest}
+        {renderBtnTest()}
       </Button>
     </div>
   )
