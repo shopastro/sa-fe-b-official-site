@@ -19,6 +19,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const activeColor = theme === 'light' ? '#FE8952' : '#004DD1'
 
   const { route } = useRouter()
+
   const [showMore, setShowMore] = useState<Pathname>({})
   const [fixedStyle, setFixedStyle] = useState({ top: 0, left: 0 })
   const token = useRef<any>(null)
@@ -62,45 +63,54 @@ const Menu: React.FC<MenuProps> = (props) => {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
-            <div className="mx-[20px] cursor-pointer" style={{ color: route === '/dtc' ? activeColor : 'inherit' }}>
-              <Link href="/dtc">DTC建站</Link>
-            </div>
-            <div className="mx-[20px] cursor-pointer" style={{ color: route === '/b2b' ? activeColor : 'inherit' }}>
-              <Link href="/b2b">B2B建站</Link>
-            </div>
-            <div
-              className="flex items-center relative mx-[20px] cursor-pointer"
-              style={{ color: routeListMap.beluga.includes(route) ? activeColor : 'inherit' }}
-              onMouseEnter={(e) => {
-                handleMouseEnter(e, 'beluga')
-              }}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href="/beluga">白鲸营销</Link>
-              <div className="flex items-center ml-[12px]">
-                <Image src={icon} width={10} height={5} quality={100} alt="icon" />
+            <Link href="/dtc" passHref>
+              <div className="mx-[20px] cursor-pointer " style={{ color: route === '/dtc' ? activeColor : 'inherit' }}>
+                DTC建站
               </div>
-            </div>
-
-            <div
-              className="mx-[20px] cursor-pointer"
-              style={{ color: route === '/solutions' ? activeColor : 'inherit' }}
-            >
-              <Link href="/solutions">解决方案</Link>
-            </div>
-            <div
-              className="flex items-center relative mx-[20px] cursor-pointer"
-              style={{ color: routeListMap.about.includes(route) ? activeColor : 'inherit' }}
-              onMouseEnter={(e) => {
-                handleMouseEnter(e, 'about')
-              }}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href="/about">关于</Link>
-              <div className="flex items-center ml-[12px]">
-                <Image src={icon} width={10} height={5} quality={100} alt="icon" />
+            </Link>
+            <Link href="/b2b" passHref>
+              <div className="mx-[20px] cursor-pointer" style={{ color: route === '/b2b' ? activeColor : 'inherit' }}>
+                B2B建站
               </div>
-            </div>
+            </Link>
+            <Link href="/beluga" passHref>
+              <div
+                className="flex items-center relative px-[10px] mx-[10px] cursor-pointer"
+                style={{ color: routeListMap.beluga.includes(route) ? activeColor : 'inherit' }}
+                onMouseEnter={(e) => {
+                  handleMouseEnter(e, 'beluga')
+                }}
+                onMouseLeave={handleMouseLeave}
+              >
+                白鲸营销
+                <div className="flex items-center ml-[12px]">
+                  <Image src={icon} width={10} height={5} quality={100} alt="icon" />
+                </div>
+              </div>
+            </Link>
+            <Link href="/solutions" passHref>
+              <div
+                className="mx-[20px] cursor-pointer"
+                style={{ color: route === '/solutions' ? activeColor : 'inherit' }}
+              >
+                解决方案
+              </div>
+            </Link>
+            <Link href="/about">
+              <div
+                className="flex items-center relative px-[10px] mx-[10px] cursor-pointer"
+                style={{ color: routeListMap.about.includes(route) ? activeColor : 'inherit' }}
+                onMouseEnter={(e) => {
+                  handleMouseEnter(e, 'about')
+                }}
+                onMouseLeave={handleMouseLeave}
+              >
+                关于
+                <div className="flex items-center ml-[12px]">
+                  <Image src={icon} width={10} height={5} quality={100} alt="icon" />
+                </div>
+              </div>
+            </Link>
             <div className="mx-[20px] cursor-pointer">
               <a href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg" target={'_blank'} rel="noreferrer">
                 帮助
@@ -132,7 +142,7 @@ const Menu: React.FC<MenuProps> = (props) => {
           className="flex flex-col fixed p-[20px] text-[14px] leading-[22px] text-[#222] bg-white bg-opacity-90 rounded-[4px]"
           style={{
             display: currentSubMore ? 'flex' : 'none',
-            boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
             top: `${fixedStyle.top}px`,
             left: `${fixedStyle.left}px`
           }}
