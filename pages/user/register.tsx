@@ -214,16 +214,16 @@ const Register = () => {
                 { len: 11, message: '手机长度要11位' },
                 { validator: phoneNumberValidator }
               ]}
-              validateTrigger={'onChange'}
+              validateTrigger={'onBlur'}
               validateFirst={true}
             >
-              <Input placeholder="请输入手机号码" type={'number'} />
+              <Input placeholder="请输入手机号码" maxLength={11} />
             </Form.Item>
             <Form.Item
               extra={<SendBtn phoneNum={formValue?.phoneNum || ''} />}
               required
               name="verifyCode"
-              validateTrigger="onChange"
+              validateTrigger="onBlur"
               validateFirst={true}
               rules={[
                 { required: true, message: '请输入验证码' },
@@ -234,7 +234,7 @@ const Register = () => {
             </Form.Item>
             <Form.Item
               name="password"
-              validateTrigger="onChange"
+              validateTrigger="onBlur"
               validateFirst={true}
               rules={[{ required: true, message: '请输入密码' }, { validator: passwordValidator }]}
             >
