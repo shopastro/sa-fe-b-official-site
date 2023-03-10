@@ -96,7 +96,7 @@ const Menu: React.FC<MenuProps> = (props) => {
                 解决方案
               </div>
             </Link>
-            <Link href="/about">
+            <Link href="/about" passHref>
               <div
                 className="flex items-center relative px-[10px] mx-[10px] cursor-pointer"
                 style={{ color: routeListMap.about.includes(route) ? activeColor : 'inherit' }}
@@ -111,17 +111,14 @@ const Menu: React.FC<MenuProps> = (props) => {
                 </div>
               </div>
             </Link>
-            <div className="mx-[20px] cursor-pointer">
-              <a href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg" target={'_blank'} rel="noreferrer">
-                帮助
-              </a>
-            </div>
+            <a href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg" target={'_blank'} rel="noreferrer">
+              <div className="mx-[20px] cursor-pointer text-[#0E1E46]">帮助</div>
+            </a>
           </div>
           <div className="ml-[56px] flex items-center">
-            <div className="mr-[16px] cursor-pointer">
-              <Link href="https://sys.admin.ishopastro.com/admin/user/login">登录</Link>
-            </div>
-
+            <Link href="https://sys.admin.ishopastro.com/admin/user/login" passHref>
+              <div className="mr-[16px] cursor-pointer">登录</div>
+            </Link>
             <Link href={freeLink('', '')} passHref>
               <div
                 className="cursor-pointer rounded-[8px] border border-solid border-[#FFF] px-[30px] py-[10px]"

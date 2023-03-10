@@ -67,12 +67,14 @@ const BelugaQuestion = (props: IProps) => {
           <Link passHref href={trailLink()}>
             <div
               onClick={() => {
-                if (!phone) {
-                  Toast.show('手机号不能为空')
-                  setShowError(true)
-                }
-                if (showError) {
-                  Toast.show('请输入正确的11位手机号')
+                if (isMobile) {
+                  if (!phone) {
+                    Toast.show('手机号不能为空')
+                    setShowError(true)
+                  }
+                  if (showError) {
+                    Toast.show('请输入正确的11位手机号')
+                  }
                 }
               }}
               className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[8px] flex item-center cursor-pointer"
