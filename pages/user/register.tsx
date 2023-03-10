@@ -22,8 +22,8 @@ const Register = () => {
   const [success, setSuccess] = useState(false)
   const [agreement, setAgreement] = useState(false)
   const [formValue, setFormValue] = useState<FormValues>({})
+  // const [csrf, setCsrf] = useState('')
   const apiDomain = useRef('//sys.api.ishopastro.com')
-
   const { phoneNum = '' } = router.query
 
   useEffect(() => {
@@ -32,9 +32,9 @@ const Register = () => {
     }
     ;(async () => {
       try {
-        const res = await await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)
-
-        console.log(res, 'res')
+        const res = await await await (await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)).data
+        // setCsrf(res.header['b-frsc'])
+        console.log(res.header['b-frsc'], 'res')
       } catch {}
     })()
   }, [])
@@ -261,7 +261,7 @@ const Register = () => {
                 <span className="text-[12px] leading-[25px]">
                   <span className="text-[#666]">阅读并同意</span>
                   <a href={AGREEMENT_LINK} target={'_blank'} rel="noreferrer">
-                    《shopastro 用户协议》
+                    <span className="text-[#004ED1]">《shopastro 用户协议》</span>
                   </a>
                 </span>
               </Checkbox>

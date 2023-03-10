@@ -72,7 +72,7 @@ const BelugaQuestion = (props: IProps) => {
             />
             {showError && (
               <div className="text-[#FF0000] text-[12px] mt-[12px]">
-                {phone ? '请输入正确的11位手机号' : '手机号不能为空'}{' '}
+                {phone ? '请输入正确的11位手机号' : '手机号不能为空'}
               </div>
             )}
           </div>
@@ -81,7 +81,6 @@ const BelugaQuestion = (props: IProps) => {
               onClick={() => {
                 if (isMobile) {
                   if (!phone) {
-                    // Toast.show('手机号不能为空')
                     setShowError(true)
                   }
                 }
