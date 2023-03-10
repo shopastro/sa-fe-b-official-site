@@ -38,7 +38,7 @@ const BelugaQuestion = (props: IProps) => {
   }
 
   return (
-    <div className="flex justify-center w-screen relative h-[320px] md:h-[540px]">
+    <div className="flex justify-center w-screen relative h-[320px] md:min-h-[440px]">
       <div
         className="absolute top-[0] left-[0] w-[100%] h-[320px] md:h-[540px]"
         style={{

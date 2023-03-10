@@ -12,7 +12,7 @@ const UseProduct = (props: IProps) => {
 
   return (
     <div
-      className="flex justify-center items-center h-[220px]"
+      className="flex justify-center items-center h-[220px] relative"
       style={{
         backgroundImage: `url(${
           isMobile
@@ -20,10 +20,13 @@ const UseProduct = (props: IProps) => {
             : 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/pc.svg'
         })`,
         backgroundSize: 'cover !important',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        position: 'absolute',
+        width: '100%',
+        paddingTop: '15.28%'
       }}
     >
-      <div className="flex flex-col md:flex-row items-center text-center px-[56px]">
+      <div className="flex absolute top-[0] h-[100%] flex-col md:flex-row items-center justify-center text-center px-[56px]">
         <div className="text-[#fff] md:text-[32px] text-[24px] font-[600] mb-[24px] md:mb-0 md:mr-[32px]">
           用白鲸行业情报，获得更有效的营销增长
         </div>
