@@ -28,9 +28,10 @@ const BelugaQuestion = (props: IProps) => {
 
   const handleInputNumber = (v: string) => {
     if (v.length <= 11) {
+      setShowError(false)
       setPhone(v)
       if (v.length === 11) {
-        const isRightPhone = Boolean(/^1(3|4|5|6|7|8|9)\d{9}$/g.test(v))
+        const isRightPhone = Boolean(/^(1|2)(3|4|5|6|7|8|9)\d{9}$/g.test(v))
         setShowError(!isRightPhone)
       }
     }
@@ -59,7 +60,7 @@ const BelugaQuestion = (props: IProps) => {
               }}
               onBlur={(v) => {
                 const values = v.target.value
-                const isRightPhone = Boolean(/^1(3|4|5|6|7|8|9)\d{9}$/g.test(values))
+                const isRightPhone = Boolean(/^(1|2)(3|4|5|6|7|8|9)\d{9}$/g.test(values))
                 setShowError(!isRightPhone)
               }}
               value={phone}
@@ -69,18 +70,19 @@ const BelugaQuestion = (props: IProps) => {
               className="w-screen font-[12px] px-[15px] mt-[20px] h-[38px] rounded-[6px] border-[1px] border-[#BFBFBF]"
               placeholder="输入您的手机号立即体验"
             />
-            {showError && <div className="text-[#FF0000] text-[12px] mt-[8px]">请输入正确的11位手机号</div>}
+            {showError && (
+              <div className="text-[#FF0000] text-[12px] mt-[8px]">
+                {phone ? '请输入正确的11位手机号' : '手机号不能为空'}{' '}
+              </div>
+            )}
           </div>
           <Link passHref href={trailLink()}>
             <div
               onClick={() => {
                 if (isMobile) {
                   if (!phone) {
-                    Toast.show('手机号不能为空')
+                    // Toast.show('手机号不能为空')
                     setShowError(true)
-                  }
-                  if (showError) {
-                    Toast.show('请输入正确的11位手机号')
                   }
                 }
               }}

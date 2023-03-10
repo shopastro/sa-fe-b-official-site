@@ -4,7 +4,7 @@ export function isValidPhoneNumber(phoneNumber: string, regionCode: string): boo
   }
 
   if (regionCode === '+86') {
-    return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(phoneNumber)
+    return /^(1|2)[3|4|5|6|7|8|9][0-9]{9}$/.test(phoneNumber)
   }
 
   return true
