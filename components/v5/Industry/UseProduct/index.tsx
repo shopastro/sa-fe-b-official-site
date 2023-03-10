@@ -14,12 +14,13 @@ const UseProduct = (props: IProps) => {
     <div
       className="flex justify-center items-center h-[220px]"
       style={{
-        background: `url(${
+        backgroundImage: `url(${
           isMobile
             ? 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/mobile.svg'
             : 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/pc.svg'
-        }) no-repeat`,
-        backgroundSize: 'cover'
+        })`,
+        backgroundSize: 'cover !important',
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="flex flex-col md:flex-row items-center text-center px-[56px]">

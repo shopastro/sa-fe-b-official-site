@@ -19,7 +19,5 @@ export function passwordValidator(_: any, value: string): any {
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9@.$!%#?&]{8,20}$/
   return passwordRegex.test(value)
     ? Promise.resolve()
-    : Promise.reject(
-        new Error('密码需要包含一个数字,一个大写字母,一个小写字母,可以包含特殊字符.$!%#?&,长度大于等于8,小于等于20。')
-      )
+    : Promise.reject(new Error('密码长度请大于等于8位，并包含数字及大小写字母'))
 }

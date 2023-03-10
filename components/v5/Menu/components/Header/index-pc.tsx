@@ -112,7 +112,9 @@ const Menu: React.FC<MenuProps> = (props) => {
               </div>
             </Link>
             <a href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg" target={'_blank'} rel="noreferrer">
-              <div className="mx-[20px] cursor-pointer text-[#0E1E46]">帮助</div>
+              <div className={`mx-[20px] cursor-pointer `} style={{ color: theme === 'light' ? '#fff' : '#0E1E46' }}>
+                帮助
+              </div>
             </a>
           </div>
           <div className="ml-[56px] flex items-center">
@@ -121,10 +123,10 @@ const Menu: React.FC<MenuProps> = (props) => {
             </Link>
             <Link href={freeLink('', '')} passHref>
               <div
-                className="cursor-pointer rounded-[8px] border border-solid border-[#FFF] px-[30px] py-[10px]"
+                className={`cursor-pointer rounded-[8px] border border-solid  px-[28px] py-[10px] font-[600]`}
                 style={{
-                  color: route === '/about' ? '#3E3E40' : theme === 'light' ? '#FFF' : '#004DD1',
-                  borderColor: route === '/about' ? '#3E3E40' : theme === 'light' ? '#FFF' : '#004DD1'
+                  color: theme === 'light' ? '#FFF' : '#0E1E46',
+                  borderColor: theme === 'light' ? '#FFF' : '#0E1E46'
                 }}
               >
                 免费试用
