@@ -6,14 +6,14 @@ import { useContainer } from 'unstated-next'
 import Header from '../components/v2/Header'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
+import useTrailLink from '../hooks/useTrail'
 import detectionStore from '../store/detectionStore'
-import { freeLink } from '../utils/freeTrail'
-
-const freeLinkDTC = freeLink('website_dtc', '')
 
 // 产品方案
 const Product: NextPage = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
+  const freeLink = useTrailLink()
+  const freeLinkDTC = freeLink('website_dtc', '')
 
   return (
     <>

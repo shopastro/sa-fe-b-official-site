@@ -11,7 +11,6 @@ import Partners from '../components/v5/Home/Partners'
 import Plugins from '../components/v5/Home/Plugins'
 import Solution from '../components/v5/Home/Solution'
 import Menu from '../components/v5/Menu'
-import { freeLink } from '../utils/freeTrail'
 
 const Home: NextPage = () => {
   const [fixedButton, setFixedButton] = useState(false)
@@ -78,7 +77,7 @@ const Home: NextPage = () => {
         <Partners />
         <Footer />
       </div>
-      {fixedButton && <FixedButton href={freeLink('', '')} />}
+      {fixedButton && <FixedButton href={'/user/register'} />}
     </>
   )
 }

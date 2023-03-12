@@ -2,7 +2,7 @@ import { Input } from 'antd-mobile'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { freeLink } from '../../../../utils/freeTrail'
+import useTrailLink from '../../../../hooks/useTrail'
 
 type IProps = {
   isMobile: boolean
@@ -10,7 +10,7 @@ type IProps = {
 
 const BelugaQuestion = (props: IProps) => {
   const { isMobile } = props
-
+  const freeLink = useTrailLink()
   const [phone, setPhone] = useState('')
   const [showError, setShowError] = useState(false)
 

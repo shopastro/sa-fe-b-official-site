@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useRef, useState } from 'react'
 
-import { freeLink } from '../../../../../utils/freeTrail'
+import useTrailLink from '../../../../../hooks/useTrail'
 import { routeListMap, routeMapObj } from './constant'
 import type { Pathname } from './constant'
 
@@ -17,7 +17,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const logo = theme === 'light' ? lightLogo : darkLogo
   const icon = theme === 'light' ? lightIcon : darkIcon
   const activeColor = theme === 'light' ? '#FE8952' : '#004DD1'
-
+  const freeLink = useTrailLink()
   const { route } = useRouter()
 
   const [showMore, setShowMore] = useState<Pathname>({})

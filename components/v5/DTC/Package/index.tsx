@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
-import { freeLink } from '../../../../utils/freeTrail'
+import useTrailLink from '../../../../hooks/useTrail'
 import { dtcMonthData, dtcTypeInfo, dtcYearData } from './data'
 
 const DTCPackage = () => {
@@ -14,7 +14,7 @@ const DTCPackage = () => {
   const stickyContentRef = useRef<HTMLDivElement>(null)
   const data = showMonth ? dtcMonthData : dtcYearData
   const curType = dtcTypeInfo[activeTypeIndex - 1]
-
+  const freeLink = useTrailLink()
   const isMobile = useIsMobile()
 
   useEffect(() => {

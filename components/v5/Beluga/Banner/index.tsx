@@ -2,13 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useContainer } from 'unstated-next'
 
+import useTrailLink from '../../../../hooks/useTrail'
 import detectionStore from '../../../../store/detectionStore'
-import { freeLink } from '../../../../utils/freeTrail'
 import { bannerData } from './data'
 
 const BelugaBanner = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
-
+  const freeLink = useTrailLink()
   return (
     <div className="flex flex-col justify-center relative w-screen bg-[#F5F6FA]">
       {/* bg */}

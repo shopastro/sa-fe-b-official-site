@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { freeLink } from '../../../../utils/freeTrail'
+import useTrailLink from '../../../../hooks/useTrail'
 import { bannerData } from './data'
 
 type IProps = {
@@ -10,6 +10,7 @@ type IProps = {
 
 const BelugaBanner = (props: IProps) => {
   const { isMobile } = props
+  const freeLink = useTrailLink()
   const link = isMobile ? `/user/register` : freeLink('beluga_industry', 'beluga')
 
   return (

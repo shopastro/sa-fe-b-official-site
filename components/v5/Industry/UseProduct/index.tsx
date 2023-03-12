@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { freeLink } from '../../../../utils/freeTrail'
+import useTrailLink from '../../../../hooks/useTrail'
 
 type IProps = {
   isMobile: boolean
@@ -8,6 +8,7 @@ type IProps = {
 
 const UseProduct = (props: IProps) => {
   const { isMobile } = props
+  const freeLink = useTrailLink()
   const link = isMobile ? `/user/register` : freeLink('beluga_industry', 'beluga')
 
   return (

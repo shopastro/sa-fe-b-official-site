@@ -4,12 +4,13 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import useIsMobile from '../../../..//hooks/useIsMobile'
-import { freeLink } from '../../../../utils/freeTrail'
+import useTrailLink from '../../../../hooks/useTrail'
 
 const Banner = () => {
   const [phone, setPhone] = useState('')
   const [showError, setShowError] = useState(false)
   const isMobile = useIsMobile()
+  const freeLink = useTrailLink()
   const trailLink = () => {
     if (isMobile) {
       if (phone && !showError) {
