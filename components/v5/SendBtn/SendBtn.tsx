@@ -1,14 +1,15 @@
 import { Button, Toast } from 'antd-mobile'
 import axios from 'axios'
-import React, { forwardRef, useRef, useState } from 'react'
+import { useRouter } from 'next/router'
+import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { isValidPhoneNumber } from '../../../utils/check'
 
 type IProps = {
-  phoneNum: string
+  phoneNumber: string
 }
 const Component = (props: IProps) => {
-  const { phoneNum } = props
+  const { phoneNumber } = props
 
   const [loading, setLoading] = useState(false)
   const [count, setCount] = React.useState(0)
@@ -19,7 +20,16 @@ const Component = (props: IProps) => {
     startTime: 0
   })
 
+  const router = useRouter()
+
+  const { phoneNum = '' } = router.query
+
   const apiDomain = useRef('//sys.api.ishopastro.com')
+
+  useEffect(() => {
+    const finalPhoneNum = Buffer.from(phoneNum.toString(), 'base64').toString()
+    if (finalPhoneNum) handleSendCode(finalPhoneNum)
+  }, [phoneNum])
 
   const calc = (time: number) => {
     if (ctx.current.startTime <= 0) {
@@ -36,13 +46,14 @@ const Component = (props: IProps) => {
     }
   }
 
-  const handleSendCode = async () => {
+  const handleSendCode = async (phone: string) => {
     if (ctx.current.reqLocked) {
       return
     }
     setLoading(true)
+    console.log(phone)
 
-    const isValid = isValidPhoneNumber(phoneNum, '+86')
+    const isValid = isValidPhoneNumber(phone, '+86')
 
     if (isValid) {
       ctx.current.reqLocked = true
@@ -50,7 +61,7 @@ const Component = (props: IProps) => {
       try {
         await axios
           .get(
-            `${apiDomain.current}/common/v1/obtain/verification-code.json?phoneNum=${phoneNum}&region=+86&origin=mobile`
+            `${apiDomain.current}/common/v1/obtain/verification-code.json?phoneNum=${phone}&region=+86&origin=mobile`
           )
           .then((res) => {
             const { data, success, errMsg } = res.data
@@ -103,7 +114,9 @@ const Component = (props: IProps) => {
         loading={loading}
         disabled={loading || count > 0}
         style={{ border: 'none', fontSize: '14px', color: '#004ED1' }}
-        onClick={handleSendCode}
+        onClick={() => {
+          handleSendCode(phoneNumber)
+        }}
       >
         {renderBtnTest()}
       </Button>

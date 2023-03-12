@@ -44,13 +44,14 @@ const Register = () => {
         setFormValue({ ...formValue, phoneNum: finalPhoneNum })
         form.setFieldValue('phoneNum', finalPhoneNum)
         await phoneNumberValidator(undefined, finalPhoneNum.toString())
-        await axios
-          .get(`${apiDomain.current}/common/v1/verify-phone.json?phoneNum=${finalPhoneNum.toString()}`)
-          .then((res) => {
-            if (res.data.errMsg) {
-              Toast.show(res.data.errMsg)
-            }
-          })
+        // /common/v1/verify-phone.json?phoneNum=${finalPhoneNum.toString()}
+        // await axios
+        //   .get(`${apiDomain.current}/common/v1/verify-phone.json?phoneNum=${finalPhoneNum.toString()}`)
+        //   .then((res) => {
+        //     if (res.data.errMsg) {
+        //       Toast.show(res.data.errMsg)
+        //     }
+        //   })
       } catch (e) {}
     })()
   }, [form, phoneNum])
@@ -230,7 +231,7 @@ const Register = () => {
               <Input placeholder="请输入手机号码" maxLength={11} />
             </Form.Item>
             <Form.Item
-              extra={<SendBtn phoneNum={formValue?.phoneNum || ''} />}
+              extra={<SendBtn phoneNumber={formValue?.phoneNum || ''} />}
               required
               name="verifyCode"
               validateTrigger="onBlur"
