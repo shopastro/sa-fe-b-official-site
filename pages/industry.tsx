@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { useEffect, useState } from 'react'
 
 import Header from '../components/v2/Header'
 import FixedButton from '../components/v5/FixedButton'
@@ -11,6 +12,30 @@ import useIsMobile from '../hooks/useIsMobile'
 
 const Industry: NextPage = () => {
   const isMobile = useIsMobile()
+  const [fixedButton, setFixedButton] = useState(false)
+  const handleScroll = (e: any) => {
+    if (!e.srcElement.documentElement) {
+      return
+    }
+
+    const scrollTop =
+      (e.srcElement ? e.srcElement.documentElement?.scrollTop : false) ||
+      window.pageYOffset ||
+      (e.srcElement ? e.srcElement.body?.scrollTop : 0)
+
+    if (scrollTop >= 300) {
+      setFixedButton(true)
+    } else {
+      setFixedButton(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, true)
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true)
+    }
+  }, [])
 
   return (
     <>
@@ -29,7 +54,7 @@ const Industry: NextPage = () => {
         <UseProduct isMobile={isMobile} />
         <Footer />
       </div>
-      <FixedButton text="免费试用" href="/user/register" />
+      {fixedButton && <FixedButton text="免费试用" href="/user/register" />}
     </>
   )
 }
