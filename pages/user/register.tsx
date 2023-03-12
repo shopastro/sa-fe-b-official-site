@@ -32,9 +32,7 @@ const Register = () => {
     }
     ;(async () => {
       try {
-        const res = await await await (await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)).data
-        // setCsrf(res.header['b-frsc'])
-        console.log(res.header['b-frsc'], 'res')
+        ;(await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)).data
       } catch {}
     })()
   }, [])
@@ -206,6 +204,7 @@ const Register = () => {
             仅差一步，即可获取账号
           </div>
           <Form
+            mode="card"
             form={form}
             onFinish={onFinish}
             onValuesChange={(values: FormValues) => {
