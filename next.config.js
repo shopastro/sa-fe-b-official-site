@@ -1,9 +1,7 @@
-const withTM = require('next-transpile-modules')(['antd-mobile'])
-
-module.exports = withTM({
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: ['media.cdn.ishopastro.com']
   },
-  cssModules: true
-})
+  transpilePackages: ['antd-mobile']
+}
