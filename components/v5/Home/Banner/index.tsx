@@ -56,15 +56,17 @@ const Banner = () => {
             </div>
             {
               <div className="flex flex-wrap justify-between mt-[20px] mb-[24px]">
-                {['十五分钟快速建站', '最优建站产品组合', '多种生意场景套件', '精准助力广告营销'].map((el, i) => {
+                {['十五分钟快速建站', '丰富的免费插件', '精准助力广告营销', '行业专家全案运营'].map((el, i) => {
                   return (
                     <div
                       key={el}
-                      style={{ justifyContent: i % 2 === 1 ? 'flex-end' : 'flex-start' }}
-                      className={`flex items-center mb-[4px] w-[50%] text-[12px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
+                      style={{
+                        justifyContent: i % 2 === 1 ? 'flex-end' : 'flex-start'
+                      }}
+                      className={`flex items-center mb-[4px] w-[50%] text-[16px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
                     >
                       <span className="flex w-[8px] h-[8px] mr-[6px] rounded-[4px] bg-white" />
-                      {el}
+                      <span style={{ marginRight: i === 1 ? '16px' : '' }}>{el}</span>
                     </div>
                   )
                 })}

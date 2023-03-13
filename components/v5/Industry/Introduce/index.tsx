@@ -4,6 +4,8 @@ import { useState } from 'react'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
+const introduceBg = require('../img/introduceBg.png')
+
 type IProps = {
   isMobile: boolean
 }
@@ -41,9 +43,10 @@ const BelugaQuestion = (props: IProps) => {
     <div
       className="relative w-[100%] h-[320px] md:h-[0]"
       style={{
-        background: 'url(https://media.cdn.ishopastro.com/svg/sa-fe-b-background/industry_bg.svg) no-repeat',
+        background: `url(${introduceBg.default.src}) no-repeat`,
         backgroundSize: 'cover',
-        width: '100%',
+        backgroundColor: '#F4F6FA',
+        width: '100% !important',
         paddingTop: '30.56%'
       }}
     >

@@ -9,7 +9,7 @@ const useIsMobile = () => {
       link = `https://sys.admin.ishopastro.com/admin/user/store-login?product=${type}`
     }
     if (isMobile) {
-      link = 'user/register'
+      link = '/user/register'
     }
     return link
   }

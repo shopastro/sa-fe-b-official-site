@@ -1,11 +1,11 @@
-const websitePc = require('./img/item_website_pc.png')
-const website = require('./img/item_website.png')
-const originalityPc = require('./img/item_originality_pc.png')
-const originality = require('./img/item_originality.png')
-const intelligentPc = require('./img/item_intelligent_pc.png')
-const intelligent = require('./img/item_intelligent.png')
-const seoPc = require('./img/item_seo_pc.png')
-const seo = require('./img/item_seo.png')
+const websitePc = require('../img/item_website_pc.png')
+const website = require('../img/item_website.png')
+const originalityPc = require('../img/item_originality_pc.png')
+const originality = require('../img/item_originality.png')
+const intelligentPc = require('../img/item_intelligent_pc.png')
+const intelligent = require('../img/item_intelligent.png')
+const seoPc = require('../img/item_seo_pc.png')
+const seo = require('../img/item_seo.png')
 
 export const bannerData = [
   {

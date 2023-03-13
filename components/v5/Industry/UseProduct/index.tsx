@@ -2,6 +2,9 @@ import Link from 'next/link'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
+const mobile = require('../img/mobile.jpg')
+const pc = require('../img/pc.jpg')
+
 type IProps = {
   isMobile: boolean
 }
@@ -15,11 +18,7 @@ const UseProduct = (props: IProps) => {
     <div
       className="flex justify-center items-center h-[220px] relative"
       style={{
-        backgroundImage: `url(${
-          isMobile
-            ? 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/mobile.svg'
-            : 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/pc.svg'
-        })`,
+        backgroundImage: `url(${isMobile ? mobile.default.src : pc.default.src})`,
         backgroundSize: 'cover !important',
         backgroundRepeat: 'no-repeat',
         position: 'absolute',
