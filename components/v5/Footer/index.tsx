@@ -61,7 +61,7 @@ const Footer = () => {
               </span>
             </div>
             <div
-              className="flex flex-col text-[14px] leading-[24px] text-[#535D77] transition-all overflow-hidden"
+              className="flex flex-col text-[14px] leading-[24px] transition-all overflow-hidden"
               style={{ maxHeight: showAbout ? '100vh' : '0' }}
             >
               {[
@@ -73,7 +73,9 @@ const Footer = () => {
               ].map((el) => {
                 return (
                   <Link href={el.url} key={el.name} passHref>
-                    <div className="py-[16px] text-[16px] md:py-[0] md:mb-[8px] cursor-pointer">{el.name}</div>
+                    <div className="py-[16px] text-[16px] md:py-[0] md:mb-[8px]  text-[#535D77] cursor-pointer">
+                      {el.name}
+                    </div>
                   </Link>
                 )
               })}
@@ -93,7 +95,7 @@ const Footer = () => {
               </span>
             </div>
             <div
-              className="flex flex-col text-[14px] leading-[24px] text-[#535D77] transition-all overflow-hidden"
+              className="flex flex-col text-[14px] leading-[24px] transition-all overflow-hidden"
               style={{ maxHeight: showJoin ? '100vh' : '0' }}
             >
               {[
@@ -105,7 +107,9 @@ const Footer = () => {
               ].map((el) => {
                 return (
                   <Link href={el.url} key={el.name} passHref>
-                    <div className="py-[16px] text-[16px] md:py-[0] md:mb-[8px] cursor-pointer">{el.name}</div>
+                    <div className="py-[16px] text-[#535D77] text-[16px] md:py-[0] md:mb-[8px] cursor-pointer">
+                      {el.name}
+                    </div>
                   </Link>
                 )
               })}
