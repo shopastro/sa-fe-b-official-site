@@ -54,7 +54,27 @@ const Banner = () => {
                 alt="banner1"
               />
             </div>
-            {
+            {!isMobile && (
+              <div className="mt-[20px] mb-[24px]">
+                {[
+                  '十五分钟快速建站, 搭建更具本土化的品牌独立站',
+                  '最优建站产品组合, 丰富的免费插件, 紧贴您的行业需求',
+                  '精准助力广告营销, 深度挖掘市场情报, 量化驱动私域增长',
+                  ' 多种生意场景套件, 行业专家全案运营'
+                ].map((el, i) => {
+                  return (
+                    <div
+                      key={el}
+                      className={`flex items-center mb-[4px] text-[16px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
+                    >
+                      <span className="flex w-[8px] h-[8px] mr-[6px] rounded-[4px] bg-white" />
+                      <span style={{ marginRight: i === 1 ? '16px' : '' }}>{el}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+            {isMobile && (
               <div className="flex flex-wrap justify-between mt-[20px] mb-[24px]">
                 {['十五分钟快速建站', '丰富的免费插件', '精准助力广告营销', '行业专家全案运营'].map((el, i) => {
                   return (
@@ -71,7 +91,7 @@ const Banner = () => {
                   )
                 })}
               </div>
-            }
+            )}
 
             <div className="md:hidden flex flex-col">
               <Input
@@ -106,7 +126,7 @@ const Banner = () => {
                     }
                   }
                 }}
-                className="w-[100%] md:hidden mt-[8px] mb-[40px] flex item-center cursor-pointer"
+                className="w-[100%] md:hidden mt-[8px] mb-[40px] flex item-center cursor-pointer text-[#fff]"
               >
                 <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[8px]">
                   免费试用
@@ -114,11 +134,11 @@ const Banner = () => {
               </div>
             </Link>
             <div className="hidden text-[18px] leading-[26px] md:flex">
-              <span className="py-[12px] px-[54px] border border-solid border-[#FE8953] rounded-[8px] bg-[#FE8953]">
-                <Link href={freeLink('', '')} passHref>
+              <Link href={freeLink('', '')} passHref>
+                <span className="py-[12px] px-[54px] text-[#fff] border border-solid border-[#FE8953] rounded-[8px] bg-[#FE8953]">
                   免费试用
-                </Link>
-              </span>
+                </span>
+              </Link>
             </div>
           </div>
           <div className="hidden items-center md:flex">
