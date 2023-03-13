@@ -64,19 +64,19 @@ const Menu: React.FC<MenuProps> = (props) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
             <Link href="/dtc" passHref>
-              <div className="mx-[20px] cursor-pointer " style={{ color: route === '/dtc' ? activeColor : 'inherit' }}>
+              <div className="mx-[20px] cursor-pointer " style={{ color: route === '/dtc' ? activeColor : '#0E1E46' }}>
                 DTC建站
               </div>
             </Link>
             <Link href="/b2b" passHref>
-              <div className="mx-[20px] cursor-pointer" style={{ color: route === '/b2b' ? activeColor : 'inherit' }}>
+              <div className="mx-[20px] cursor-pointer" style={{ color: route === '/b2b' ? activeColor : '#0E1E46' }}>
                 B2B建站
               </div>
             </Link>
             <Link href="/beluga" passHref>
               <div
                 className="flex items-center relative px-[10px] mx-[10px] cursor-pointer"
-                style={{ color: routeListMap.beluga.includes(route) ? activeColor : 'inherit' }}
+                style={{ color: routeListMap.beluga.includes(route) ? activeColor : '#0E1E46' }}
                 onMouseEnter={(e) => {
                   handleMouseEnter(e, 'beluga')
                 }}
@@ -91,7 +91,7 @@ const Menu: React.FC<MenuProps> = (props) => {
             <Link href="/solutions" passHref>
               <div
                 className="mx-[20px] cursor-pointer"
-                style={{ color: route === '/solutions' ? activeColor : 'inherit' }}
+                style={{ color: route === '/solutions' ? activeColor : '#0E1E46' }}
               >
                 解决方案
               </div>
@@ -99,7 +99,7 @@ const Menu: React.FC<MenuProps> = (props) => {
             <Link href="/about" passHref>
               <div
                 className="flex items-center relative px-[10px] mx-[10px] cursor-pointer"
-                style={{ color: routeListMap.about.includes(route) ? activeColor : 'inherit' }}
+                style={{ color: routeListMap.about.includes(route) ? activeColor : '#0E1E46' }}
                 onMouseEnter={(e) => {
                   handleMouseEnter(e, 'about')
                 }}
@@ -119,7 +119,7 @@ const Menu: React.FC<MenuProps> = (props) => {
           </div>
           <div className="ml-[56px] flex items-center">
             <Link href="https://sys.admin.ishopastro.com/admin/user/login" passHref>
-              <div className="mr-[16px] cursor-pointer">登录</div>
+              <div className="mr-[16px] cursor-pointer text-[#0E1E46]">登录</div>
             </Link>
             <Link href={freeLink('', '')} passHref>
               <div
@@ -154,7 +154,7 @@ const Menu: React.FC<MenuProps> = (props) => {
                 <span
                   className={`mb-[${
                     i < routeMapObj[currentSubMore].length - 1 ? '16px' : ''
-                  }] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]`}
+                  }] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700] text-[#0E1E46] inline-block`}
                 >
                   {el.name}
                 </span>
