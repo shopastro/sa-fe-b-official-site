@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 import Header from '../components/v2/Header'
 import FixedButton from '../components/v5/FixedButton'
@@ -10,9 +11,30 @@ import Partners from '../components/v5/Home/Partners'
 import Plugins from '../components/v5/Home/Plugins'
 import Solution from '../components/v5/Home/Solution'
 import Menu from '../components/v5/Menu'
-import { freeLink } from '../utils/freeTrail'
 
 const Home: NextPage = () => {
+  const [fixedButton, setFixedButton] = useState(false)
+  const handleScroll = (e: any) => {
+    if (!e.srcElement.documentElement) {
+      return
+    }
+    const scrollTop =
+      (e.srcElement ? e.srcElement.documentElement?.scrollTop : false) ||
+      window.pageYOffset ||
+      (e.srcElement ? e.srcElement.body?.scrollTop : 0)
+    if (scrollTop >= 560) {
+      setFixedButton(true)
+    } else {
+      setFixedButton(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, true)
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true)
+    }
+  }, [])
   return (
     <>
       <Header
@@ -53,7 +75,7 @@ const Home: NextPage = () => {
         <Partners />
         <Footer />
       </div>
-      <FixedButton href={freeLink('', '')} />
+      {fixedButton && <FixedButton href={'/user/register'} />}
     </>
   )
 }

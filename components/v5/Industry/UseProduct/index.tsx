@@ -1,6 +1,9 @@
 import Link from 'next/link'
 
-import { freeLink } from '../../../../utils/freeTrail'
+import useTrailLink from '../../../../hooks/useTrail'
+
+const mobile = require('../img/mobile.jpg')
+const pc = require('../img/pc.jpg')
 
 type IProps = {
   isMobile: boolean
@@ -8,17 +11,14 @@ type IProps = {
 
 const UseProduct = (props: IProps) => {
   const { isMobile } = props
+  const freeLink = useTrailLink()
   const link = isMobile ? `/user/register` : freeLink('beluga_industry', 'beluga')
 
   return (
     <div
       className="flex justify-center items-center h-[220px] relative"
       style={{
-        backgroundImage: `url(${
-          isMobile
-            ? 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/mobile.svg'
-            : 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/pc.svg'
-        })`,
+        backgroundImage: `url(${isMobile ? mobile.default.src : pc.default.src})`,
         backgroundSize: 'cover !important',
         backgroundRepeat: 'no-repeat',
         position: 'absolute',

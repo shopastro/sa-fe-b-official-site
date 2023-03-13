@@ -3,9 +3,9 @@ import Link from 'next/link'
 import React from 'react'
 import { useContainer } from 'unstated-next'
 
+import useTrailLink from '../../../hooks/useTrail'
 import detectionStore from '../../../store/detectionStore'
 import { buryingPoint } from '../../../utils/buryingPoint'
-import { freeLink } from '../../../utils/freeTrail'
 import Modal from '../../v1/base/Modal'
 import styles from './index.module.scss'
 
@@ -16,7 +16,7 @@ type IProps = {
 
 const Pendant: React.FC<IProps> = () => {
   const { showModal, setShowMoadl, setButtonType } = useContainer(detectionStore)
-
+  const freeLink = useTrailLink()
   const handleClose = () => {
     setShowMoadl(false)
   }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useRef, useState } from 'react'
 
-import { freeLink } from '../../../../../utils/freeTrail'
+import useTrailLink from '../../../../../hooks/useTrail'
 import { routeListMap, routeMapObj } from './constant'
 import type { Pathname } from './constant'
 
@@ -17,7 +17,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const logo = theme === 'light' ? lightLogo : darkLogo
   const icon = theme === 'light' ? lightIcon : darkIcon
   const activeColor = theme === 'light' ? '#FE8952' : '#004DD1'
-
+  const freeLink = useTrailLink()
   const { route } = useRouter()
 
   const [showMore, setShowMore] = useState<Pathname>({})
@@ -63,17 +63,17 @@ const Menu: React.FC<MenuProps> = (props) => {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
-            <Link href="/dtc" passHref>
+            <Link href="/dtc" passHref style={{ color: 'inherit' }}>
               <div className="mx-[20px] cursor-pointer " style={{ color: route === '/dtc' ? activeColor : 'inherit' }}>
                 DTC建站
               </div>
             </Link>
-            <Link href="/b2b" passHref>
+            <Link href="/b2b" passHref style={{ color: 'inherit' }}>
               <div className="mx-[20px] cursor-pointer" style={{ color: route === '/b2b' ? activeColor : 'inherit' }}>
                 B2B建站
               </div>
             </Link>
-            <Link href="/beluga" passHref>
+            <Link href="/beluga" passHref style={{ color: 'inherit' }}>
               <div
                 className="flex items-center relative px-[10px] mx-[10px] cursor-pointer"
                 style={{ color: routeListMap.beluga.includes(route) ? activeColor : 'inherit' }}
@@ -88,7 +88,7 @@ const Menu: React.FC<MenuProps> = (props) => {
                 </div>
               </div>
             </Link>
-            <Link href="/solutions" passHref>
+            <Link href="/solutions" passHref style={{ color: 'inherit' }}>
               <div
                 className="mx-[20px] cursor-pointer"
                 style={{ color: route === '/solutions' ? activeColor : 'inherit' }}
@@ -96,7 +96,7 @@ const Menu: React.FC<MenuProps> = (props) => {
                 解决方案
               </div>
             </Link>
-            <Link href="/about" passHref>
+            <Link href="/about" passHref style={{ color: 'inherit' }}>
               <div
                 className="flex items-center relative px-[10px] mx-[10px] cursor-pointer"
                 style={{ color: routeListMap.about.includes(route) ? activeColor : 'inherit' }}
@@ -118,7 +118,7 @@ const Menu: React.FC<MenuProps> = (props) => {
             </a>
           </div>
           <div className="ml-[56px] flex items-center">
-            <Link href="https://sys.admin.ishopastro.com/admin/user/login" passHref>
+            <Link href="https://sys.admin.ishopastro.com/admin/user/login" passHref style={{ color: 'inherit' }}>
               <div className="mr-[16px] cursor-pointer">登录</div>
             </Link>
             <Link href={freeLink('', '')} passHref>
@@ -154,7 +154,7 @@ const Menu: React.FC<MenuProps> = (props) => {
                 <span
                   className={`mb-[${
                     i < routeMapObj[currentSubMore].length - 1 ? '16px' : ''
-                  }] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700]`}
+                  }] whitespace-nowrap cursor-pointer hover:text-[#004DD1] hover:font-[700] text-[#0E1E46] inline-block`}
                 >
                   {el.name}
                 </span>

@@ -2,7 +2,9 @@ import { Input } from 'antd-mobile'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { freeLink } from '../../../../utils/freeTrail'
+import useTrailLink from '../../../../hooks/useTrail'
+
+const introduceBg = require('../img/introduceBg.png')
 
 type IProps = {
   isMobile: boolean
@@ -10,7 +12,7 @@ type IProps = {
 
 const BelugaQuestion = (props: IProps) => {
   const { isMobile } = props
-
+  const freeLink = useTrailLink()
   const [phone, setPhone] = useState('')
   const [showError, setShowError] = useState(false)
 
@@ -41,9 +43,10 @@ const BelugaQuestion = (props: IProps) => {
     <div
       className="relative w-[100%] h-[320px] md:h-[0]"
       style={{
-        background: 'url(https://media.cdn.ishopastro.com/svg/sa-fe-b-background/industry_bg.svg) no-repeat',
+        background: `url(${introduceBg.default.src}) no-repeat`,
         backgroundSize: 'cover',
-        width: '100%',
+        backgroundColor: '#F4F6FA',
+        width: '100% !important',
         paddingTop: '30.56%'
       }}
     >

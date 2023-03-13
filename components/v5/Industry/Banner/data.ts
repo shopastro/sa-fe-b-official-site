@@ -1,11 +1,11 @@
-const websitePc = require('./img/item_website_pc.png')
-const website = require('./img/item_website.png')
-const originalityPc = require('./img/item_originality_pc.png')
-const originality = require('./img/item_originality.png')
-const intelligentPc = require('./img/item_intelligent_pc.png')
-const intelligent = require('./img/item_intelligent.png')
-const seoPc = require('./img/item_seo_pc.png')
-const seo = require('./img/item_seo.png')
+const websitePc = require('../img/item_website_pc.png')
+const website = require('../img/item_website.png')
+const originalityPc = require('../img/item_originality_pc.png')
+const originality = require('../img/item_originality.png')
+const intelligentPc = require('../img/item_intelligent_pc.png')
+const intelligent = require('../img/item_intelligent.png')
+const seoPc = require('../img/item_seo_pc.png')
+const seo = require('../img/item_seo.png')
 
 export const bannerData = [
   {
@@ -30,7 +30,7 @@ export const bannerData = [
     image: originality,
     imagePc: originalityPc,
     info: [
-      'AI识别，智能发现行业广告素材',
+      '百万广告主数据，AI分类识别行业广告',
       '多维检索，锁定优质广告素材，发掘爆款',
       ' 以图搜图，快速找到适合商品的广告方案',
       '关注广告主，投放趋势尽在掌握'
@@ -44,11 +44,7 @@ export const bannerData = [
     title: '智能选品',
     image: intelligent,
     imagePc: intelligentPc,
-    info: [
-      'Google权威数据，掌握全球独立站商品趋势',
-      '精准获取商品最新热度与需求趋势',
-      '竞对商品尽收眼底，新品快速跟进'
-    ],
+    info: ['六千万+商品数据， 竞对商品尽收眼底', '精准获取商品最新热度与需求趋势', '竞对商品尽收眼底，新品快速跟进'],
     height: 212,
     heightPc: 345,
     widthPc: 718

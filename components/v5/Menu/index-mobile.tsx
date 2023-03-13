@@ -133,7 +133,10 @@ const Menu: React.FC<MenuProps> = (props) => {
               style={{ maxHeight: showMore.beluga ? '100vh' : 0 }}
             >
               <Link href="/industry" passHref>
-                <span className="px-[48px] py-[16px]" style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}>
+                <span
+                  className="flex px-[48px] text-[#222] py-[16px]"
+                  style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+                >
                   行业情报
                 </span>
               </Link>
@@ -168,12 +171,18 @@ const Menu: React.FC<MenuProps> = (props) => {
               style={{ maxHeight: showMore.about ? '100vh' : 0 }}
             >
               <Link href="/about" passHref>
-                <span className="px-[48px] py-[16px]" style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}>
+                <span
+                  className="flex px-[48px] text-[#222] py-[16px]"
+                  style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+                >
                   关于我们
                 </span>
               </Link>
               <Link href="/partners" passHref>
-                <span className="px-[48px] py-[16px]" style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}>
+                <span
+                  className="flex px-[48px] text-[#222] py-[16px]"
+                  style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+                >
                   渠道合作&生态联盟
                 </span>
               </Link>

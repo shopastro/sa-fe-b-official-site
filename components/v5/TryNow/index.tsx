@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
 
-import { freeLink } from '../../../utils/freeTrail'
+import useTrailLink from '../../../hooks/useTrail'
 
 const TryNow: React.FC<TryNowProps> = (props) => {
+  const freeLink = useTrailLink()
   return (
     <div className="flex flex-col items-center w-screen bg-[#F5F6FA]">
       <div className="flex flex-col items-center relative px-[20px] py-[40px] overflow-hidden md:py-[80px]">

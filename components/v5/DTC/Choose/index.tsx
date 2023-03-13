@@ -3,13 +3,14 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 import useIsMobile from '../../../../hooks/useIsMobile'
-import { freeLink } from '../../../../utils/freeTrail'
+import useTrailLink from '../../../../hooks/useTrail'
 import { DTCChooseData } from './data'
 
 const DTCPackage = () => {
   const [activeIndex, setActiveIndex] = useState(1)
   const [shadowStyle, setShadowStyle] = useState<any>({})
   const stickyContentRef = useRef<HTMLDivElement>(null)
+  const freeLink = useTrailLink()
   const isMobile = useIsMobile()
 
   useEffect(() => {

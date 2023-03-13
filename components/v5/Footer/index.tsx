@@ -61,24 +61,24 @@ const Footer = () => {
               </span>
             </div>
             <div
-              className="flex flex-col text-[14px] leading-[24px] text-[#535D77] transition-all overflow-hidden"
+              className="flex flex-col text-[14px] leading-[24px] transition-all overflow-hidden"
               style={{ maxHeight: showAbout ? '100vh' : '0' }}
             >
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">
-                <Link href="/about">公司简介</Link>
-              </div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">
-                <Link href="/privacy">隐私政策</Link>
-              </div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">
-                <Link href="/agreement">用户协议</Link>
-              </div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">
-                <Link href="/solutions">解决方案</Link>
-              </div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">
-                <Link href="https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg">帮助中心</Link>
-              </div>
+              {[
+                { name: '公司简介', url: '/about' },
+                { name: '隐私政策', url: '/privacy' },
+                { name: '用户协议', url: '/agreement' },
+                { name: '解决方案', url: '/solutions' },
+                { name: '帮助中心', url: 'https://shopastro.feishu.cn/wiki/wikcnLesUeY4fIzlf9MmebbYhxg' }
+              ].map((el) => {
+                return (
+                  <Link href={el.url} key={el.name} passHref>
+                    <div className="py-[16px] text-[16px] md:py-[0] md:mb-[8px]  text-[#535D77] cursor-pointer">
+                      {el.name}
+                    </div>
+                  </Link>
+                )
+              })}
             </div>
           </div>
 
@@ -95,17 +95,24 @@ const Footer = () => {
               </span>
             </div>
             <div
-              className="flex flex-col text-[14px] leading-[24px] text-[#535D77] transition-all overflow-hidden"
+              className="flex flex-col text-[14px] leading-[24px] transition-all overflow-hidden"
               style={{ maxHeight: showJoin ? '100vh' : '0' }}
             >
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">
-                <Link href="https://www.zhipin.com/gongsir/0c4a441aa82110141nx82Nm9EFI~.html?ka=company-jobs">
-                  在招岗位
-                </Link>
-              </div>
-              <div className="py-[16px] md:py-[0] md:mb-[8px]">
-                <Link href="https://www.zhipin.com/gongsi/0c4a441aa82110141nx82Nm9EFI~.html">投递简历</Link>
-              </div>
+              {[
+                {
+                  name: '在招岗位',
+                  url: 'https://www.zhipin.com/gongsir/0c4a441aa82110141nx82Nm9EFI~.html?ka=company-jobs'
+                },
+                { name: '投递简历', url: 'https://www.zhipin.com/gongsi/0c4a441aa82110141nx82Nm9EFI~.html' }
+              ].map((el) => {
+                return (
+                  <Link href={el.url} key={el.name} passHref>
+                    <div className="py-[16px] text-[#535D77] text-[16px] md:py-[0] md:mb-[8px] cursor-pointer">
+                      {el.name}
+                    </div>
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -114,7 +121,7 @@ const Footer = () => {
           <div className="md:flex md:w-[1200px] md:m-auto">
             <span className="flex flex-1 mb-[8px]">©{new Date().getFullYear()} shopastro All Rights Reserved.</span>
             <div className="flex flex-wrap md:items-center">
-              <a className="mr-[8px]" href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
+              <a className="mr-[8px] text-[#263959]" href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
                 浙ICP备2021036268号
               </a>
               <div className="flex items-center">
@@ -127,7 +134,7 @@ const Footer = () => {
                   />
                 </span>
                 <a
-                  className="mr-[8px]"
+                  className="mr-[8px]  text-[#263959]"
                   href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016170"
                   target="_blank"
                   rel="noreferrer"
@@ -145,7 +152,7 @@ const Footer = () => {
                   />
                 </span>
                 <a
-                  className="mr-[8px]"
+                  className="mr-[8px] text-[#263959]"
                   href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016170"
                   target="_blank"
                   rel="noreferrer"
@@ -163,7 +170,7 @@ const Footer = () => {
                   />
                 </span>
                 <a
-                  className="mr-[8px]"
+                  className="mr-[8px]  text-[#263959]"
                   href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016170"
                   target="_blank"
                   rel="noreferrer"

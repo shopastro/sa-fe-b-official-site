@@ -1,9 +1,39 @@
+import { Input } from 'antd-mobile'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
-import { freeLink } from '../../../../utils/freeTrail'
+import useIsMobile from '../../../..//hooks/useIsMobile'
+import useTrailLink from '../../../../hooks/useTrail'
 
 const Banner = () => {
+  const [phone, setPhone] = useState('')
+  const [showError, setShowError] = useState(false)
+  const isMobile = useIsMobile()
+  const freeLink = useTrailLink()
+  const trailLink = () => {
+    if (isMobile) {
+      if (phone && !showError) {
+        return `/user/register?phoneNum=${Buffer.from(phone).toString('base64')}`
+      } else {
+        return '#'
+      }
+    } else {
+      return freeLink('beluga_industry', 'beluga')
+    }
+  }
+
+  const handleInputNumber = (v: string) => {
+    if (v.length <= 11) {
+      setShowError(false)
+      setPhone(v)
+      if (v.length === 11) {
+        const isRightPhone = Boolean(/^(1|2)(3|4|5|6|7|8|9)\d{9}$/g.test(v))
+        setShowError(!isRightPhone)
+      }
+    }
+  }
+
   return (
     <div className="flex justify-center w-screen text-white">
       <div className="flex flex-col items-center relative px-[20px] overflow-hidden md:w-[1200px] md:h-[830px]">
@@ -24,28 +54,93 @@ const Banner = () => {
                 alt="banner1"
               />
             </div>
-            <div className="flex items-center mb-[4px] text-[12px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]">
-              <span className="flex w-[8px] h-[8px] mr-[16px] rounded-[4px] bg-white" />
-              十五分钟快速建站, 搭建更具本土化的品牌独立站
+            {!isMobile && (
+              <div className="mt-[20px] mb-[24px]">
+                {[
+                  '十五分钟快速建站, 搭建更具本土化的品牌独立站',
+                  '最优建站产品组合, 丰富的免费插件, 紧贴您的行业需求',
+                  '精准助力广告营销, 深度挖掘市场情报, 量化驱动私域增长',
+                  ' 多种生意场景套件, 行业专家全案运营'
+                ].map((el, i) => {
+                  return (
+                    <div
+                      key={el}
+                      className={`flex items-center mb-[4px] text-[16px] leading-[28px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
+                    >
+                      <span className="flex w-[8px] h-[8px] mr-[6px] rounded-[4px] bg-white" />
+                      <span style={{ marginRight: i === 1 ? '16px' : '' }}>{el}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+            {isMobile && (
+              <div className="flex flex-wrap justify-between mt-[20px] mb-[24px]">
+                {['十五分钟快速建站', '丰富的免费插件', '精准助力广告营销', '行业专家全案运营'].map((el, i) => {
+                  return (
+                    <div
+                      key={el}
+                      style={
+                        {
+                          // justifyContent: i % 2 === 1 ? 'flex-end' : 'flex-start'
+                        }
+                      }
+                      className={`flex items-center mb-[4px] w-[50%] text-[16px] leading-[28px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
+                    >
+                      <span className="flex w-[8px] h-[8px] mr-[6px] rounded-[4px] bg-white" />
+                      <span style={{ marginRight: i === 1 ? '16px' : '' }}>{el}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+
+            <div className="md:hidden flex flex-col">
+              <Input
+                onChange={(v) => {
+                  handleInputNumber(v)
+                }}
+                onBlur={(v) => {
+                  const values = v.target.value
+                  const isRightPhone = Boolean(/^(1|2)(3|4|5|6|7|8|9)\d{9}$/g.test(values))
+                  setShowError(!isRightPhone)
+                }}
+                value={phone}
+                type="number"
+                maxLength={11}
+                style={{ '--placeholder-color': '#D5D5D5', background: '#fff' }}
+                className="w-[100%] font-[12px] px-[15px] h-[38px] rounded-[6px] border-[1px] border-[#BFBFBF]"
+                placeholder="输入您的手机号立即体验"
+              />
+              {showError && (
+                <div className="text-[#FF0000] text-[12px] mt-[12px]">
+                  {phone ? '请输入正确的11位手机号' : '手机号不能为空'}
+                </div>
+              )}
             </div>
-            <div className="flex items-center mb-[4px] text-[12px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]">
-              <span className="flex w-[8px] h-[8px] mr-[16px] rounded-[4px] bg-white" />
-              最优建站产品组合, 丰富的免费插件, 紧贴您的行业需求
-            </div>
-            <div className="flex items-center mb-[4px] text-[12px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]">
-              <span className="flex w-[8px] h-[8px] mr-[16px] rounded-[4px] bg-white" />
-              精准助力广告营销, 深度挖掘市场情报, 量化驱动私域增长
-            </div>
-            <div className="flex items-center mb-[20px] text-[12px] leading-[20px] md:mb-[36px] md:text-[18px] md:leading-[32px]">
-              <span className="flex w-[8px] h-[8px] mr-[16px] rounded-[4px] bg-white" />
-              多种生意场景套件, 行业专家全案运营
-            </div>
-            <div className="hidden text-[18px] leading-[26px] md:flex">
-              <span className="py-[12px] px-[54px] border border-solid border-[#FE8953] rounded-[8px] bg-[#FE8953]">
-                <Link href={freeLink('', '')} passHref>
+
+            <Link passHref href={trailLink()}>
+              <div
+                onClick={() => {
+                  if (isMobile) {
+                    if (!phone) {
+                      setShowError(true)
+                    }
+                  }
+                }}
+                className="w-[100%] md:hidden mt-[12px] mb-[40px] flex item-center cursor-pointer text-[#fff]"
+              >
+                <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[8px]">
                   免费试用
-                </Link>
-              </span>
+                </span>
+              </div>
+            </Link>
+            <div className="hidden text-[18px] leading-[26px] md:flex">
+              <Link href={freeLink('', '')} passHref>
+                <span className="py-[12px] px-[54px] text-[#fff] border border-solid border-[#FE8953] rounded-[8px] bg-[#FE8953]">
+                  免费试用
+                </span>
+              </Link>
             </div>
           </div>
           <div className="hidden items-center md:flex">

@@ -2,13 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useContainer } from 'unstated-next'
 
+import useTrailLink from '../../../../hooks/useTrail'
 import detectionStore from '../../../../store/detectionStore'
-import { freeLink } from '../../../../utils/freeTrail'
 import { bannerData } from './data'
 
 const BelugaBanner = () => {
   const { setShowMoadl, setButtonType } = useContainer(detectionStore)
-
+  const freeLink = useTrailLink()
   return (
     <div className="flex flex-col justify-center relative w-screen bg-[#F5F6FA]">
       {/* bg */}
@@ -52,8 +52,8 @@ const BelugaBanner = () => {
                 }}
               >
                 <span
-                  className="flex-1 py-[7px] text-[16px] md:text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#004DD1] rounded-[8px]"
-                  style={{ backgroundColor: name ? '#FE8953' : '#004DD1' }}
+                  className="flex-1 py-[7px] text-[16px] md:text-[18px] leading-[26px] text-[#FFF] font-[700] text-center rounded-[8px]"
+                  style={{ backgroundColor: name ? '#FE8953 !important' : '#004DD1' }}
                 >
                   {name ? '免费试用' : '立即咨询'}
                 </span>

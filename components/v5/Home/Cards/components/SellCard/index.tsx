@@ -1,12 +1,13 @@
 import Image from 'next/image'
 
-import { freeLink } from '../../../../../../utils/freeTrail'
+import useTrailLink from '../../../../../../hooks/useTrail'
 import FreeButton from '../../../../FreeButton'
 import Description from '../Description'
 import SubTitle from '../SubTitle'
 import Title from '../Title'
 
 const SellCard = () => {
+  const freeLink = useTrailLink()
   return (
     <div className="flex flex-col items-center mb-[28px] md:flex-row md:w-[1440px] md:mb-[120px]">
       <div className="flex flex-1 mb-[20px] md:mb-0">

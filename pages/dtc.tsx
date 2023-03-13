@@ -9,9 +9,10 @@ import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 import TryNow from '../components/v5/TryNow'
-import { freeLink } from '../utils/freeTrail'
+import useTrailLink from '../hooks/useTrail'
 
 const DTC: NextPage = () => {
+  const freeLink = useTrailLink()
   return (
     <>
       <Header
