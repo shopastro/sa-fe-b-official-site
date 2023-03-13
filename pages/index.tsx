@@ -18,12 +18,10 @@ const Home: NextPage = () => {
     if (!e.srcElement.documentElement) {
       return
     }
-
     const scrollTop =
       (e.srcElement ? e.srcElement.documentElement?.scrollTop : false) ||
       window.pageYOffset ||
       (e.srcElement ? e.srcElement.body?.scrollTop : 0)
-
     if (scrollTop >= 560) {
       setFixedButton(true)
     } else {

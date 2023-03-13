@@ -65,7 +65,7 @@ const Banner = () => {
                   return (
                     <div
                       key={el}
-                      className={`flex items-center mb-[4px] text-[16px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
+                      className={`flex items-center mb-[4px] text-[16px] leading-[28px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
                     >
                       <span className="flex w-[8px] h-[8px] mr-[6px] rounded-[4px] bg-white" />
                       <span style={{ marginRight: i === 1 ? '16px' : '' }}>{el}</span>
@@ -80,10 +80,12 @@ const Banner = () => {
                   return (
                     <div
                       key={el}
-                      style={{
-                        justifyContent: i % 2 === 1 ? 'flex-end' : 'flex-start'
-                      }}
-                      className={`flex items-center mb-[4px] w-[50%] text-[16px] leading-[20px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
+                      style={
+                        {
+                          // justifyContent: i % 2 === 1 ? 'flex-end' : 'flex-start'
+                        }
+                      }
+                      className={`flex items-center mb-[4px] w-[50%] text-[16px] leading-[28px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
                     >
                       <span className="flex w-[8px] h-[8px] mr-[6px] rounded-[4px] bg-white" />
                       <span style={{ marginRight: i === 1 ? '16px' : '' }}>{el}</span>
@@ -126,7 +128,7 @@ const Banner = () => {
                     }
                   }
                 }}
-                className="w-[100%] md:hidden mt-[8px] mb-[40px] flex item-center cursor-pointer text-[#fff]"
+                className="w-[100%] md:hidden mt-[12px] mb-[40px] flex item-center cursor-pointer text-[#fff]"
               >
                 <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[8px]">
                   免费试用
