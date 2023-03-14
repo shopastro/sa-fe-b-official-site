@@ -1,19 +1,15 @@
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
+  const { route } = useRouter()
+  console.log(route, 'route')
 
   const handleResize = (e: any) => {
-    if (!e.srcElement.documentElement) {
-      return
-    }
+    const screenWidth = window.screen.width
 
-    const offsetWidth =
-      (e.srcElement ? e.srcElement.documentElement?.offsetWidth : false) ||
-      window.pageXOffset ||
-      (e.srcElement ? e.srcElement.body?.offsetWidth : 0)
-
-    if (offsetWidth < 786) {
+    if (screenWidth < 786) {
       setIsMobile(true)
     } else {
       setIsMobile(false)
@@ -21,15 +17,20 @@ const useIsMobile = () => {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleResize, true)
+    window.addEventListener('resize', handleResize, true)
     return () => {
-      window.removeEventListener('scroll', handleResize, true)
+      window.removeEventListener('resize', handleResize, true)
     }
-  }, [])
+  }, [route])
 
   useEffect(() => {
-    if (window.innerWidth > 768) setIsMobile(false)
-  }, [])
+    if (window.screen.width > 768) {
+      setIsMobile(false)
+    } else {
+      setIsMobile(true)
+    }
+  }, [route])
+
   return isMobile
 }
 
