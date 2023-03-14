@@ -112,7 +112,7 @@ const Plugins = () => {
           >
             {pcPluginsData.map((item, index) => {
               return (
-                <SwiperSlide key={index} className={'w-[400px] h-[294px]'} style={{ width: '367px' }}>
+                <SwiperSlide key={index} className={'w-[400px]'} style={{ width: '367px' }}>
                   {item.map((pluginData, elementIndex) => {
                     return (
                       <div
