@@ -45,9 +45,3 @@ export const solutionData = [
       '具备供应链及物流整合优势的卖家, 只需一次开通, 即可通过星盘一键代发平台为星盘独立站卖家提供供应链和履约能力。并通过拓峰科技的Shopify一件代发能力链接海量Shopify店主。'
   }
 ]
-
-export interface SolutionDataItem {
-  icon: string
-  title: string
-  description: string
-}

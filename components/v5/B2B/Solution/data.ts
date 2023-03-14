@@ -39,9 +39,3 @@ export const solutionData = [
     description: '全球物流海外仓ERP对接发货无忧, 跨境财务合规服务商推荐, 多途径支付渠道轻松收款; 品牌内容服务商对接'
   }
 ]
-
-export interface SolutionDataItem {
-  image: string
-  title: string
-  description: string
-}
