@@ -48,7 +48,7 @@ const Banner = () => {
                 setButtonType('topbanner')
               }}
             >
-              <span className="flex-1 px-[54px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[12px] md:flex-none md:py-[18px]">
+              <span className="flex-1 px-[54px] text-[18px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FE8953] rounded-[12px] md:flex-none md:py-[18px]">
                 立即咨询
               </span>
             </div>

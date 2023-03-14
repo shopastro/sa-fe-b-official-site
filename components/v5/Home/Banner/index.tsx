@@ -130,7 +130,7 @@ const Banner = () => {
                 }}
                 className="w-[100%] md:hidden mt-[12px] mb-[40px] flex item-center cursor-pointer text-[#fff]"
               >
-                <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FF793A] rounded-[8px]">
+                <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FE8953] rounded-[8px]">
                   免费试用
                 </span>
               </div>
