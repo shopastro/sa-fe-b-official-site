@@ -1,15 +1,12 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { Navigation, Pagination } from 'swiper'
+import { Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import useIsMobile from '../../../../hooks/useIsMobile'
 import { questions } from './data'
 
 const DTCPackage = () => {
-  const isMobile = useIsMobile()
   return (
     <div className="flex flex-col">
       <div className="flex flex-col px-[20px] pt-[40px] text-[#0E1E46] md:py-[80px]">

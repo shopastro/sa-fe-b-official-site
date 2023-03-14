@@ -189,11 +189,3 @@ export const partnersData = [
     ]
   }
 ]
-
-export interface PartnersDataItem {
-  title: string
-  data: {
-    icon: string
-    link: string
-  }[]
-}
