@@ -49,7 +49,7 @@
         display: block;
       }
       .nav-home {
-        color: #ff793a;
+        color: #fe8953;
       }
 
       .content-us-btn-for-mb,
@@ -89,7 +89,6 @@
       position: absolute;
       height: 38px;
       width: 100%;
-
     }
     .lang {
       display: none;
@@ -163,7 +162,7 @@
         height: 100vh;
         transition-duration: 0.3s;
 
-        &.ture{
+        &.ture {
           box-shadow: 0 5px 40px rgb(0 0 0 / 15%);
         }
         .content-us-btn {
@@ -213,7 +212,9 @@
             color: #fff;
             background: #004ed1;
           }
-          a,a:visited,a:link{
+          a,
+          a:visited,
+          a:link {
             color: #ffffff;
           }
         }
