@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import useTrailLink from '../../../../../hooks/useTrail'
 import { routeListMap, routeMapObj } from './constant'
@@ -46,6 +46,12 @@ const Menu: React.FC<MenuProps> = (props) => {
   function handleDialogLeave() {
     setShowMore({})
   }
+
+  useEffect(() => {
+    if (/beta/.test(location.host)) {
+      setLoginLink('https://sys.admin.beta.ishopastro.com/admin/user/login')
+    }
+  }, [])
 
   return (
     <>
@@ -119,7 +125,7 @@ const Menu: React.FC<MenuProps> = (props) => {
             </a>
           </div>
           <div className="ml-[56px] flex items-center">
-            <Link href="https://sys.admin.ishopastro.com/admin/user/login" passHref style={{ color: 'inherit' }}>
+            <Link href={loginLink} passHref style={{ color: 'inherit' }}>
               <div className="mr-[16px] cursor-pointer">登录</div>
             </Link>
             <Link href={freeLink('', '')} passHref>
