@@ -19,6 +19,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const activeColor = theme === 'light' ? '#FE8952' : '#004DD1'
   const freeLink = useTrailLink()
   const { route } = useRouter()
+  const [loginLink, setLoginLink] = useState('https://sys.admin.ishopastro.com/admin/user/login')
 
   const [showMore, setShowMore] = useState<Pathname>({})
   const [fixedStyle, setFixedStyle] = useState({ top: 0, left: 0 })
