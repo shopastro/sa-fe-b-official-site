@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Link from 'next/link'
+import Script from 'next/script'
 import React from 'react'
 import { useContainer } from 'unstated-next'
 
@@ -25,19 +25,14 @@ const Pendant: React.FC<IProps> = () => {
     <div className={styles.pendantContainer}>
       <ul>
         <li>
-          <div
-            className={styles.pendantItem}
-            onMouseEnter={() => {
-              //添加埋点
-              buryingPoint('hover_contact_info')
-            }}
-          >
-            <div className={styles.imgItem} />
-            <div className={styles.textItem}> 微信咨询</div>
-          </div>
-          <div className={styles.arrow_box}>
-            <div className={styles.imgBcg}></div>
-          </div>
+          {/* <Link href={freeLink('', '')} passHref>
+            <div className={classNames(styles.pendantItem)}>
+              <div className={styles.textItem}> 免费试用</div>
+              <div className={styles.imgItem} />
+            </div>
+          </Link> */}
+          <div id="sa-showcase-chat"></div>
+          <Script src="//sys.cdn.ishopastro.com/pages/beta/sa-c-chat-sdk.js" />
         </li>
         <li>
           <div
@@ -48,17 +43,24 @@ const Pendant: React.FC<IProps> = () => {
               setButtonType('toolbar')
             }}
           >
-            <div className={styles.imgItem} />
             <div className={styles.textItem}>立即咨询</div>
+            <div className={styles.imgItem} />
           </div>
         </li>
         <li>
-          <Link href={freeLink('', '')} passHref>
-            <div className={classNames(styles.pendantItem)}>
-              <div className={styles.imgItem} />
-              <div className={styles.textItem}> 免费试用</div>
-            </div>
-          </Link>
+          <div
+            className={styles.pendantItem}
+            onMouseEnter={() => {
+              //添加埋点
+              buryingPoint('hover_contact_info')
+            }}
+          >
+            <div className={styles.textItem}> 微信咨询</div>
+            <div className={styles.imgItem} />
+          </div>
+          <div className={styles.arrow_box}>
+            <div className={styles.imgBcg}></div>
+          </div>
         </li>
         <li id="pendantItem" style={{ display: 'none' }}></li>
       </ul>

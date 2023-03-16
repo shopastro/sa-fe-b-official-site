@@ -10,9 +10,7 @@
       margin-right: 2.4rem;
 
       li {
-        margin-bottom: 0.4rem;
-        width: 7.6rem;
-        height: 7.6rem;
+        margin-bottom: 1.2rem;
         background-color: #004ed1;
         border-radius: 0.8rem;
         display: flex;
@@ -20,12 +18,17 @@
         align-items: center;
         cursor: pointer;
         box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+        border-radius: 200px;
 
         .pendantItem {
+          display: flex;
+          align-items: center;
+          padding: 10px 16px;
+
           .imgItem {
-            height: 3rem;
+            width: 40px;
+            height: 40px;
             background-image: url(./img/listen.svg);
-            width: 100%;
             background-repeat: no-repeat;
             background-position: center;
           }
@@ -33,15 +36,30 @@
           .textItem {
             color: #ffffff;
             font-size: 1.2rem;
-            margin-top: 0.6rem;
+            margin-right: 8px;
           }
         }
       }
 
       li:nth-child(1) {
-        position: relative;
         .imgItem {
-          background-image: url(./img/weChat.svg);
+          background-image: url(//media.cdn.ishopastro.com/svg/sa-fe-c/aac70e033d35f5ccbeef54a812318938.svg);
+        }
+      }
+
+      li:nth-child(2) {
+        background-color: #FE8953;
+
+        .imgItem {
+          background-image: url(./img/write.svg);
+        }
+      }
+
+      li:nth-child(3) {
+        position: relative;
+
+        .imgItem {
+          background-image: url(//media.cdn.ishopastro.com/svg/sa-fe-c/430303be1b591e087af28dc391b5a890.svg);
         }
 
         &:hover {
@@ -64,21 +82,6 @@
             background-position: center;
             background-size: contain;
           }
-        }
-      }
-
-      li:nth-child(2) {
-        background-color: #FE8953;
-
-        .imgItem {
-          background-image: url(./img/write.svg);
-        }
-      }
-
-      li:nth-child(3) {
-
-        .imgItem {
-          background-image: url(./img/free.svg);
         }
       }
     }

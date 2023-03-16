@@ -2,7 +2,7 @@
   "name": "sa-index",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "APP_ENV=dev bff_url=http://aad91d61236524954bbec7d6f34579f6-558346467d5b64ad.elb.us-west-2.amazonaws.com NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "lint": "next lint",
     "start:dev": "APP_ENV=dev next dev -p 3000",
