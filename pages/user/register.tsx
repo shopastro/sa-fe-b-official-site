@@ -44,14 +44,6 @@ const Register = () => {
         setFormValue({ ...formValue, phoneNum: finalPhoneNum })
         form.setFieldValue('phoneNum', finalPhoneNum)
         await phoneNumberValidator(undefined, finalPhoneNum.toString())
-        // /common/v1/verify-phone.json?phoneNum=${finalPhoneNum.toString()}
-        // await axios
-        //   .get(`${apiDomain.current}/common/v1/verify-phone.json?phoneNum=${finalPhoneNum.toString()}`)
-        //   .then((res) => {
-        //     if (res.data.errMsg) {
-        //       Toast.show(res.data.errMsg)
-        //     }
-        //   })
       } catch (e) {}
     })()
   }, [form, phoneNum])
@@ -59,6 +51,20 @@ const Register = () => {
   const handleRegister = async (values: FormValues) => {
     setLoading(true)
     try {
+      // 增加注册打点
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'sign_up',
+          gtm: {
+            elementId: ''
+          },
+          eventModel: {
+            user_data: {
+              phone_number: `+86${values.phoneNum}`
+            }
+          }
+        })
+      }
       const res = await axios.post(`${apiDomain.current}/common/v1/register.json`, {
         password: values.password,
         phoneNum: values.phoneNum,
