@@ -1,0 +1,23 @@
+import { NextResponse } from 'next/server'
+import type { NextFetchEvent, NextRequest } from 'next/server'
+
+const BFF_URL = process.env.bff_url
+
+export async function middleware(request: NextRequest, event: NextFetchEvent) {
+  const saCid = request.cookies.get('sa-cid')
+
+  const response = NextResponse.next()
+  if (!saCid) {
+    try {
+      const res = await fetch(`${BFF_URL}/customers/cookie/v2?_domain=zhang90.beta.ishopastro.com`, {
+        method: 'GET'
+      })
+      const { data } = await res.json()
+      response.cookies.set('sa-cid', data, { expires: new Date(Date.now() + 1000 * 3600 * 24 * 365 * 10) })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  return response
+}
