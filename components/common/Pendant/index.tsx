@@ -47,7 +47,7 @@ const Pendant: React.FC<IProps> = () => {
     <div className={styles.pendantContainer}>
       <ul>
         <li>
-          <div id="sa-showcase-chat"></div>
+          <div id="sa-showcase-chat" className={styles['sa-showcase-chat']}></div>
           {version && <Script src={`//sys.cdn.ishopastro.com/pages/${version}/sa-c-chat-sdk.js`} />}
         </li>
         <li>

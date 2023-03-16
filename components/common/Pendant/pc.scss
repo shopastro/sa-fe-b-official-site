@@ -119,7 +119,7 @@
     margin-top: -1rem;
   }
 
-  #sa-showcase-chat {
+  .sa-showcase-chat {
     display: flex;
     align-items: center;
     position: relative !important;
@@ -129,7 +129,7 @@
     left: unset !important;
   }
 
-  #sa-showcase-chat [data-role=sa-chat] {
+  .sa-showcase-chat [data-role=sa-chat] {
     position: static !important;
     top: unset !important;
     right: unset !important;
@@ -137,11 +137,11 @@
     left: unset !important;
   }
 
-  #sa-showcase-chat [data-role=sa-chat-entry] {
+  .sa-showcase-chat [data-role=sa-chat-entry] {
     box-shadow: none;
   }
 
-  #sa-showcase-chat [data-role=sa-chat-title] {
+  .sa-showcase-chat [data-role=sa-chat-title] {
     display: block !important;
   }
 }
