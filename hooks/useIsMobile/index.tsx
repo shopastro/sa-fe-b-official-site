@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false)
   const { route } = useRouter()
-  console.log(route, 'route')
 
   const handleResize = (e: any) => {
     const screenWidth = window.screen.width
