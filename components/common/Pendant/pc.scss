@@ -142,11 +142,24 @@
   }
 
   .sa-showcase-chat [data-role=sa-chat-title] {
-    display: block !important;
+    display: flex !important;
+    align-items: center;
+    font-size: 0;
   }
 
   .sa-showcase-chat [data-role=sa-chat-title]::after {
     content: "在线沟通";
     display: block;
+    font-size: 1.2rem;
+  }
+
+  .sa-showcase-chat [data-role=sa-chat-unread] {
+    position: absolute !important;
+    right: 100%;
+  }
+
+  .sa-showcase-chat [data-role=sa-chat-unread]::after {
+    box-shadow: none;
+    z-index: 1;
   }
 }
