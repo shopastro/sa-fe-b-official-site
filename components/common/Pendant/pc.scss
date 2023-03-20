@@ -144,4 +144,9 @@
   .sa-showcase-chat [data-role=sa-chat-title] {
     display: block !important;
   }
+
+  .sa-showcase-chat [data-role=sa-chat-title]::after {
+    content: "在线沟通";
+    display: block;
+  }
 }
