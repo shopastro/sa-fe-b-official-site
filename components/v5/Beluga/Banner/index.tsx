@@ -52,8 +52,9 @@ const BelugaBanner = () => {
                 }}
               >
                 <span
-                  className="flex-1 py-[7px] text-[16px] md:text-[18px] leading-[26px] text-[#FFF] font-[700] text-center rounded-[8px]"
-                  style={{ backgroundColor: name ? '#FE8953 !important' : '#004DD1' }}
+                  className={`flex-1 py-[7px] bg-[${
+                    name ? '#FE8953' : '#004DD1'
+                  }] text-[16px] md:text-[18px] leading-[26px] text-[#FFF] font-[700] text-center rounded-[8px]`}
                 >
                   {name ? '免费试用' : '立即咨询'}
                 </span>
