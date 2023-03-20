@@ -21,7 +21,7 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
     request.nextUrl.pathname = '/api/beluga-chat/im/v1/customer/notification/subscription.json'
     const requestHeaders = new Headers(request.headers)
     requestHeaders.set('host', `chat-api.beluga.${isBeta ? 'beta.' : ''}ishopastro.com`)
-    return NextResponse.rewrite(request.nextUrl, requestHeaders)
+    return NextResponse.rewrite(request.nextUrl, { request: { headers: requestHeaders } })
   }
 
   const response = NextResponse.next()
