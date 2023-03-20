@@ -12,13 +12,16 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
   if (pathname === '/api/im-gateway/chat/initConnect.json') {
     request.nextUrl.searchParams.set('_domain', domain)
     request.nextUrl.pathname = '/api/beluga-chat/im/v1/customer/connect.json'
+    request.nextUrl.host = `chat-api.beluga.${isBeta ? 'beta.' : ''}ishopastro.com`
     return NextResponse.rewrite(request.nextUrl)
   }
 
   if (pathname === '/im/v1/customer/notification/subscription.json') {
     request.nextUrl.searchParams.set('_domain', domain)
     request.nextUrl.pathname = '/api/beluga-chat/im/v1/customer/notification/subscription.json'
-    return NextResponse.rewrite(request.nextUrl)
+    const requestHeaders = new Headers(request.headers)
+    requestHeaders.set('host', `chat-api.beluga.${isBeta ? 'beta.' : ''}ishopastro.com`)
+    return NextResponse.rewrite(request.nextUrl, requestHeaders)
   }
 
   const response = NextResponse.next()
