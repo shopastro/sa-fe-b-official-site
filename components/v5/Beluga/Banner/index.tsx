@@ -68,7 +68,7 @@ const BelugaBanner = () => {
                 <div className="mb-[12px] text-[22px] leading-[30px] text-[#18214D] text-center font-[700]">
                   {data.title}
                 </div>
-                <div className="mb-[20px] px-[40px] text-[16px] leading-[24px] text-[#3E4462] text-opacity-80 text-center md:px-[40px]">
+                <div className="mb-[20px] px-[40px] text-[16px] md:text-[14px] leading-[24px] text-[#3E4462] text-opacity-80 text-center md:px-[20px]">
                   {data.info}
                 </div>
                 <div className="md:w-[300px] px-[20px]">

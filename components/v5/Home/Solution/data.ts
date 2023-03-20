@@ -14,7 +14,7 @@ export const solutionData = [
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/5a901f1a4924586eaa6a63a3a086761c.svg',
     title: '多渠道布局',
     description:
-      '品牌型精品卖家，采用独立站作为更丰富的品牌表达承接，并直达消费者的售卖方式，精确掌控属于自己的流量和投入产出比，直接打造面向海外消费者的品牌，通过优质的产品和服务与品牌背书相结合，实现用户口碑和长期复购。'
+      '亚马逊平台卖家，可通过独立站测试新品，并搜集用户反馈；也可实现更高的客单价和产品复购；并从经营风险角度进行自己的流量布局。'
   },
   {
     icon: 'https://media.cdn.ishopastro.com/svg/shopastrohome/9a1c2c9c0e4f3b70f30c63c5ebf23dd2.svg',
