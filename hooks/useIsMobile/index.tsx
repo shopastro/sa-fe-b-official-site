@@ -6,7 +6,7 @@ const useIsMobile = () => {
   const { route } = useRouter()
 
   const handleResize = (e: any) => {
-    const screenWidth = window.screen.width
+    const screenWidth = window.document.documentElement.clientWidth
 
     if (screenWidth < 786) {
       setIsMobile(true)
@@ -23,7 +23,7 @@ const useIsMobile = () => {
   }, [route])
 
   useEffect(() => {
-    if (window.screen.width > 768) {
+    if (window.document.documentElement.clientWidth > 768) {
       setIsMobile(false)
     } else {
       setIsMobile(true)
