@@ -47,8 +47,19 @@ const Pendant: React.FC<IProps> = () => {
     <div className={styles.pendantContainer}>
       <ul>
         <li>
-          <div id="sa-showcase-chat" className={styles['sa-showcase-chat']}></div>
-          {version && <Script src={`//sys.cdn.ishopastro.com/pages/${version}/sa-c-chat-sdk.js`} />}
+          <div
+            className={styles.pendantItem}
+            onMouseEnter={() => {
+              //添加埋点
+              buryingPoint('hover_contact_info')
+            }}
+          >
+            <div className={styles.textItem}> 微信咨询</div>
+            <div className={styles.imgItem} />
+          </div>
+          <div className={styles.arrow_box}>
+            <div className={styles.imgBcg}></div>
+          </div>
         </li>
         <li>
           <div
@@ -64,19 +75,8 @@ const Pendant: React.FC<IProps> = () => {
           </div>
         </li>
         <li>
-          <div
-            className={styles.pendantItem}
-            onMouseEnter={() => {
-              //添加埋点
-              buryingPoint('hover_contact_info')
-            }}
-          >
-            <div className={styles.textItem}> 微信咨询</div>
-            <div className={styles.imgItem} />
-          </div>
-          <div className={styles.arrow_box}>
-            <div className={styles.imgBcg}></div>
-          </div>
+          <div id="sa-showcase-chat" className={styles['sa-showcase-chat']}></div>
+          {version && <Script src={`//sys.cdn.ishopastro.com/pages/${version}/sa-c-chat-sdk.js`} />}
         </li>
         <li id="pendantItem" style={{ display: 'none' }}></li>
       </ul>
