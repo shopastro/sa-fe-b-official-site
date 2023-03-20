@@ -1,5 +1,6 @@
 const BFF_URL = process.env.bff_url
 const isBeta = process.env.APP_ENV === 'dev'
+const CHAT_URL = `http://chat-api.beluga.${isBeta ? 'beta.' : ''}ishopastro.com`
 
 module.exports = {
   reactStrictMode: true,
@@ -15,9 +16,13 @@ module.exports = {
           destination: isBeta ? '/sw/beta.js' : '/sw/prod.js',
         },
         {
+          source: '/api/beluga-chat/:path*',
+          destination: `${CHAT_URL}/:path*`
+        },
+        {
           source: '/api/:path*',
           destination: `${BFF_URL}/:path*`
-        }
+        },
       ]
     }
   }

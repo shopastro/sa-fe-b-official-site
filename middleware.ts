@@ -7,6 +7,19 @@ const domain = isBeta ? 'zhang90.beta.ishopastro.com' : 'astrobeluga.ishopastro.
 
 export async function middleware(request: NextRequest, event: NextFetchEvent) {
   const saCid = request.cookies.get('sa-cid')
+  const { pathname } = request.nextUrl
+
+  if (pathname === '/api/im-gateway/chat/initConnect.json') {
+    request.nextUrl.searchParams.set('_domain', domain)
+    request.nextUrl.pathname = '/api/beluga-chat/im/v1/customer/connect.json'
+    return NextResponse.rewrite(request.nextUrl)
+  }
+
+  if (pathname === '/im/v1/customer/notification/subscription.json') {
+    request.nextUrl.searchParams.set('_domain', domain)
+    request.nextUrl.pathname = '/api/beluga-chat/im/v1/customer/notification/subscription.json'
+    return NextResponse.rewrite(request.nextUrl)
+  }
 
   const response = NextResponse.next()
   if (!saCid) {
@@ -15,7 +28,10 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
         method: 'GET'
       })
       const { data } = await res.json()
-      response.cookies.set('sa-cid', data, { expires: new Date(Date.now() + 1000 * 3600 * 24 * 365 * 10) })
+      response.cookies.set('sa-cid', data, {
+        expires: new Date(Date.now() + 1000 * 3600 * 24 * 365 * 10),
+        domain: '.ishopastro.com'
+      })
     } catch (err) {
       console.log(err)
     }
