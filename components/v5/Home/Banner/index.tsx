@@ -68,7 +68,7 @@ const Banner = () => {
                       className={`flex items-center mb-[4px] text-[16px] leading-[28px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
                     >
                       <span className="flex w-[8px] h-[8px] mr-[6px] rounded-[4px] bg-white" />
-                      <span style={{ marginRight: i === 1 ? '16px' : '' }}>{el}</span>
+                      <span style={{ marginRight: i === 1 ? '16px' : '0' }}>{el}</span>
                     </div>
                   )
                 })}

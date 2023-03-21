@@ -1,9 +1,9 @@
+import axios from 'axios'
 import classNames from 'classnames'
-import Link from 'next/link'
-import React from 'react'
+import Script from 'next/script'
+import React, { useEffect, useState } from 'react'
 import { useContainer } from 'unstated-next'
 
-import useTrailLink from '../../../hooks/useTrail'
 import detectionStore from '../../../store/detectionStore'
 import { buryingPoint } from '../../../utils/buryingPoint'
 import Modal from '../../v1/base/Modal'
@@ -16,10 +16,31 @@ type IProps = {
 
 const Pendant: React.FC<IProps> = () => {
   const { showModal, setShowMoadl, setButtonType } = useContainer(detectionStore)
-  const freeLink = useTrailLink()
+  const [version, setVersion] = useState<string>()
+
   const handleClose = () => {
     setShowMoadl(false)
   }
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      // @ts-ignore
+      const isBeta = window?.gloConfig?.isBeta
+      if (isBeta) {
+        setVersion('beta')
+      } else {
+        try {
+          axios.get('/api/shop/v1/frontsetting/queryByKey.json?configKey=showcase-sdk-version').then((res) => {
+            const data = JSON.parse(res.data)
+            const chatVersion = data['sa-c-chat-sdk']
+            if (chatVersion) setVersion(chatVersion)
+          })
+        } catch (err) {
+          console.log(err)
+        }
+      }
+    }
+  }, [])
 
   return (
     <div className={styles.pendantContainer}>
@@ -32,8 +53,8 @@ const Pendant: React.FC<IProps> = () => {
               buryingPoint('hover_contact_info')
             }}
           >
-            <div className={styles.imgItem} />
             <div className={styles.textItem}> 微信咨询</div>
+            <div className={styles.imgItem} />
           </div>
           <div className={styles.arrow_box}>
             <div className={styles.imgBcg}></div>
@@ -48,17 +69,13 @@ const Pendant: React.FC<IProps> = () => {
               setButtonType('toolbar')
             }}
           >
-            <div className={styles.imgItem} />
             <div className={styles.textItem}>立即咨询</div>
+            <div className={styles.imgItem} />
           </div>
         </li>
         <li>
-          <Link href={freeLink('', '')} passHref>
-            <div className={classNames(styles.pendantItem)}>
-              <div className={styles.imgItem} />
-              <div className={styles.textItem}> 免费试用</div>
-            </div>
-          </Link>
+          <div id="sa-showcase-chat" className={styles['sa-showcase-chat']}></div>
+          {version && <Script src={`//sys.cdn.ishopastro.com/pages/${version}/sa-c-chat-sdk.js`} />}
         </li>
         <li id="pendantItem" style={{ display: 'none' }}></li>
       </ul>
