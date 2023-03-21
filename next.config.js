@@ -1,6 +1,6 @@
-const BFF_URL = process.env.bff_url
 const isBeta = process.env.APP_ENV === 'dev'
 const CHAT_URL = `https://chat.beluga.${isBeta ? 'beta.' : ''}ishopastro.com/`
+const WEBHOOK_URL = `https://webhook.${isBeta ? 'beta.' : ''}ishopastro.com`
 
 module.exports = {
   reactStrictMode: true,
@@ -21,7 +21,7 @@ module.exports = {
         },
         {
           source: '/api/:path*',
-          destination: `${BFF_URL}/:path*`
+          destination: `${WEBHOOK_URL}/:path*`
         },
       ]
     }
