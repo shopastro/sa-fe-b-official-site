@@ -30,7 +30,7 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
       const { data } = await res.json()
       response.cookies.set('sa-cid', data, {
         expires: new Date(Date.now() + 1000 * 3600 * 24 * 365 * 10),
-        domain: '.ishopastro.com'
+        domain: isBeta ? '.ishopastro.com' : '.shopastro.com'
       })
     } catch (err) {
       console.log(err)
