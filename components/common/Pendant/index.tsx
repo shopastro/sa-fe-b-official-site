@@ -31,7 +31,6 @@ const Pendant: React.FC<IProps> = () => {
       } else {
         try {
           axios.get('/api/shop/v1/frontsetting/queryByKey.json?configKey=showcase-sdk-version').then((res) => {
-            console.log(res, 'ppppp')
             const data = JSON.parse(res.data)
             const chatVersion = data['sa-c-chat-sdk']
             if (chatVersion) setVersion(chatVersion)
