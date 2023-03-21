@@ -21,6 +21,13 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
     return NextResponse.rewrite(request.nextUrl)
   }
 
+  if (pathname === '/api/nexturl') {
+    return new NextResponse(JSON.stringify(request.nextUrl), {
+      status: 200,
+      headers: { 'content-type': 'application/json' }
+    })
+  }
+
   const response = NextResponse.next()
   if (!saCid) {
     try {
@@ -30,7 +37,7 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
       const { data } = await res.json()
       response.cookies.set('sa-cid', data, {
         expires: new Date(Date.now() + 1000 * 3600 * 24 * 365 * 10),
-        domain: '.ishopastro.com'
+        domain: '.shopastro.com'
       })
     } catch (err) {
       console.log(err)
