@@ -22,10 +22,19 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
   }
 
   if (pathname === '/api/nexturl') {
-    return new NextResponse(JSON.stringify(request.nextUrl), {
-      status: 200,
-      headers: { 'content-type': 'application/json' }
-    })
+    return new NextResponse(
+      JSON.stringify({
+        aa: {
+          ...request.nextUrl
+        },
+        h: request.nextUrl.host,
+        o: request.nextUrl.origin
+      }),
+      {
+        status: 200,
+        headers: { 'content-type': 'application/json' }
+      }
+    )
   }
 
   const response = NextResponse.next()
