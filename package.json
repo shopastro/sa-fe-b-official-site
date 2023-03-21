@@ -2,11 +2,11 @@
   "name": "sa-index",
   "private": true,
   "scripts": {
-    "dev": "APP_ENV=dev bff_url=http://aad91d61236524954bbec7d6f34579f6-558346467d5b64ad.elb.us-west-2.amazonaws.com NODE_OPTIONS='--inspect' next dev",
-    "build": "bff_url=http://aad91d61236524954bbec7d6f34579f6-558346467d5b64ad.elb.us-west-2.amazonaws.com next build",
+    "dev": "APP_ENV=dev NODE_OPTIONS='--inspect' next dev",
+    "build": "next build",
     "lint": "next lint",
-    "start:dev": "APP_ENV=dev bff_url=http://aad91d61236524954bbec7d6f34579f6-558346467d5b64ad.elb.us-west-2.amazonaws.com next dev -p 3000",
-    "start:prod": "APP_ENV=prod bff_url=http://internal-prod-buyer-apps-internal-alb-1106079571.us-east-2.elb.amazonaws.com next start -p 3000"
+    "start:dev": "APP_ENV=dev next dev -p 3000",
+    "start:prod": "APP_ENV=prod next start -p 3000"
   },
   "dependencies": {
     "@better-scroll/core": "^2.4.2",
