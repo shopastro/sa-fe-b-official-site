@@ -140,6 +140,14 @@ const Menu: React.FC<MenuProps> = (props) => {
                   行业情报
                 </span>
               </Link>
+              <Link href="/copymaster" passHref>
+                <span
+                  className="flex px-[48px] text-[#222] py-[16px]"
+                  style={{ borderBottom: '1px solid rgba(34, 34, 34, 0.1)' }}
+                >
+                  文案大师
+                </span>
+              </Link>
             </div>
           </div>
 

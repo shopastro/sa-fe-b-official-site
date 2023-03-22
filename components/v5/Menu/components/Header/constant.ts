@@ -18,6 +18,10 @@ export const routeMapObj: { [key: string]: { name: string; link: string }[] } = 
     {
       name: '行业情报',
       link: '/industry'
+    },
+    {
+      name: '文案大师',
+      link: '/copymaster'
     }
   ]
 }
@@ -25,5 +29,5 @@ export const routeMapObj: { [key: string]: { name: string; link: string }[] } = 
 //一级路由高亮 对应的二级路由
 export const routeListMap: { [key: string]: string[] } = {
   about: ['/partners', '/about'],
-  beluga: ['/industry', '/beluga']
+  beluga: ['/industry', '/beluga', '/copymaster']
 }
