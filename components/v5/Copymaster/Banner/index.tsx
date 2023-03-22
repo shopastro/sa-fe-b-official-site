@@ -25,7 +25,7 @@ const BelugaBanner = (props: IProps) => {
             }]`}
             key={el.type}
           >
-            <div className={`md:w-[689px] w-[100%] md:h-[340px] h-[${el.height}px] mb-[24px] md:mb-[0]`}>
+            <div className={`md:w-[535px] w-[100%] md:h-[340px] h-[${el.height}px] mb-[24px] md:mb-[0]`}>
               <Image
                 src={isMobile ? el.image : el.imagePc}
                 height={isMobile ? el.height : el.heightPc}
@@ -34,7 +34,7 @@ const BelugaBanner = (props: IProps) => {
               />
             </div>
 
-            <div className={` ${i % 2 === 1 ? 'md:mr-[82px]' : 'md:ml-[82px]'} md:w-[430px]`}>
+            <div className={` ${i % 2 === 1 ? 'md:mr-[82px] md:ml-[120px]' : 'md:ml-[82px]'} md:w-[430px]`}>
               <h3 className="md:font-[600] font-[500] text-[#0E1E46] md:text-[40px] text-[32px] mb-[16px] md:mb-[24px]">
                 {el.title}
               </h3>

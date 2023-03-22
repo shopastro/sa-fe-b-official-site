@@ -32,7 +32,7 @@ const BelugaQuestion = (props: IProps) => {
 
   const autoShowText = () => {
     let i = 0
-    const str = '·本页文案均由白鲸文案大师AI生成·'
+    const str = '本页文案均由白鲸文案大师AI生成'
 
     function typing() {
       if (i <= str.length) {
@@ -70,7 +70,7 @@ const BelugaQuestion = (props: IProps) => {
         backgroundSize: isMobile ? 'contain' : 'cover',
         backgroundColor: '#FBFDFF',
         width: '100% !important',
-        paddingTop: isMobile ? '96%' : '30.56%'
+        paddingTop: isMobile ? '96%' : '32.56%'
       }}
     >
       <div className="absolute top-[0] h-[100%] w-screen flex items-center justify-center">
@@ -80,7 +80,7 @@ const BelugaQuestion = (props: IProps) => {
           </span>
           <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">跨境人的高效生产力工具</span>
           <div className="leading-[18px] h-[18px] md:h-[30px] md:leading-[30px] text-[12px] md:text-[20px] mt-[4px] md:mt-[10px]">
-            {autoText}
+            {autoText}|
           </div>
           <div className="w-screen px-[38px] md:hidden flex flex-col">
             <Input

@@ -2,9 +2,6 @@ import Link from 'next/link'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
-const mobile = require('../../img/mobile.jpg')
-const pc = require('../../img/pc.jpg')
-
 type IProps = {
   isMobile: boolean
 }
@@ -18,9 +15,7 @@ const UseProduct = (props: IProps) => {
     <div
       className="flex justify-center items-center h-[220px] relative"
       style={{
-        backgroundImage: `url(${isMobile ? mobile.default.src : pc.default.src})`,
-        backgroundSize: 'cover !important',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#004DD1',
         position: 'absolute',
         width: '100%',
         paddingTop: '15.28%'
