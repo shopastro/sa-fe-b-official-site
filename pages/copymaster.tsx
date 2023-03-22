@@ -2,12 +2,12 @@ import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
 
 import Header from '../components/v2/Header'
+import Banner from '../components/v5/Copymaster/Banner'
+import Introduce from '../components/v5/Copymaster/Introduce'
+import UseProduct from '../components/v5/Copymaster/UseProduct'
 import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
-import Banner from '../components/v5/copymaster/Banner'
-import Introduce from '../components/v5/copymaster/Introduce'
-import UseProduct from '../components/v5/copymaster/UseProduct'
 import useIsMobile from '../hooks/useIsMobile'
 
 const CopyMaster: NextPage = () => {

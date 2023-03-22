@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
-const mobile = require('../img/mobile.jpg')
-const pc = require('../img/pc.jpg')
+const mobile = require('../../img/mobile.jpg')
+const pc = require('../../img/pc.jpg')
 
 type IProps = {
   isMobile: boolean

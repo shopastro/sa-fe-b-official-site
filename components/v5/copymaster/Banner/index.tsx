@@ -11,7 +11,7 @@ type IProps = {
 const BelugaBanner = (props: IProps) => {
   const { isMobile } = props
   const freeLink = useTrailLink()
-  const link = isMobile ? `/user/register` : freeLink('beluga_industry', 'beluga')
+  const link = isMobile ? `/user/register` : freeLink('beluga_copymaster', 'beluga')
 
   return (
     <div>

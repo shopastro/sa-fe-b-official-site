@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
-const introducePc = require('../img/introducePc.png')
-const introduce = require('../img/introduce.png')
+const introducePc = require('../../img/copymaster/introducePc.png')
+const introduce = require('../../img/copymaster/introduce.png')
 
 type IProps = {
   isMobile: boolean

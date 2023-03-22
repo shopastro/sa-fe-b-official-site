@@ -1,11 +1,11 @@
-const contentPc = require('../img/contentPc.png')
-const content = require('../img/content.png')
-const scenePc = require('../img/scenePc.png')
-const scene = require('../img/scene.png')
-const frontPc = require('../img/frontPc.png')
-const front = require('../img/front.png')
-const customPc = require('../img/customPc.png')
-const custom = require('../img/custom.png')
+const contentPc = require('../../img/copymaster/contentPc.png')
+const content = require('../../img/copymaster/content.png')
+const scenePc = require('../../img/copymaster/scenePc.png')
+const scene = require('../../img/copymaster/scene.png')
+const frontPc = require('../../img/copymaster/frontPc.png')
+const front = require('../../img/copymaster/front.png')
+const customPc = require('../../img/copymaster/customPc.png')
+const custom = require('../../img/copymaster/custom.png')
 
 export const bannerData = [
   {
