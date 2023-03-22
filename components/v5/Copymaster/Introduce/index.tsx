@@ -37,10 +37,10 @@ const BelugaQuestion = (props: IProps) => {
     function typing() {
       if (i <= str.length) {
         setAutoText(str.substring(0, i++))
-        setTimeout(typing, 300)
+        setTimeout(typing, 200)
       } else {
         i = 0
-        setTimeout(typing, 300)
+        setTimeout(typing, 1500)
       }
     }
 
@@ -80,7 +80,7 @@ const BelugaQuestion = (props: IProps) => {
           </span>
           <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">跨境人的高效生产力工具</span>
           <div className="leading-[18px] h-[18px] md:h-[30px] md:leading-[30px] text-[12px] md:text-[20px] mt-[4px] md:mt-[10px]">
-            {autoText}|
+            {autoText} {autoText.length < 16 ? '|' : ''}
           </div>
           <div className="w-screen px-[38px] md:hidden flex flex-col">
             <Input
