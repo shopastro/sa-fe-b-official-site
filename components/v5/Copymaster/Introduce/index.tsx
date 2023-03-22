@@ -80,7 +80,8 @@ const BelugaQuestion = (props: IProps) => {
           </span>
           <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">跨境人的高效生产力工具</span>
           <div className="leading-[18px] h-[18px] md:h-[30px] md:leading-[30px] text-[12px] md:text-[20px] mt-[4px] md:mt-[10px]">
-            {autoText} {autoText.length < 16 ? '|' : ''}
+            {autoText}
+            {autoText.length < 16 ? '|' : ''}
           </div>
           <div className="w-screen px-[38px] md:hidden flex flex-col">
             <Input
