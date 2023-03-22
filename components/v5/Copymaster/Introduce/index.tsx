@@ -1,10 +1,11 @@
 import { Input } from 'antd-mobile'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
-const introduceBg = require('../../img/industry/introduceBg.png')
+const introducePc = require('../../img/copymaster/introducePc.png')
+const introduce = require('../../img/copymaster/introduce.png')
 
 type IProps = {
   isMobile: boolean
@@ -15,6 +16,7 @@ const BelugaQuestion = (props: IProps) => {
   const freeLink = useTrailLink()
   const [phone, setPhone] = useState('')
   const [showError, setShowError] = useState(false)
+  const [autoText, setAutoText] = useState('')
 
   const trailLink = () => {
     if (isMobile) {
@@ -24,8 +26,25 @@ const BelugaQuestion = (props: IProps) => {
         return '#'
       }
     } else {
-      return freeLink('beluga_industry', 'beluga')
+      return freeLink('beluga_copymaster', 'beluga')
     }
+  }
+
+  const autoShowText = () => {
+    let i = 0
+    const str = '本页文案均由白鲸文案大师AI生成'
+
+    function typing() {
+      if (i <= str.length) {
+        setAutoText(str.substring(0, i++))
+        setTimeout(typing, 200)
+      } else {
+        i = 0
+        setTimeout(typing, 1500)
+      }
+    }
+
+    typing()
   }
 
   const handleInputNumber = (v: string) => {
@@ -39,23 +58,31 @@ const BelugaQuestion = (props: IProps) => {
     }
   }
 
+  useEffect(() => {
+    autoShowText()
+  }, [])
+
   return (
     <div
       className="relative w-[100%] h-[320px] md:h-[0]"
       style={{
-        background: `url(${introduceBg.default.src}) no-repeat`,
-        backgroundSize: 'cover',
-        backgroundColor: '#F4F6FA',
+        background: `url(  ${isMobile ? introduce.default.src : introducePc.default.src}) no-repeat`,
+        backgroundSize: isMobile ? 'contain' : 'cover',
+        backgroundColor: '#FBFDFF',
         width: '100% !important',
-        paddingTop: '30.56%'
+        paddingTop: isMobile ? '96%' : '32.56%'
       }}
     >
       <div className="absolute top-[0] h-[100%] w-screen flex items-center justify-center">
         <h1 className="flex items-center  w-screen flex-col  text-[#0E1E46]">
           <span className="text-[#004DD1] md:text-[56px] text-[28px] md:mb-[10px] mb-[4px] font-[600]">
-            白鲸行业情报
+            白鲸文案大师
           </span>
-          <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">品牌独立站的全方位竞对分析工具</span>
+          <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">跨境人的高效生产力工具</span>
+          <div className="leading-[18px] h-[18px] md:h-[30px] md:leading-[30px] text-[12px] md:text-[20px] mt-[4px] md:mt-[10px]">
+            {autoText}
+            {autoText.length < 16 ? '|' : ''}
+          </div>
           <div className="w-screen px-[38px] md:hidden flex flex-col">
             <Input
               onChange={(v) => {
