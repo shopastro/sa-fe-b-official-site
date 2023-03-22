@@ -11,7 +11,7 @@ export const bannerData = [
   {
     type: 'content',
     title: '内容精准，转化更佳',
-    info: ['聚焦在出海电商场景进行AI训练，生成文案效果更有利消费者转化'],
+    info: ['聚焦在出海电商场景进行AI训练，生成的文案让消费者转化效果更佳'],
     image: content,
     imagePc: contentPc,
     height: 331,

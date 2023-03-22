@@ -38,11 +38,11 @@ const BelugaBanner = (props: IProps) => {
               <h3 className="md:font-[600] font-[500] text-[#0E1E46] md:text-[40px] text-[32px] mb-[16px] md:mb-[24px]">
                 {el.title}
               </h3>
-              <ul style={{ listStyle: 'disc' }} className="ml-[20px] md:ml-[0]">
+              <ul style={{ listStyle: 'none' }} className="ml-[20px] md:ml-[0]">
                 {el.info.map((item) => {
                   return (
                     <li
-                      className="font-[400] text-[#535D77] text-[16px] md:text-[18px] leading-relaxed	 md:leading-loose"
+                      className="font-[400] text-[#535D77] text-[16px] md:text-[18px] leading-relaxed md:leading-loose"
                       key={item}
                     >
                       {item}
