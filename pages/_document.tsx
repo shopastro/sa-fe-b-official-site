@@ -18,7 +18,7 @@ export default function Document() {
         <link rel="prefetch" href="https://sys.cdn.ishopastro.com/fe/common/lib.min@1.0.0.js" as="script" />
         <Main />
         <NextScript />
-        <Script src={chatSdkSrc} strategy="beforeInteractive" />
+        <Script src={chatSdkSrc} strategy="afterInteractive" />
       </body>
     </Html>
   )
