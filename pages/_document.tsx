@@ -2,9 +2,7 @@ import { Head, Html, Main, NextScript } from 'next/document'
 import Script from 'next/script'
 
 const isBeta = process.env.APP_ENV === 'dev'
-const chatSdkSrc = isBeta
-  ? '//sys.cdn.ishopastro.com/pages/beta/sa-c-chat-sdk.js'
-  : '//sys.cdn.ishopastro.com/lib/sa-chat-sdk.js'
+const chatSdkSrc = `//sys.cdn.ishopastro.com/lib/${isBeta ? 'beta/' : ''}sa-chat-sdk.js`
 
 export default function Document() {
   return (
@@ -17,10 +15,10 @@ export default function Document() {
           }}
         ></script>
         <script dangerouslySetInnerHTML={{ __html: `window.gloConfig=${JSON.stringify({ isBeta })}` }}></script>
-        <Script src={chatSdkSrc} strategy="lazyOnload" />
         <link rel="prefetch" href="https://sys.cdn.ishopastro.com/fe/common/lib.min@1.0.0.js" as="script" />
         <Main />
         <NextScript />
+        <Script src={chatSdkSrc} strategy="beforeInteractive" />
       </body>
     </Html>
   )
