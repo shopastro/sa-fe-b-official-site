@@ -1,7 +1,5 @@
-import axios from 'axios'
 import classNames from 'classnames'
-import Script from 'next/script'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useContainer } from 'unstated-next'
 
 import detectionStore from '../../../store/detectionStore'
@@ -16,31 +14,10 @@ type IProps = {
 
 const Pendant: React.FC<IProps> = () => {
   const { showModal, setShowMoadl, setButtonType } = useContainer(detectionStore)
-  const [version, setVersion] = useState<string>()
 
   const handleClose = () => {
     setShowMoadl(false)
   }
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      // @ts-ignore
-      const isBeta = window?.gloConfig?.isBeta
-      if (isBeta) {
-        setVersion('beta')
-      } else {
-        try {
-          axios.get('/api/shop/v1/frontsetting/queryByKey.json?configKey=showcase-sdk-version').then((res) => {
-            const data = JSON.parse(res.data?.data)
-            const chatVersion = data['sa-c-chat-sdk']
-            if (chatVersion) setVersion(chatVersion)
-          })
-        } catch (err) {
-          console.log(err)
-        }
-      }
-    }
-  }, [])
 
   return (
     <div className={styles.pendantContainer}>
@@ -75,7 +52,6 @@ const Pendant: React.FC<IProps> = () => {
         </li>
         <li>
           <div id="sa-showcase-chat" className={styles['sa-showcase-chat']}></div>
-          {version && <Script src={`//sys.cdn.ishopastro.com/pages/${version}/sa-c-chat-sdk.js`} />}
         </li>
         <li id="pendantItem" style={{ display: 'none' }}></li>
       </ul>
