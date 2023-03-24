@@ -8,7 +8,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Pendant from '../../components/common/Pendant'
 import Header from '../../components/v2/Header'
 import SendBtn from '../../components/v5/SendBtn/SendBtn'
-import { passwordValidator, phoneNumberValidator } from '../../utils/check'
+import { phoneNumberValidator } from '../../utils/check'
 
 const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
 
@@ -262,7 +262,11 @@ const Register = () => {
               name="password"
               validateTrigger="onBlur"
               validateFirst={true}
-              rules={[{ required: true, message: '请输入密码' }, { validator: passwordValidator }]}
+              rules={[
+                { required: true, message: '请输入密码' },
+                { min: 6, message: '密码需大于等于6位' },
+                { max: 18, message: '密码需小于等于20位' }
+              ]}
             >
               <Input placeholder="请输入密码" clearable type="password" />
             </Form.Item>
