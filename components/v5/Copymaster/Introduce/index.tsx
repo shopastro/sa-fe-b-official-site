@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
+// const video = require('../../../../public/video/test.mp4')
+// console.log(video)
+
 type IProps = {
   isMobile: boolean
 }
@@ -119,6 +122,8 @@ const Industry = (props: IProps) => {
               </span>
             </div>
           </Link>
+          {/* <iframe src={video} /> */}
+          {/* <video controls autoPlay src={video.default.src} /> */}
         </div>
       </div>
     </div>
