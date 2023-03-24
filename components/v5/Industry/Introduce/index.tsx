@@ -10,7 +10,7 @@ type IProps = {
   isMobile: boolean
 }
 
-const BelugaQuestion = (props: IProps) => {
+const Industry = (props: IProps) => {
   const { isMobile } = props
   const freeLink = useTrailLink()
   const [phone, setPhone] = useState('')
@@ -101,4 +101,4 @@ const BelugaQuestion = (props: IProps) => {
   )
 }
 
-export default BelugaQuestion
+export default Industry
