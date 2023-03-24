@@ -18,21 +18,32 @@ const Video = (props: IProps) => {
     >
       {!isMobile && (
         <div
-          onClick={() => {
-            setPlayBtn(false)
-            document.querySelector('video')?.play()
+          className="absolute"
+          style={{
+            zIndex: 2,
+            display: playBtn ? 'flex' : 'none',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            height: '560px'
           }}
-          style={{ zIndex: 2, display: playBtn ? 'block' : 'none' }}
-          id="play"
-          className="absolute top-[50%] left-[50%] md:bottom-[-32px] md:right-[-32px] bottom-[-16px] right-[-16px] cursor-pointer md:w-[64px] md:h-[64px] w-[32px] h-[32px]"
         >
-          <Image
-            width={64}
-            height={64}
-            quality={100}
-            src="https://media.cdn.ishopastro.com/svg/sa-fe-b-icon/video_play.svg"
-            alt="banner bg"
-          />
+          <div
+            onClick={() => {
+              setPlayBtn(false)
+              document.querySelector('video')?.play()
+            }}
+            id="play"
+            className="cursor-pointer md:w-[64px] md:h-[64px] w-[32px] h-[32px]"
+          >
+            <Image
+              width={64}
+              height={64}
+              quality={100}
+              src="https://media.cdn.ishopastro.com/svg/sa-fe-b-icon/video_play.svg"
+              alt="banner bg"
+            />
+          </div>
         </div>
       )}
 
@@ -40,7 +51,7 @@ const Video = (props: IProps) => {
         className="md:max-w-[988px] w-[100%] h-[100%] md:h-[100%] bt-[0]"
         controls
         preload="metadata"
-        poster={isMobile ? 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/mobile_cover.svg' : ''}
+        poster={isMobile ? 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/copymaster_mobile.svg' : ''}
       >
         <source
           src="https://prod-ishopastro-com.oss-accelerate-overseas.aliyuncs.com/videos/copymaster.mp4"
