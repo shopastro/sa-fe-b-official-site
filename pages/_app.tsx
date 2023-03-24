@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       const searchToBase64 = Buffer.from(location.href).toString('base64')
       sessionStorage.setItem('refer', searchToBase64)
     }
-  }, [location.href])
+  }, [])
   return (
     <>
       {/*@ts-ignore*/}
