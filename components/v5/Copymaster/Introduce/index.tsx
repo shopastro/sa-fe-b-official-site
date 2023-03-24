@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
-const introducePc = require('../../../../public/img/copymaster/introducePc.png')
 const introduce = require('../../../../public/img/copymaster/introduce.png')
+const introducePc = require('../../../../public/img/copymaster/introducePc.png')
 
 type IProps = {
   isMobile: boolean
 }
 
-const BelugaQuestion = (props: IProps) => {
+const Industry = (props: IProps) => {
   const { isMobile } = props
   const freeLink = useTrailLink()
   const [phone, setPhone] = useState('')
@@ -74,11 +74,13 @@ const BelugaQuestion = (props: IProps) => {
       }}
     >
       <div className="absolute top-[0] h-[100%] w-screen flex items-center justify-center">
-        <h1 className="flex items-center  w-screen flex-col  text-[#0E1E46]">
-          <span className="text-[#004DD1] md:text-[56px] text-[28px] md:mb-[10px] mb-[4px] font-[600]">
-            白鲸文案大师
-          </span>
-          <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">跨境人的高效生产力工具</span>
+        <div className="flex items-center  w-screen flex-col">
+          <h1 className="flex items-center  w-screen flex-col text-[#0E1E46]">
+            <span className="text-[#004DD1] md:text-[56px] text-[28px] md:mb-[10px] mb-[4px] font-[600]">
+              白鲸文案大师
+            </span>
+            <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">跨境人的高效生产力工具</span>
+          </h1>
           <div className="leading-[18px] h-[18px] md:h-[30px] md:leading-[30px] text-[12px] md:text-[20px] mt-[4px] md:mt-[10px]">
             {autoText}
             {autoText.length < 16 ? '|' : ''}
@@ -122,10 +124,10 @@ const BelugaQuestion = (props: IProps) => {
               </span>
             </div>
           </Link>
-        </h1>
+        </div>
       </div>
     </div>
   )
 }
 
-export default BelugaQuestion
+export default Industry

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useState } from 'react'
 
 type IProps = {
   isMobile: boolean
@@ -6,17 +7,25 @@ type IProps = {
 
 const Video = (props: IProps) => {
   const { isMobile } = props
+  const [playBtn, setPlayBtn] = useState(true)
   // controls
   return (
     <div
-      className="w-[100%] h-[320px] md:h-[640px] md:px-[80px] md:py-[40px] relative"
+      className="w-[100%] h-[220px] md:h-[640px] md:px-[80px] md:py-[40px] flex justify-center relative"
       style={{
         backgroundColor: '#FBFDFF',
-        width: '100% !important',
-        height: '200px'
+        width: '100% !important'
       }}
     >
-      <div className="absolute top-[50%] left-[50%] md:bottom-[-32px] md:right-[-32px] cursor-pointer w-[64px] h-[64px]">
+      <div
+        onClick={() => {
+          setPlayBtn(false)
+          document.querySelector('video')?.play()
+        }}
+        style={{ zIndex: 2, display: playBtn ? 'block' : 'none' }}
+        id="play"
+        className="absolute top-[50%] left-[50%] md:bottom-[-32px] md:right-[-32px] bottom-[-16px] right-[-16px] cursor-pointer md:w-[64px] md:h-[64px] w-[32px] h-[32px]"
+      >
         <Image
           width={64}
           height={64}
@@ -26,7 +35,7 @@ const Video = (props: IProps) => {
         />
       </div>
 
-      <video className="w-[screen] h-[100%] md:h-[100%]" controls preload="metadata">
+      <video className="md:max-w-[988px] w-[100%] h-[100%] md:h-[100%] bt-[0]" controls preload="metadata">
         <source
           src="https://prod-ishopastro-com.oss-accelerate-overseas.aliyuncs.com/videos/copymaster.mp4"
           type="video/mp4"
