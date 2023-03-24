@@ -51,7 +51,8 @@ const Video = (props: IProps) => {
         className="md:max-w-[988px] w-[100%] h-[100%] md:h-[100%] bt-[0]"
         controls
         preload="metadata"
-        poster={isMobile ? 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/copymaster_mobile.svg' : ''}
+        style={{ objectFit: 'cover' }}
+        poster={isMobile ? 'https://media.cdn.ishopastro.com/svg/sa-fe-b-background/copamaster_cover_mobile.svg' : ''}
       >
         <source
           src="https://prod-ishopastro-com.oss-accelerate-overseas.aliyuncs.com/videos/copymaster.mp4"
