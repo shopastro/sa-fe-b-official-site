@@ -268,7 +268,7 @@ const Register = () => {
                 { max: 18, message: '密码需小于等于20位' }
               ]}
             >
-              <Input placeholder="请输入密码" clearable type="password" />
+              <Input placeholder="请输入6-20位密码" clearable type="password" />
             </Form.Item>
             <Form.Item>
               <Checkbox

@@ -5,6 +5,7 @@ import Header from '../components/v2/Header'
 import Banner from '../components/v5/Copymaster/Banner'
 import Introduce from '../components/v5/Copymaster/Introduce'
 import UseProduct from '../components/v5/Copymaster/UseProduct'
+import Video from '../components/v5/Copymaster/Video'
 import FixedButton from '../components/v5/FixedButton'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
@@ -54,6 +55,7 @@ const CopyMaster: NextPage = () => {
       <div className="pb-[70px] md:pb-0">
         <Menu />
         <Introduce isMobile={isMobile} />
+        <Video isMobile={isMobile} />
         <Banner isMobile={isMobile} />
         <UseProduct isMobile={isMobile} />
         <Footer />

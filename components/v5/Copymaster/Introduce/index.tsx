@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
-// const video = require('../../../../public/video/test.mp4')
-// console.log(video)
+const introduce = require('../../../../public/img/copymaster/introduce.png')
+const introducePc = require('../../../../public/img/copymaster/introducePc.png')
 
 type IProps = {
   isMobile: boolean
@@ -66,6 +66,8 @@ const Industry = (props: IProps) => {
     <div
       className="relative w-[100%] h-[320px] md:h-[0]"
       style={{
+        background: `url(  ${isMobile ? introduce.default.src : introducePc.default.src}) no-repeat`,
+        backgroundSize: isMobile ? 'contain' : 'cover',
         backgroundColor: '#FBFDFF',
         width: '100% !important',
         paddingTop: isMobile ? '96%' : '32.56%'
@@ -122,8 +124,6 @@ const Industry = (props: IProps) => {
               </span>
             </div>
           </Link>
-          {/* <iframe src={video} /> */}
-          {/* <video controls autoPlay src={video.default.src} /> */}
         </div>
       </div>
     </div>
