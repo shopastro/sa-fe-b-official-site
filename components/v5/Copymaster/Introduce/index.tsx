@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react'
 
 import useTrailLink from '../../../../hooks/useTrail'
 
-// const video = require('../../../../public/video/test.mp4')
-// console.log(video)
+const introducePc = require('../../../../public/img/copymaster/introducePc.png')
+const introduce = require('../../../../public/img/copymaster/introduce.png')
 
 type IProps = {
   isMobile: boolean
 }
 
-const Industry = (props: IProps) => {
+const BelugaQuestion = (props: IProps) => {
   const { isMobile } = props
   const freeLink = useTrailLink()
   const [phone, setPhone] = useState('')
@@ -66,19 +66,19 @@ const Industry = (props: IProps) => {
     <div
       className="relative w-[100%] h-[320px] md:h-[0]"
       style={{
+        background: `url(  ${isMobile ? introduce.default.src : introducePc.default.src}) no-repeat`,
+        backgroundSize: isMobile ? 'contain' : 'cover',
         backgroundColor: '#FBFDFF',
         width: '100% !important',
         paddingTop: isMobile ? '96%' : '32.56%'
       }}
     >
       <div className="absolute top-[0] h-[100%] w-screen flex items-center justify-center">
-        <div className="flex items-center  w-screen flex-col">
-          <h1 className="flex items-center  w-screen flex-col text-[#0E1E46]">
-            <span className="text-[#004DD1] md:text-[56px] text-[28px] md:mb-[10px] mb-[4px] font-[600]">
-              白鲸文案大师
-            </span>
-            <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">跨境人的高效生产力工具</span>
-          </h1>
+        <h1 className="flex items-center  w-screen flex-col  text-[#0E1E46]">
+          <span className="text-[#004DD1] md:text-[56px] text-[28px] md:mb-[10px] mb-[4px] font-[600]">
+            白鲸文案大师
+          </span>
+          <span className="text-[#0E1E46] md:text-[44px] text-[20px] font-[500]">跨境人的高效生产力工具</span>
           <div className="leading-[18px] h-[18px] md:h-[30px] md:leading-[30px] text-[12px] md:text-[20px] mt-[4px] md:mt-[10px]">
             {autoText}
             {autoText.length < 16 ? '|' : ''}
@@ -122,12 +122,10 @@ const Industry = (props: IProps) => {
               </span>
             </div>
           </Link>
-          {/* <iframe src={video} /> */}
-          {/* <video controls autoPlay src={video.default.src} /> */}
-        </div>
+        </h1>
       </div>
     </div>
   )
 }
 
-export default Industry
+export default BelugaQuestion
