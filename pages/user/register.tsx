@@ -65,13 +65,22 @@ const Register = () => {
           }
         })
       }
-      const res = await axios.post(`${apiDomain.current}/common/v1/register.json`, {
-        password: values.password,
-        phoneNum: values.phoneNum,
-        region: '+86',
-        verifyCode: values.verifyCode,
-        origin: 'mobile'
-      })
+
+      const res = await axios.post(
+        `${apiDomain.current}/common/v1/register.json`,
+        {
+          password: values.password,
+          phoneNum: values.phoneNum,
+          region: '+86',
+          verifyCode: values.verifyCode,
+          origin: 'mobile'
+        },
+        {
+          headers: {
+            'shopastro-origin': sessionStorage.getItem('refer') ? `refer=${sessionStorage.getItem('refer')}` : ''
+          }
+        }
+      )
       if (res.data) {
         if (res.data.success) {
           setSuccess(true)
