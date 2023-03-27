@@ -49,7 +49,7 @@ const Banner = () => {
               <Image
                 width={748}
                 height={582}
-                quality={75}
+                priority
                 src="https://media.cdn.ishopastro.com/upload/images/20221219.png_2022-12-19-12-02-37.png"
                 alt="banner1"
               />
@@ -147,7 +147,6 @@ const Banner = () => {
             <Image
               width={676}
               height={539}
-              quality={100}
               src="https://media.cdn.ishopastro.com/upload/images/20221212-151737.png_2022-12-12-07-35-32.png"
               alt="banner"
             />
