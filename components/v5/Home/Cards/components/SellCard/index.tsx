@@ -14,7 +14,6 @@ const SellCard = () => {
         <Image
           width={1570}
           height={1200}
-          quality={100}
           src="https://media.cdn.ishopastro.com/upload/images/3.png_2022-12-22-08-13-26.png"
           alt="快速建站"
         />
