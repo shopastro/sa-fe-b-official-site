@@ -16,6 +16,7 @@ const SellCard = () => {
           height={1200}
           src="https://media.cdn.ishopastro.com/upload/images/3.png_2022-12-22-08-13-26.png"
           alt="快速建站"
+          loading={'lazy'}
         />
       </div>
       <div className="flex flex-col flex-1 px-[20px] md:px-0">

@@ -43,6 +43,7 @@ const UserCard = () => {
           height={1200}
           src="https://media.cdn.ishopastro.com/upload/images/4.png_2022-12-22-08-13-26.png"
           alt="快速建站"
+          loading={'lazy'}
         />
       </div>
     </div>
