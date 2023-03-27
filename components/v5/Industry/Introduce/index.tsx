@@ -29,11 +29,12 @@ const Industry = (props: IProps) => {
   }
 
   const handleInputNumber = (v: string) => {
-    if (v.length <= 11) {
+    const trimStr = v.replace(/\s*/g, '').substring(0, 11)
+    if (trimStr.length <= 11) {
       setShowError(false)
-      setPhone(v)
-      if (v.length === 11) {
-        const isRightPhone = Boolean(/^(1|2)(3|4|5|6|7|8|9)\d{9}$/g.test(v))
+      setPhone(trimStr)
+      if (trimStr.length === 11) {
+        const isRightPhone = Boolean(/^(1|2)(3|4|5|6|7|8|9)\d{9}$/g.test(trimStr))
         setShowError(!isRightPhone)
       }
     }
@@ -68,7 +69,6 @@ const Industry = (props: IProps) => {
               }}
               value={phone}
               type="number"
-              maxLength={11}
               style={{ '--placeholder-color': '#D5D5D5' }}
               className="w-screen font-[12px] px-[15px] mt-[20px] h-[38px] rounded-[6px] border-[1px] border-[#BFBFBF]"
               placeholder="输入您的手机号立即体验"
