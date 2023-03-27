@@ -47,9 +47,9 @@ const Banner = () => {
             </h1>
             <div className="flex items-center md:hidden">
               <Image
-                width={1352}
-                height={1050}
-                quality={100}
+                width={748}
+                height={582}
+                quality={75}
                 src="https://media.cdn.ishopastro.com/upload/images/20221219.png_2022-12-19-12-02-37.png"
                 alt="banner1"
               />
