@@ -49,7 +49,6 @@ const Home: NextPage = () => {
             <Image
               width={353}
               height={554}
-              quality={100}
               src="https://media.cdn.ishopastro.com/upload/images/20221202-103722.png_2022-12-02-06-30-12.png"
               alt="bg1"
             />
@@ -58,7 +57,6 @@ const Home: NextPage = () => {
             <Image
               width={353}
               height={649}
-              quality={100}
               src="https://media.cdn.ishopastro.com/upload/images/20221202-103716.png_2022-12-02-06-30-12.png"
               alt="bg2"
             />

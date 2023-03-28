@@ -10,9 +10,7 @@
       margin-right: 2.4rem;
 
       li {
-        margin-bottom: 0.4rem;
-        width: 7.6rem;
-        height: 7.6rem;
+        margin-bottom: 1.2rem;
         background-color: #004ed1;
         border-radius: 0.8rem;
         display: flex;
@@ -20,28 +18,34 @@
         align-items: center;
         cursor: pointer;
         box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+        border-radius: 200px;
 
         .pendantItem {
+          display: flex;
+          align-items: center;
+          padding: 10px 16px;
+
           .imgItem {
-            height: 3rem;
+            width: 40px;
+            height: 40px;
             background-image: url(./img/listen.svg);
-            width: 100%;
             background-repeat: no-repeat;
             background-position: center;
           }
 
           .textItem {
             color: #ffffff;
-            font-size: 1.2rem;
-            margin-top: 0.6rem;
+            font-size: 1.4rem;
+            margin-right: 8px;
           }
         }
       }
 
       li:nth-child(1) {
         position: relative;
+
         .imgItem {
-          background-image: url(./img/weChat.svg);
+          background-image: url(//media.cdn.ishopastro.com/svg/sa-fe-c/430303be1b591e087af28dc391b5a890.svg);
         }
 
         &:hover {
@@ -76,9 +80,8 @@
       }
 
       li:nth-child(3) {
-
         .imgItem {
-          background-image: url(./img/free.svg);
+          background-image: url(//media.cdn.ishopastro.com/svg/sa-fe-c/aac70e033d35f5ccbeef54a812318938.svg);
         }
       }
     }
@@ -114,5 +117,49 @@
     border-left-color: #fff;
     border-width: 0.8rem;
     margin-top: -1rem;
+  }
+
+  .sa-showcase-chat {
+    display: flex;
+    align-items: center;
+    position: relative !important;
+    top: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+  }
+
+  .sa-showcase-chat [data-role=sa-chat] {
+    position: static !important;
+    top: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+  }
+
+  .sa-showcase-chat [data-role=sa-chat-entry] {
+    box-shadow: none;
+  }
+
+  .sa-showcase-chat [data-role=sa-chat-title] {
+    display: flex !important;
+    align-items: center;
+    font-size: 0;
+  }
+
+  .sa-showcase-chat [data-role=sa-chat-title]::after {
+    content: "在线沟通";
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  .sa-showcase-chat [data-role=sa-chat-unread] {
+    position: absolute !important;
+    right: 100%;
+  }
+
+  .sa-showcase-chat [data-role=sa-chat-unread]::after {
+    box-shadow: none;
+    z-index: 1;
   }
 }

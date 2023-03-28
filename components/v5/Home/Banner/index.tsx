@@ -47,9 +47,9 @@ const Banner = () => {
             </h1>
             <div className="flex items-center md:hidden">
               <Image
-                width={1352}
-                height={1050}
-                quality={100}
+                width={748}
+                height={582}
+                priority
                 src="https://media.cdn.ishopastro.com/upload/images/20221219.png_2022-12-19-12-02-37.png"
                 alt="banner1"
               />
@@ -68,7 +68,7 @@ const Banner = () => {
                       className={`flex items-center mb-[4px] text-[16px] leading-[28px] md:mb-[6px] md:text-[18px] md:leading-[32px]`}
                     >
                       <span className="flex w-[8px] h-[8px] mr-[6px] rounded-[4px] bg-white" />
-                      <span style={{ marginRight: i === 1 ? '16px' : '' }}>{el}</span>
+                      <span style={{ marginRight: i === 1 ? '16px' : '0' }}>{el}</span>
                     </div>
                   )
                 })}
@@ -147,7 +147,6 @@ const Banner = () => {
             <Image
               width={676}
               height={539}
-              quality={100}
               src="https://media.cdn.ishopastro.com/upload/images/20221212-151737.png_2022-12-12-07-35-32.png"
               alt="banner"
             />

@@ -10,30 +10,20 @@ const Partners = () => {
   const [swiperInstance, setSwiperInstance] = useState<any>(null)
   const { data } = partnersData[activeIndex]
   const titleRefs = useRef<HTMLDivElement[]>([])
-  const isFirstRender = useRef(true)
   const isMobile = useIsMobile()
 
   function handleTitleClick(index: number) {
     setActiveIndex(index)
     if (isMobile) {
-      swiperInstance.slideTo(index)
-    }
-  }
-
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false
-      return
-    }
-
-    if (isMobile) {
-      const titleRef = titleRefs.current[activeIndex]
+      const titleRef = titleRefs.current[index]
       titleRef.scrollIntoView({
         block: 'nearest',
         inline: 'center'
       })
+
+      swiperInstance.slideTo(index)
     }
-  }, [activeIndex])
+  }
 
   return (
     <div id="partners" className="flex flex-col pb-[40px] pt-[48px] md:items-center md:pt-[80px] md:pb-[48px]">
