@@ -247,11 +247,11 @@ function DetectionStore() {
     showModal,
     errorText,
     setErrorText,
-    // loopResult,
+    loopResult: () => {},
     modalVisiabl,
     setModalVisiabl,
-    // fileS3Url,
-    // reqNoData,
+    fileS3Url: '',
+    reqNoData: false,
     buttonType,
     setButtonType
   }
