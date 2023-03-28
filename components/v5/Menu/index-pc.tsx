@@ -27,7 +27,7 @@ const Menu: React.FC<MenuProps> = (props) => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center sticky top-0 w-screen text-[16px] leading-[20px] text-[#FFF] z-[100]"
+      className="hidden md:flex flex-col items-center justify-center sticky top-0 w-screen text-[16px] leading-[20px] text-[#FFF] z-[100]"
       style={{
         height: `${120 - 40 * radio}px`,
         backgroundColor: `rgba(255, 255, 255, ${route === '/about' && radio < 0.7 ? 0.7 : radio})`

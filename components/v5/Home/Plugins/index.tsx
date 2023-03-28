@@ -145,7 +145,6 @@ const Plugins = () => {
             <Image
               width={58}
               height={58}
-              quality={100}
               src="https://media.cdn.ishopastro.com/svg/shopastrohome/cd0fb76c374c39f5c1fc747a424b2d0c.svg"
               alt="arrow icon"
             />
@@ -159,7 +158,7 @@ const Plugins = () => {
                     return (
                       <div key={index} className="flex w-[250px] h-[102px] mb-[12px] p-[12px] bg-white rounded-[8px]">
                         <div className="flex-shrink-0 w-[44px] h-[44px] mr-[12px]">
-                          <Image width={64} height={64} quality={100} src={pluginData.icon} alt={pluginData.title} />
+                          <Image width={64} height={64} src={pluginData.icon} alt={pluginData.title} />
                         </div>
                         <div>
                           <div className="mb-[12px] text-[14px] leading-[18px] text-[#0E1E46]">{pluginData.title}</div>

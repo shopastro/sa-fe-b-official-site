@@ -38,9 +38,9 @@ const Quick = () => {
         <Image
           width={1570}
           height={1200}
-          quality={100}
           src="https://media.cdn.ishopastro.com/upload/images/2.png_2022-12-22-08-13-25.png"
           alt="白鲸广告管理"
+          loading={'lazy'}
         />
       </div>
     </div>
