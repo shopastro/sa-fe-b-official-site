@@ -45,7 +45,7 @@ const Home: NextPage = () => {
       {/* 背景 */}
       <div className="flex items-center justify-center absolute top-0 left-0 w-screen h-[1300px] md:h-[950px] bg-[#003892] overflow-hidden">
         <div className="relative w-screen h-full md:w-[1200px] md:m-auto">
-          <div className="absolute w-[220px] top-[75px] left-[-15px] md:top-[270px] md:left-[624px] md:w-[353px]">
+          <div className="hidden md:block absolute w-[220px] top-[75px] left-[-15px] md:top-[270px] md:left-[624px] md:w-[353px]">
             <Image
               width={353}
               height={554}
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
               alt="bg1"
             />
           </div>
-          <div className="absolute w-[220px] top-[12px] right-[-85px] md:top-[145px] md:left-[1135px] md:w-[353px]">
+          <div className="hidden md:block absolute w-[220px] top-[12px] right-[-85px] md:top-[145px] md:left-[1135px] md:w-[353px]">
             <Image
               width={353}
               height={649}
