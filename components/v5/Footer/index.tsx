@@ -183,6 +183,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        {/* @ts-ignore */}
         {!isMobile && <Pendant />}
       </div>
     </div>
