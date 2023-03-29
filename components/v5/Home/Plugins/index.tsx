@@ -67,7 +67,6 @@ const Plugins = () => {
               width={58}
               height={58}
               quality={100}
-              objectFit={'cover'}
               src="https://media.cdn.ishopastro.com/svg/shopastrohome/cd0fb76c374c39f5c1fc747a424b2d0c.svg"
               alt="arrow icon"
             />
