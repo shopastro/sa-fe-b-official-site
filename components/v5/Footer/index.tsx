@@ -1,9 +1,11 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import useIsMobile from '../../../hooks/useIsMobile'
-import Pendant from '../../common/Pendant'
+
+const Pendant = dynamic(() => import('../../common/Pendant'))
 
 const add = 'https://media.cdn.ishopastro.com/svg/shopastrohome/7a7423a5d27fb477da06078dc3a6689a.svg'
 const minus = 'https://media.cdn.ishopastro.com/svg/shopastrohome/f0c77881530c6ee43515438ef4d8265f.svg'
