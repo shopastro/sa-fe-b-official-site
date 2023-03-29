@@ -68,8 +68,6 @@ const Industry = (props: IProps) => {
       style={{
         background: `url(  ${isMobile ? introduce.default.src : introducePc.default.src}) no-repeat`,
         backgroundSize: isMobile ? 'contain' : 'cover',
-        // backgroundColor: '#FBFDFF',
-        width: '100% !important',
         paddingTop: isMobile ? '96%' : '32.56%'
       }}
     >

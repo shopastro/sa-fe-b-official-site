@@ -46,7 +46,6 @@ const Industry = (props: IProps) => {
         background: `url(${introduceBg.default.src}) no-repeat`,
         backgroundSize: 'cover',
         backgroundColor: '#F4F6FA',
-        width: '100% !important',
         paddingTop: '30.56%'
       }}
     >

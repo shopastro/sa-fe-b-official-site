@@ -172,7 +172,7 @@ const Register = () => {
             style={{
               //@ts-ignore
               '--adm-color-primary': '#29A72F',
-              padding: '40px 55px 24px 55px !important'
+              padding: '40px 55px 24px 55px'
             }}
             status="success"
             title={<h3 className="text-[#222] font-[500] text-[24px]">注册成功</h3>}
@@ -274,7 +274,7 @@ const Register = () => {
               <Checkbox
                 style={{
                   '--icon-size': '22px',
-                  borderRadius: '8px !important'
+                  borderRadius: '8px'
                 }}
                 checked={agreement}
                 onChange={(value) => {
