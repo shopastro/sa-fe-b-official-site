@@ -29,14 +29,13 @@ const Industry = (props: IProps) => {
   }
 
   const handleInputNumber = (v: string) => {
-    const trimStr = v.replace(/\s*/g, '').substring(0, 11)
-    if (trimStr.length <= 11) {
-      setShowError(false)
-      setPhone(trimStr)
-      if (trimStr.length === 11) {
-        const isRightPhone = Boolean(/^(1|2)(3|4|5|6|7|8|9)\d{9}$/g.test(trimStr))
-        setShowError(!isRightPhone)
-      }
+    const trimStr = v.replace(/[^0-9]/gi, '').substring(0, 11)
+
+    setShowError(false)
+    setPhone(trimStr)
+    if (trimStr.length === 11) {
+      const isRightPhone = Boolean(/^(1|2)(3|4|5|6|7|8|9)\d{9}$/g.test(trimStr))
+      setShowError(!isRightPhone)
     }
   }
 
