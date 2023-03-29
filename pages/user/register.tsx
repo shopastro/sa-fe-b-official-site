@@ -142,6 +142,11 @@ const Register = () => {
     await handleRegister(values)
   }
 
+  const handleInputNumber = (v: string) => {
+    const trimStr = v.replace(/[^0-9]/gi, '').substring(0, 11)
+    form.setFieldValue('phoneNum', trimStr)
+  }
+
   return (
     <>
       <Header
@@ -243,7 +248,12 @@ const Register = () => {
               validateTrigger={'onBlur'}
               validateFirst={true}
             >
-              <Input placeholder="请输入手机号码" maxLength={11} />
+              <Input
+                placeholder="请输入手机号码"
+                type={'number'}
+                onChange={handleInputNumber}
+                value={form.getFieldValue('phoneNum')}
+              />
             </Form.Item>
             <Form.Item
               extra={<SendBtn phoneNumber={formValue?.phoneNum || ''} />}
