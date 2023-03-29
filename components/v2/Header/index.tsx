@@ -40,17 +40,17 @@ const Header: React.FC<IProps> = (props) => {
         <meta name="google-site-verification" content="7ThrbtOx2-qkncHO3SxtyWaqIWYB7NAU8xgV3Av6bzc" />
         {props.children}
       </Head>
-
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-6WMHV7EMED" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://tagging.ishopastro.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TLZJ6RL')
-        `}
-      </Script>
+      {/*暂时下线打点, beta环境评估性能*/}
+      {/*<Script src="https://www.googletagmanager.com/gtag/js?id=G-6WMHV7EMED" strategy="afterInteractive" />*/}
+      {/*<Script id="google-analytics" strategy="afterInteractive">*/}
+      {/*  {`*/}
+      {/*    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':*/}
+      {/*      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],*/}
+      {/*      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=*/}
+      {/*      'https://tagging.ishopastro.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);*/}
+      {/*      })(window,document,'script','dataLayer','GTM-TLZJ6RL')*/}
+      {/*  `}*/}
+      {/*</Script>*/}
 
       <noscript>
         <iframe
