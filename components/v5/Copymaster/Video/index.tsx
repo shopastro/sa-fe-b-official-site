@@ -12,8 +12,7 @@ const Video = (props: IProps) => {
     <div
       className="w-[100%] h-[220px] md:h-[640px] md:px-[80px] md:py-[40px] flex justify-center relative"
       style={{
-        backgroundColor: '#FBFDFF',
-        width: '100% !important'
+        backgroundColor: '#FBFDFF'
       }}
     >
       {!isMobile && (

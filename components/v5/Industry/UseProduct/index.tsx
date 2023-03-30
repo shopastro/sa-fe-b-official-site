@@ -19,7 +19,7 @@ const UseProduct = (props: IProps) => {
       className="flex justify-center items-center h-[220px] relative"
       style={{
         backgroundImage: `url(${isMobile ? mobile.default.src : pc.default.src})`,
-        backgroundSize: 'cover !important',
+        backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         position: 'absolute',
         width: '100%',

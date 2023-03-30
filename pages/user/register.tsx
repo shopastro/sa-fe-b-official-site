@@ -142,6 +142,11 @@ const Register = () => {
     await handleRegister(values)
   }
 
+  const handleInputNumber = (v: string) => {
+    const trimStr = v.replace(/[^0-9]/gi, '').substring(0, 11)
+    form.setFieldValue('phoneNum', trimStr)
+  }
+
   return (
     <>
       <Header
@@ -172,7 +177,7 @@ const Register = () => {
             style={{
               //@ts-ignore
               '--adm-color-primary': '#29A72F',
-              padding: '40px 55px 24px 55px !important'
+              padding: '40px 55px 24px 55px'
             }}
             status="success"
             title={<h3 className="text-[#222] font-[500] text-[24px]">注册成功</h3>}
@@ -243,7 +248,7 @@ const Register = () => {
               validateTrigger={'onBlur'}
               validateFirst={true}
             >
-              <Input placeholder="请输入手机号码" maxLength={11} />
+              <Input placeholder="请输入手机号码" onChange={handleInputNumber} value={form.getFieldValue('phoneNum')} />
             </Form.Item>
             <Form.Item
               extra={<SendBtn phoneNumber={formValue?.phoneNum || ''} />}
@@ -274,7 +279,7 @@ const Register = () => {
               <Checkbox
                 style={{
                   '--icon-size': '22px',
-                  borderRadius: '8px !important'
+                  borderRadius: '8px'
                 }}
                 checked={agreement}
                 onChange={(value) => {
