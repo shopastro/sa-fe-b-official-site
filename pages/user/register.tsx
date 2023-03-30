@@ -248,12 +248,7 @@ const Register = () => {
               validateTrigger={'onBlur'}
               validateFirst={true}
             >
-              <Input
-                placeholder="请输入手机号码"
-                type={'number'}
-                onChange={handleInputNumber}
-                value={form.getFieldValue('phoneNum')}
-              />
+              <Input placeholder="请输入手机号码" onChange={handleInputNumber} value={form.getFieldValue('phoneNum')} />
             </Form.Item>
             <Form.Item
               extra={<SendBtn phoneNumber={formValue?.phoneNum || ''} />}

@@ -94,7 +94,6 @@ const Industry = (props: IProps) => {
                 setShowError(!isRightPhone)
               }}
               value={phone}
-              // type="number"
               style={{ '--placeholder-color': '#D5D5D5' }}
               className="w-screen font-[12px] px-[15px] mt-[20px] h-[38px] rounded-[6px] border-[1px] border-[#BFBFBF]"
               placeholder="输入您的手机号立即体验"
