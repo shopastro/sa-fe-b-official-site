@@ -181,7 +181,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <Pendant />
+        {!isMobile && <Pendant />}
       </div>
     </div>
   )

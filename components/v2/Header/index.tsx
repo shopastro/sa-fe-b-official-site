@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 type IProps = {
   title?: string
@@ -12,6 +12,7 @@ type IProps = {
 declare global {
   interface Window {
     dataLayer: any
+    _isInitTracker: boolean
   }
 }
 
@@ -24,6 +25,47 @@ const Header: React.FC<IProps> = (props) => {
 
   const { route } = useRouter()
   const canonical = `https://www.ishopastro.com${route}`
+
+  const initTracker = () => {
+    if (window._isInitTracker) {
+      return
+    }
+    window._isInitTracker = true
+    const GTAG_ID = 'G-6WMHV7EMED'
+    const gtagScript = document.createElement('script')
+    gtagScript.type = 'text/javascript'
+    gtagScript.id = 'gtag-script'
+    gtagScript.async = true
+    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`
+    gtagScript.onload = () => {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({ event: 'gtm.js', 'gtm.start': new Date().getTime(), 'gtm.uniqueEventId': 0 })
+      const gtmScript = document.createElement('script')
+      gtmScript.type = 'text/javascript'
+      gtmScript.id = 'gtm-script'
+      gtmScript.text = `
+         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://tagging.ishopastro.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TLZJ6RL')
+        `
+      document.head.appendChild(gtmScript)
+    }
+
+    document.head.appendChild(gtagScript)
+  }
+
+  useEffect(() => {
+    document.addEventListener('scroll', initTracker)
+    document.addEventListener('mousemove', initTracker)
+    document.addEventListener('touchstart', initTracker)
+    return () => {
+      document.removeEventListener('scroll', initTracker)
+      document.removeEventListener('mousemove', initTracker)
+      document.removeEventListener('touchstart', initTracker)
+    }
+  }, [])
 
   return (
     <>
@@ -40,27 +82,18 @@ const Header: React.FC<IProps> = (props) => {
         <meta name="google-site-verification" content="7ThrbtOx2-qkncHO3SxtyWaqIWYB7NAU8xgV3Av6bzc" />
         {props.children}
       </Head>
+      {/*暂时下线打点, beta环境评估性能*/}
+      {/*<Script src="https://www.googletagmanager.com/gtag/js?id=G-6WMHV7EMED" strategy="afterInteractive" />*/}
+      {/*<Script id="google-analytics" strategy="afterInteractive">*/}
+      {/*  {`*/}
+      {/*    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':*/}
+      {/*      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],*/}
+      {/*      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=*/}
+      {/*      'https://tagging.ishopastro.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);*/}
+      {/*      })(window,document,'script','dataLayer','GTM-TLZJ6RL')*/}
+      {/*  `}*/}
+      {/*</Script>*/}
 
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-6WMHV7EMED" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://tagging.ishopastro.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TLZJ6RL')
-        `}
-      </Script>
-
-      <Script id="uDesk-analytics" strategy="afterInteractive">
-        {`(function(a,h,c,b,f,g){a["UdeskApiObject"]=f;a[f]=a[f]||function(){(a[f].d=a[f].d||[]).push(arguments)};g=h.createElement(c);g.async=1;g.charset="utf-8";g.src=b;c=h.getElementsByTagName(c)[0];c.parentNode.insertBefore(g,c)})(window,document,"script","https://assets-cli.s4.udesk.cn/im_client/js/udeskApi.js","ud");
-            ud({
-                "code": "1b7f137j",
-                "link": "https://1381583.s4.udesk.cn/im_client/?web_plugin_id=34130",
-                "targetSelector": "#pendantItem",
-            });
-        `}
-      </Script>
       <noscript>
         <iframe
           src="https://tagging.ishopastro.com/ns.html?id=GTM-TLZJ6RL"

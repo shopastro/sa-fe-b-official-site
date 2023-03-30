@@ -4,6 +4,9 @@ const WEBHOOK_URL = `https://webhook.${isBeta ? 'beta.' : ''}ishopastro.com`
 
 module.exports = {
   reactStrictMode: true,
+  experimental: {
+    appDir: true
+  },
   images: {
     domains: ['media.cdn.ishopastro.com']
   },
@@ -13,7 +16,7 @@ module.exports = {
       fallback: [
         {
           source: '/sw.js',
-          destination: isBeta ? '/sw/beta.js' : '/sw/prod.js',
+          destination: isBeta ? '/sw/beta.js' : '/sw/prod.js'
         },
         {
           source: '/api/beluga-chat/:path*',
@@ -22,7 +25,7 @@ module.exports = {
         {
           source: '/api/:path*',
           destination: `${WEBHOOK_URL}/:path*`
-        },
+        }
       ]
     }
   }

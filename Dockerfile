@@ -6,4 +6,4 @@ RUN npm install pm2 -g
 RUN yarn install
 COPY . /app
 RUN yarn build
-CMD ["yarn", "start:dev"]
+CMD ["yarn", "start:prod"]
