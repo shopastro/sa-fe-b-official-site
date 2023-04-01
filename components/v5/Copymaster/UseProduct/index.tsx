@@ -13,15 +13,15 @@ const UseProduct = (props: IProps) => {
 
   return (
     <div
-      className="flex justify-center items-center h-[220px] relative"
+      className="flex justify-center items-center h-[220px]"
       style={{
         backgroundColor: '#004DD1',
-        position: 'absolute',
         width: '100%',
-        paddingTop: '15.28%'
+        paddingTop: '15.28%',
+        position: 'relative'
       }}
     >
-      <div className="flex absolute top-[0] h-[100%] flex-col md:flex-row items-center justify-center text-center px-[56px]">
+      <div className="flex absolute top-[0] h-[100%] flex-col md:flex-row items-center justify-center text-center px-[56px] z-10">
         <div className="text-[#fff] md:text-[32px] text-[24px] font-[600] mb-[24px] md:mb-0 md:mr-[32px]">
           用白鲸文案大师，获得十倍提效，更高转化
         </div>
