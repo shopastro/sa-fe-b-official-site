@@ -67,7 +67,7 @@ const Industry = (props: IProps) => {
               }}
               value={phone}
               style={{ '--placeholder-color': '#D5D5D5' }}
-              className="w-screen font-[12px] px-[15px] mt-[20px] h-[48px] rounded-[6px] border-[1px] border-[#BFBFBF]"
+              className="w-screen font-[12px] px-[15px] mt-[16px] h-[48px] rounded-[6px] border-[1px] border-[#BFBFBF]"
               placeholder="输入您的手机号立即体验"
             />
             {showError && (
