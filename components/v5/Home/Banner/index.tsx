@@ -107,7 +107,7 @@ const Banner = () => {
                 }}
                 value={phone}
                 style={{ '--placeholder-color': '#D5D5D5', background: '#fff' }}
-                className="w-[100%] font-[12px] px-[15px] h-[38px] rounded-[6px] border-[1px] border-[#BFBFBF]"
+                className="w-[100%] font-[12px] px-[15px] h-[48px] rounded-[6px] border-[1px] border-[#BFBFBF]"
                 placeholder="输入您的手机号立即体验"
               />
               {showError && (
@@ -128,7 +128,7 @@ const Banner = () => {
                 }}
                 className="w-[100%] md:hidden mt-[12px] mb-[40px] flex item-center cursor-pointer text-[#fff]"
               >
-                <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FE8953] rounded-[8px]">
+                <span className="flex-1 py-[11px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FE8953] rounded-[8px]">
                   免费试用
                 </span>
               </div>

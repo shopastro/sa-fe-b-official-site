@@ -52,7 +52,7 @@ const BelugaBanner = (props: IProps) => {
               </ul>
               <Link passHref href={link}>
                 <div className="md:px-[0] w-[110px] md:w-[130px] mt-[16px] md:mt-[32px] flex item-center cursor-pointer">
-                  <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[18px] leading-[26px] text-[#FFF] font-[600] text-center bg-[#FE8953] rounded-[8px]">
+                  <span className="flex-1 py-[7px] md:py-[15px] text-[16px] md:text-[18px] leading-[26px] text-[#FFF] font-[600] text-center bg-[#FE8953] rounded-[8px]">
                     免费试用
                   </span>
                 </div>

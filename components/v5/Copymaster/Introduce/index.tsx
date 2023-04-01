@@ -95,7 +95,7 @@ const Industry = (props: IProps) => {
               }}
               value={phone}
               style={{ '--placeholder-color': '#D5D5D5' }}
-              className="w-screen font-[12px] px-[15px] mt-[20px] h-[38px] rounded-[6px] border-[1px] border-[#BFBFBF]"
+              className="w-screen font-[12px] px-[15px] mt-[20px] h-[48px] rounded-[6px] border-[1px] border-[#BFBFBF]"
               placeholder="输入您的手机号立即体验"
             />
             {showError && (
@@ -115,7 +115,7 @@ const Industry = (props: IProps) => {
               }}
               className="w-screen px-[38px] md:px-[0] md:w-[180px] md:mt-[24px] mt-[12px] flex item-center cursor-pointer"
             >
-              <span className="flex-1 py-[9px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FE8953] rounded-[8px]">
+              <span className="flex-1 py-[11px] md:py-[14px] text-[16px] md:text-[20px] leading-[26px] text-[#FFF] font-[700] text-center bg-[#FE8953] rounded-[8px]">
                 免费试用
               </span>
             </div>
