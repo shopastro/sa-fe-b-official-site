@@ -27,6 +27,17 @@ const Component = (props: IProps) => {
   const apiDomain = useRef('//sys.api.ishopastro.com')
 
   useEffect(() => {
+    if (/beta/.test(location.host)) {
+      apiDomain.current = '//sys.api.beta.ishopastro.com'
+    }
+    ;(async () => {
+      try {
+        ;(await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)).data
+      } catch {}
+    })()
+  }, [])
+
+  useEffect(() => {
     const finalPhoneNum = Buffer.from(phoneNum.toString(), 'base64').toString()
     if (finalPhoneNum) handleSendCode(finalPhoneNum)
   }, [phoneNum])
@@ -60,9 +71,7 @@ const Component = (props: IProps) => {
 
       try {
         await axios
-          .get(
-            `${apiDomain.current}/common/v1/obtain/verification-code.json?phoneNum=${phone}&region=+86&origin=mobile`
-          )
+          .get(`${apiDomain.current}/common/v1/phone/register-code.json?phoneNum=${phone}&region=+86&origin=mobile`)
           .then((res) => {
             const { data, success, errMsg } = res.data
             if (success) {
@@ -113,7 +122,7 @@ const Component = (props: IProps) => {
         size="large"
         loading={loading}
         disabled={loading || count > 0}
-        style={{ border: 'none', fontSize: '14px', color: '#004ED1' }}
+        style={{ border: 'none', fontSize: '17px', color: '#004ED1' }}
         onClick={() => {
           handleSendCode(phoneNumber)
         }}

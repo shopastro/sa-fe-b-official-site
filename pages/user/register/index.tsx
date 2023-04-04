@@ -5,14 +5,15 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
 
-import Pendant from '../../components/common/Pendant'
-import Header from '../../components/v2/Header'
-import SendBtn from '../../components/v5/SendBtn/SendBtn'
-import { phoneNumberValidator } from '../../utils/check'
+import Pendant from '../../../components/common/Pendant'
+import Header from '../../../components/v2/Header'
+import SendBtn from '../../../components/v5/SendBtn'
+import { phoneNumberValidator } from '../../../utils/check'
+import styles from './index.module.scss'
 
 const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
 
-type FormValues = { password?: string; phoneNum?: string; verifyCode?: string }
+type FormValues = { phoneNum?: string; verifyCode?: string }
 
 const Register = () => {
   const [form] = Form.useForm()
@@ -67,9 +68,8 @@ const Register = () => {
       }
 
       const res = await axios.post(
-        `${apiDomain.current}/common/v1/register.json`,
+        `${apiDomain.current}/common/v1/phone/register.json`,
         {
-          password: values.password,
           phoneNum: values.phoneNum,
           region: '+86',
           verifyCode: values.verifyCode,
@@ -213,18 +213,17 @@ const Register = () => {
         </>
       ) : (
         <>
-          <div className={'flex justify-center mt-[30px] mb-[40px]'}>
+          <div className={'flex justify-center mt-[32px] mb-[20px]'}>
             <Image
               src="https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg"
               alt="logo"
-              width={128}
-              height={24}
+              width={175}
+              height={32}
             />
           </div>
-          <div className="flex justify-center text-[#004DD1] text-[24px] mb-[32px] font-semibold">
-            仅差一步，即可获取账号
-          </div>
+          <div className="flex justify-center text-[#004DD1] text-[15px] mb-[36px] ">仅差一步，即可获取账号</div>
           <Form
+            className={styles.registerForm}
             mode="card"
             form={form}
             onFinish={onFinish}
@@ -263,18 +262,7 @@ const Register = () => {
             >
               <Input placeholder="请输入验证码" maxLength={4} />
             </Form.Item>
-            <Form.Item
-              name="password"
-              validateTrigger="onBlur"
-              validateFirst={true}
-              rules={[
-                { required: true, message: '请输入密码' },
-                { min: 6, message: '密码需大于等于6位' },
-                { max: 18, message: '密码需小于等于20位' }
-              ]}
-            >
-              <Input placeholder="请输入6-20位密码" clearable type="password" />
-            </Form.Item>
+
             <Form.Item>
               <Checkbox
                 style={{
@@ -286,7 +274,7 @@ const Register = () => {
                   setAgreement(value)
                 }}
               >
-                <span className="text-[12px] leading-[25px]">
+                <span className="text-[15px] leading-[25px]">
                   <span className="text-[#666]">阅读并同意</span>
                   <a href={AGREEMENT_LINK} target={'_blank'} rel="noreferrer">
                     <span className="text-[#004ED1]">《shopastro 用户协议》</span>
