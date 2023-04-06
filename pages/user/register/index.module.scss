@@ -1,5 +1,8 @@
 .registerForm {
   :global {
+    .adm-list-item {
+      padding-left: 0;
+    }
     .adm-list-item-content {
       border-top: none;
     }
