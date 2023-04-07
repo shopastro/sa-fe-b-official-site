@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Header from '../components/v2/Header'
 import Banner from '../components/v5/Copymaster/Banner'
 import Introduce from '../components/v5/Copymaster/Introduce'
+import InviteModal from '../components/v5/Copymaster/InviteModal'
 import UseProduct from '../components/v5/Copymaster/UseProduct'
 import Video from '../components/v5/Copymaster/Video'
 import FixedButton from '../components/v5/FixedButton'
@@ -58,6 +59,7 @@ const CopyMaster: NextPage = () => {
         <Video isMobile={isMobile} />
         <Banner isMobile={isMobile} />
         <UseProduct isMobile={isMobile} />
+        <InviteModal isMobile={isMobile} />
         <Footer />
       </div>
       {fixedButton && <FixedButton text="免费试用" href="/user/register" />}
