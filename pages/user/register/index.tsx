@@ -3,6 +3,7 @@ import axios from 'axios'
 import copy from 'copy-to-clipboard'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import queryString from 'query-string'
 import React, { useEffect, useRef, useState } from 'react'
 
 import Pendant from '../../../components/common/Pendant'
@@ -14,7 +15,13 @@ import styles from './index.module.scss'
 const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
 
 type FormValues = { phoneNum?: string; verifyCode?: string }
-
+type RegisterParams = {
+  phoneNum?: string
+  region?: string
+  verifyCode?: string
+  origin?: string
+  code?: string | (string | null)[] | null
+}
 const Register = () => {
   const [form] = Form.useForm()
   const router = useRouter()
@@ -50,6 +57,8 @@ const Register = () => {
   }, [form, phoneNum])
 
   const handleRegister = async (values: FormValues) => {
+    let registerUrl = `${apiDomain.current}/common/v1/phone/register.json`
+
     setLoading(true)
     try {
       // 增加注册打点
@@ -67,20 +76,23 @@ const Register = () => {
         })
       }
 
-      const res = await axios.post(
-        `${apiDomain.current}/common/v1/phone/register.json`,
-        {
-          phoneNum: values.phoneNum,
-          region: '+86',
-          verifyCode: values.verifyCode,
-          origin: 'mobile'
-        },
-        {
-          headers: {
-            'shopastro-origin': sessionStorage.getItem('refer') ? `refer=${sessionStorage.getItem('refer')}` : ''
-          }
+      const params: RegisterParams = {
+        phoneNum: values.phoneNum,
+        region: '+86',
+        verifyCode: values.verifyCode,
+        origin: 'mobile'
+      }
+
+      if (location.search.includes('code')) {
+        const { code = '' } = queryString.parse(location.search)
+        params.code = code
+      }
+
+      const res = await axios.post(registerUrl, params, {
+        headers: {
+          'shopastro-origin': sessionStorage.getItem('refer') ? `refer=${sessionStorage.getItem('refer')}` : ''
         }
-      )
+      })
       if (res.data) {
         if (res.data.success) {
           setSuccess(true)

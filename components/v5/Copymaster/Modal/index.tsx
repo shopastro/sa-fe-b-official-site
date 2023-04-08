@@ -18,8 +18,6 @@ const Modal: React.FC<IProps> = (props: IProps) => {
   const { isMobile } = props
   const freeLink = useTrailLink()
 
-  const link = isMobile ? `/user/register` : freeLink('beluga_copymaster', 'beluga')
-
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -53,7 +51,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
             <p>注册即可获取，畅享AI文案十倍提效</p>
           </div>
           <div className="w-[100%] mt-[32px]">
-            <Link href={link} passHref>
+            <Link href={freeLink('beluga_copymaster', 'beluga')} passHref>
               <div className="rounded-[4px] md:cursor-pointer flex items-center justify-center text-[14px] text-[#fff] h-[32px] w-[100%] bg-[#004ED1]">
                 立即体验
               </div>
