@@ -247,6 +247,12 @@ const Register = () => {
             mode="card"
             form={form}
             onFinish={onFinish}
+            onValuesChange={(values: FormValues) => {
+              form.setFieldsValue({
+                phoneNum: values.phoneNum?.substring(0, 11),
+                verifyCode: values.verifyCode?.substring(0, 4)
+              })
+            }}
             layout="horizontal"
             footer={
               <Button block type="submit" color="primary" size="large" loading={loading} loadingText={'注册中'}>
