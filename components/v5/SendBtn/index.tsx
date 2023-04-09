@@ -117,7 +117,7 @@ const Component = (props: IProps) => {
   }
 
   return (
-    <div className={'btnContainer'}>
+    <div className="text-center">
       <Button
         size="large"
         loading={loading}

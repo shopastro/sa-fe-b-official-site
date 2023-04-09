@@ -1,10 +1,72 @@
 .registerForm {
+  .phoneInput {
+    .inputContent {
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+
+      .prefix {
+        color: #666;
+        font-size: 16px;
+      }
+
+      .clear {
+        cursor: pointer;
+      }
+
+      :global {
+        .adm-input {
+          padding-left: 12px;
+        }
+      }
+    }
+  }
+
+  .verifyInput {
+    :global {
+      .adm-input {
+        border: 1px solid #e5e5e5;
+        border-radius: 8px 0 0 8px;
+        padding: 12px 16px;
+      }
+
+      .adm-list-item-content-main {
+        padding: 0;
+      }
+
+      .adm-list-item-content-extra {
+        border: 1px solid #e5e5e5;
+        border-left: none;
+        border-radius: 0 8px 8px 0;
+        padding: 2px 0;
+        width: 110px;
+        margin-bottom: 23px;
+      }
+    }
+  }
+
+  .agreeCheck {
+    .adm-list-item-content-main {
+      padding-top: 32px;
+    }
+  }
+
   :global {
     .adm-list-item {
       padding-left: 0;
     }
     .adm-list-item-content {
       border-top: none;
+    }
+
+    .adm-list.adm-list-card {
+      margin-bottom: 0;
+    }
+
+    .adm-form-footer {
+      padding-top: 8px;
     }
   }
 }

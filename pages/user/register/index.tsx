@@ -12,6 +12,8 @@ import SendBtn from '../../../components/v5/SendBtn'
 import { phoneNumberValidator } from '../../../utils/check'
 import styles from './index.module.scss'
 
+const clear = require('../../../public/img/register/clear.png')
+
 const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
 
 type FormValues = { phoneNum?: string; verifyCode?: string }
@@ -30,7 +32,6 @@ const Register = () => {
   const [success, setSuccess] = useState(false)
   const [agreement, setAgreement] = useState(false)
   const [formValue, setFormValue] = useState<FormValues>({})
-  // const [csrf, setCsrf] = useState('')
   const apiDomain = useRef('//sys.api.ishopastro.com')
   const { phoneNum = '' } = router.query
 
@@ -50,11 +51,11 @@ const Register = () => {
       try {
         const finalPhoneNum = Buffer.from(phoneNum.toString(), 'base64').toString()
         setFormValue({ ...formValue, phoneNum: finalPhoneNum })
-        form.setFieldValue('phoneNum', finalPhoneNum)
+
         await phoneNumberValidator(undefined, finalPhoneNum.toString())
       } catch (e) {}
     })()
-  }, [form, phoneNum])
+  }, [phoneNum])
 
   const handleRegister = async (values: FormValues) => {
     let registerUrl = `${apiDomain.current}/common/v1/phone/register.json`
@@ -77,10 +78,10 @@ const Register = () => {
       }
 
       const params: RegisterParams = {
-        phoneNum: values.phoneNum,
         region: '+86',
-        verifyCode: values.verifyCode,
-        origin: 'mobile'
+        origin: 'mobile',
+        phoneNum: formValue.phoneNum,
+        verifyCode: formValue.verifyCode
       }
 
       if (location.search.includes('code')) {
@@ -157,6 +158,13 @@ const Register = () => {
   const handleInputNumber = (v: string) => {
     const trimStr = v.replace(/[^0-9]/gi, '').substring(0, 11)
     form.setFieldValue('phoneNum', trimStr)
+    setFormValue({ ...formValue, phoneNum: trimStr })
+  }
+
+  const handleInputCode = (v: string) => {
+    const trimStr = v.replace(/[^0-9]/gi, '').substring(0, 4)
+    setFormValue({ ...formValue, verifyCode: trimStr })
+    form.setFieldValue('verifyCode', trimStr)
   }
 
   return (
@@ -233,15 +241,12 @@ const Register = () => {
               height={32}
             />
           </div>
-          <div className="flex justify-center text-[#004DD1] text-[15px] mb-[36px] ">仅差一步，即可获取账号</div>
+          <div className="flex justify-center text-[#004DD1] text-[15px] mb-[24px] ">仅差一步，即可获取账号</div>
           <Form
             className={styles.registerForm}
             mode="card"
             form={form}
             onFinish={onFinish}
-            onValuesChange={(values: FormValues) => {
-              setFormValue({ ...values })
-            }}
             layout="horizontal"
             footer={
               <Button block type="submit" color="primary" size="large" loading={loading} loadingText={'注册中'}>
@@ -250,6 +255,7 @@ const Register = () => {
             }
           >
             <Form.Item
+              className={styles.phoneInput}
               name="phoneNum"
               rules={[
                 { required: true, message: '请输入手机号码' },
@@ -259,9 +265,24 @@ const Register = () => {
               validateTrigger={'onBlur'}
               validateFirst={true}
             >
-              <Input placeholder="请输入手机号码" onChange={handleInputNumber} value={form.getFieldValue('phoneNum')} />
+              <div className={styles.inputContent}>
+                <div className={styles.prefix}>+86</div>
+                <Input placeholder="请输入手机号码" onChange={handleInputNumber} value={formValue.phoneNum} />
+
+                {formValue.phoneNum && (
+                  <div
+                    className={styles.clear}
+                    onClick={() => {
+                      setFormValue({ ...formValue, phoneNum: '' })
+                    }}
+                  >
+                    <Image alt="" src={clear} height={18} width={18} />
+                  </div>
+                )}
+              </div>
             </Form.Item>
             <Form.Item
+              className={styles.verifyInput}
               extra={<SendBtn phoneNumber={formValue?.phoneNum || ''} />}
               required
               name="verifyCode"
@@ -272,10 +293,10 @@ const Register = () => {
                 { len: 4, message: '有效验证码为4位的数字。' }
               ]}
             >
-              <Input placeholder="请输入验证码" maxLength={4} />
+              <Input placeholder="请输入验证码" onChange={handleInputCode} maxLength={4} value={formValue.verifyCode} />
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item className={styles.agreeCheck}>
               <Checkbox
                 style={{
                   '--icon-size': '22px',

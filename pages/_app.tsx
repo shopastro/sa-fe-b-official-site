@@ -8,7 +8,7 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    if (location.href.includes('?')) {
+    if (location.href.includes('utm_source')) {
       const searchToBase64 = Buffer.from(location.href).toString('base64')
       sessionStorage.setItem('refer', searchToBase64)
     }
