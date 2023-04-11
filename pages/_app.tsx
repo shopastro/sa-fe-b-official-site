@@ -20,11 +20,23 @@ function MyApp({ Component, pageProps }: AppProps) {
     const searchCode = String(queryString.parse(location.search).code)
     //本地存储中的code
     const localStorageCode = localStorage.getItem('copymasterCode')
-    if (location.href.includes('copymasterCode')) {
+    if (searchCode) {
       localStorage.setItem('copymasterCode', searchCode)
       if (searchCode !== localStorageCode || !localStorage.getItem('codeExpireTime')) {
         localStorage.setItem('codeExpireTime', String(new Date().getTime()))
       }
+    }
+  }, [])
+
+  useEffect(() => {
+    //url上的code
+    const codeExpireTime = Number(localStorage.getItem('codeExpireTime'))
+    //本地存储中的code
+    const nowTime = new Date().getTime()
+
+    if (nowTime - (codeExpireTime + 60 * 60 * 24 * 1000) > 0) {
+      localStorage.removeItem('copymasterCode')
+      localStorage.removeItem('codeExpireTime')
     }
   }, [])
 

@@ -1,4 +1,3 @@
-import queryString from 'query-string'
 import { useEffect, useState } from 'react'
 
 const useIsMobile = () => {
@@ -34,7 +33,7 @@ const useIsMobile = () => {
   useEffect(() => {
     if (window.innerWidth > 768) setIsMobile(false)
     if (/beta/.test(location.host)) setBeta('beta.')
-    if (location.search && queryString.parse(location.search).code) setCode(queryString.parse(location.search).code)
+    if (localStorage.getItem('copymasterCode')) setCode(localStorage.getItem('copymasterCode'))
     if (sessionStorage.getItem('refer')) setRefer(sessionStorage.getItem('refer') || '')
   }, [])
 
