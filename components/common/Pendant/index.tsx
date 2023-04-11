@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import Script from 'next/script'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useContainer } from 'unstated-next'
 
 import detectionStore from '../../../store/detectionStore'
@@ -20,10 +20,17 @@ type IProps = {
 
 const Pendant: React.FC<IProps> = () => {
   const { showModal, setShowMoadl, setButtonType } = useContainer(detectionStore)
+  const [time, setTime] = useState(Date.now())
 
   const handleClose = () => {
     setShowMoadl(false)
   }
+
+  useEffect(() => {
+    if (!time) {
+      setTime(Date.now())
+    }
+  }, [])
 
   return (
     <div className={styles.pendantContainer}>
@@ -58,7 +65,7 @@ const Pendant: React.FC<IProps> = () => {
         </li>
         <li>
           <div id="sa-showcase-chat" className={styles['sa-showcase-chat']}></div>
-          <Script src={chatSdkSrc} strategy="lazyOnload" />
+          {time && <Script key={Math.random()} src={`${chatSdkSrc}?t=${time}`} strategy="lazyOnload" />}
         </li>
         <li id="pendantItem" style={{ display: 'none' }}></li>
       </ul>
