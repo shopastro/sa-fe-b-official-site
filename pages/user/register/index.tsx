@@ -50,7 +50,7 @@ const Register = () => {
       try {
         const finalPhoneNum = Buffer.from(phoneNum.toString(), 'base64').toString()
         setFormValue({ ...formValue, phoneNum: finalPhoneNum })
-
+        form.setFieldValue('phoneNum', finalPhoneNum)
         await phoneNumberValidator(undefined, finalPhoneNum.toString())
       } catch (e) {}
     })()
