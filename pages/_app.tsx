@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     //url上的code
-    const searchCode = String(queryString.parse(location.search).code)
+    const searchCode = queryString.parse(location.search).code ? String(queryString.parse(location.search).code) : ''
     //本地存储中的code
     const localStorageCode = localStorage.getItem('copymasterCode')
     if (searchCode) {
@@ -29,9 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   useEffect(() => {
-    //url上的code
+    //上次存储时间
     const codeExpireTime = Number(localStorage.getItem('codeExpireTime'))
-    //本地存储中的code
+    //当前时间
     const nowTime = new Date().getTime()
 
     if (nowTime - (codeExpireTime + 60 * 60 * 24 * 1000) > 0) {
