@@ -245,10 +245,10 @@ const Register = () => {
             mode="card"
             form={form}
             onFinish={onFinish}
-            onValuesChange={(values: FormValues) => {
+            onValuesChange={(_values: FormValues, allValues: FormValues) => {
               form.setFieldsValue({
-                phoneNum: values.phoneNum?.substring(0, 11),
-                verifyCode: values.verifyCode?.substring(0, 4)
+                phoneNum: allValues.phoneNum?.substring(0, 11),
+                verifyCode: allValues.verifyCode?.substring(0, 4)
               })
             }}
             layout="horizontal"

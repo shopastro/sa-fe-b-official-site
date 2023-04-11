@@ -51,6 +51,7 @@ const Component = (props: IProps) => {
       ctx.current.timesLocked = false
       ctx.current.startTime = 0
       setCount(0)
+      localStorage.setItem()
     } else {
       setCount(59 - Math.floor(progress / 1000))
       ctx.current.cdSID = requestAnimationFrame(calc)
@@ -62,7 +63,6 @@ const Component = (props: IProps) => {
       return
     }
     setLoading(true)
-    console.log(phone)
 
     const isValid = isValidPhoneNumber(phone, '+86')
 
