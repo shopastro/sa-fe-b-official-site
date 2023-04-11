@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import queryString from 'query-string'
 import { useEffect } from 'react'
 import 'tailwindcss/tailwind.css'
 
@@ -13,6 +14,20 @@ function MyApp({ Component, pageProps }: AppProps) {
       sessionStorage.setItem('refer', searchToBase64)
     }
   }, [])
+
+  useEffect(() => {
+    //url上的code
+    const searchCode = String(queryString.parse(location.search).code)
+    //本地存储中的code
+    const localStorageCode = localStorage.getItem('copymasterCode')
+    if (location.href.includes('copymasterCode')) {
+      localStorage.setItem('copymasterCode', searchCode)
+      if (searchCode !== localStorageCode || !localStorage.getItem('codeExpireTime')) {
+        localStorage.setItem('codeExpireTime', String(new Date().getTime()))
+      }
+    }
+  }, [])
+
   return (
     <>
       {/*@ts-ignore*/}
