@@ -121,7 +121,7 @@ const Component = (props: IProps) => {
         size="large"
         loading={loading}
         disabled={loading || count > 0}
-        style={{ border: 'none', fontSize: '17px', color: '#004ED1' }}
+        style={{ border: 'none', fontSize: '16px', color: '#004ED1', whiteSpace: 'nowrap' }}
         onClick={() => {
           handleSendCode(phoneNumber)
         }}
