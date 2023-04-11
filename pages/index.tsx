@@ -70,7 +70,7 @@ const Home: NextPage = () => {
         <Plugins />
         <Cards />
         <Solution />
-        <Partners />
+        {/* <Partners /> */}
         <Footer />
       </div>
       {fixedButton && <FixedButton href={'/user/register'} />}
