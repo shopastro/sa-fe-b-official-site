@@ -21,7 +21,6 @@ type RegisterParams = {
   region?: string
   verifyCode?: string
   origin?: string
-  code?: string | (string | null)[] | null
 }
 const Register = () => {
   const [form] = Form.useForm()
@@ -84,7 +83,9 @@ const Register = () => {
       }
 
       if (localStorage.getItem('copymasterCode')) {
-        params.code = localStorage.getItem('copymasterCode')
+        registerUrl = `${apiDomain.current}/common/v1/phone/register.json?code=${localStorage.getItem(
+          'copymasterCode'
+        )}`
       }
 
       const res = await axios.post(registerUrl, params, {
