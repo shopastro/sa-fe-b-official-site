@@ -215,7 +215,7 @@ const Register = () => {
             </div>
             <Space justify="center" block>
               <Button
-                className="h-[36px] w-[86px] text-[14px] text-[#30323F]"
+                className="h-[36px] w-[86px] text-[14px] text-[#30323F] whitespace-pre"
                 onClick={() => {
                   copy('https://sys.admin.ishopastro.com')
                   Toast.show({
