@@ -21,9 +21,9 @@ const useIsMobile = () => {
     }
 
     if (isMobile) {
-      link = `/user/register`
+      link = `/user/register?product=${type}`
       if (code) {
-        link = `/user/register?code=${code}`
+        link = `/user/register?product=${type}&code=${code}`
       }
     }
 

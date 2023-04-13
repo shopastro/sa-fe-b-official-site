@@ -3,6 +3,7 @@ import axios from 'axios'
 import copy from 'copy-to-clipboard'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import queryString from 'query-string'
 import React, { useEffect, useRef, useState } from 'react'
 
 import Pendant from '../../../components/common/Pendant'
@@ -87,10 +88,16 @@ const Register = () => {
           'copymasterCode'
         )}`
       }
+      console.log(location.search, 'location.search')
+
+      let header = location.search.split('?')?.[1]
+      if (sessionStorage.getItem('refer')) {
+        header = `${header}&refer=${sessionStorage.getItem('refer')}`
+      }
 
       const res = await axios.post(registerUrl, params, {
         headers: {
-          'shopastro-origin': sessionStorage.getItem('refer') ? `refer=${sessionStorage.getItem('refer')}` : ''
+          'shopastro-origin': header
         }
       })
       if (res.data) {
