@@ -88,7 +88,6 @@ const Register = () => {
           'copymasterCode'
         )}`
       }
-      console.log(location.search, 'location.search')
 
       let header = location.search.split('?')?.[1]
       if (sessionStorage.getItem('refer')) {
