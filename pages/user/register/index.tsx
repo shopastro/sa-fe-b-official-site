@@ -254,7 +254,15 @@ const Register = () => {
             }}
             layout="horizontal"
             footer={
-              <Button block type="submit" color="primary" size="large" loading={loading} loadingText={'注册中'}>
+              <Button
+                block
+                type="submit"
+                color="primary"
+                size="large"
+                loading={loading}
+                style={{ backgroundColor: '#004ED1' }}
+                loadingText={'注册中'}
+              >
                 注册
               </Button>
             }

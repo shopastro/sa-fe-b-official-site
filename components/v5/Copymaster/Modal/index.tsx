@@ -53,7 +53,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
           <div className="w-[100%] mt-[32px]">
             <Link href={freeLink('beluga_copymaster', 'beluga')} passHref>
               <div className="rounded-[4px] md:cursor-pointer flex items-center justify-center text-[14px] text-[#fff] h-[32px] w-[100%] bg-[#004ED1]">
-                立即体验
+                去体验
               </div>
             </Link>
           </div>
