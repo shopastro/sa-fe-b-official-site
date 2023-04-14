@@ -1,3 +1,4 @@
+import queryString from 'query-string'
 import { useEffect, useState } from 'react'
 
 const useIsMobile = () => {
@@ -11,20 +12,15 @@ const useIsMobile = () => {
     if (origin) {
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}`
     }
-    console.log('init')
     if (code) {
-      console.log('code')
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}&code=${code}`
     }
 
     if (refer) {
-      console.log('refer')
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}&refer=${refer}`
     }
 
     if (code && refer) {
-      console.log('and')
-
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}&code=${code}&refer=${refer}`
     }
 
@@ -44,8 +40,13 @@ const useIsMobile = () => {
   }, [])
 
   useEffect(() => {
-    if (localStorage.getItem('copymasterCode')) setCode(localStorage.getItem('copymasterCode'))
-    if (sessionStorage.getItem('refer')) setRefer(sessionStorage.getItem('refer') || '')
+    if (location.search.includes('code') || localStorage.getItem('copymasterCode')) {
+      setCode(String(queryString.parse(location.search).code) || localStorage.getItem('copymasterCode'))
+    }
+
+    if (location.href.includes('?') || sessionStorage.getItem('refer')) {
+      setRefer(Buffer.from(location.href).toString('base64') || sessionStorage.getItem('refer') || '')
+    }
   }, [])
 
   return freeLink
