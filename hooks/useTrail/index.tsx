@@ -11,16 +11,20 @@ const useIsMobile = () => {
     if (origin) {
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}`
     }
-
+    console.log('init')
     if (code) {
+      console.log('code')
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}&code=${code}`
     }
 
     if (refer) {
+      console.log('refer')
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}&refer=${refer}`
     }
 
     if (code && refer) {
+      console.log('and')
+
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}&code=${code}&refer=${refer}`
     }
 
@@ -37,6 +41,9 @@ const useIsMobile = () => {
   useEffect(() => {
     if (window.innerWidth > 768) setIsMobile(false)
     if (/beta/.test(location.host)) setBeta('beta.')
+  }, [])
+
+  useEffect(() => {
     if (localStorage.getItem('copymasterCode')) setCode(localStorage.getItem('copymasterCode'))
     if (sessionStorage.getItem('refer')) setRefer(sessionStorage.getItem('refer') || '')
   }, [])
