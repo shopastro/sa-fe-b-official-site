@@ -27,6 +27,17 @@ const Component = (props: IProps) => {
   const apiDomain = useRef('//sys.api.ishopastro.com')
 
   useEffect(() => {
+    if (/beta/.test(location.host)) {
+      apiDomain.current = '//sys.api.beta.ishopastro.com'
+    }
+    ;(async () => {
+      try {
+        ;(await axios.get(`${apiDomain.current}/common/v1/keep-alive.json`)).data
+      } catch {}
+    })()
+  }, [])
+
+  useEffect(() => {
     const finalPhoneNum = Buffer.from(phoneNum.toString(), 'base64').toString()
     if (finalPhoneNum) handleSendCode(finalPhoneNum)
   }, [phoneNum])
@@ -51,7 +62,6 @@ const Component = (props: IProps) => {
       return
     }
     setLoading(true)
-    console.log(phone)
 
     const isValid = isValidPhoneNumber(phone, '+86')
 
@@ -60,9 +70,7 @@ const Component = (props: IProps) => {
 
       try {
         await axios
-          .get(
-            `${apiDomain.current}/common/v1/obtain/verification-code.json?phoneNum=${phone}&region=+86&origin=mobile`
-          )
+          .get(`${apiDomain.current}/common/v1/phone/register-code.json?phoneNum=${phone}&region=+86&origin=mobile`)
           .then((res) => {
             const { data, success, errMsg } = res.data
             if (success) {
@@ -108,12 +116,12 @@ const Component = (props: IProps) => {
   }
 
   return (
-    <div className={'btnContainer'}>
+    <div className="text-center">
       <Button
         size="large"
         loading={loading}
         disabled={loading || count > 0}
-        style={{ border: 'none', fontSize: '14px', color: '#004ED1' }}
+        style={{ border: 'none', fontSize: '16px', color: '#004ED1', whiteSpace: 'nowrap', height: '45px' }}
         onClick={() => {
           handleSendCode(phoneNumber)
         }}

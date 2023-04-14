@@ -28,5 +28,14 @@ module.exports = {
         }
       ]
     }
+  },
+  redirects: async () => {
+    return [
+      {
+        source: '/register',
+        destination: '/copymaster',
+        permanent: true
+      }
+    ]
   }
 }
