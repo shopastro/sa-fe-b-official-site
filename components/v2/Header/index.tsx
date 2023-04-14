@@ -98,7 +98,7 @@ const Header: React.FC<IProps> = (props) => {
         (function() {
           var hm = document.createElement("script");
           hm.src = "https://hm.baidu.com/hm.js?9f6bc03de81e40fdaefb5edea1c99cd1";
-          var s = document.getElementsByTagName("script")[0]; 
+          var s = document.getElementById("baidu-statistic-data"); 
           s.parentNode.insertBefore(hm, s);
         })();`}
       </Script>
