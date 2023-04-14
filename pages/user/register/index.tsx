@@ -32,10 +32,12 @@ const Register = () => {
   const [agreement, setAgreement] = useState(false)
   const [formValue, setFormValue] = useState<FormValues>({})
   const apiDomain = useRef('//sys.api.ishopastro.com')
+  const saasUrl = useRef('https://sys.admin.ishopastro.com')
   const { phoneNum = '' } = router.query
 
   useEffect(() => {
     if (/beta/.test(location.host)) {
+      saasUrl.current = 'https://sys.beta.admin.ishopastro.com'
       apiDomain.current = '//sys.api.beta.ishopastro.com'
     }
     ;(async () => {
@@ -216,14 +218,12 @@ const Register = () => {
           />
           <Card bodyClassName={'bg-[red]  bg-[#F7F9FE] flex flex-col justify-between py-[16px]'}>
             <div className={'text-center text-[#18214D] text-[16px] font-medium '}>链接地址</div>
-            <div className="text-center text-[16px] text-[#909EB0] mt-[8px] mb-[16px]">
-              https://sys.admin.ishopastro.com
-            </div>
+            <div className="text-center text-[16px] text-[#909EB0] mt-[8px] mb-[16px]">{saasUrl.current}</div>
             <Space justify="center" block>
               <Button
                 className="h-[36px] w-[86px] text-[14px] text-[#30323F] whitespace-pre"
                 onClick={() => {
-                  copy('https://sys.admin.ishopastro.com')
+                  copy(saasUrl.current)
                   Toast.show({
                     duration: 2000,
                     content: '复制成功'
