@@ -3,17 +3,26 @@ import axios from 'axios'
 import copy from 'copy-to-clipboard'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import queryString from 'query-string'
 import React, { useEffect, useRef, useState } from 'react'
 
-import Pendant from '../../components/common/Pendant'
-import Header from '../../components/v2/Header'
-import SendBtn from '../../components/v5/SendBtn/SendBtn'
-import { phoneNumberValidator } from '../../utils/check'
+import Pendant from '../../../components/common/Pendant'
+import Header from '../../../components/v2/Header'
+import SendBtn from '../../../components/v5/SendBtn'
+import { phoneNumberValidator } from '../../../utils/check'
+import styles from './index.module.scss'
+
+const clear = require('../../../public/img/register/clear.png')
 
 const AGREEMENT_LINK = 'https://www.shopastro.com/agreement'
 
-type FormValues = { password?: string; phoneNum?: string; verifyCode?: string }
-
+type FormValues = { phoneNum?: string; verifyCode?: string }
+type RegisterParams = {
+  phoneNum?: string
+  region?: string
+  verifyCode?: string
+  origin?: string
+}
 const Register = () => {
   const [form] = Form.useForm()
   const router = useRouter()
@@ -22,12 +31,13 @@ const Register = () => {
   const [success, setSuccess] = useState(false)
   const [agreement, setAgreement] = useState(false)
   const [formValue, setFormValue] = useState<FormValues>({})
-  // const [csrf, setCsrf] = useState('')
   const apiDomain = useRef('//sys.api.ishopastro.com')
+  const saasUrl = useRef('https://sys.admin.ishopastro.com')
   const { phoneNum = '' } = router.query
 
   useEffect(() => {
     if (/beta/.test(location.host)) {
+      saasUrl.current = 'https://sys.beta.admin.ishopastro.com'
       apiDomain.current = '//sys.api.beta.ishopastro.com'
     }
     ;(async () => {
@@ -46,9 +56,11 @@ const Register = () => {
         await phoneNumberValidator(undefined, finalPhoneNum.toString())
       } catch (e) {}
     })()
-  }, [form, phoneNum])
+  }, [phoneNum])
 
   const handleRegister = async (values: FormValues) => {
+    let registerUrl = `${apiDomain.current}/common/v1/phone/register.json`
+
     setLoading(true)
     try {
       // 增加注册打点
@@ -66,21 +78,29 @@ const Register = () => {
         })
       }
 
-      const res = await axios.post(
-        `${apiDomain.current}/common/v1/register.json`,
-        {
-          password: values.password,
-          phoneNum: values.phoneNum,
-          region: '+86',
-          verifyCode: values.verifyCode,
-          origin: 'mobile'
-        },
-        {
-          headers: {
-            'shopastro-origin': sessionStorage.getItem('refer') ? `refer=${sessionStorage.getItem('refer')}` : ''
-          }
+      const params: RegisterParams = {
+        region: '+86',
+        origin: 'mobile',
+        phoneNum: formValue.phoneNum,
+        verifyCode: formValue.verifyCode
+      }
+
+      if (localStorage.getItem('copymasterCode')) {
+        registerUrl = `${apiDomain.current}/common/v1/phone/register.json?code=${localStorage.getItem(
+          'copymasterCode'
+        )}`
+      }
+
+      let header = location.search.split('?')?.[1]
+      if (sessionStorage.getItem('refer')) {
+        header = `${header}&refer=${sessionStorage.getItem('refer')}`
+      }
+
+      const res = await axios.post(registerUrl, params, {
+        headers: {
+          'shopastro-origin': header
         }
-      )
+      })
       if (res.data) {
         if (res.data.success) {
           setSuccess(true)
@@ -145,6 +165,13 @@ const Register = () => {
   const handleInputNumber = (v: string) => {
     const trimStr = v.replace(/[^0-9]/gi, '').substring(0, 11)
     form.setFieldValue('phoneNum', trimStr)
+    setFormValue({ ...formValue, phoneNum: trimStr })
+  }
+
+  const handleInputCode = (v: string) => {
+    const trimStr = v.replace(/[^0-9]/gi, '').substring(0, 4)
+    setFormValue({ ...formValue, verifyCode: trimStr })
+    form.setFieldValue('verifyCode', trimStr)
   }
 
   return (
@@ -191,14 +218,12 @@ const Register = () => {
           />
           <Card bodyClassName={'bg-[red]  bg-[#F7F9FE] flex flex-col justify-between py-[16px]'}>
             <div className={'text-center text-[#18214D] text-[16px] font-medium '}>链接地址</div>
-            <div className="text-center text-[16px] text-[#909EB0] mt-[8px] mb-[16px]">
-              https://sys.admin.ishopastro.com
-            </div>
+            <div className="text-center text-[16px] text-[#909EB0] mt-[8px] mb-[16px]">{saasUrl.current}</div>
             <Space justify="center" block>
               <Button
-                className="h-[36px] w-[86px] text-[14px] text-[#30323F]"
+                className="h-[36px] w-[86px] text-[14px] text-[#30323F] whitespace-pre"
                 onClick={() => {
-                  copy('https://sys.admin.ishopastro.com')
+                  copy(saasUrl.current)
                   Toast.show({
                     duration: 2000,
                     content: '复制成功'
@@ -213,32 +238,43 @@ const Register = () => {
         </>
       ) : (
         <>
-          <div className={'flex justify-center mt-[30px] mb-[40px]'}>
+          <div className={'flex justify-center mt-[32px] mb-[20px]'}>
             <Image
               src="https://media.cdn.ishopastro.com/svg/shopastrohome/dark-logo.svg"
               alt="logo"
-              width={128}
-              height={24}
+              width={175}
+              height={32}
             />
           </div>
-          <div className="flex justify-center text-[#004DD1] text-[24px] mb-[32px] font-semibold">
-            仅差一步，即可获取账号
-          </div>
+          <div className="flex justify-center text-[#004DD1] text-[15px] mb-[24px] ">仅差一步，即可获取账号</div>
           <Form
+            className={styles.registerForm}
             mode="card"
             form={form}
             onFinish={onFinish}
-            onValuesChange={(values: FormValues) => {
-              setFormValue({ ...values })
+            onValuesChange={(_values: FormValues, allValues: FormValues) => {
+              form.setFieldsValue({
+                phoneNum: allValues.phoneNum?.substring(0, 11),
+                verifyCode: allValues.verifyCode?.substring(0, 4)
+              })
             }}
             layout="horizontal"
             footer={
-              <Button block type="submit" color="primary" size="large" loading={loading} loadingText={'注册中'}>
+              <Button
+                block
+                type="submit"
+                color="primary"
+                size="large"
+                loading={loading}
+                style={{ backgroundColor: '#004ED1' }}
+                loadingText={'注册中'}
+              >
                 注册
               </Button>
             }
           >
             <Form.Item
+              className={styles.phoneInput}
               name="phoneNum"
               rules={[
                 { required: true, message: '请输入手机号码' },
@@ -248,9 +284,24 @@ const Register = () => {
               validateTrigger={'onBlur'}
               validateFirst={true}
             >
-              <Input placeholder="请输入手机号码" onChange={handleInputNumber} value={form.getFieldValue('phoneNum')} />
+              <div className={styles.inputContent}>
+                <div className={styles.prefix}>+86</div>
+                <Input placeholder="请输入手机号码" onChange={handleInputNumber} value={formValue.phoneNum} />
+
+                {formValue.phoneNum && (
+                  <div
+                    className={styles.clear}
+                    onClick={() => {
+                      setFormValue({ ...formValue, phoneNum: '' })
+                    }}
+                  >
+                    <Image alt="" src={clear} height={18} width={18} />
+                  </div>
+                )}
+              </div>
             </Form.Item>
             <Form.Item
+              className={styles.verifyInput}
               extra={<SendBtn phoneNumber={formValue?.phoneNum || ''} />}
               required
               name="verifyCode"
@@ -261,21 +312,10 @@ const Register = () => {
                 { len: 4, message: '有效验证码为4位的数字。' }
               ]}
             >
-              <Input placeholder="请输入验证码" maxLength={4} />
+              <Input placeholder="请输入验证码" onChange={handleInputCode} maxLength={4} value={formValue.verifyCode} />
             </Form.Item>
-            <Form.Item
-              name="password"
-              validateTrigger="onBlur"
-              validateFirst={true}
-              rules={[
-                { required: true, message: '请输入密码' },
-                { min: 6, message: '密码需大于等于6位' },
-                { max: 18, message: '密码需小于等于20位' }
-              ]}
-            >
-              <Input placeholder="请输入6-20位密码" clearable type="password" />
-            </Form.Item>
-            <Form.Item>
+
+            <Form.Item className={styles.agreeCheck}>
               <Checkbox
                 style={{
                   '--icon-size': '22px',
@@ -286,7 +326,7 @@ const Register = () => {
                   setAgreement(value)
                 }}
               >
-                <span className="text-[12px] leading-[25px]">
+                <span className="text-[15px] leading-[25px]">
                   <span className="text-[#666]">阅读并同意</span>
                   <a href={AGREEMENT_LINK} target={'_blank'} rel="noreferrer">
                     <span className="text-[#004ED1]">《shopastro 用户协议》</span>
