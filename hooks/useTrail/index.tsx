@@ -20,6 +20,10 @@ const useIsMobile = () => {
       link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}&refer=${refer}`
     }
 
+    if (code && refer) {
+      link = `https://sys.admin.${beta}ishopastro.com/admin/user/store-login?product=${type}&code=${code}&refer=${refer}`
+    }
+
     if (isMobile) {
       link = `/user/register?product=${type}`
       if (code) {
