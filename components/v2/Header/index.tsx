@@ -93,7 +93,15 @@ const Header: React.FC<IProps> = (props) => {
       {/*      })(window,document,'script','dataLayer','GTM-TLZJ6RL')*/}
       {/*  `}*/}
       {/*</Script>*/}
-
+      <Script id="baidu-statistic-data" strategy="afterInteractive">
+        {`var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?9f6bc03de81e40fdaefb5edea1c99cd1";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();`}
+      </Script>
       <noscript>
         <iframe
           src="https://tagging.ishopastro.com/ns.html?id=GTM-TLZJ6RL"
