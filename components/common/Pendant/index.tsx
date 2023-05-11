@@ -11,7 +11,7 @@ import styles from './index.module.scss'
 const isBeta = process.env.APP_ENV === 'dev'
 const chatSdkSrc = isBeta
   ? '//sys.cdn.ishopastro.com/pages/beta/sa-c-chat-sdk.js'
-  : '//sys.cdn.ishopastro.com/lib/sa-chat-sdk.js'
+  : '//sys.cdn.ishopastro.com/pages/c-chat/0.7.6/sa-c-chat-sdk.js'
 
 type IProps = {
   size?: 14 | 24 | 26 | 34
