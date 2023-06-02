@@ -118,24 +118,24 @@ export const dtcTypeInfo = [
     title: '基础版',
     subTitle: ['适合新手卖家, 快速启动', '满足跨境电商基础运营需求'],
     info: ['佣金0.8%', '多国家,多语言', '分销订单200/月', '竞手站点洞察30个', 'EDM500条/月'],
-    monthPrice: 180,
-    yearPrice: 1180
+    monthPrice: 1800,
+    yearPrice: 11800
   },
   {
     type: 2,
     title: '专业版',
     subTitle: ['适合专业团队', '业务进阶'],
     info: ['佣金0.6%', '多国家,多语言', '分销订单600/月', '竞手站点洞察100个', 'EDM3000条/月'],
-    monthPrice: 380,
-    yearPrice: 3380
+    monthPrice: 3800,
+    yearPrice: 33800
   },
   {
     type: 3,
     title: '旗舰版',
     subTitle: ['适合专业高端卖家', '品牌打造'],
     info: ['佣金0.2%', '多国家,多语言', '分销订单6000/月', '竞手站点洞察500个', 'EDM30000条/月'],
-    monthPrice: 1180,
-    yearPrice: 11880
+    monthPrice: 11800,
+    yearPrice: 118800
   }
 ]
 
