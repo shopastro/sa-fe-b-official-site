@@ -21,6 +21,7 @@ const Partners: NextPage = () => {
       {/* 背景 */}
       <div className="flex absolute top-0 left-0 w-screen h-[556px] md:h-[700px] overflow-hidden">
         <Image
+          className={'h-full'}
           width={2872}
           height={1236}
           quality={100}
@@ -32,7 +33,6 @@ const Partners: NextPage = () => {
         <Menu theme="light" />
         <Banner />
         <Form />
-        <TryNow />
         <Footer />
       </div>
       <FixedButton
@@ -40,7 +40,6 @@ const Partners: NextPage = () => {
         onClick={() => {
           const usernameInput = document.getElementById('username')
           if (usernameInput) {
-            usernameInput.focus()
             usernameInput.scrollIntoView({
               behavior: 'smooth',
               block: 'center',
