@@ -19,7 +19,7 @@ const Partners: NextPage = () => {
         keywords="星盘服务商, 合作伙伴, 助力助力中国品牌出海, 立即加入;"
       />
       {/* 背景 */}
-      <div className="flex absolute top-0 left-0 w-screen h-[556px] md:h-[700px] overflow-hidden">
+      <div className="flex absolute top-0 left-0 w-screen h-[450px] md:h-[700px] overflow-hidden">
         <Image
           className={'h-full'}
           width={2872}
