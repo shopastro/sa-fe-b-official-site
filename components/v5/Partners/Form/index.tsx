@@ -6,8 +6,8 @@ import { list } from './data'
 const Banner = () => {
   return (
     <div className="flex flex-col w-screen md:items-center">
-      <div className="flex flex-col relative px-[20px] py-[40px] overflow-hidden md:flex-row md:w-[1200px] md:py-[80px]">
-        <div className="mb-[20px] md:w-[688px] md:mb-0 md:mr-[40px]">
+      <div className="flex flex-col relative px-[20px] pt-[26px] pb-[40px] overflow-hidden md:flex-row md:w-[1200px] md:py-[80px]">
+        <div className="mb-[20px] md:w-[688px] md:mb-0 md:mr-[40px] hidden md:block">
           <Image
             width={1377}
             height={918}
