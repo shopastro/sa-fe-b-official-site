@@ -7,10 +7,12 @@ import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
 import Banner from '../components/v5/Partners/Banner'
 import Form from '../components/v5/Partners/Form'
-import TryNow from '../components/v5/TryNow'
+import useIsMobile from '../hooks/useIsMobile'
 
 // 渠道合作
 const Partners: NextPage = () => {
+  const isMobile = useIsMobile()
+
   return (
     <>
       <Header
@@ -19,7 +21,7 @@ const Partners: NextPage = () => {
         keywords="星盘服务商, 合作伙伴, 助力助力中国品牌出海, 立即加入;"
       />
       {/* 背景 */}
-      <div className="flex absolute top-0 left-0 w-screen h-[450px] md:h-[700px] overflow-hidden">
+      <div className="flex absolute top-0 left-0 w-screen h-[460px] md:h-[700px] overflow-hidden">
         <Image
           className={'h-full'}
           width={2872}
@@ -35,19 +37,21 @@ const Partners: NextPage = () => {
         <Form />
         <Footer />
       </div>
-      <FixedButton
-        text="立即加入"
-        onClick={() => {
-          const usernameInput = document.getElementById('username')
-          if (usernameInput) {
-            usernameInput.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-              inline: 'nearest'
-            })
-          }
-        }}
-      />
+      {!isMobile && (
+        <FixedButton
+          text="立即加入"
+          onClick={() => {
+            const usernameInput = document.getElementById('username')
+            if (usernameInput) {
+              usernameInput.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest'
+              })
+            }
+          }}
+        />
+      )}
     </>
   )
 }
