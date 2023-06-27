@@ -8,7 +8,7 @@ const Concat = () => {
           联系我们
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="flex md:flex-6 md:mr-[64px]">
+          <div className="flex mb-[16px] md:mb-0 md:flex-6 md:mr-[64px]">
             <Image
               width={1343}
               height={928}
@@ -21,9 +21,9 @@ const Concat = () => {
             <div className="flex mb-[16px] md:mb-[48px]">
               <Image
                 width={833}
-                height={476}
+                height={555}
                 quality={100}
-                src="https://media.cdn.ishopastro.com/upload/images/20221221-211656.png_2022-12-21-13-18-14.png"
+                src="https://media.cdn.ishopastro.com/upload/images/4A29AD47-38E3-4C64-B34E-65202F55AAC0.png_2023-06-27-08-24-21.png"
                 alt="icon"
               />
             </div>

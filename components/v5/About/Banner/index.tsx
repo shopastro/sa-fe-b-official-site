@@ -33,13 +33,13 @@ const Banner = () => {
             星盘跨境 shopastro
           </h1>
           <div className="relative px-[20px] mb-[4px] text-[14px] leading-[22px] text-[#535D77] md:w-[550px] md:mb-[8px] md:text-[16px] m:leading-[26px]">
-            {/* shopastro是品牌出海服务领域的新锐者, 成立于2021年8月, 总部位于杭州, 在义乌、深圳、厦门三地设立分公司,
-            目前已服务百家以上大客户。其致力于为中国品牌卖家提供一站式出海全链路解决方案,
-            以「大数据和AI技术驱动的精细化运营」实现品牌价值输出和流量变现 */}
-            星盘起航(杭州)网络技术有限公司旗下品牌 shopastro 是品牌出海服务领域的新锐者，
-            星盘起航(杭州)网络技术有限公司成立于2021年8月，总部位于杭州，在义乌、深圳、厦门三地设立分公司，
-            目前已服务百家以上大客户。其致力于为中国品牌卖家提供一站式出海全链路解决方案，
-            以「大数据和AI技术驱动的精细化运营」实现品牌价值输出。
+            <p className={'mb-[16px]'}>
+              星盘跨境是AI-based SaaS/PaaS
+              服务商及品牌出海全链路运营服务商，成立于2021年8月，使命是让中国品牌卖家享受更好的商业服务。核心团队来自于阿里巴巴、蚂蚁金服、百度。已获高瓴、顺为领投的超千万美元A轮融资。
+            </p>
+            <p>
+              星盘跨境一直致力于将AI技术深度应用于品牌出海全链路中，服务客户涵盖B2B和DTC独立站业务。已将AIGC/ChatGPT技术应用于品牌策划、建站、SEO、广告投放、社媒运营和用户运营等领域。作为AI数智化品牌出海的新锐者，星盘跨境不断创新，使得传统的建站和运营方式得到了重新定义。
+            </p>
           </div>
           <a
             href="https://shopastro.feishu.cn/wiki/wikcn1rjK4qU03PRdyRB1tXpgIe"
@@ -115,53 +115,122 @@ const Banner = () => {
         </div>
         {/* 发展历程 pc */}
         <div className="hidden md:flex flex-col items-center">
-          <div className="flex items-center w-[1200px]">
-            <div className="flex items-center flex-1 h-[120px] p-[20px] text-[32px] leading-[38px] text-[#0E1E46] font-[700]">
-              发展历程
-            </div>
-            <div className="flex flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB]">
-              <span className="absolute bottom-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
-              <div className="flex flex-col">
-                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/08</span>
-                <span className="text-[14px] leading-[16px] text-[#313945]">星盘跨境shopastro在杭州成立</span>
-              </div>
-            </div>
-            <div className="flex flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB]">
-              <span className="absolute bottom-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
+          <div className="flex items-center flex-1 h-[120px] p-[20px] text-[32px] leading-[38px] text-[#0E1E46] font-[700] w-[1200px] justify-start">
+            发展历程
+          </div>
+          <div className="flex items-end w-[1200px]">
+            <div className="flex flex-1 relative h-[120px] p-[20px]"></div>
+            <div className="flex flex-1 relative h-[120px] p-[20px]"></div>
+            <div className="flex flex-1 relative h-[120px] px-[20px] border-l-[2px] border-[#BCD4FB]">
+              <span className="absolute bottom-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#FF793A] rounded-[22px]" />
               <div className="flex flex-col">
                 <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/11</span>
-                <span className="text-[14px] leading-[16px] text-[#313945]">shopastro义乌分公司成立</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">星盘建站</span>
+                <span className={'text-lg'}>建站产品上线 收获第一批种子客户</span>
               </div>
             </div>
-            <div className="flex flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB]">
-              <span className="absolute bottom-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
+            <div className="flex flex-1 relative h-[120px] p-[20px]"></div>
+            <div className="flex flex-1 relative h-[120px] p-[20px]"></div>
+            <div className="flex flex-1 relative h-[120px] p-[20px]"></div>
+            <div className="flex flex-1 relative h-[120px] px-[20px] border-l-[2px] border-[#BCD4FB]">
+              <span className="absolute bottom-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#FF793A] rounded-[22px]" />
               <div className="flex flex-col">
-                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2022/03</span>
-                <span className="text-[14px] leading-[16px] text-[#313945]">
-                  shopastro获超千万美元A轮融资, 由高瓴创投领投
-                </span>
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2022/06</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">白鲸数智</span>
+                <span className={'text-lg'}>白鲸数智营销 产品上线</span>
+              </div>
+            </div>
+            <div className="flex flex-1 relative h-[190px] p-[20px] border-l-[2px] border-[#BCD4FB] pt-0">
+              <span className="absolute bottom-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#FF793A] rounded-[22px]" />
+              <div className="flex flex-col">
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2022/11</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">Google 合作</span>
+                <span className={'text-lg'}>成为Google合作伙伴</span>
+                <img
+                  src="https://media.cdn.ishopastro.com/upload/images/unnamed.jpg_2023-06-27-12-02-17.jpg"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <div className="flex flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB] pt-0">
+              <span className="absolute bottom-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#FF793A] rounded-[22px]" />
+              <div className="flex flex-col">
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2022/12</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">阿里合作</span>
+                <span className={'text-lg'}>与阿里签署合作协议</span>
+                <img
+                  src="https://media.cdn.ishopastro.com/svg/official site/24d6a8f049bf15a47f1762b821ef6955.svg"
+                  alt="logo"
+                />
               </div>
             </div>
           </div>
           <div className="w-screen h-[2px] bg-[#BCD4FB]" />
-          <div className="flex w-[600px] ml-[300px]">
-            <div className="flex items-end flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB]">
+          <div className="flex w-[1200px]">
+            <div className="flex items-start flex-1 relative h-[100px] px-[20px] pt-[20px] border-l-[2px] border-[#BCD4FB]">
               <span className="absolute top-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
               <div className="flex flex-col">
-                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/09</span>
-                <span className="text-[14px] leading-[16px] text-[#313945]">
-                  shopastro获蓝湖资本, 深瑾资本等机构数百万美元天使投资
-                </span>
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/08</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">公司成立</span>
+                <span className={'text-lg'}>成立于2021年8月 总部位于杭州</span>
               </div>
             </div>
-            <div className="flex items-end flex-1 relative h-[120px] p-[20px] border-l-[2px] border-[#BCD4FB]">
+            <div className="flex items-start flex-1 relative h-[155px] p-[20px] border-l-[2px] border-[#BCD4FB]">
               <span className="absolute top-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
               <div className="flex flex-col">
                 <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2022/02</span>
-                <span className="text-[14px] leading-[16px] text-[#313945]">shopastro深圳分公司成立</span>
-                <span className="text-[14px] leading-[16px] text-[#313945]">shopastro厦门分公司成立</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">天使轮融资</span>
+                <span className={'text-lg'}>获得天使轮融资 3600万人民币</span>
+                <img
+                  className={'mb-1 w-[120px]'}
+                  src="https://media.cdn.ishopastro.com/upload/images/27873635.png_2023-06-27-11-29-23.png"
+                  alt="logo"
+                />
+                <img
+                  className={'w-[120px]'}
+                  src="https://media.cdn.ishopastro.com/svg/official site/1485002a4e32958328c2d29d95f8e565.svg"
+                  alt="logo"
+                />
               </div>
             </div>
+            <div className="flex items-start flex-1 relative h-[120px] p-[20px]"></div>
+            <div className="flex items-start flex-1 relative h-[90px] p-[20px] border-l-[2px] border-[#BCD4FB]">
+              <span className="absolute top-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
+              <div className="flex flex-col">
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021/11</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">义乌分公司</span>
+                <span className={'text-lg'}>成立义乌分公司</span>
+              </div>
+            </div>
+            <div className="flex items-start flex-1 relative h-[90px] p-[20px] border-l-[2px] border-[#BCD4FB]">
+              <span className="absolute top-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
+              <div className="flex flex-col">
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2022/02</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">深圳分公司</span>
+                <span className={'text-lg'}>成立深圳分公司</span>
+              </div>
+            </div>
+            <div className="flex items-start flex-1 h-[200px] relative p-[20px] border-l-[2px] border-[#BCD4FB]">
+              <span className="absolute top-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
+              <div className="flex flex-col">
+                <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2022/03</span>
+                <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">A轮融资</span>
+                <span className={'text-lg'}>获得A轮融资 1000万美金</span>
+                <img
+                  className={'mb-1 w-[120px]'}
+                  src="https://media.cdn.ishopastro.com/upload/images/63d9f2d3572c11dfa9ec6b644d6875d0f703918f646e copy.jpg_2023-06-27-11-53-28.jpg"
+                  alt="logo"
+                />
+                <img
+                  className={'w-[36px] bg-white'}
+                  src="https://media.cdn.ishopastro.com/upload/images/logo-shunwei.png_2023-06-27-11-55-14.png"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <div className="flex items-end flex-1 relative h-[120px] p-[20px]"></div>
+            <div className="flex items-end flex-1 relative h-[120px] p-[20px]"></div>
+            <div className="flex items-end flex-1 relative h-[120px] p-[20px]"></div>
           </div>
         </div>
       </div>
