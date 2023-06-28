@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Banner = () => {
   return (
     <div className="flex flex-col justify-center w-screen">
-      <div className="flex flex-col relative py-[40px] overflow-hidden md:items-center">
+      <div className="flex flex-col relative py-[40px] md:py-[80px] overflow-hidden md:items-center">
         {/* 背景图1 h5 */}
         <div className="flex flex-col absolute top-[28px] left-0 w-screen md:hidden">
           <div>
@@ -33,11 +33,11 @@ const Banner = () => {
             星盘跨境 shopastro
           </h1>
           <div className="relative px-[20px] mb-[4px] text-[14px] leading-[22px] text-[#535D77] md:w-[550px] md:mb-[8px] md:text-[16px] m:leading-[26px]">
-            <p className={'mb-[16px]'}>
+            <p className={'mb-[16px] leading-[1.6]'}>
               星盘跨境是AI-based SaaS/PaaS
               服务商及品牌出海全链路运营服务商，成立于2021年8月，使命是让中国品牌卖家享受更好的商业服务。核心团队来自于阿里巴巴、蚂蚁金服、百度。已获高瓴、顺为领投的超千万美元A轮融资。
             </p>
-            <p>
+            <p className={'leading-[1.6]'}>
               星盘跨境一直致力于将AI技术深度应用于品牌出海全链路中，服务客户涵盖B2B和DTC独立站业务。已将AIGC/ChatGPT技术应用于品牌策划、建站、SEO、广告投放、社媒运营和用户运营等领域。作为AI数智化品牌出海的新锐者，星盘跨境不断创新，使得传统的建站和运营方式得到了重新定义。
             </p>
           </div>
@@ -264,7 +264,7 @@ const Banner = () => {
                   alt="logo"
                 />
                 <img
-                  className={'mb-2 w-[120px]'}
+                  className={'mb-2 w-[120px] rounded-lg'}
                   src="https://media.cdn.ishopastro.com/upload/images/27873635.png_2023-06-28-06-42-39.png"
                   alt="logo"
                 />
