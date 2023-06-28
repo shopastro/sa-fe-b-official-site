@@ -63,7 +63,7 @@ const Banner = () => {
         </div>
         {/* 发展历程 h5 */}
         <div className="flex relative px-[20px] md:hidden">
-          <div className="w-[2px] ml-[10px] mt-[12px] mb-[24px] bg-[#BCD4FB]" />
+          <div className="w-[2px] ml-[10px] mt-[12px] mb-[32px] bg-[#BCD4FB]" />
           <div className="flex flex-col w-[236px]">
             <div className="flex items-center mb-[42px]">
               <span className="flex-shrink-0 w-[22px] h-[22px] ml-[-12px] mr-[12px] border-[6px] border-[#F6F7F8] bg-[#004ED1] rounded-[22px]" />
@@ -86,18 +86,18 @@ const Banner = () => {
                 <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">天使轮融资</span>
                 <span className={'text-lg'}>获得天使轮融资3600万人民币</span>
                 <img
-                  className={'my-2 w-[60px] bg-white rounded-lg inline-block'}
-                  src="https://media.cdn.ishopastro.com/upload/images/63d9f2d3572c11dfa9ec6b644d6875d0f703918f646e copy.jpg_2023-06-27-11-53-28.jpg"
+                  className={'my-2 w-[80px] bg-white rounded inline-block'}
+                  src="https://media.cdn.ishopastro.com/upload/images/gl.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
                 <img
-                  className={'mb-3.5 w-[60px] inline-block'}
-                  src="https://media.cdn.ishopastro.com/upload/images/27873635.png_2023-06-28-06-42-39.png"
+                  className={'mb-3.5 w-[80px] inline-block rounded'}
+                  src="https://media.cdn.ishopastro.com/upload/images/sj.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
                 <img
-                  className={'w-[60px] inline-block'}
-                  src="https://media.cdn.ishopastro.com/svg/official site/1485002a4e32958328c2d29d95f8e565.svg"
+                  className={'w-[80px] inline-block rounded'}
+                  src="https://media.cdn.ishopastro.com/upload/images/lh.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
               </div>
@@ -133,13 +133,13 @@ const Banner = () => {
                 <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">A轮融资</span>
                 <span className={'text-lg'}>获得A轮融资1000万美金</span>
                 <img
-                  className={'my-2 w-[60px] bg-white rounded-lg inline-block'}
-                  src="https://media.cdn.ishopastro.com/upload/images/63d9f2d3572c11dfa9ec6b644d6875d0f703918f646e copy.jpg_2023-06-27-11-53-28.jpg"
+                  className={'my-2 w-[80px] bg-white rounded inline-block'}
+                  src="https://media.cdn.ishopastro.com/upload/images/gl.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
                 <img
-                  className={'w-[18px] bg-white rounded-lg'}
-                  src="https://media.cdn.ishopastro.com/upload/images/Shunwei_Capital.png_2023-06-28-05-53-28.png"
+                  className={'w-[24px] bg-white rounded'}
+                  src="https://media.cdn.ishopastro.com/upload/images/sw.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
               </div>
@@ -188,7 +188,7 @@ const Banner = () => {
           <div className="flex items-end w-[1200px]">
             <div className="flex flex-1 relative h-[120px] p-[20px]"></div>
             <div className="flex flex-1 relative h-[120px] p-[20px]"></div>
-            <div className="flex flex-1 relative h-[120px] px-[20px] border-l-[2px] border-[#BCD4FB]">
+            <div className="flex flex-2 relative h-[120px] px-[20px] border-l-[2px] border-[#BCD4FB]">
               <span className="absolute bottom-[-12px] left-[-12px] w-[22px] h-[22px] border-[6px] border-[#F6F7F8] bg-[#FF793A] rounded-[22px]" />
               <div className="flex flex-col">
                 <span className="mb-[8px] text-[18px] leading-[22px] text-[#0E1E46] font-[700]">2021 / 11</span>
@@ -259,18 +259,18 @@ const Banner = () => {
                 <span className="text-[14px] leading-[16px] text-[#313945] font-semibold mb-1">天使轮融资</span>
                 <span className={'text-lg'}>获得天使轮融资 3600万人民币</span>
                 <img
-                  className={'my-2 py-[3px] bg-white rounded-lg'}
-                  src="https://media.cdn.ishopastro.com/upload/images/63d9f2d3572c11dfa9ec6b644d6875d0f703918f646e copy.jpg_2023-06-27-11-53-28.jpg"
+                  className={'my-2 py-[3px] bg-white rounded'}
+                  src="https://media.cdn.ishopastro.com/upload/images/gl.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
                 <img
-                  className={'mb-2 w-[120px] rounded-lg'}
-                  src="https://media.cdn.ishopastro.com/upload/images/27873635.png_2023-06-28-06-42-39.png"
+                  className={'mb-2 w-[120px] rounded'}
+                  src="https://media.cdn.ishopastro.com/upload/images/sj.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
                 <img
-                  className={'w-[120px]'}
-                  src="https://media.cdn.ishopastro.com/svg/official site/1485002a4e32958328c2d29d95f8e565.svg"
+                  className={'w-[120px] rounded'}
+                  src="https://media.cdn.ishopastro.com/upload/images/lh.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
               </div>
@@ -303,13 +303,13 @@ const Banner = () => {
                   1000万美金
                 </span>
                 <img
-                  className={'my-2 py-[3px] bg-white rounded-lg'}
-                  src="https://media.cdn.ishopastro.com/upload/images/63d9f2d3572c11dfa9ec6b644d6875d0f703918f646e copy.jpg_2023-06-27-11-53-28.jpg"
+                  className={'my-2 py-[3px] bg-white rounded'}
+                  src="https://media.cdn.ishopastro.com/upload/images/gl.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
                 <img
-                  className={'w-[36px] bg-white rounded-lg'}
-                  src="https://media.cdn.ishopastro.com/upload/images/Shunwei_Capital.png_2023-06-28-05-53-28.png"
+                  className={'w-[36px] bg-white rounded'}
+                  src="https://media.cdn.ishopastro.com/upload/images/sw.png_2023-06-28-08-13-13.png"
                   alt="logo"
                 />
               </div>
