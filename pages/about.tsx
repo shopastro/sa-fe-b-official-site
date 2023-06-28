@@ -8,7 +8,6 @@ import Join from '../components/v5/About/Join'
 import Position from '../components/v5/About/Position'
 import Footer from '../components/v5/Footer'
 import Menu from '../components/v5/Menu'
-import TryNow from '../components/v5/TryNow'
 
 const About: NextPage = () => {
   return (
@@ -56,7 +55,8 @@ const About: NextPage = () => {
         <Position />
         <Join />
         <Concat />
-        <TryNow />
+        {/*暂时不卖了*/}
+        {/*<TryNow />*/}
         <Footer />
       </div>
     </>
