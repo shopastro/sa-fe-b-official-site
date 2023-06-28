@@ -91,8 +91,8 @@ const Banner = () => {
                   alt="logo"
                 />
                 <img
-                  className={'mb-3.5 w-[60px] rounded-lg inline-block'}
-                  src="https://media.cdn.ishopastro.com/upload/images/27873635.png_2023-06-27-11-29-23.png"
+                  className={'mb-3.5 w-[60px] inline-block'}
+                  src="https://media.cdn.ishopastro.com/upload/images/27873635.png_2023-06-28-06-42-39.png"
                   alt="logo"
                 />
                 <img
@@ -264,8 +264,8 @@ const Banner = () => {
                   alt="logo"
                 />
                 <img
-                  className={'mb-2 w-[120px] rounded-lg'}
-                  src="https://media.cdn.ishopastro.com/upload/images/27873635.png_2023-06-27-11-29-23.png"
+                  className={'mb-2 w-[120px]'}
+                  src="https://media.cdn.ishopastro.com/upload/images/27873635.png_2023-06-28-06-42-39.png"
                   alt="logo"
                 />
                 <img
