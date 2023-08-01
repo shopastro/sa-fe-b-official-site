@@ -59,7 +59,7 @@ const Register = () => {
   }, [phoneNum])
 
   const handleRegister = async (values: FormValues) => {
-    let registerUrl = `${apiDomain.current}/common/v1/phone/register.json`
+    let registerUrl = `/api/phone/register`
 
     setLoading(true)
 
@@ -73,7 +73,6 @@ const Register = () => {
         })
         return
       }
-      return
 
       // 增加注册打点
       if (window.dataLayer) {
@@ -98,9 +97,7 @@ const Register = () => {
       }
 
       if (localStorage.getItem('copymasterCode')) {
-        registerUrl = `${apiDomain.current}/common/v1/phone/register.json?code=${localStorage.getItem(
-          'copymasterCode'
-        )}`
+        registerUrl = `/api/phone/register?code=${localStorage.getItem('copymasterCode')}`
       }
 
       let header = location.search.split('?')?.[1]
