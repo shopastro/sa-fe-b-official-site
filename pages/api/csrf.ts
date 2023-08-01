@@ -21,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       setCookieNext(cookie.name, cookie.value, {
         req,
         res,
-        domain: '.shopastro.com',
+        domain: isBeta ? '.ishopastro.com' : '.shopastro.com',
         httpOnly: undefined,
         path: cookie.path,
         expires: cookie.expires,
