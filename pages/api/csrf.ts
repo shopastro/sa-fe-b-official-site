@@ -9,7 +9,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return
   }
   try {
-    const bffResponse = await axios.get(`https://sys.api.ishopastro.com/common/v1/index.json`)
+    const isBeta = process.env.APP_ENV === 'dev'
+    let api = 'https://sys.api.ishopastro.com/common/v1/index.json'
+    if (isBeta) {
+      api = 'https://sys.api.beta.ishopastro.com/common/v1/index.json'
+    }
+    const bffResponse = await axios.get(api)
     //@ts-ignore
     const bffSetCookie = setCookieParser.parse(bffResponse as Response)
     bffSetCookie.forEach((cookie) => {

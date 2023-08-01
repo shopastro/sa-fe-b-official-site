@@ -62,7 +62,19 @@ const Register = () => {
     let registerUrl = `${apiDomain.current}/common/v1/phone/register.json`
 
     setLoading(true)
+
     try {
+      const csrfRes = await axios('/api/csrf')
+      if (!csrfRes.data.success) {
+        setLoading(false)
+        Toast.show({
+          duration: 3000,
+          content: <>服务器或网络异常, 请稍后重试.</>
+        })
+        return
+      }
+      return
+
       // 增加注册打点
       if (window.dataLayer) {
         window.dataLayer.push({

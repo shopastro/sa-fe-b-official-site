@@ -2,10 +2,10 @@
   "name": "sa-index",
   "private": true,
   "scripts": {
-    "dev": "APP_ENV=dev NODE_OPTIONS='--inspect' next dev",
+    "dev": "APP_ENV=dev next dev",
     "build": "next build",
     "lint": "next lint",
-    "start:dev": "APP_ENV=dev next dev -p 3000",
+    "start:beta": "APP_ENV=dev next start -p 3000",
     "start:prod": "APP_ENV=prod next start -p 3000"
   },
   "dependencies": {
