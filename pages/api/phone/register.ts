@@ -6,8 +6,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return
   }
   try {
-    const { copymasterCode } = req.query
-    const bffCopyMasterCode = (copymasterCode ?? '').toString()
+    const { code } = req.query
+    const bffCopyMasterCode = (code ?? '').toString()
     const isBeta = process.env.APP_ENV === 'dev'
     let api = `https://sys.api.ishopastro.com/common/v1/phone/register.json?code=${bffCopyMasterCode}`
     if (isBeta) {
