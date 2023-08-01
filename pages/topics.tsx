@@ -1,9 +1,7 @@
-import type { NextPage } from 'next'
-import Header from '../components/v2/Header'
-import Menu from '../components/v1/Menu'
-import Footer from '../components/v1/Footer'
 import TopicsBox from '../components/common/TopicsBox'
-import { useEffect } from 'react'
+import Footer from '../components/v1/Footer'
+import Menu from '../components/v1/Menu'
+import Header from '../components/v2/Header'
 import { getTopics } from '../service/index'
 
 const CategoryGoodsList = ({ topics = [] }) => {
@@ -23,7 +21,7 @@ const CategoryGoodsList = ({ topics = [] }) => {
 CategoryGoodsList.getInitialProps = async () => {
   const topics = await getTopics()
   return {
-    topics: topics,
+    topics: topics
   }
 }
 

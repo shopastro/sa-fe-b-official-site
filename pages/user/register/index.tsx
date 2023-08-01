@@ -3,7 +3,6 @@ import axios from 'axios'
 import copy from 'copy-to-clipboard'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import queryString from 'query-string'
 import React, { useEffect, useRef, useState } from 'react'
 
 import Pendant from '../../../components/common/Pendant'
