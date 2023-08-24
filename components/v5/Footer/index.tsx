@@ -31,7 +31,7 @@ const Footer = () => {
             <span>星盘起航（杭州）网络技术有限公司</span>
             <span className="mb-[24px]">浙江省杭州市滨江区施强广场1号楼1902室</span>
             <span>contact@shopastro.com</span>
-            <span>(+86) 153 0658 2338</span>
+            <span>(+86) 190 1286 5235</span>
           </div>
 
           <div className="flex flex-col px-[20px] mb-[24px] text-[14px] leading-[20px] text-[#535D77] md:mr-[96px]">
