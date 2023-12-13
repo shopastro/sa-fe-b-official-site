@@ -15,10 +15,11 @@ export const routeMapObj: { [key: string]: { name: string; link: string }[] } = 
     }
   ],
   beluga: [
-    {
-      name: '行业情报',
-      link: '/industry'
-    },
+    // 行业情报暂时下线
+    // {
+    //   name: '行业情报',
+    //   link: '/industry'
+    // },
     {
       name: '文案大师',
       link: '/copymaster'
