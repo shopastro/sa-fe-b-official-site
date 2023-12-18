@@ -77,10 +77,10 @@ const Vision: React.FC<any> = (props) => {
             </div>
             <div className={styles[`${close.about ? 'opened' : 'closeed'}`]}>
               <div className={styles['item']}>
-                <Link href={getLocal('privacyLink')}>{getLocal('privacy')}</Link>
+                <Link href={'/privacy'}>{getLocal('privacy')}</Link>
               </div>
               <div className={styles['item']}>
-                <Link href={getLocal('termsLink')}>{getLocal('terms')}</Link>
+                <Link href={'/agreement'}>{getLocal('terms')}</Link>
               </div>
             </div>
           </div>
