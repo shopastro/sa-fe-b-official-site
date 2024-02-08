@@ -2440,6 +2440,11 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
 <li>本协议以中文书就，其他语言的翻译版本仅作参考。若本协议的任何语言的翻译件与中文版本有不一致的，以中文版本为准。</li>
 </ol>
 <p>&nbsp;</p>
+<p><strong>十四、关于Google API的使用</strong></p>
+<ol>
+  <li>星盘跨境shopastro遵守Google API服务用户数据政策，包括有限使用要求，确保从Google API获取的信息在应用程序内的使用和转移符合<a style="color:#3370ff" href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes" target="_blank">Google的准则和政策</a>。这对于维护用户隐私和数据安全非常重要。</li>
+</ol>
+
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p style="margin-top:6pt; margin-bottom:6pt; text-align:center; line-height:120%; font-size:11pt"><span
@@ -3327,6 +3332,12 @@ export const agreement = `<p style="text-align: center;"><span style="font-size:
     style="font-family:Arial; color:#1f2329">This Agreement is prepared Chinese and translations in other languages
     are for reference purpose only. If there is any discrepancy between the Chinese version and any translation in
     other language, the Chinese version shall prevail.</span></p>
+<p style="margin-top:6pt; margin-bottom:6pt; text-indent:21pt; line-height:120%; font-size:11pt"><span
+    style="font-family:Arial; color:#1f2329">&nbsp;</span></p>
+<p style="margin-top:6pt; margin-bottom:6pt; line-height:120%; font-size:11pt"><span
+    style="font-family:Arial; font-weight:bold; color:#1f2329">14. For Google API usage</span></p>
+<p style="margin-top:6pt; margin-bottom:6pt; text-indent:21pt; line-height:120%; font-size:11pt"><span
+    style="font-family:Arial; color:#1f2329">(App’s) use and transfer to any other app of information received from Google APIs will adhere to <a style="color:#3370ff" href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements.</span></p>
 <div style="-aw-headerfooter-type:footer-primary">
   <p style="margin-top:0pt; margin-bottom:10pt; line-height:115%; font-size:11pt"><span
       style="font-family:'Times New Roman'">&nbsp;</span></p>
